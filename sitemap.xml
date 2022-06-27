@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/jupyter/2020/02/20/test.html</loc>
-<lastmod>2020-02-20T00:00:00-06:00</lastmod>
-</url>
-<url>
 <loc>https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT100-tools.html</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
@@ -22,6 +18,10 @@
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/tri1/2022/06/27/Tri1-introduction.html</loc>
+<lastmod>2022-06-27T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/units/2022/06/27/anatomy.html</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
 <url>

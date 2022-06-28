@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -275,7 +275,9 @@ window.onload = wrap_img;
 <li>The name of the function in this example is "question_and_answer".  In essence, we are defining our own command within the Python language.</li>
 <li>The three "question_and_answer" commands that follow the function and indented commands allow this function to be run.</li>
 <li>This code of the function is then run multiple times, each command line providing a unique "prompt" as a result of the literal parameter passed to the function.</li>
-<li>The <mark>function takes a parameter</mark> called "prompt", which is a message output to the user to describe the input requested.  String concatenation "+" prefixes the prompt with the literal message "Question: ".</li>
+<li>The <mark>function takes a parameter</mark> called "prompt", which is a message output to the user to describe the input requested.  </li>
+<li>
+<mark>String concatenation</mark> "+" prefixes the prompt with the literal message "Question: ".</li>
 <li>The "msg" variable is captured as a result of the jupyter notebook input supplied by the user</li>
 <li>The input "msg" is output back to the user with "Answer: " concatenated to the front.</li>
 </ul>
@@ -332,22 +334,35 @@ Answer: def
 <h3 id="Imports-and-Logical-Expressions">
 <a class="anchor" href="#Imports-and-Logical-Expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Imports and Logical Expressions<a class="anchor-link" href="#Imports-and-Logical-Expressions"> </a>
 </h3>
-<p>In the anatomy of a language you will be importing functions that are developed by others.  In this example we are importing from a library called "os", this determines properties about you system.</p>
-<p>Additionally, this example uses are previous function to present and obtain an answer from a greeting.</p>
-<p>Finally, this example builds a new function "question_with_response" that returns the value input by the user.  This allows programmer to evaluate the response.</p>
+<p>In Python anatomy of you will be <mark>importing libraries and functions</mark>.  This is code that is developed by others.  In this example we are importing from a library called "os", this library extracts properties from the operating system of your existing system.   Additionally, this example uses the custom function defined earlier in the Jupyter document.  Python and Jupyter docs requires you to reference imports and definitions above the referencing line of code.</p>
+<ul>
+<li>import os, sys obtain functions and variables from running environment</li>
+<li>print('Hello, ' + getpass.getuser() + " running " + sys.executable + " on " + sys.platform + "!"), is a concatenated statement that outputs properties from the import</li>
+</ul>
+<p>Next, this example defines a new function "question_with_response", <mark>this function returns a value</mark> input by the user.  This allows programmer to evaluate the response.  The purpose of obtaining the return value is to evaluate if correct response was given to the question.</p>
 <ul>
 <li>response from "question_with_response" is captured in a variable called "rsp"<ul>
 <li>return command in function returns msg input by user</li>
 <li>assignment to "rsp" is allowed a function is returning a value, names do not need to match (but could)</li>
 </ul>
 </li>
-<li>"if" command is next command in sequence after "rsp" assignment<ul>
-<li>this command contains an expression, rsp == "import"</li>
-<li>expressions are evaluated for true or false</li>
+<li>
+<mark>if command</mark> is next command in sequence after "rsp" assignment<ul>
+<li>this command contains an expression, rsp == "import" which compare what is typed to the string literal answer</li>
+<li>an <mark>if expression</mark> is evaluated for true or false</li>
 <li>true takes branch of code directly under if</li>
-<li>false takes branch of code direct under else</li>
+<li>false takes branch of code directly under <mark>else command</mark>
+</li>
 </ul>
 </li>
+</ul>
+<p>The grand finally of this example is calculating the right/total.</p>
+<ul>
+<li>question = 3 is <mark>defined as number</mark> of questions</li>
+<li>correct = 0 is defined as running score</li>
+<li>correct += 1 is the way to <mark>add one to the score</mark>, this code is placed in sequence under correct expression evaluation</li>
+<li>since question and correct are numbers, versus strings, to place them in concatenation in print statements you must inclose them in Python <mark>function str()</mark> which turns number into string.</li>
+<li>final print statement is concatenated and formatted to give user and right over wrong</li>
 </ul>
 
 </div>
@@ -360,33 +375,42 @@ Answer: def
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span><span class="o">,</span> <span class="nn">sys</span>
 
 <span class="k">def</span> <span class="nf">question_with_response</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Question: "</span> <span class="o">+</span> <span class="n">prompt</span><span class="p">)</span>
     <span class="n">msg</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">msg</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, '</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">getlogin</span><span class="p">()</span> <span class="o">+</span><span class="s2">"!"</span><span class="p">)</span>
-<span class="n">question_and_answer</span><span class="p">(</span><span class="s2">"How are you?"</span><span class="p">)</span>
+<span class="n">questions</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Hello, '</span> <span class="o">+</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" running "</span> <span class="o">+</span> <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You will be asked "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" questions."</span><span class="p">)</span>
+<span class="n">question_and_answer</span><span class="p">(</span><span class="s2">"Are you ready to take a test?"</span><span class="p">)</span>
 
 <span class="n">rsp</span> <span class="o">=</span> <span class="n">question_with_response</span><span class="p">(</span><span class="s2">"What command is used to include other functions that are developed?"</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">rsp</span> <span class="o">==</span> <span class="s2">"import"</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is correct!"</span><span class="p">)</span>
+    <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is incorrect!"</span><span class="p">)</span>
 
 <span class="n">rsp</span> <span class="o">=</span> <span class="n">question_with_response</span><span class="p">(</span><span class="s2">"What command in this example is used to evaluate a response?"</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">rsp</span> <span class="o">==</span> <span class="s2">"if"</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is correct!"</span><span class="p">)</span>
+    <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is incorrect!"</span><span class="p">)</span>
 
 <span class="n">rsp</span> <span class="o">=</span> <span class="n">question_with_response</span><span class="p">(</span><span class="s2">"Each 'if' command contains a '_________' to determine a true or false condition?"</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">rsp</span> <span class="o">==</span> <span class="s2">"expression"</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is correct!"</span><span class="p">)</span>
+    <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is incorrect!"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">getpass</span><span class="o">.</span><span class="n">getuser</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" you scored "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span> <span class="o">+</span><span class="s2">"/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">questions</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -399,15 +423,17 @@ Answer: def
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Hello, root!
-Question: How are you?
-Answer: Fine, thank you.
+<pre>Hello, johnmortensen running /usr/local/bin/python3
+You will be asked 3 questions.
+Question: Are you ready to take a test?
+Answer: lets go!!!
 Question: What command is used to include other functions that are developed?
 import is correct!
 Question: What command in this example is used to evaluate a response?
 if is correct!
 Question: Each 'if' command contains a '_________' to determine a true or false condition?
-else is incorrect!
+expression is correct!
+johnmortensen you scored 3/3
 </pre>
 </div>
 </div>
@@ -433,11 +459,12 @@ else is incorrect!
 <p>Additional requirements</p>
 <ul>
 <li>Build your quiz so that it captures the key Vocabulary from this Jupyter document</li>
+<li>Calculate the percentage of your quiz</li>
 <li>Review College Board Big Idea outline, see if you can source locations where you see this vocabulary</li>
 </ul>
 <p>Extra credit</p>
 <ul>
-<li>Go beyond to last key part of anatomy by repeating questions until you get it right.</li>
+<li>Do you see repeating pattern of code?  Try to implement solution to avoid the repeating pattern.  </li>
 </ul>
 
 </div>

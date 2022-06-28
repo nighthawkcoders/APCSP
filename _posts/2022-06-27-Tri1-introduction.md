@@ -6,16 +6,16 @@ categories: [tri1]
 title: Tool Setup Sprint - Tools and Pair Programming
 ---
 
-# AP CSA COURSE OUTLINE
+# AP CSP COURSE OUTLINE
 - Methodology.  Project Based Learning (PBL)
 - Guideline. The 5 Big Ideas AP Computer Science Principles
 - Key Learnings for 2022-2023
     - Collaboratively Build, Deploy and Host Web Pages
-    - Programming, Algorithms, Databases, and APIs
+    - Programming, Algorithms, APIs, and Databases
     - Team and Individual Project will highlight all 5 Big Units, either academically or in interest fashion
 - Establish "Real World” Scrum Team projects
     - Preference is to establish projects with a Customer/Sponsor, including me or other Teachers and Admin on campus.   We have some projects that have been started by other student groups that can be extended.
-    - Projects will be tracked using GitHub README (Time Box), Issues and Projects tools
+    - Projects will be tracked using GitHub README (Time Boxing Events), Issues and Projects tools
 - Create "GitHub Pages" Individual postings and notebooks
     - Build individual GitHub Pages Web Site to _post Notes and Learnings
 - AP create task project and testing in May

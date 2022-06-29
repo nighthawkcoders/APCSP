@@ -99,6 +99,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#learning-college-board-pseudo-code">Learning College Board Pseudo Code</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#comparison-of-cb-pseudo-code-to-python-with-descriptions">Comparison of CB Pseudo Code to Python with descriptions</a></li>
+<li class="toc-entry toc-h3"><a href="#pseudo-if-code-block">Pseudo IF Code Block</a></li>
+<li class="toc-entry toc-h3"><a href="#python-if-code-block">Python IF Code Block</a></li>
 <li class="toc-entry toc-h3"><a href="#suggestions-for-students">Suggestions for students</a></li>
 </ul>
 </li>
@@ -116,13 +118,31 @@ Assignment   |	a ← expression	   | a = expression         | Evaluates expressi
 Selection    | IF (expression)     | if expression:         | Run commands in the code block associated with the selection
 Iteration n times     |	REPEAT n TIMES      | for i in range(n): | Repeat commands in the code block associated withe the iteration n times
 Iteration expression  | REPEAT UNTIL (expression) |	while expression: |  Repeat commands in the code block associated withe the iteration while expression is true
-List Assignment | list ← [expression1, expression2, expression3] | list = [expression1, expression2, expression3] | Assigns 3 values to list.
-First index in List     |	list[1] | list[0] | Access the 1st element in the list[]
-Last index in List    | list[LENGTH(list)] | list[len(list) - 1] | Access the last element in the list[]
+List Assignment | list ← [expression1, expression2, expression3] | list = [expression1, expression2, expression3] | Assigns 3 values to list, value can be literal or expressions
+First index in List     |	list[1] | list[0] | Access the 1st element in the list[].  FYI, most programming languages start a zero.
+Last index in List    | list[LENGTH(list)] | list[len(list) - 1] | Access the last element in the list[].  If you start at zero, last element is length - 1.
 Define Procedure      | PROCEDURE name (parameter) | def name(parameter): |  Create a procedure containing a sequence of programming instructions.
 Expression equals     |	a = b	| a == b  | Evaluate if assigned value of a equals assigned value of b
 Expression not equals |	a ≠ b	| a != b  | Evaluate if assigned value of a is NOT equal to assigned value of b</p>
 
+<h3 id="pseudo-if-code-block">
+<a class="anchor" href="#pseudo-if-code-block" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pseudo IF Code Block</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a ← 1
+b ← 1
+IF (a = b) {
+   DISPLAY("A equals B")
+}
+</code></pre></div></div>
+
+<h3 id="python-if-code-block">
+<a class="anchor" href="#python-if-code-block" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python IF Code Block</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"A equals B"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>{ <block of="" statements=""> }</block></p>
 <h3 id="suggestions-for-students">
 <a class="anchor" href="#suggestions-for-students" aria-hidden="true"><span class="octicon octicon-link"></span></a>Suggestions for students</h3>
 <p>It is very important that you become fluent in “Command Vocabulary” and “Purpose” of the Pseudo Code versus Python comparison.  During the year you will look at JavaScript which has same Command Vocabulary and Purpose.  Others may take Java, you will see the same ideas again.</p>

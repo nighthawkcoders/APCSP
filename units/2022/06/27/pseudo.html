@@ -112,7 +112,7 @@ window.onload = wrap_img;
 <h3 id="comparison-of-cb-pseudo-code-to-python-with-descriptions">
 <a class="anchor" href="#comparison-of-cb-pseudo-code-to-python-with-descriptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison of CB Pseudo Code to Python with descriptions</h3>
 <p>Command Vocabulary | Pseudo code         | Python                 | Purpose
-Output       | DISPLAY(expression) | print(expression, end=” “) | Displays the value of expression, followed by a space.
+Output       | DISPLAY(expression) | print(expression, end=” “) | Displays the value of expression, followed by a space. Python defaults to newline, thus the end=” “
 Input        | a ← INPUT()         | a = input(prompt)      | Accepts a value from the user and returns it to the variable a.
 Assignment   |	a ← expression	   | a = expression         | Evaluates expression and assigns the result to the variable a.
 Selection    | IF (expression)     | if expression:         | Run commands in the code block associated with the selection
@@ -129,6 +129,7 @@ Expression not equals |	a ≠ b	| a != b  | Evaluate if assigned value of a is N
 <a class="anchor" href="#pseudo-if-code-block" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pseudo IF Code Block</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a ← 1
 b ← 1
+
 IF (a = b) {
    DISPLAY("A equals B")
 }
@@ -139,7 +140,8 @@ IF (a = b) {
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">"A equals B"</span><span class="p">)</span>
+    <span class="c1"># Python uses indent to establish code block
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"A equals B"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>{ <block of="" statements=""> }</block></p>

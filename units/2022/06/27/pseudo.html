@@ -111,19 +111,89 @@ window.onload = wrap_img;
 
 <h3 id="comparison-of-cb-pseudo-code-to-python-with-descriptions">
 <a class="anchor" href="#comparison-of-cb-pseudo-code-to-python-with-descriptions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparison of CB Pseudo Code to Python with descriptions</h3>
-<p>Command Vocabulary | Pseudo code         | Python                 | Purpose
-Output       | DISPLAY(expression) | print(expression, end=” “) | Displays the value of expression, followed by a space. Python defaults to newline, thus the end=” “
-Input        | a ← INPUT()         | a = input(prompt)      | Accepts a value from the user and returns it to the variable a.
-Assignment   |	a ← expression	   | a = expression         | Evaluates expression and assigns the result to the variable a.
-Selection    | IF (expression)     | if expression:         | Run commands in the code block associated with the selection
-Iteration n times     |	REPEAT n TIMES      | for i in range(n): | Repeat commands in the code block associated withe the iteration n times
-Iteration expression  | REPEAT UNTIL (expression) |	while expression: |  Repeat commands in the code block associated withe the iteration while expression is true
-List Assignment | list ← [expression1, expression2, expression3] | list = [expression1, expression2, expression3] | Assigns 3 values to list, value can be literal or expressions
-First index in List     |	list[1] | list[0] | Access the 1st element in the list[].  FYI, most programming languages start a zero.
-Last index in List    | list[LENGTH(list)] | list[len(list) - 1] | Access the last element in the list[].  If you start at zero, last element is length - 1.
-Define Procedure      | PROCEDURE name (parameter) | def name(parameter): |  Create a procedure containing a sequence of programming instructions.
-Expression equals     |	a = b	| a == b  | Evaluate if assigned value of a equals assigned value of b
-Expression not equals |	a ≠ b	| a != b  | Evaluate if assigned value of a is NOT equal to assigned value of b</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Command Vocabulary</td>
+      <td>Pseudo code</td>
+      <td>Python</td>
+      <td>Purpose</td>
+    </tr>
+    <tr>
+      <td>Output</td>
+      <td>DISPLAY(expression)</td>
+      <td>print(expression, end=” “)</td>
+      <td>Displays the value of expression, followed by a space. Python defaults to newline, thus the end=” “</td>
+    </tr>
+    <tr>
+      <td>Input</td>
+      <td>a ← INPUT()</td>
+      <td>a = input(prompt)</td>
+      <td>Accepts a value from the user and returns it to the variable a.</td>
+    </tr>
+    <tr>
+      <td>Assignment</td>
+      <td>a ← expression</td>
+      <td>a = expression</td>
+      <td>Evaluates expression and assigns the result to the variable a.</td>
+    </tr>
+    <tr>
+      <td>Selection</td>
+      <td>IF (expression)</td>
+      <td>if expression:</td>
+      <td>Run commands in the code block associated with the selection</td>
+    </tr>
+    <tr>
+      <td>Iteration n times</td>
+      <td>REPEAT n TIMES</td>
+      <td>for i in range(n):</td>
+      <td>Repeat commands in the code block associated withe the iteration n times</td>
+    </tr>
+    <tr>
+      <td>Iteration expression</td>
+      <td>REPEAT UNTIL (expression)</td>
+      <td>while expression:</td>
+      <td>Repeat commands in the code block associated withe the iteration while expression is true</td>
+    </tr>
+    <tr>
+      <td>List Assignment</td>
+      <td>list ← [expression1, expression2, expression3]</td>
+      <td>list = [expression1, expression2, expression3]</td>
+      <td>Assigns 3 values to list, value can be literal or expressions</td>
+    </tr>
+    <tr>
+      <td>First index in List</td>
+      <td>list[1]</td>
+      <td>list[0]</td>
+      <td>Access the 1st element in the list[].  FYI, most programming languages start a zero.</td>
+    </tr>
+    <tr>
+      <td>Last index in List</td>
+      <td>list[LENGTH(list)]</td>
+      <td>list[len(list) - 1]</td>
+      <td>Access the last element in the list[].  If you start at zero, last element is length - 1.</td>
+    </tr>
+    <tr>
+      <td>Define Procedure</td>
+      <td>PROCEDURE name (parameter)</td>
+      <td>def name(parameter):</td>
+      <td>Create a procedure containing a sequence of programming instructions.</td>
+    </tr>
+    <tr>
+      <td>Expression equals</td>
+      <td>a = b</td>
+      <td>a == b</td>
+      <td>Evaluate if assigned value of a equals assigned value of b</td>
+    </tr>
+    <tr>
+      <td>Expression not equals</td>
+      <td>a ≠ b</td>
+      <td>a != b</td>
+      <td>Evaluate if assigned value of a is NOT equal to assigned value of b</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 id="pseudo-if-code-block">
 <a class="anchor" href="#pseudo-if-code-block" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pseudo IF Code Block</h3>

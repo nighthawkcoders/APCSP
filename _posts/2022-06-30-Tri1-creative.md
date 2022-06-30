@@ -12,7 +12,7 @@ In the Student handout... College Board states that Students need to obtain know
 - Pair Share team needs to work together to optimize delivery to Teacher. 
 - Each student needs to become competent in HTML fragments, Jupyter Notebooks, and Python.
 - Each student needs to learn and apply College Board requirements in "Unt 2: Data" and "Unit 3: Algorithms and Programming".  
-- Web programming and JavaScript will be introduced during the process of creating this Pair Share project.  
+- Web programming and JavaScript will be introduced during the process of creating this Pair Share project.
 
 ### PBL Ideation
 Start the process of Ideation, Design, Scrum Board building, and assigning Issues prior to coding.  These are early ideas, followed by early coding (prototyping) helps lead Developers into the iterative processes of Development. 
@@ -27,6 +27,13 @@ The process of Ideation, Design, Scrum Board building, and assigning Issues prio
 
 ### PBL Code/Code/Coding
 This is bringing Ideation and Prototyping into something that has function.  Remember, user College Board Create Task requirements if you are struggling on details.
+
+### Schedule
+- Monday: "Live Review" with pairs: show personal progress in ideation and prototyping.
+- Tuesday: Test Prep - Discuss Create Task.  
+- Wednesday: Plan/Plan/Planning - Pair Create Task.
+- Thursday: Tech Talk - Roles and Agile
+- Friday: Code/Code/Code - Pair Create Task.  
 
 ## Hacks - Live Crossover Grade, before Monday AM.
 This is a big planning and prototype week,  Build all things into Scrum Board. Individuals demonstrate progress on assigned Issue(s) with tangibles.  

@@ -140,9 +140,9 @@ window.onload = wrap_img;
 <h3 id="Lists-and-Dictionaries">
 <a class="anchor" href="#Lists-and-Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists and Dictionaries<a class="anchor-link" href="#Lists-and-Dictionaries"> </a>
 </h3>
-<p>As a quick review we used variables in the introduction of variables.  Variables all have a type: String, Integer, Float, List and Dictionary are some key types that we will be using frequently.  Developers often think of variables as primitives and collections.</p>
+<p>As a quick review we used variables in the introduction last week.  Variables all have a type: String, Integer, Float, List and Dictionary are some key types.  These types we will be using frequently.</p>
 <ol>
-<li>Look at this example and see if you can see hypothesize the difference between primitive and collection.  </li>
+<li>Developers often think of variables as primitives and collections.  Look at this example and see if you can see hypothesize the difference between a primitive and a collection.  </li>
 <li>Take a minute and see if you can reference other elements in the list or the dictionary. Show output.</li>
 </ol>
 
@@ -168,10 +168,14 @@ window.onload = wrap_img;
 <span class="n">score</span> <span class="o">=</span> <span class="mf">90.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"score"</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
 
+<span class="nb">print</span><span class="p">()</span>
+
 <span class="c1"># variable of type list (many values in one variable)</span>
 <span class="n">langs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"JavaScript"</span><span class="p">,</span> <span class="s2">"Java"</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"langs"</span><span class="p">,</span> <span class="n">langs</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-- langs[0]"</span><span class="p">,</span> <span class="n">langs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"- langs[0]"</span><span class="p">,</span> <span class="n">langs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># variable of type dictionary (a group of keys and values)</span>
 <span class="n">person</span> <span class="o">=</span> <span class="p">{</span>
@@ -181,7 +185,7 @@ window.onload = wrap_img;
     <span class="s2">"langs"</span><span class="p">:</span> <span class="n">langs</span>
 <span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"person"</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'-- person["name"]'</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'- person["name"]'</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -197,10 +201,12 @@ window.onload = wrap_img;
 <pre>name John Doe &lt;class 'str'&gt;
 age 18 &lt;class 'int'&gt;
 score 90.0 &lt;class 'float'&gt;
+
 langs ['Python', 'JavaScript', 'Java'] &lt;class 'list'&gt;
-langs[0] Python &lt;class 'str'&gt;
+- langs[0] Python &lt;class 'str'&gt;
+
 person {'name': 'John Doe', 'age': 18, 'score': 90.0, 'langs': ['Python', 'JavaScript', 'Java']} &lt;class 'dict'&gt;
-person["name"] John Doe &lt;class 'str'&gt;
+- person["name"] John Doe &lt;class 'str'&gt;
 </pre>
 </div>
 </div>

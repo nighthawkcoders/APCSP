@@ -3,7 +3,7 @@ toc: true
 layout: post
 description: 
 categories: [tri1]
-title: Data Abstraction Sprint - Python
+title: Data Abstraction Sprint
 ---
 
 # Introduction to Python - Week 1

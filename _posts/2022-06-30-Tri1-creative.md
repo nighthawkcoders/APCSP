@@ -40,6 +40,4 @@ This is a big planning and prototype week,  Build all things into Scrum Board. I
 - Jupyter notebooks makes it easy to have tangible and working documents.  
 - Each Pair performs review with cross over who should be doing similar task, make adjustments before review with Teacher.  
 - Provide Crossover/Self grade at the top of the review ticket.  Anyone who rates above 90% should have something they have done outside of the requirements. 
-- Each pair should be prepared to complete review with Teacher in 2-4 minutes.
-- Designs will be review to meet Teacher and Create Task requirements.  Be sure to pick something that you don't burn out on after a couple of hours.
-
+- Each pair should be prepared to complete review with Teacher in about 2 minutes.  Be prepared to both talk and take notes.

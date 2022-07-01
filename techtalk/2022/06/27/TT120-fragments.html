@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>TT 1.2.0 HTML Fragments | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="TT 1.2.0 HTML Fragments" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="HTML Fragments and Markdown Building an entire Web Application frontend requires HTML, CSS and JavaScript. In our Fastpages/GitHub Pages a lot of the frontend design work has been done. Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website." />
+<meta property="og:description" content="HTML Fragments and Markdown Building an entire Web Application frontend requires HTML, CSS and JavaScript. In our Fastpages/GitHub Pages a lot of the frontend design work has been done. Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-27T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="TT 1.2.0 HTML Fragments" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-27T00:00:00-05:00","datePublished":"2022-06-27T00:00:00-05:00","description":"HTML Fragments and Markdown Building an entire Web Application frontend requires HTML, CSS and JavaScript. In our Fastpages/GitHub Pages a lot of the frontend design work has been done. Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website.","headline":"TT 1.2.0 HTML Fragments","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html"},"url":"https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/">Tags</a><a class="page-link" href="/APCSP/about/">About Us</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">TT 1.2.0 HTML Fragments</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-27T00:00:00-05:00" itemprop="datePublished">
+        Jun 27, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      10 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/APCSP/categories/#techtalk">techtalk</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#html-fragments-and-markdown">HTML Fragments and Markdown</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#web-page-layout">Web Page Layout</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#tt-110-focus-and-habits---yale-professor-on-successful-people">TT 1.1.0 Focus and Habits - Yale Professor on Successful People</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#psychology-and-the-good-life-by-laurie-santos">
+Psychology and the Good Life, by Laurie Santos
+</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#teacher-notes">
+Teacher Notes</a></li>
+<li class="toc-entry toc-h3"><a href="#teacher-message">
+Teacher Message</a></li>
+<li class="toc-entry toc-h3"><a href="#agile-and-psychology-of-the-good-life">
+Agile and Psychology of the Good Life</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#hacks">
+Hacks</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#tt-110-focus-and-habits---yale-professor-on-successful-people-1">TT 1.1.0 Focus and Habits - Yale Professor on Successful People</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#psychology-and-the-good-life-by-laurie-santos">
+Psychology and the Good Life, by Laurie Santos
+</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#teacher-notes">
+Teacher Notes</a></li>
+<li class="toc-entry toc-h3"><a href="#teacher-message">
+Teacher Message</a></li>
+<li class="toc-entry toc-h3"><a href="#agile-and-psychology-of-the-good-life">
+Agile and Psychology of the Good Life</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#hacks">
+Hacks</a></li>
+</ul>
+</li>
+</ul><h2 id="html-fragments-and-markdown">
+<a class="anchor" href="#html-fragments-and-markdown" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML Fragments and Markdown</h2>
+<p>Building an entire Web Application frontend requires HTML, CSS and JavaScript.  In our Fastpages/GitHub Pages a lot of the frontend design work has been done.   Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website.</p>
+
+<h3 id="web-page-layout">
+<a class="anchor" href="#web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web Page Layout</h3>
+<p>A complete HTML Web Application is typically made off of a Layout and a series of Fragments (sometimes called templates).</p>
+<ul>
+  <li>
+<a href="https://padlet.com/jmortensen7/weblayout">Web Page Layout</a>.  This illustration becomes important when you make your own layout and fragments using frameworks like Jinja2 (for Python)  or Thymeleaf (for Java).</li>
+  <li>
+    <p>Minima Layout, everywhere you see an “include” this layout is including a fragment to complement the page.  Where you see ```&lt;article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"&gt;</p>
+
+    <header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">
+<a class="anchor" href="#tt-110-focus-and-habits---yale-professor-on-successful-people" aria-hidden="true"><span class="octicon octicon-link"></span></a>TT 1.1.0 Focus and Habits - Yale Professor on Successful People</h1>
+<p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-27T00:00:00-05:00" itemprop="datePublished">
+      Jun 27, 2022
+    </time>
+     • <span class="read-time" title="Estimated read time">
+    
+    
+    1 min read
+    
+</span></p></header>
+  </li>
+</ul>
+<p>&lt;/span&gt;&lt;/p&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;p class="category-tags"&gt;&lt;i class="fas fa-tags category-tags-icon"&gt;&lt;/i&gt;&lt;/i&gt; 
+  
+    &lt;a class="category-tags-link" href="/APCSP/categories/#techtalk"&gt;techtalk&lt;/a&gt;
+    
+  
+  &lt;/p&gt;
+
+
+&lt;/header&gt;
+</code></pre></div></div>
+
+<div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2">
+<a href="#psychology-and-the-good-life-by-laurie-santos">Psychology and the Good Life, by Laurie Santos</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#teacher-notes">Teacher Notes</a></li>
+<li class="toc-entry toc-h3"><a href="#teacher-message">Teacher Message</a></li>
+<li class="toc-entry toc-h3"><a href="#agile-and-psychology-of-the-good-life">Agile and Psychology of the Good Life</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#hacks">Hacks</a></li>
+</ul>
+<h2 id="psychology-and-the-good-life-by-laurie-santos">
+<a class="anchor" href="#psychology-and-the-good-life-by-laurie-santos" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#psychology-and-the-good-life-by-laurie-santos" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://www.youtube.com/watch?v=ZizdB0TgAVM">Psychology and the Good Life, by Laurie Santos</a>
+</h2>
+<p>This video is very relevant to students.  Laurie Santos is a professor at Yale has produced one of the most popular classes of all time at Yale (1 of 4 students take this class).</p>
+
+<h3 id="teacher-notes">
+<a class="anchor" href="#teacher-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#teacher-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teacher Notes</h3>
+<p>In my first watch of this video, right after 2021-2022 school year, these were my observations in improving the well being of Computer Science at Del Norte.</p>
+<ul>
+  <li>The <mark>Teacher needs to reduce academic stress</mark> on students.</li>
+  <li>The Teacher needs to convince Students to <mark>form habits of successful people</mark>, as discussed in the video. These habits need to be formed collaboratively between Teacher and Student.</li>
+  <li>Students need to strive to <mark>form an attitude of success for life</mark>.  This takes effort and commitment.  Similar to exercise analogies discussed in video.</li>
+  <li>In active discussions with Ms Naidu who taught at Del Norte in 2021-2022, we determined the biggest weakness in students our students is Collaboration, not Technical.</li>
+  <li>Laure Santos request that students <mark>be grateful</mark> for their current situation.</li>
+</ul>
+
+<h3 id="teacher-message">
+<a class="anchor" href="#teacher-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#teacher-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teacher Message</h3>
+<p>The AP Computer Science classes at Del Norte in 2022-2023 is structured to <mark>do most of the work in the classroom</mark>.  Students, please prioritize the 4C habits: Collaboration, Communication, Critical Thinking and Creativity in classroom.  Additionally, <mark>focus, ask questions, Code/Code/Code, and make mistakes</mark>. If you do these things, you are in danger of getting <mark>90% on all your assignments</mark>.</p>
+
+<h3 id="agile-and-psychology-of-the-good-life">
+<a class="anchor" href="#agile-and-psychology-of-the-good-life" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#agile-and-psychology-of-the-good-life" aria-hidden="true"><span class="octicon octicon-link"></span></a>Agile and Psychology of the Good Life</h3>
+<p>A lot of the way we go Agile, Sprints, and Scrums is helping to establish habits and focus. As Engineers, we need to learn to put things together and not consider everything as disparate.</p>
+<ul>
+  <li>Habit helpers: Stand-up meetings, Issues, Scrum Board, Review Tickets, Sprints</li>
+  <li>Focus helpers: Reviewing Issues, Pair Coding, Making mistakes, Fixing Bugs, Scrum accountability</li>
+</ul>
+
+<h2 id="hacks">
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h2>
+<ul>
+  <li>Watch and build a vocabulary on the “Psychology and the Good Life” and maintain it on GH Pages, look for connections between Good Life and Agile.</li>
+  <li>Write a note of gratitude to someone on campus and someone at home, record your experience in GH Pages.</li>
+</ul>
+
+  </div>
+<p><a class="u-url" href="/APCSP/techtalk/2022/06/27/TT111-focus.html" hidden=""></a>
+&lt;/article&gt;
+```, this is where our HTML or Markdown fragment is inserted.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:card"</span> <span class="na">content=</span><span class="s">"summary_large_image"</span> <span class="nt">/&gt;</span><span class="c">&lt;!-- Begin Jekyll SEO tag v2.8.0 --&gt;</span>
+<span class="nt">&lt;title&gt;</span>TT 1.2.0 HTML Fragments | APCSP<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"generator"</span> <span class="na">content=</span><span class="s">"Jekyll v4.1.1"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"TT 1.2.0 HTML Fragments"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:locale"</span> <span class="na">content=</span><span class="s">"en_US"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"HTML Fragments and Markdown Building an entire Web Application frontend requires HTML, CSS and JavaScript. In our Fastpages/GitHub Pages a lot of the frontend design work has been done. Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website."</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"HTML Fragments and Markdown Building an entire Web Application frontend requires HTML, CSS and JavaScript. In our Fastpages/GitHub Pages a lot of the frontend design work has been done. Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website."</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"canonical"</span> <span class="na">href=</span><span class="s">"https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:site_name"</span> <span class="na">content=</span><span class="s">"APCSP"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"article"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:published_time"</span> <span class="na">content=</span><span class="s">"2022-06-27T00:00:00-05:00"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"twitter:card"</span> <span class="na">content=</span><span class="s">"summary"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"twitter:title"</span> <span class="na">content=</span><span class="s">"TT 1.2.0 HTML Fragments"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"application/ld+json"</span><span class="nt">&gt;</span>
+<span class="p">{</span><span class="dl">"</span><span class="s2">@context</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://schema.org</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">@type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">BlogPosting</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">dateModified</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">2022-06-27T00:00:00-05:00</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">datePublished</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">2022-06-27T00:00:00-05:00</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">HTML Fragments and Markdown Building an entire Web Application frontend requires HTML, CSS and JavaScript. In our Fastpages/GitHub Pages a lot of the frontend design work has been done. Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website.</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">headline</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">TT 1.2.0 HTML Fragments</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">mainEntityOfPage</span><span class="dl">"</span><span class="p">:{</span><span class="dl">"</span><span class="s2">@type</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">WebPage</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">@id</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html</span><span class="dl">"</span><span class="p">},</span><span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html</span><span class="dl">"</span><span class="p">}</span><span class="nt">&lt;/script&gt;</span>
+<span class="c">&lt;!-- End Jekyll SEO tag --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/APCSP/assets/css/style.css"</span><span class="nt">&gt;&lt;link</span> <span class="na">type=</span><span class="s">"application/atom+xml"</span> <span class="na">rel=</span><span class="s">"alternate"</span> <span class="na">href=</span><span class="s">"https://nighthawkcoders.github.io/APCSP/feed.xml"</span> <span class="na">title=</span><span class="s">"APCSP"</span> <span class="nt">/&gt;&lt;link</span> <span class="na">rel=</span><span class="s">"shortcut icon"</span> <span class="na">type=</span><span class="s">"image/x-icon"</span> <span class="na">href=</span><span class="s">"/APCSP/images/favicon.ico"</span><span class="nt">&gt;&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css"</span> <span class="na">integrity=</span><span class="s">"sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg=="</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"</span> <span class="na">integrity=</span><span class="s">"sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">function</span> <span class="nx">wrap_img</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">attachEvent</span> <span class="p">?</span> <span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">complete</span><span class="dl">"</span> <span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">loading</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">elements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.post img</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">elements</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">className</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">emoji</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="kd">const</span> <span class="nx">caption</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">figcaption</span><span class="dl">'</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">));</span>
+                <span class="nx">caption</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">node</span><span class="p">);</span>
+                <span class="kd">const</span> <span class="nx">wrapper</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">figure</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">wrapper</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">image</span><span class="dl">'</span><span class="p">;</span>
+                <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">wrapper</span><span class="p">,</span> <span class="nx">el</span><span class="p">);</span>
+                <span class="nx">el</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+                <span class="nx">wrapper</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+                <span class="nx">wrapper</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">caption</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">DOMContentLoaded</span><span class="dl">'</span><span class="p">,</span> <span class="nx">fn</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="nx">wrap_img</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">DOMContentLoaded</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="c1">// add link icon to anchor tags</span>
+    <span class="kd">var</span> <span class="nx">elem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.anchor-link</span><span class="dl">"</span><span class="p">)</span>
+    <span class="nx">elem</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;i class="fas fa-link fa-xs"&gt;&lt;/i&gt;</span><span class="dl">'</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;&lt;header</span> <span class="na">class=</span><span class="s">"site-header"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"site-title"</span> <span class="na">rel=</span><span class="s">"author"</span> <span class="na">href=</span><span class="s">"/APCSP/"</span><span class="nt">&gt;</span>APCSP<span class="nt">&lt;/a&gt;&lt;nav</span> <span class="na">class=</span><span class="s">"site-nav"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"nav-trigger"</span> <span class="na">class=</span><span class="s">"nav-trigger"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nav-trigger"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"menu-icon"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">viewBox=</span><span class="s">"0 0 18 15"</span> <span class="na">width=</span><span class="s">"18px"</span> <span class="na">height=</span><span class="s">"15px"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/svg&gt;</span>
+          <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"trigger"</span><span class="nt">&gt;&lt;a</span> <span class="na">class=</span><span class="s">"page-link"</span> <span class="na">href=</span><span class="s">"/APCSP/search/"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">class=</span><span class="s">"page-link"</span> <span class="na">href=</span><span class="s">"/APCSP/categories/"</span><span class="nt">&gt;</span>Tags<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">class=</span><span class="s">"page-link"</span> <span class="na">href=</span><span class="s">"/APCSP/about/"</span><span class="nt">&gt;</span>About Us<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;/nav&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"page-content"</span> <span class="na">aria-label=</span><span class="s">"Content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post h-entry"</span> <span class="na">itemscope</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/BlogPosting"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"post-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title p-name"</span> <span class="na">itemprop=</span><span class="s">"name headline"</span><span class="nt">&gt;</span>TT 1.1.0 Focus and Habits - Yale Professor on Successful People<span class="nt">&lt;/h1&gt;&lt;p</span> <span class="na">class=</span><span class="s">"post-meta post-meta-title"</span><span class="nt">&gt;&lt;time</span> <span class="na">class=</span><span class="s">"dt-published"</span> <span class="na">datetime=</span><span class="s">"2022-06-27T00:00:00-05:00"</span> <span class="na">itemprop=</span><span class="s">"datePublished"</span><span class="nt">&gt;</span>
+        Jun 27, 2022
+      <span class="nt">&lt;/time&gt;</span>
+       • <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"read-time"</span> <span class="na">title=</span><span class="s">"Estimated read time"</span><span class="nt">&gt;</span>
+    
+    
+      1 min read
+    
+<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
+
+    
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"category-tags"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-tags category-tags-icon"</span><span class="nt">&gt;&lt;/i&gt;&lt;/i&gt;</span> 
+      
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"category-tags-link"</span> <span class="na">href=</span><span class="s">"/APCSP/categories/#techtalk"</span><span class="nt">&gt;</span>techtalk<span class="nt">&lt;/a&gt;</span>
+        
+      
+      <span class="nt">&lt;/p&gt;</span>
+    
+
+    <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post-content e-content"</span> <span class="na">itemprop=</span><span class="s">"articleBody"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">"toc"</span> <span class="na">class=</span><span class="s">"section-nav"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"toc-entry toc-h2"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#psychology-and-the-good-life-by-laurie-santos"</span><span class="nt">&gt;</span>Psychology and the Good Life, by Laurie Santos<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"toc-entry toc-h3"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#teacher-notes"</span><span class="nt">&gt;</span>Teacher Notes<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"toc-entry toc-h3"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#teacher-message"</span><span class="nt">&gt;</span>Teacher Message<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"toc-entry toc-h3"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#agile-and-psychology-of-the-good-life"</span><span class="nt">&gt;</span>Agile and Psychology of the Good Life<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"toc-entry toc-h2"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#hacks"</span><span class="nt">&gt;</span>Hacks<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;&lt;h2</span> <span class="na">id=</span><span class="s">"psychology-and-the-good-life-by-laurie-santos"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"anchor"</span> <span class="na">href=</span><span class="s">"#psychology-and-the-good-life-by-laurie-santos"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-link"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://www.youtube.com/watch?v=ZizdB0TgAVM"</span><span class="nt">&gt;</span>Psychology and the Good Life, by Laurie Santos<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p&gt;</span>This video is very relevant to students.  Laurie Santos is a professor at Yale has produced one of the most popular classes of all time at Yale (1 of 4 students take this class).<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"teacher-notes"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"anchor"</span> <span class="na">href=</span><span class="s">"#teacher-notes"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-link"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>Teacher Notes<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;p&gt;</span>In my first watch of this video, right after 2021-2022 school year, these were my observations in improving the well being of Computer Science at Del Norte.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>The <span class="nt">&lt;mark&gt;</span>Teacher needs to reduce academic stress<span class="nt">&lt;/mark&gt;</span> on students.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>The Teacher needs to convince Students to <span class="nt">&lt;mark&gt;</span>form habits of successful people<span class="nt">&lt;/mark&gt;</span>, as discussed in the video. These habits need to be formed collaboratively between Teacher and Student.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Students need to strive to <span class="nt">&lt;mark&gt;</span>form an attitude of success for life<span class="nt">&lt;/mark&gt;</span>.  This takes effort and commitment.  Similar to exercise analogies discussed in video.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>In active discussions with Ms Naidu who taught at Del Norte in 2021-2022, we determined the biggest weakness in students our students is Collaboration, not Technical.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Laure Santos request that students <span class="nt">&lt;mark&gt;</span>be grateful<span class="nt">&lt;/mark&gt;</span> for their current situation.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"teacher-message"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"anchor"</span> <span class="na">href=</span><span class="s">"#teacher-message"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-link"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>Teacher Message<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;p&gt;</span>The AP Computer Science classes at Del Norte in 2022-2023 is structured to <span class="nt">&lt;mark&gt;</span>do most of the work in the classroom<span class="nt">&lt;/mark&gt;</span>.  Students, please prioritize the 4C habits: Collaboration, Communication, Critical Thinking and Creativity in classroom.  Additionally, <span class="nt">&lt;mark&gt;</span>focus, ask questions, Code/Code/Code, and make mistakes<span class="nt">&lt;/mark&gt;</span>. If you do these things, you are in danger of getting <span class="nt">&lt;mark&gt;</span>90% on all your assignments<span class="nt">&lt;/mark&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;h3</span> <span class="na">id=</span><span class="s">"agile-and-psychology-of-the-good-life"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"anchor"</span> <span class="na">href=</span><span class="s">"#agile-and-psychology-of-the-good-life"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-link"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>Agile and Psychology of the Good Life<span class="nt">&lt;/h3&gt;</span>
+<span class="nt">&lt;p&gt;</span>A lot of the way we go Agile, Sprints, and Scrums is helping to establish habits and focus. As Engineers, we need to learn to put things together and not consider everything as disparate.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Habit helpers: Stand-up meetings, Issues, Scrum Board, Review Tickets, Sprints<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Focus helpers: Reviewing Issues, Pair Coding, Making mistakes, Fixing Bugs, Scrum accountability<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"hacks"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"anchor"</span> <span class="na">href=</span><span class="s">"#hacks"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">"octicon octicon-link"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>Hacks<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Watch and build a vocabulary on the “Psychology and the Good Life” and maintain it on GH Pages, look for connections between Good Life and Agile.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Write a note of gratitude to someone on campus and someone at home, record your experience in GH Pages.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+  <span class="nt">&lt;/div&gt;&lt;a</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"/APCSP/techtalk/2022/06/27/TT111-focus.html"</span> <span class="na">hidden</span><span class="nt">&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/main&gt;&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer h-card"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;data</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"/APCSP/"</span><span class="nt">&gt;&lt;/data&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col-wrapper"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"feed-subscribe"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/APCSP/feed.xml"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon orange"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/APCSP/assets/minima-social-icons.svg#rss"</span><span class="nt">&gt;&lt;/use&gt;</span>
+            <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>Subscribe<span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer-col"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>AP Computer Science Principles with support for Jupyter Notebooks.<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"social-links"</span><span class="nt">&gt;&lt;ul</span> <span class="na">class=</span><span class="s">"social-media-list"</span><span class="nt">&gt;&lt;li&gt;&lt;a</span> <span class="na">rel=</span><span class="s">"me"</span> <span class="na">href=</span><span class="s">"https://github.com/nighthawkcoders"</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">title=</span><span class="s">"nighthawkcoders"</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon grey"</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/APCSP/assets/minima-social-icons.svg#github"</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a</span> <span class="na">rel=</span><span class="s">"me"</span> <span class="na">href=</span><span class="s">"https://twitter.com/NighthawkCoding"</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">title=</span><span class="s">"NighthawkCoding"</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">"svg-icon grey"</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/APCSP/assets/minima-social-icons.svg#twitter"</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>The design of GitHub pages allows us to change theme and the new them will have a similar ```&lt;article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"&gt;</p>
+
+    <header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">
+<a class="anchor" href="#tt-110-focus-and-habits---yale-professor-on-successful-people-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>TT 1.1.0 Focus and Habits - Yale Professor on Successful People</h1>
+<p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-27T00:00:00-05:00" itemprop="datePublished">
+      Jun 27, 2022
+    </time>
+     • <span class="read-time" title="Estimated read time">
+    
+    
+    1 min read
+    
+</span></p></header>
+  </li>
+</ul>
+<p>&lt;/span&gt;&lt;/p&gt;</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;p class="category-tags"&gt;&lt;i class="fas fa-tags category-tags-icon"&gt;&lt;/i&gt;&lt;/i&gt; 
+  
+    &lt;a class="category-tags-link" href="/APCSP/categories/#techtalk"&gt;techtalk&lt;/a&gt;
+    
+  
+  &lt;/p&gt;
+
+
+&lt;/header&gt;
+</code></pre></div></div>
+
+<div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2">
+<a href="#psychology-and-the-good-life-by-laurie-santos">Psychology and the Good Life, by Laurie Santos</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#teacher-notes">Teacher Notes</a></li>
+<li class="toc-entry toc-h3"><a href="#teacher-message">Teacher Message</a></li>
+<li class="toc-entry toc-h3"><a href="#agile-and-psychology-of-the-good-life">Agile and Psychology of the Good Life</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#hacks">Hacks</a></li>
+</ul>
+<h2 id="psychology-and-the-good-life-by-laurie-santos">
+<a class="anchor" href="#psychology-and-the-good-life-by-laurie-santos" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#psychology-and-the-good-life-by-laurie-santos" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://www.youtube.com/watch?v=ZizdB0TgAVM">Psychology and the Good Life, by Laurie Santos</a>
+</h2>
+<p>This video is very relevant to students.  Laurie Santos is a professor at Yale has produced one of the most popular classes of all time at Yale (1 of 4 students take this class).</p>
+
+<h3 id="teacher-notes">
+<a class="anchor" href="#teacher-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#teacher-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teacher Notes</h3>
+<p>In my first watch of this video, right after 2021-2022 school year, these were my observations in improving the well being of Computer Science at Del Norte.</p>
+<ul>
+  <li>The <mark>Teacher needs to reduce academic stress</mark> on students.</li>
+  <li>The Teacher needs to convince Students to <mark>form habits of successful people</mark>, as discussed in the video. These habits need to be formed collaboratively between Teacher and Student.</li>
+  <li>Students need to strive to <mark>form an attitude of success for life</mark>.  This takes effort and commitment.  Similar to exercise analogies discussed in video.</li>
+  <li>In active discussions with Ms Naidu who taught at Del Norte in 2021-2022, we determined the biggest weakness in students our students is Collaboration, not Technical.</li>
+  <li>Laure Santos request that students <mark>be grateful</mark> for their current situation.</li>
+</ul>
+
+<h3 id="teacher-message">
+<a class="anchor" href="#teacher-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#teacher-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>Teacher Message</h3>
+<p>The AP Computer Science classes at Del Norte in 2022-2023 is structured to <mark>do most of the work in the classroom</mark>.  Students, please prioritize the 4C habits: Collaboration, Communication, Critical Thinking and Creativity in classroom.  Additionally, <mark>focus, ask questions, Code/Code/Code, and make mistakes</mark>. If you do these things, you are in danger of getting <mark>90% on all your assignments</mark>.</p>
+
+<h3 id="agile-and-psychology-of-the-good-life">
+<a class="anchor" href="#agile-and-psychology-of-the-good-life" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#agile-and-psychology-of-the-good-life" aria-hidden="true"><span class="octicon octicon-link"></span></a>Agile and Psychology of the Good Life</h3>
+<p>A lot of the way we go Agile, Sprints, and Scrums is helping to establish habits and focus. As Engineers, we need to learn to put things together and not consider everything as disparate.</p>
+<ul>
+  <li>Habit helpers: Stand-up meetings, Issues, Scrum Board, Review Tickets, Sprints</li>
+  <li>Focus helpers: Reviewing Issues, Pair Coding, Making mistakes, Fixing Bugs, Scrum accountability</li>
+</ul>
+
+<h2 id="hacks">
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h2>
+<ul>
+  <li>Watch and build a vocabulary on the “Psychology and the Good Life” and maintain it on GH Pages, look for connections between Good Life and Agile.</li>
+  <li>Write a note of gratitude to someone on campus and someone at home, record your experience in GH Pages.</li>
+</ul>
+
+  </div>
+<p><a class="u-url" href="/APCSP/techtalk/2022/06/27/TT111-focus.html" hidden=""></a>
+&lt;/article&gt;
+``` statement that will include our code and hopefully style us within there layout.</p>
+
+
+  </div><a class="u-url" href="/APCSP/techtalk/2022/06/27/TT120-fragments.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="nighthawkcoders"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="NighthawkCoding"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -125,8 +125,8 @@ window.onload = wrap_img;
 <a href="https://github.com/jekyll/minima">Minima theme</a>, has a layout as shown below.  Everywhere you see an “include” this layout is including a fragment to complement the page, things like CSS and JavaScript.  Where you see content surrounded by curl braces, this is the statement that includes page specific HTML or Markdown fragment.</li>
 </ul>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;&lt;head&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;&lt;head&gt;</span>
   <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
@@ -196,8 +196,8 @@ window.onload = wrap_img;
       <span class="nt">&lt;/nav&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;/header&gt;</span>
 <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"page-content"</span> <span class="na">aria-label=</span><span class="s">"Content"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post h-entry"</span> <span class="na">itemscope</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/BlogPosting"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post h-entry"</span> <span class="na">itemscope</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/BlogPosting"</span><span class="nt">&gt;</span>
 
   <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"post-header"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title p-name"</span> <span class="na">itemprop=</span><span class="s">"name headline"</span><span class="nt">&gt;</span>TT 1.1.0 Focus and Habits - Yale Professor on Successful People<span class="nt">&lt;/h1&gt;&lt;p</span> <span class="na">class=</span><span class="s">"post-meta post-meta-title"</span><span class="nt">&gt;&lt;time</span> <span class="na">class=</span><span class="s">"dt-published"</span> <span class="na">datetime=</span><span class="s">"2022-06-27T00:00:00-05:00"</span> <span class="na">itemprop=</span><span class="s">"datePublished"</span><span class="nt">&gt;</span>
@@ -269,8 +269,8 @@ window.onload = wrap_img;
   <span class="nt">&lt;/div&gt;&lt;a</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"/APCSP/techtalk/2022/06/27/TT111-focus.html"</span> <span class="na">hidden</span><span class="nt">&gt;&lt;/a&gt;</span>
 <span class="nt">&lt;/article&gt;</span>
 
-      <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;/main&gt;&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer h-card"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/main&gt;&lt;footer</span> <span class="na">class=</span><span class="s">"site-footer h-card"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;data</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">href=</span><span class="s">"/APCSP/"</span><span class="nt">&gt;&lt;/data&gt;</span>
 
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
@@ -298,8 +298,9 @@ window.onload = wrap_img;
 <span class="nt">&lt;/footer&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 
-<span class="nt">&lt;/html&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
+
 <ul>
   <li>The design of GitHub pages allows us to change themes with the _config.yml file (theme: minima) key/value, change the value to  a <a href="https://pages.github.com/themes/">supported theme</a> should just work.  The new them will have a similar layout and with a content statement that will include our HTML or Markdown fragments.</li>
 </ul>

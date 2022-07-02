@@ -64,15 +64,12 @@ permalink: /about/
           for (let row in data) {
             const tr = document.createElement("tr");
 
-            for (let key in row) {
-                if (key !== 'query') {
-                    //create a cell for each key
-                    const td = document.createElement("td");
-                    td.innerHTML = row[key];
-                    //add each cell to the table row
-                    tr.appendChild(td);
-                }
-            }
+            //create a cell for each key
+            const td = document.createElement("td");
+            td.innerHTML = row;
+            //add each cell to the table row
+            tr.appendChild(td);
+                
             // append the row to the table
             resultContainer.appendChild(tr);
           }

@@ -4,6 +4,34 @@ title: About Us
 permalink: /about/
 ---
 
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Role</th>
+    <th>Profile</th>
+    <th>Issues</th>
+    <th>Commits</th>
+  </tr>
+  </thead>
+  <tbody id="users">
+  <tr>
+    <td>John Mortensen</td>
+    <td>Teacher</td>
+    <td><a href="https://github.com/jm1021" target="_blank">Profile</a></td>
+    <td><a href="https://github.com/nighthawkcoders/APCSA/issues/assigned/jm1021" target="_blank">Issues</a></td>
+    <td><a href="https://github.com/nighthawkcoders/APCSA/commits?author=jm1021" target="_blank">Commits</a></td>
+  </tr>
+  <tr>
+    <td>Tigran Arkelov</td>
+    <td>Student</td>
+    <td><a href="https://github.com/Tigran7" target="_blank">Profile</a></td>
+    <td><a href="https://github.com/nighthawkcoders/APCSA/issues/assigned/Tigran7" target="_blank">Issues</a></td>
+    <td><a href="https://github.com/nighthawkcoders/APCSA/commits?author=Tigran7" target="_blank">Commits</a></td>
+  </tr>
+  </tbody>
+</table>
+
 <script>   
     // fetch the record from the database for a chosen userid
     document.onload = function() {
@@ -56,32 +84,3 @@ permalink: /about/
       })
     }
 </script>
-
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Role</th>
-    <th>Profile</th>
-    <th>Issues</th>
-    <th>Commits</th>
-  </tr>
-  </thead>
-  <tbody id="users">
-  <tr>
-    <td>John Mortensen</td>
-    <td>Teacher</td>
-    <td><a href="https://github.com/jm1021" target="_blank">Profile</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/issues/assigned/jm1021" target="_blank">Issues</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/commits?author=jm1021" target="_blank">Commits</a></td>
-  </tr>
-  <tr>
-    <td>Tigran Arkelov</td>
-    <td>Student</td>
-    <td><a href="https://github.com/Tigran7" target="_blank">Profile</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/issues/assigned/Tigran7" target="_blank">Issues</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/commits?author=Tigran7" target="_blank">Commits</a></td>
-  </tr>
-  </tbody>
-</table>
-

@@ -44,7 +44,7 @@ Projects should be tested.  Test-driven development (TDD) is a software developm
 - Often, after this phase, new Issues are created; these issues represent changes that were not obvious when you started.
 
 ### PBL Development
-At this point in time...  It should be obvious that Development and Coding are not the same thing.  Answer the question, "what is development?" at the end of this Sprint.  
+At this point in time...  It should be obvious that Development and Coding are not the same thing.  Answer the question, "what is development?" or "why do they call people that code engineers?".  
 
 ## Hacks - Live Grade before Monday AM.
 This is a big planning and prototype week,  Build all things into Scrum Board. Individuals demonstrate progress on assigned Issue(s) and then complete Issue(s)with tangibles.  
@@ -62,3 +62,4 @@ This is a big planning and prototype week,  Build all things into Scrum Board. I
     - Be prepared to talk and accept feedback.
     - Optimize time for where you are the same
     - Individuals should each speak to their differences
+    - Think about your vocabulary!!!  For instance, when you say development... know how it is different than coding.

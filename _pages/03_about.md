@@ -38,11 +38,11 @@ permalink: /about/
 
   // prepare fetch option
   const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063',
-		'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com'
-	}
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063',
+      'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com'
+    }
   };
 
   // fetch the API
@@ -68,6 +68,7 @@ permalink: /about/
             td.innerHTML = row;
             tr.appendChild(td);
             resultContainer.appendChild(tr);
+          }
       })
   })
   // catch fetch errors

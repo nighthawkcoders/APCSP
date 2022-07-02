@@ -107,12 +107,11 @@ window.onload = wrap_img;
 <script>   
     // fetch the record from the database for a chosen userid
     //url for Read API
-    const url='https://csp.nighthawkcodingsociety.com/crud_api/read/'
+    const url='http://cors.io/?https://csp.nighthawkcodingsociety.com/crud_api/read/'
     console.log(url);
     const requestOptions = {
         method: 'GET',
         mode: 'cors', // no-cors, *cors, same-origin
-        credentials: 'omit', // include, *same-origin, omit
     };
     //Async fetch API call to the database
     fetch(url, requestOptions).then(response => {

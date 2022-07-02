@@ -55,7 +55,7 @@ This is a big planning and prototype week,  Build all things into Scrum Board. I
     - A high quality Issue will reflect Ideation, Prototyping, Code.  It is very easy to take 5 minutes a day to update your Issue before embarking into work.  This is called Daily Planning.  In fact, <mark>Daily Planning will help with your classroom focus </mark>.    
 - Each Pair performs Review each week with crossover Pair, use review to see if Issue is complete
     - Crossover must make comments and grade within their comment, if individual has not done a crossover grade with comments they will receive 10% reduction on their score.
-    - Individual grade and Crossover grade at top of Review Ticket is required. Make sure you do math on any rubrics provided, grade yourself on everything in the Canvas assignment.  
+    - Individual grade and Crossover grade at top of Review Ticket is required. Make sure you do math on any rubrics provided, <mark>grade yourself on everything in the Canvas assignment</mark>, it does not matter what the vocabulary is around points and ownership.
     - If you score yourself higher than the grade you received from Crossover, show how you made adjustment/corrections.
     - Individual will need to discuss grading and reflection/learnings from crossover grading during their presentation.
 - Each Pair programming partnership should be prepared to complete their review with Teacher in about 2 minutes.  Focus is on Creative Development.

@@ -43,13 +43,8 @@ permalink: /about/
     };
     //Async fetch API call to the database
     fetch(url, requestOptions).then(response => {
-        // prepare HTML search result container for new output
-        const resultContainer = document.getElementById("users");
-        // clean up from previous search
-        while (resultContainer.firstChild) {
-            resultContainer.removeChild(resultContainer.firstChild);
-        }
         // trap error response from Web API
+        console.log(response.status);
         if (response.status !== 200) {
             const errorMsg = 'Database response error: ' + response.status;
             console.log(errorMsg);

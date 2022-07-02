@@ -61,18 +61,18 @@ permalink: /about/
       response.json().then(data => {
           console.log(data);
           //create a table row for the new user
-          for (let row in data) {
+
             const tr = document.createElement("tr");
 
-            //create a cell for each key
             const td = document.createElement("td");
-            td.innerHTML = row;
-            //add each cell to the table row
+            td.innerHTML =  data.world_total;
             tr.appendChild(td);
-                
-            // append the row to the table
             resultContainer.appendChild(tr);
-          }
+
+            const td = document.createElement("td");
+            td.innerHTML =  data.countries_stat;
+            tr.appendChild(td); 
+            resultContainer.appendChild(tr);
           
       })
   })

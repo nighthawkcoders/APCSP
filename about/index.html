@@ -86,7 +86,7 @@ window.onload = wrap_img;
     <th>Commits</th>
   </tr>
   </thead>
-  <tbody id="users">
+  <tbody id="result">
   <tr>
     <td>John Mortensen</td>
     <td>Teacher</td>
@@ -105,6 +105,10 @@ window.onload = wrap_img;
 </table>
 
 <script>
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+
+  // prepare fetch option
   const options = {
 	method: 'GET',
 	headers: {
@@ -113,12 +117,10 @@ window.onload = wrap_img;
 	}
   };
 
-  //Async fetch API
+  // fetch the API
   fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options)
     .then(response => {
-      // prepare HTML search result container for new output
-      const resultContainer = document.getElementById("users");
-      // check for errors
+      // check for response errors
       if (response.status !== 200) {
           const errorMsg = 'Database response error: ' + response.status;
           console.log(errorMsg);
@@ -129,26 +131,26 @@ window.onload = wrap_img;
           resultContainer.appendChild(tr);
           return;
       }
-      // response contains valid result
+      // response to json data
       response.json().then(data => {
           console.log(data);
-          //create a table row for the new user
-
+          for (let row in data) {
             const tr = document.createElement("tr");
-
             const td = document.createElement("td");
-            td.innerHTML =  data.world_total;
+            td.innerHTML = row;
             tr.appendChild(td);
             resultContainer.appendChild(tr);
-
-            const td = document.createElement("td");
-            td.innerHTML =  data.countries_stat;
-            tr.appendChild(td); 
-            resultContainer.appendChild(tr);
-          
       })
   })
-  .catch(err => console.error(err));
+  // catch fetch errors
+  .catch(err => {
+    console.error(err);
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.innerHTML = err;
+    tr.appendChild(td);
+    resultContainer.appendChild(tr);
+  });
 </script>
 
 

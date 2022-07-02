@@ -107,11 +107,14 @@ window.onload = wrap_img;
 <script>   
     // fetch the record from the database for a chosen userid
     //url for Read API
-    const url='https://csp.nighthawkcodingsociety.com/crud_api/read/'
+    const url='https://covid-19-tracking.p.rapidapi.com/v1/us'
     console.log(url);
     const requestOptions = {
         method: 'GET',
-        mode: 'cors', // no-cors, *cors, same-origin
+        headers: {
+		            'X-RapidAPI-Key': 'bea0fa2ff5msh7f14bf69be38ca6p175482jsn6c4988114560',
+		            'X-RapidAPI-Host': 'covid-19-tracking.p.rapidapi.com'
+	      }
     };
     //Async fetch API call to the database
     fetch(url, requestOptions).then(response => {

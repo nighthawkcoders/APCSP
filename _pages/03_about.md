@@ -42,7 +42,8 @@ permalink: /about/
   };
 
   //Async fetch API
-  fetch('https://covid-19-tracking.p.rapidapi.com/v1/usa', options).then(response => {
+  fetch('https://covid-19-tracking.p.rapidapi.com/v1/usa', options)
+    .then(response => {
       // prepare HTML search result container for new output
       const resultContainer = document.getElementById("users");
       // check for errors
@@ -77,6 +78,6 @@ permalink: /about/
           }
           
       })
-      .catch(err => console.error(err));
   })
+  .catch(err => console.error(err));
 </script>

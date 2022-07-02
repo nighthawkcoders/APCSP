@@ -39,6 +39,7 @@ permalink: /about/
   // prepare fetch option
   const options = {
     method: 'GET',
+    mode: 'cors',
     headers: {
       'Host': 'csp.nighthawkcodingsociety.com/api/jokes'
     }

@@ -21,8 +21,8 @@ permalink: /about/
   const resultContainer = document.getElementById("result");
 
   // prepare fetch options
-  // const url = "https://csp.nighthawkcodingsociety.com/crud_api/read/";
-  const url = "https://csa.nighthawkcodingsociety.com/api/person/all";
+  const url = "https://csp.nighthawkcodingsociety.com/crud_api/read/";
+  // const url = "https://csa.nighthawkcodingsociety.com/api/person/all";
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin

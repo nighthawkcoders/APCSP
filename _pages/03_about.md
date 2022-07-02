@@ -3,8 +3,57 @@ layout: page
 title: About Us
 permalink: /about/
 ---
+<script>   
+    // fetch the record from the database for a chosen userid
+    function read_User(){
+      const userID = "1";
+      //url for Read API
+      const url='https://csp.nighthawkcodingsociety.com/crud_api/read/' + userID;
+      console.log(url);
+      const requestOptions = {
+          method: 'GET',
+      };
+      //Async fetch API call to the database
+      fetch(url, requestOptions).then(response => {
+          // prepare HTML search result container for new output
+          const resultContainer = document.getElementById("result");
+          // clean up from previous search
+          while (resultContainer.firstChild) {
+              resultContainer.removeChild(resultContainer.firstChild);
+          }
+          // trap error response from Web API
+          if (response.status !== 200) {
+              const errorMsg = 'Database response error: ' + response.status;
+              console.log(errorMsg);
+              const tr = document.createElement("tr");
+              const td = document.createElement("td");
+              td.innerHTML = errorMsg;
+              tr.appendChild(td);
+              resultContainer.appendChild(tr);
+              return;
+          }
+          // response contains valid result
+          response.json().then(data => {
+              console.log(data);
+              //create a table row for the new user
+              const tr = document.createElement("tr");
+              for (let key in data) {
+                  if (key !== 'query') {
+                      //create a cell for each key
+                      const td = document.createElement("td");
+                      td.innerHTML = data[key];
+                      //add each cell to the table row
+                      tr.appendChild(td);
+                  }
+              }
+              // append the row to the table
+              resultContainer.appendChild(tr);
+          })
+      })
+    }
+</script>
 
-<table id="users">
+<table onload="read_User()" id="users">
   <thead>
   <tr>
     <th>Name</th>
@@ -46,52 +95,3 @@ permalink: /about/
   </tbody>
 </table>
 
-<script>   
-    // fetch the record from the database for a chosen userid
-    object.onload = function(){
-        const userID = "1";
-        //url for Read API
-        const url='https://csp.nighthawkcodingsociety.com/crud_api/read/' + userID;
-        console.log(url);
-        const requestOptions = {
-            method: 'GET',
-        };
-        //Async fetch API call to the database
-        fetch(url, requestOptions).then(response => {
-            // prepare HTML search result container for new output
-            const resultContainer = document.getElementById("result");
-            // clean up from previous search
-            while (resultContainer.firstChild) {
-                resultContainer.removeChild(resultContainer.firstChild);
-            }
-            // trap error response from Web API
-            if (response.status !== 200) {
-                const errorMsg = 'Database response error: ' + response.status;
-                console.log(errorMsg);
-                const tr = document.createElement("tr");
-                const td = document.createElement("td");
-                td.innerHTML = errorMsg;
-                tr.appendChild(td);
-                resultContainer.appendChild(tr);
-                return;
-            }
-            // response contains valid result
-            response.json().then(data => {
-                console.log(data);
-                //create a table row for the new user
-                const tr = document.createElement("tr");
-                for (let key in data) {
-                    if (key !== 'query') {
-                        //create a cell for each key
-                        const td = document.createElement("td");
-                        td.innerHTML = data[key];
-                        //add each cell to the table row
-                        tr.appendChild(td);
-                    }
-                }
-                // append the row to the table
-                resultContainer.appendChild(tr);
-            })
-        })
-    }
-</script>

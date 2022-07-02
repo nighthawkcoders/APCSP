@@ -32,7 +32,21 @@ permalink: /about/
   </tbody>
 </table>
 
-<script>   
+<script>
+  const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'bea0fa2ff5msh7f14bf69be38ca6p175482jsn6c4988114560',
+		'X-RapidAPI-Host': 'covid-19-tracking.p.rapidapi.com'
+	}
+  };
+
+  fetch('https://covid-19-tracking.p.rapidapi.com/v1/usa', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+    
     // fetch the record from the database for a chosen userid
     //url for Read API
     const url='https://covid-19-tracking.p.rapidapi.com/v1/us'
@@ -42,8 +56,9 @@ permalink: /about/
         headers: {
           'X-RapidAPI-Key': 'bea0fa2ff5msh7f14bf69be38ca6p175482jsn6c4988114560',
           'X-RapidAPI-Host': 'covid-19-tracking.p.rapidapi.com'
-	      }
+        }
     };
+
     //Async fetch API call to the database
     fetch(url, requestOptions).then(response => {
         // prepare HTML search result container for new output
@@ -80,5 +95,6 @@ permalink: /about/
             }
             
         })
+        .catch(err => console.error(err));
     })
 </script>

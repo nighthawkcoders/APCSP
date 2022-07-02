@@ -28,7 +28,7 @@ Start the process of Ideation, Design, Scrum Board building, and assigning Issue
 - In this ideation process, it is critical that you Review College Board Create Task project requirements.  
 
 ### PBL Prototyping
-The process of Ideation, Design, Scrum Board building, and assigning Issues prior to coding.  Early ideas, followed by early coding (prototyping) helps lead Developers into the <mark>iterative processes of Development</mark>.
+The process of Ideation, Design, Scrum Board building, and assigning Issues prior to coding.  Early ideas, followed by early coding (prototyping) helps <mark>lead Developers into the iterative processes of Development</mark>.
 - This should be done using Pair Programming.  A driver and observer, then switching.
 
 ### PBL Code/Code/Coding
@@ -41,7 +41,7 @@ Projects should be tested.  Test-driven development (TDD) is a software developm
 - Test cases should be developed within Issue before software is fully developed.
 - Testing and reviews can be combined with crossover grading.
 - Self and crossover testing and grading should consider how your 'Unique idea(s)' matches your Issue(s).
-- Often, after this phase, new Issues are created; these issues represent changes that were not obvious when you started.
+- Undoubtedly, <mark>after this phase, new Issues are created</mark>; these issues represent changes that were not obvious when you started.
 
 ### PBL Development
 At this point in time...  It should be obvious that Development and Coding are not the same thing.  Answer the question, "what is development?" or "why do they call people that code engineers?".  
@@ -58,8 +58,9 @@ This is a big planning and prototype week,  Build all things into Scrum Board. I
     - Individual grade and Crossover grade at top of Review Ticket is required. Make sure you do math on any rubrics provided, grade yourself on everything in the Canvas assignment.  
     - If you score yourself higher than the grade you received from Crossover, show how you made adjustment/corrections.
     - Individual will need to discuss grading and reflection/learnings from crossover grading during their presentation.
-- Each Pair programming partnership should be prepared to complete their review with Teacher in about 2 minutes.  
+- Each Pair programming partnership should be prepared to complete their review with Teacher in about 2 minutes.  Focus is on Creative Development.
     - Be prepared to talk and accept feedback.
-    - Optimize time for where you are the same
-    - Individuals should each speak to their differences
+    - Focus on Review Ticket, Demo, Issues(s) completed, Failures, and New Issues Created
+    - Optimize time for where you are the same.
+    - Individuals should each speak to their own differences
     - Think about your vocabulary!!!  For instance, when you say development... know how it is different than coding.

@@ -8,27 +8,10 @@ permalink: /about/
   <thead>
   <tr>
     <th>Name</th>
-    <th>Role</th>
-    <th>Profile</th>
-    <th>Issues</th>
-    <th>Commits</th>
+    <th>ID</th>
   </tr>
   </thead>
   <tbody id="result">
-  <tr>
-    <td>John Mortensen</td>
-    <td>Teacher</td>
-    <td><a href="https://github.com/jm1021" target="_blank">Profile</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/issues/assigned/jm1021" target="_blank">Issues</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/commits?author=jm1021" target="_blank">Commits</a></td>
-  </tr>
-  <tr>
-    <td>Tigran Arkelov</td>
-    <td>Student</td>
-    <td><a href="https://github.com/Tigran7" target="_blank">Profile</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/issues/assigned/Tigran7" target="_blank">Issues</a></td>
-    <td><a href="https://github.com/nighthawkcoders/APCSA/commits?author=Tigran7" target="_blank">Commits</a></td>
-  </tr>
   </tbody>
 </table>
 
@@ -49,7 +32,7 @@ permalink: /about/
   };
 
   // fetch the API
-  fetch('https://csp.nighthawkcodingsociety.com/api/jokes', options)
+  fetch('https://csp.nighthawkcodingsociety.com/crud_api/read/', options)
     .then(response => {
       // check for response errors
       if (response.status !== 200) {
@@ -67,13 +50,17 @@ permalink: /about/
           console.log(data);
           for (let row in data) {
             const tr = document.createElement("tr");
-            const td0 = document.createElement("td");
-            td0.innerHTML = row; 
-            tr.appendChild(td0);
-            const td1 = document.createElement("td");
-            td1.innerHTML = data[row].joke; 
-            tr.appendChild(td1);
+            const name = document.createElement("td");
+            const id = document.createElement("td");
+
+            name.innerHTML = row.name; 
             resultContainer.appendChild(tr);
+
+            id.innerHTML = row.email; 
+            resultContainer.appendChild(tr);
+
+            tr.appendChild(name);
+            tr.appendChild(id);
           }
       })
   })

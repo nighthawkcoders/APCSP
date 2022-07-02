@@ -54,13 +54,11 @@ permalink: /about/
             const id = document.createElement("td");
 
             name.innerHTML = row.name; 
-            resultContainer.appendChild(tr);
-
             id.innerHTML = row.email; 
-            resultContainer.appendChild(tr);
 
             tr.appendChild(name);
             tr.appendChild(id);
+            resultContainer.appendChild(tr);
           }
       })
   })

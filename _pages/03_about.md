@@ -39,11 +39,9 @@ permalink: /about/
   // prepare fetch option
   const options = {
     method: 'GET',
-    /*
     headers: {
-      'X-RapidAPI-Key': 'dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063',
-      'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com'
-    } */
+      'Host': 'csp.nighthawkcodingsociety.com/api/jokes'
+    }
   };
 
   // fetch the API

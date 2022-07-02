@@ -12,6 +12,7 @@ permalink: /about/
   </tr>
   </thead>
   <tbody id="result">
+    <!-- javascript generated data -->
   </tbody>
 </table>
 

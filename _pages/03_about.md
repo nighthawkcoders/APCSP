@@ -67,9 +67,12 @@ permalink: /about/
           console.log(data);
           for (let row in data) {
             const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = row + data.row.joke;
-            tr.appendChild(td);
+            const td0 = document.createElement("td");
+            td0.innerHTML = row + data.row.joke; 
+            tr.appendChild(td0);
+            const td1 = document.createElement("td1");
+            td1.innerHTML = data.row.joke; 
+            tr.appendChild(td1);
             resultContainer.appendChild(tr);
           }
       })

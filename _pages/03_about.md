@@ -71,7 +71,7 @@ permalink: /about/
             td0.innerHTML = row; 
             tr.appendChild(td0);
             const td1 = document.createElement("td1");
-            td1.innerHTML = data.row.joke; 
+            td1.innerHTML = data[row].joke; 
             tr.appendChild(td1);
             resultContainer.appendChild(tr);
           }

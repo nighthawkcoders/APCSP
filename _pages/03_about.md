@@ -39,7 +39,6 @@ permalink: /about/
     console.log(url);
     const requestOptions = {
         method: 'GET',
-        mode: 'no-cors',
     };
     //Async fetch API call to the database
     fetch(url, requestOptions).then(response => {

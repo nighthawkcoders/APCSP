@@ -68,7 +68,7 @@ permalink: /about/
           for (let row in data) {
             const tr = document.createElement("tr");
             const td = document.createElement("td");
-            td.innerHTML = row;
+            td.innerHTML = row + data.row.joke;
             tr.appendChild(td);
             resultContainer.appendChild(tr);
           }

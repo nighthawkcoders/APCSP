@@ -70,7 +70,7 @@ permalink: /about/
             const td0 = document.createElement("td");
             td0.innerHTML = row; 
             tr.appendChild(td0);
-            const td1 = document.createElement("td1");
+            const td1 = document.createElement("td");
             td1.innerHTML = data[row].joke; 
             tr.appendChild(td1);
             resultContainer.appendChild(tr);

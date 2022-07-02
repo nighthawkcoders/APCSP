@@ -36,13 +36,13 @@ permalink: /about/
   const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'bea0fa2ff5msh7f14bf69be38ca6p175482jsn6c4988114560',
-		'X-RapidAPI-Host': 'covid-19-tracking.p.rapidapi.com'
+		'X-RapidAPI-Key': 'dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063',
+		'X-RapidAPI-Host': 'corona-virus-world-and-india-data.p.rapidapi.com'
 	}
   };
 
   //Async fetch API
-  fetch('https://covid-19-tracking.p.rapidapi.com/v1/usa', options)
+  fetch('https://corona-virus-world-and-india-data.p.rapidapi.com/api', options)
     .then(response => {
       // prepare HTML search result container for new output
       const resultContainer = document.getElementById("users");
@@ -68,7 +68,7 @@ permalink: /about/
                 if (key !== 'query') {
                     //create a cell for each key
                     const td = document.createElement("td");
-                    td.innerHTML = data[key];
+                    td.innerHTML = row[key];
                     //add each cell to the table row
                     tr.appendChild(td);
                 }

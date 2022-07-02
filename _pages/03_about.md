@@ -52,6 +52,7 @@ permalink: /about/
         const userID = "1";
         //url for Read API
         const url='https://csp.nighthawkcodingsociety.com/crud_api/read/' + userID;
+        console.log(url);
         const requestOptions = {
             method: 'GET',
         };

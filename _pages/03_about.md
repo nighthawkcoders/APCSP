@@ -20,7 +20,8 @@ permalink: /about/
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
 
-  // prepare fetch option
+  // prepare fetch options
+  const url = "https://csp.nighthawkcodingsociety.com/crud_api/read/";
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -33,7 +34,7 @@ permalink: /about/
   };
 
   // fetch the API
-  fetch('https://csp.nighthawkcodingsociety.com/crud_api/read/', options)
+  fetch(url, options)
     .then(response => {
       // check for response errors
       if (response.status !== 200) {
@@ -54,8 +55,8 @@ permalink: /about/
             const name = document.createElement("td");
             const id = document.createElement("td");
 
-            name.innerHTML = row.name; 
-            id.innerHTML = row.email; 
+            name.innerHTML = data[row].name; 
+            id.innerHTML = data[row].email; 
 
             tr.appendChild(name);
             tr.appendChild(id);

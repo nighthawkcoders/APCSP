@@ -35,7 +35,7 @@ permalink: /about/
 <script>   
     // fetch the record from the database for a chosen userid
     //url for Read API
-    const url='http://cors.io/?https://csp.nighthawkcodingsociety.com/crud_api/read/'
+    const url='https://cors.io/?https://csp.nighthawkcodingsociety.com/crud_api/read/'
     console.log(url);
     const requestOptions = {
         method: 'GET',

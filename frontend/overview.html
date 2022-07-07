@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Search | APCSP</title>
+<title>Frontend | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Search" />
+<meta property="og:title" content="Frontend" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="AP Computer Science Principles course materials." />
 <meta property="og:description" content="AP Computer Science Principles course materials." />
-<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/search/" />
-<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/search/" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/frontend/overview" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/frontend/overview" />
 <meta property="og:site_name" content="APCSP" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Search" />
+<meta property="twitter:title" content="Frontend" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"AP Computer Science Principles course materials.","headline":"Search","url":"https://nighthawkcoders.github.io/APCSP/search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"AP Computer Science Principles course materials.","headline":"Frontend","url":"https://nighthawkcoders.github.io/APCSP/frontend/overview"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,17 +69,71 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- adapted from https://github.com/pmarsceill/just-the-docs -->
-<script type="text/javascript" src="/APCSP/assets/js/search.js"></script>
-<script type="text/javascript" src="/APCSP/assets/js/vendor/lunr.min.js"></script>
+        <table>
+    <tr>
+        <td><img src="/APCSP//images/logo.png" height="60" title="Frontend" alt="" /></td>
+        <td><a href="/APCSP/frontend/overview.html">Overview</a></td>
+        <td><a href="/APCSP/frontend/binary.html">Binary</a></td>
+        <td><a href="/APCSP/frontend/graph.html">Graph</a></td>
+        <td><a href="/APCSP/frontend/life.html">Life</a></td>
+        <td><a href="/APCSP/frontend/snake.html">Snake</a></td>
+    </tr>
+</table>
 
-<div class="search">
-    <div class="search-input-wrap">
-    <input type="text" class="js-search-input search-input input-block form-control" tabindex="0" placeholder="Search APCSP" aria-label="Search APCSP" autocomplete="off">
+<div>
+
+    <div style="float: left; margin: 0px 10px 10px 0px;">
+        <a href="https://en.wikipedia.org/wiki/Front-end_web_development">
+            <img atl="Wikipedia Front-end" src="/APCSP/images/html-css-js.jpeg" title="" width="200" />
+        </a>
     </div>
-    <br>
-    <div class="js-search-results search-results-wrap"></div>
+    <div>
+        <hr />
+        <p>
+            Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.  
+            <ul>
+                <li>In this class, we will be using <a href="https://github.com/fastai/fastpages"><mark>Fastpages</mark></a> on top of GitHub Pages to maximize our presentations, while minimizing our front-end coding. GitHub Pages deployment is performed through <a href="https://jekyllrb.com/"><mark>Jekyll</mark></a>, which regenerates the website automatically after each commit, tracking can be seen in Actions tab within GitHub.</li>
+
+                <li> HTML generation is performed through <a href="https://shopify.github.io/liquid/basics/introduction/"><mark>Liquid</mark></a>, a template language (similar to Jinja2 or Thymeleaf).</li>
+
+                <li>CSS style layout is provided by using <a href="https://pages.github.com/themes/"><mark>Themes</mark></a> provided through GH Pages. Each page we make we assume the defined theme and insert our HTML fragments, local page style, and local page JavaScript.</li>
+
+                <li><a href="https://www.javascript.com/"><mark>JavaScript</mark></a> enable pages to have actions, fetch content, animate, etc</li> 
+            </ul>
+        </p>
+        <hr />
+    </div>
+
 </div>
+
+<h3 id="sample-code-in-this-sub-menu">Sample Code in this Sub Menu</h3>
+
+<p>HTML, CSS, and JavaScript are the front-end of the Web.  Many tools and languages complement development using markup, style and javascript.  This section of the Del Note CS website is providing some code samples.  These are intended to spark your own PBL ideas.  Each of these were generated after watching others teach or interacting with students.</p>
+<ul>
+  <li>Binary: This example was created after watching Harvard CS50 by David J. Malan in 2020, he had built a machine to turn on and off lights/binary digits.  My thought after watching machine, why not simulate it in software?
+    <ul>
+      <li>Liquid is used to generate the HTML bits and parameters for onclick actions</li>
+      <li>JavaScript is used base 2, 8, 16 calculations</li>
+    </ul>
+  </li>
+  <li>Graph: This was created when a student named Bryant 2022 asked me the question “how would I plot data?” as described in an FRQ.
+    <ul>
+      <li>JavaScript canvas is used to draw grid, axis, lines</li>
+    </ul>
+  </li>
+  <li>Life: This was created by Nathaniel 2022 when I asked him about something interesting to show students in JS that relates to school.
+    <ul>
+      <li>Built on Conway’s Game of Life (<a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia</a>, <a href="https://playgameoflife.com/">Original</a>)</li>
+      <li>Somewhat pure JavaScript, no canvas usage even though it has a grid.</li>
+    </ul>
+  </li>
+  <li>Snake: This was interest of students in each of my 3 years, inspiration and some of the code came from a student named Nolan 2021.
+    <ul>
+      <li>Contains menu and settings, as well as Grid</li>
+      <li>Uses JavaScript canvas and key events</li>
+    </ul>
+  </li>
+</ul>
 
       </div>
     </main><footer class="site-footer h-card">

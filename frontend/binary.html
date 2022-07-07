@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>APCSP | AP Computer Science Principles course materials.</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="APCSP" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AP Computer Science Principles course materials." />
+<meta property="og:description" content="AP Computer Science Principles course materials." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/frontend/binary" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/frontend/binary" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="APCSP" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"AP Computer Science Principles course materials.","headline":"APCSP","url":"https://nighthawkcoders.github.io/APCSP/frontend/binary"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/">Tags</a><a class="page-link" href="/APCSP/about/">About Us</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <table>
+    <tr>
+        <td><img src="/APCSP//images/logo.png" height="60" title="Frontend" alt=""></td>
+        <td><a href="/APCSP/frontend/overview.html">Overview</a></td>
+        <td><a href="/APCSP/frontend/binary.html">Binary</a></td>
+        <td><a href="/APCSP/frontend/graph.html">Graph</a></td>
+        <td><a href="/APCSP/frontend/life.html">Life</a></td>
+        <td><a href="/APCSP/frontend/snake.html">Snake</a></td>
+    </tr>
+</table>
+
+
+<!-- Hack 1: add a character display to text when 8 bits, determine if printable or not printable -->
+<!-- Hack 2: change to 24 bits and add a color code and display color when 24 bits, think about display on this one -->
+<!-- Hack 3: do your own thing -->
+
+<script>
+    const BITS = 8;
+    const MAX = 2 ** BITS - 1;
+    const MSG_ON = "Turn on";
+    const IMAGE_ON = "/APCSA/images/bulb_on.gif";
+    const MSG_OFF = "Turn off";
+    const IMAGE_OFF = "/APCSA/images/bulb_off.png"
+
+    // return string with current value of each bit
+    function getBits() {
+        let bits = "";
+        for(let i = 0; i < BITS; i++) {
+        bits = bits + document.getElementById('digit' + i).value;
+        }
+        return bits;
+    }
+    // setter for DOM values
+    function setConversions(binary) {
+        document.getElementById('binary').innerHTML = binary;
+        // Octal conversion
+        document.getElementById('octal').innerHTML = parseInt(binary, 2).toString(8);
+        // Hexadecimal conversion
+        document.getElementById('hexadecimal').innerHTML = parseInt(binary, 2).toString(16);
+        // Decimal conversion
+        document.getElementById('decimal').innerHTML = parseInt(binary, 2).toString();
+    }
+    //
+    function decimal_2_base(decimal, base) {
+        let conversion = "";
+        // loop to convert to base
+        do {
+        let digit = decimal % base;
+        conversion = "" + digit + conversion; // what does this do?
+        decimal = ~~(decimal / base);         // what does this do?
+        } while (decimal > 0);                  // why while at the end? what is ~~?
+        // loop to pad with zeros
+        if (base === 2) {                        // only pad for binary conversions
+        for (let i = 0; conversion.length < BITS; i++) {
+            conversion = "0" + conversion;
+        }
+        }
+        return conversion;
+    }
+
+    // toggle selected bit and recalculate
+    function toggleBit(i) {
+        //alert("Digit action: " + i );
+        const dig = document.getElementById('digit' + i);
+        const image = document.getElementById('bulb' + i);
+        const butt = document.getElementById('butt' + i);
+        // Change digit and visual
+        if (image.src.match(IMAGE_ON)) {
+        dig.value = 0;
+        image.src = IMAGE_OFF;
+        butt.innerHTML = MSG_ON;
+        } else {
+        dig.value = 1;
+        image.src = IMAGE_ON;
+        butt.innerHTML = MSG_OFF;
+        }
+        // Binary numbers
+        const binary = getBits();
+        setConversions(binary);
+    }
+    // add is positive integer, subtract is negative integer
+    function add(n) {
+        let binary = getBits();
+        // convert to decimal and do math
+        let decimal = parseInt(binary, 2);
+        if (n > 0) {  // PLUS
+        decimal = MAX === decimal ? 0 : decimal += n; // OVERFLOW or PLUS
+        } else  {     // MINUS
+        decimal = 0 === decimal ? MAX : decimal += n; // OVERFLOW or MINUS
+        }
+        // convert the result back to binary
+        binary = decimal_2_base(decimal, 2);
+        // update conversions
+        setConversions(binary);
+        // update bits
+        for (let i = 0; i < binary.length; i++) {
+        let digit = binary.substr(i, 1);
+        document.getElementById('digit' + i).value = digit;
+        if (digit === "1") {
+            document.getElementById('bulb' + i).src = IMAGE_ON;
+            document.getElementById('butt' + i).innerHTML = MSG_OFF;
+        } else {
+            document.getElementById('bulb' + i).src = IMAGE_OFF;
+            document.getElementById('butt' + i).innerHTML = MSG_ON;
+        }
+        }
+    }
+</script>
+
+
+<div class="container bg-primary">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4">Binary Math with Conversions</span>
+    </header>
+
+    <div class="row justify-content-md-center">
+
+    <div class="col-8">
+        <table class="table">
+        <tr id="table">
+            <th>Plus</th>
+            <th>Binary</th>
+            <th>Octal</th>
+            <th>Hexadecimal</th>
+            <th>Decimal</th>
+            <th>Minus</th>
+        </tr>
+        <tr>
+            <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
+            <td id="binary">00000000</td>
+            <td id="octal">0</td>
+            <td id="hexadecimal">0</td>
+            <td id="decimal">0</td>
+            <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
+        </tr>
+        </table>
+    </div>
+
+    <div class="col-12">
+        
+         
+        <table class="table">
+
+        <tr>
+            
+            
+            <td><img class="img-responsive py-3" id="bulb0" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt0" onclick="javascript:toggleBit(0)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb1" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt1" onclick="javascript:toggleBit(1)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb2" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt2" onclick="javascript:toggleBit(2)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb3" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt3" onclick="javascript:toggleBit(3)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb4" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt4" onclick="javascript:toggleBit(4)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb5" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt5" onclick="javascript:toggleBit(5)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb6" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt6" onclick="javascript:toggleBit(6)">Turn on</button>
+            </td>
+            
+            <td><img class="img-responsive py-3" id="bulb7" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
+                <button type="button" id="butt7" onclick="javascript:toggleBit(7)">Turn on</button>
+            </td>
+            
+        </tr>
+
+        <tr>
+            
+            
+            <td><input type='text' id="digit0" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit1" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit2" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit3" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit4" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit5" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit6" Value="0" size="1" readonly></td>
+            
+            <td><input type='text' id="digit7" Value="0" size="1" readonly></td>
+            
+        </tr>
+
+        </table>
+    </div>
+
+    </div>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="nighthawkcoders"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="NighthawkCoding"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

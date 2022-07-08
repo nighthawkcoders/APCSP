@@ -172,9 +172,20 @@
   
 
   
+      ,"page4": {
+          "title": "Data",
+          "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Data Overview .",
+          "url": "https://nighthawkcoders.github.io/APCSP/data/overview",
+          "relUrl": "/data/overview",
+          "date": ""
+      }
+      
+  
 
   
-      ,"page5": {
+
+  
+      ,"page6": {
           "title": "",
           "content": "| Overview | Binary | Graph | Life | Snake | . Binary Math with Conversions . Plus Binary Octal Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 0 | 0 | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | .",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/binary",
@@ -185,7 +196,29 @@
   
 
   
-      ,"page6": {
+      ,"page7": {
+          "title": "",
+          "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Covid19 RapidAPI .",
+          "url": "https://nighthawkcoders.github.io/APCSP/data/covid",
+          "relUrl": "/data/covid",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page8": {
+          "title": "",
+          "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Database API .",
+          "url": "https://nighthawkcoders.github.io/APCSP/data/database",
+          "relUrl": "/data/database",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page9": {
           "title": "",
           "content": "| Overview | Binary | Graph | Life | Snake | . Graphing grid .",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/graph",
@@ -198,7 +231,18 @@
   
 
   
-      ,"page8": {
+      ,"page11": {
+          "title": "",
+          "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Joke HaHa Boohoo .",
+          "url": "https://nighthawkcoders.github.io/APCSP/data/jokes",
+          "relUrl": "/data/jokes",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page12": {
           "title": "",
           "content": "| Overview | Binary | Graph | Life | Snake | . Remix of Game of Life . start step",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/life",
@@ -215,7 +259,7 @@
   
 
   
-      ,"page11": {
+      ,"page15": {
           "title": "",
           "content": "{% include nav_frontend.html %} . Snake score: 0 . . Welcome to Snake, press space to begin . new game settings Game Over, press space to try again . new game settings Settings Screen, press space to go back to playing . new game Speed: Slow Normal Fast . Wall: On Off .",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/snake",
@@ -235,7 +279,7 @@
   
 
   
-      ,"page15": {
+      ,"page19": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/APCSP/robots.txt",

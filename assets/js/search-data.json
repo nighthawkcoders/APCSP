@@ -198,6 +198,17 @@
   
       ,"page7": {
           "title": "",
+          "content": "| Overview | Binary | Graph | Life | Snake | . 0 1 2 3 + 4 5 6 - 7 8 9 * A/C 0 . &lt;div class=&quot;calculator-button&quot; onclick=&quot;equals()&quot;&quot;&gt;= &lt;/div&gt; .",
+          "url": "https://nighthawkcoders.github.io/APCSP/frontend/calculator",
+          "relUrl": "/frontend/calculator",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page8": {
+          "title": "",
           "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Covid19 RapidAPI .",
           "url": "https://nighthawkcoders.github.io/APCSP/data/covid",
           "relUrl": "/data/covid",
@@ -207,7 +218,7 @@
   
 
   
-      ,"page8": {
+      ,"page9": {
           "title": "",
           "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Database API .",
           "url": "https://nighthawkcoders.github.io/APCSP/data/database",
@@ -218,7 +229,7 @@
   
 
   
-      ,"page9": {
+      ,"page10": {
           "title": "",
           "content": "| Overview | Binary | Graph | Life | Snake | . Graphing grid .",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/graph",
@@ -231,7 +242,7 @@
   
 
   
-      ,"page11": {
+      ,"page12": {
           "title": "",
           "content": "| Overview | Jokes API | Covid19 RapidAPI | Database API | . Joke HaHa Boohoo .",
           "url": "https://nighthawkcoders.github.io/APCSP/data/jokes",
@@ -242,7 +253,7 @@
   
 
   
-      ,"page12": {
+      ,"page13": {
           "title": "",
           "content": "| Overview | Binary | Graph | Life | Snake | . Remix of Game of Life . start step",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/life",
@@ -259,7 +270,7 @@
   
 
   
-      ,"page15": {
+      ,"page16": {
           "title": "",
           "content": "{% include nav_frontend.html %} . Snake score: 0 . . Welcome to Snake, press space to begin . new game settings Game Over, press space to try again . new game settings Settings Screen, press space to go back to playing . new game Speed: Slow Normal Fast . Wall: On Off .",
           "url": "https://nighthawkcoders.github.io/APCSP/frontend/snake",
@@ -279,7 +290,7 @@
   
 
   
-      ,"page19": {
+      ,"page20": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/APCSP/robots.txt",

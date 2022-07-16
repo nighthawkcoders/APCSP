@@ -80,6 +80,9 @@ window.onload = wrap_img;
         <td><a href="/APCSP/frontend/snake.html">Snake</a></td>
     </tr>
 </table>
+<!-- Hack 1: Test conditions on small and big numbers, report on findings -->
+<!-- Hack 2: Implement 1 number operation (ie SQRT) -->
+<!-- Hack 3: Think of something new -->
 
 <!-- Style (CSS) implementation of the calculator. -->
 <style>
@@ -107,7 +110,7 @@ window.onload = wrap_img;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     grid-column: span 1;
     grid-row: span 1;
 
@@ -132,8 +135,8 @@ window.onload = wrap_img;
     display: flex;
     align-items: center;
 }
-
 </style>
+
 
 <!-- HTML implementation of the calculator. 
     CSS sets 4 buttons (calculator-button) to a row
@@ -164,6 +167,7 @@ window.onload = wrap_img;
     <div class="calculator-button" onclick="number('.')">.</div>
     <div class="calculator-button" onclick="equals()"">=</div>
 </div>
+
 
 <!-- JavaScript (JS) implementation of the calculator. -->
 <script>
@@ -241,7 +245,6 @@ function clearCalc () { // clears calculator
     output.innerHTML = "0";
     nextReady = true;
 }
-
 </script>
       </div>
     </main><footer class="site-footer h-card">

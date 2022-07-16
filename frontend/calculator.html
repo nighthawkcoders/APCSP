@@ -88,14 +88,26 @@ window.onload = wrap_img;
 <style>
 /* class to create the calculator's container; uses CSS grid dsiplay to partition off buttons */
 .calculator-container { 
-    width: 40vw;
+    width: 90vw; /* this width and height is specified for mobile devices by default */
     height: 80vh;
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
     grid-template-rows: 0.5fr repeat(4, 1fr);
     gap: 10px 10px;
+}
+
+/* 
+    CSS allows programmers to use media queries to change the size of classes based on the size of the device.
+    This allows us to make it so that our website looks good on both mobile and desktop. If the width of the
+    device is big enough, then the calculator will take up more of the screen.
+*/
+@media (min-width: 600px) { 
+    .calculator-container {
+        width: 40vw;
+        height: 80vh;
+    }
 }
 
 /* styling for the calculator buttons themselves */
@@ -111,6 +123,7 @@ window.onload = wrap_img;
     justify-content: center;
     align-items: center;
 
+    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
     grid-column: span 1;
     grid-row: span 1;
 
@@ -125,8 +138,10 @@ window.onload = wrap_img;
 
 /* styling for the top bar which shows the results of the calculator */
 .calculator-output {
+    /* note how the output instead takes up 4 columns and 1 row; essentially takes up the entirety of the first row */
     grid-column: span 4;
     grid-row: span 1;
+
     border-radius: 10px;
     padding: 1em;
     font-size: auto;

@@ -37,6 +37,9 @@ title: Frontend
 ### Sample Code in this Sub Menu
 
 HTML, CSS, and JavaScript are the front-end of the Web.  Many tools and languages complement development using markup, style and javascript.  This section of the Del Note CS website is providing some code samples.  These are intended to spark your own PBL ideas.  Each of these were generated after watching others teach or interacting with students.
+- Calculator: This calculator was inspired by Mr. Mortensen's calculator that he built in Objective-C during his first year of teaching at DNHS. It was recreated by former student Anthony using GitHub pages, HTML, JavaScript, and CSS in 2022.
+    - Creating a calculator helps developers to learn how to store data, manage presentation, associate input to output, and work with logic
+    - Visually shows how math works within a language; specific functions, handling of very big vs. very small numbers, etc.
 - Binary: This example was created after watching Harvard CS50 by David J. Malan in 2020, he had built a machine to turn on and off lights/binary digits.  My thought after watching machine, why not simulate it in software?
     - Liquid is used to generate the HTML bits and parameters for onclick actions
     - JavaScript is used base 2, 8, 16 calculations

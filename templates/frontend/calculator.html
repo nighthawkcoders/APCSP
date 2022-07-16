@@ -4,6 +4,9 @@ permalink: /frontend/calculator
 ---
 
 {% include nav_frontend.html %}
+<!-- Hack 1: Test conditions on small and big numbers, report on findings -->
+<!-- Hack 2: Implement 1 number operation (ie SQRT) -->
+<!-- Hack 3: Think of something new -->
 
 <!-- Style (CSS) implementation of the calculator. -->
 <style>
@@ -31,7 +34,7 @@ permalink: /frontend/calculator
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     grid-column: span 1;
     grid-row: span 1;
 
@@ -56,8 +59,8 @@ permalink: /frontend/calculator
     display: flex;
     align-items: center;
 }
-
 </style>
+
 
 <!-- HTML implementation of the calculator. 
     CSS sets 4 buttons (calculator-button) to a row
@@ -88,6 +91,7 @@ permalink: /frontend/calculator
     <div class="calculator-button" onclick="number('.')">.</div>
     <div class="calculator-button" onclick="equals()"">=</div>
 </div>
+
 
 <!-- JavaScript (JS) implementation of the calculator. -->
 <script>
@@ -165,5 +169,4 @@ function clearCalc () { // clears calculator
     output.innerHTML = "0";
     nextReady = true;
 }
-
 </script>

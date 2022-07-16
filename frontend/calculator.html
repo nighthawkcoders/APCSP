@@ -73,6 +73,7 @@ window.onload = wrap_img;
     <tr>
         <td><img src="/APCSP//images/logo.png" height="60" title="Frontend" alt=""></td>
         <td><a href="/APCSP/frontend/overview.html">Overview</a></td>
+        <td><a href="/APCSP/frontend/calculator.html">Calculator</a></td>
         <td><a href="/APCSP/frontend/binary.html">Binary</a></td>
         <td><a href="/APCSP/frontend/graph.html">Graph</a></td>
         <td><a href="/APCSP/frontend/life.html">Life</a></td>
@@ -80,8 +81,8 @@ window.onload = wrap_img;
     </tr>
 </table>
 
+<!-- Style (CSS) implementation of the calculator. -->
 <style>
-
 /* class to create the calculator's container; uses CSS grid dsiplay to partition off buttons */
 .calculator-container { 
     width: 40vw;
@@ -92,19 +93,17 @@ window.onload = wrap_img;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 0.5fr repeat(4, 1fr);
     gap: 10px 10px;
-
 }
 
 /* styling for the calculator buttons themselves */
 .calculator-button {
     width: auto;
     height: auto;
-    
     border-radius: 10px;
     background-color: #FFE5AE;
     border: 3px solid black;
     font-size: 1.5em;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,6 +114,7 @@ window.onload = wrap_img;
     /* allows for smooth transition of properties and the "animation" effect to appear on hover */
     transition: all 0.5s; 
 }
+
 /* darkens the background color on hover to create a selecting effect */
 .calculator-button:hover {
     background-color: #ECD5A4;
@@ -125,7 +125,6 @@ window.onload = wrap_img;
     grid-column: span 4;
     grid-row: span 1;
     border-radius: 10px;
-    
     padding: 1em;
     font-size: auto;
     border: 5px solid black;
@@ -136,39 +135,45 @@ window.onload = wrap_img;
 
 </style>
 
-<!-- HTML implementation of the calculator. each set of 4 is its own row -->
+<!-- HTML implementation of the calculator. 
+    CSS sets 4 buttons (calculator-button) to a row
+    All buttons have onclick JavaScript action
+    All actions result in calculator-output.innerHTML change
+-->
 <div class="calculator-container">
+    <!--result-->
     <div class="calculator-output" id="output">0</div>
-    
+    <!--row 1-->
     <div class="calculator-button" onclick="number('1')">1</div>
     <div class="calculator-button" onclick="number('2')">2</div>
     <div class="calculator-button" onclick="number('3')">3</div>
     <div class="calculator-button" onclick="operation('+')">+</div>
-    
+    <!--row 2-->
     <div class="calculator-button" onclick="number('4')">4</div>
     <div class="calculator-button" onclick="number('5')">5</div>
     <div class="calculator-button" onclick="number('6')">6</div>
     <div class="calculator-button" onclick="operation('-')">-</div>
-    
+    <!--row 3-->
     <div class="calculator-button" onclick="number('7')">7</div>
     <div class="calculator-button" onclick="number('8')">8</div>
     <div class="calculator-button" onclick="number('9')">9</div>
     <div class="calculator-button" onclick="operation('*')">*</div>
-    
+    <!--row 4-->
     <div class="calculator-button" onclick="clearCalc()">A/C</div>
     <div class="calculator-button" onclick="number('0')">0</div>
     <div class="calculator-button" onclick="number('.')">.</div>
     <div class="calculator-button" onclick="equals()"">=</div>
 </div>
 
+<!-- JavaScript (JS) implementation of the calculator. -->
 <script>
-
 // initialize important variables
 let output = document.getElementById("output");
 let operator = null;
 let firstNumber = null;
 let nextReady = true;
 
+// Number action
 function number (value) { // function to input numbers into the calculator
     if (value != ".") {
         if (nextReady == true) { // nextReady is used to tell the computer when the user is going to input a completely new number
@@ -187,6 +192,7 @@ function number (value) { // function to input numbers into the calculator
     }
 }
 
+// Operator action
 function operation (choice) { // function to input operations into the calculator
     operator = choice;
     if (firstNumber == null) { // once the operation is chosen, the displayed number is stored into the variable firstNumber
@@ -194,13 +200,13 @@ function operation (choice) { // function to input operations into the calculato
         nextReady = true;
         return; // exits function
     }
-    
     // occurs if there is already a number stored in the calculator
     firstNumber = calculate(firstNumber, parseFloat(output.innerHTML)); 
     output.innerHTML = firstNumber.toString();
     nextReady = true;
 }
 
+// Calculator
 function calculate (first, second) { // function to calculate the result of the equation
     let result = 0;
     switch (operator) {
@@ -222,12 +228,14 @@ function calculate (first, second) { // function to calculate the result of the 
     return result;
 }
 
+// Equal action
 function equals () { // function used when the equals button is clicked; calculates equation and displays it
     firstNumber = calculate(firstNumber, parseFloat(output.innerHTML));
     output.innerHTML = firstNumber.toString();
     nextReady = true;
 }
 
+// A/C action
 function clearCalc () { // clears calculator
     firstNumber = null;
     output.innerHTML = "0";

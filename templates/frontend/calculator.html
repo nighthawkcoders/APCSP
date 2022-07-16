@@ -1,0 +1,153 @@
+---
+layout: default
+permalink: /frontend/calculator
+---
+
+{% include nav_frontend.html %}
+
+<style>
+.calculator-container {
+    width: 40vw;
+    height: 80vh;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.5fr repeat(4, 1fr);
+    gap: 10px 10px;
+/*       grid-template-areas: 
+    "button-1 button-2 button-3 button-4"
+    "button-5 button-6 button-7 button-8"
+    "button-9 button-10 button-11 button-9"
+    "button-13 button-14 button-15 button-16"; */
+}
+.calculator-button {
+    width: auto;
+    height: auto;
+    
+    border-radius: 10px;
+    background-color: #FFE5AE;
+    border: 3px solid black;
+    font-size: 1.5em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    grid-column: span 1;
+    grid-row: span 1;
+
+}
+.calculator-output {
+    grid-column: span 4;
+    grid-row: span 1;
+    border-radius: 10px;
+    
+    padding: 1em;
+    font-size: auto;
+    border: 5px solid black;
+
+    display: flex;
+    align-items: center;
+}
+</style>
+
+<div>
+<div class="calculator-container">
+    <div class="calculator-output" id="output">0</div>
+    
+    <div class="calculator-button" onclick="number('1')">1</div>
+    <div class="calculator-button" onclick="number('2')">2</div>
+    <div class="calculator-button" onclick="number('3')">3</div>
+    <div class="calculator-button" onclick="operation('+')">+</div>
+    
+    <div class="calculator-button" onclick="number('4')">4</div>
+    <div class="calculator-button" onclick="number('5')">5</div>
+    <div class="calculator-button" onclick="number('6')">6</div>
+    <div class="calculator-button" onclick="operation('-')">-</div>
+    
+    <div class="calculator-button" onclick="number('7')">7</div>
+    <div class="calculator-button" onclick="number('8')">8</div>
+    <div class="calculator-button" onclick="number('9')">9</div>
+    <div class="calculator-button" onclick="operation('*')">*</div>
+    
+    <div class="calculator-button" onclick="clearCalc()">A/C</div>
+    <div class="calculator-button" onclick="number('0')">0</div>
+    <div class="calculator-button" onclick="number('.')">.</div>
+    <div class="calculator-button" onclick="equals()"">=</div>
+</div>
+</div>
+
+<script>
+let output = document.getElementById("output");
+let operator = null;
+let firstNumber = null;
+let nextReady = true;
+
+function number (value) {
+    if (value != ".") {
+    if (nextReady == true) {
+        output.innerHTML = value;
+        if (value != "0") {
+        nextReady = false;
+        }
+    } else {
+        output.innerHTML = output.innerHTML + value;
+    }
+    } else {
+    if (output.innerHTML.indexOf(".") == -1) {
+        output.innerHTML = output.innerHTML + value;
+        nextReady = false;
+    }
+    }
+}
+
+function operation (choice) {
+    if (firstNumber == null) {
+    firstNumber = parseInt(output.innerHTML);
+    nextReady = true;
+    operator = choice;
+    return;
+    }
+    
+    firstNumber = calculate(firstNumber, parseFloat(output.innerHTML));
+    output.innerHTML = firstNumber.toString();
+    nextReady = true;
+    operator = choice;
+}
+
+function calculate (first, second) {
+    let result = 0;
+    switch (operator) {
+    case "+":
+        result = first + second;
+        break;
+    case "-":
+        result = first - second;
+        break;
+    case "*":
+        result = first * second;
+        break;
+    case "/":
+        result = first / second;
+        break;
+    default: 
+        break;
+    }
+    return result;
+}
+
+function equals () {
+    firstNumber = calculate(firstNumber, parseFloat(output.innerHTML));
+    output.innerHTML = firstNumber.toString();
+    nextReady = true;
+}
+
+function clearCalc () {
+    console.log("test");
+    firstNumber = null;
+    output.innerHTML = "0";
+    nextReady = true;
+}
+
+</script>

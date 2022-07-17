@@ -137,14 +137,15 @@ function number (value) { // function to input numbers into the calculator
 
 // Operator action
 function operation (choice) { // function to input operations into the calculator
-    operator = choice;
     if (firstNumber == null) { // once the operation is chosen, the displayed number is stored into the variable firstNumber
         firstNumber = parseInt(output.innerHTML);
         nextReady = true;
+        operator = choice;
         return; // exits function
     }
     // occurs if there is already a number stored in the calculator
     firstNumber = calculate(firstNumber, parseFloat(output.innerHTML)); 
+    operator = choice;
     output.innerHTML = firstNumber.toString();
     nextReady = true;
 }

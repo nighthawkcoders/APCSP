@@ -1,12 +1,16 @@
 ---
+title: Calculator Starters
 layout: default
+description: A common way to become familiar with a language is to build a calculator.  This calculator shows off button with actions.
 permalink: /frontend/calculator
+categories: [pbl]
+tags: [javascript, css. dom, getElementID]
 ---
 
 {% include nav_frontend.html %}
 <!-- Hack 1: Test conditions on small and big numbers, report on findings -->
-<!-- Hack 2: Implement 1 number operation (ie SQRT) -->
-<!-- Hack 3: Think of something new -->
+<!-- Hack 2: Add a common math operation that is missing from calculator -->
+<!-- Hack 3: Implement 1 number operation (ie SQRT) -->
 
 <!-- Style (CSS) implementation of the calculator. -->
 <style>

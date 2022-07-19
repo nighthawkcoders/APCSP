@@ -1,21 +1,74 @@
 ---
+title: Binary Math
 layout: default
+description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 permalink: /frontend/binary
+categories: [pbl]
+tags: [html, liquid, javascript]
 ---
-{% include nav_frontend.html %}
-{% assign BITS = 8 %}
 
 <!-- Hack 1: add a character display to text when 8 bits, determine if printable or not printable -->
 <!-- Hack 2: change to 24 bits and add a color code and display color when 24 bits, think about display on this one -->
 <!-- Hack 3: do your own thing -->
 
+{% include nav_frontend.html %}
+{% assign BITS = 8 %}
+
+<div class="container bg-primary">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4">Binary Math with Conversions</span>
+    </header>
+    <div class="row justify-content-md-center">
+        <div class="col-8">
+            <table class="table">
+            <tr id="table">
+                <th>Plus</th>
+                <th>Binary</th>
+                <th>Octal</th>
+                <th>Hexadecimal</th>
+                <th>Decimal</th>
+                <th>Minus</th>
+            </tr>
+            <tr>
+                <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
+                <td id="binary">00000000</td>
+                <td id="octal">0</td>
+                <td id="hexadecimal">0</td>
+                <td id="decimal">0</td>
+                <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
+            </tr>
+            </table>
+        </div>
+        <div class="col-12">
+            {% comment %}Liquid for loop includes last number, thus the Minus{% endcomment %}
+            {% assign bits = BITS | minus: 1 %} 
+            <table class="table">
+            <tr>
+                {% comment %}Build many bits{% endcomment %}
+                {% for i in (0..bits) %}
+                <td><img class="img-responsive py-3" id="bulb{{ i }}" src="{{site.baseurl}}/images/bulb_off.png" alt="" width="40" height="Auto">
+                    <button type="button" id="butt{{ i }}" onclick="javascript:toggleBit({{ i }})">Turn on</button>
+                </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% comment %}Value of bit{% endcomment %}
+                {% for i in (0..bits) %}
+                <td><input type='text' id="digit{{ i }}" Value="0" size="1" readonly></td>
+                {% endfor %}
+            </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
 <script>
-    const BITS = {{BITS}};
+    const BITS = {{ BITS }};
     const MAX = 2 ** BITS - 1;
     const MSG_ON = "Turn on";
-    const IMAGE_ON = "/APCSA/images/bulb_on.gif";
+    const IMAGE_ON = "{{site.baseurl}}/images/bulb_on.gif";
     const MSG_OFF = "Turn off";
-    const IMAGE_OFF = "/APCSA/images/bulb_off.png"
+    const IMAGE_OFF = "{{site.baseurl}}/images/bulb_off.png"
 
     // return string with current value of each bit
     function getBits() {
@@ -101,59 +154,3 @@ permalink: /frontend/binary
         }
     }
 </script>
-
-
-<div class="container bg-primary">
-    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-        <span class="fs-4">Binary Math with Conversions</span>
-    </header>
-
-    <div class="row justify-content-md-center">
-
-    <div class="col-8">
-        <table class="table">
-        <tr id="table">
-            <th>Plus</th>
-            <th>Binary</th>
-            <th>Octal</th>
-            <th>Hexadecimal</th>
-            <th>Decimal</th>
-            <th>Minus</th>
-        </tr>
-        <tr>
-            <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
-            <td id="binary">00000000</td>
-            <td id="octal">0</td>
-            <td id="hexadecimal">0</td>
-            <td id="decimal">0</td>
-            <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
-        </tr>
-        </table>
-    </div>
-
-    <div class="col-12">
-        {% comment %}Liquid for loop includes last number, thus the Minus{% endcomment %}
-        {% assign bits = BITS | minus: 1 %} 
-        <table class="table">
-
-        <tr>
-            {% comment %}Build many bits{% endcomment %}
-            {% for i in (0..bits) %}
-            <td><img class="img-responsive py-3" id="bulb{{ i }}" src="/APCSA/images/bulb_off.png" alt="" width="40" height="Auto">
-                <button type="button" id="butt{{ i }}" onclick="javascript:toggleBit({{ i }})">Turn on</button>
-            </td>
-            {% endfor %}
-        </tr>
-
-        <tr>
-            {% comment %}Value of bit{% endcomment %}
-            {% for i in (0..bits) %}
-            <td><input type='text' id="digit{{ i }}" Value="0" size="1" readonly></td>
-            {% endfor %}
-        </tr>
-
-        </table>
-    </div>
-
-    </div>
-</div>

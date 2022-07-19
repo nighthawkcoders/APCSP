@@ -43,6 +43,7 @@ HTML, CSS, and JavaScript are the front-end of the Web.  Many tools and language
 - Binary: This example was created after watching Harvard CS50 by David J. Malan in 2020, he had built a machine to turn on and off lights/binary digits.  My thought after watching machine, why not simulate it in software?
     - Liquid is used to generate the HTML bits and parameters for onclick actions
     - JavaScript is used base 2, 8, 16 calculations
+- Grades: This grade calculator was created to show interaction of HTML and JavaScript to perform input.  Additionally, it show how to add element to HTML Document Object Model <mark>(DOM)</mark>.  FYI, the IJavaScript kernel did not support input as of this writing.
 - Graph: This was created when a student named Bryant 2022 asked me the question "how would I plot data?" as described in an FRQ.
     - JavaScript canvas is used to draw grid, axis, lines
 - Life: This was created by Nathaniel 2022 when I asked him about something interesting to show students in JS that relates to school.

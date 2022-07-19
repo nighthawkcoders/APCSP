@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Calculator Starters",
-            "content": "| Overview | Calculator | Binary | Graph | Life | Snake | . 0 1 2 3 + 4 5 6 - 7 8 9 * A/C 0 . &lt;div class=&quot;calculator-button&quot; onclick=&quot;equals()&quot;&quot;&gt;= &lt;/div&gt; .",
+            "content": "| Overview | Calculator | Binary | Graph | Life | Snake | . 0 1 2 3 + 4 5 6 - 7 8 9 * A/C 0 . =",
             "url": "https://nighthawkcoders.github.io/APCSP/frontend/calculator",
             "relUrl": "/frontend/calculator",
             "date": " • Jul 19, 2022"

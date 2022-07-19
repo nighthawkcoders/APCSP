@@ -108,7 +108,7 @@ tags: [javascript, css. dom, getElementID]
     <div class="calculator-button" onclick="clearCalc()">A/C</div>
     <div class="calculator-button" onclick="number('0')">0</div>
     <div class="calculator-button" onclick="number('.')">.</div>
-    <div class="calculator-button" onclick="equals()"">=</div>
+    <div class="calculator-button" onclick="equals()">=</div>
 </div>
 
 

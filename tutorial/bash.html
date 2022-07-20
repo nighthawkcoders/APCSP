@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PBL - Bash Tutorial | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="PBL - Bash Tutorial" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A brief overview of Bash. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, we will run a “terminal” through VS Code or “console” while in AWS." />
+<meta property="og:description" content="A brief overview of Bash. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, we will run a “terminal” through VS Code or “console” while in AWS." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/tutorial/bash" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/tutorial/bash" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-19T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PBL - Bash Tutorial" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-19T00:00:00-05:00","datePublished":"2022-07-19T00:00:00-05:00","description":"A brief overview of Bash. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, we will run a “terminal” through VS Code or “console” while in AWS.","headline":"PBL - Bash Tutorial","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/tutorial/bash"},"url":"https://nighthawkcoders.github.io/APCSP/tutorial/bash"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/">Tags</a><a class="page-link" href="/APCSP/about/">About Us</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">PBL - Bash Tutorial</h1><p class="page-description">A brief overview of Bash.  When a computer boots up, a kernel (MacOS, Windows, Linux) is started.  This kernel provides a shell that allows user to interact with a most basic set of commands.  Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process.  To activate the shell directly, we will run a "terminal" through VS Code or "console" while in AWS.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-19T00:00:00-05:00" itemprop="datePublished">
+        Jul 19, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/APCSP/categories/#pbl">pbl</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2022-07-19-bash_tutorial.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2022-07-19-bash_tutorial.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2022-07-19-bash_tutorial.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2022-07-19-bash_tutorial.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-07-19-bash_tutorial.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Prerequisites-for-Bash-on-Jupyter">Prerequisites for Bash on Jupyter<a class="anchor-link" href="#Prerequisites-for-Bash-on-Jupyter"> </a></h2><blockquote><p>Install the Bash Kernel for Jupyter notebooks.  I used pip3 and python3 and both were in my path.  This allowed me to build this tutorial.</p>
+</blockquote>
+<ul>
+<li>pip install bash_kernel</li>
+<li>python -m bash_kernel.install</li>
+</ul>
+<p>Selecting a kernel should now have bash in options.
+<img src="/APCSP/images/copied_from_nb/images/kernels.png" alt="" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Files-and-Directories">Files and Directories<a class="anchor-link" href="#Files-and-Directories"> </a></h2><blockquote><p>All computers contain files and directories.  Using the bash shell you will see some commands that show and interact .</p>
+</blockquote>
+<ul>
+<li>"ls" lists computer files in Unix and Unix-like operating systems</li>
+<li>"cd" offers way to navigate and change working directory</li>
+<li>"pwd" print working directory</li>
+<li>"echo" used to display line of text/string that are passed as an argument</li>
+<li>"cat" reads data from the file and gives its content as output</li>
+<li>"env" prints the environment variables of the shell</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;print working directory and show contents in directory&quot;</span>
+<span class="nb">pwd</span>
+ls
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>print working directory and show contents in directory
+/Users/johnmortensen/Downloads/flask_portfolio
+README.md		requirements.txt	templates
+main.py			static
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;change directory, print working directory, list files&quot;</span>
+<span class="nb">cd</span> images
+<span class="nb">pwd</span>
+ls
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;change directory back one level, print working directory, list files in long format&quot;</span>
+<span class="nb">cd</span> ..
+<span class="nb">pwd</span>
+ls -l
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>change directory, print working directory, list files
+bash: cd: images: No such file or directory
+/Users/johnmortensen/Downloads/flask_portfolio
+README.md		requirements.txt	templates
+main.py			static
+
+change directory back one level, print working directory, list files in long format
+/Users/johnmortensen/Downloads
+total 1175040
+-rw-r--r--@ 1 johnmortensen  staff     675980 Apr 28 12:40 1E20D0E5-A652-4601-A8B8-B74F3A027C17.JPG
+-rw-r--r--@ 1 johnmortensen  staff     407563 Jul  5 14:56 2020-01-01-Microsoft-Word-Example-Post.docx
+-rw-r--r--@ 1 johnmortensen  staff     326286 Jun 14 12:33 2022-06-14-Curriculum Map-David- 2021-2022.docx
+-rw-r--r--@ 1 johnmortensen  staff   35214017 May  5 14:15 AmazonChime-OSX-notarize.release-4.39.8628.dmg
+drwxr-xr-x@ 3 johnmortensen  staff         96 Dec 23  2021 Coding Pack for Java.app
+-rw-r--r--@ 1 johnmortensen  staff    2262291 Apr 20 17:08 Fully executed lease agreemnt for your file.pdf
+-rw-r--r--@ 1 johnmortensen  staff     906400 Jun  7 18:30 GeoMadHulyler.jpg
+-rw-r--r--@ 1 johnmortensen  staff    1342454 Apr 29 14:28 Hull Quote.pdf
+-rw-r--r--@ 1 johnmortensen  staff     756912 Aug  1  2021 IMG_0301.JPG
+-rw-r--r--@ 1 johnmortensen  staff    1057770 Aug  1  2021 IMG_0302 3.JPG
+-rw-r--r--@ 1 johnmortensen  staff  102013487 Jun 15 17:47 JavaCodingPack-0.4.1 (1).zip
+-rw-r--r--@ 1 johnmortensen  staff  102013487 Jun  6 07:44 JavaCodingPack-0.4.1.zip
+-rw-r--r--@ 1 johnmortensen  staff   13992401 Mar 26 13:35 MortensenTaxes2021v2.pdf
+-rw-r--r--@ 1 johnmortensen  staff  112503375 Apr  9 07:35 Screen Recording 2022-04-02 at 12.15.44 AM.mov
+-rwx------@ 1 johnmortensen  staff     197867 Apr  5 18:41 Tax2021Worksheets.numbers
+-rw-r--r--@ 1 johnmortensen  staff  110546899 May 15 15:31 Teams_osx_s_8DA36C2ECC2BE71-7-0_c_w_.pkg
+-rw-r--r--@ 1 johnmortensen  staff  108574512 Jun  6 07:46 VSCode-darwin.zip
+drwxr-xr-x@ 3 johnmortensen  staff         96 Apr 21 02:11 Visual Studio Code.app
+-rw-r--r--@ 1 johnmortensen  staff       1678 May 31 10:59 a2.pem
+-rw-r--r--@ 1 johnmortensen  staff     129584 Jun 16 12:01 agile.webp
+-rw-r--r--@ 1 johnmortensen  staff     527818 Jun 14 12:20 apcsa.png
+-rw-r--r--@ 1 johnmortensen  staff     502444 Jun 26 22:01 apcsp.png
+-rw-r--r--@ 1 johnmortensen  staff      50994 Jun  4 20:12 bewarelest.webp
+-rw-r--r--@ 1 johnmortensen  staff       6123 Mar 26 06:16 classroster.csv
+-rw-r--r--@ 1 johnmortensen  staff       1674 May 27 09:56 drain.pem
+-rw-r--r--@ 1 johnmortensen  staff     238049 Jun 17 06:33 extensions.png
+-rw-r--r--@ 1 johnmortensen  staff      98592 Jun 16 19:59 fastpages.png
+drwx------@ 9 johnmortensen  staff        288 Jun 14 19:41 favicon_io
+-rw-r--r--@ 1 johnmortensen  staff      84090 Jun 14 19:41 favicon_io.zip
+drwxr-xr-x  9 johnmortensen  staff        288 Jul 19 18:17 flask_portfolio
+-rw-r--r--@ 1 johnmortensen  staff     104414 Jun 20 09:39 frontend.png
+-rw-r--r--@ 1 johnmortensen  staff      15614 Jun  8 17:59 goldrickchildren.jpeg
+-rw-r--r--@ 1 johnmortensen  staff      71887 Jul  5 21:25 html-css-js.jpeg
+-rw-r--r--@ 1 johnmortensen  staff    3366077 Jun 13 19:43 ijava-1.3.0.zip
+-rw-r--r--@ 1 johnmortensen  staff       7471 May  5  2019 install.py
+drwxr-xr-x@ 5 johnmortensen  staff        160 May  5  2019 java
+-rw-r--r--@ 1 johnmortensen  staff       2055 Jun 24 19:05 java.png
+-rw-r--r--@ 1 johnmortensen  staff       4132 Jun  8 17:35 julianwhalen.jpeg
+-rw-r--r--@ 1 johnmortensen  staff      79231 Jul 19 17:24 kernels.png
+-rw-------@ 1 johnmortensen  staff       1674 Apr 13 17:20 nighthawk.pem
+-rw-r--r--@ 1 johnmortensen  staff      46391 Apr 19 15:10 original.jpeg
+-rw-r--r--@ 1 johnmortensen  staff         96 May 12 10:20 paul_accessKeys (1).csv
+-rw-r--r--@ 1 johnmortensen  staff         96 May 12 10:19 paul_accessKeys.csv
+-rw-r--r--@ 1 johnmortensen  staff      27180 Jun 24 19:36 pojo.jpeg
+-rw-r--r--@ 1 johnmortensen  staff     787433 Jun  4 07:08 rahab.png
+-rw-r--r--@ 1 johnmortensen  staff     422993 May 17 08:52 reddragonmoon.jpeg
+-rw-r--r--@ 1 johnmortensen  staff      64998 Jun 20 10:38 resources.png
+-rw-r--r--@ 1 johnmortensen  staff      89191 Jun 24 19:14 spring.html
+-rw-r--r--@ 1 johnmortensen  staff       7962 Jun 24 19:08 spring.jpeg
+-rw-r--r--@ 1 johnmortensen  staff      41083 Jun 24 19:14 spring.png
+-rw-r--r--@ 1 johnmortensen  staff      57711 May  2 11:45 tux (1).jpg
+-rw-r--r--@ 1 johnmortensen  staff      57711 May  2 11:44 tux.jpg
+-rw-r--r--@ 1 johnmortensen  staff    1818794 Jun  7 18:30 youngLeslie.jpg
+-rw-r--r--@ 1 johnmortensen  staff        162 Jul  5 14:56 ~$20-01-01-Microsoft-Word-Example-Post.docx
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;show the contents of README.md&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+
+cat README.md
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>show the contents of README.md
+
+cat: README.md: No such file or directory
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;show the shell environment variables&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+
+env
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>show the contents of README.md
+
+PYTHONUNBUFFERED=1
+PYDEVD_USE_FRAME_EVAL=NO
+PYTHONIOENCODING=utf-8
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+PAGER=cat
+PWD=/Users/johnmortensen/vsProjects/APCSP/_notebooks
+PS1=[PEXP\[\]ECT_PROMPT&gt;
+SHLVL=1
+LC_CTYPE=UTF-8
+_=/usr/bin/env
+OLDPWD=/Users/johnmortensen/vsProjects/APCSP/_notebooks/images
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-Terminal-on-MacOS">In Terminal on MacOS<a class="anchor-link" href="#In-Terminal-on-MacOS"> </a></h3><blockquote><p>Practice pulling code from git to your machine.  After you do this you should be able to navigate to the files.  As of this writing git clone did not work well in jupyter bash kernel.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="nb">cd</span> /Users/johnmortensen/Downloads
+git clone https://github.com/nighthawkcoders/flask_portfolio.git
+</pre></div>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;navigate to downloads, then navigate to area wwhere files were cloned&quot;</span>
+<span class="nb">cd</span> /Users/johnmortensen/Downloads
+<span class="nb">cd</span> flask_portfolio
+<span class="nb">pwd</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;list files pulled from github&quot;</span>
+ls
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;list with hidden files pulled from github&quot;</span>
+ls -a
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>navigate to downloads, then navigate to area wwhere files were cloned
+/Users/johnmortensen/Downloads/flask_portfolio
+
+list files pulled from github
+README.md		requirements.txt	templates
+main.py			static
+
+list with hidden files pulled from github
+.			.gitignore		requirements.txt
+..			README.md		static
+.git			main.py			templates
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deployment-and-GitHub">Deployment and GitHub<a class="anchor-link" href="#Deployment-and-GitHub"> </a></h3><blockquote><p>GitHub is NOT Only used to exchange code between individuals, it IS used to exchange code through deployment.</p>
+</blockquote>
+<ul>
+<li>"github clone" sets up a director of files</li>
+<li>"cd flaskportfolio" allows user or machine to be inside that directory of files</li>
+<li>".git" is a directory that is used by git to establish relationship between machine and the git server on GitHub (behind the scenes)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> /Users/johnmortensen/Downloads
+<span class="nb">cd</span> flask_portfolio
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;show the secrets of .git&quot;</span>
+<span class="nb">cd</span> .git
+ls -l
+
+<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;look at config file&quot;</span>
+cat config
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+show the secrets of .git
+total 40
+-rw-r--r--   1 johnmortensen  staff    21 Jul 19 18:17 HEAD
+drwxr-xr-x   2 johnmortensen  staff    64 Jul 19 18:17 branches
+-rw-r--r--   1 johnmortensen  staff   320 Jul 19 18:17 config
+-rw-r--r--   1 johnmortensen  staff    73 Jul 19 18:17 description
+drwxr-xr-x  13 johnmortensen  staff   416 Jul 19 18:17 hooks
+-rw-r--r--   1 johnmortensen  staff  1635 Jul 19 18:17 index
+drwxr-xr-x   3 johnmortensen  staff    96 Jul 19 18:17 info
+drwxr-xr-x   4 johnmortensen  staff   128 Jul 19 18:17 logs
+drwxr-xr-x  84 johnmortensen  staff  2688 Jul 19 18:17 objects
+-rw-r--r--   1 johnmortensen  staff   112 Jul 19 18:17 packed-refs
+drwxr-xr-x   5 johnmortensen  staff   160 Jul 19 18:17 refs
+
+look at config file
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote &#34;origin&#34;]
+	url = https://github.com/nighthawkcoders/flask_portfolio.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch &#34;main&#34;]
+	remote = origin
+	merge = refs/heads/main
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/tutorial/bash" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="nighthawkcoders"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="NighthawkCoding"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

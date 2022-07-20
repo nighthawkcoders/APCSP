@@ -148,7 +148,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Files-and-Directories">Files and Directories<a class="anchor-link" href="#Files-and-Directories"> </a></h2><blockquote><p>All computers contain files and directories.  Using the bash shell you will see some commands that show and interact .</p>
+<h2 id="Files-and-Directories">Files and Directories<a class="anchor-link" href="#Files-and-Directories"> </a></h2><blockquote><p>All computers contain files and directories.  Using the bash shell you will see some commands that show and interact with files and directories.</p>
 </blockquote>
 <ul>
 <li>"ls" lists computer files in Unix and Unix-like operating systems</li>
@@ -169,7 +169,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;print working directory and show contents in directory&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;print my project directory (~) and show contents in directory&quot;</span>
+<span class="nb">cd</span> ~/vsProjects/APCSP/_notebooks/
 <span class="nb">pwd</span>
 ls
 </pre></div>
@@ -407,7 +408,7 @@ git clone https://github.com/nighthawkcoders/flask_portfolio.git
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;navigate to downloads, then navigate to area wwhere files were cloned&quot;</span>
-<span class="nb">cd</span> /Users/johnmortensen/Downloads
+<span class="nb">cd</span> ~/Downloads
 <span class="nb">cd</span> flask_portfolio
 <span class="nb">pwd</span>
 
@@ -472,7 +473,7 @@ list with hidden files pulled from github
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> /Users/johnmortensen/Downloads
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> ~/Downloads
 <span class="nb">cd</span> flask_portfolio
 
 <span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
@@ -534,6 +535,21 @@ look at config file
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h2><p>Learning how to run this demo on your machine will require some setup.</p>
+<ul>
+<li>"mkdir" is a command that allows you to make a new directory.  To run this demo you would need to:<ul>
+<li>mkdir ~/vsProjects</li>
+</ul>
+</li>
+<li>"git clone" add the APCSP project into this directory</li>
+<li>"cd ~" this command on my machine is shorthand for cd /Users/johnmortensen.  On your machine it would replace your username for mine.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 

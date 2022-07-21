@@ -109,7 +109,7 @@ window.onload = wrap_img;
 </ul>
 
 <h3 id="make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">Make sure your machine is up to date with Tools we need for Flask/Python</h3>
-<p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system. These commands should be run anytime you have Python/Flask errors on your system.</p>
+<p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt upgrade
 <span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip nginx
@@ -159,95 +159,61 @@ Use a production WSGI server instead.</li>
 ```</li>
 </ul>
 
-<h3 id="create-dockerfile-to-use-docker-build">Create dockerfile to use docker build</h3>
+<h3 id="create-dockerfile">Create Dockerfile</h3>
+<p>A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!</p>
 <ul>
-  <li>edit Dockerfile <code class="language-plaintext highlighter-rouge">$ sudo nano Dockerfile</code>, add lines:
-    <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># syntax=docker/dockerfile:1</span>
-<span class="k">FROM</span><span class="s"> openjdk:16-alpine3.13</span>
+  <li>Edit the Dockerfile
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano Dockerfile
+</code></pre></div>    </div>
+  </li>
+  <li>Insert the Dockerfile commands, note that they are similar to Bash commands performed earlier.  Follow prompts on screen to save file when complete, look for Key/Value (GitHub HTTPS link) that requires change for your project.
+    <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> docker.io/python:3.9</span>
 <span class="k">WORKDIR</span><span class="s"> /app</span>
-<span class="k">RUN </span>apk update <span class="o">&amp;&amp;</span> apk upgrade <span class="o">&amp;&amp;</span> <span class="se">\
-</span>  apk add <span class="nt">--no-cache</span> git 
-<span class="k">RUN </span>git clone https://github.com/nighthawkcoders/spring_portfolio.git /app
-<span class="k">RUN </span>./mvnw package
-<span class="k">CMD</span><span class="s"> ["java", "-jar", "target/spring-0.0.1-SNAPSHOT.jar"]</span>
+<span class="c"># --- Update environment and install python and pip ---</span>
+<span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="se">\
+</span>  apt-get <span class="nb">install</span> <span class="nt">-y</span> python3 python3-pip git
+<span class="k">RUN </span>git clone https://github.com/nighthawkcoders/flask_portfolio /app
+<span class="c"># --- Install project specific dependencies ---</span>
+<span class="k">RUN </span>pip3 <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">-r</span> requirements.txt
+<span class="k">RUN </span>pip3 <span class="nb">install </span>gunicorn
+<span class="c"># --- Setup args to run 3 workers and run on port 8080 ---</span>
+<span class="k">ENV</span><span class="s"> GUNICORN_CMD_ARGS="--workers=3 --bind=0.0.0.0:8080"</span>
+<span class="c"># --- Allow port 8080 to be accessed by system ---</span>
 <span class="k">EXPOSE</span><span class="s"> 8080</span>
+<span class="c"># --- Run Web Application in production style ---</span>
+<span class="k">CMD</span><span class="s"> [ "gunicorn", "main:app" ]</span>
 </code></pre></div>    </div>
-  </li>
-  <li>Here’s what these lines mean:
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge"># syntax=docker/dockerfile:1</code>: This tells docker which syntax you want to use</li>
-      <li><code class="language-plaintext highlighter-rouge">FROM openjdk:16-alpine3.13</code>: imports openjdk so that you can actually run java stuff</li>
-      <li><code class="language-plaintext highlighter-rouge">WORKDIR /app</code>: Sets the directory to /app</li>
-      <li><code class="language-plaintext highlighter-rouge">COPY .mvn/ .mvn</code> and <code class="language-plaintext highlighter-rouge">COPY mvnw pom.xml ./</code>: Copy all necessary files into running directory</li>
-      <li><code class="language-plaintext highlighter-rouge">RUN ./mvnw dependency:go-offline</code>: Run script</li>
-      <li><code class="language-plaintext highlighter-rouge">COPY src ./src</code>: Copy source code</li>
-      <li><code class="language-plaintext highlighter-rouge">CMD ["./mvnw", "spring-boot:run"]</code>: Run ./mvnw spring-boot:run</li>
-      <li><code class="language-plaintext highlighter-rouge">EXPOSE 8082</code>: Set to use port 8082</li>
-    </ul>
-  </li>
-  <li>Create a .dockerignore file in the same directory as the Dockerfile <code class="language-plaintext highlighter-rouge">sudo nano .dockerignore</code> add to file:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target
-</code></pre></div>    </div>
-  </li>
-  <li>Build image
-    <ul>
-      <li>In the same directory as the Dockerfile run the following command to create a image that can be used for running with the tag java-docker:latest <code class="language-plaintext highlighter-rouge">$ docker build --tag java-docker .</code></li>
-      <li>
-        <p>Create a new image with a tag of javak-docker:v1.0.0 based on java-docker:latest: <code class="language-plaintext highlighter-rouge">$ docker tag java-docker:latest java-docker:v1.0.0</code></p>
-
-        <ul>
-          <li>If you need to remove a tag, run: <code class="language-plaintext highlighter-rouge">$ docker rmi java-docker:v1.0.0</code></li>
-        </ul>
-      </li>
-      <li>To view images: <code class="language-plaintext highlighter-rouge">$ docker images</code></li>
-    </ul>
   </li>
 </ul>
 
-<h3 id="run-the-imagestart-a-container">Run the image/start a container</h3>
+<h3 id="create-docker-compose-file">Create docker-compose file</h3>
+<p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.</p>
+
 <ul>
-  <li>run java-docker:v1.0.0 image in detached mode so it’s running in the
-background with the port as 80
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8085:8080 java-backend:v1.0.0
+  <li>Edit docker-compose.yml
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano docker-compose.yml
 </code></pre></div>    </div>
   </li>
-  <li>Check if it works
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">--request</span> GET <span class="nt">--url</span> http://localhost:8085 
-</code></pre></div>    </div>
-  </li>
-  <li>List containers/running images
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker ps
-</code></pre></div>    </div>
-  </li>
-  <li>At this point, we will stop and remove container as we will do this command via docker-compose:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker stop [container name]
-$ docker rm [container name]
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h3 id="create-docker-compose-file-to-do-some-of-the-steps-above-automatically">Create docker-compose file to do some of the steps above automatically</h3>
-<ul>
-  <li>edit docker-compose.yml <code class="language-plaintext highlighter-rouge">$ sudo nano docker-compose.yml</code>, add lines:</li>
-</ul>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+  <li>Insert the docker-compose.yml Keys/Values.
+    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
 <span class="na">services</span><span class="pi">:</span>
-  <span class="na">web</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">java_springv1</span>
-    <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
-    <span class="na">ports</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">8085:8080"</span>
-    <span class="na">volumes</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">persistent_volume:/app/volumes</span>
+<span class="na">web</span><span class="pi">:</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">java_springv1</span>
+  <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
+  <span class="na">ports</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">8085:8080"</span>
+  <span class="na">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">persistent_volume:/app/volumes</span>
 <span class="na">volumes</span><span class="pi">:</span>
-  <span class="na">persistent_volume</span><span class="pi">:</span>
-    <span class="na">driver</span><span class="pi">:</span> <span class="s">local</span>
-    <span class="na">driver_opts</span><span class="pi">:</span>
-      <span class="na">o</span><span class="pi">:</span> <span class="s">bind</span>
-      <span class="na">type</span><span class="pi">:</span> <span class="s">none</span>
-      <span class="na">device</span><span class="pi">:</span> <span class="s">/home/ubuntu/spring_portfolio/volumes</span>
-</code></pre></div></div>
+<span class="na">persistent_volume</span><span class="pi">:</span>
+  <span class="na">driver</span><span class="pi">:</span> <span class="s">local</span>
+  <span class="na">driver_opts</span><span class="pi">:</span>
+    <span class="na">o</span><span class="pi">:</span> <span class="s">bind</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">none</span>
+    <span class="na">device</span><span class="pi">:</span> <span class="s">/home/ubuntu/spring_portfolio/volumes</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 
       </div>

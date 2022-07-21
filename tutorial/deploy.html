@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      5 min read
     
 </span></p>
 
@@ -100,11 +100,11 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#keyvalues-required-as-you-go-through-these-procedures">Key/Values required as you go through these procedures</a></li>
 <li class="toc-entry toc-h3"><a href="#amazon-web-services-aws-electric-cloud-compute-ec2-setup">Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</a></li>
-<li class="toc-entry toc-h3"><a href="#make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">Make sure your machine is up to date with Tools we need for Flask/Python</a></li>
-<li class="toc-entry toc-h3"><a href="#clone-and-change-directory-to-where-project-is-stored-on-ec2">Clone and change directory to where project is stored on EC2</a></li>
-<li class="toc-entry toc-h3"><a href="#test-run-your-project">Test run your project</a></li>
-<li class="toc-entry toc-h3"><a href="#create-dockerfile">Create Dockerfile</a></li>
-<li class="toc-entry toc-h3"><a href="#create-docker-compose-file">Create docker-compose file</a></li>
+<li class="toc-entry toc-h3"><a href="#update-upgrade-and-install-packages">Update, Upgrade, and Install packages</a></li>
+<li class="toc-entry toc-h3"><a href="#clone-and-change-directory-to-project-location">Clone and Change Directory to project location</a></li>
+<li class="toc-entry toc-h3"><a href="#test-web-service">Test Web Service</a></li>
+<li class="toc-entry toc-h3"><a href="#create-dockerfile-to-run-web-service">Create Dockerfile to run Web Service</a></li>
+<li class="toc-entry toc-h3"><a href="#create-docker-compose-file-share-web-service">Create docker-compose file share Web Service</a></li>
 </ul>
 </li>
 </ul><h2 id="deployment-overview">
@@ -148,8 +148,8 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">
-<a class="anchor" href="#make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython" aria-hidden="true"><span class="octicon octicon-link"></span></a>Make sure your machine is up to date with Tools we need for Flask/Python</h3>
+<h3 id="update-upgrade-and-install-packages">
+<a class="anchor" href="#update-upgrade-and-install-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update, Upgrade, and Install packages</h3>
 <p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt upgrade
@@ -157,8 +157,8 @@ window.onload = wrap_img;
 <span class="nv">$ </span><span class="nb">sudo </span>pip3 <span class="nb">install </span>virtualenv
 </code></pre></div></div>
 
-<h3 id="clone-and-change-directory-to-where-project-is-stored-on-ec2">
-<a class="anchor" href="#clone-and-change-directory-to-where-project-is-stored-on-ec2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone and change directory to where project is stored on EC2</h3>
+<h3 id="clone-and-change-directory-to-project-location">
+<a class="anchor" href="#clone-and-change-directory-to-project-location" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone and Change Directory to project location</h3>
 <p>This command move your Web Application code onto you EC2 cloud computer.The sample GithUb HTTPs Link is demonstration is: https://github.com/nighthawkcoders/flask_portfolio.git.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span>
@@ -166,8 +166,8 @@ window.onload = wrap_img;
 <span class="nv">$ </span><span class="nb">cd </span>flask_portfolio
 </code></pre></div></div>
 
-<h3 id="test-run-your-project">
-<a class="anchor" href="#test-run-your-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test run your project</h3>
+<h3 id="test-web-service">
+<a class="anchor" href="#test-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test Web Service</h3>
 <p>These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio
@@ -205,8 +205,8 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
  <span class="k">*</span> Debugger PIN: 710-199-540
 </code></pre></div></div>
 
-<h3 id="create-dockerfile">
-<a class="anchor" href="#create-dockerfile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Dockerfile</h3>
+<h3 id="create-dockerfile-to-run-web-service">
+<a class="anchor" href="#create-dockerfile-to-run-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Dockerfile to run Web Service</h3>
 <p>A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!</p>
 <ul>
   <li>Edit the Dockerfile
@@ -235,8 +235,8 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
   </li>
 </ul>
 
-<h3 id="create-docker-compose-file">
-<a class="anchor" href="#create-docker-compose-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create docker-compose file</h3>
+<h3 id="create-docker-compose-file-share-web-service">
+<a class="anchor" href="#create-docker-compose-file-share-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create docker-compose file share Web Service</h3>
 <p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.</p>
 
 <ul>

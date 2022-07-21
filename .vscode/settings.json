@@ -4,6 +4,10 @@
         "getuser",
         "gunicorn",
         "nighthawkcodingsociety",
-        "peasy"
+        "peasy",
+        "Traceback",
+        "virtualenv",
+        "WORKDIR",
+        "WSGI"
     ]
 }

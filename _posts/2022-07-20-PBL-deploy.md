@@ -67,7 +67,7 @@ $ pip install -r requirements.txt
 $ python main.py
 ```
 
-* Failed result.  If you get a result that looks like the below, your requirements.txt needs work.  In this instance, I would need ot add flask to the requirements.txt.
+* Failed result.  If you get a result that looks like the below, your requirements.txt needs work.  In this instance, I would need to add flask to the requirements.txt.
 
 ```bash
 (webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ python main.py
@@ -97,7 +97,7 @@ ModuleNotFoundError: No module named 'flask'
 A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!
 * Edit the Dockerfile
 ```bash
-$ sudo nano Dockerfile
+$ nano Dockerfile
 ```
 
 * Insert the Dockerfile commands, note that they are similar to Bash commands performed earlier.  Follow prompts on screen to save file when complete, look for Key/Value (GitHub HTTPS link) that requires change for your project.
@@ -125,7 +125,7 @@ A docker-compose file is a configuration used to share your Docker Web Service a
 
 * Edit docker-compose.yml
 ```bash
-$ sudo nano docker-compose.yml
+$ nano docker-compose.yml
 ```
 
 * Insert the docker-compose.yml Keys/Values.

@@ -38,7 +38,7 @@ Preparing and AWS EC2 instance is the process of creating a cloud computer.  Thi
     - The remainder of the steps you can use the defaults, refer to AWS documentation for guidance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html
     - At the end of this process you need to "Connect to Instance". This will provide you a terminal like experience.
 
-### Make sure your machine is up to date with Tools we need for Flask/Python
+### Update, Upgrade, and Install packages
 Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system.
 
 ```bash
@@ -47,7 +47,7 @@ $ sudo apt install python3-pip nginx
 $ sudo pip3 install virtualenv
 ```
 
-### Clone and change directory to where project is stored on EC2
+### Clone and Change Directory to project location
 This command move your Web Application code onto you EC2 cloud computer.The sample GithUb HTTPs Link is demonstration is: https://github.com/nighthawkcoders/flask_portfolio.git.  
 
 ```bash
@@ -56,7 +56,7 @@ $ git clone https://github.com/nighthawkcoders/flask_portfolio.git
 $ cd flask_portfolio
 ```
 
-### Test run your project
+### Test Web Service
 These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.
 
 ```bash
@@ -93,7 +93,7 @@ ModuleNotFoundError: No module named 'flask'
  * Debugger PIN: 710-199-540
 ```
 
-### Create Dockerfile
+### Create Dockerfile to run Web Service
 A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!
 * Edit the Dockerfile
 ```bash
@@ -120,7 +120,7 @@ CMD [ "gunicorn", "main:app" ]
 ```
 
 
-### Create docker-compose file
+### Create docker-compose file share Web Service
 A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.
 
 * Edit docker-compose.yml

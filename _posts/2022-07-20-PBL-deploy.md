@@ -38,7 +38,7 @@ Preparing and AWS EC2 instance is the process of creating a cloud computer.  Thi
     - At the end of this process you need to "Connect to Instance". This will provide you a terminal like experience.
 
 ### Make sure your machine is up to date with Tools we need for Flask/Python
-Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system. These commands should be run anytime you have Python/Flask errors on your system.
+Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system.
 
 ```bash
 $ sudo apt update; sudo apt upgrade
@@ -75,6 +75,7 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'flask'
 (webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ 
 ```
+
 * A successful result will look like the following.  At this point we will type "ctrl+c" and then at prompt "deactivate", as we will now build and run a Docker File to deploy in more automated fashion.
 ```bash
 (webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ python main.py
@@ -89,62 +90,42 @@ ModuleNotFoundError: No module named 'flask'
  * Debugger PIN: 710-199-540
 ```
 
-### Create dockerfile to use docker build
-* edit Dockerfile `$ sudo nano Dockerfile`, add lines: 
+### Create Dockerfile
+A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!
+* Edit the Dockerfile
+```bash
+$ sudo nano Dockerfile
+```
+
+* Insert the Dockerfile commands, note that they are similar to Bash commands performed earlier.  Follow prompts on screen to save file when complete, look for Key/Value (GitHub HTTPS link) that requires change for your project.
 ```dockerfile
-# syntax=docker/dockerfile:1
-FROM openjdk:16-alpine3.13
+FROM docker.io/python:3.9
 WORKDIR /app
-RUN apk update && apk upgrade && \
-    apk add --no-cache git 
-RUN git clone https://github.com/nighthawkcoders/spring_portfolio.git /app
-RUN ./mvnw package
-CMD ["java", "-jar", "target/spring-0.0.1-SNAPSHOT.jar"]
+# --- Update environment and install python and pip ---
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y python3 python3-pip git
+RUN git clone https://github.com/nighthawkcoders/flask_portfolio /app
+# --- Install project specific dependencies ---
+RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install gunicorn
+# --- Setup args to run 3 workers and run on port 8080 ---
+ENV GUNICORN_CMD_ARGS="--workers=3 --bind=0.0.0.0:8080"
+# --- Allow port 8080 to be accessed by system ---
 EXPOSE 8080
+# --- Run Web Application in production style ---
+CMD [ "gunicorn", "main:app" ]
 ```
-* Here's what these lines mean: 
-     * `# syntax=docker/dockerfile:1`: This tells docker which syntax you want to use
-     * `FROM openjdk:16-alpine3.13`: imports openjdk so that you can actually run java stuff
-     * `WORKDIR /app`: Sets the directory to /app
-     * `COPY .mvn/ .mvn` and `COPY mvnw pom.xml ./`: Copy all necessary files into running directory
-     * `RUN ./mvnw dependency:go-offline`: Run script
-     * `COPY src ./src`: Copy source code
-     * `CMD ["./mvnw", "spring-boot:run"]`: Run ./mvnw spring-boot:run
-     * `EXPOSE 8082`: Set to use port 8082
-* Create a .dockerignore file in the same directory as the Dockerfile `sudo nano .dockerignore` add to file:
-```
-target
-```
-* Build image
-     * In the same directory as the Dockerfile run the following command to create a image that can be used for running with the tag java-docker:latest `$ docker build --tag java-docker .`
-     * Create a new image with a tag of javak-docker:v1.0.0 based on java-docker:latest: `$ docker tag java-docker:latest java-docker:v1.0.0`
 
-          * If you need to remove a tag, run: `$ docker rmi java-docker:v1.0.0`
-     * To view images: `$ docker images`
 
-### Run the image/start a container
-* run java-docker:v1.0.0 image in detached mode so it's running in the
-background with the port as 80
+### Create docker-compose file
+A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.
+
+* Edit docker-compose.yml
 ```bash
-$ docker run -d -p 8085:8080 java-backend:v1.0.0
-```
-* Check if it works
-```bash
-$ curl --request GET --url http://localhost:8085 
-```
-* List containers/running images
-```bash
-$ docker ps
-```
-* At this point, we will stop and remove container as we will do this command via docker-compose:
-```
-$ docker stop [container name]
-$ docker rm [container name]
+$ sudo nano docker-compose.yml
 ```
 
-### Create docker-compose file to do some of the steps above automatically
-* edit docker-compose.yml `$ sudo nano docker-compose.yml`, add lines: 
-
+* Insert the docker-compose.yml Keys/Values.
 ```yml
 version: '3'
 services:

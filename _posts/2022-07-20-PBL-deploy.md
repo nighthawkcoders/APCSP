@@ -1,10 +1,10 @@
 ---
+toc: true
 title: Deployment Guide
 layout: default
 description: Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx 
 permalink: /tutorial/deploy
 categories: [pbl]
-toc: true
 tags: [aws, ec2. docker, nginx, certbot, dns]
 ---
 

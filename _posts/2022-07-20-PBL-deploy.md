@@ -130,7 +130,7 @@ $ sudo nano docker-compose.yml
 version: '3'
 services:
   web:
-    image: java_springv1
+    image: pythonv1
     build: .
     ports:
       - "8085:8080"

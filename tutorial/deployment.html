@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Deployment Guide | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Deployment Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx" />
+<meta property="og:description" content="Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/tutorial/deployment" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/tutorial/deployment" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-20T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Deployment Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-20T00:00:00-05:00","datePublished":"2022-07-20T00:00:00-05:00","description":"Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx","headline":"Deployment Guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/tutorial/deployment"},"url":"https://nighthawkcoders.github.io/APCSP/tutorial/deployment"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/">Tags</a><a class="page-link" href="/APCSP/about/">About Us</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2 id="deployment-overview">Deployment Overview</h2>
+<p>Deploying a Web Application enables a Server to serve the components of a Web Application to clients. Deployment is the tools and service used to enable the Web Application on the Internet.  The process of can use many different cloud servers, as well as choice in tools and services.</p>
+
+<ul>
+  <li>EC2: Amazon Web Services is a cloud computing platform that the PUSD district has provided for us to serve our Web Application.</li>
+  <li>GitHub: At this point in time, we should be aware that we are using GitHub is an open platform to share our Web Application code on the Internet.</li>
+  <li>Docker and docker-compose: To host a Web Application you need to prepare an environment that contains the Web Application code and all the dependencies (requirements.txt for Python)  Docker is an open platform for developing, shipping, and running applications.</li>
+  <li>Nginx: To find a Web Application on a server, there needs to be a process to listen for the Web request and direct it to the Web Application.  Nginx is an open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.</li>
+  <li>Certbot: Web traffic on internet is reliably served over Secure Hyper Text Transfer Protocol (https).  Certbot is a free, open source software tool for automatically using Let’s Encrypt certifications</li>
+  <li>DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to our Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the service used to register the nighthawkcodingsociety.com domain.</li>
+</ul>
+
+<h3 id="keyvalues-required-as-you-go-through-these-procedures">Key/Values required as you go through these procedures</h3>
+<p>Some of these values you should obtain before you start.  Others you will obtain as you go through the process.</p>
+
+<ul>
+  <li>GitHub HTTPS link:</li>
+  <li>IAM user:</li>
+  <li>EC2 name:</li>
+  <li>EC2 Public IPs:</li>
+  <li>DNS Name:</li>
+</ul>
+
+<h3 id="amazon-web-services-aws-electric-cloud-compute-ec2-setup">Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</h3>
+<p>Preparing and AWS EC2 instance is the process of creating a cloud computer.  This process starts by logging into your AWS IAM user, searching for EC2.</p>
+<ul>
+  <li>To get started, launch a new AWS EC2 instance to learn process and understand how to work with Linux. here are some key considerations.
+    <ul>
+      <li>Choose an Amazon Machine Image (AMI), the class will be using Ubuntu you should check on last verified version with a Teacher before proceeding</li>
+      <li>When it comes to picking memory or disk it is VERY important to pick Free Tier.  As stated, this will only be used for testing and then it will be disposed for cost efficiency.</li>
+      <li>When presented with access dialog for http and https, make sure you check these boxes.  Remember you are making a Web application that will run over http and https.</li>
+      <li>Name the security group (.pem) file after your team.  It may be necessary to use SSH to access your EC2 instance.</li>
+      <li>The remainder of the steps you can use the defaults, refer to AWS documentation for guidance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html</li>
+      <li>At the end of this process you need to “Connect to Instance”. This will provide you a terminal like experience.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">Make sure your machine is up to date with Tools we need for Flask/Python</h3>
+<p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system. These commands should be run anytime you have Python/Flask errors on your system.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt upgrade
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip nginx
+<span class="nv">$ </span><span class="nb">sudo </span>pip3 <span class="nb">install </span>virtualenv
+</code></pre></div></div>
+
+<h3 id="clone-and-change-directory-to-where-project-is-stored-on-ec2">Clone and change directory to where project is stored on EC2</h3>
+<p>This command move your Web Application code onto you EC2 cloud computer.The sample GithUb HTTPs Link is demonstration is: https://github.com/nighthawkcoders/flask_portfolio.git.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span>
+<span class="nv">$ </span>git clone https://github.com/nighthawkcoders/flask_portfolio.git
+<span class="nv">$ </span><span class="nb">cd </span>flask_portfolio
+</code></pre></div></div>
+
+<h3 id="test-run-your-project">Test run your project</h3>
+<p>These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio
+<span class="nv">$ </span>virtualenv <span class="nt">-p</span> /usr/bin/python3 webapp
+<span class="nv">$ </span><span class="nb">source </span>webapp/bin/activate
+<span class="nv">$ </span>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+<span class="nv">$ </span>python main.py
+</code></pre></div></div>
+
+<ul>
+  <li>If you get a result that looks like the below, your requirements.txt needs work.  In this instance, I would need ot add flask to the requirements.txt.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>webapp<span class="o">)</span> ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>python main.py
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+File <span class="s2">"main.py"</span>, line 2, <span class="k">in</span> &lt;module&gt;
+  from flask import Flask, render_template
+ModuleNotFoundError: No module named <span class="s1">'flask'</span>
+<span class="o">(</span>webapp<span class="o">)</span> ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>
+</code></pre></div>    </div>
+  </li>
+  <li>A successful result will look like the following.  At this point we will type “ctrl+c” and then at prompt “deactivate”, as we will now build and run a Docker File to deploy in more automated fashion.
+```bash
+(webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ python main.py</li>
+  <li>Serving Flask app ‘main’ (lazy loading)</li>
+  <li>Environment: production
+WARNING: This is a development server. Do not use it in a production deployment.
+Use a production WSGI server instead.</li>
+  <li>Debug mode: on</li>
+  <li>Running on http://127.0.0.1:5000 (Press CTRL+C to quit)</li>
+  <li>Restarting with stat</li>
+  <li>Debugger is active!</li>
+  <li>Debugger PIN: 710-199-540
+```</li>
+</ul>
+
+<h3 id="create-dockerfile-to-use-docker-build">Create dockerfile to use docker build</h3>
+<ul>
+  <li>edit Dockerfile <code class="language-plaintext highlighter-rouge">$ sudo nano Dockerfile</code>, add lines:
+    <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># syntax=docker/dockerfile:1</span>
+<span class="k">FROM</span><span class="s"> openjdk:16-alpine3.13</span>
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+<span class="k">RUN </span>apk update <span class="o">&amp;&amp;</span> apk upgrade <span class="o">&amp;&amp;</span> <span class="se">\
+</span>  apk add <span class="nt">--no-cache</span> git 
+<span class="k">RUN </span>git clone https://github.com/nighthawkcoders/spring_portfolio.git /app
+<span class="k">RUN </span>./mvnw package
+<span class="k">CMD</span><span class="s"> ["java", "-jar", "target/spring-0.0.1-SNAPSHOT.jar"]</span>
+<span class="k">EXPOSE</span><span class="s"> 8080</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Here’s what these lines mean:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge"># syntax=docker/dockerfile:1</code>: This tells docker which syntax you want to use</li>
+      <li><code class="language-plaintext highlighter-rouge">FROM openjdk:16-alpine3.13</code>: imports openjdk so that you can actually run java stuff</li>
+      <li><code class="language-plaintext highlighter-rouge">WORKDIR /app</code>: Sets the directory to /app</li>
+      <li><code class="language-plaintext highlighter-rouge">COPY .mvn/ .mvn</code> and <code class="language-plaintext highlighter-rouge">COPY mvnw pom.xml ./</code>: Copy all necessary files into running directory</li>
+      <li><code class="language-plaintext highlighter-rouge">RUN ./mvnw dependency:go-offline</code>: Run script</li>
+      <li><code class="language-plaintext highlighter-rouge">COPY src ./src</code>: Copy source code</li>
+      <li><code class="language-plaintext highlighter-rouge">CMD ["./mvnw", "spring-boot:run"]</code>: Run ./mvnw spring-boot:run</li>
+      <li><code class="language-plaintext highlighter-rouge">EXPOSE 8082</code>: Set to use port 8082</li>
+    </ul>
+  </li>
+  <li>Create a .dockerignore file in the same directory as the Dockerfile <code class="language-plaintext highlighter-rouge">sudo nano .dockerignore</code> add to file:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target
+</code></pre></div>    </div>
+  </li>
+  <li>Build image
+    <ul>
+      <li>In the same directory as the Dockerfile run the following command to create a image that can be used for running with the tag java-docker:latest <code class="language-plaintext highlighter-rouge">$ docker build --tag java-docker .</code></li>
+      <li>
+        <p>Create a new image with a tag of javak-docker:v1.0.0 based on java-docker:latest: <code class="language-plaintext highlighter-rouge">$ docker tag java-docker:latest java-docker:v1.0.0</code></p>
+
+        <ul>
+          <li>If you need to remove a tag, run: <code class="language-plaintext highlighter-rouge">$ docker rmi java-docker:v1.0.0</code></li>
+        </ul>
+      </li>
+      <li>To view images: <code class="language-plaintext highlighter-rouge">$ docker images</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="run-the-imagestart-a-container">Run the image/start a container</h3>
+<ul>
+  <li>run java-docker:v1.0.0 image in detached mode so it’s running in the
+background with the port as 80
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker run <span class="nt">-d</span> <span class="nt">-p</span> 8085:8080 java-backend:v1.0.0
+</code></pre></div>    </div>
+  </li>
+  <li>Check if it works
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">--request</span> GET <span class="nt">--url</span> http://localhost:8085 
+</code></pre></div>    </div>
+  </li>
+  <li>List containers/running images
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker ps
+</code></pre></div>    </div>
+  </li>
+  <li>At this point, we will stop and remove container as we will do this command via docker-compose:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ docker stop [container name]
+$ docker rm [container name]
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="create-docker-compose-file-to-do-some-of-the-steps-above-automatically">Create docker-compose file to do some of the steps above automatically</h3>
+<ul>
+  <li>edit docker-compose.yml <code class="language-plaintext highlighter-rouge">$ sudo nano docker-compose.yml</code>, add lines:</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="na">web</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">java_springv1</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8085:8080"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">persistent_volume:/app/volumes</span>
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">persistent_volume</span><span class="pi">:</span>
+    <span class="na">driver</span><span class="pi">:</span> <span class="s">local</span>
+    <span class="na">driver_opts</span><span class="pi">:</span>
+      <span class="na">o</span><span class="pi">:</span> <span class="s">bind</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">none</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/home/ubuntu/spring_portfolio/volumes</span>
+</code></pre></div></div>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="nighthawkcoders"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="NighthawkCoding"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="YouTube"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

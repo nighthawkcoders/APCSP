@@ -1,7 +1,8 @@
 ---
 toc: true
+comments: true
 layout: post
-description: 
+description: A web application without data is typically simple and not very useful.  Think of all the fields in Computer Science that are related to data.
 categories: [tri1]
 title: Data Abstraction Sprint
 ---

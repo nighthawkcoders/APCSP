@@ -1,7 +1,8 @@
 ---
 toc: true
+comments: true
 layout: post
-description: 
+description: Creative development is a key skill that Teachers will be looking at through the year.  The development process requires inspiration, research, and go both inside and outside the box.
 categories: [tri1]
 title: Creative Development Sprint
 ---

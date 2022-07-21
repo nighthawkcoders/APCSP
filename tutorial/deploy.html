@@ -70,7 +70,45 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h2 id="deployment-overview">Deployment Overview</h2>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Deployment Guide</h1><p class="page-description">Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-20T00:00:00-05:00" itemprop="datePublished">
+        Jul 20, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/APCSP/categories/#pbl">pbl</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#deployment-overview">Deployment Overview</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#keyvalues-required-as-you-go-through-these-procedures">Key/Values required as you go through these procedures</a></li>
+<li class="toc-entry toc-h3"><a href="#amazon-web-services-aws-electric-cloud-compute-ec2-setup">Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</a></li>
+<li class="toc-entry toc-h3"><a href="#make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">Make sure your machine is up to date with Tools we need for Flask/Python</a></li>
+<li class="toc-entry toc-h3"><a href="#clone-and-change-directory-to-where-project-is-stored-on-ec2">Clone and change directory to where project is stored on EC2</a></li>
+<li class="toc-entry toc-h3"><a href="#test-run-your-project">Test run your project</a></li>
+<li class="toc-entry toc-h3"><a href="#create-dockerfile">Create Dockerfile</a></li>
+<li class="toc-entry toc-h3"><a href="#create-docker-compose-file">Create docker-compose file</a></li>
+</ul>
+</li>
+</ul><h2 id="deployment-overview">
+<a class="anchor" href="#deployment-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment Overview</h2>
 <p>Deploying a Web Application enables a Server to serve the components of a Web Application to clients. Deployment is the tools and service used to enable the Web Application on the Internet.  The process of can use many different cloud servers, as well as choice in tools and services.</p>
 
 <ul>
@@ -82,7 +120,8 @@ window.onload = wrap_img;
   <li>DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to our Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the service used to register the nighthawkcodingsociety.com domain.</li>
 </ul>
 
-<h3 id="keyvalues-required-as-you-go-through-these-procedures">Key/Values required as you go through these procedures</h3>
+<h3 id="keyvalues-required-as-you-go-through-these-procedures">
+<a class="anchor" href="#keyvalues-required-as-you-go-through-these-procedures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key/Values required as you go through these procedures</h3>
 <p>Some of these values you should obtain before you start.  Others you will obtain as you go through the process.</p>
 
 <ul>
@@ -93,7 +132,8 @@ window.onload = wrap_img;
   <li>DNS Name:</li>
 </ul>
 
-<h3 id="amazon-web-services-aws-electric-cloud-compute-ec2-setup">Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</h3>
+<h3 id="amazon-web-services-aws-electric-cloud-compute-ec2-setup">
+<a class="anchor" href="#amazon-web-services-aws-electric-cloud-compute-ec2-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</h3>
 <p>Preparing and AWS EC2 instance is the process of creating a cloud computer.  This process starts by logging into your AWS IAM user, searching for EC2.</p>
 <ul>
   <li>To get started, launch a new AWS EC2 instance to learn process and understand how to work with Linux. here are some key considerations.
@@ -108,7 +148,8 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">Make sure your machine is up to date with Tools we need for Flask/Python</h3>
+<h3 id="make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython">
+<a class="anchor" href="#make-sure-your-machine-is-up-to-date-with-tools-we-need-for-flaskpython" aria-hidden="true"><span class="octicon octicon-link"></span></a>Make sure your machine is up to date with Tools we need for Flask/Python</h3>
 <p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt upgrade
@@ -116,7 +157,8 @@ window.onload = wrap_img;
 <span class="nv">$ </span><span class="nb">sudo </span>pip3 <span class="nb">install </span>virtualenv
 </code></pre></div></div>
 
-<h3 id="clone-and-change-directory-to-where-project-is-stored-on-ec2">Clone and change directory to where project is stored on EC2</h3>
+<h3 id="clone-and-change-directory-to-where-project-is-stored-on-ec2">
+<a class="anchor" href="#clone-and-change-directory-to-where-project-is-stored-on-ec2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone and change directory to where project is stored on EC2</h3>
 <p>This command move your Web Application code onto you EC2 cloud computer.The sample GithUb HTTPs Link is demonstration is: https://github.com/nighthawkcoders/flask_portfolio.git.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span>
@@ -124,7 +166,8 @@ window.onload = wrap_img;
 <span class="nv">$ </span><span class="nb">cd </span>flask_portfolio
 </code></pre></div></div>
 
-<h3 id="test-run-your-project">Test run your project</h3>
+<h3 id="test-run-your-project">
+<a class="anchor" href="#test-run-your-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test run your project</h3>
 <p>These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio
@@ -162,15 +205,18 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
  <span class="k">*</span> Debugger PIN: 710-199-540
 </code></pre></div></div>
 
-<h3 id="create-dockerfile">Create Dockerfile</h3>
+<h3 id="create-dockerfile">
+<a class="anchor" href="#create-dockerfile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Dockerfile</h3>
 <p>A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!</p>
 <ul>
   <li>Edit the Dockerfile
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano Dockerfile
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano Dockerfile
 </code></pre></div>    </div>
   </li>
   <li>Insert the Dockerfile commands, note that they are similar to Bash commands performed earlier.  Follow prompts on screen to save file when complete, look for Key/Value (GitHub HTTPS link) that requires change for your project.
-    <div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> docker.io/python:3.9</span>
+    <div class="language-dockerfile highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> docker.io/python:3.9</span>
 <span class="k">WORKDIR</span><span class="s"> /app</span>
 <span class="c"># --- Update environment and install python and pip ---</span>
 <span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="se">\
@@ -189,16 +235,19 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
   </li>
 </ul>
 
-<h3 id="create-docker-compose-file">Create docker-compose file</h3>
+<h3 id="create-docker-compose-file">
+<a class="anchor" href="#create-docker-compose-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create docker-compose file</h3>
 <p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.</p>
 
 <ul>
   <li>Edit docker-compose.yml
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano docker-compose.yml
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano docker-compose.yml
 </code></pre></div>    </div>
   </li>
   <li>Insert the docker-compose.yml Keys/Values.
-    <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
+    <div class="language-yml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
 <span class="na">services</span><span class="pi">:</span>
 <span class="na">web</span><span class="pi">:</span>
   <span class="na">image</span><span class="pi">:</span> <span class="s">pythonv1</span>
@@ -218,6 +267,9 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
   </li>
 </ul>
 
+
+  </div><a class="u-url" href="/APCSP/tutorial/deploy" hidden></a>
+</article>
 
       </div>
     </main><footer class="site-footer h-card">

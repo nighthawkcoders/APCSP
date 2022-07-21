@@ -1,7 +1,7 @@
 ---
 title: Deployment Guide
 layout: default
-comment: true
+toc: true
 description: Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx 
 permalink: /tutorial/deploy
 categories: [pbl]

@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>PBL - Bash Tutorial | APCSP</title>
+<title>Bash Tutorial | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="PBL - Bash Tutorial" />
+<meta property="og:title" content="Bash Tutorial" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A brief overview of Bash, on your way to becoming a Linux expert. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, users will run a “terminal” through the Desktop, VS Code or activate “console” while on a cloud computer like AWS." />
 <meta property="og:description" content="A brief overview of Bash, on your way to becoming a Linux expert. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, users will run a “terminal” through the Desktop, VS Code or activate “console” while on a cloud computer like AWS." />
@@ -16,9 +16,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-07-19T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="PBL - Bash Tutorial" />
+<meta property="twitter:title" content="Bash Tutorial" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-19T00:00:00-05:00","datePublished":"2022-07-19T00:00:00-05:00","description":"A brief overview of Bash, on your way to becoming a Linux expert. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, users will run a “terminal” through the Desktop, VS Code or activate “console” while on a cloud computer like AWS.","headline":"PBL - Bash Tutorial","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/tutorial/bash"},"url":"https://nighthawkcoders.github.io/APCSP/tutorial/bash"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-19T00:00:00-05:00","datePublished":"2022-07-19T00:00:00-05:00","description":"A brief overview of Bash, on your way to becoming a Linux expert. When a computer boots up, a kernel (MacOS, Windows, Linux) is started. This kernel provides a shell that allows user to interact with a most basic set of commands. Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process. To activate the shell directly, users will run a “terminal” through the Desktop, VS Code or activate “console” while on a cloud computer like AWS.","headline":"Bash Tutorial","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/tutorial/bash"},"url":"https://nighthawkcoders.github.io/APCSP/tutorial/bash"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,7 +73,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">PBL - Bash Tutorial</h1><p class="page-description">A brief overview of Bash, on your way to becoming a Linux expert.  When a computer boots up, a kernel (MacOS, Windows, Linux) is started.  This kernel provides a shell that allows user to interact with a most basic set of commands.  Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process.  To activate the shell directly, users will run a "terminal" through the Desktop, VS Code or activate "console" while on a cloud computer like AWS.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-19T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Bash Tutorial</h1><p class="page-description">A brief overview of Bash, on your way to becoming a Linux expert.  When a computer boots up, a kernel (MacOS, Windows, Linux) is started.  This kernel provides a shell that allows user to interact with a most basic set of commands.  Typically, the casual user will not interact with the shell as a Desktop User Interface is started by the computer boot up process.  To activate the shell directly, users will run a "terminal" through the Desktop, VS Code or activate "console" while on a cloud computer like AWS.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-07-19T00:00:00-05:00" itemprop="datePublished">
         Jul 19, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -123,7 +123,16 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Prerequisites-for-Bash-on-Jupyter">Prerequisites for Bash on Jupyter </a></li>
+<li class="toc-entry toc-h2"><a href="#Files-and-Directories">Files and Directories </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#In-Terminal-on-MacOS">In Terminal on MacOS </a></li>
+<li class="toc-entry toc-h3"><a href="#Deployment-and-GitHub">Deployment and GitHub </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -132,23 +141,33 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Prerequisites-for-Bash-on-Jupyter">Prerequisites for Bash on Jupyter<a class="anchor-link" href="#Prerequisites-for-Bash-on-Jupyter"> </a></h2><blockquote><p>Install the Bash Kernel for Jupyter notebooks.  I used pip3 and python3 and both were in my path.  This allowed me to build this tutorial.</p>
+<h2 id="Prerequisites-for-Bash-on-Jupyter">
+<a class="anchor" href="#Prerequisites-for-Bash-on-Jupyter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites for Bash on Jupyter<a class="anchor-link" href="#Prerequisites-for-Bash-on-Jupyter"> </a>
+</h2>
+<blockquote>
+<p>Install the Bash Kernel for Jupyter notebooks.  I used pip3 and python3 and both were in my path.  This allowed me to build this tutorial.</p>
 </blockquote>
 <ul>
 <li>pip install bash_kernel</li>
 <li>python -m bash_kernel.install</li>
 </ul>
 <p>Selecting a kernel should now have bash in options.
-<img src="/APCSP/images/copied_from_nb/images/kernels.png" alt="" /></p>
+<img src="/APCSP/images/copied_from_nb/images/kernels.png" alt=""></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Files-and-Directories">Files and Directories<a class="anchor-link" href="#Files-and-Directories"> </a></h2><blockquote><p>All computers contain files and directories.  Using the bash shell you will see some commands that show and interact with files and directories.</p>
+<h2 id="Files-and-Directories">
+<a class="anchor" href="#Files-and-Directories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Files and Directories<a class="anchor-link" href="#Files-and-Directories"> </a>
+</h2>
+<blockquote>
+<p>All computers contain files and directories.  Using the bash shell you will see some commands that show and interact with files and directories.</p>
 </blockquote>
 <ul>
 <li>"ls" lists computer files in Unix and Unix-like operating systems</li>
@@ -169,7 +188,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;print my project directory (~) and show contents in directory&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"print my project directory (~) and show contents in directory"</span>
 <span class="nb">cd</span> ~/vsProjects/APCSP/_notebooks/
 <span class="nb">pwd</span>
 ls
@@ -207,12 +226,12 @@ ls
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;change directory, print working directory, list files&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"change directory, print working directory, list files"</span>
 <span class="nb">cd</span> images
 <span class="nb">pwd</span>
 ls
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;change directory back one level, print working directory, list files in long format&quot;</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"change directory back one level, print working directory, list files in long format"</span>
 <span class="nb">cd</span> ..
 <span class="nb">pwd</span>
 ls -l
@@ -258,8 +277,8 @@ drwxr-xr-x  3 johnmortensen  staff     96 Jul 19 17:31 images
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;show the contents of README.md&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"show the contents of README.md"</span>
+<span class="nb">echo</span> <span class="s2">""</span>
 
 cat README.md
 </pre></div>
@@ -306,8 +325,8 @@ See [Writing Blog Posts With Jupyter](https://github.com/fastai/fastpages#writin
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;show the shell environment variables&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"show the shell environment variables"</span>
+<span class="nb">echo</span> <span class="s2">""</span>
 
 env
 </pre></div>
@@ -345,9 +364,14 @@ _=/usr/bin/env
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="In-Terminal-on-MacOS">In Terminal on MacOS<a class="anchor-link" href="#In-Terminal-on-MacOS"> </a></h3><blockquote><p>Practice pulling code from git to your machine.  After you do this you should be able to navigate to the files.  As of this writing git clone did not work well in jupyter bash kernel.</p>
+<h3 id="In-Terminal-on-MacOS">
+<a class="anchor" href="#In-Terminal-on-MacOS" aria-hidden="true"><span class="octicon octicon-link"></span></a>In Terminal on MacOS<a class="anchor-link" href="#In-Terminal-on-MacOS"> </a>
+</h3>
+<blockquote>
+<p>Practice pulling code from git to your machine.  After you do this you should be able to navigate to the files.  As of this writing git clone did not work well in jupyter bash kernel.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> /Users/johnmortensen/Downloads
 git clone https://github.com/nighthawkcoders/flask_portfolio.git
@@ -363,17 +387,17 @@ git clone https://github.com/nighthawkcoders/flask_portfolio.git
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;navigate to downloads, then navigate to area wwhere files were cloned&quot;</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"navigate to downloads, then navigate to area wwhere files were cloned"</span>
 <span class="nb">cd</span> ~/Downloads
 <span class="nb">cd</span> flask_portfolio
 <span class="nb">pwd</span>
 
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;list files pulled from github&quot;</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"list files pulled from github"</span>
 ls
 
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;list with hidden files pulled from github&quot;</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"list with hidden files pulled from github"</span>
 ls -a
 </pre></div>
 
@@ -408,9 +432,14 @@ list with hidden files pulled from github
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Deployment-and-GitHub">Deployment and GitHub<a class="anchor-link" href="#Deployment-and-GitHub"> </a></h3><blockquote><p>GitHub is NOT Only used to exchange code between individuals, it IS used to exchange code through deployment.</p>
+<h3 id="Deployment-and-GitHub">
+<a class="anchor" href="#Deployment-and-GitHub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment and GitHub<a class="anchor-link" href="#Deployment-and-GitHub"> </a>
+</h3>
+<blockquote>
+<p>GitHub is NOT Only used to exchange code between individuals, it IS used to exchange code through deployment.</p>
 </blockquote>
 <ul>
 <li>"github clone" sets up a director of files</li>
@@ -432,13 +461,13 @@ list with hidden files pulled from github
 <div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> ~/Downloads
 <span class="nb">cd</span> flask_portfolio
 
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;show the secrets of .git&quot;</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"show the secrets of .git"</span>
 <span class="nb">cd</span> .git
 ls -l
 
-<span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;look at config file&quot;</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"look at config file"</span>
 cat config
 </pre></div>
 
@@ -475,10 +504,10 @@ look at config file
 	logallrefupdates = true
 	ignorecase = true
 	precomposeunicode = true
-[remote &#34;origin&#34;]
+[remote "origin"]
 	url = https://github.com/nighthawkcoders/flask_portfolio.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
-[branch &#34;main&#34;]
+[branch "main"]
 	remote = origin
 	merge = refs/heads/main
 </pre>
@@ -491,9 +520,13 @@ look at config file
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h2><p>Learning how to run this demo on your machine will require some setup.</p>
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+<p>Learning how to run this demo on your machine will require some setup.</p>
 <ul>
 <li>"mkdir" is a command that allows you to make a new directory.  To run this demo you would need to:<ul>
 <li>mkdir ~/vsProjects</li>
@@ -510,7 +543,15 @@ look at config file
 
 
 
-  </div><a class="u-url" href="/APCSP/tutorial/bash" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/tutorial/bash" hidden></a>
 </article>
 
       </div>

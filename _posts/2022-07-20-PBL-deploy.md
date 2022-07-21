@@ -14,7 +14,7 @@ Deploying a Web Application enables a Server to serve the components of a Web Ap
 - EC2: Amazon Web Services is a cloud computing platform that the PUSD district has provided for us to serve our Web Application.
 - GitHub: At this point in time, we should be aware that we are using GitHub is an open platform to share our Web Application code on the Internet.
 - Docker and docker-compose: To host a Web Application you need to prepare an environment that contains the Web Application code and all the dependencies (requirements.txt for Python)  Docker is an open platform for developing, shipping, and running applications.
-- Nginx: To find a Web Application on a server, there needs to be a process to listen for the Web request and direct it to the Web Application.  Nginx is an open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.
+- Nginx: To find a Web Application on a server, there needs to be a process to listen for the Web request and direct it to the Web Application.  Nginx is an open source software for web serving, reverse proxy, caching, load balancing, media streaming, and more.
 - Certbot: Web traffic on internet is reliably served over Secure Hyper Text Transfer Protocol (https).  Certbot is a free, open source software tool for automatically using Let's Encrypt certifications 
 - DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to our Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the service used to register the nighthawkcodingsociety.com domain.
 

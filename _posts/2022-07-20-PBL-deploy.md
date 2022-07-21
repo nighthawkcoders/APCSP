@@ -3,7 +3,7 @@ title: Deployment Guide
 layout: default
 comment: true
 description: Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx 
-permalink: /tutorial/deployment
+permalink: /tutorial/deploy
 categories: [pbl]
 tags: [aws, ec2. docker, nginx, certbot, dns]
 ---
@@ -66,7 +66,8 @@ $ pip install -r requirements.txt
 $ python main.py
 ```
 
-* If you get a result that looks like the below, your requirements.txt needs work.  In this instance, I would need ot add flask to the requirements.txt.
+* Failed result.  If you get a result that looks like the below, your requirements.txt needs work.  In this instance, I would need ot add flask to the requirements.txt.
+
 ```bash
 (webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ python main.py
 Traceback (most recent call last):
@@ -76,7 +77,8 @@ ModuleNotFoundError: No module named 'flask'
 (webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ 
 ```
 
-* A successful result will look like the following.  At this point we will type "ctrl+c" and then at prompt "deactivate", as we will now build and run a Docker File to deploy in more automated fashion.
+* Correct result. A successful result will look like the following.  At this point we will type "ctrl+c" and then at prompt "deactivate", as we will now build and run a Docker File to deploy in more automated fashion.
+
 ```bash
 (webapp) ubuntu@ip-172-31-1-138:~/flask_portfolio$ python main.py
  * Serving Flask app 'main' (lazy loading)

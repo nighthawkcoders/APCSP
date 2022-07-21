@@ -20,7 +20,7 @@ Deploying a Web Application enables a Server to serve the components of a Web Ap
 - DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to our Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the service used to register the nighthawkcodingsociety.com domain.
 
 ### Key/Values required as you go through these procedures
-Some of these values you should obtain before you start.  Others you will obtain as you go through the process.
+Listed are Keys, you need to obtain Values.  It is important that you recognize the sample Values as you work through these procedures, then replace them with the Values that are specific to your use case.
 
 - GitHub HTTPS link:
 - IAM user:

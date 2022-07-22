@@ -27,6 +27,10 @@ Listed are Keys, you need to obtain Values.  It is important that you recognize 
 - EC2 name:
 - EC2 Public IPs:
 - DNS Name:
+- Docker Port:
+- docker-compose Ports:
+- docker-compose Image:
+
 
 ### Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup
 Preparing and AWS EC2 instance is the process of creating a cloud computer.  This process starts by logging into your AWS IAM user, searching for EC2.
@@ -121,8 +125,9 @@ CMD [ "gunicorn", "main:app" ]
 
 
 ### Create docker-compose file share Web Service
-A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.
+A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.
 
+Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.
 * Edit docker-compose.yml
 ```bash
 $ nano docker-compose.yml
@@ -132,19 +137,87 @@ $ nano docker-compose.yml
 ```yml
 version: '3'
 services:
-  web:
-    image: pythonv1
-    build: .
-    ports:
-      - "8085:8080"
-    volumes:
-      - persistent_volume:/app/volumes
+        web:
+                image: flask_port_v1
+                build: .
+                ports:
+                        - "8086:8080"
+                volumes:
+                        - persistent_volume:/app/volumes
 volumes:
   persistent_volume:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/ubuntu/spring_portfolio/volumes
+      device: /home/ubuntu/flask_portfolio/volumes
+```
+
+### Running Docker using docker-compose.yml
+At this point, it is best to review complete files on GitHub and for Docker and docker-compose: https://github.com/nighthawkcoders/flask_portfolio.   Review the Key/Values mentioned in this document.  Make sure your Docker and docker-compose files a personalized to your project.
+
+* Make sure you are in project directory
+```bash
+$ cd ~/flask_portfolio/
+```
+
+* Run docker-compose
+```bash
+$ docker-compose up -d
+```
+
+* Output from docker-compose.  When running this command, docker-compose will run all the Docker steps and build a Web Application running in a Docker container, a virtual environment.
+
+```bash
+Creating network "flask_portfolio_default" with the default driver
+Building web
+Step 1/9 : FROM docker.io/python:3.9
+ ---> d0ce03c9330c
+Step 2/9 : WORKDIR /app
+
+.... LOTS of STEPs and OUTPUT ...
+
+Successfully built 68d68ad9699b
+Successfully tagged flask_port_v1:latest
+WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating flask_portfolio_web_1 ... done
+```
+
+### Behind the Scenes
+Here is a look at some of the commands behind the scenes.  None of these are required to get things working, but show the results of the Docker and docker-compose.yml files and commands.
+
+- docker-compose ps   The running Web process, "ps" is a standard linux command or option that provides for viewing information related with the processes on a system.  Look at headings in relation to outputs.
+```bash
+ ubuntu@ip-172-31-1-138:~/flask_portfolio$ docker-compose ps
+        Name                 Command        State                    Ports                  
+--------------------------------------------------------------------------------------------
+flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086->8080/tcp,:::8086->8080/tcp
+```
+
+- docker ps   A more comprehensive list of all the docker processes.
+```bash
+buntu@ip-172-31-1-138:~/flask_portfolio$ docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+749a93bc11ce   flask_port_v1   "gunicorn main:app"      45 minutes ago   Up 45 minutes   0.0.0.0:8086->8080/tcp, :::8086->8080/tcp   flask_portfolio_web_1
+89155782b853   java_springv1   "java -jar target/sp…"   6 days ago       Up 6 days       0.0.0.0:8085->8080/tcp, :::8085->8080/tcp   spring_portfolio_web_1
+9415d6397d2e   python_cspv1    "gunicorn main:app"      2 weeks ago      Up 2 weeks      0.0.0.0:8082->8080/tcp, :::8082->8080/tcp   nighthawk_csp_web_1
+4bf324458bf6   python_laxv1    "gunicorn main:app"      5 weeks ago      Up 5 weeks      0.0.0.0:8084->8080/tcp, :::8084->8080/tcp   lax_web_1
+7a6dff6425e9   python_ctev1    "gunicorn main:app"      5 weeks ago      Up 5 weeks      0.0.0.0:8083->8080/tcp, :::8083->8080/tcp   cte_web_1
+abd77b8e77af   java_csav2      "java -jar target/cs…"   5 weeks ago      Up 5 weeks      0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   nighthawk_csa_web_1
+```
+
+- docker images   This lists all of the docker images, or containers, that are used to serve the process shown above.
+```bash
+ubuntu@ip-172-31-1-138:~/flask_portfolio$ docker images
+REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
+flask_port_v1   latest          68d68ad9699b   51 minutes ago   1.01GB
+java_springv1   latest          e85a584b1836   6 days ago       523MB
+python_laxv1    latest          713c84a30d3b   5 weeks ago      1.16GB
+python_ctev1    latest          1608eaee06c7   5 weeks ago      1.18GB
+python_cspv1    latest          b9bb27be863b   5 weeks ago      1.12GB
+java_csav2      latest          4055a9fd5ea7   5 weeks ago      570MB
+python          3.9             d0ce03c9330c   7 weeks ago      915MB
+alpine          latest          e66264b98777   8 weeks ago      5.53MB
+openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 ```
 

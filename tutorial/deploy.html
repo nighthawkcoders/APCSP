@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -106,6 +106,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#create-dockerfile-to-run-web-service">Create Dockerfile to run Web Service</a></li>
 <li class="toc-entry toc-h3"><a href="#create-docker-compose-file-share-web-service">Create docker-compose file share Web Service</a></li>
 <li class="toc-entry toc-h3"><a href="#running-docker-using-docker-composeyml">Running Docker using docker-compose.yml</a></li>
+<li class="toc-entry toc-h3"><a href="#behind-the-scenes">Behind the Scenes</a></li>
 </ul>
 </li>
 </ul><h2 id="deployment-overview">
@@ -303,6 +304,48 @@ Successfully tagged flask_port_v1:latest
 WARNING: Image <span class="k">for </span>service web was built because it did not already exist. To rebuild this image you must use <span class="sb">`</span>docker-compose build<span class="sb">`</span> or <span class="sb">`</span>docker-compose up <span class="nt">--build</span><span class="sb">`</span><span class="nb">.</span>
 Creating flask_portfolio_web_1 ... <span class="k">done</span>
 </code></pre></div></div>
+
+<h3 id="behind-the-scenes">
+<a class="anchor" href="#behind-the-scenes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Behind the Scenes</h3>
+<p>Here is a look at some of the commands behind the scenes.  None of these are required to get things working, but show the results of the Docker and docker-compose.yml files and commands.</p>
+
+<ul>
+  <li>docker-compose ps   The running Web process, “ps” is a standard linux command or option that provides for viewing information related with the processes on a system.  Look at headings in relation to outputs.
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>docker-compose ps
+      Name                 Command        State                    Ports                  
+<span class="nt">--------------------------------------------------------------------------------------------</span>
+flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086-&gt;8080/tcp,:::8086-&gt;8080/tcp
+</code></pre></div>    </div>
+  </li>
+  <li>docker ps   A more comprehensive list of all the docker processes.
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>buntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+749a93bc11ce   flask_port_v1   <span class="s2">"gunicorn main:app"</span>      45 minutes ago   Up 45 minutes   0.0.0.0:8086-&gt;8080/tcp, :::8086-&gt;8080/tcp   flask_portfolio_web_1
+89155782b853   java_springv1   <span class="s2">"java -jar target/sp…"</span>   6 days ago       Up 6 days       0.0.0.0:8085-&gt;8080/tcp, :::8085-&gt;8080/tcp   spring_portfolio_web_1
+9415d6397d2e   python_cspv1    <span class="s2">"gunicorn main:app"</span>      2 weeks ago      Up 2 weeks      0.0.0.0:8082-&gt;8080/tcp, :::8082-&gt;8080/tcp   nighthawk_csp_web_1
+4bf324458bf6   python_laxv1    <span class="s2">"gunicorn main:app"</span>      5 weeks ago      Up 5 weeks      0.0.0.0:8084-&gt;8080/tcp, :::8084-&gt;8080/tcp   lax_web_1
+7a6dff6425e9   python_ctev1    <span class="s2">"gunicorn main:app"</span>      5 weeks ago      Up 5 weeks      0.0.0.0:8083-&gt;8080/tcp, :::8083-&gt;8080/tcp   cte_web_1
+abd77b8e77af   java_csav2      <span class="s2">"java -jar target/cs…"</span>   5 weeks ago      Up 5 weeks      0.0.0.0:8081-&gt;8080/tcp, :::8081-&gt;8080/tcp   nighthawk_csa_web_1
+</code></pre></div>    </div>
+  </li>
+  <li>docker images   This lists all of the docker images, or containers, that are used to serve the process shown above.
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>docker images
+REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
+flask_port_v1   latest          68d68ad9699b   51 minutes ago   1.01GB
+java_springv1   latest          e85a584b1836   6 days ago       523MB
+python_laxv1    latest          713c84a30d3b   5 weeks ago      1.16GB
+python_ctev1    latest          1608eaee06c7   5 weeks ago      1.18GB
+python_cspv1    latest          b9bb27be863b   5 weeks ago      1.12GB
+java_csav2      latest          4055a9fd5ea7   5 weeks ago      570MB
+python          3.9             d0ce03c9330c   7 weeks ago      915MB
+alpine          latest          e66264b98777   8 weeks ago      5.53MB
+openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 
   </div><!-- from https://github.com/utterance/utterances -->

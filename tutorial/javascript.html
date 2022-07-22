@@ -519,7 +519,8 @@ string ; {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
     <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Bria"</span><span class="p">,</span> <span class="s2">"B-G101"</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
     <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Allie"</span><span class="p">,</span> <span class="s2">"xiaoa0"</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
     <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Tigran"</span><span class="p">,</span> <span class="s2">"Tigran7"</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
-    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Rebecca"</span><span class="p">,</span> <span class="s2">"Rebecca-123"</span><span class="p">,</span> <span class="mf">2023</span><span class="p">)</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Rebecca"</span><span class="p">,</span> <span class="s2">"Rebecca-123"</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Vidhi"</span><span class="p">,</span> <span class="s2">"unknown"</span><span class="p">,</span> <span class="mf">2024</span><span class="p">)</span>
 <span class="p">];</span>
 
 <span class="c1">// define a classroom and build Classroom objects and json</span>
@@ -592,6 +593,12 @@ string ; {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
     ghID: 'Rebecca-123',
     classOf: 2023,
     role: 'Student'
+  },
+  Person {
+    name: 'Vidhi',
+    ghID: 'unknown',
+    classOf: 2024,
+    role: 'Student'
   }
 ]
 string ; Mr M
@@ -617,8 +624,8 @@ object ; { name: 'Mr M', ghID: 'jm1021', classOf: 1977, role: 'Teacher' }
 <ul>
 <li>JavaScript in the _toHTML method is broken into three parts...<ul>
 <li>Style part is building CSS inline formatting</li>
-<li>Body part is constructing the Table Rows (tr), Table Headings (th), and Table Data (td).  The table data is obtained from a Classroom object.  The JavaScript for loop allows the construction of a new row of data for each index in the Array.</li>
-<li>Return part create the HTML fragment for rendering</li>
+<li>Body part is constructing the Table Rows (tr), Table Headings (th), and Table Data (td).  The table data is obtained from a Classroom object.  The JavaScript for loop allows the construction of a new row of data for each person object in the Array.</li>
+<li>Return part creates the HTML fragment for rendering</li>
 </ul>
 </li>
 <li>The last line in the example <mark>$$.html is IJavaScript HTML interpreter</mark> and by passing the parameter of the _toHTML method it obtains HTML to render</li>
@@ -654,14 +661,14 @@ object ; { name: 'Mr M', ghID: 'jm1021', classOf: 1977, role: 'Teacher' }
   <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Role"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
   <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
   <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">in</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// tr for each row, a new line</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
     <span class="c1">// td for each column of data</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">ghID</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">classOf</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">ghID</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">classOf</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
     <span class="c1">// tr to end line</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
   <span class="p">}</span>
@@ -738,6 +745,13 @@ object ; { name: 'Mr M', ghID: 'jm1021', classOf: 1977, role: 'Teacher' }
 <td>Rebecca</td>
 <td>Rebecca-123</td>
 <td>2023</td>
+<td>Student</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Vidhi</td>
+<td>unknown</td>
+<td>2024</td>
 <td>Student</td>
 </tr>
 <tr>&lt;/table&gt;&lt;/div&gt;

@@ -27,6 +27,10 @@ Listed are Keys, you need to obtain Values.  It is important that you recognize 
 - EC2 name:
 - EC2 Public IPs:
 - DNS Name:
+- Docker Port:
+- docker-compose Ports:
+- docker-compose Image:
+
 
 ### Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup
 Preparing and AWS EC2 instance is the process of creating a cloud computer.  This process starts by logging into your AWS IAM user, searching for EC2.
@@ -121,8 +125,9 @@ CMD [ "gunicorn", "main:app" ]
 
 
 ### Create docker-compose file share Web Service
-A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.
+A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.
 
+Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.
 * Edit docker-compose.yml
 ```bash
 $ nano docker-compose.yml
@@ -132,19 +137,50 @@ $ nano docker-compose.yml
 ```yml
 version: '3'
 services:
-  web:
-    image: pythonv1
-    build: .
-    ports:
-      - "8085:8080"
-    volumes:
-      - persistent_volume:/app/volumes
+        web:
+                image: flask_port_v1
+                build: .
+                ports:
+                        - "8086:8080"
+                volumes:
+                        - persistent_volume:/app/volumes
 volumes:
   persistent_volume:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /home/ubuntu/spring_portfolio/volumes
+      device: /home/ubuntu/flask_portfolio/volumes
 ```
+
+### Running Docker using docker-compose.yml
+At this point, it is best to review complete files on GitHub and for Docker and docker-compose: https://github.com/nighthawkcoders/flask_portfolio.   Review the Key/Values mentioned in this document.  Make sure your Docker and docker-compose files a personalized to your project.
+
+* Make sure you are in project directory
+```bash
+$ cd ~/flask_portfolio/
+```
+
+* Run docker-compose
+```bash
+$ docker-compose up -d
+```
+
+* Output from docker-compose.  When running this command, docker-compose will run all the Docker steps and build a Web Application running in a Docker container, a virtual environment.
+
+```bash
+Creating network "flask_portfolio_default" with the default driver
+Building web
+Step 1/9 : FROM docker.io/python:3.9
+ ---> d0ce03c9330c
+Step 2/9 : WORKDIR /app
+
+.... LOTS of STEPs and OUTPUT ...
+
+Successfully built 68d68ad9699b
+Successfully tagged flask_port_v1:latest
+WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating flask_portfolio_web_1 ... done
+```
+
 

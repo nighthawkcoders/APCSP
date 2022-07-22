@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -105,6 +105,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#test-web-service">Test Web Service</a></li>
 <li class="toc-entry toc-h3"><a href="#create-dockerfile-to-run-web-service">Create Dockerfile to run Web Service</a></li>
 <li class="toc-entry toc-h3"><a href="#create-docker-compose-file-share-web-service">Create docker-compose file share Web Service</a></li>
+<li class="toc-entry toc-h3"><a href="#running-docker-using-docker-composeyml">Running Docker using docker-compose.yml</a></li>
 </ul>
 </li>
 </ul><h2 id="deployment-overview">
@@ -130,6 +131,9 @@ window.onload = wrap_img;
   <li>EC2 name:</li>
   <li>EC2 Public IPs:</li>
   <li>DNS Name:</li>
+  <li>Docker Port:</li>
+  <li>docker-compose Ports:</li>
+  <li>docker-compose Image:</li>
 </ul>
 
 <h3 id="amazon-web-services-aws-electric-cloud-compute-ec2-setup">
@@ -237,8 +241,9 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 
 <h3 id="create-docker-compose-file-share-web-service">
 <a class="anchor" href="#create-docker-compose-file-share-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create docker-compose file share Web Service</h3>
-<p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file make Linux Port/Docker Port association and exposes persistent data from application to a /volumes location.</p>
+<p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.</p>
 
+<p>Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.</p>
 <ul>
   <li>Edit docker-compose.yml
     <div class="language-bash highlighter-rouge">
@@ -249,23 +254,55 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
     <div class="language-yml highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
 <span class="na">services</span><span class="pi">:</span>
-<span class="na">web</span><span class="pi">:</span>
-  <span class="na">image</span><span class="pi">:</span> <span class="s">pythonv1</span>
-  <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
-  <span class="na">ports</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s2">"</span><span class="s">8085:8080"</span>
-  <span class="na">volumes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">persistent_volume:/app/volumes</span>
+      <span class="na">web</span><span class="pi">:</span>
+              <span class="na">image</span><span class="pi">:</span> <span class="s">flask_port_v1</span>
+              <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
+              <span class="na">ports</span><span class="pi">:</span>
+                      <span class="pi">-</span> <span class="s2">"</span><span class="s">8086:8080"</span>
+              <span class="na">volumes</span><span class="pi">:</span>
+                      <span class="pi">-</span> <span class="s">persistent_volume:/app/volumes</span>
 <span class="na">volumes</span><span class="pi">:</span>
 <span class="na">persistent_volume</span><span class="pi">:</span>
   <span class="na">driver</span><span class="pi">:</span> <span class="s">local</span>
   <span class="na">driver_opts</span><span class="pi">:</span>
     <span class="na">o</span><span class="pi">:</span> <span class="s">bind</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">none</span>
-    <span class="na">device</span><span class="pi">:</span> <span class="s">/home/ubuntu/spring_portfolio/volumes</span>
+    <span class="na">device</span><span class="pi">:</span> <span class="s">/home/ubuntu/flask_portfolio/volumes</span>
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h3 id="running-docker-using-docker-composeyml">
+<a class="anchor" href="#running-docker-using-docker-composeyml" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Docker using docker-compose.yml</h3>
+<p>At this point, it is best to review complete files on GitHub and for Docker and docker-compose: https://github.com/nighthawkcoders/flask_portfolio.   Review the Key/Values mentioned in this document.  Make sure your Docker and docker-compose files a personalized to your project.</p>
+
+<ul>
+  <li>Make sure you are in project directory
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio/
+</code></pre></div>    </div>
+  </li>
+  <li>Run docker-compose
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Output from docker-compose.  When running this command, docker-compose will run all the Docker steps and build a Web Application running in a Docker container, a virtual environment.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Creating network <span class="s2">"flask_portfolio_default"</span> with the default driver
+Building web
+Step 1/9 : FROM docker.io/python:3.9
+ <span class="nt">---</span><span class="o">&gt;</span> d0ce03c9330c
+Step 2/9 : WORKDIR /app
+
+.... LOTS of STEPs and OUTPUT ...
+
+Successfully built 68d68ad9699b
+Successfully tagged flask_port_v1:latest
+WARNING: Image <span class="k">for </span>service web was built because it did not already exist. To rebuild this image you must use <span class="sb">`</span>docker-compose build<span class="sb">`</span> or <span class="sb">`</span>docker-compose up <span class="nt">--build</span><span class="sb">`</span><span class="nb">.</span>
+Creating flask_portfolio_web_1 ... <span class="k">done</span>
+</code></pre></div></div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->

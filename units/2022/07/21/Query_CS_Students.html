@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      6 min read
     
 </span></p>
 
@@ -253,10 +253,10 @@ window.onload = wrap_img;
 
 
 
-<div id="0cb634c3-e1f9-499c-b411-79820e993549"></div>
+<div id="a6cf9cf2-885d-454c-a2f6-25636a13c9bf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0cb634c3-e1f9-499c-b411-79820e993549');
+var element = $('#a6cf9cf2-885d-454c-a2f6-25636a13c9bf');
 var link = document.createElement("link");
 	link.ref = "stylesheet";
 	link.type = "text/css";
@@ -315,57 +315,96 @@ require.config({     paths: {         vis: '//cdnjs.cloudflare.com/ajax/libs/vis
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ServiceUnavailable</span>                        Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/Users/johnmortensen/vsProjects/APCSP-3/_notebooks/2022-07-21-Query_CS_Students.ipynb Cell 5'</span> in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell:/Users/johnmortensen/vsProjects/APCSP-3/_notebooks/2022-07-21-Query_CS_Students.ipynb#ch0000004?line=0'&gt;1&lt;/a&gt;</span> # Run this cell to visualize all of the people in the graph!
+<span class="ansi-green-fg">----&gt; &lt;a href='vscode-notebook-cell:/Users/johnmortensen/vsProjects/APCSP-3/_notebooks/2022-07-21-Query_CS_Students.ipynb#ch0000004?line=1'&gt;2&lt;/a&gt;</span> neo4jupyter.draw(graph, {"PERSON": "name"})
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div id="ab5e081c-a7df-4cd4-9a27-74f7da77c30b" style="height: 400px;"></div>
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py:83</span>, in <span class="ansi-cyan-fg">draw</span><span class="ansi-blue-fg">(graph, options, physics, limit)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=56'&gt;57&lt;/a&gt;</span> """
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=57'&gt;58&lt;/a&gt;</span> The options argument should be a dictionary of node labels and property keys; it determines which property
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=58'&gt;59&lt;/a&gt;</span> is displayed for the node label. For example, in the movie graph, options = {"Movie": "title", "Person": "name"}.
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=66'&gt;67&lt;/a&gt;</span> :return: IPython.display.HTML
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=67'&gt;68&lt;/a&gt;</span> """
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=69'&gt;70&lt;/a&gt;</span> query = """
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=70'&gt;71&lt;/a&gt;</span> MATCH (n)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=71'&gt;72&lt;/a&gt;</span> WITH n, rand() AS random
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=79'&gt;80&lt;/a&gt;</span>        id(m) AS target_id
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=80'&gt;81&lt;/a&gt;</span> """
+<span class="ansi-green-fg">---&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=82'&gt;83&lt;/a&gt;</span> data = graph.run(query, limit=limit)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=84'&gt;85&lt;/a&gt;</span> nodes = []
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/neo4jupyter/neo4jupyter.py?line=85'&gt;86&lt;/a&gt;</span> edges = []
 
-<script type="text/javascript">
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py:405</span>, in <span class="ansi-cyan-fg">Graph.run</span><span class="ansi-blue-fg">(self, cypher, parameters, **kwparameters)</span>
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=394'&gt;395&lt;/a&gt;</span> def run(self, cypher, parameters=None, **kwparameters):
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=395'&gt;396&lt;/a&gt;</span>     """ Run a single read/write query within an auto-commit
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=396'&gt;397&lt;/a&gt;</span>     :class:`~py2neo.Transaction`.
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=397'&gt;398&lt;/a&gt;</span> 
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=402'&gt;403&lt;/a&gt;</span>     :return:
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=403'&gt;404&lt;/a&gt;</span>     """
+<span class="ansi-green-fg">--&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=404'&gt;405&lt;/a&gt;</span>     return self.auto().run(cypher, parameters, **kwparameters)
 
-    var nodes = [{"id": 10, "label": "", "group": "PERIOD", "title": "Node('PERIOD', period=1)"}, {"id": 1, "label": "", "group": "SCRUM_TEAM", "title": "Node('SCRUM_TEAM', ProjectDescription='A project about team 2!', name='Team 2', runtimelink='www.team2.com')"}, {"id": 0, "label": "", "group": "SCRUM_TEAM", "title": "Node('SCRUM_TEAM', ProjectDescription='A project about team 1!', name='Team 1', runtimelink='www.team1.com')"}, {"id": 5, "label": "Doug", "group": "PERSON", "title": "Node('PERSON', name='Doug')"}, {"id": 6, "label": "Eve", "group": "PERSON", "title": "Node('PERSON', name='Eve')"}, {"id": 9, "label": "Henry", "group": "PERSON", "title": "Node('PERSON', name='Henry')"}, {"id": 11, "label": "", "group": "PERIOD", "title": "Node('PERIOD', period=2)"}, {"id": 8, "label": "George", "group": "PERSON", "title": "Node('PERSON', name='George')"}, {"id": 7, "label": "Ferb", "group": "PERSON", "title": "Node('PERSON', name='Ferb')"}, {"id": 2, "label": "Alice", "group": "PERSON", "title": "Node('PERSON', name='Alice')"}, {"id": 4, "label": "Carl", "group": "PERSON", "title": "Node('PERSON', name='Carl')"}, {"id": 3, "label": "Bob", "group": "PERSON", "title": "Node('PERSON', name='Bob')"}];
-    var edges = [{"from": 1, "to": 0, "label": "CROSSOVER"}, {"from": 1, "to": 10, "label": "IN_PERIOD"}, {"from": 5, "to": 0, "label": "IN_GROUP"}, {"from": 6, "to": 9, "label": "PAIR_SHARE"}, {"from": 6, "to": 1, "label": "IN_GROUP"}, {"from": 9, "to": 1, "label": "IN_GROUP"}, {"from": 8, "to": 1, "label": "IN_GROUP"}, {"from": 7, "to": 8, "label": "PAIR_SHARE"}, {"from": 7, "to": 1, "label": "IN_GROUP"}, {"from": 2, "to": 4, "label": "PAIR_SHARE"}, {"from": 2, "to": 0, "label": "IN_GROUP"}, {"from": 3, "to": 5, "label": "PAIR_SHARE"}, {"from": 3, "to": 0, "label": "IN_GROUP"}, {"from": 0, "to": 10, "label": "IN_PERIOD"}, {"from": 0, "to": 1, "label": "CROSSOVER"}, {"from": 4, "to": 0, "label": "IN_GROUP"}];
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py:989</span>, in <span class="ansi-cyan-fg">Transaction.run</span><span class="ansi-blue-fg">(self, cypher, parameters, **kwparameters)</span>
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=986'&gt;987&lt;/a&gt;</span>     result = self._connector.run(self.ref, cypher, parameters)
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=987'&gt;988&lt;/a&gt;</span> else:
+<span class="ansi-green-fg">--&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=988'&gt;989&lt;/a&gt;</span>     result = self._connector.auto_run(cypher, parameters,
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=989'&gt;990&lt;/a&gt;</span>                                       graph_name=self.graph.name,
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=990'&gt;991&lt;/a&gt;</span>                                       readonly=self.readonly)
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=991'&gt;992&lt;/a&gt;</span> self._connector.pull(result, -1)
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/database.py?line=992'&gt;993&lt;/a&gt;</span> return Cursor(result, hydrant)
 
-    var container = document.getElementById("ab5e081c-a7df-4cd4-9a27-74f7da77c30b");
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py:1338</span>, in <span class="ansi-cyan-fg">Connector.auto_run</span><span class="ansi-blue-fg">(self, cypher, parameters, graph_name, readonly)</span>
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1320'&gt;1321&lt;/a&gt;</span> def auto_run(self, cypher, parameters=None, graph_name=None, readonly=False,
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1321'&gt;1322&lt;/a&gt;</span>              # after=None, metadata=None, timeout=None
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1322'&gt;1323&lt;/a&gt;</span>              ):
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1323'&gt;1324&lt;/a&gt;</span>     """ Run a Cypher query within a new auto-commit transaction.
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1324'&gt;1325&lt;/a&gt;</span> 
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1325'&gt;1326&lt;/a&gt;</span>     :param cypher:
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1335'&gt;1336&lt;/a&gt;</span>         cannot be honoured
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1336'&gt;1337&lt;/a&gt;</span>     """
+<span class="ansi-green-fg">-&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1337'&gt;1338&lt;/a&gt;</span>     cx = self._acquire(graph_name)
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1338'&gt;1339&lt;/a&gt;</span>     try:
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1339'&gt;1340&lt;/a&gt;</span>         return cx.auto_run(cypher, parameters, graph_name=graph_name, readonly=readonly)
 
-    var data = {
-        nodes: nodes,
-        edges: edges
-    };
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py:1111</span>, in <span class="ansi-cyan-fg">Connector._acquire</span><span class="ansi-blue-fg">(self, graph_name, readonly)</span>
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1108'&gt;1109&lt;/a&gt;</span>     return self._acquire_ro(graph_name)
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1109'&gt;1110&lt;/a&gt;</span> else:
+<span class="ansi-green-fg">-&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1110'&gt;1111&lt;/a&gt;</span>     return self._acquire_rw(graph_name)
 
-    var options = {
-    nodes: {
-        shape: 'dot',
-        size: 25,
-        font: {
-            size: 14
-        }
-    },
-    edges: {
-        font: {
-            size: 14,
-            align: 'middle'
-        },
-        color: 'gray',
-        arrows: {
-            to: {
-                enabled: true,
-                scaleFactor: 0.5
-            }
-        },
-        smooth: {
-            enabled: false
-        }
-    },
-    physics: {
-        enabled: true
-        }
-    };
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py:1203</span>, in <span class="ansi-cyan-fg">Connector._acquire_rw</span><span class="ansi-blue-fg">(self, graph_name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1198'&gt;1199&lt;/a&gt;</span> # TODO: exit immediately if the server/cluster is in readonly mode
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1200'&gt;1201&lt;/a&gt;</span> while True:
+<span class="ansi-green-fg">-&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1202'&gt;1203&lt;/a&gt;</span>     ro_profiles, rw_profiles = self._get_profiles(graph_name, readonly=False)
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1203'&gt;1204&lt;/a&gt;</span>     if rw_profiles:
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1204'&gt;1205&lt;/a&gt;</span>         # There is at least one writer, so collect the pools
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1205'&gt;1206&lt;/a&gt;</span>         # for those writers. In all implementations to date,
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1206'&gt;1207&lt;/a&gt;</span>         # a Neo4j cluster will only ever contain at most one
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1207'&gt;1208&lt;/a&gt;</span>         # writer (per database). But this algorithm should
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1208'&gt;1209&lt;/a&gt;</span>         # still survive if that changes.
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1209'&gt;1210&lt;/a&gt;</span>         pools = [pool for profile, pool in list(self._pools.items())
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1210'&gt;1211&lt;/a&gt;</span>                  if profile in rw_profiles]
 
-    var network = new vis.Network(container, data, options);
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py:1016</span>, in <span class="ansi-cyan-fg">Connector._get_profiles</span><span class="ansi-blue-fg">(self, graph_name, readonly)</span>
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1013'&gt;1014&lt;/a&gt;</span>         rt.wait_until_updated()
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1014'&gt;1015&lt;/a&gt;</span> else:
+<span class="ansi-green-fg">-&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1015'&gt;1016&lt;/a&gt;</span>     self.refresh_routing_table(graph_name)
 
-</script>
+File <span class="ansi-green-fg">/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py:1064</span>, in <span class="ansi-cyan-fg">Connector.refresh_routing_table</span><span class="ansi-blue-fg">(self, graph_name)</span>
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1061'&gt;1062&lt;/a&gt;</span>                 cx.release()
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1062'&gt;1063&lt;/a&gt;</span>     else:
+<span class="ansi-green-fg">-&gt; &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1063'&gt;1064&lt;/a&gt;</span>         raise ServiceUnavailable("Cannot connect to any known routers")
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1064'&gt;1065&lt;/a&gt;</span> finally:
+<span class="ansi-green-intense-fg ansi-bold">   &lt;a href='file:///Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/py2neo/client/__init__.py?line=1065'&gt;1066&lt;/a&gt;</span>     rt.set_not_updating()
 
+<span class="ansi-red-fg">ServiceUnavailable</span>: Cannot connect to any known routers</pre>
 </div>
-
 </div>
 
 </div>

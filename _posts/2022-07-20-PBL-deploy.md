@@ -183,10 +183,10 @@ WARNING: Image for service web was built because it did not already exist. To re
 Creating flask_portfolio_web_1 ... done
 ```
 
-### Behind the Scenes
+### Verifying Web Application via Docker commands
 Here is a look at some of the commands behind the scenes.  None of these are required to get things working, but show the results of the Docker and docker-compose.yml files and commands.
 
-- docker-compose ps   The running Web process, "ps" is a standard linux command or option that provides for viewing information related with the processes on a system.  Look at headings in relation to outputs.
+- docker-compose ps   The running Web process, "ps" is a linux command or option that provides information related to the processes on a system.  Look at headings in relation to outputs of the docker-compose process.
 ```bash
  ubuntu@ip-172-31-1-138:~/flask_portfolio$ docker-compose ps
         Name                 Command        State                    Ports                  
@@ -194,7 +194,7 @@ Here is a look at some of the commands behind the scenes.  None of these are req
 flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086->8080/tcp,:::8086->8080/tcp
 ```
 
-- docker ps   A more comprehensive list of all the docker processes.
+- docker ps   A more comprehensive list of all the docker processes on the system.  In this process reports, many of the alternate projects running on this AWS server are show.  The flask_portfolio_web_1 process is the items specific to this tutorial.
 ```bash
 buntu@ip-172-31-1-138:~/flask_portfolio$ docker ps
 CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
@@ -206,7 +206,7 @@ CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS 
 abd77b8e77af   java_csav2      "java -jar target/cs…"   5 weeks ago      Up 5 weeks      0.0.0.0:8081->8080/tcp, :::8081->8080/tcp   nighthawk_csa_web_1
 ```
 
-- docker images   This lists all of the docker images, or containers, that are used to serve the process shown above.
+- docker images   This lists all of the docker images, or containers, that are used to serve the process shown above.  The flask_port_v1 is the image created from the Docker file created in this tutorial.  The image contains the running Web application.
 ```bash
 ubuntu@ip-172-31-1-138:~/flask_portfolio$ docker images
 REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
@@ -221,3 +221,124 @@ alpine          latest          e66264b98777   8 weeks ago      5.53MB
 openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 ```
 
+### Preparing the Docker Web Application for Internet Access
+There are a couple of steps to this preparation. We need to direct the internet to the Server running the Web Application, this is done using Domain Name Service (DNS).   After being directed to the Web Server, the server needs to respond to the Hyper Text Transfer Protocol (HTTP), this will be manged by Nginx.   Additionally, we will be required to support Secure HTTP (HTTPS), a utility called Certbot will augment our Nginx configuration with a certificate.
+
+#### DNS provider and setup
+Each student scrum team is required to learn how to obtain a DNS provider and setup an independent domain.  However, the final set up will be using a Subdomain under nighthawkcodingsociety.com.
+
+#### Nginx install, configuration, and services
+Each student scrum team will perform Nginx installation and setup on an AWS EC2 test server.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.
+
+```
+server {
+    listen 80;
+    listen [::]:80;
+    server_name nighthawkcodingsociety.com;
+
+    location / {
+        proxy_pass http://localhost:8086;
+        # Simple requests
+        if ($request_method ~* "(GET|POST)") {
+                add_header "Access-Control-Allow-Origin"  *;
+        }
+
+        # Preflighted requests
+        if ($request_method = OPTIONS ) {
+                add_header "Access-Control-Allow-Origin"  *;
+                add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
+                add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
+                return 200;
+        }
+    }
+}
+```
+
+#### Certbot install and configuration
+Each student scrum team will learn Certbot on on AWS EC2 test server, establish working https web application.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.
+
+```bash
+$ sudo certbot --nginx
+```
+
+```
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator nginx, Installer nginx
+
+Which names would you like to activate HTTPS for?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: nighthawkcodingsociety.com
+2: csa.nighthawkcodingsociety.com
+3: csp.nighthawkcodingsociety.com
+4: flm.nighthawkcodingsociety.com
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate numbers separated by commas and/or spaces, or leave input
+blank to select all options shown (Enter 'c' to cancel):    
+Cert not yet due for renewal
+
+You have an existing certificate that has exactly the same domains or certificate name you requested and isn't close to expiry.
+(ref: /etc/letsencrypt/renewal/nighthawkcodingsociety.com-0001.conf)
+
+What would you like to do?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: Attempt to reinstall this existing certificate
+2: Renew & replace the cert (limit ~5 per 7 days)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
+Renewing an existing certificate
+Performing the following challenges:
+http-01 challenge for nighthawkcodingsociety.com
+http-01 challenge for csa.nighthawkcodingsociety.com
+http-01 challenge for cso.nighthawkcodingsociety.com
+http-01 challenge for flm.nighthawkcodingsociety.com
+Waiting for verification...
+Cleaning up challenges
+Deploying Certificate to VirtualHost /etc/nginx/sites-enabled/nighthawk_society
+Deploying Certificate to VirtualHost /etc/nginx/sites-enabled/nighthawk_csa
+Deploying Certificate to VirtualHost /etc/nginx/sites-enabled/nighthawk_csp
+Deploying Certificate to VirtualHost /etc/nginx/sites-enabled/nighthawk_flm
+
+Please choose whether or not to redirect HTTP traffic to HTTPS, removing HTTP access.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: No redirect - Make no further changes to the webserver configuration.
+2: Redirect - Make all requests redirect to secure HTTPS access. Choose this for
+new sites, or if you're confident your site works on HTTPS. You can undo this
+change by editing your web server's configuration.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-2] then [enter] (press 'c' to cancel): 2
+Traffic on port 80 already redirecting to ssl in /etc/nginx/sites-enabled/nighthawk_society
+Traffic on port 80 already redirecting to ssl in /etc/nginx/sites-enabled/nighthawk_csa
+Traffic on port 80 already redirecting to ssl in /etc/nginx/sites-enabled/nighthawk_csp
+Traffic on port 80 already redirecting to ssl in /etc/nginx/sites-enabled/nighthawk_flm
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Your existing certificate has been successfully renewed, and the new certificate
+has been installed.
+
+The new certificate covers the following domains:
+https://nighthawkcodingsociety.com, 
+https://csa.nighthawkcodingsociety.com, 
+https://csp.nighthawkcodingsociety.com, and
+https://flm.nighthawkcodingsociety.com,
+
+You should test your configuration at:
+https://www.ssllabs.com/ssltest/analyze.html?d=nighthawkcodingsociety.com
+https://www.ssllabs.com/ssltest/analyze.html?d=csa.nighthawkcodingsociety.com
+https://www.ssllabs.com/ssltest/analyze.html?d=csp.nighthawkcodingsociety.com
+https://www.ssllabs.com/ssltest/analyze.html?d=flm.nighthawkcodingsociety.com
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/nighthawkcodingsociety.com-0001/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/nighthawkcodingsociety.com-0001/privkey.pem
+   Your cert will expire on 2022-03-06. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot again
+   with the "certonly" option. To non-interactively renew *all* of
+   your certificates, run "certbot renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+```

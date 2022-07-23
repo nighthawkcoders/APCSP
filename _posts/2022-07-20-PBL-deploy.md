@@ -27,9 +27,12 @@ Listed are Keys, you need to obtain Values.  It is important that you recognize 
 - EC2 name:
 - EC2 Public IPs:
 - DNS Name:
+- DNS Subdomain name(s)
 - Docker Port:
-- docker-compose Ports:
-- docker-compose Image:
+- docker-compose, proxy pass Port:
+- docker-compose, docker Image:
+- Nginx server file(s):
+
 
 
 ### Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup
@@ -227,14 +230,47 @@ There are a couple of steps to this preparation. We need to direct the internet 
 #### DNS provider and setup
 Each student scrum team is required to learn how to obtain a DNS provider and setup an independent domain.  However, the final set up will be using a Subdomain under nighthawkcodingsociety.com.
 
+A picture is included to show key elements in setting up a domain with a DNS provider.  The nighthawkcodingsociety.com is using Freenom as its service provider.  As you build your own DNS server you will need to obtain your own IP address and domain.
+
+This illustration is dependent on...
+- EC2 Public IPs: 3.233.212.71
+- DNS Name: nighthawkcodingsociety.com
+- DNS Subdomain name(s): battleship.nighthawkcodingsociety.com. cowboys.nighthawkcodingsociety.com
+
+A minimum configuration will have the two "A" type definitions using you Public IP address.  These two are resolved with a single Web Application.  The "CNAME" type is used for subdomains, these will resolve to a different Web Application.
+
+<img atl="Setup a Domain" src="{{site.baseurl}}/images/freenom.png" title="DNS Provider"
+
+
 #### Nginx install, configuration, and services
 Each student scrum team will perform Nginx installation and setup on an AWS EC2 test server.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.
+
+Enable Nginx to retrieve Python Web Application on internet request (Reverse Proxy)! Make a server file located at /etc/nginx/sites-available/nighthawk.
+
+* Install Nginx on Ubuntu servers
+```bash
+$ sudo apt install nginx
+```
+
+* Go to location of Nginx server configuration files
+```bash
+$ cd /etc/nginx/sites-available
+```
+
+* Open editor to Create your own "Nginx server configuration"
+```bash
+$ nano nighthawk
+```
+
+* Edit your own Nginx server configuration making modifications to:
+    * DNS Name(s): nighthawkcodingsociety.com www.nighthawkcodingsociety.com
+    * docker-compose, proxy pass Port: 8086
 
 ```
 server {
     listen 80;
     listen [::]:80;
-    server_name nighthawkcodingsociety.com;
+    server_name nighthawkcodingsociety.com www.nighthawkcodingsociety.com;
 
     location / {
         proxy_pass http://localhost:8086;
@@ -253,6 +289,31 @@ server {
     }
 }
 ```
+
+* Activate/enabled Nginx server configuration:
+```bash
+$ sudo ln -s /etc/nginx/sites-available/nighthawk /etc/nginx/sites-enabled
+$ sudo nginx -t
+```
+
+* If there are no errors, restart NGINX so the server is an endpoint to the internet:
+```bash
+$ sudo systemctl restart nginx
+```
+
+#### Testing HTTP endpoint
+Before finishing, this is a good opportunity to test everything you have done.  
+
+* Direct Test of Web Application Endpoint.  This should return HTML related to the home page of the Web site.  If this fails, you need to review Docker and docker-compose configurations.
+```bash
+$ curl http://localhost:8086;
+```
+
+* Testing unsecure HTTP endpoint on the internet.  Go to a browser an type your DNS domain: http://nighthawkcodingsociety.com. 
+   * Timeout.  This means something is wrong with EC2 Public IP.
+   * Nginx Default page.  This means DNS is working, but something is wrong with you Nginx configuration.
+   * Broken Gateway.  This means Nginx is working, but something is wrong with Web Application endpoint on machine, if this fails something is wrong with Web Application.  This requires you to look at Docker and docker-compose configuration.
+   
 
 #### Certbot install and configuration
 Each student scrum team will learn Certbot on on AWS EC2 test server, establish working https web application.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.

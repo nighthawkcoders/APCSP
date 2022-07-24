@@ -192,14 +192,13 @@ window.onload = wrap_img;
     <span class="s1">'An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?'</span>
 <span class="p">]</span>
 
-<span class="c1"># Note: this resets every time application restarts</span>
+<span class="c1"># Note: this resets every time application restarts, it is not persistent</span>
 <span class="k">def</span> <span class="nf">jokes_init</span><span class="p">():</span>
-    <span class="n">item_id</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">joke_list</span><span class="p">:</span>
         <span class="n">jokes_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">"joke"</span><span class="p">:</span> <span class="n">item</span><span class="p">,</span> <span class="s2">"haha"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"boohoo"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
         <span class="n">item_id</span> <span class="o">+=</span> <span class="mi">1</span>
         
-
 <span class="k">def</span> <span class="nf">joke_random</span><span class="p">():</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">jokes_init</span><span class="p">()</span>
@@ -210,9 +209,26 @@ window.onload = wrap_img;
         <span class="n">jokes_init</span><span class="p">()</span>
     <span class="k">return</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span>
 
+<span class="k">def</span> <span class="nf">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">=</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span>
+    
+<span class="k">def</span> <span class="nf">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">=</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span>
 
 <span class="c1"># Test Joke Model</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Return a random joke form the model"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Test Joke Model"</span><span class="p">)</span>
+<span class="n">jokes_init</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">joke_random</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="n">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">joke_random</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="n">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">joke_random</span><span class="p">())</span>
 </pre></div>
 
@@ -226,8 +242,8 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Return a random joke form the model
-{'id': 6, 'joke': 'Java programmers are some of the most materialistic people I know, very object-oriented', 'haha': 0, 'boohoo': 0}
+<pre>Test Joke Model
+{'id': 12, 'joke': 'Computers make very fast, very accurate mistakes.', 'haha': 3, 'boohoo': 4}
 </pre>
 </div>
 </div>

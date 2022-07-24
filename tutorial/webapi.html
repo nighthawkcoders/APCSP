@@ -289,20 +289,20 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Most liked 22
-5 Java programmers are some of the most materialistic people I know, very object-oriented 
- haha: 22 
- boohoo: 3 
+<pre>Most liked 17
+10 There are 10 types of people in the world: those who understand binary, and those who don’t. 
+ haha: 17 
+ boohoo: 1 
 
-Most jeered 6
-6 The oldest computer can be traced back to Adam and Eve. It was an apple but with extremely limited memory. Just 1 byte. And then everything crashed. 
- haha: 7 
- boohoo: 6 
+Most jeered 9
+12 Computers make very fast, very accurate mistakes. 
+ haha: 15 
+ boohoo: 9 
 
 Random joke
-11 If it wasn't for C, we’d all be programming in BASI and OBOL. 
+16 Q: What is the biggest lie in the entire universe? A: I have read and agree to the Terms and Conditions. 
  haha: 12 
- boohoo: 4 
+ boohoo: 1 
 
 Jokes Count: 18
 </pre>
@@ -384,7 +384,9 @@ Jokes Count: 18
     <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_UpdateJeer</span><span class="p">,</span> <span class="s1">'/jeer/&lt;int:id&gt;/'</span><span class="p">)</span>
     
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> 
-    <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:5000/api/jokes/'</span> <span class="c1"># run from project to enable</span>
+    <span class="c1"># server = "http://127.0.0.1:5000/" # run local</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="s1">'https://flask.nighthawkcodingsociety.com/'</span> <span class="c1"># run from web</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">server</span> <span class="o">+</span> <span class="s2">"api/jokes/"</span>
     <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># responses list</span>
     
     <span class="c1"># responses.append(requests.get(url)) # read all, verbose so commented out</span>
@@ -422,13 +424,13 @@ Jokes Count: 18
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>&lt;Response [200]&gt;
-{'boohoo': 5, 'haha': 11, 'id': 7, 'joke': 'Q: Why did Wi-Fi and the computer get married? A: Because they had a connection'}
+{'boohoo': 9, 'haha': 10, 'id': 5, 'joke': 'Java programmers are some of the most materialistic people I know, very object-oriented'}
 &lt;Response [200]&gt;
-{'boohoo': 2, 'haha': 13, 'id': 8, 'joke': 'Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.'}
+{'boohoo': 2, 'haha': 9, 'id': 10, 'joke': 'There are 10 types of people in the world: those who understand binary, and those who don’t.'}
 &lt;Response [200]&gt;
-{'boohoo': 2, 'haha': 14, 'id': 8, 'joke': 'Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.'}
+{'boohoo': 2, 'haha': 10, 'id': 10, 'joke': 'There are 10 types of people in the world: those who understand binary, and those who don’t.'}
 &lt;Response [200]&gt;
-{'boohoo': 3, 'haha': 14, 'id': 8, 'joke': 'Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.'}
+{'boohoo': 3, 'haha': 10, 'id': 10, 'joke': 'There are 10 types of people in the world: those who understand binary, and those who don’t.'}
 </pre>
 </div>
 </div>

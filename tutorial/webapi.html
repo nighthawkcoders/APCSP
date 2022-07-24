@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -150,8 +150,9 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li>Next comes some functions to interact with our jokes<ul>
-<li>def joke_random():  returns a random joke from our list</li>
-<li>def jokes(): returns the complete list of jokes</li>
+<li>def initJokes(): initializes jokes_data</li>
+<li>def getJokes(): returns the complete list of jokes</li>
+<li>def getJoke():  returns a single joke from our list</li>
 </ul>
 </li>
 </ul>
@@ -192,44 +193,90 @@ window.onload = wrap_img;
     <span class="s1">'An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?'</span>
 <span class="p">]</span>
 
-<span class="c1"># Note: this resets every time application restarts, it is not persistent</span>
-<span class="k">def</span> <span class="nf">jokes_init</span><span class="p">():</span>
+<span class="c1"># Initialize jokes</span>
+<span class="k">def</span> <span class="nf">initJokes</span><span class="p">():</span>
+    <span class="c1"># setup jokes into a dictionary with id, joke, haha, boohoo</span>
     <span class="n">item_id</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">joke_list</span><span class="p">:</span>
         <span class="n">jokes_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">"joke"</span><span class="p">:</span> <span class="n">item</span><span class="p">,</span> <span class="s2">"haha"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"boohoo"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
         <span class="n">item_id</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># prime some haha responses</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">getRandomJoke</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
+        <span class="n">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    <span class="c1"># prime some haha responses</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">getRandomJoke</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
+        <span class="n">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         
-<span class="k">def</span> <span class="nf">joke_random</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">jokes_init</span><span class="p">()</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">jokes</span><span class="p">():</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">jokes_init</span><span class="p">()</span>
+<span class="c1"># Return all jokes from jokes_data</span>
+<span class="k">def</span> <span class="nf">getJokes</span><span class="p">():</span>
     <span class="k">return</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span>
 
+<span class="c1"># Joke getter</span>
+<span class="k">def</span> <span class="nf">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span>
+
+<span class="c1"># Return random joke from jokes_data</span>
+<span class="k">def</span> <span class="nf">getRandomJoke</span><span class="p">():</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">))</span>
+
+<span class="c1"># Liked joke</span>
+<span class="k">def</span> <span class="nf">favoriteJoke</span><span class="p">():</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">bestID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">joke</span> <span class="ow">in</span> <span class="n">getJokes</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best</span><span class="p">:</span>
+            <span class="n">best</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">]</span>
+            <span class="n">bestID</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="n">bestID</span><span class="p">]</span>
+    
+<span class="c1"># Jeered joke</span>
+<span class="k">def</span> <span class="nf">jeeredJoke</span><span class="p">():</span>
+    <span class="n">worst</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">worstID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">joke</span> <span class="ow">in</span> <span class="n">getJokes</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">worst</span><span class="p">:</span>
+            <span class="n">worst</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">]</span>
+            <span class="n">worstID</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="n">worstID</span><span class="p">]</span>
+
+<span class="c1"># Add to haha for requested id</span>
 <span class="k">def</span> <span class="nf">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
     <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">=</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span>
-    
+
+<span class="c1"># Add to boohoo for requested id</span>
 <span class="k">def</span> <span class="nf">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
     <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">=</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span>
 
+<span class="c1"># Pretty Print joke</span>
+<span class="k">def</span> <span class="nf">printJoke</span><span class="p">(</span><span class="n">joke</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">joke</span><span class="p">[</span><span class="s1">'id'</span><span class="p">],</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'joke'</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"haha:"</span><span class="p">,</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"boohoo:"</span><span class="p">,</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Number of jokes</span>
+<span class="k">def</span> <span class="nf">countJokes</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span>
+
 <span class="c1"># Test Joke Model</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Test Joke Model"</span><span class="p">)</span>
-<span class="n">jokes_init</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
-    <span class="nb">id</span> <span class="o">=</span> <span class="n">joke_random</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
-    <span class="n">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> 
+    <span class="n">initJokes</span><span class="p">()</span>  <span class="c1"># initialize jokes</span>
     
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
-    <span class="nb">id</span> <span class="o">=</span> <span class="n">joke_random</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
-    <span class="n">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">joke_random</span><span class="p">())</span>
+    <span class="c1"># Most likes and most jeered</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="n">favoriteJoke</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Most liked"</span><span class="p">,</span> <span class="n">best</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">])</span>
+    <span class="n">printJoke</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+    <span class="n">worst</span> <span class="o">=</span> <span class="n">jeeredJoke</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Most jeered"</span><span class="p">,</span> <span class="n">worst</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">])</span>
+    <span class="n">printJoke</span><span class="p">(</span><span class="n">worst</span><span class="p">)</span>
+    
+    <span class="c1"># Random joke</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Random joke"</span><span class="p">)</span>
+    <span class="n">printJoke</span><span class="p">(</span><span class="n">getRandomJoke</span><span class="p">())</span>
+    
+    <span class="c1"># Count of Jokes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Jokes Count: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">countJokes</span><span class="p">()))</span>
 </pre></div>
 
     </div>
@@ -242,8 +289,22 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test Joke Model
-{'id': 12, 'joke': 'Computers make very fast, very accurate mistakes.', 'haha': 3, 'boohoo': 4}
+<pre>Most liked 22
+5 Java programmers are some of the most materialistic people I know, very object-oriented 
+ haha: 22 
+ boohoo: 3 
+
+Most jeered 6
+6 The oldest computer can be traced back to Adam and Eve. It was an apple but with extremely limited memory. Just 1 byte. And then everything crashed. 
+ haha: 7 
+ boohoo: 6 
+
+Random joke
+11 If it wasn't for C, we’d all be programming in BASI and OBOL. 
+ haha: 12 
+ boohoo: 4 
+
+Jokes Count: 18
 </pre>
 </div>
 </div>
@@ -270,14 +331,84 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">JSON</span><span class="p">,</span> <span class="n">display</span>  <span class="c1"># IPython way of producing JSON</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">random</span>
 
-<span class="c1"># concept of API without app route</span>
-<span class="k">def</span> <span class="nf">api_joke</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">JSON</span><span class="p">(</span><span class="n">joke_random</span><span class="p">())</span>
+<span class="n">app_api</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">'api'</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span>
+                   <span class="n">url_prefix</span><span class="o">=</span><span class="s1">'/api/jokes'</span><span class="p">)</span>
 
-<span class="c1"># IPython display of JSON</span>
-<span class="n">display</span><span class="p">(</span><span class="n">api_joke</span><span class="p">())</span>
+<span class="c1"># API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app_api</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">JokesAPI</span><span class="p">:</span>
+    <span class="c1"># class for create/post</span>
+    <span class="k">class</span> <span class="nc">_Create</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">joke</span><span class="p">):</span>
+            <span class="k">pass</span>
+            
+    <span class="c1"># class for read/get</span>
+    <span class="k">class</span> <span class="nc">_Read</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJokes</span><span class="p">())</span>
+
+    <span class="c1"># class for delete</span>
+    <span class="k">class</span> <span class="nc">_ReadID</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="c1"># class for read/get</span>
+    <span class="k">class</span> <span class="nc">_ReadRandom</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getRandomJoke</span><span class="p">())</span>
+
+    <span class="c1"># class for update/put</span>
+    <span class="k">class</span> <span class="nc">_UpdateLike</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+            <span class="n">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="k">class</span> <span class="nc">_UpdateJeer</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+            <span class="n">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="c1"># building RESTapi resource</span>
+    <span class="c1"># building RESTapi resource</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Create</span><span class="p">,</span> <span class="s1">'/create/&lt;string:joke&gt;'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Read</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_ReadID</span><span class="p">,</span> <span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_ReadRandom</span><span class="p">,</span> <span class="s1">'/random'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_UpdateLike</span><span class="p">,</span> <span class="s1">'/like/&lt;int:id&gt;/'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_UpdateJeer</span><span class="p">,</span> <span class="s1">'/jeer/&lt;int:id&gt;/'</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> 
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:5000/api/jokes/'</span> <span class="c1"># run from project to enable</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># responses list</span>
+    
+    <span class="c1"># responses.append(requests.get(url)) # read all, verbose so commented out</span>
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"random"</span><span class="p">))</span> <span class="c1"># read a random joke</span>
+    
+    <span class="c1"># update likes/dislikes test sequence</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">countJokes</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># test a random record</span>
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="n">num</span><span class="p">)</span>  <span class="c1"># read joke by id</span>
+        <span class="p">)</span> 
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"like/"</span><span class="o">+</span><span class="n">num</span><span class="p">)</span> <span class="c1"># add to like count</span>
+        <span class="p">)</span> 
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"jeer/"</span><span class="o">+</span><span class="n">num</span><span class="p">)</span> <span class="c1"># add to jeer count</span>
+        <span class="p">)</span> 
+
+    <span class="c1"># cycle through responses</span>
+    <span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"unknown error"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -289,12 +420,17 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea ">
-<pre>&lt;IPython.core.display.JSON object&gt;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;Response [200]&gt;
+{'boohoo': 5, 'haha': 11, 'id': 7, 'joke': 'Q: Why did Wi-Fi and the computer get married? A: Because they had a connection'}
+&lt;Response [200]&gt;
+{'boohoo': 2, 'haha': 13, 'id': 8, 'joke': 'Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.'}
+&lt;Response [200]&gt;
+{'boohoo': 2, 'haha': 14, 'id': 8, 'joke': 'Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.'}
+&lt;Response [200]&gt;
+{'boohoo': 3, 'haha': 14, 'id': 8, 'joke': 'Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10.'}
+</pre>
 </div>
-
 </div>
 
 </div>

@@ -4,6 +4,7 @@
         "getuser",
         "gunicorn",
         "haha",
+        "jsonify",
         "nighthawkcodingsociety",
         "peasy",
         "Traceback",

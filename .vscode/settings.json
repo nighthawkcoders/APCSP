@@ -1,14 +1,17 @@
 {
     "cSpell.words": [
+        "DNHS",
         "getpass",
         "getuser",
         "gunicorn",
         "haha",
         "jsonify",
+        "Malan",
         "nighthawkcodingsociety",
         "peasy",
         "Traceback",
         "virtualenv",
+        "webapi",
         "WORKDIR",
         "WSGI"
     ]

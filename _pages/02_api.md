@@ -45,7 +45,7 @@ title: API
 
                 <li>Once a REST API receives and processes an HTTP request (endpoint), it will return an HTTP response. Included in this response is an HTTP status code and data.  Common status codes are shown.</li>
                 <ul> 
-                    <li>200 => OK</li>
+                    <li>200 => OK, this will have the promise of a JSON body</li>
                     <li>400 => Bad Request</li>
                     <li>404 => Not Found</li>
                     <li>500 => Internal Server Error (aka bug)</li>

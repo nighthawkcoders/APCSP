@@ -71,7 +71,7 @@ window.onload = wrap_img;
       <div class="wrapper">
         <table>
     <tr>
-        <td><img src="/APCSP//images/logo.png" height="60"  title="Data" alt=""></td>
+        <td><img src="/APCSP//images/logo.png" height="60" title="Data" alt="" /></td>
         <td><a href="/APCSP/api/overview">Overview</a></td>
         <td><a href="/APCSP/data/covid">Covid19 RapidAPI</a></td>
         <td><a href="/APCSP/data/jokes">Jokes API</a></td>
@@ -83,12 +83,11 @@ window.onload = wrap_img;
 
     <div style="float: left; margin: 0px 10px 10px 0px;">
         <a href="https://en.wikipedia.org/wiki/Web_API">
-            <img atl="Wikipedia Web API" src="/APCSP/images/webapi.png" title=""
-            width="200">
+            <img atl="Wikipedia Web API" src="/APCSP/images/webapi.png" title="" width="200" />
         </a>
     </div>
     <div>
-        <hr>
+        <hr />
         <p>
             A Web API is an application programming interface typically for a web browser.  Non-changing endpoints are used in interacting with server-side Web APIs.  RESTful web APIs use HTTP methods to access resources via URL parameters, and use JSON for transmitting text.
             <ul>
@@ -101,42 +100,46 @@ window.onload = wrap_img;
 
                 <li>Client.  We will use JavaScript as the frontend to consume data from the Python defined REST APIs. Fetch will be used to make API calls.  There are four basic http methods, they align with Create, Read, Update, Deleted (CRUD).</li>
                 <ul> 
-                    <li>GET => Retrieve/Read data</li>
-                    <li>POST => Create data</li>
-                    <li>PUT/PATCH => Update data (put replaces the old one, while patch adds to the existing data)</li>
-                    <li>DELETE => Delete data</li>
+                    <li>GET =&gt; Retrieve/Read data</li>
+                    <li>POST =&gt; Create data</li>
+                    <li>PUT/PATCH =&gt; Update data (put replaces the old one, while patch adds to the existing data)</li>
+                    <li>DELETE =&gt; Delete data</li>
                 </ul>
 
                 <li>REST endpoints are for a users resource that represents students and teachers in a system.</li>
                 <ul> 
-                    <li>GET: /users => Get a list of users</li>
-                    <li>GET: /users(id) => Get a single user</li>
-                    <li>POST: /users => Create a new user</li>
-                    <li>PUT: /users(id) => Update a user</li>
-                    <li>DELETE: /users(id) => Delete a user</li>
+                    <li>GET: /users =&gt; Get a list of users</li>
+                    <li>GET: /users(id) =&gt; Get a single user</li>
+                    <li>POST: /users =&gt; Create a new user</li>
+                    <li>PUT: /users(id) =&gt; Update a user</li>
+                    <li>DELETE: /users(id) =&gt; Delete a user</li>
                 </ul>
 
                 <li>Once a REST API receives and processes an HTTP request (endpoint), it will return an HTTP response. Included in this response is an HTTP status code and data.  Common status codes are shown.</li>
                 <ul> 
-                    <li>200 => OK</li>
-                    <li>400 => Bad Request</li>
-                    <li>404 => Not Found</li>
-                    <li>500 => Internal Server Error (aka bug)</li>
+                    <li>200 =&gt; OK</li>
+                    <li>400 =&gt; Bad Request</li>
+                    <li>404 =&gt; Not Found</li>
+                    <li>500 =&gt; Internal Server Error (aka bug)</li>
                 </ul>
 
             </ul>
         </p>
-        <hr>
+        <hr />
     </div>
 
 </div>
 
+<h3 id="sample-code-in-this-sub-menu">Sample Code in this Sub Menu</h3>
+<blockquote>
+  <p>HTML, CSS, and JavaScript are the front-end of the API.  Python and Api libraries are used for RESTful API definition. APIs save a lot of time between developers, as exchange of data has expectations and standards.  Learning APIs is a highly recommended step for every developer trying to break into the world of tech.</p>
+  <ul>
+    <li>Covid19: RapiAPI example.</li>
+    <li>Jokes: Introduction to Python RESTful API library.  A list is used to make data persistent as long as Web Server is active.</li>
+    <li>Users: Continues with RESTful API library, but now establish data persistence through the use of a database.</li>
+  </ul>
+</blockquote>
 
-### Sample Code in this Sub Menu
-> HTML, CSS, and JavaScript are the front-end of the API.  Python and Api libraries are used for RESTful API definition. APIs save a lot of time between developers, as exchange of data has expectations and standards.  Learning APIs is a highly recommended step for every developer trying to break into the world of tech.
-- Covid19: RapiAPI example.
-- Jokes: Introduction to Python RESTful API library.  A list is used to make data persistent as long as Web Server is active.
-- Users: Continues with RESTful API library, but now establish data persistence through the use of a database.
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/APCSP/"></data>

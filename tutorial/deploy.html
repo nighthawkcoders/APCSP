@@ -420,7 +420,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
                 add_header "Access-Control-Allow-Origin"  *;
         }
 
-        # Preflighted requests
+        # Preflight requests
         if ($request_method = OPTIONS ) {
                 add_header "Access-Control-Allow-Origin"  *;
                 add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";

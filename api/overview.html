@@ -94,14 +94,14 @@ window.onload = wrap_img;
             <ul>
                 <li>Server.  In this class, we will be using Python to define REST APIs that provide access to backend data. Python tools are very popular for building REST APIs</li>
                 <ul> 
-                    <li>Stateless: The server won’t maintain any state between requests from the client.</li>li>
-
-                    <li>Client-server: The client and server must be decoupled from each other, allowing each to develop independently.</li>
+                    <li>REST: Representational State Transfer.  A set of guidelines on how to architect a network-connected software system.</li>
+                    <li>Client-server: One guideline is a client and server must be decoupled from each other, allowing each to develop independently.</li>
+                    <li>Layered system: The client may access the resources on the server indirectly through other layers such as a proxy. This will be understood when server is deployed.</li>
                 </ul>
 
                 <li>Client.  We will use JavaScript as the frontend to consume data from the Python defined REST APIs.</li>
 
-                <li>Fetch will be used to make API calls.  There are four basic http methods:</li>
+                <li>Fetch will be used to make API calls.  There are four basic http methods, they align with Create, Read, Update, Deleted (CRUD).</li>
                 <ul> 
                     <li>GET => Retrieve/Read data</li>
                     <li>POST => Create data</li>

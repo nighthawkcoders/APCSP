@@ -98,15 +98,15 @@ window.onload = wrap_img;
                     <li>Layered system: The client may access the resources on the server indirectly through other layers such as a proxy. This will be understood when server is deployed.</li>
                 </ul>
 
-                <li>Client.  We will use JavaScript as the frontend to consume data from the Python defined REST APIs. Fetch will be used to make API calls.  There are four basic http methods, they align with Create, Read, Update, Deleted (CRUD).</li>
+                <li>Client.  We will use JavaScript as the frontend to consume data from the Python defined REST APIs. Fetch will be used to make API calls.  There are four basic HTTP Methods, they align with Create, Read, Update, Deleted (CRUD).</li>
                 <ul> 
                     <li>GET =&gt; Retrieve/Read data</li>
                     <li>POST =&gt; Create data</li>
-                    <li>PUT/PATCH =&gt; Update data (put replaces the old one, while patch adds to the existing data)</li>
+                    <li>PUT =&gt; Update data</li>
                     <li>DELETE =&gt; Delete data</li>
                 </ul>
 
-                <li>REST endpoints are for a users resource that represents students and teachers in a system.</li>
+                <li>REST endpoints will have similarity from application to application.  In planning APIs for a Users class that can be used to represent Students and Teachers in a system, it would likely contain these endpoints.</li>
                 <ul> 
                     <li>GET: /users =&gt; Get a list of users</li>
                     <li>GET: /users(id) =&gt; Get a single user</li>
@@ -115,9 +115,9 @@ window.onload = wrap_img;
                     <li>DELETE: /users(id) =&gt; Delete a user</li>
                 </ul>
 
-                <li>Once a REST API receives and processes an HTTP request (endpoint), it will return an HTTP response. Included in this response is an HTTP status code and data.  Common status codes are shown.</li>
+                <li>Once a REST API receives and processes an HTTP request (endpoint), it will return an HTTP response. Included in this response is an HTTP status code.  Common status codes are shown.</li>
                 <ul> 
-                    <li>200 =&gt; OK, this will have the promise of a JSON body</li>
+                    <li>200 =&gt; OK, this status will have the promise of JSON data (aka body)</li>
                     <li>400 =&gt; Bad Request</li>
                     <li>404 =&gt; Not Found</li>
                     <li>500 =&gt; Internal Server Error (aka bug)</li>

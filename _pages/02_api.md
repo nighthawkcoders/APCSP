@@ -34,7 +34,7 @@ title: API
                     <li>Layered system: The client may access the resources on the server indirectly through other layers such as a proxy or using authentication. This will be clarified by application and security requirements.</li>
                 </ul>
 
-                <li>Client.  avaScript is the frontend language used to consume data from the Python defined REST APIs. Fetch will be used to make HTTP requests, as well as handle HTTP response.  There are four basic HTTP methods, they align with Create, Read, Update, Delete (CRUD).</li>
+                <li>Client.  JavaScript is the frontend language used to consume data from the Python defined REST APIs. Fetch will be used to make HTTP requests, as well as handle HTTP response.  There are four basic HTTP methods, they align with Create, Read, Update, Delete (CRUD).</li>
                 <ul> 
                     <li>GET => Retrieve/Read data</li>
                     <li>POST => Create data</li>

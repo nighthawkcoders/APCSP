@@ -6,6 +6,14 @@ title: API
 
 {% include nav_data.html %}
 
+### APIs in this Sub Menu
+> HTML, CSS, and JavaScript are the front-end of the API.  Python and Api libraries are used for RESTful API definition. APIs save a lot of time between developers, as exchange of data has expectations and standards.  Learning APIs is a highly recommended step for every developer trying to break into the world of tech.
+- Covid19: RapiAPI example.  This is introducing APIs by accessing something that already exists.  This will show many good practices in RESTful definition.
+- Jokes: Introduction to Python RESTful API library.  A list is used to make data persistent as long as Web Server is not updated.  This is great for learning, but data is considered volatile.
+- Users: Another RESTful API library, but this backend establishes data persistence through the use of a database.  This data if properly managed and migrated can last forever.
+
+### Web API Overview
+
 <div>
 
     <div style="float: left; margin: 0px 10px 10px 0px;">
@@ -57,10 +65,3 @@ title: API
     </div>
 
 </div>
-
-
-### Sample Code in this Sub Menu
-> HTML, CSS, and JavaScript are the front-end of the API.  Python and Api libraries are used for RESTful API definition. APIs save a lot of time between developers, as exchange of data has expectations and standards.  Learning APIs is a highly recommended step for every developer trying to break into the world of tech.
-- Covid19: RapiAPI example.
-- Jokes: Introduction to Python RESTful API library.  A list is used to make data persistent as long as Web Server is active.
-- Users: Continues with RESTful API library, but now establish data persistence through the use of a database.

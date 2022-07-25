@@ -26,15 +26,31 @@ title: API
                     <li>Layered system: The client may access the resources on the server indirectly through other layers such as a proxy. This will be understood when server is deployed.</li>
                 </ul>
 
-                <li>Client.  We will use JavaScript as the frontend to consume data from the Python defined REST APIs.</li>
-
-                <li>Fetch will be used to make API calls.  There are four basic http methods, they align with Create, Read, Update, Deleted (CRUD).</li>
+                <li>Client.  We will use JavaScript as the frontend to consume data from the Python defined REST APIs. Fetch will be used to make API calls.  There are four basic http methods, they align with Create, Read, Update, Deleted (CRUD).</li>
                 <ul> 
                     <li>GET => Retrieve/Read data</li>
                     <li>POST => Create data</li>
                     <li>PUT/PATCH => Update data (put replaces the old one, while patch adds to the existing data)</li>
                     <li>DELETE => Delete data</li>
                 </ul>
+
+                <li>REST endpoints are for a users resource that represents students and teachers in a system.</li>
+                <ul> 
+                    <li>GET: /users => Get a list of users</li>
+                    <li>GET: /users(id) => Get a single user</li>
+                    <li>POST: /users => Create a new user</li>
+                    <li>PUT: /users(id) => Update a user</li>
+                    <li>DELETE: /users(id) => Delete a user</li>
+                </ul>
+
+                <li>Once a REST API receives and processes an HTTP request (endpoint), it will return an HTTP response. Included in this response is an HTTP status code and data.  Common status codes are shown.</li>
+                <ul> 
+                    <li>200 => OK</li>
+                    <li>400 => Bad Request</li>
+                    <li>404 => Not Found</li>
+                    <li>500 => Internal Server Error (aka bug)</li>
+                </ul>
+
             </ul>
         </p>
         <hr>

@@ -279,7 +279,7 @@ server {
                 add_header "Access-Control-Allow-Origin"  *;
         }
 
-        # Preflighted requests
+        # Preflight requests
         if ($request_method = OPTIONS ) {
                 add_header "Access-Control-Allow-Origin"  *;
                 add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";

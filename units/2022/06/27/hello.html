@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Variables, Assignments, Functions, Selection" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A progressive journey through Python using the classic “Hello, World” example, then progressing in learning to building a quiz." />
-<meta property="og:description" content="A progressive journey through Python using the classic “Hello, World” example, then progressing in learning to building a quiz." />
+<meta name="description" content="A journey through Python starting the classic “Hello, World” example, then progressing in learning to building a quiz. This focuses on College Board vocabulary and examples using Variables, Assignments, Functions, and Selection." />
+<meta property="og:description" content="A journey through Python starting the classic “Hello, World” example, then progressing in learning to building a quiz. This focuses on College Board vocabulary and examples using Variables, Assignments, Functions, and Selection." />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/units/2022/06/27/hello.html" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/units/2022/06/27/hello.html" />
 <meta property="og:site_name" content="APCSP" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Variables, Assignments, Functions, Selection" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-27T00:00:00-05:00","datePublished":"2022-06-27T00:00:00-05:00","description":"A progressive journey through Python using the classic “Hello, World” example, then progressing in learning to building a quiz.","headline":"Variables, Assignments, Functions, Selection","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/units/2022/06/27/hello.html"},"url":"https://nighthawkcoders.github.io/APCSP/units/2022/06/27/hello.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-27T00:00:00-05:00","datePublished":"2022-06-27T00:00:00-05:00","description":"A journey through Python starting the classic “Hello, World” example, then progressing in learning to building a quiz. This focuses on College Board vocabulary and examples using Variables, Assignments, Functions, and Selection.","headline":"Variables, Assignments, Functions, Selection","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/units/2022/06/27/hello.html"},"url":"https://nighthawkcoders.github.io/APCSP/units/2022/06/27/hello.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,13 +73,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Variables, Assignments, Functions, Selection</h1><p class="page-description">A progressive journey through Python using the classic "Hello, World" example, then progressing in learning to building a quiz.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-27T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Variables, Assignments, Functions, Selection</h1><p class="page-description">A journey through Python starting the classic "Hello, World" example, then progressing in learning to building a quiz.  This focuses on College Board vocabulary and examples using Variables, Assignments, Functions, and Selection.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-27T00:00:00-05:00" itemprop="datePublished">
         Jun 27, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -126,7 +126,7 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Hello,-World!">Hello, World! </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Static-print-command-and-output">Static print command and output </a></li>
+<li class="toc-entry toc-h3"><a href="#Print-command-using-Static-Text-which-performs-output">Print command using Static Text which performs output </a></li>
 <li class="toc-entry toc-h3"><a href="#Dynamic-example-showing-variables,-input-and-output">Dynamic example showing variables, input and output </a></li>
 <li class="toc-entry toc-h3"><a href="#Building-a-Function">Building a Function </a></li>
 <li class="toc-entry toc-h3"><a href="#Imports,-Selection,-and-Logical-Expressions">Imports, Selection, and Logical Expressions </a></li>
@@ -156,15 +156,17 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Static-print-command-and-output">
-<a class="anchor" href="#Static-print-command-and-output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static print command and output<a class="anchor-link" href="#Static-print-command-and-output"> </a>
+<h3 id="Print-command-using-Static-Text-which-performs-output">
+<a class="anchor" href="#Print-command-using-Static-Text-which-performs-output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Print command using Static Text which performs output<a class="anchor-link" href="#Print-command-using-Static-Text-which-performs-output"> </a>
 </h3>
 <p>The classic introduction to a programming language is to output a "Hello, World!" message.  In Python, this is a print statement.</p>
 <ul>
 <li>The <mark>command or function</mark> is print()</li>
 <li>"Hello, World" is a String literal. This is the referred to as <mark>Static text</mark>, as it does not change.</li>
 <li>"Hello, World" is a parameter to the print command.</li>
-<li>The <mark>print command outputs</mark> the parameter to the terminal, as you see it in this Jupyter document </li>
+<li>The <mark>print command outputs</mark> the parameter to the terminal, as you see it in this Jupyter document</li>
+<li>
+<mark>Output</mark> in Jupyter Notebook is below the code cell.  Output will vary depending on tools and development intentions. Python print typically outputs to a terminal, we will see that when students start using Visual Studio Code.</li>
 </ul>
 
 </div>
@@ -249,7 +251,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>see you later
+<pre>Good day!
 </pre>
 </div>
 </div>
@@ -403,7 +405,7 @@ Answer: def
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is incorrect!"</span><span class="p">)</span>
 
-<span class="n">rsp</span> <span class="o">=</span> <span class="n">question_with_response</span><span class="p">(</span><span class="s2">"Each 'if' command contains a '_________' to determine a true or false condition?"</span><span class="p">)</span>
+<span class="n">rsp</span> <span class="o">=</span> <span class="n">question_with_response</span><span class="p">(</span><span class="s2">"Each 'if' command contains an '_________' to determine a true or false condition?"</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">rsp</span> <span class="o">==</span> <span class="s2">"expression"</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">rsp</span> <span class="o">+</span> <span class="s2">" is correct!"</span><span class="p">)</span>
     <span class="n">correct</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -426,7 +428,7 @@ Answer: def
 <pre>Hello, johnmortensen running /usr/local/bin/python3
 You will be asked 3 questions.
 Question: Are you ready to take a test?
-Answer: lets go!!!
+Answer: let's go
 Question: What command is used to include other functions that are developed?
 import is correct!
 Question: What command in this example is used to evaluate a response?

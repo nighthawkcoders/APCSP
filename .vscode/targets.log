@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Jul 25 06:41:21 2022
+# Make data base, printed on Tue Jul 26 07:27:57 2022
 
 # Variables
 
@@ -19,7 +19,6 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
- 
 VSCODE_LOG_NATIVE = false
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
@@ -42,8 +41,9 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/_n/7k1b0n557ng0fkmw74pd5cx00000gn/T/vscode-ipc-74cace61-61a7-4284-a46f-3aa939cafd1e.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/_n/7k1b0n557ng0fkmw74pd5cx00000gn/T/vscode-ipc-6e38a744-093f-4454-8589-4baf5dce1004.sock
 # environment
+ 
 VSCODE_CWD = /
 # environment
 PATH = /Users/johnmortensen/opt/anaconda3/bin:/Users/johnmortensen/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
@@ -152,7 +152,6 @@ CONDA_PREFIX = /Users/johnmortensen/opt/anaconda3
 # environment
 VSCODE_PID = 669
 # environment
- 
 _CE_CONDA = 
 # environment
 LANG = C
@@ -165,15 +164,16 @@ LANG = C
 
 # Directories
 
-# . (device 16777220, inode 342273860): 27 files, no impossibilities.
+# . (device 16777220, inode 342273860): 28 files, no impossibilities.
 
-# 27 files, no impossibilities in 1 directories.
+# 28 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 # No implicit rules.
 
 # Files
+ 
 
 stop: .FORCE
 #  Implicit rule search has not been done.
@@ -322,6 +322,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Mon Jul 25 06:41:21 2022
+# Finished Make data base on Tue Jul 26 07:27:57 2022
 
  

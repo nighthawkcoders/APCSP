@@ -1,5 +1,6 @@
 ---
 title: Calculator Starters
+comments: true
 layout: default
 description: A common way to become familiar with a language is to build a calculator.  This calculator shows off button with actions.
 permalink: /frontend/calculator

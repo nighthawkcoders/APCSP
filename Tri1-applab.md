@@ -3,17 +3,19 @@ toc: true
 comments: true
 title: App Lab
 layout: post
-description: Activity to build a UI through block coding, learn JavaScript, and get familiar with tracing and debugging code.
+description: Activity to build a UI through block coding.  Learn design process and prototyping; while producing some code.
 categories: [Tri1]
 tags: [AppLab javascript]
 ---
 
-# App Lab
-App Lab is the tool we will be using to introduce you to JavaScript.
+## App Lab
+AppLab is the tool we will be using to introduce you to design, prototyping, and JavaScript.
 
 To start, please create a https://studio.code.org/users/sign_in account and go to the following link: https://studio.code.org/projects/applab
-## Exploring App Lab
+
+### Exploring App Lab
 * Go ahead and take a look at the interface, discuss with a partner what features you see.
+
 ### Console
 In the code toolbox click variables and look at: console.log("message")
 
@@ -23,23 +25,24 @@ Drag this into your workspace. You can change the message if you would like.
 * Why would it be useful to have a print statement that the user does not see?
 
 ### Elements
-Make sure you are in design mode and select the elements to drag into the app. Take a look at the changable attributes of each elements. You can use the workspace to change these manually or you can try to change the attributes with a line of code.
+Make sure you are in design mode and select the elements to drag into the app. Take a look at the changeable attributes of each elements. You can use the workspace to change these manually or you can try to change the attributes with a line of code.
 
 In the code toolbox click UI controls. There are multiple functions that can affect the elements. Go ahead and play around with the different elements and see what you can do.
 
 * Share something interesting you found with your partner.
 * How can you keep track of all the elements you created?
-## Example
 
+### Example
 This is an example of an incomplete program: https://studio.code.org/projects/applab/rEkq6_-HMk-W8WkN1WoZFm45pdGoioqK4ur9sYYve6Q
 
 * What could you do to improve this program?
-## Design
 
+### Design
 You will be creating your own quiz with a partner choosing a topic of your choice. The most important thing you do before coding is to PLAN. Make an outline of the quiz you would like to create before you do any coding. 
 
 When you are done:
 * Share your program with the class: https://docs.google.com/forms/d/e/1FAIpQLSd1t5TTelZpp0JxCWKjNu-VVLvWZMg6UP7LKPlTQhkp26Cz8w/viewform?usp=sf_link
 * Class programs can be found here: https://docs.google.com/spreadsheets/d/1kgPNS4tkcuUmpm0f6piw5ARTW-JW2qN8FYb681z8syY/edit?usp=sharing
+
 ## Hacks
 * If you finish your quiz early, try coming up with a new idea for an app you think could work within App Lab. Remember to make a plan before you start any coding.

@@ -24,7 +24,7 @@ url: "https://nighthawkcoders.github.io" # the base hostname & protocol for your
 # 
 ####  Scenario Two: If you have a Custom Domain #####
 # 1. If your domain does NOT have a subpath, this leave this value as ""
-# 2. If your domain does have a subpath, you must preceed the value with a / and NOT have a / at the end.  
+# 2. If your domain does have a subpath, you must precede the value with a / and NOT have a / at the end.  
 #      For example: 
 #           "" is valid
 #           "/blog"        is valid
@@ -52,7 +52,7 @@ show_description: true
 # Set this to true to display image previews on home page, if they exist
 show_image: true
 
-# Set this to true to turn on annotations with hypothes.is (https://web.hypothes.is/)
+# Set this to true to turn on annotations with hypothes.is(https://web.hypothes.is/)
 annotations: false
 
 # Set this to true to display tags on each post

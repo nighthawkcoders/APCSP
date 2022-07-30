@@ -370,20 +370,9 @@
   
 
   
-      ,"page5": {
-          "title": "AppLab",
-          "content": "Posts .",
-          "url": "https://nighthawkcoders.github.io/APCSP/applab/",
-          "relUrl": "/applab/",
-          "date": ""
-      }
-      
-  
 
   
-
-  
-      ,"page7": {
+      ,"page6": {
           "title": "",
           "content": "Objectives . . This Conceptual Framework teaches College Boards 5 Big Ideas of AP Computer Science Principles, Python, JavaScript, and a Web Site application development together in an integrated fashion. The purpose is to teach College Board requirements while adding languages, tools, frameworks, and methodologies that meet Career Technical Education (CTE) needs. The outcome is preparing the High School student for the AP Test and simultaneously building the skills required for Computer Science internships. . . 2022-2023 Schedule . Week Sprint AP Test Prep Career Tech Canvas . 10 | Algorithms for Images | 2.2 Data Compression | Image Manipulations (TBD) | TBD | . 9 | Working with Images | 2.3 Extracting Information from Data | RGB Values and Base64 | TBD | . 8 | Working with Binary | 2.1 Binary Numbers | Binary Calculator ASCII, Base 2, 8, 16 (TBD) | TBD | . 7 | Test Driven Development | 1.4 Identifying and Correct Errors | Frontend and Backend use cases (API) | TBD | . 6 | AWS, Docker, Nginx Deployment | 1.3 Program Design and Development | Bash Introduction, Deployment Guide | TBD | . 5 | Flask/Python Backend Development | 1.2 Program Function and Purpose | Python API Endpoints using Jokes | TBD | . 4 | HTML/JavaScript Frontend Development | 1.1 Collaboration | Frontend with Fastpages | TBD | . 3 | Creative Development | Create Performance Task | Roles and Agile, Program Design with AppLab, JavaScript Tutorial | TBD | . 2 | Data Abstraction | Lists, Dictionaries, Iteration | HTML Fragments | TBD | . 1 | Introduction to Python | Variables, Assignments, Functions, Selection | Fastpages, Jupyter Notebooks, Markdown, Focus and Habits | TBD | . 0 | Tool Setup | Pseudo Code | Tools and Equipment | TBD | . Key Links . GitHub Repos: github.com/nighthawkcoders | AWS Deployments: csp.nighthawkcodingsociety.com | 2021-2022 Archives: Fall, Early Winter, Late Winter, Spring | . This site is built with fastpages. . Posts .",
           "url": "https://nighthawkcoders.github.io/APCSP/",
@@ -406,7 +395,7 @@
   
 
   
-      ,"page12": {
+      ,"page11": {
           "title": "",
           "content": "Objectives . . This Conceptual Framework teaches College Boards 5 Big Ideas of AP Computer Science Principles, Python, JavaScript, and a Web Site application development together in an integrated fashion. The purpose is to teach College Board requirements while adding languages, tools, frameworks, and methodologies that meet Career Technical Education (CTE) needs. The outcome is preparing the High School student for the AP Test and simultaneously building the skills required for Computer Science internships. . . 2022-2023 Schedule . Week Sprint AP Test Prep Career Tech Canvas . 10 | Algorithms for Images | 2.2 Data Compression | Image Manipulations (TBD) | TBD | . 9 | Working with Images | 2.3 Extracting Information from Data | RGB Values and Base64 | TBD | . 8 | Working with Binary | 2.1 Binary Numbers | Binary Calculator ASCII, Base 2, 8, 16 (TBD) | TBD | . 7 | Test Driven Development | 1.4 Identifying and Correct Errors | Frontend and Backend use cases (API) | TBD | . 6 | AWS, Docker, Nginx Deployment | 1.3 Program Design and Development | Bash Introduction, Deployment Guide | TBD | . 5 | Flask/Python Backend Development | 1.2 Program Function and Purpose | Python API Endpoints using Jokes | TBD | . 4 | HTML/JavaScript Frontend Development | 1.1 Collaboration | Frontend with Fastpages | TBD | . 3 | Creative Development | Create Performance Task | Roles and Agile, Program Design with AppLab, JavaScript Tutorial | TBD | . 2 | Data Abstraction | Lists, Dictionaries, Iteration | HTML Fragments | TBD | . 1 | Introduction to Python | Variables, Assignments, Functions, Selection | Fastpages, Jupyter Notebooks, Markdown, Focus and Habits | TBD | . 0 | Tool Setup | Pseudo Code | Tools and Equipment | TBD | . Key Links . GitHub Repos: github.com/nighthawkcoders | AWS Deployments: csp.nighthawkcodingsociety.com | 2021-2022 Archives: Fall, Early Winter, Late Winter, Spring | . This site is built with fastpages. . Posts .",
           "url": "https://nighthawkcoders.github.io/APCSP/page2/",
@@ -420,7 +409,7 @@
   
 
   
-      ,"page14": {
+      ,"page13": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/APCSP/robots.txt",

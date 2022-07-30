@@ -5,6 +5,7 @@ layout: post
 title: Program Design with App Lab by Code.org
 description: This Tech Talk focuses on Program Design and enables the student to build a prototype UI through block or script coding using the AppLab tool by Code.org.
 image: /images/applab-tool.png
+permalink: /tutorial/applab
 categories: [pbl]
 tags: [javascript]
 ---

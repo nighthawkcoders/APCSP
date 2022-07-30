@@ -1,6 +1,15 @@
-# How I Got a 5 on AP exam and Create Task Project
+---
+toc: true
+comments: true
+title: How I got a 5!
+layout: post
+description: Bria review her path to success on the AP Exam and Create Task project
+categories: [resources]
+tags: [apexam]
+---
 
 ## Exam Preparation
+> It all started ...
 
 ## Create Task Preparation
 

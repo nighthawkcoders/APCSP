@@ -5,6 +5,7 @@ title: Deployment Guide
 layout: post
 description: Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx 
 permalink: /tutorial/deploy
+image: /images/aws.png
 categories: [pbl]
 tags: [aws, ec2. docker, nginx, certbot, dns]
 ---

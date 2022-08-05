@@ -31,9 +31,9 @@ wsl --install
 Here are some useful command prompts to find a good location
 ```
 cd\     takes you to the root of the drive
-DIR     views the content of the directory you are currently on
-CD path     changes the directory to the chosen path
-CD..    changes the directory to the previous/parent directory
+dir     views the content of the directory you are currently on
+cd path     changes the directory to the chosen path
+cd..    changes the directory to the previous/parent directory
 ```
 3. Type ```code.``` in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.
 4. Once finished, you now see a WSL indicator in the bottom left corner.

@@ -36,5 +36,5 @@ CD path     changes the directory to the chosen path
 CD..    changes the directory to the previous/parent directory
 ```
 3. Type ```code.``` in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.
-4. Once finished, you now see a WSL indicator in the bottom left corner, and you'll be able to use VS Code as you would normally!
+4. Once finished, you now see a WSL indicator in the bottom left corner.
 ![WSL Status Bar](https://github.com/nighthawkcoders/APCSP/blob/master/images/wsl-statusbar-indicator.png)

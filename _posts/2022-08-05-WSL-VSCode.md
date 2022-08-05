@@ -30,7 +30,7 @@ wsl --install
 2. Navigate to a folder you'd like to open in VS Code
 Here are some useful command prompts to find a good location
 ```
-cd ~     takes you to the root of the drive
+cd ~     takes you to your personal directory
 mkdir    creates a folder (you can name this vscode)  
 ls     views the content of the directory you are currently on
 cd path     changes the directory to the chosen path (you can also do cd ~/vscode)

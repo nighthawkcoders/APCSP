@@ -4,6 +4,7 @@ comments: true
 layout: post
 title: VSCode Download with WSL
 description: Instructions on how to download VSCode with WSL
+image: https://commons.wikimedia.org/wiki/File:Visual_Studio_Code_1.35_icon.svg
 permalink: /vscode-wsl
 categories: [tri1]
 ---

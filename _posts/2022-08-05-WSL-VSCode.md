@@ -8,7 +8,7 @@ permalink: /vscode-wsl
 categories: [tri1]
 ---
 
-#Instructions to Download Visual Studio Code Remote - WSL
+# Instructions to Download Visual Studio Code Remote - WSL
 
 ## Download WSL 
 1. Type Command Prompt in your computer's search bar. Make sure to run as an administrator.

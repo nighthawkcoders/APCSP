@@ -121,6 +121,10 @@
 <lastmod>2022-07-29T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>https://nighthawkcoders.github.io/APCSP/vscode-wsl</loc>
+<lastmod>2022-08-05T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nighthawkcoders.github.io/APCSP/frontend/overview</loc>
 </url>
 <url>
@@ -140,5 +144,8 @@
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/page2/</loc>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/page3/</loc>
 </url>
 </urlset>

@@ -30,10 +30,11 @@ wsl --install
 2. Navigate to a folder you'd like to open in VS Code
 Here are some useful command prompts to find a good location
 ```
-cd\     takes you to the root of the drive
-dir     views the content of the directory you are currently on
-cd path     changes the directory to the chosen path
-cd..    changes the directory to the previous/parent directory
+cd ~     takes you to the root of the drive
+mkdir    creates a folder (you can name this vscode)  
+ls     views the content of the directory you are currently on
+cd path     changes the directory to the chosen path (you can also do cd ~/vscode)
+cd ..    changes the directory to the previous/parent directory
 ```
 3. Type ```code.``` in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.
 4. Once finished, you now see a WSL indicator in the bottom left corner.

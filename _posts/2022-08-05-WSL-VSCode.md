@@ -12,7 +12,7 @@ categories: [tri1]
 
 ## Download WSL 
 1. Type Command Prompt in your computer's search bar. Make sure to run as an administrator.
-You may get "the required operation requires elevation" if you do not run as an administator.
+You may get "the required operation requires elevation" if you do not run as an administrator.
 2. Enter Command Prompt
 ```
 wsl --install
@@ -38,4 +38,4 @@ cd ..    changes the directory to the previous/parent directory
 ```
 3. Type ```code.``` in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.
 4. Once finished, you now see a WSL indicator in the bottom left corner.
-![WSL Status Bar](https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/images/wsl-statusbar-indicator.png)
+![WSL Status Bar](images/wsl-statusbar-indicator.png)

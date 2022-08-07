@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT100-tools.html</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/tools</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT110-fastpages.html</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/fastpages</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT111-focus.html</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/focus</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT120-fragments.html</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/html</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/2022/06/27/TT130-roles.html</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/agile</loc>
+<lastmod>2022-06-27T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/applab</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
 <url>
@@ -115,10 +119,6 @@
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/resources/2022/07/27/create-task-bria.html</loc>
 <lastmod>2022-07-27T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/tutorial/applab</loc>
-<lastmod>2022-07-29T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/vscode-wsl</loc>

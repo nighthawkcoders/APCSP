@@ -3,7 +3,7 @@ toc: true
 comments: true
 layout: post
 title: VSCode Download with WSL
-description: Instructions on how to download VSCode with WSL in order to develop in a Linux-based environment.
+description: Instructions for Windows users on how to use VSCode with WSL in order to add a Linux-based development.
 permalink: /vscode-wsl
 categories: [tri1]
 image: images/wsl.png

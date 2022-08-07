@@ -77,9 +77,9 @@ title: Schedule
         <td>3</td>
         <td><a href="tri1/2022/06/30/Tri1-creative.html">Creative Development</a></td>
         <td><a href="units/2022/06/30/creatept.html">Create Performance Task</a></td>
-        <td><a href="techtalk/2022/06/27/TT130-roles.html">Roles and Agile</a>,
-            <a href="tutorial/applab/PBL-applab">Program Design with AppLab</a>,
-            <a href="tutorial/javascript">JavaScript Tutorial</a>
+        <td><a href="techtalk/agile">Agile and Roles</a>,
+            <a href="tutorial/javascript">JavaScript Tutorial</a>,
+            <a href="techtalk/applab">Program Design with AppLab</a>
         </td>
         <td>TBD</td>
     </tr>
@@ -88,7 +88,7 @@ title: Schedule
         <td>2</td>
         <td><a href="tri1/2022/06/29/Tri1-dataabstract.html">Data Abstraction</a></td>
         <td><a href="units/2022/06/29/lists.html">Lists, Dictionaries, Iteration</a></td>
-        <td><a href="techtalk/2022/06/27/TT120-fragments.html">HTML Fragments</a></td>
+        <td><a href="techtalk/html">HTML Fragments</a></td>
         <td>TBD</td>
     </tr>
 
@@ -96,8 +96,8 @@ title: Schedule
         <td>1</td>
         <td><a href="tri1/2022/06/29/Tri1-python.html">Introduction to Python</a></td>
         <td><a href="units/2022/06/27/hello.html">Variables, Assignments, Functions, Selection</a></td>
-        <td><a href="techtalk/2022/06/27/TT110-fastpages.html">Fastpages, Jupyter Notebooks, Markdown</a>,
-            <a href="techtalk/2022/06/27/TT111-focus.html">Focus and Habits</a>       
+        <td><a href="techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
+            <a href="techtalk/focus">Focus and Habits</a>       
         </td>
         <td>TBD</td>
     </tr>
@@ -106,7 +106,7 @@ title: Schedule
         <td>0</td>
         <td><a href="tri1/2022/06/27/Tri1-setup.html">Tool Setup</a></td>
         <td><a href="units/2022/06/27/pseudo.html">Pseudo Code</a></td>
-        <td><a href="techtalk/2022/06/27/TT100-tools.html">Tools and Equipment</a></td>
+        <td><a href="techtalk/tools">Tools and Equipment</a></td>
         <td>TBD</td>
     </tr>
     

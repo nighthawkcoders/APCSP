@@ -31,5 +31,5 @@ tags: [ApExam]
 8. SPEND A DAY REARRANGING THE CODE! This was important for me because the order that my code was in only made sense to me. But obviously I'm not the one grading, so I spent time going through and arranging my code in a way that I thought would make sense to a random person going through it line by line. 
 
 ## MY CREATE TASK PROCESS LINKS
-[INITIAL ROUGH DRAFT](https://github.com/nadirahaddach/4Gs/wiki/Bria's-Create-Task)   
-[]()
+[INITIAL ROUGH DRAFT](https://b-g101.github.io/create_task)   
+[FINAL DRAFT](https://github.com/nadirahaddach/4Gs/blob/main/templates/maptest.html)

@@ -38,6 +38,8 @@ image: images/mapimage.png
 9. SPEND A DAY REARRANGING THE CODE! This was important for me because the order that my code was in only made sense to me. But obviously I'm not the one grading, so I spent time going through and arranging my code in a way that I thought would make sense to a random person going through it line by line. 
 
 ## MY CREATE TASK PROCESS LINKS
-[INITIAL ROUGH DRAFT](https://b-g101.github.io/create_task)   
+[INITIAL ROUGH DRAFT](https://b-g101.github.io/create_task)
+
 [FINAL DRAFT](https://github.com/nadirahaddach/4Gs/blob/main/templates/maptest.html)
+
 [LINK TO VIDEO RUNTIME](https://user-images.githubusercontent.com/89234851/166164333-9bd98278-ef7b-47c4-ac39-7aeaddc23c12.mp4)

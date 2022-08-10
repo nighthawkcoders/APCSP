@@ -6,6 +6,7 @@ layout: post
 description: Bria review her path to success on the AP Exam and Create Task project
 categories: [resources]
 tags: [ApExam]
+image: images/mapimage.png
 ---
 
 ## EXAM PREPARATION
@@ -26,8 +27,9 @@ tags: [ApExam]
 ## CREATE TASK TIPS
 
 1. READ OVER THE [INSTRUCTIONS](https://apcentral.collegeboard.org/media/pdf/ap-csp-student-task-directions.pdf) CAREFULLY! Make sure that you are including each specific element in your project. It might be helpful to make a checklist with everything and check each item off as you are completing it with your project. I found myself having to review the guidelines a lot because there would be little things that I was forgetting, but doing so definitely made my project stronger.
-2. REVIEW THE [PAST EXAMPLES](https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam) FROM COLLEGEBOARD! Seeing what ideas got lower scores guided me and I knew what to avoid including in my own project. Additionally, the good examples gave me some ideas of how other people included the required lists, iteration, and other items in a creative way. Though these examples might inspire you, make sure that you are coming up with your own idea and not directly copying. 
-     -  
+2. REVIEW THE [PAST EXAMPLES](https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam#page-3) FROM COLLEGEBOARD! Seeing what ideas got lower scores guided me and I knew what to avoid including in my own project. Additionally, the good examples gave me some ideas of how other people included the required lists, iteration, and other items in a creative way. Though these examples might inspire you, make sure that you are coming up with your own idea and not directly copying. 
+     -  I looked at example [A](https://apcentral.collegeboard.org/media/pdf/ap21-apc-computer-science-principles-create-performance-task-sample-a.pdf) and [B](https://apcentral.collegeboard.org/media/pdf/ap21-apc-computer-science-principles-create-performance-task-sample-b.pdf) because those examples got all the points rewarded, so I looked at those for what to include and how much to write for my response.
+     -  I looked specifically at examples [I](https://apcentral.collegeboard.org/media/pdf/ap21-apc-computer-science-principles-create-performance-task-sample-i.pdf) and [H](https://apcentral.collegeboard.org/media/pdf/ap21-apc-computer-science-principles-create-performance-task-sample-h.pdf) because they both lost a bunch of points, so I made sure not look at what they did wrong and fix those error in my response.
 4. CITE YOUR SOURCES! If you use code from somewhere else, dont forget to make notes throughout giving credit to the original creator. Even something as small as a loop needs to be cited if its from somewhere else. But definitely try to code everything yourself because it's good practice and you learn a lot through actually working through the bugs in your project.
 5. DON'T MAKE A BASIC GAME! This one is more subjective, but a lot of people were telling me that if you make something basic/generic like hangman or tic tac toe you are not going to get a good score. I think just try to be as creative as possible and make sure that your project has a geniune purpose because that's an important part of the create task. Also please don't do a GPA Calculator, its so overdone :)
 6. REVIEW THE [SCORING GUIDELINES](https://apcentral.collegeboard.org/media/pdf/ap21-sg-computer-science-principles.pdf)! Don't just assume you are meeting each requirement, check the guidelines. They let you know exactly what they are looking for, so its another great way to double check your work. 
@@ -38,4 +40,4 @@ tags: [ApExam]
 ## MY CREATE TASK PROCESS LINKS
 [INITIAL ROUGH DRAFT](https://b-g101.github.io/create_task)   
 [FINAL DRAFT](https://github.com/nadirahaddach/4Gs/blob/main/templates/maptest.html)
-[LINK TO VIDEO RUNTIME]()
+[LINK TO VIDEO RUNTIME](https://user-images.githubusercontent.com/89234851/166164333-9bd98278-ef7b-47c4-ac39-7aeaddc23c12.mp4)

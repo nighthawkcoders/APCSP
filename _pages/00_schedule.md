@@ -29,8 +29,8 @@ title: Schedule
     <tr>
         <td>2</td>
         <td><a href="{{site.baseurl}}/week/2">Data Abstraction</a></td>
-        <td><a href="{{site.baseurl}}/collegeboard/python_data"</a></td>
-        <td><a href="{{site.baseurl}}/techtalk/html">HTML Fragments</a></td>
+        <td><a href="{{site.baseurl}}/collegeboard/python_lists"</a></td>
+        <td><a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a></td>
         <td>TBD</td>
     </tr>
 

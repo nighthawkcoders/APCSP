@@ -86,7 +86,7 @@ title: Schedule
         <td>8</td>
         <td><a href="">Working with Binary</a></td>
         <td><a href="https://apclassroom.collegeboard.org/103/home?unit=2">2.1 Binary Numbers</a></td>
-        <td><a href="frontend/binary">Binary Calculator ASCII, Base 2, 8, 16 (TBD)</a></td>
+        <td><a href="{{site.baseurl}}/frontend/binary">Binary Calculator ASCII, Base 2, 8, 16 (TBD)</a></td>
         <td>TBD</td>
     </tr>
 
@@ -94,7 +94,7 @@ title: Schedule
         <td>7</td>
         <td><a href="">Test Driven Development</a></td>
         <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.4 Identifying and Correct Errors</a></td>
-        <td><a href="api/overview">Frontend and Backend use cases (API)</a></td>
+        <td><a href="{{site.baseurl}}/api/overview">Frontend and Backend APIs</a></td>
         <td>TBD</td>
     </tr>
 
@@ -102,8 +102,9 @@ title: Schedule
         <td>6</td>
         <td><a href="">AWS, Docker, Nginx Deployment</a></td>
         <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.3 Program Design and Development</a></td>
-        <td><a href="tutorial/bash">Bash Introduction</a>,
-            <a href="tutorial/deploy">Deployment Guide</a>
+        <td>
+            <a href="{{site.baseurl}}/techtalk/bash">Bash Introduction</a>,
+            <a href="{{site.baseurl}}/techtalk/deploy">Deployment Guide</a>
         </td>
         <td>TBD</td>
     </tr>
@@ -112,7 +113,7 @@ title: Schedule
         <td>5</td>
         <td><a href="">Flask/Python Backend Development</a></td>
         <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.2 Program Function and Purpose</a></td>
-        <td><a href="tutorial/webapi">Python API Endpoints using Jokes</a></td>
+        <td><a href="{{site.baseurl}}/techtalk/webapi">Python API Endpoints using Jokes</a></td>
         <td>TBD</td>
     </tr>
 
@@ -120,7 +121,7 @@ title: Schedule
         <td>4</td>
         <td><a href="">HTML/JavaScript Frontend Development</a></td>
         <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.1 Collaboration</a></td>
-        <td><a href="frontend/overview.html">Frontend with Fastpages</a></td>
+        <td><a href="{{site.baseurl}}/frontend/overview.html">Frontend with Fastpages</a></td>
         <td>TBD</td>
     </tr>
 -->

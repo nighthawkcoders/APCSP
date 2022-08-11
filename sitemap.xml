@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/html</loc>
-<lastmod>2022-06-27T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://nighthawkcoders.github.io/APCSP/techtalk/agile</loc>
 <lastmod>2022-06-27T00:00:00-05:00</lastmod>
 </url>
@@ -117,11 +113,15 @@
 <lastmod>2022-08-22T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/collegeboard/python_data</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/collegeboard/python_lists</loc>
 <lastmod>2022-08-29T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/week/2</loc>
+<lastmod>2022-08-29T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/html</loc>
 <lastmod>2022-08-29T00:00:00-05:00</lastmod>
 </url>
 <url>

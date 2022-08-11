@@ -4,6 +4,7 @@ comments: true
 layout: post
 title: College Board Pseudo Code
 description: The College Board testing language is Pseudo Code.  Pseudo mean kind-of, or in this case College Board uses a kind-of programming language in its Multiple Choice exam.
+image: /images/pseudo_code.png
 permalink: /collegeboard/pseudo_code
 categories: [collegeboard]
 tags: [pseudoCode]

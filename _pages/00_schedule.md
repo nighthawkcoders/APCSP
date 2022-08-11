@@ -5,7 +5,7 @@ title: Schedule
 ---
 
 ## Trimester 1 - Introduction to Tools and Resources
-> The initial weeks focus on introducing Tools, Pair Programming, and the AP Resources that we plan to use throughout the year. At the end of Weeks 0-3 students will be exposed to Blogging with GitHub Pages, Jupyter Notebooks, Python, JavaScript, HTML, the College Board Create Performance Task and Code.org AppLab.
+> The initial weeks focus on introducing Tools, Pair Programming, and the AP Resources that we plan to use throughout the year. At the end of Weeks 0-3 students will be exposed to blogging with GitHub Pages; development with Jupyter Notebooks, Python, JavaScript, HTML, and Code.org AppLab; college board requirements within AP classroom and the Create Performance Task project.
 
 <table>
     <tr>

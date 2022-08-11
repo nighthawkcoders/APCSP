@@ -3,7 +3,7 @@ toc: true
 comments: true
 layout: post
 title: How I got a 5!
-description: Bria provides a review her path to success on the AP Exam and Create Task project
+description: Bria provides her path to success on the AP Exam and Create Task project
 image: /images/map_dnhs.png
 permalink: /collegeboard/bria
 categories: [collegeboard]

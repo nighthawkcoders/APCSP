@@ -15,6 +15,45 @@ title: Schedule
      <th>Canvas</th>
     </tr>
     
+    <tr>
+        <td>3</td>
+        <td><a href="tri1/2022/06/30/Tri1-creative.html">Creative Development</a></td>
+        <td><a href="units/2022/06/30/creatept.html">Create Performance Task</a></td>
+        <td><a href="{{site.baseurl}}/techtalk/agile">Agile and Roles</a>,
+            <a href="{{site.baseurl}}/tutorial/javascript">JavaScript Tutorial</a>,
+            <a href="{{site.baseurl}}/techtalk/applab">Program Design with AppLab</a>
+        </td>
+        <td>TBD</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td><a href="tri1/2022/06/29/Tri1-dataabstract.html">Data Abstraction</a></td>
+        <td><a href="units/2022/06/29/lists.html">Lists, Dictionaries, Iteration</a></td>
+        <td><a href="{{site.baseurl}}/techtalk/html">HTML Fragments</a></td>
+        <td>TBD</td>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td><a href="tri1/2022/06/29/Tri1-python.html">Introduction to Python</a></td>
+        <td><a href="units/2022/06/27/hello.html">Variables, Assignments, Functions, Selection</a></td>
+        <td><a href="techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
+            <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>       
+        </td>
+        <td>TBD</td>
+    </tr>
+    
+    <tr>
+        <td>0</td>
+        <td><a href="{{site.baseurl}}/week/0">Tool Setup</a></td>
+        <td><a href="{{site.baseurl}}/collegeboard/pseudo_code">Pseudo Code</a></td>
+        <td><a href="{{site.baseurl}}/techtalk/tools">Tools and Equipment</a></td>
+        <td>TBD</td>
+    </tr>
+    
+</table>
+
 <!---
     <tr>
         <td>10</td>
@@ -74,41 +113,3 @@ title: Schedule
         <td>TBD</td>
     </tr>
 -->
-    <tr>
-        <td>3</td>
-        <td><a href="tri1/2022/06/30/Tri1-creative.html">Creative Development</a></td>
-        <td><a href="units/2022/06/30/creatept.html">Create Performance Task</a></td>
-        <td><a href="techtalk/agile">Agile and Roles</a>,
-            <a href="tutorial/javascript">JavaScript Tutorial</a>,
-            <a href="techtalk/applab">Program Design with AppLab</a>
-        </td>
-        <td>TBD</td>
-    </tr>
-
-    <tr>
-        <td>2</td>
-        <td><a href="tri1/2022/06/29/Tri1-dataabstract.html">Data Abstraction</a></td>
-        <td><a href="units/2022/06/29/lists.html">Lists, Dictionaries, Iteration</a></td>
-        <td><a href="techtalk/html">HTML Fragments</a></td>
-        <td>TBD</td>
-    </tr>
-
-    <tr>
-        <td>1</td>
-        <td><a href="tri1/2022/06/29/Tri1-python.html">Introduction to Python</a></td>
-        <td><a href="units/2022/06/27/hello.html">Variables, Assignments, Functions, Selection</a></td>
-        <td><a href="techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
-            <a href="techtalk/focus">Focus and Habits</a>       
-        </td>
-        <td>TBD</td>
-    </tr>
-    
-    <tr>
-        <td>0</td>
-        <td><a href="tri1/2022/06/27/Tri1-setup.html">Tool Setup</a></td>
-        <td><a href="units/2022/06/27/pseudo.html">Pseudo Code</a></td>
-        <td><a href="techtalk/tools">Tools and Equipment</a></td>
-        <td>TBD</td>
-    </tr>
-    
-</table>

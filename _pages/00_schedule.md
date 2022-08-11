@@ -17,9 +17,9 @@ title: Schedule
     
     <tr>
         <td>3</td>
-        <td><a href="tri1/2022/06/30/Tri1-creative.html">Creative Development</a></td>
-        <td><a href="units/2022/06/30/creatept.html">Create Performance Task</a></td>
-        <td><a href="{{site.baseurl}}/techtalk/agile">Agile and Roles</a>,
+        <td><a href="{{site.baseurl}}/week/3">Creative Development</a></td>
+        <td><a href="{{site.baseurl}}/collegeboard/create">Create Performance Task</a></td>
+        <td>
             <a href="{{site.baseurl}}/tutorial/javascript">JavaScript Tutorial</a>,
             <a href="{{site.baseurl}}/techtalk/applab">Program Design with AppLab</a>
         </td>
@@ -30,7 +30,10 @@ title: Schedule
         <td>2</td>
         <td><a href="{{site.baseurl}}/week/2">Data Abstraction</a></td>
         <td><a href="{{site.baseurl}}/collegeboard/python_lists">Python Lists and Dictionaries</a></td>
-        <td><a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a></td>
+        <td>
+            <a href="{{site.baseurl}}/techtalk/agile">Agile and Roles</a>,
+            <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
+        </td>
         <td>TBD</td>
     </tr>
 

@@ -4,6 +4,8 @@ comments: true
 layout: post
 description: 30% of testing and a big portion of achievement in class is in building your own application. Start thinking about this now!
 categories: [units]
+image: /images/create_performance_task.webp
+permalink: /techtalk/create
 title: College Board Create Performance Task
 ---
 

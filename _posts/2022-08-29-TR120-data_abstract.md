@@ -19,10 +19,10 @@ As you use Python, as with all programming languages, <mark>managing data is a k
 ## Daily Plans Week 2
 Introduce some concepts in [Big Idea 2 Data](https://apclassroom.collegeboard.org/103/home?unit=3), [Big Idea Section 3.2 Data Abstraction](https://apclassroom.collegeboard.org/103/home?unit=3).  Practice Pair Programming Habit of 30 minutes/30 minutes/1 commit.
 - Monday: "Live Review" with pairs: show personal progress in Python, Variables, and Assignments.
-- Tuesday: Test Prep - Discuss Lists and Dictionaries.  
-- Wednesday: Tech Talk - Pair Programming and using Jupyter Notebook to generate Python lists and dictionaries
+- Tuesday: Test Prep - Discuss Lists and Dictionaries  
+- Wednesday: Tech Talk - Agile Development Methodology
 - Thursday: Tech Talk - HTML fragments, including behind the Scenes Layout
-- Friday: Code/Code/Code - Code/Code/Code, Completing hacks for the week
+- Friday: Pair Code/Code/Code, Completing hacks for the week
 
 
 # Points and Tangibles

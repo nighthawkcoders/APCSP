@@ -2,9 +2,11 @@
 toc: true
 comments: true
 layout: post
-description: Creative development is a key skill that Teachers will be looking at through the year.  The development process requires inspiration, research, and go both inside and outside the box.
-categories: [tri1]
 title: Creative Development Sprint
+description: Creative development is a key skill that Teachers will be looking at through the year.  The development process requires inspiration, research, and go both inside and outside the box.  At these early stages of development it is about pair programming, collaborating with each other and teacher, and responding to change.
+permalink: /week/3
+image: /images/agile_manifesto.jpeg
+categories: [tri1]
 ---
 
 # Creative Development - Week 3
@@ -15,11 +17,10 @@ title: Creative Development Sprint
 - Each student needs to begin technical application of College Board requirements in "Unt 2: Data" and "Unit 3: Algorithms and Programming".  
 
 ### Weekly Schedule
-- Monday: "Live Review" with pairs: show personal progress in ideation and prototyping.
-- Tuesday: Test Prep - Discuss Create Task.  
-- Wednesday: Create Performance Task, Plan/Plan/Planning - Pair Create Task.
-- Thursday: Tech Talk - Roles and Agile
-- Friday: Create Performance Task, Code/Code/Coding, Pair Programming; Crossover Review last 15-20 minutes with crossover grading 
+- Tuesday (makeup Monday): PBL review below; "Live Review" with pairs: show personal progress in ideation and prototyping.
+- Wednesday: Test Prep - Discuss Create Performance Task.  
+- Thursday: Tech Talk - Code.org AppLab
+- Friday: Crossover Review last 15-20 minutes with crossover grading 
 
 ### PBL Ideation
 > Start the process of Ideation, Design, Scrum Board building, and assigning Issues prior to coding.  Ideation are early ideas.
@@ -53,7 +54,7 @@ title: Creative Development Sprint
         <mark>Progressive learning objectives to become a Development Engineer versus a Coder.  Students need to establish a Trimester Long self-evaluation progress sheet on these objectives throughout the term.</mark>.  Each time you do a review ticket you should consider with of these you have improved on.
         <ul>
             <li>Proficiency in GitHub Pages/Fastpages and Jupyter Notebooks. Learn how to keep notes, search, tag, and develop code fragments in a personal GH Pages project</li>
-            <li>Become Socially Active in Classroom Development Methodologies like Pair Programming, Issue Definition, Scrum Boards, GitHub Code Management, Review Tickets, Video making, Lesson Presentation, and Live Grading</li>
+            <li>Become Active in Classroom Development Methodologies like Pair Programming, Issue Definition, Scrum Boards, GitHub Code Management, Review Tickets, Video making, Lesson Presentation, and Live Grading</li>
             <li>Establish skills in Fundamentals of Programming using Python and JavaScript. Understanding Code concepts like Sequences, Selection, Iteration, and Procedural Abstraction</li>
             <li>Become fluent in Data Abstraction using Arrays in JavaScript, JavaScript Object Notation (JSON), and Python Lists and Dictionaries</li>
             <li>Establish Developer Operations (DevOps) skills in GitHub, Visual Studio Code, Linux, Bash, AWS and other Deployment tooling</li>

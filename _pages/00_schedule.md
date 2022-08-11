@@ -19,9 +19,12 @@ title: Schedule
     <tr>
         <td>3</td>
         <td><a href="{{site.baseurl}}/week/3">Creative Development</a></td>
-        <td><a href="{{site.baseurl}}/collegeboard/create">Create Performance Task</a></td>
         <td>
-            <a href="{{site.baseurl}}/tutorial/javascript">JavaScript Tutorial</a>,
+            <a href="{{site.baseurl}}/collegeboard/create">Create Performance Task</a>,
+            <a href="{{site.baseurl}}/collegeboard/bria">How I got a  5!</a>
+        </td>
+        <td>
+            <a href="{{site.baseurl}}/techtalk/javascript">JavaScript Tutorial</a>,
             <a href="{{site.baseurl}}/techtalk/applab">Program Design with AppLab</a>
         </td>
         <td>TBD</td>

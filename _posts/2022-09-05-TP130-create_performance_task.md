@@ -4,9 +4,9 @@ comments: true
 layout: post
 title: College Board Create Performance Task
 description: 30% of testing and a big portion of achievement in class is in building your own application. Start thinking about this now!
-categories: [units]
 image: /images/create_performance_task.png
 permalink: /techtalk/create
+categories: [collegeboard]
 ---
 
 ## Learning Create Performance Task, 30% of grade on AP exam
@@ -126,6 +126,6 @@ Del Norte Computer Science Principles Teachers have zero tolerance for plagiaris
 
 ## Hacks
 > Start an outline on how you will prepare for the Create Performance Task project.
-- Review [How I got a 5, by Bria]({{site.baseurl}}/techtalk/bria)
+- Review [How I got a 5, by Bria]({{site.baseurl}}/collegeboard/bria)
 - Establish a personal or pair Scrum Board with active and future Issues
 - Start a design that _post that can be reviewed to see if it meets the basicCreate Performance Task requirements. Be sure to pick something that you don't burn out on or is not overly common.

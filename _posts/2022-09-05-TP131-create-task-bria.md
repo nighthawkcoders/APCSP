@@ -5,8 +5,8 @@ layout: post
 title: How I got a 5!
 description: Bria provides a review her path to success on the AP Exam and Create Task project
 image: /images/map_dnhs.png
-permalink: /techtalk/bria
-categories: [techtalk]
+permalink: /collegeboard/bria
+categories: [collegeboard]
 tags: [APExam]
 ---
 

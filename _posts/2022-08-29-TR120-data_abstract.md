@@ -4,9 +4,9 @@ comments: true
 layout: post
 title: Data Abstraction in Python
 description: A computer application without data is typically simple and not very useful.  Think of all the fields in Computer Science that are related to data.  This week, using Pair Programming, students will get familiar with storing data in Python.
-categories: [tri1]
 permalink: /week/2
-image: /images/python_data
+image: /images/python_data.jpeg
+categories: [tri1]
 ---
 
 # Data Abstraction - Week 2

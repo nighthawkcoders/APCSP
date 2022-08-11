@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/webapi</loc>
+<lastmod>2022-06-01T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/bash</loc>
+<lastmod>2022-06-01T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/deploy</loc>
+<lastmod>2022-06-01T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nighthawkcoders.github.io/APCSP/frontend/binary</loc>
 <lastmod>2022-07-07T00:00:00-05:00</lastmod>
 </url>
@@ -37,20 +49,8 @@
 <lastmod>2022-07-19T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/tutorial/bash</loc>
-<lastmod>2022-07-19T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/tutorial/deploy</loc>
-<lastmod>2022-07-20T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/pbl/2022/07/21/neo4j_intro.html</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/pbl/2022/07/21/PBL-neo4j_intro.html</loc>
 <lastmod>2022-07-21T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/tutorial/webapi</loc>
-<lastmod>2022-07-23T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/workshop/code_dot_org</loc>

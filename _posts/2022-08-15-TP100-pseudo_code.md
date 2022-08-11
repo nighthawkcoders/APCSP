@@ -17,6 +17,8 @@ BTW, instructions are translated into machine code for computers to execute.  Th
 
 College Board is trying to remain neutral and build Computer Science Principles off of any language, thus the Teacher is left to pick the language(s) according to application and curriculum. 
 
+[Exam Reference Sheet](https://apcentral.collegeboard.org/media/pdf/ap-computer-science-principles-exam-reference-sheet.pdf)
+
 ### Comparison of CB Pseudo Code to Python with descriptions
 
 Command Vocabulary | Pseudo code         | Python                 | Purpose

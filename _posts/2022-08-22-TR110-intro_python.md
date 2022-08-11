@@ -2,9 +2,11 @@
 toc: true
 comments: true
 layout: post
-description: Python is a key language in the class and will be used to build the backend of our Web Applications throughout the year.
-categories: [tri1]
 title: Introduction to Python Sprint
+description: Python is a key language in the class and will be used to build the backend of our Web Applications throughout the year.
+permalink: /week/1
+image: /images/python.png
+categories: [tri1]
 ---
 
 # Introduction to Python - Week 1

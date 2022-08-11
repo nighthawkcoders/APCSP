@@ -36,8 +36,8 @@ title: Schedule
 
     <tr>
         <td>1</td>
-        <td><a href="tri1/2022/06/29/Tri1-python.html">Introduction to Python</a></td>
-        <td><a href="units/2022/06/27/hello.html">Variables, Assignments, Functions, Selection</a></td>
+        <td><a href="t{{site.baseurl}}/week/1">Introduction to Python</a></td>
+        <td><a href="{{site.baseurl}}/collegeboard/python">Hello to Python</a></td>
         <td><a href="techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
             <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>       
         </td>

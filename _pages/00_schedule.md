@@ -28,15 +28,15 @@ title: Schedule
 
     <tr>
         <td>2</td>
-        <td><a href="tri1/2022/06/29/Tri1-dataabstract.html">Data Abstraction</a></td>
-        <td><a href="units/2022/06/29/lists.html">Lists, Dictionaries, Iteration</a></td>
+        <td><a href="{{site.baseurl}}/week/2">Data Abstraction</a></td>
+        <td><a href="{{site.baseurl}}/collegeboard/python_data"</a></td>
         <td><a href="{{site.baseurl}}/techtalk/html">HTML Fragments</a></td>
         <td>TBD</td>
     </tr>
 
     <tr>
         <td>1</td>
-        <td><a href="t{{site.baseurl}}/week/1">Introduction to Python</a></td>
+        <td><a href="{{site.baseurl}}/week/1">Introduction to Python</a></td>
         <td><a href="{{site.baseurl}}/collegeboard/python">Hello to Python</a></td>
         <td>
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,

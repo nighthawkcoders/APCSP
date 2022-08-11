@@ -2,9 +2,11 @@
 toc: true
 comments: true
 layout: post
-description: A web application without data is typically simple and not very useful.  Think of all the fields in Computer Science that are related to data.
+title: Pair Programming and Data Abstraction in Python
+description: A computer application without data is typically simple and not very useful.  Think of all the fields in Computer Science that are related to data.  This week, using Pair Programming, students will get familiar with storing data in Python.
 categories: [tri1]
-title: Data Abstraction Sprint
+permalink: /week/2
+image: /images/pair_programming.png
 ---
 
 # Data Abstraction - Week 2
@@ -18,9 +20,10 @@ As you use Python, as with all programming languages, <mark>managing data is a k
 Introduce some concepts in [Big Idea 2 Data](https://apclassroom.collegeboard.org/103/home?unit=3), [Big Idea Section 3.2 Data Abstraction](https://apclassroom.collegeboard.org/103/home?unit=3).  Practice Pair Programming Habit of 30 minutes/30 minutes/1 commit.
 - Monday: "Live Review" with pairs: show personal progress in Python, Variables, and Assignments.
 - Tuesday: Test Prep - Discuss Lists and Dictionaries.  
-- Wednesday: Tech Talk - Code/Code/Code, Pair Programming in Jupyter Notebook
+- Wednesday: Tech Talk - Pair Programming and using Jupyter Notebook to generate Python lists and dictionaries
 - Thursday: Tech Talk - HTML fragments, including behind the Scenes Layout
 - Friday: Code/Code/Code - Code/Code/Code, Completing hacks for the week
+
 
 # Points and Tangibles
 - Points (see canvas), live reviews will be scheduled in class on Monday of next week.  Everything will be crossover graded using a "Review Ticket"

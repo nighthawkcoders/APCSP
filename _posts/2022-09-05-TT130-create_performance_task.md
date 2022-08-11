@@ -2,11 +2,11 @@
 toc: true
 comments: true
 layout: post
+title: College Board Create Performance Task
 description: 30% of testing and a big portion of achievement in class is in building your own application. Start thinking about this now!
 categories: [units]
-image: /images/create_performance_task.webp
+image: /images/create_performance_task.png
 permalink: /techtalk/create
-title: College Board Create Performance Task
 ---
 
 ## Learning Create Performance Task, 30% of grade on AP exam

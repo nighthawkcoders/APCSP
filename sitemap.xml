@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/agile</loc>
-<lastmod>2022-06-27T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/applab</loc>
-<lastmod>2022-06-27T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/tri1/2022/06/30/Tri1-creative.html</loc>
-<lastmod>2022-06-30T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://nighthawkcoders.github.io/APCSP/units/2022/06/30/creatept.html</loc>
-<lastmod>2022-06-30T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://nighthawkcoders.github.io/APCSP/tutorial/javascript</loc>
 <lastmod>2022-07-06T00:00:00-05:00</lastmod>
 </url>
@@ -121,8 +105,24 @@
 <lastmod>2022-08-29T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/agile</loc>
+<lastmod>2022-08-29T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nighthawkcoders.github.io/APCSP/techtalk/html</loc>
 <lastmod>2022-08-29T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/week/3</loc>
+<lastmod>2022-09-05T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/applab</loc>
+<lastmod>2022-09-05T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/create</loc>
+<lastmod>2022-09-05T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/schedule</loc>

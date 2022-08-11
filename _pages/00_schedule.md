@@ -14,7 +14,8 @@ title: Schedule
      <th>Career Tech</th>
      <th>Canvas</th>
     </tr>
-
+    
+<!---
     <tr>
         <td>10</td>
         <td><a href="">Algorithms for Images</a></td>
@@ -72,7 +73,7 @@ title: Schedule
         <td><a href="frontend/overview.html">Frontend with Fastpages</a></td>
         <td>TBD</td>
     </tr>
-
+-->
     <tr>
         <td>3</td>
         <td><a href="tri1/2022/06/30/Tri1-creative.html">Creative Development</a></td>

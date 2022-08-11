@@ -125,7 +125,7 @@ Del Norte Computer Science Principles Teachers have zero tolerance for plagiaris
     - [Information on written responses starts here](https://youtu.be/LfzpMASeNHg?t=801)
 
 ## Hacks
-
-- Scum Board with active and future Issues
-- Commits in GitHub
-- Designs will be reviewed to meet Teacher and Create Task requirements. Be sure to pick something that you don't burn out on after a couple of hours.
+> Start an outline on how you will prepare for the Create Performance Task project.
+- Review [How I got a 5, by Bria]({{site.baseurl}}/techtalk/bria)
+- Establish a personal or pair Scrum Board with active and future Issues
+- Start a design that _post that can be reviewed to see if it meets the basicCreate Performance Task requirements. Be sure to pick something that you don't burn out on or is not overly common.

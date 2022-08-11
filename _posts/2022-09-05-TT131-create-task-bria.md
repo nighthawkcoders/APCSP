@@ -1,12 +1,13 @@
 ---
 toc: true
 comments: true
-title: How I got a 5!
 layout: post
-description: Bria review her path to success on the AP Exam and Create Task project
-categories: [resources]
-tags: [ApExam]
-image: images/mapimage.png
+title: How I got a 5!
+description: Bria provides a review her path to success on the AP Exam and Create Task project
+image: /images/map_dnhs.png
+permalink: /techtalk/bria
+categories: [techtalk]
+tags: [APExam]
 ---
 
 ## EXAM PREPARATION

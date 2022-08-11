@@ -13,9 +13,9 @@ categories: [units]
 ### 2022
 Paper exam in Gym, MCQs
 -	Energy in classroom was much improved over prior year. Ms Naidu and Mr Mortensen often had positive work sessions at the end of the day and we were always complementary to students effort.
--	Test Prep Tuesday was polarized between participating and not participating. Student Led sessions needed improve, Teachers did intervention toward the end of the year. Teachers plan to lead Test Prep sessions at start of the year and look for students to provide valued participation in second half of Trimester 1.  Extra Credit will likely be awarded for quality student led preparations.
--	Students did very well on practice exams and corrections on errors.  Majority of class was in dark green after 2nd practice test.
--   Some students were trying to do minimum on College Board Create Performance Task (CPT).  The people that received "4's and 5's" seem to have an extra mindset on CPT.
+-	Test Prep Tuesday was polarized between participating and not participating. Student Led sessions needed improve, perhaps more training by Teachers. In 2023 testing year, the plan is to lead Test Prep sessions at start of the year and look for students to provide valued participation in second half of Trimester 1.  Extra Credit will likely be awarded for quality student led preparations during the year.
+-	Students did very well on practice exams and on corrections of errors.  Majority of class was in dark green after 2nd practice test.
+-   Some students were trying to do minimum on College Board Create Performance Task (CPT).  The people that received "4's and 5's" seem to have an extra mindset on CPT.  It is my opinion that many scores dropped out of "5" range as a result of the CPT.  But, this can't be confirmed, but theory is based on high MCQ scores in practice sessions.
 
  ![]({{site.baseurl}}/images/history/2022-CB-Scores1.png)
 

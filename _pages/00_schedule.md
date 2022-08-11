@@ -55,7 +55,10 @@ title: Schedule
     <tr>
         <td>0</td>
         <td><a href="{{site.baseurl}}/week/0">Tool Setup</a></td>
-        <td><a href="{{site.baseurl}}/collegeboard/pseudo_code">Pseudo Code</a></td>
+        <td>
+            <a href="{{site.baseurl}}/collegeboard/history">Scoring History</a>,
+            <a href="{{site.baseurl}}/collegeboard/pseudo_code">Pseudo Code</a>
+        </td>
         <td><a href="{{site.baseurl}}/techtalk/tools">Tools and Equipment</a></td>
         <td>TBD</td>
     </tr>

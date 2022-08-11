@@ -3,6 +3,7 @@ title: Grade Calculator
 layout: default
 description: Supports grade inputs and calculates average. 
 permalink: /frontend/grades
+image: /images/grade_calc.png
 categories: [pbl]
 tags: [javascript, html, input, onblur]
 ---

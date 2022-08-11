@@ -3,6 +3,7 @@ title: Binary Math
 layout: default
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 permalink: /frontend/binary
+image: /images/binary.png
 categories: [pbl]
 tags: [html, liquid, javascript]
 ---

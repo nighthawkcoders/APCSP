@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -105,9 +105,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#opening-up-vscode-with-wsl">Opening up VSCode with WSL</a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#opening-up-vscode-with-wsl-terminal">Opening up VSCode with WSL terminal</a></li>
+<li class="toc-entry toc-h4"><a href="#other-observation">Other observation</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h3"><a href="#other">Other</a></li>
 </ul>
 </li>
 </ul><h2 id="instructions-to-download-visual-studio-code-remote---wsl">
@@ -183,17 +183,21 @@ window.onload = wrap_img;
 <ol>
   <li>Open a WSL terminal window (using the start menu item or by typing wsl from a command prompt / PowerShell)</li>
   <li>Navigate to a folder you’d like to open in VS Code
-Here are some useful command prompts to find a good location
+Here are some useful commands for our work
     <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~     <span class="c"># takes you to your personal directory on Windows</span>
-<span class="nb">cd</span> /mnt/c/Users/&lt;username&gt; <span class="c"># task you to personal director on WSL</span>
-<span class="nb">mkdir</span>    <span class="c"># creates a folder (you can name this vscode)  </span>
+<span class="nb">mkdir </span>vscode   <span class="c"># creates a folder to clone your repositories</span>
 <span class="nb">ls</span>     <span class="c"># views the content of the directory you are currently on</span>
-<span class="nb">cd </span>path     <span class="c"># changes the directory to the chosen path (you can also do cd /mnt/c/Users/&lt;username&gt;/vscode)</span>
+<span class="nb">cd</span> ~/vscode  <span class="c"># changes the directory to path for vscode files</span>
+git clone https://github.com/nighthawkcoders/APCSP.git <span class="c"># clone repo</span>
+<span class="nb">cd </span>APCSP  <span class="c"># changes the directory to path for APCSP repos assets</span>
+code <span class="nb">.</span>  <span class="c"># opens APCSP in VSCode</span>
 <span class="nb">cd</span> ..    <span class="c"># changes the directory to the previous/parent directory</span>
+git config <span class="nt">--global</span> user.email mygmail@gmail.com  <span class="c"># tell git your email</span>
+git config <span class="nt">--global</span> user.name mygithub   <span class="c"># tell git your github id</span>
 </code></pre></div>    </div>
   </li>
-  <li>Type <code class="language-plaintext highlighter-rouge">code.</code> in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.</li>
+  <li>Type <code class="language-plaintext highlighter-rouge">code .</code> in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.</li>
 </ol>
 
 <h4 id="opening-up-vscode-with-wsl-terminal">
@@ -205,8 +209,8 @@ Here are some useful command prompts to find a good location
 <ul>
   <li>These two commands help git to understand your identity
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span>git config <span class="nt">--global</span> user.email jmort1021@gmail.com
-shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span>git config <span class="nt">--global</span> user.name jm1021
+<div class="highlight"><pre class="highlight"><code>shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span>git config <span class="nt">--global</span> user.email shay@gmail.com
+shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span>git config <span class="nt">--global</span> user.name shay
 </code></pre></div>    </div>
   </li>
   <li>These commands clone a respository and load VSCode for work
@@ -230,12 +234,17 @@ shay@MSI:/mnt/c/Users/ShayM/vscode$
 ```</li>
 </ul>
 
-<h3 id="other">
-<a class="anchor" href="#other" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other</h3>
-<p>Once finished, you now see a WSL indicator in the bottom left corner.
+<h4 id="other-observation">
+<a class="anchor" href="#other-observation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other observation</h4>
+<blockquote>
+  <p>When you open VSCode in WSL, you now see a WSL indicator in the bottom left corner.
 <img src="images/wsl-statusbar-indicator.png" alt="WSL Status Bar"></p>
+</blockquote>
 
-<p><a href="https://code.visualstudio.com/docs/remote/wsl">### More on WSL and VS Code</a></p>
+<blockquote>
+  <p>Read move on WSL and VSCode
+<a href="https://code.visualstudio.com/docs/remote/wsl">VSCode doc</a></p>
+</blockquote>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"

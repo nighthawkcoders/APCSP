@@ -104,7 +104,6 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#github-account">GitHub Account</a></li>
 <li class="toc-entry toc-h3"><a href="#macos-1st-time-developer">MacOS 1st Time Developer</a></li>
 <li class="toc-entry toc-h3"><a href="#windows-1st-time-developer">Windows 1st Time Developer</a></li>
-<li class="toc-entry toc-h3"><a href="#vscode-for-python">VSCode for Python</a></li>
 <li class="toc-entry toc-h3"><a href="#vscode-fastpages-project">VSCode Fastpages Project</a></li>
 <li class="toc-entry toc-h3"><a href="#vscode-marketplace-and-extensions">VSCode Marketplace and Extensions</a></li>
 </ul>
@@ -154,58 +153,60 @@ window.onload = wrap_img;
 
 <h3 id="macos-1st-time-developer">
 <a class="anchor" href="#macos-1st-time-developer" aria-hidden="true"><span class="octicon octicon-link"></span></a>MacOS 1st Time Developer</h3>
-<ul>
-  <li>Install Homebrew from Terminal <a href="https://brew.sh">https://brew.sh</a>
-    <ul>
-      <li>Copy <code class="language-plaintext highlighter-rouge">bash ... curl ...</code>  command using copy box on website</li>
-      <li>Launch <code class="language-plaintext highlighter-rouge">terminal</code> from search bar</li>
-      <li>Paste <code class="language-plaintext highlighter-rouge">bash ... curl ...</code> command into Terminal …</li>
-      <li>Make sure command starts, this should provide feedback/output in terminal and could take a long time, like 10-min, there could be a  prompt in the middle, at about 5-minutes.  Follow any on screen instructions provided in terminal output to finish.</li>
-    </ul>
-  </li>
-  <li>Homebrew install a tool called “brew” which helps add and manage developer packages on MacOS. Next, we need to obtain “git” which helps us “git” (get) code from a cloud server called GitHub
-    <ul>
-      <li>At prompt enter commend: <code class="language-plaintext highlighter-rouge">$ brew list</code>
+<blockquote>
+  <p>VSCode install on MacOS.</p>
+  <ul>
+    <li>Install <a href="https://code.visualstudio.com/docs/setup/mac">VSCode</a>
 </li>
-      <li>Then type: <code class="language-plaintext highlighter-rouge">$ brew install git</code>
-</li>
-    </ul>
-  </li>
-  <li>Install <a href="https://code.visualstudio.com/docs/setup/mac">VSCode</a>
-    <ul>
-      <li>Follow quick install for obtaining Python and Extensions</li>
-    </ul>
-  </li>
-</ul>
+    <li>Install Homebrew from Terminal <a href="https://brew.sh">https://brew.sh</a>
+      <ul>
+        <li>Copy <code class="language-plaintext highlighter-rouge">bash ... curl ...</code>  command using copy box on website</li>
+        <li>Launch <code class="language-plaintext highlighter-rouge">terminal</code> from search bar</li>
+        <li>Paste <code class="language-plaintext highlighter-rouge">bash ... curl ...</code> command into Terminal …</li>
+        <li>Make sure command starts, this should provide feedback/output in terminal and could take a long time, like 10-min, there could be a  prompt in the middle, at about 5-minutes.  Follow any on screen instructions provided in terminal output to finish.</li>
+      </ul>
+    </li>
+    <li>Homebrew installs a tool called “brew” which helps add and manage developer packages on MacOS.</li>
+    <li>In a Terminal install Git and Python3
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>brew list <span class="c"># list packages</span>
+brew update <span class="c"># update package list</span>
+brew upgrade <span class="c"># upgrade packages</span>
+brew <span class="nb">install </span>git  <span class="c"># install latest git</span>
+brew <span class="nb">install </span>python <span class="c"># install python3</span>
+python3 <span class="nt">--version</span> <span class="c"># version of python3 installed</span>
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
 
 <h3 id="windows-1st-time-developer">
 <a class="anchor" href="#windows-1st-time-developer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows 1st Time Developer</h3>
 <blockquote>
-  <p>We need to obtain developer tools,<br>
-VSCode install using WSL (Recommended) This helps Windows user to have best of Windows and Linux while developing within VSCode.</p>
+  <p>VSCode install using WSL. Windows users have option to have best of Windows and Linux while developing within VSCode.</p>
   <ul>
-    <li>Install <a href="/APCSP/techtalk/vscode-wsl">VSCode using WSL</a>.  This helps Windows user to have best of Windows and Linux while developing within VSCode.</li>
+    <li>Install <a href="/APCSP/techtalk/vscode-wsl">VSCode using WSL</a>.</li>
+    <li>Required review, become familiar with <a href="https://code.visualstudio.com/docs/remote/wsl-tutorial">Windows WSL development</a>
+</li>
+    <li>In a WSL Command / Powershell install Python3
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt list <span class="c"># list packages</span>
+<span class="nb">sudo </span>apt update <span class="c"># update package list</span>
+<span class="nb">sudo </span>apt upgrade <span class="c"># upgrade packages</span>
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip <span class="c"># install python3 and pip3</span>
+python3 <span class="nt">--version</span>  <span class="c"># version of python3 installed</span>
+</code></pre></div>      </div>
+    </li>
   </ul>
 </blockquote>
 
-<blockquote>
-  <p>VSCode install for Windows. (Alternative)  This is classic Windows installation, no additional Linux additions.</p>
-  <ul>
-    <li>Install Windows Git from <s> [https://git-scm.com/downloads](https://git-scm.com/downloads).  This tool helps "git" (get) code from a cloud server called GitHub.</s>
-</li>
-    <li>Install <s>[VSCode in conventional mode](https://code.visualstudio.com/docs/setup/windows)</s>
-</li>
-  </ul>
-</blockquote>
-
-<h3 id="vscode-for-python">
-<a class="anchor" href="#vscode-for-python" aria-hidden="true"><span class="octicon octicon-link"></span></a>VSCode for Python</h3>
-<blockquote>
-  <p>Follow instructions to prepare VSCode for Python development.</p>
-  <ul>
-    <li><a href="https://code.visualstudio.com/docs/languages/python">Python in VSCode</a></li>
-  </ul>
-</blockquote>
+<!--
+> VSCode install for Windows. (Deprecated)  This is classic Windows installation, no additional Linux additions.
+- Install Windows Git from <s> [https://git-scm.com/downloads](https://git-scm.com/downloads).  This tool helps "git" (get) code from a cloud server called GitHub.</s>
+- Install <s>[VSCode in conventional mode](https://code.visualstudio.com/docs/setup/windows)</s>
+> Follow instructions to prepare VSCode for Python development.
+- Installation for <s>[Python in VSCode](https://code.visualstudio.com/docs/languages/python)</s>
+-->
 
 <h3 id="vscode-fastpages-project">
 <a class="anchor" href="#vscode-fastpages-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>VSCode Fastpages Project</h3>
@@ -240,7 +241,7 @@ VSCode install using WSL (Recommended) This helps Windows user to have best of W
         </p>
         <ul>
             <li>
-                <mark>In marketplace</mark> there are several extensions for Python, Python for VSCode, Python Extension Pack
+                <mark>In marketplace</mark> there are several extensions for Python, Python Intellisense, Python Extension Pack
             </li>
             <li>
                 <mark>Jupyter</mark>: This supports build jupyter ipynb files from within VS Code

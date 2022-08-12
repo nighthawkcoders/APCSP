@@ -158,6 +158,12 @@ window.onload = wrap_img;
   <ul>
     <li>Install <a href="https://code.visualstudio.com/docs/setup/mac">VSCode</a>
 </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Package manager install on MacOS</p>
+  <ul>
     <li>Install Homebrew from Terminal <a href="https://brew.sh">https://brew.sh</a>
       <ul>
         <li>Copy <code class="language-plaintext highlighter-rouge">bash ... curl ...</code>  command using copy box on website</li>
@@ -167,6 +173,12 @@ window.onload = wrap_img;
       </ul>
     </li>
     <li>Homebrew installs a tool called “brew” which helps add and manage developer packages on MacOS.</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Key Packages need update on MacOS</p>
+  <ul>
     <li>In a Terminal install Git and Python3
       <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>brew list <span class="c"># list packages</span>
@@ -176,7 +188,10 @@ brew <span class="nb">install </span>git  <span class="c"># install latest git</
 brew <span class="nb">install </span>python <span class="c"># install python3</span>
 python3 <span class="nt">--version</span> <span class="c"># version of python3 installed</span>
 </code></pre></div>      </div>
+      <p>Anaconda is Environment Manager on MaOS as well as Windows and Linux. This will help us manage our projects.</p>
     </li>
+    <li>Download for MacOS: https://www.anaconda.com/products/distribution</li>
+    <li>Run Install: Answer yes to questions</li>
   </ul>
 </blockquote>
 
@@ -188,6 +203,12 @@ python3 <span class="nt">--version</span> <span class="c"># version of python3 i
     <li>Install <a href="/APCSP/techtalk/vscode-wsl">VSCode using WSL</a>.</li>
     <li>Required review, become familiar with <a href="https://code.visualstudio.com/docs/remote/wsl-tutorial">Windows WSL development</a>
 </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Key Packages needing update on WSL Ubunut</p>
+  <ul>
     <li>In a WSL Command / Powershell install Python3
       <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt list <span class="c"># list packages</span>
@@ -195,6 +216,15 @@ python3 <span class="nt">--version</span> <span class="c"># version of python3 i
 <span class="nb">sudo </span>apt upgrade <span class="c"># upgrade packages</span>
 <span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip <span class="c"># install python3 and pip3</span>
 python3 <span class="nt">--version</span>  <span class="c"># version of python3 installed</span>
+</code></pre></div>      </div>
+      <p>Anaconda is an environment manager on Ubuntu as well as MacOs, Windows, and other Linux. This will help us manage our projects.</p>
+    </li>
+    <li>We need to find the link for latest Linux-x86 distribution at the bottom of this page: https://www.anaconda.com/products/distribution.  In a WSL Command / Powershell you will do the following replacing location and command according to data in copied link.
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~
+wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+<span class="c"># Answer yes to all the prompts</span>
+./Anaconda3-2022.05-Linux-x86_64.sh
 </code></pre></div>      </div>
     </li>
   </ul>

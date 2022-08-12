@@ -102,7 +102,12 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#download-wsl">Download WSL</a></li>
 <li class="toc-entry toc-h3"><a href="#download-visual-studio-code">Download Visual Studio Code</a></li>
-<li class="toc-entry toc-h3"><a href="#opening-up-vscode-with-wsl">Opening up VSCode with WSL</a></li>
+<li class="toc-entry toc-h3"><a href="#opening-up-vscode-with-wsl">Opening up VSCode with WSL</a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#opening-up-vscode-with-wsl-example">Opening up VSCode with WSL example</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#other">Other</a></li>
 </ul>
 </li>
 </ul><h2 id="instructions-to-download-visual-studio-code-remote---wsl">
@@ -180,18 +185,45 @@ window.onload = wrap_img;
   <li>Navigate to a folder you’d like to open in VS Code
 Here are some useful command prompts to find a good location
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~     <span class="c"># takes you to your personal directory</span>
+<div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~     <span class="c"># takes you to your personal directory on Windows</span>
+<span class="nb">cd</span> /mnt/c/Users/&lt;username&gt; <span class="c"># task you to personal director on WSL</span>
 <span class="nb">mkdir</span>    <span class="c"># creates a folder (you can name this vscode)  </span>
 <span class="nb">ls</span>     <span class="c"># views the content of the directory you are currently on</span>
-<span class="nb">cd </span>path     <span class="c"># changes the directory to the chosen path (you can also do cd ~/vscode)</span>
+<span class="nb">cd </span>path     <span class="c"># changes the directory to the chosen path (you can also do cd /mnt/c/Users/&lt;username&gt;/vscode)</span>
 <span class="nb">cd</span> ..    <span class="c"># changes the directory to the previous/parent directory</span>
 </code></pre></div>    </div>
   </li>
   <li>Type <code class="language-plaintext highlighter-rouge">code.</code> in the terminal. When doing this for the first time, you should see VS Code fetching components needed to run in WSL. This should only take a short while, and is only needed once.</li>
-  <li>Once finished, you now see a WSL indicator in the bottom left corner.
-<img src="images/wsl-statusbar-indicator.png" alt="WSL Status Bar">
-</li>
 </ol>
+
+<h4 id="opening-up-vscode-with-wsl-example">
+<a class="anchor" href="#opening-up-vscode-with-wsl-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Opening up VSCode with WSL example</h4>
+<blockquote>
+  <p>Here is sample of steps with WSL <username> equal to ```shay```</username></p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">mkdir </span>vscode
+shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd </span>vscode
+shay@MSI:/mnt/c/Users/ShayM/vscode<span class="nv">$ </span>git clone https://github.com/nighthawkcoders/APCSP.git
+Cloning into <span class="s1">'APCSP'</span>...
+remote: Enumerating objects: 8306, <span class="k">done</span><span class="nb">.</span>
+remote: Counting objects: 100% <span class="o">(</span>2360/2360<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Compressing objects: 100% <span class="o">(</span>723/723<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Total 8306 <span class="o">(</span>delta 1312<span class="o">)</span>, reused 2305 <span class="o">(</span>delta 1262<span class="o">)</span>, pack-reused 5946
+Receiving objects: 100% <span class="o">(</span>8306/8306<span class="o">)</span>, 16.27 MiB | 1.11 MiB/s, <span class="k">done</span><span class="nb">.</span>
+Resolving deltas: 100% <span class="o">(</span>4360/4360<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+shay@MSI:/mnt/c/Users/ShayM/vscode<span class="nv">$ </span>code <span class="nb">.</span>
+Installing VS Code Server <span class="k">for </span>x64 <span class="o">(</span>6d9b74a70ca9c7733b29f0456fd8195364076dda<span class="o">)</span>
+Downloading: 100%
+Unpacking: 100%
+Unpacked 2416 files and folders to /home/shay/.vscode-server/bin/6d9b74a70ca9c7733b29f0456fd8195364076dda.
+shay@MSI:/mnt/c/Users/ShayM/vscode<span class="err">$</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="other">
+<a class="anchor" href="#other" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other</h3>
+<p>Once finished, you now see a WSL indicator in the bottom left corner.
+<img src="images/wsl-statusbar-indicator.png" alt="WSL Status Bar"></p>
 
 <p><a href="https://code.visualstudio.com/docs/remote/wsl">### More on WSL and VS Code</a></p>
 

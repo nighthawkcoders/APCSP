@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -101,7 +101,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#instructions-to-download-visual-studio-code-remote---wsl">Instructions to Download Visual Studio Code Remote - WSL</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#download-wsl">Download WSL</a></li>
-<li class="toc-entry toc-h3"><a href="#download-visual-code">Download Visual Code</a></li>
+<li class="toc-entry toc-h3"><a href="#download-visual-studio-code">Download Visual Studio Code</a></li>
 <li class="toc-entry toc-h3"><a href="#opening-up-vscode-with-wsl">Opening up VSCode with WSL</a></li>
 </ul>
 </li>
@@ -113,53 +113,59 @@ window.onload = wrap_img;
 
 <h3 id="download-wsl">
 <a class="anchor" href="#download-wsl" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download WSL</h3>
-<ol>
-  <li>Type either Command or PowerShell (recommended shell) in your computer’s search bar. Right click and make sure to <mark>Run as an administrator</mark>.
-    <ul>
-      <li>Correct Admin Prompt: ```C:\Windows\system32``</li>
-      <li>Incorrect User Prompt:  <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>.  If you proceed to next command you will receive error<code class="language-plaintext highlighter-rouge">the required operation requires elevation</code>.  You can elevate permission from this prompt using command: <code class="language-plaintext highlighter-rouge">start-process PowerShell -verb runas</code>.</li>
-    </ul>
-  </li>
-  <li>Enter WSL installation command at Prompt:
-    <div class="language-bash highlighter-rouge">
+<blockquote>
+  <p>This section of the document is intended to get the WSL distribution of Ubuntu installed on you Windows PC.</p>
+  <ol>
+    <li>Type either Command or PowerShell (recommended shell) in your computer’s search bar. Right click and make sure to <mark>Run as an administrator</mark>.
+      <ul>
+        <li>Correct Admin Prompt: ```C:\Windows\system32``</li>
+        <li>Incorrect User Prompt:  <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>.  If you proceed to next command you will receive error<code class="language-plaintext highlighter-rouge">the required operation requires elevation</code>.  You can elevate permission from this prompt using command: <code class="language-plaintext highlighter-rouge">start-process PowerShell -verb runas</code>.</li>
+      </ul>
+    </li>
+    <li>Enter WSL installation command at Prompt:
+      <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>wsl <span class="nt">--install</span>
-</code></pre></div>    </div>
-  </li>
-  <li>As it states in output in shell, you will need to reboot your computer.  My suggestion is to select <mark>Restart</mark> or <mark>Update and Restart</mark>.</li>
-  <li>After booting up there are several things that could occur
-    <ul>
-      <li>A Command or PowerShell prompt could automatically pop up prompting you for a username. Choose a username and password to create an account.</li>
-      <li>Some other event may occur.  Make sure you establish password when requested.  Verifying or take action in Command or Powershell, try these as <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>…</li>
-    </ul>
-    <ul>
-      <li>Type <code class="language-plaintext highlighter-rouge">wsl --list</code>, you should see Ubuntu</li>
-      <li>If no Ubuntu, Type <code class="language-plaintext highlighter-rouge">wsl --list --online</code>, then use <code class="language-plaintext highlighter-rouge">wsl --install -d Ubuntu</code>
+</code></pre></div>      </div>
+    </li>
+    <li>As it states in output in shell, you will need to reboot your computer.  My suggestion is to select <mark>Restart</mark> or <mark>Update and Restart</mark>.</li>
+    <li>After booting up there are several things that could occur
+      <ul>
+        <li>A Command or PowerShell prompt could automatically pop up prompting you for a username. Choose a username and password to create an account.</li>
+        <li>Some other event may occur.  Make sure you establish password when requested.  Verifying or take action in Command or Powershell, try these as <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>…</li>
+      </ul>
+      <ul>
+        <li>Type <code class="language-plaintext highlighter-rouge">wsl --list</code>, you should see Ubuntu</li>
+        <li>If no Ubuntu, Type <code class="language-plaintext highlighter-rouge">wsl --list --online</code>, then use <code class="language-plaintext highlighter-rouge">wsl --install -d Ubuntu</code>
 </li>
-      <li>After success</li>
-    </ul>
-  </li>
-  <li>After success on WSL install, any time you want to obtain a Linux prompt do the following:
-    <ul>
-      <li>Open Command or Powershell, <mark>as your own user account</mark>.</li>
-    </ul>
-    <ul>
-      <li>Type <code class="language-plaintext highlighter-rouge">wsl</code>, this should put you in a different looking prompt. From <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code> to <code class="language-plaintext highlighter-rouge">&lt;username&gt;@MSI:</code>
+        <li>After success</li>
+      </ul>
+    </li>
+    <li>After WSL install, verify the following before you continue:
+      <ul>
+        <li>Open Command or Powershell, <mark>as your own user account</mark>.</li>
+      </ul>
+      <ul>
+        <li>Type <code class="language-plaintext highlighter-rouge">wsl</code>, this should put you in a different looking prompt. From <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code> to <code class="language-plaintext highlighter-rouge">&lt;username&gt;@MSI:</code>
 </li>
-      <li>If you ever need to elevate permission for installation <code class="language-plaintext highlighter-rouge">sudo wsl``, followed by your computer password.
+        <li>If you ever need to elevate permission for installation <code class="language-plaintext highlighter-rouge">sudo wsl``, followed by your computer password.
     - Observe that drive changes from</code>C:`<code class="language-plaintext highlighter-rouge">to</code><code class="language-plaintext highlighter-rouge">/mnt/c</code>`` when you change prompt from native Windows to WSL.</li>
-    </ul>
-  </li>
-</ol>
+      </ul>
+    </li>
+  </ol>
+</blockquote>
 
-<h3 id="download-visual-code">
-<a class="anchor" href="#download-visual-code" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://code.visualstudio.com/">Download Visual Code</a>
+<h3 id="download-visual-studio-code">
+<a class="anchor" href="#download-visual-studio-code" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://code.visualstudio.com/">Download Visual Studio Code</a>
 </h3>
-<ol>
-  <li>Download the Windows version.</li>
-  <li>When prompted to Select Additional Tasks during installation, be sure to check the Add to PATH option so you can easily open a folder in WSL using the code command.</li>
-  <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack</a>
+<blockquote>
+  <p>Installing Visual Studio Code (VSCode) with the Remote extension lets you use the WSL as your full-time development environment right from VS Code</p>
+  <ol>
+    <li>Download the Windows version.</li>
+    <li>When prompted to Select Additional Tasks during installation, be sure to check the Add to PATH option so you can easily open a folder in WSL using the VSCode <code class="language-plaintext highlighter-rouge">code</code> command.</li>
+    <li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack</a>
 </li>
-</ol>
+  </ol>
+</blockquote>
 
 <h3 id="opening-up-vscode-with-wsl">
 <a class="anchor" href="#opening-up-vscode-with-wsl" aria-hidden="true"><span class="octicon octicon-link"></span></a>Opening up VSCode with WSL</h3>

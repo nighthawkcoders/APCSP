@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      10 min read
     
 </span></p>
 
@@ -104,7 +104,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#github-account">GitHub Account</a></li>
 <li class="toc-entry toc-h3"><a href="#macos-1st-time-developer">MacOS 1st Time Developer</a></li>
 <li class="toc-entry toc-h3"><a href="#windows-1st-time-developer">Windows 1st Time Developer</a></li>
-<li class="toc-entry toc-h3"><a href="#jupyter-install-and-kernels">Jupyter Install and Kernels</a></li>
+<li class="toc-entry toc-h3"><a href="#jupyter-install-and-kernels-macos-and-wsl">Jupyter Install and Kernels (MacOs and WSL)</a></li>
 <li class="toc-entry toc-h3"><a href="#vscode-fastpages-project">VSCode Fastpages Project</a></li>
 <li class="toc-entry toc-h3"><a href="#vscode-marketplace-and-extensions">VSCode Marketplace and Extensions</a></li>
 </ul>
@@ -124,7 +124,7 @@ window.onload = wrap_img;
     </ul>
   </li>
   <li>
-<mark>Visual Studio Code</mark> (abbreviations VS Code, VSCode or VSC) is a powerful Code Editor.  VSCode performs a lot of magic and automation behind the scenes to make your Code/Code/Coding life easier.  There is a back-in-the-day story hear, but short version is VSCode qualifies to be called and <mark>Integrated Development Environment (IDE)</mark>.  It allows you to Edit files, Build your Code, and Pull/Push Code from and to the GitHub.  FYI, VSCode is new to APCS this year, the former IDE’s used in CompSci classes include XCode, Eclipse, and IntelliJ.</li>
+<mark>Visual Studio Code</mark> (abbreviations VS Code, VSCode or VSC) is a powerful Code Editor.  VSCode performs a lot of magic and automation behind the scenes to make your Code/Code/Coding life easier.  There is a back-in-the-day story hear, but short version is VSCode qualifies, IMO, to be called and <mark>Integrated Development Environment (IDE)</mark>.  It allows you to Edit files, Build your Code, and Pull/Push Code from and to the GitHub.  FYI, VSCode is new to APCS this year, the former IDE’s used in CompSci classes include XCode, Eclipse, and IntelliJ.</li>
   <li>
 <mark>Jupyter Documents (.ipynb)</mark> is a document format for creating and sharing computational documents.  These documents allow you to compute segments of Python or Java code as you are taking notes.  These are new to AP CS this year, but are viewed as very powerful in gaining a quick understanding of coding concepts.  Jupyter documents are often called “notebooks”.</li>
 </ul>
@@ -141,7 +141,10 @@ window.onload = wrap_img;
 </li>
   <li>Slack Account, install App on Laptop, get used to reading announcements. Slack is a messaging tool similar to Discord, the first year we had 35,000 message in a class.</li>
   <li>Python is the key language you will be using in this class.  Flask, Jinja2, HTML, CSS, JavaScript are the key supporting technicals you will be using to enhance your learning of coding.</li>
-  <li>VS Code is the code editor we will be using in this class.  VSCode is more than and editor, it is called and Interactive Development Environment (IDE).</li>
+  <li>VSCode is the code editor we will be using in this class.  VSCode is more than and editor, it is called and Interactive Development Environment (IDE).</li>
+  <li>Anaconda is the environment manager.  Conda is an open-source package and environment management system that runs on Windows, macOS, and Linux.</li>
+  <li>Homebrew for MacOS installs packages (Java, Python) you need for Development that Apple did not include.</li>
+  <li>Apt for WSL Ubuntu installs the packages (Java, Python) you need for Development that Ubuntu did not include.</li>
   <li>AWS Account for cloud computing and deployment, account access will be provided by Teacher.  AWS Cloud Computing and Electric Cloud Computing (EC2’s) will be used to Deploy and Support projects on the Internet.</li>
 </ul>
 
@@ -155,6 +158,14 @@ window.onload = wrap_img;
 <h3 id="macos-1st-time-developer">
 <a class="anchor" href="#macos-1st-time-developer" aria-hidden="true"><span class="octicon octicon-link"></span></a>MacOS 1st Time Developer</h3>
 <blockquote>
+  <p>Python2 install on MacOS</p>
+  <ul>
+    <li>Install <a href="https://www.python.org/ftp/python/2.7.18/python-2.7.18-macosx10.9.pkg">Python2</a>
+</li>
+  </ul>
+</blockquote>
+
+<blockquote>
   <p>VSCode install on MacOS.</p>
   <ul>
     <li>Install <a href="https://code.visualstudio.com/docs/setup/mac">VSCode</a>
@@ -163,9 +174,18 @@ window.onload = wrap_img;
 </blockquote>
 
 <blockquote>
-  <p>Package manager install on MacOS</p>
+  <p>Anaconda install on MacOS.</p>
   <ul>
-    <li>Install Homebrew from Terminal <a href="https://brew.sh">https://brew.sh</a>
+    <li>Download for MacOS: <a href="https://www.anaconda.com/products/distribution">Anaconda</a>
+</li>
+    <li>Run Install: Answer yes to questions</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Homebrew install on MacOS</p>
+  <ul>
+    <li>Copy and Paste to Install from Terminal <a href="https://brew.sh">Homebrew</a>
       <ul>
         <li>Copy <code class="language-plaintext highlighter-rouge">bash ... curl ...</code>  command using copy box on website</li>
         <li>Launch <code class="language-plaintext highlighter-rouge">terminal</code> from search bar</li>
@@ -178,20 +198,31 @@ window.onload = wrap_img;
 </blockquote>
 
 <blockquote>
-  <p>MacOS Terminal updates</p>
-  <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>brew list <span class="c"># list packages</span>
-brew update <span class="c"># update package list</span>
-brew upgrade <span class="c"># upgrade packages</span>
-brew <span class="nb">install </span>git  <span class="c"># install latest git</span>
-brew <span class="nb">install </span>python <span class="c"># install python3</span>
-python3 <span class="nt">--version</span> <span class="c"># version of python3 installed</span>
-</code></pre></div>  </div>
-  <p>Anaconda Install.</p>
+  <p>At this point, the next task is to prepare for Jupyter Notebooks and Kernels.  <mark>You must start a new Terminal</mark>.  Now the Terminal prompt should be <mark>prefixed with (base)</mark>.  If not, you need to go back to Anaconda install.</p>
   <ul>
-    <li>Download for MacOS: <a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a>
-</li>
-    <li>Run Install: Answer yes to questions</li>
+    <li>Open new Terminal.  If your prompt is not looking like this you need to back up.
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> iMac:~ jmort1021<span class="err">$</span>
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>Key Packages needed on MacOS</p>
+  <ul>
+    <li>
+<mark>Close and Start a new terminal</mark>, run each command in Terminal
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>brew list <span class="c"># list packages</span>
+<span class="nv">$ </span>brew update <span class="c"># update package list</span>
+<span class="nv">$ </span>brew upgrade <span class="c"># upgrade packages</span>
+<span class="nv">$ </span>brew <span class="nb">install </span>git  <span class="c"># install latest git</span>
+<span class="nv">$ </span>brew <span class="nb">install </span>python <span class="c"># install python3 for development</span>
+<span class="nv">$ </span>python <span class="nt">--version</span> <span class="c"># version of python3 installed</span>
+<span class="nv">$ </span>brew <span class="nb">install </span>java <span class="c"># openjdk install</span>
+</code></pre></div>      </div>
+    </li>
   </ul>
 </blockquote>
 
@@ -207,70 +238,82 @@ python3 <span class="nt">--version</span> <span class="c"># version of python3 i
 </blockquote>
 
 <blockquote>
-  <p>WSL Command / Powershell Terminal updates</p>
-  <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt list <span class="c"># list packages</span>
-<span class="nb">sudo </span>apt update <span class="c"># update package list</span>
-<span class="nb">sudo </span>apt upgrade <span class="c"># upgrade packages</span>
-<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip <span class="c"># install python3 and pip3</span>
-python3 <span class="nt">--version</span>  <span class="c"># version of python3 installed</span>
-</code></pre></div>  </div>
-  <p>Anaconda Install.</p>
+  <p>Anaconda install on MacOS.</p>
   <ul>
-    <li>Install as indicated, if it fails obtain latest Linux-x86 distribution link at the bottom of page: https://www.anaconda.com/products/distribution.
+    <li>Try the exact commands in WSL Command / Powershell.</li>
+    <li>If there is a wget error… To find the latest Linux-x86 distribution scroll to the bottom of this page: https://www.anaconda.com/products/distribution.  Change wget and command based on link.
       <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~
-wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+<div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\U</span>serName&gt; wsl  <span class="c"># Windows prompt to WSL command</span>
+<span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span>wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
 <span class="c"># Answer yes to all the prompts</span>
-./Anaconda3-2022.05-Linux-x86_64.sh
+<span class="nv">$ </span>./Anaconda3-2022.05-Linux-x86_64.sh
 </code></pre></div>      </div>
     </li>
   </ul>
 </blockquote>
 
-<h3 id="jupyter-install-and-kernels">
-<a class="anchor" href="#jupyter-install-and-kernels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jupyter Install and Kernels</h3>
 <blockquote>
-  <p>At this point the task is to prepare for Jupyter Notebooks and Kernels.  <mark>You must a new WSL Command / Powershell</mark>.  Now the WSL prompt should be <mark>prefixed with (base)</mark>.  If not, you need to go back to Anaconda install.</p>
+  <p>At this point, the next task is to prepare for Packages, Jupyter Notebooks, and Kernels.  <mark>You must start a new WSL Command / Powershell</mark>.  Now the WSL prompt should be <mark>prefixed with (base)</mark> from Anaconda install.  If not, you need to go back to Anaconda install.</p>
   <ul>
-    <li>Open Command / Powershell to set directory to home (~).  If you are not looking like this you need to back up.
+    <li>Open Command / Powershell.  If you are not looking like this you need to back up.
       <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\S</span>hayM&gt; wsl  <span class="c"># Windows prompt</span>
 <span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~ <span class="c"># WSL prompt</span>
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span><span class="c"># WSL home</span>
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span><span class="c"># WSL home, best place to install files</span>
 </code></pre></div>      </div>
     </li>
   </ul>
 </blockquote>
+
+<blockquote>
+  <p>Key Packages needing update on WSL Ubuntu</p>
+  <ul>
+    <li>In a WSL Command / Powershell install Python3
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt list <span class="c"># list packages</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt update <span class="c"># update package list</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt upgrade <span class="c"># upgrade packages</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python2 <span class="c"># install python2 for package dependencies</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip <span class="c"># install python3 and pip3 for development</span>
+<span class="nv">$ </span>python <span class="nt">--version</span>  <span class="c"># version of python3 should be shown</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>default-jdk default-jre  <span class="c"># java install</span>
+<span class="nv">$ </span>java <span class="nt">--version</span>  <span class="c"># java runtime version</span>
+<span class="nv">$ </span>javac <span class="nt">--version</span> <span class="c"># java compiler version</span>
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>unzip  <span class="c"># unzip utility</span>
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h3 id="jupyter-install-and-kernels-macos-and-wsl">
+<a class="anchor" href="#jupyter-install-and-kernels-macos-and-wsl" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jupyter Install and Kernels (MacOs and WSL)</h3>
 
 <blockquote>
   <p>Install Jupyter and check kernels</p>
   <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>conda <span class="nt">--version</span> 
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>conda <span class="nb">install </span>jupyter <span class="c"># install jupyter</span>
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list installed kernels</span>
+<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>conda <span class="nt">--version</span> 
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>conda <span class="nb">install </span>jupyter <span class="c"># install jupyter</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list installed kernels</span>
 Available kernels:
   python3    /home/shay/.local/share/jupyter/kernels/python3
-pip <span class="nb">install </span>bash_kernel <span class="c"># install bash kernel</span>
-python <span class="nt">-m</span> bash_kernel.install  <span class="c"># build the kernel</span>
 </code></pre></div>  </div>
 </blockquote>
 
 <blockquote>
   <p>Install Bash kernel.</p>
   <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\S</span>hayM&gt; wsl
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~ <span class="c"># home directory</span>
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>pip <span class="nb">install </span>bash_kernel <span class="c"># download bash kernel</span>
+<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span><span class="c"># start in home directory</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>pip <span class="nb">install </span>bash_kernel <span class="c"># download bash kernel</span>
 Collecting bash_kernel
   Downloading bash_kernel-0.7.2-py2.py3-none-any.whl <span class="o">(</span>15 kB<span class="o">)</span>
 Requirement already satisfied: pexpect&gt;<span class="o">=</span>4.0 <span class="k">in</span> ./anaconda3/lib/python3.9/site-packages <span class="o">(</span>from bash_kernel<span class="o">)</span> <span class="o">(</span>4.8.0<span class="o">)</span>
 Requirement already satisfied: ptyprocess&gt;<span class="o">=</span>0.5 <span class="k">in</span> ./anaconda3/lib/python3.9/site-packages <span class="o">(</span>from pexpect&gt;<span class="o">=</span>4.0-&gt;bash_kernel<span class="o">)</span> <span class="o">(</span>0.7.0<span class="o">)</span>
 Installing collected packages: bash-kernel
 Successfully installed bash-kernel-0.7.2
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>python <span class="nt">-m</span> bash_kernel.install <span class="c"># install kernel</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>python <span class="nt">-m</span> bash_kernel.install <span class="c"># install kernel</span>
 Installing IPython kernel spec
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list kernels</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list kernels</span>
 Available kernels:
   bash       /home/shay/.local/share/jupyter/kernels/bash
   python3    /home/shay/.local/share/jupyter/kernels/python3
@@ -278,14 +321,13 @@ Available kernels:
 </blockquote>
 
 <blockquote>
-  <p>Install JavaScript kernel.</p>
+  <p>Install JavaScript kernel. Output not shown, answer y or yes to questions.</p>
   <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python2  <span class="c"># Python2 is required for process</span>
-<span class="nv">$ </span>conda <span class="nb">install </span>nodejs <span class="c"># node is framework for JavaScript kernel</span>
-<span class="nv">$ </span>npm <span class="nt">-version</span>  <span class="c"># node package manager comes with nodejs</span>
-<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> ijavascript  <span class="c"># get the kernel</span>
-<span class="nv">$ </span>ijsinstall <span class="c"># install it</span>
-<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list kernels</span>
+<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>conda <span class="nb">install </span>nodejs <span class="c"># node is framework for JavaScript kernel</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>npm <span class="nt">-version</span>  <span class="c"># node package manager comes with nodejs</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> ijavascript  <span class="c"># get the kernel</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>ijsinstall <span class="c"># install javascript kernel</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list kernels</span>
 Available kernels:
   bash          /home/shay/.local/share/jupyter/kernels/bash
   javascript    /home/shay/.local/share/jupyter/kernels/javascript
@@ -295,23 +337,28 @@ Available kernels:
 
 <h3 id="vscode-fastpages-project">
 <a class="anchor" href="#vscode-fastpages-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>VSCode Fastpages Project</h3>
-<ul>
-  <li>Start Pages/Fastpages GitHub Repo from Template  <a href="https://github.com/fastai/fastpages#setup-instructions">https://github.com/fastai/fastpages#setup-instructions</a>
-    <ul>
-      <li><a href="https://www.youtube.com/watch?v=sepml4GLLSM">Recommended Video</a></li>
-      <li>Verify GitHub pages is running</li>
-      <li>VSCode Clone new GitHub Project</li>
-      <li>Push a minor “markdown” change and Verify on GitHub <a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">https://code.visualstudio.com/docs/editor/versioncontrol#_git-support</a>
+<blockquote>
+  <p>Start Pages/Fastpages from <a href="https://github.com/fastai/fastpages#setup-instructions">GitHub Setup Instructions</a></p>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=sepml4GLLSM">Recommended Video - 27 minutes</a></li>
+    <li>Verify GitHub pages is running</li>
+    <li>Clone and Open project in VSCode
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> vscode <span class="c"># make a vscode directory</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span><span class="nb">cd </span>vscode <span class="c"># change to the directory</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>git clone https://github.com/nighthawkcoders/APCSP.git <span class="c"># change to your repo</span>
+<span class="o">(</span>base<span class="o">)</span> <span class="nb">id</span>:~<span class="nv">$ </span>code <span class="nb">.</span> <span class="c"># open VSCode projects in directory</span>
+</code></pre></div>      </div>
+    </li>
+    <li>Push a minor “markdown” change and Verify on GitHub <a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">https://code.visualstudio.com/docs/editor/versioncontrol#_git-support</a>
 </li>
-      <li>Verify “markdown” change on GitHub Pages</li>
-      <li>Create a new Jupyter notebook and publish to _notebooks directory <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">https://code.visualstudio.com/docs/datascience/jupyter-notebooks</a>
-</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="vscode-marketplace-and-extensions">
+    <li>Verify “markdown” change on GitHub Pages</li>
+    <li>Create a new Jupyter notebook and publish to _notebooks directory <a href="https://code.visualstudio.com/docs/datascience/jupyter-notebooks">https://code.visualstudio.com/docs/datascience/jupyter-notebooks</a>
+      <h3 id="vscode-marketplace-and-extensions">
 <a class="anchor" href="#vscode-marketplace-and-extensions" aria-hidden="true"><span class="octicon octicon-link"></span></a>VSCode Marketplace and Extensions</h3>
+    </li>
+  </ul>
+</blockquote>
 
 <div>
     <div style="float: left; margin: 0px 10px 10px 0px;">

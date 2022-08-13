@@ -231,10 +231,9 @@ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
 <h3 id="jupyter-install-and-kernels">
 <a class="anchor" href="#jupyter-install-and-kernels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jupyter Install and Kernels</h3>
 <blockquote>
-  <p>At this point the task is to prepare for Jupyter Notebooks and Kernels.</p>
+  <p>At this point the task is to prepare for Jupyter Notebooks and Kernels.  <mark>You must a new WSL Command / Powershell</mark>.  Now the WSL prompt should be <mark>prefixed with (base)</mark>.  If not, you need to go back to Anaconda install.</p>
   <ul>
-    <li>In new WSL Command / Powershell, the WSL prompt should be <mark>prefixed with (base)</mark>.  If not, you need to go back to Anaconda install.</li>
-    <li>Open Command / Powershell
+    <li>Open Command / Powershell to set directory to home (~).  If you are not looking like this you need to back up.
       <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\S</span>hayM&gt; wsl  <span class="c"># Windows prompt</span>
 <span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~ <span class="c"># WSL prompt</span>
@@ -244,31 +243,34 @@ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
   </ul>
 </blockquote>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Install Jupyter and check kernels
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>conda <span class="nt">--version</span> 
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>conda <span class="nb">install </span>jupyter
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list
+<blockquote>
+  <p>Install Jupyter and check kernels</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>conda <span class="nt">--version</span> 
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>conda <span class="nb">install </span>jupyter <span class="c"># install jupyter</span>
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list installed kernels</span>
 Available kernels:
   python3    /home/shay/.local/share/jupyter/kernels/python3
 pip <span class="nb">install </span>bash_kernel <span class="c"># install bash kernel</span>
 python <span class="nt">-m</span> bash_kernel.install  <span class="c"># build the kernel</span>
-</code></pre></div></div>
+</code></pre></div>  </div>
+</blockquote>
 
 <blockquote>
-  <p>Install Bash kernel</p>
+  <p>Install Bash kernel.</p>
   <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\S</span>hayM&gt; wsl
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>pip <span class="nb">install </span>bash_kernel
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~ <span class="c"># home directory</span>
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>pip <span class="nb">install </span>bash_kernel <span class="c"># download bash kernel</span>
 Collecting bash_kernel
   Downloading bash_kernel-0.7.2-py2.py3-none-any.whl <span class="o">(</span>15 kB<span class="o">)</span>
 Requirement already satisfied: pexpect&gt;<span class="o">=</span>4.0 <span class="k">in</span> ./anaconda3/lib/python3.9/site-packages <span class="o">(</span>from bash_kernel<span class="o">)</span> <span class="o">(</span>4.8.0<span class="o">)</span>
 Requirement already satisfied: ptyprocess&gt;<span class="o">=</span>0.5 <span class="k">in</span> ./anaconda3/lib/python3.9/site-packages <span class="o">(</span>from pexpect&gt;<span class="o">=</span>4.0-&gt;bash_kernel<span class="o">)</span> <span class="o">(</span>0.7.0<span class="o">)</span>
 Installing collected packages: bash-kernel
 Successfully installed bash-kernel-0.7.2
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>python <span class="nt">-m</span> bash_kernel.install
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>python <span class="nt">-m</span> bash_kernel.install <span class="c"># install kernel</span>
 Installing IPython kernel spec
-<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list kernels</span>
 Available kernels:
   bash       /home/shay/.local/share/jupyter/kernels/bash
   python3    /home/shay/.local/share/jupyter/kernels/python3
@@ -276,14 +278,14 @@ Available kernels:
 </blockquote>
 
 <blockquote>
-  <p>Install JavaScript kernel.  The outputs from these are verbose so everything is abbreviated to commands.</p>
+  <p>Install JavaScript kernel.</p>
   <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python2  <span class="c"># Python2 is required for process</span>
 <span class="nv">$ </span>conda <span class="nb">install </span>nodejs <span class="c"># node is framework for JavaScript kernel</span>
 <span class="nv">$ </span>npm <span class="nt">-version</span>  <span class="c"># node package manager comes with nodejs</span>
 <span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> ijavascript  <span class="c"># get the kernel</span>
 <span class="nv">$ </span>ijsinstall <span class="c"># install it</span>
-<span class="nv">$ </span>jupyter kernelspec list
+<span class="nv">$ </span>jupyter kernelspec list <span class="c"># list kernels</span>
 Available kernels:
   bash          /home/shay/.local/share/jupyter/kernels/bash
   javascript    /home/shay/.local/share/jupyter/kernels/javascript

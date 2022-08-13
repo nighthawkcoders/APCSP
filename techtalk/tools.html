@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -104,6 +104,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#github-account">GitHub Account</a></li>
 <li class="toc-entry toc-h3"><a href="#macos-1st-time-developer">MacOS 1st Time Developer</a></li>
 <li class="toc-entry toc-h3"><a href="#windows-1st-time-developer">Windows 1st Time Developer</a></li>
+<li class="toc-entry toc-h3"><a href="#jupyter-install-and-kernels">Jupyter Install and Kernels</a></li>
 <li class="toc-entry toc-h3"><a href="#vscode-fastpages-project">VSCode Fastpages Project</a></li>
 <li class="toc-entry toc-h3"><a href="#vscode-marketplace-and-extensions">VSCode Marketplace and Extensions</a></li>
 </ul>
@@ -230,13 +231,48 @@ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
   </ul>
 </blockquote>
 
-<!--
-> VSCode install for Windows. (Deprecated)  This is classic Windows installation, no additional Linux additions.
-- Install Windows Git from <s> [https://git-scm.com/downloads](https://git-scm.com/downloads).  This tool helps "git" (get) code from a cloud server called GitHub.</s>
-- Install <s>[VSCode in conventional mode](https://code.visualstudio.com/docs/setup/windows)</s>
-> Follow instructions to prepare VSCode for Python development.
-- Installation for <s>[Python in VSCode](https://code.visualstudio.com/docs/languages/python)</s>
--->
+<h3 id="jupyter-install-and-kernels">
+<a class="anchor" href="#jupyter-install-and-kernels" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jupyter Install and Kernels</h3>
+<blockquote>
+  <p>At this point the task is to prepare for Jupyter Notebooks and Kernels.</p>
+  <ul>
+    <li>In new WSL Command / Powershell, the WSL prompt should be <mark>prefixed with (base)</mark>.  If not, you need to go back to Anaconda install.</li>
+    <li>Open Command / Powershell to set directory to home (~).  If you are not looking like this you need to back up.
+      <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\S</span>hayM&gt; wsl
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~
+</code></pre></div>      </div>
+    </li>
+    <li>Install Juypter and check kernels
+(base) shay@MSI:~$ conda –version 
+(base) shay@MSI:~$ conda install jupyter
+(base) shay@MSI:~$ jupyter kernelspec list
+Available kernels:
+python3    /home/shay/.local/share/jupyter/kernels/python3
+pip install bash_kernel # install bash kernel
+python -m bash_kernel.install  # build the kernel
+      <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Install Bash kernel
+```base
+PS C:\Users\ShayM&gt; wsl
+(base) shay@MSI:/mnt/c/Users/ShayM$ cd ~
+(base) shay@MSI:~$ pip install bash_kernel
+Collecting bash_kernel
+Downloading bash_kernel-0.7.2-py2.py3-none-any.whl (15 kB)
+Requirement already satisfied: pexpect&gt;=4.0 in ./anaconda3/lib/python3.9/site-packages (from bash_kernel) (4.8.0)
+Requirement already satisfied: ptyprocess&gt;=0.5 in ./anaconda3/lib/python3.9/site-packages (from pexpect&gt;=4.0-&gt;bash_kernel) (0.7.0)
+Installing collected packages: bash-kernel
+Successfully installed bash-kernel-0.7.2
+(base) shay@MSI:~$ python -m bash_kernel.install
+Installing IPython kernel spec
+(base) shay@MSI:~$ jupyter kernelspec list
+Available kernels:
+bash       /home/shay/.local/share/jupyter/kernels/bash
+python3    /home/shay/.local/share/jupyter/kernels/python3
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
 
 <h3 id="vscode-fastpages-project">
 <a class="anchor" href="#vscode-fastpages-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>VSCode Fastpages Project</h3>

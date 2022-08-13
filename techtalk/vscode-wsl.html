@@ -105,7 +105,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#opening-up-vscode-with-wsl">Opening up VSCode with WSL</a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#opening-up-vscode-with-wsl-terminal">Opening up VSCode with WSL terminal</a></li>
-<li class="toc-entry toc-h4"><a href="#other-observation">Other observation</a></li>
+<li class="toc-entry toc-h4"><a href="#setup-observation">Setup Observation</a></li>
+<li class="toc-entry toc-h4"><a href="#resource">Resource</a></li>
 </ul>
 </li>
 </ul>
@@ -213,36 +214,40 @@ git config <span class="nt">--global</span> user.name mygithub   <span class="c"
 shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span>git config <span class="nt">--global</span> user.name shay
 </code></pre></div>    </div>
   </li>
-  <li>These commands clone a respository and load VSCode for work
-shay@MSI:/mnt/c/Users/ShayM$ mkdir vscode
-shay@MSI:/mnt/c/Users/ShayM$ cd vscode
-shay@MSI:/mnt/c/Users/ShayM/vscode$ git clone https://github.com/nighthawkcoders/APCSP.git
-Cloning into ‘APCSP’…
-remote: Enumerating objects: 8306, done.
-remote: Counting objects: 100% (2360/2360), done.
-remote: Compressing objects: 100% (723/723), done.
-remote: Total 8306 (delta 1312), reused 2305 (delta 1262), pack-reused 5946
-Receiving objects: 100% (8306/8306), 16.27 MiB | 1.11 MiB/s, done.
-Resolving deltas: 100% (4360/4360), done.
-shay@MSI:/mnt/c/Users/ShayM/vscode$ cd APCSP
-shay@MSI:/mnt/c/Users/ShayM/vscode/APCSP$ code .
-Installing VS Code Server for x64 (6d9b74a70ca9c7733b29f0456fd8195364076dda)
+  <li>These commands clone a repository and load VSCode for work
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">mkdir </span>vscode
+shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd </span>vscode
+shay@MSI:/mnt/c/Users/ShayM/vscode<span class="nv">$ </span>git clone https://github.com/nighthawkcoders/APCSP.git
+Cloning into <span class="s1">'APCSP'</span>...
+remote: Enumerating objects: 8306, <span class="k">done</span><span class="nb">.</span>
+remote: Counting objects: 100% <span class="o">(</span>2360/2360<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Compressing objects: 100% <span class="o">(</span>723/723<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Total 8306 <span class="o">(</span>delta 1312<span class="o">)</span>, reused 2305 <span class="o">(</span>delta 1262<span class="o">)</span>, pack-reused 5946
+Receiving objects: 100% <span class="o">(</span>8306/8306<span class="o">)</span>, 16.27 MiB | 1.11 MiB/s, <span class="k">done</span><span class="nb">.</span>
+Resolving deltas: 100% <span class="o">(</span>4360/4360<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+shay@MSI:/mnt/c/Users/ShayM/vscode<span class="nv">$ </span><span class="nb">cd </span>APCSP
+shay@MSI:/mnt/c/Users/ShayM/vscode/APCSP<span class="nv">$ </span>code <span class="nb">.</span>
+Installing VS Code Server <span class="k">for </span>x64 <span class="o">(</span>6d9b74a70ca9c7733b29f0456fd8195364076dda<span class="o">)</span>
 Downloading: 100%
 Unpacking: 100%
 Unpacked 2416 files and folders to /home/shay/.vscode-server/bin/6d9b74a70ca9c7733b29f0456fd8195364076dda.
-shay@MSI:/mnt/c/Users/ShayM/vscode$
-```</li>
+shay@MSI:/mnt/c/Users/ShayM/vscode<span class="err">$</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
 
-<h4 id="other-observation">
-<a class="anchor" href="#other-observation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other observation</h4>
+<h4 id="setup-observation">
+<a class="anchor" href="#setup-observation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup Observation</h4>
 <blockquote>
-  <p>When you open VSCode in WSL, you now see a WSL indicator in the bottom left corner.
+  <p>VSCode with WSL shows a WSL indicator in the bottom left corner of Window.
 <img src="images/wsl-statusbar-indicator.png" alt="WSL Status Bar"></p>
 </blockquote>
 
+<h4 id="resource">
+<a class="anchor" href="#resource" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resource</h4>
 <blockquote>
-  <p>Read move on WSL and VSCode
+  <p>Read more on WSL and VSCode
 <a href="https://code.visualstudio.com/docs/remote/wsl">VSCode doc</a></p>
 </blockquote>
 

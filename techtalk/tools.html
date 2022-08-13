@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -272,6 +272,22 @@ python3    /home/shay/.local/share/jupyter/kernels/python3
 </code></pre></div>      </div>
     </li>
   </ul>
+</blockquote>
+
+<blockquote>
+  <p>Install JavaScript kernel.  The outputs from these are verbose so everthing is abbreviated to commands.</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python2  <span class="c"># Python2 is required for process</span>
+<span class="nv">$ </span>conda <span class="nb">install </span>nodejs <span class="c"># node is framework for JavaScript kernel</span>
+<span class="nv">$ </span>npm <span class="nt">-version</span>  <span class="c"># node package manager comes with nodejs</span>
+<span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">-g</span> ijavascript  <span class="c"># get the kernel</span>
+<span class="nv">$ </span>ijsinstall <span class="c"># install it</span>
+<span class="nv">$ </span>jupyter kernelspec list
+Available kernels:
+  bash          /home/shay/.local/share/jupyter/kernels/bash
+  javascript    /home/shay/.local/share/jupyter/kernels/javascript
+  python3       /home/shay/.local/share/jupyter/kernels/python3
+</code></pre></div>  </div>
 </blockquote>
 
 <h3 id="vscode-fastpages-project">

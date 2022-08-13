@@ -256,22 +256,23 @@ python <span class="nt">-m</span> bash_kernel.install  <span class="c"># build t
 
 <blockquote>
   <p>Install Bash kernel</p>
-  <pre><code class="language-base">PS C:\Users\ShayM&gt; wsl
-(base) shay@MSI:/mnt/c/Users/ShayM$ cd ~
-(base) shay@MSI:~$ pip install bash_kernel
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\S</span>hayM&gt; wsl
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:/mnt/c/Users/ShayM<span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>pip <span class="nb">install </span>bash_kernel
 Collecting bash_kernel
-  Downloading bash_kernel-0.7.2-py2.py3-none-any.whl (15 kB)
-Requirement already satisfied: pexpect&gt;=4.0 in ./anaconda3/lib/python3.9/site-packages (from bash_kernel) (4.8.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in ./anaconda3/lib/python3.9/site-packages (from pexpect&gt;=4.0-&gt;bash_kernel) (0.7.0)
+  Downloading bash_kernel-0.7.2-py2.py3-none-any.whl <span class="o">(</span>15 kB<span class="o">)</span>
+Requirement already satisfied: pexpect&gt;<span class="o">=</span>4.0 <span class="k">in</span> ./anaconda3/lib/python3.9/site-packages <span class="o">(</span>from bash_kernel<span class="o">)</span> <span class="o">(</span>4.8.0<span class="o">)</span>
+Requirement already satisfied: ptyprocess&gt;<span class="o">=</span>0.5 <span class="k">in</span> ./anaconda3/lib/python3.9/site-packages <span class="o">(</span>from pexpect&gt;<span class="o">=</span>4.0-&gt;bash_kernel<span class="o">)</span> <span class="o">(</span>0.7.0<span class="o">)</span>
 Installing collected packages: bash-kernel
 Successfully installed bash-kernel-0.7.2
-(base) shay@MSI:~$ python -m bash_kernel.install
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>python <span class="nt">-m</span> bash_kernel.install
 Installing IPython kernel spec
-(base) shay@MSI:~$ jupyter kernelspec list
+<span class="o">(</span>base<span class="o">)</span> shay@MSI:~<span class="nv">$ </span>jupyter kernelspec list
 Available kernels:
   bash       /home/shay/.local/share/jupyter/kernels/bash
   python3    /home/shay/.local/share/jupyter/kernels/python3
-</code></pre>
+</code></pre></div>  </div>
 </blockquote>
 
 <blockquote>

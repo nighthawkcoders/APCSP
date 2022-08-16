@@ -106,7 +106,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/bash">Bash Introduction</a>,
             <a href="{{site.baseurl}}/techtalk/deploy">Deployment Guide</a>
         </td>
-        <td>TBD</td>
+        <td><a href="https://poway.instructure.com/courses/127268/assignments/2206627">Tools Setup</a></td>
     </tr>
 
     <tr>

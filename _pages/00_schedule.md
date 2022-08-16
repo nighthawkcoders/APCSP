@@ -60,7 +60,7 @@ title: Schedule
             <a href="{{site.baseurl}}/collegeboard/pseudo_code">Pseudo Code</a>
         </td>
         <td><a href="{{site.baseurl}}/techtalk/tools">Tools and Equipment</a></td>
-        <td>TBD</td>
+        <td><a href="https://poway.instructure.com/courses/127268/assignments/2206627">Tools Setup</a></td>
     </tr>
     
 </table>

@@ -49,7 +49,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
             <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>       
         </td>
-        <td>TBD</td>
+        <td><a href="https://poway.instructure.com/courses/127268/assignments/2296689">Intro Python, Jupyter, Fastpages</a></td>
     </tr>
     
     <tr>

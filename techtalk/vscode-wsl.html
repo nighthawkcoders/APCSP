@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      3 min read
     
 </span></p>
 
@@ -121,50 +121,41 @@ window.onload = wrap_img;
 <a class="anchor" href="#download-wsl" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download WSL</h3>
 <blockquote>
   <p>This section of the document is intended to get the WSL distribution of Ubuntu installed on you Windows PC.</p>
-  <ol>
-    <li>Type either Command or PowerShell (recommended shell) in your computer’s search bar. Right click and make sure to <mark>Run as an administrator</mark>.
-      <ul>
-        <li>Correct Admin Prompt: <code class="language-plaintext highlighter-rouge">C:\Windows\system32</code>
-</li>
-        <li>Incorrect User Prompt:  <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>
-          <ul>
-            <li>If you proceed to next command you will receive error<code class="language-plaintext highlighter-rouge">the required operation requires elevation</code>  You can elevate permission from this prompt using command: <code class="language-plaintext highlighter-rouge">start-process PowerShell -verb runas</code>
-</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li>Enter WSL installation command at Prompt:
-      <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>wsl <span class="nt">--install</span>
-</code></pre></div>      </div>
-    </li>
-    <li>As it states in output in shell, you will need to reboot your computer.  My suggestion is to select <mark>Restart</mark> or if available <mark>Update and Restart</mark>.</li>
-    <li>After booting up there are several things that could occur
-      <ul>
-        <li>A Command or PowerShell prompt could automatically pop up prompting you for a username. Choose a username and password to create an account.</li>
-        <li>Some other event may occur.  Make sure you establish password when requested.  Verifying or take action in Command or Powershell, try these as <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>…</li>
-      </ul>
-      <ul>
-        <li>Type <code class="language-plaintext highlighter-rouge">wsl --list</code>, you should see Ubuntu</li>
-        <li>If no Ubuntu, Type <code class="language-plaintext highlighter-rouge">wsl --list --online</code>, then use <code class="language-plaintext highlighter-rouge">wsl --install -d Ubuntu</code>
-</li>
-        <li>After success</li>
-      </ul>
-    </li>
-    <li>After WSL install, verify the following before you continue:
-      <ul>
-        <li>Open Command or Powershell, <mark>Run as your own user account</mark>.</li>
-      </ul>
-      <ul>
-        <li>Type <code class="language-plaintext highlighter-rouge">wsl</code>, this should put you in a different looking prompt. From <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code> to <code class="language-plaintext highlighter-rouge">&lt;username&gt;@MSI:</code>
-</li>
-        <li>If you ever need to elevate permission for installation <code class="language-plaintext highlighter-rouge">sudo wsl</code>, followed by your computer password.
-    - Observe that drive changes from <code class="language-plaintext highlighter-rouge">C:\</code> to <code class="language-plaintext highlighter-rouge">/mnt/c</code> when you change prompt from native Windows to WSL.</li>
-      </ul>
-    </li>
-  </ol>
 </blockquote>
+
+<ol>
+  <li>Enter WSL installation command at Prompt:
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>wsl <span class="nt">--install</span>
+</code></pre></div>    </div>
+  </li>
+  <li>If you proceed to next command you will receive error<code class="language-plaintext highlighter-rouge">the required operation requires elevation</code>  You can elevate permission from this prompt using command: <code class="language-plaintext highlighter-rouge">start-process PowerShell -verb runas</code>
+</li>
+  <li>As it states in output in shell, you will need to reboot your computer.  My suggestion is to select <mark>Restart</mark> or if available <mark>Update and Restart</mark>.</li>
+  <li>After booting up there are several things that could occur
+    <ul>
+      <li>A Command or PowerShell prompt could automatically pop up prompting you for a username. Choose a username and password to create an account.</li>
+      <li>Some other event may occur.  Make sure you establish password when requested.  Verifying or take action in Command or Powershell, try these as <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code>…</li>
+    </ul>
+    <ul>
+      <li>Type <code class="language-plaintext highlighter-rouge">wsl --list</code>, you should see Ubuntu</li>
+      <li>If no Ubuntu, Type <code class="language-plaintext highlighter-rouge">wsl --list --online</code>, then use <code class="language-plaintext highlighter-rouge">wsl --install -d Ubuntu</code>
+</li>
+      <li>After success</li>
+    </ul>
+  </li>
+  <li>After WSL install, verify the following before you continue:
+    <ul>
+      <li>Open Command or Powershell, <mark>Run as your own user account</mark>.</li>
+    </ul>
+    <ul>
+      <li>Type <code class="language-plaintext highlighter-rouge">wsl</code>, this should put you in a different looking prompt. From <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;</code> to <code class="language-plaintext highlighter-rouge">&lt;username&gt;@MSI:</code>
+</li>
+      <li>If you ever need to elevate permission for installation <code class="language-plaintext highlighter-rouge">sudo wsl</code>, followed by your computer password.
+    - Observe that drive changes from <code class="language-plaintext highlighter-rouge">C:\</code> to <code class="language-plaintext highlighter-rouge">/mnt/c</code> when you change prompt from native Windows to WSL.</li>
+    </ul>
+  </li>
+</ol>
 
 <h3 id="download-visual-studio-code">
 <a class="anchor" href="#download-visual-studio-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Download Visual Studio Code</h3>

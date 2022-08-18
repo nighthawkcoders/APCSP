@@ -243,8 +243,9 @@ window.onload = wrap_img;
     <li>Only if there is a wget error… To find the latest Linux-x86 distribution scroll to the bottom of this page: https://www.anaconda.com/products/distribution.  Change wget and Anaconda3 command based on new link.
       <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>PS C:<span class="se">\U</span>sers<span class="se">\U</span>serName&gt; wsl  <span class="c"># Windows prompt to WSL command</span>
-<span class="nv">$ </span><span class="nb">cd</span> ~
+<span class="nv">$ </span><span class="nb">cd</span> /tmp
 <span class="nv">$ </span>wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+<span class="nv">$ </span><span class="nb">chmod</span> +x Anaconda3-2022.05-Linux-x86_64.sh
 <span class="c"># Answer yes to all the prompts</span>
 <span class="nv">$ </span>./Anaconda3-2022.05-Linux-x86_64.sh
 </code></pre></div>      </div>

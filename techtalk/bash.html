@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      10 min read
     
 </span></p>
 
@@ -127,10 +127,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Prerequisites-for-Bash-on-Jupyter">Prerequisites for Bash on Jupyter </a></li>
-<li class="toc-entry toc-h2"><a href="#Files-and-Directories">Files and Directories </a>
+<li class="toc-entry toc-h2"><a href="#Prerequisites-for-Project-Directory">Prerequisites for Project Directory </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#In-Terminal-on-MacOS">In Terminal on MacOS </a></li>
-<li class="toc-entry toc-h3"><a href="#Deployment-and-GitHub">Deployment and GitHub </a></li>
+<li class="toc-entry toc-h3"><a href="#Look-inside-Fastpages/Github-page-project">Look inside Fastpages/Github page project </a></li>
+<li class="toc-entry toc-h3"><a href="#Look-inside-a-Markdown-File">Look inside a Markdown File </a></li>
+<li class="toc-entry toc-h3"><a href="#Env,-Git-and-GitHub">Env, Git and GitHub </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
@@ -150,13 +151,14 @@ window.onload = wrap_img;
 <a class="anchor" href="#Prerequisites-for-Bash-on-Jupyter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites for Bash on Jupyter<a class="anchor-link" href="#Prerequisites-for-Bash-on-Jupyter"> </a>
 </h2>
 <blockquote>
-<p>Install the Bash Kernel for Jupyter notebooks.  I used pip3 and python3 and both were in my path.  This allowed me to build this tutorial.</p>
+<p>Being able to find a Bash Reference.  Here is a <a href="https://www.pcwdld.com/bash-cheat-sheet">Bash Cheat Sheet</a>
+Install the Bash Kernel for Jupyter notebooks.  Expectations are pip3 and python3 are defined within the path.  The bash shell allowed construction of this tutorial.</p>
 </blockquote>
 <ul>
 <li>pip install bash_kernel</li>
 <li>python -m bash_kernel.install</li>
 </ul>
-<p>Selecting a kernel should now have bash in options.
+<p>Selecting a kernel in "code --project--" or "jupyter notebook --file.ipynb--" that have bash in options.
 <img src="/APCSP/images/copied_from_nb/images/kernels.png" alt=""></p>
 
 </div>
@@ -165,19 +167,14 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Files-and-Directories">
-<a class="anchor" href="#Files-and-Directories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Files and Directories<a class="anchor-link" href="#Files-and-Directories"> </a>
+<h2 id="Prerequisites-for-Project-Directory">
+<a class="anchor" href="#Prerequisites-for-Project-Directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites for Project Directory<a class="anchor-link" href="#Prerequisites-for-Project-Directory"> </a>
 </h2>
 <blockquote>
-<p>All computers contain files and directories.  Using the bash shell you will see some commands that show and interact with files and directories.</p>
+<p>Practice pulling code from git to your machine. This will create a project directory and add APCSP github project to the directory.  There is conditional logic to make sure that directory and pull only happen if it does not (!) exist.</p>
 </blockquote>
 <ul>
-<li>"ls" lists computer files in Unix and Unix-like operating systems</li>
-<li>"cd" offers way to navigate and change working directory</li>
-<li>"pwd" print working directory</li>
-<li>"echo" used to display line of text/string that are passed as an argument</li>
-<li>"cat" reads data from the file and gives its content as output</li>
-<li>"env" prints the environment variables of the shell</li>
+<li>Hack:Change variables, make new directory, clone to that directory.</li>
 </ul>
 
 </div>
@@ -190,13 +187,168 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"print my project directory (~) and show contents in directory"</span>
-<span class="nb">cd</span> ~/vsProjects/APCSP/_notebooks/
-<span class="nb">pwd</span>
-ls
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Using conditional statement to create a project directory and project"</span>
+
+<span class="c1"># Variable section</span>
+<span class="nb">export</span> <span class="nv">project_dir</span><span class="o">=</span><span class="nv">$HOME</span>/vscode  <span class="c1"># change vscode to different name to test git clone</span>
+<span class="nb">export</span> <span class="nv">project</span><span class="o">=</span><span class="nv">$project_dir</span>/APCSP  <span class="c1"># change APCSP to name of project from git clone</span>
+<span class="nb">export</span> <span class="nv">project_repo</span><span class="o">=</span><span class="s2">"https://github.com/nighthawkcoders/APCSP.git"</span>  <span class="c1"># change to project of choice</span>
+
+<span class="nb">cd</span> ~    <span class="c1"># start in home directory</span>
+
+<span class="c1"># Conditional block to make a project directory</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="nv">$project_dir</span> <span class="o">]</span>
+<span class="k">then</span> 
+    <span class="nb">echo</span> <span class="s2">"Directory </span><span class="nv">$project_dir</span><span class="s2"> does not exists... makinng directory </span><span class="nv">$project_dir</span><span class="s2">"</span>
+    mkdir -p <span class="nv">$project_dir</span>
+<span class="k">fi</span>
+<span class="nb">echo</span> <span class="s2">"Directory </span><span class="nv">$project_dir</span><span class="s2"> exists."</span> 
+
+<span class="c1"># Conditional block to git clone a project from project_repo</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="nv">$project</span> <span class="o">]</span>
+<span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">"Directory </span><span class="nv">$project</span><span class="s2"> does not exists... cloning </span><span class="nv">$project_repo</span><span class="s2">"</span>
+    <span class="nb">cd</span> <span class="nv">$project_dir</span>
+    git clone <span class="nv">$project_repo</span>
+    <span class="nb">cd</span> ~
+<span class="k">fi</span>
+<span class="nb">echo</span> <span class="s2">"Directory </span><span class="nv">$project</span><span class="s2"> exists."</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Using conditional statement to create a project directory and project
+Directory /Users/johnmortensen/vscode exists.
+Directory /Users/johnmortensen/vscode/APCSP exists.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Look-inside-Fastpages/Github-page-project">
+<a class="anchor" href="#Look-inside-Fastpages/Github-page-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Look inside Fastpages/Github page project<a class="anchor-link" href="#Look-inside-Fastpages/Github-page-project"> </a>
+</h3>
+<blockquote>
+<p>All computers contain files and directories.  The clone brought more files from cloud to your machine.  Using the bash shell you will see some commands that show and interact with files and directories.</p>
+</blockquote>
+<ul>
+<li>"ls" lists computer files in Unix and Unix-like operating systems</li>
+<li>"cd" offers way to navigate and change working directory</li>
+<li>"pwd" print working directory</li>
+<li>"echo" used to display line of text/string that are passed as an argument</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Navigate to project, then navigate to area wwhere files were cloned"</span>
+<span class="nb">cd</span> <span class="nv">$project</span>
+<span class="nb">pwd</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"list top level or root of files with project pulled from github"</span>
+ls
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"list again with hidden files pulled from github"</span>
+ls -a   <span class="c1"># hidden files flag, many shell commands have flags</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"list all files in long format"</span>
+ls -al   <span class="c1"># all files and long listing</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Navigate to project, then navigate to area wwhere files were cloned
+/Users/johnmortensen/vscode/APCSP
+
+list top level or root of files with project pulled from github
+Gemfile			_includes		_word
+LICENSE			_layouts		assets
+Makefile		_notebooks		docker-compose.yml
+README.md		_pages			images
+_action_files		_plugins		index.html
+_config.yml		_posts			python
+_fastpages_docs		_sass
+
+list again with hidden files pulled from github
+.			Makefile		_posts
+..			README.md		_sass
+.devcontainer.json	_action_files		_word
+.git			_config.yml		assets
+.gitattributes		_fastpages_docs		docker-compose.yml
+.github			_includes		images
+.gitignore		_layouts		index.html
+.vscode			_notebooks		python
+Gemfile			_pages
+LICENSE			_plugins
+
+list all files in long format
+total 96
+drwxr-xr-x  28 johnmortensen  staff    896 Jul 31 07:34 .
+drwxr-xr-x  13 johnmortensen  staff    416 Aug 20 05:23 ..
+-rw-r--r--   1 johnmortensen  staff    420 Jul 31 07:34 .devcontainer.json
+drwxr-xr-x  16 johnmortensen  staff    512 Aug 18 21:12 .git
+-rw-r--r--   1 johnmortensen  staff     84 Jul 31 07:34 .gitattributes
+drwxr-xr-x   4 johnmortensen  staff    128 Jul 31 07:34 .github
+-rw-r--r--   1 johnmortensen  staff    917 Jul 31 07:34 .gitignore
+drwxr-xr-x   6 johnmortensen  staff    192 Aug  2 07:26 .vscode
+-rwxr-xr-x   1 johnmortensen  staff   1304 Jul 31 07:34 Gemfile
+-rw-r--r--   1 johnmortensen  staff  11351 Jul 31 07:34 LICENSE
+-rwxr-xr-x   1 johnmortensen  staff   1422 Jul 31 07:34 Makefile
+-rwxr-xr-x   1 johnmortensen  staff   3614 Jul 31 07:34 README.md
+drwxr-xr-x  18 johnmortensen  staff    576 Jul 31 07:34 _action_files
+-rw-r--r--   1 johnmortensen  staff   3716 Jul 31 07:34 _config.yml
+drwxr-xr-x  24 johnmortensen  staff    768 Jul 31 07:34 _fastpages_docs
+drwxr-xr-x  29 johnmortensen  staff    928 Jul 31 07:34 _includes
+drwxr-xr-x   6 johnmortensen  staff    192 Jul 31 07:34 _layouts
+drwxr-xr-x  11 johnmortensen  staff    352 Aug 21 07:41 _notebooks
+drwxr-xr-x   9 johnmortensen  staff    288 Aug 17 14:04 _pages
+drwxr-xr-x   4 johnmortensen  staff    128 Jul 31 07:34 _plugins
+drwxr-xr-x  29 johnmortensen  staff    928 Aug 18 21:04 _posts
+drwxr-xr-x   3 johnmortensen  staff     96 Jul 31 07:34 _sass
+drwxr-xr-x   3 johnmortensen  staff     96 Jul 31 07:34 _word
+drwxr-xr-x   4 johnmortensen  staff    128 Jul 31 07:34 assets
+-rwxr-xr-x   1 johnmortensen  staff   1136 Jul 31 07:34 docker-compose.yml
+drwxr-xr-x  51 johnmortensen  staff   1632 Aug 17 14:04 images
+-rw-r--r--   1 johnmortensen  staff   1061 Aug  6 18:25 index.html
+drwxr-xr-x   3 johnmortensen  staff     96 Jul 31 07:34 python
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -210,13 +362,118 @@ ls
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"change directory, print working directory, list files"</span>
-<span class="nb">cd</span> images
-<span class="nb">pwd</span>
-ls
-<span class="nb">echo</span> <span class="s2">""</span>
-<span class="nb">echo</span> <span class="s2">"change directory back one level, print working directory, list files in long format"</span>
-<span class="nb">cd</span> ..
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Look for posts"</span>
+<span class="nb">export</span> <span class="nv">posts</span><span class="o">=</span><span class="nv">$project</span>/_posts  <span class="c1"># _posts inside project</span>
+<span class="nb">cd</span> <span class="nv">$posts</span>  <span class="c1"># this should exist per fastpages</span>
+<span class="nb">pwd</span>  <span class="c1"># present working directory</span>
+ls -l  <span class="c1"># list posts</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Look for posts
+/Users/johnmortensen/vscode/APCSP/_posts
+total 456
+-rw-r--r--  1 johnmortensen  staff  21306 Aug 11 16:10 2022-06-01-TT160-deploy.md
+-rw-r--r--  1 johnmortensen  staff   5861 Aug 11 06:46 2022-07-07-PBL-binary.md
+-rw-r--r--  1 johnmortensen  staff   3085 Aug 11 06:47 2022-07-08-PBL-grade_calc.md
+-rw-r--r--  1 johnmortensen  staff   3698 Aug 11 06:48 2022-07-08-PBL-graph.md
+-rw-r--r--  1 johnmortensen  staff   5729 Aug 11 06:49 2022-07-08-PBL-life.md
+-rw-r--r--  1 johnmortensen  staff  14387 Aug 11 06:49 2022-07-08-PBL-snake.md
+-rw-r--r--  1 johnmortensen  staff    334 Aug 11 06:50 2022-07-10-PBL-database.md
+-rw-r--r--  1 johnmortensen  staff   2908 Aug 11 06:51 2022-07-10-PBL-jokes.md
+-rw-r--r--  1 johnmortensen  staff   4046 Aug  6 20:47 2022-07-10-PBL-rapidapi.md
+-rw-r--r--  1 johnmortensen  staff   6685 Aug  6 20:28 2022-07-19-PBL-calculator.md
+-rw-r--r--  1 johnmortensen  staff  23325 Jul 31 07:34 2022-07-25-CSP-workshop.md
+-rw-r--r--  1 johnmortensen  staff   2333 Aug 11 13:33 2022-08-15-TP000-student_score_history.md
+-rw-r--r--  1 johnmortensen  staff   4363 Aug 11 07:21 2022-08-15-TP100-pseudo_code.md
+-rw-r--r--  1 johnmortensen  staff   7968 Aug 17 19:25 2022-08-15-TR100-tool_setup.md
+-rw-r--r--  1 johnmortensen  staff  15026 Aug 18 13:51 2022-08-15-TT100-tools.md
+-rw-r--r--  1 johnmortensen  staff   5590 Aug 18 21:11 2022-08-15-TT101-vscode-wsl.md
+-rw-r--r--  1 johnmortensen  staff   2066 Aug 11 07:52 2022-08-22-TR110-intro_python.md
+-rw-r--r--  1 johnmortensen  staff   5173 Aug 11 07:44 2022-08-22-TT110-fastpages.md
+-rw-r--r--  1 johnmortensen  staff   2635 Aug 11 07:47 2022-08-22-TT110-focus.md
+-rw-r--r--  1 johnmortensen  staff   2737 Aug 11 09:34 2022-08-29-TR120-data_abstract.md
+-rw-r--r--  1 johnmortensen  staff  10683 Aug  6 20:01 2022-08-29-TT120-agile.md
+-rw-r--r--  1 johnmortensen  staff   4498 Aug 11 09:06 2022-08-29-TT120-html_fragments.md
+-rw-r--r--  1 johnmortensen  staff   9037 Aug 11 15:52 2022-09-05-TP130-create_performance_task.md
+-rw-r--r--  1 johnmortensen  staff   7753 Aug 11 11:12 2022-09-05-TP131-create-task-bria.md
+-rw-r--r--  1 johnmortensen  staff   8066 Aug 11 09:32 2022-09-05-TR130-creative_development.md
+-rw-r--r--  1 johnmortensen  staff   3520 Aug 11 11:06 2022-09-05-TT130-applab.md
+-rw-r--r--  1 johnmortensen  staff    720 Jul 31 07:34 README.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Look for notebooks"</span>
+<span class="nb">export</span> <span class="nv">notebooks</span><span class="o">=</span><span class="nv">$project</span>/_notebooks  <span class="c1"># _notebooks is inside project</span>
+<span class="nb">cd</span> <span class="nv">$notebooks</span>   <span class="c1"># this should exist per fastpages</span>
+<span class="nb">pwd</span>  <span class="c1"># present working directory</span>
+ls -l  <span class="c1"># list notebooks</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Look for notebooks
+/Users/johnmortensen/vscode/APCSP/_notebooks
+total 192
+-rw-r--r--   1 johnmortensen  staff  14243 Aug 11 16:15 2022-06-01-TT150-webapi_tutorial.ipynb
+-rw-r--r--   1 johnmortensen  staff  23946 Aug 21 14:57 2022-06-01-TT160-bash_tutorial.ipynb
+-rw-r--r--   1 johnmortensen  staff   8653 Aug 11 16:23 2022-07-21-PBL-neo4j_intro.ipynb
+-rw-r--r--   1 johnmortensen  staff  11749 Aug 11 07:38 2022-08-22-TP110-python_hello.ipynb
+-rw-r--r--   1 johnmortensen  staff  10141 Aug 11 08:48 2022-08-29-TP120-python_lists.ipynb
+-rw-r--r--   1 johnmortensen  staff  12632 Aug 11 11:09 2022-09-05-TT130-js_tutorial.ipynb
+drwxr-xr-x  28 johnmortensen  staff    896 Aug 21 07:41 APCSP
+-rw-r--r--   1 johnmortensen  staff    771 Jul 31 07:34 README.md
+drwxr-xr-x   3 johnmortensen  staff     96 Aug 21 07:13 images
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Look for images in notebooks, print working directory, list files"</span>
+<span class="nb">cd</span> <span class="nv">$notebooks</span>/images  <span class="c1"># this should exist per fastpages</span>
 <span class="nb">pwd</span>
 ls -l
 </pre></div>
@@ -225,9 +482,39 @@ ls -l
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Look for images in notebooks, print working directory, list files
+/Users/johnmortensen/vscode/APCSP/_notebooks/images
+total 200
+-rw-r--r--  1 johnmortensen  staff  101617 Aug 21 07:12 kernels.png
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Look-inside-a-Markdown-File">
+<a class="anchor" href="#Look-inside-a-Markdown-File" aria-hidden="true"><span class="octicon octicon-link"></span></a>Look inside a Markdown File<a class="anchor-link" href="#Look-inside-a-Markdown-File"> </a>
+</h3>
+<blockquote>
+<p>"cat" reads data from the file and gives its content as output</p>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -235,19 +522,90 @@ ls -l
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"show the contents of README.md"</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Navigate to project, then navigate to area wwhere files were cloned"</span>
+
+<span class="nb">cd</span> <span class="nv">$project</span>
+<span class="nb">echo</span> <span class="s2">"show the contents of README.md"</span>
 <span class="nb">echo</span> <span class="s2">""</span>
 
-cat README.md
+cat README.md  <span class="c1"># show contents of file, in this case markdown</span>
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"end of README.md"</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Navigate to project, then navigate to area wwhere files were cloned
+show the contents of README.md
+
+[//]: # (This template replaces README.md when someone creates a new repo with the fastpages template.)
+
+![](https://github.com/nighthawkcoders/APCSP/workflows/CI/badge.svg) 
+![](https://github.com/nighthawkcoders/APCSP/workflows/GH-Pages%20Status/badge.svg) 
+[![](https://img.shields.io/static/v1?label=fastai&amp;message=fastpages&amp;color=57aeac&amp;labelColor=black&amp;style=flat&amp;logo=data:image/png;base64,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)](https://github.com/fastai/fastpages)
+
+https://nighthawkcoders.github.io/APCSP/
+
+# My Blog
+
+
+_powered by [fastpages](https://github.com/fastai/fastpages)_
+
+
+## What To Do Next?
+
+Great!  You have setup your repo.  Now its time to start writing content.  Some helpful links:
+
+- [Writing Blogs With Jupyter](https://github.com/fastai/fastpages#writing-blog-posts-with-jupyter)
+
+- [Writing Blogs With Markdown](https://github.com/fastai/fastpages#writing-blog-posts-with-markdown)
+
+- [Writing Blog Posts With Word](https://github.com/fastai/fastpages#writing-blog-posts-with-microsoft-word)
+
+- [(Optional) Preview Your Blog Locally](_fastpages_docs/DEVELOPMENT.md)
+
+Note: you may want to remove example blog posts from the `_posts`,  `_notebooks` or `_word` folders (but leave them empty, don't delete these folders) if you don't want these blog posts to appear on your site.
+
+Please use the [nbdev &amp; blogging channel](https://forums.fast.ai/c/fastai-users/nbdev/48) in the fastai forums for any questions or feature requests.
+
+end of README.md
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Env,-Git-and-GitHub">
+<a class="anchor" href="#Env,-Git-and-GitHub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Env, Git and GitHub<a class="anchor-link" href="#Env,-Git-and-GitHub"> </a>
+</h3>
+<blockquote>
+<p>Env(ironment) is used to capture things like path to Code or Home directory.  Git and GitHub is NOT Only used to exchange code between individuals, it is often used to exchange code through servers, in our case deployment for Website.   All tools we use have a behind the scenes hav relationship with the system they run on (MacOS, Windows, Linus) or a relationship with servers which they are connected to (ie GitHub).  There is an "env" command in bash.  There are environment files and setting files (.git/config) for Git.  They both use a key/value concept.</p>
+</blockquote>
+<ul>
+<li>"env" show setting for your shell</li>
+<li>"git clone" sets up a director of files</li>
+<li>"cd $project" allows user to move inside that directory of files</li>
+<li>".git" is a hidden directory that is used by git to establish relationship between machine and the git server on GitHub.  </li>
+</ul>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -255,7 +613,7 @@ cat README.md
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"show the shell environment variables"</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Show the shell environment variables, key on left of equal value on right"</span>
 <span class="nb">echo</span> <span class="s2">""</span>
 
 env
@@ -265,25 +623,72 @@ env
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Show the shell environment variables, key on left of equal value on right
+
+SHELL=/bin/bash
+TMPDIR=/var/folders/_n/7k1b0n557ng0fkmw74pd5cx00000gn/T/
+CONDA_SHLVL=1
+PYTHONUNBUFFERED=1
+CONDA_PROMPT_MODIFIER=(base) 
+OLDPWD=/Users/johnmortensen/vscode/APCSP/_notebooks/images
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+MallocNanoZone=0
+PYDEVD_USE_FRAME_EVAL=NO
+PYTHONIOENCODING=utf-8
+USER=johnmortensen
+COMMAND_MODE=unix2003
+CONDA_EXE=/Users/johnmortensen/opt/anaconda3/bin/conda
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.uWJIpRRIbb/Listeners
+__CF_USER_TEXT_ENCODING=0x1F5:0x0:0x0
+PAGER=cat
+VSCODE_AMD_ENTRYPOINT=vs/workbench/api/node/extensionHostProcess
+ELECTRON_RUN_AS_NODE=1
+_CE_CONDA=
+PATH=/Users/johnmortensen/opt/anaconda3/bin:/Users/johnmortensen/opt/anaconda3/condabin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+LaunchInstanceID=3597BA75-2447-411B-8F68-B6AF6A2ACF3D
+CONDA_PREFIX=/Users/johnmortensen/opt/anaconda3
+__CFBundleIdentifier=com.microsoft.VSCode
+PWD=/Users/johnmortensen/vscode/APCSP
+notebooks=/Users/johnmortensen/vscode/APCSP/_notebooks
+VSCODE_HANDLES_UNCAUGHT_ERRORS=true
+project_repo=https://github.com/nighthawkcoders/APCSP.git
+project=/Users/johnmortensen/vscode/APCSP
+project_dir=/Users/johnmortensen/vscode
+XPC_FLAGS=0x0
+PS1=[PEXP\[\]ECT_PROMPT&gt;
+_CE_M=
+XPC_SERVICE_NAME=0
+SHLVL=2
+HOME=/Users/johnmortensen
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL=true
+VSCODE_NLS_CONFIG={"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+CONDA_PYTHON_EXE=/Users/johnmortensen/opt/anaconda3/bin/python
+LOGNAME=johnmortensen
+LC_CTYPE=UTF-8
+VSCODE_IPC_HOOK=/Users/johnmortensen/Library/Application Support/Code/1.70.2-main.sock
+VSCODE_CODE_CACHE_PATH=/Users/johnmortensen/Library/Application Support/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
+CONDA_DEFAULT_ENV=base
+VSCODE_PID=1456
+posts=/Users/johnmortensen/vscode/APCSP/_posts
+VSCODE_CWD=/
+SECURITYSESSIONID=186a6
+_=/usr/bin/env
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="In-Terminal-on-MacOS">
-<a class="anchor" href="#In-Terminal-on-MacOS" aria-hidden="true"><span class="octicon octicon-link"></span></a>In Terminal on MacOS<a class="anchor-link" href="#In-Terminal-on-MacOS"> </a>
-</h3>
-<blockquote>
-<p>Practice pulling code from git to your machine.  After you do this you should be able to navigate to the files.  As of this writing git clone did not work well in jupyter bash kernel.</p>
-</blockquote>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> /Users/johnmortensen/Downloads
-git clone https://github.com/nighthawkcoders/flask_portfolio.git
-</pre></div>
-
-</div>
-</div>
-</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -291,55 +696,7 @@ git clone https://github.com/nighthawkcoders/flask_portfolio.git
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"navigate to downloads, then navigate to area wwhere files were cloned"</span>
-<span class="nb">cd</span> ~/Downloads
-<span class="nb">cd</span> flask_portfolio
-<span class="nb">pwd</span>
-
-<span class="nb">echo</span> <span class="s2">""</span>
-<span class="nb">echo</span> <span class="s2">"list files pulled from github"</span>
-ls
-
-<span class="nb">echo</span> <span class="s2">""</span>
-<span class="nb">echo</span> <span class="s2">"list with hidden files pulled from github"</span>
-ls -a
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Deployment-and-GitHub">
-<a class="anchor" href="#Deployment-and-GitHub" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment and GitHub<a class="anchor-link" href="#Deployment-and-GitHub"> </a>
-</h3>
-<blockquote>
-<p>GitHub is NOT Only used to exchange code between individuals, it IS used to exchange code through deployment.</p>
-</blockquote>
-<ul>
-<li>"github clone" sets up a director of files</li>
-<li>"cd flaskportfolio" allows user or machine to be inside that directory of files</li>
-<li>".git" is a directory that is used by git to establish relationship between machine and the git server on GitHub.  </li>
-</ul>
-<p>All tools we use have a behind the scenes relationship with the system they run on (MacOS, Windows, Linus) or servers which they are connected to (GitHub).  Note the variable names and values, similar to "env" command.  The format of .git/config and env may be different, but the key/value concept is the same.</p>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> ~/Downloads
-<span class="nb">cd</span> flask_portfolio
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> <span class="nv">$project</span>
 
 <span class="nb">echo</span> <span class="s2">""</span>
 <span class="nb">echo</span> <span class="s2">"show the secrets of .git"</span>
@@ -352,6 +709,51 @@ cat config
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+show the secrets of .git
+total 96
+-rw-r--r--    1 johnmortensen  staff     12 Aug 18 21:11 COMMIT_EDITMSG
+-rw-r--r--    1 johnmortensen  staff    102 Aug 18 21:12 FETCH_HEAD
+-rw-r--r--    1 johnmortensen  staff     23 Jul 31 07:34 HEAD
+-rw-r--r--    1 johnmortensen  staff     41 Aug 18 21:12 ORIG_HEAD
+drwxr-xr-x    2 johnmortensen  staff     64 Jul 31 07:34 branches
+-rw-r--r--    1 johnmortensen  staff    314 Jul 31 07:34 config
+-rw-r--r--    1 johnmortensen  staff     73 Jul 31 07:34 description
+drwxr-xr-x   13 johnmortensen  staff    416 Jul 31 07:34 hooks
+-rw-r--r--    1 johnmortensen  staff  19716 Aug 18 21:11 index
+drwxr-xr-x    3 johnmortensen  staff     96 Jul 31 07:34 info
+drwxr-xr-x    4 johnmortensen  staff    128 Jul 31 07:34 logs
+drwxr-xr-x  243 johnmortensen  staff   7776 Aug 18 13:51 objects
+-rw-r--r--    1 johnmortensen  staff    271 Jul 31 07:34 packed-refs
+drwxr-xr-x    5 johnmortensen  staff    160 Jul 31 07:34 refs
+
+look at config file
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/nighthawkcoders/APCSP.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

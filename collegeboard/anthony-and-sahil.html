@@ -281,7 +281,12 @@ Overall, heads was flipped 5 times while tails was flipped 15 times.
 
 </div>
 </div>
-</div>//
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>//
 //  main.c
 //  parameterFunctionQuestion(s)
 //
@@ -289,16 +294,16 @@ Overall, heads was flipped 5 times while tails was flipped 15 times.
 //  Copyright © 2019 Vo, Anthony. All rights reserved.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
 
 int questionMaker (double arg1, char operator, double arg2) { //function that creates math questions based off of given paramters
     int input, randomizer, answer, i, j, seqChecker[4];
     double answerSeq[4];
     int score = 0, shutOff = 0;
     srand(time(0)); //initializes score, input, and random seed
-    
+
     switch (operator) {
         case '+':
             answer = arg1 + arg2;
@@ -313,12 +318,12 @@ int questionMaker (double arg1, char operator, double arg2) { //function that cr
             answer = arg1 * arg2;
             break;
     } //determines correct answer
-    
+
     double answer1 = arg1 + arg2;
     double answer2 = arg1 - arg2;
     double answer3 = arg1 / arg2;
     double answer4 = arg1 * arg2; //gives possible answers
-    
+
     if (answer1 == answer4) {
         if (operator == '+') {
             answer4 = answer1 - (rand() % 100) + 1;
@@ -340,20 +345,20 @@ int questionMaker (double arg1, char operator, double arg2) { //function that cr
             answer2 = answer3 - (rand() % 100) + 1;
         }
     } //failsafe for if two answers are the same (i.e. 4 - 2 = 4 / 2)
-    
+
     for (i = 0; i &lt; 4; i++) {
         seqChecker[i] = 0;
     } //cleans up seqChecker (has some random integers inside of it, not sure why)
-    
+
     for (i = 0; i &lt; 4; i++) {
         while (shutOff == 0) {
             randomizer = rand() % 4;
             if (seqChecker[0] != randomizer + 1 &amp;&amp; seqChecker[1] != randomizer + 1 &amp;&amp; seqChecker[2] != randomizer + 1 &amp;&amp; seqChecker[3] != randomizer + 1) {
                 shutOff = 1;
             }
-            
+
         }
-        
+
         shutOff = 0;
         randomizer ++;
         switch(randomizer) {
@@ -374,20 +379,20 @@ int questionMaker (double arg1, char operator, double arg2) { //function that cr
                 seqChecker[i] = 4;
                 break;
         }
-        
+
     } //randomizes answers
-    
+
     printf("%lf %c %lf is?\n", arg1, operator, arg2);
     printf("1) %lf\n2) %lf\n3) %lf\n4) %lf\n", answerSeq[0], answerSeq[1], answerSeq[2], answerSeq[3]);
     scanf("%d", &amp;input); //asks question
-    
+
     if (answerSeq[input - 1] == answer) {
         score++;
         printf("Correct!\n");
     } else {
         printf("Incorrect\n");
     } //checks for correct answer
-    
+
     return score; //returns points gained
 }
 
@@ -415,11 +420,15 @@ int main(void) {
     } */ //asks random questions (i.e. random arguments and operators)
     questionMaker(10, '*', 8);
     questions++;
-    
+
     printf("Your final score is %d out of %d\n", score, questions);
-    
+
     return 0;
-}
+}</code></pre>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -505,11 +514,8 @@ int main(void) {
 </div>
 </div>
 </div>
-&lt;/div&gt;
- 
-
-</time.h></stdlib.h></stdio.h>
 </div>
+
 
 
   </div><!-- from https://github.com/utterance/utterances -->

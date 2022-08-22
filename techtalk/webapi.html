@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python Web API Endpoints using Jokes | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python Web API Endpoints using Jokes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A discussion on Web APIs. This is about creating a Web API (Jokes), and creating API that retains data as long as the Web Server is running. This is done using List and Dictionaries as the backend. Ultimately, this example could be extended by adding a database to the backend. However, we are focussing on interaction of Frontend to Backend, this is called an Endpoint." />
+<meta property="og:description" content="A discussion on Web APIs. This is about creating a Web API (Jokes), and creating API that retains data as long as the Web Server is running. This is done using List and Dictionaries as the backend. Ultimately, this example could be extended by adding a database to the backend. However, we are focussing on interaction of Frontend to Backend, this is called an Endpoint." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/techtalk/webapi" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/techtalk/webapi" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/python_restapi.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-01T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python_restapi.png" />
+<meta property="twitter:title" content="Python Web API Endpoints using Jokes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-01T00:00:00-05:00","datePublished":"2022-06-01T00:00:00-05:00","description":"A discussion on Web APIs. This is about creating a Web API (Jokes), and creating API that retains data as long as the Web Server is running. This is done using List and Dictionaries as the backend. Ultimately, this example could be extended by adding a database to the backend. However, we are focussing on interaction of Frontend to Backend, this is called an Endpoint.","headline":"Python Web API Endpoints using Jokes","image":"https://nighthawkcoders.github.io/APCSP/images/python_restapi.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/techtalk/webapi"},"url":"https://nighthawkcoders.github.io/APCSP/techtalk/webapi"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/">Tags</a><a class="page-link" href="/APCSP/about/">About Us</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python Web API Endpoints using Jokes</h1><p class="page-description">A discussion on Web APIs.  This is about creating a Web API (Jokes), and creating API that retains data as long as the Web Server is running.  This is done using List and Dictionaries as the backend.  Ultimately, this example could be extended by adding a database to the backend.  However, we are focussing on interaction of Frontend to Backend, this is called an Endpoint.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-06-01T00:00:00-05:00" itemprop="datePublished">
+        Jun 1, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/APCSP/categories/#pbl">pbl</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2022-06-01-TT150-webapi_tutorial.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2022-06-01-TT150-webapi_tutorial.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2022-06-01-TT150-webapi_tutorial.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2022-06-01-TT150-webapi_tutorial.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Model-for-API">Model for API </a></li>
+<li class="toc-entry toc-h3"><a href="#Backend-Interface-for-Web-API-(Control)">Backend Interface for Web API (Control) </a></li>
+<li class="toc-entry toc-h3"><a href="#Frontend-(View-Simulation)-and-Hacks">Frontend (View Simulation) and Hacks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-06-01-TT150-webapi_tutorial.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-for-API">
+<a class="anchor" href="#Model-for-API" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model for API<a class="anchor-link" href="#Model-for-API"> </a>
+</h3>
+<blockquote>
+<p>We will begin our journey into APIs by creating and thinking about data.  We have learned about Python Lists and dictionaries.  In this data example, we are going to make "the best computer jokes ever ;)" and serve them over the Internet.  The ultimate objective is to allow our viewers to provide a like or dislike on each of our jokes.</p>
+</blockquote>
+<ul>
+<li>
+<p>This code planning begins by coming up with some jokes and defining a data "model" to keep and manage the jokes.</p>
+<ul>
+<li>jokes_data   contains a list of dictionary records containing joke and reactions:haha or boohoo    - joke_list   contains collection of jokes we will put into jokes_data</li>
+</ul>
+</li>
+<li>
+<p>Next comes some functions to interact with our jokes</p>
+<ul>
+<li>def initJokes(): initializes jokes_data</li>
+<li>def getJokes(): returns the complete list of jokes</li>
+<li>def getJoke():  returns a single joke from our list</li>
+<li>... many more function can be examined by reading comments below ...</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">jokes_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">joke_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"If you give someone a program... you will frustrate them for a day; if you teach them how to program... you will "</span>
+    <span class="s2">"frustrate them for a lifetime."</span><span class="p">,</span>
+    <span class="s2">"Q: Why did I divide sin by tan? A: Just cos."</span><span class="p">,</span>
+    <span class="s2">"UNIX is basically a simple operating system... but you have to be a genius to understand the simplicity."</span><span class="p">,</span>
+    <span class="s2">"Enter any 11-digit prime number to continue."</span><span class="p">,</span>
+    <span class="s2">"If at first you don't succeed; call it version 1.0."</span><span class="p">,</span>
+    <span class="s2">"Java programmers are some of the most materialistic people I know, very object-oriented"</span><span class="p">,</span>
+    <span class="s2">"The oldest computer can be traced back to Adam and Eve. It was an apple but with extremely limited memory. Just "</span>
+    <span class="s2">"1 byte. And then everything crashed."</span><span class="p">,</span>
+    <span class="s2">"Q: Why did Wi-Fi and the computer get married? A: Because they had a connection"</span><span class="p">,</span>
+    <span class="s2">"Bill Gates teaches a kindergarten class to count to ten. 1, 2, 3, 3.1, 95, 98, ME, 2000, XP, Vista, 7, 8, 10."</span><span class="p">,</span>
+    <span class="s2">"Q: What’s a aliens favorite computer key? A: the space bar!"</span><span class="p">,</span>
+    <span class="s2">"There are 10 types of people in the world: those who understand binary, and those who don’t."</span><span class="p">,</span>
+    <span class="s2">"If it wasn't for C, we’d all be programming in BASI and OBOL."</span><span class="p">,</span>
+    <span class="s2">"Computers make very fast, very accurate mistakes."</span><span class="p">,</span>
+    <span class="s2">"Q: Why is it that programmers always confuse Halloween with Christmas? A: Because 31 OCT = 25 DEC."</span><span class="p">,</span>
+    <span class="s2">"Q: How many programmers does it take to change a light bulb? A: None. It’s a hardware problem."</span><span class="p">,</span>
+    <span class="s2">"The programmer got stuck in the shower because the instructions on the shampoo bottle said: Lather, Rinse, Repeat."</span><span class="p">,</span>
+    <span class="s2">"Q: What is the biggest lie in the entire universe? A: I have read and agree to the Terms and Conditions."</span><span class="p">,</span>
+    <span class="s1">'An SQL statement walks into a bar and sees two tables. It approaches, and asks may I join you?'</span>
+<span class="p">]</span>
+
+<span class="c1"># Initialize jokes</span>
+<span class="k">def</span> <span class="nf">initJokes</span><span class="p">():</span>
+    <span class="c1"># setup jokes into a dictionary with id, joke, haha, boohoo</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">joke_list</span><span class="p">:</span>
+        <span class="n">jokes_data</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">item_id</span><span class="p">,</span> <span class="s2">"joke"</span><span class="p">:</span> <span class="n">item</span><span class="p">,</span> <span class="s2">"haha"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"boohoo"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+        <span class="n">item_id</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c1"># prime some haha responses</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">getRandomJoke</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
+        <span class="n">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    <span class="c1"># prime some haha responses</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+        <span class="nb">id</span> <span class="o">=</span> <span class="n">getRandomJoke</span><span class="p">()[</span><span class="s1">'id'</span><span class="p">]</span>
+        <span class="n">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        
+<span class="c1"># Return all jokes from jokes_data</span>
+<span class="k">def</span> <span class="nf">getJokes</span><span class="p">():</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span>
+
+<span class="c1"># Joke getter</span>
+<span class="k">def</span> <span class="nf">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">])</span>
+
+<span class="c1"># Return random joke from jokes_data</span>
+<span class="k">def</span> <span class="nf">getRandomJoke</span><span class="p">():</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">))</span>
+
+<span class="c1"># Liked joke</span>
+<span class="k">def</span> <span class="nf">favoriteJoke</span><span class="p">():</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">bestID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">joke</span> <span class="ow">in</span> <span class="n">getJokes</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best</span><span class="p">:</span>
+            <span class="n">best</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">]</span>
+            <span class="n">bestID</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="n">bestID</span><span class="p">]</span>
+    
+<span class="c1"># Jeered joke</span>
+<span class="k">def</span> <span class="nf">jeeredJoke</span><span class="p">():</span>
+    <span class="n">worst</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">worstID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">joke</span> <span class="ow">in</span> <span class="n">getJokes</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">worst</span><span class="p">:</span>
+            <span class="n">worst</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">]</span>
+            <span class="n">worstID</span> <span class="o">=</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="n">worstID</span><span class="p">]</span>
+
+<span class="c1"># Add to haha for requested id</span>
+<span class="k">def</span> <span class="nf">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">=</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'haha'</span><span class="p">]</span>
+
+<span class="c1"># Add to boohoo for requested id</span>
+<span class="k">def</span> <span class="nf">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">=</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">jokes_data</span><span class="p">[</span><span class="nb">id</span><span class="p">][</span><span class="s1">'boohoo'</span><span class="p">]</span>
+
+<span class="c1"># Pretty Print joke</span>
+<span class="k">def</span> <span class="nf">printJoke</span><span class="p">(</span><span class="n">joke</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">joke</span><span class="p">[</span><span class="s1">'id'</span><span class="p">],</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'joke'</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"haha:"</span><span class="p">,</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"boohoo:"</span><span class="p">,</span> <span class="n">joke</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">],</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Number of jokes</span>
+<span class="k">def</span> <span class="nf">countJokes</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">jokes_data</span><span class="p">)</span>
+
+<span class="c1"># Test Joke Model</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span> 
+    <span class="n">initJokes</span><span class="p">()</span>  <span class="c1"># initialize jokes</span>
+    
+    <span class="c1"># Most likes and most jeered</span>
+    <span class="n">best</span> <span class="o">=</span> <span class="n">favoriteJoke</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Most liked"</span><span class="p">,</span> <span class="n">best</span><span class="p">[</span><span class="s1">'haha'</span><span class="p">])</span>
+    <span class="n">printJoke</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+    <span class="n">worst</span> <span class="o">=</span> <span class="n">jeeredJoke</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Most jeered"</span><span class="p">,</span> <span class="n">worst</span><span class="p">[</span><span class="s1">'boohoo'</span><span class="p">])</span>
+    <span class="n">printJoke</span><span class="p">(</span><span class="n">worst</span><span class="p">)</span>
+    
+    <span class="c1"># Random joke</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Random joke"</span><span class="p">)</span>
+    <span class="n">printJoke</span><span class="p">(</span><span class="n">getRandomJoke</span><span class="p">())</span>
+    
+    <span class="c1"># Count of Jokes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Jokes Count: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">countJokes</span><span class="p">()))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Backend-Interface-for-Web-API-(Control)">
+<a class="anchor" href="#Backend-Interface-for-Web-API-(Control)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backend Interface for Web API (Control)<a class="anchor-link" href="#Backend-Interface-for-Web-API-(Control)"> </a>
+</h3>
+<blockquote>
+<p>An application programming interface (API) is the medium by which different systems of software interact. In our applications we have two big systems:1. Python Backend that stores data beyond a single Web page2. GH Pages/Fastpages Frontend that is responsible for presenting data</p>
+</blockquote>
+<p>To communicate data between Frontend and Backend, this section Backend code provides and interface to the Frontend using a Web Service Endpoint.  Examples of endpoints are listed below and can be typed within a browser, which will return JSON data:</p>
+<ul>
+<li><a href="https://flask.nighthawkcodingsociety.com/api/jokes">https://flask.nighthawkcodingsociety.com/api/jokes</a></li>
+<li><a href="https://flask.nighthawkcodingsociety.com/api/jokes/2">https://flask.nighthawkcodingsociety.com/api/jokes/2</a></li>
+<li><a href="https://flask.nighthawkcodingsociety.com/api/jokes/random">https://flask.nighthawkcodingsociety.com/api/jokes/random</a></li>
+</ul>
+<p>As you can see, these Endpoints return JSON.  They are NOT that readable by normal humans.  However, they are very effective in passing requested data across the Internet.  The Frontend code is responsible for formatting and presenting and interface that allows the typical computer user to interact with this data.</p>
+<p>The next cell of code is Creating Endpoints that return JSON.  This allows developers in the Frontend to interact with Backend data.  API is a contract between the Frontend and Backend on how to share data.</p>
+<p>FYI, <mark>there is NO output from this section </mark>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">jsonify</span>  <span class="c1"># jsonify creates an endpoint response object</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span> <span class="c1"># used for REST API building</span>
+<span class="kn">import</span> <span class="nn">requests</span>  <span class="c1"># used for testing </span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># Blueprints allow this code to be procedurally abstracted from main.py, meaning code is not all in one place</span>
+<span class="n">app_api</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">'api'</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span>
+                   <span class="n">url_prefix</span><span class="o">=</span><span class="s1">'/api/jokes'</span><span class="p">)</span>  <span class="c1"># endpoint prefix avoid redundantly typing /api/jokes over and over</span>
+
+<span class="c1"># API generator https://flask-restful.readthedocs.io/en/latest/api.html#id1</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app_api</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">JokesAPI</span><span class="p">:</span>
+    <span class="c1"># not implemented, this would be where we would allow creation of a new Joke</span>
+    <span class="k">class</span> <span class="nc">_Create</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">joke</span><span class="p">):</span>
+            <span class="k">pass</span>
+            
+    <span class="c1"># getJokes()</span>
+    <span class="k">class</span> <span class="nc">_Read</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJokes</span><span class="p">())</span>
+
+    <span class="c1"># getJoke(id)</span>
+    <span class="k">class</span> <span class="nc">_ReadID</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="c1"># getRandomJoke()</span>
+    <span class="k">class</span> <span class="nc">_ReadRandom</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getRandomJoke</span><span class="p">())</span>
+    
+    <span class="c1"># getRandomJoke()</span>
+    <span class="k">class</span> <span class="nc">_ReadCount</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">countJokes</span><span class="p">()</span>
+            <span class="n">countMsg</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'count'</span><span class="p">:</span> <span class="n">count</span><span class="p">}</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">countMsg</span><span class="p">)</span>
+
+    <span class="c1"># put method: addJokeHaHa</span>
+    <span class="k">class</span> <span class="nc">_UpdateLike</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+            <span class="n">addJokeHaHa</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="c1"># put method: addJokeBooHoo</span>
+    <span class="k">class</span> <span class="nc">_UpdateJeer</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+            <span class="n">addJokeBooHoo</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">getJoke</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+
+    <span class="c1"># building RESTapi interfaces, these routes are added to Web Server http://&lt;server&lt;/api/jokes</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Create</span><span class="p">,</span> <span class="s1">'/create/&lt;string:joke&gt;'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Read</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>    <span class="c1"># default, which returns all jokes</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_ReadID</span><span class="p">,</span> <span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_ReadRandom</span><span class="p">,</span> <span class="s1">'/random'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_ReadCount</span><span class="p">,</span> <span class="s1">'/count'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_UpdateLike</span><span class="p">,</span> <span class="s1">'/like/&lt;int:id&gt;/'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_UpdateJeer</span><span class="p">,</span> <span class="s1">'/jeer/&lt;int:id&gt;/'</span><span class="p">)</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Frontend-(View-Simulation)-and-Hacks">
+<a class="anchor" href="#Frontend-(View-Simulation)-and-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frontend (View Simulation) and Hacks<a class="anchor-link" href="#Frontend-(View-Simulation)-and-Hacks"> </a>
+</h3>
+<blockquote>
+<p>This python codes tests endpoints on a server.  This can be handy for development and testing when making modifications to the Jokes Web APIs. This code works off of the server <mark>endpoint/url</mark>, not from code cells above it in this notebook.</p>
+</blockquote>
+<p>To work with this code and make observation for learning...</p>
+<ul>
+<li>Run a local server from flask_portfolio project and the change server variable to be local</li>
+<li>Observe the requests endpoints and the output, see if you can observe what is happening/changing on put requests</li>
+<li>The "requests" are captured into a List, the List is used in the for loop to extract from RESTful API format.  </li>
+<li>Try running this with Debugging and observe what data is being created at each step (Required)</li>
+<li>Try to format this data in Python print statements to be more readable (Required)</li>
+<li>Start and stop local server and observe errors</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># server = "http://127.0.0.1:5000/" # run local</span>
+<span class="n">server</span> <span class="o">=</span> <span class="s1">'https://flask.nighthawkcodingsociety.com/'</span> <span class="c1"># run from web server</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">server</span> <span class="o">+</span> <span class="s2">"api/jokes/"</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># responses list</span>
+
+<span class="c1"># Get the count of jokes on server</span>
+<span class="n">count_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"count"</span><span class="p">)</span>
+<span class="n">count_json</span> <span class="o">=</span> <span class="n">count_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">count_json</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span>
+
+<span class="c1"># Update likes/dislikes test sequence</span>
+<span class="n">num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># test a random record</span>
+<span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="n">num</span><span class="p">)</span>  <span class="c1"># Get/read joke by id</span>
+    <span class="p">)</span> 
+<span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"like/"</span><span class="o">+</span><span class="n">num</span><span class="p">)</span> <span class="c1"># Put/add to like count</span>
+    <span class="p">)</span> 
+<span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">requests</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"jeer/"</span><span class="o">+</span><span class="n">num</span><span class="p">)</span> <span class="c1"># Put/add to jeer count</span>
+    <span class="p">)</span> 
+
+<span class="c1"># Get a random joke</span>
+<span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+    <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="s2">"random"</span><span class="p">)</span>  <span class="c1"># Get/read a random joke</span>
+    <span class="p">)</span> 
+
+<span class="c1"># Cycle through and print responses</span>
+<span class="k">for</span> <span class="n">response</span> <span class="ow">in</span> <span class="n">responses</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"data error"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/techtalk/webapi" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="nighthawkcoders"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="NighthawkCoding"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="YouTube"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

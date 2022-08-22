@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/webapi</loc>
+<lastmod>2022-06-01T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nighthawkcoders.github.io/APCSP/techtalk/deploy</loc>
 <lastmod>2022-06-01T00:00:00-05:00</lastmod>
 </url>
@@ -39,6 +43,10 @@
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/frontend/calculator</loc>
 <lastmod>2022-07-19T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/pbl/2022/07/21/PBL-neo4j_intro.html</loc>
+<lastmod>2022-07-21T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/workshop/code_dot_org</loc>
@@ -85,6 +93,10 @@
 <lastmod>2022-08-22T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>https://nighthawkcoders.github.io/APCSP/collegeboard/python_lists</loc>
+<lastmod>2022-08-29T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nighthawkcoders.github.io/APCSP/week/2</loc>
 <lastmod>2022-08-29T00:00:00-05:00</lastmod>
 </url>
@@ -113,6 +125,10 @@
 <lastmod>2022-09-05T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/javascript</loc>
+<lastmod>2022-09-05T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://nighthawkcoders.github.io/APCSP/schedule</loc>
 </url>
 <url>
@@ -135,5 +151,8 @@
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/page2/</loc>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/page3/</loc>
 </url>
 </urlset>

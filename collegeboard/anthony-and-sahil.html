@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Anthony and Sahil’s Reflections on Computer Science | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Anthony and Sahil’s Reflections on Computer Science" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An article detailing our motivations and accomplishments in computer science. More focused on stories and learning processes than Bria’s tips" />
+<meta property="og:description" content="An article detailing our motivations and accomplishments in computer science. More focused on stories and learning processes than Bria’s tips" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/collegeboard/anthony-and-sahil" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/collegeboard/anthony-and-sahil" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/python_basics_cheat_sheet.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-21T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python_basics_cheat_sheet.webp" />
+<meta property="twitter:title" content="Anthony and Sahil’s Reflections on Computer Science" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-21T00:00:00-05:00","datePublished":"2022-08-21T00:00:00-05:00","description":"An article detailing our motivations and accomplishments in computer science. More focused on stories and learning processes than Bria’s tips","headline":"Anthony and Sahil’s Reflections on Computer Science","image":"https://nighthawkcoders.github.io/APCSP/images/python_basics_cheat_sheet.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/collegeboard/anthony-and-sahil"},"url":"https://nighthawkcoders.github.io/APCSP/collegeboard/anthony-and-sahil"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/">Tags</a><a class="page-link" href="/APCSP/about/">About Us</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Anthony and Sahil&#39;s Reflections on Computer Science</h1><p class="page-description">An article detailing our motivations and accomplishments in computer science. More focused on stories and learning processes than Bria's tips</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-21T00:00:00-05:00" itemprop="datePublished">
+        Aug 21, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      12 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2022-08-21-anthony_and_sahil.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2022-08-21-anthony_and_sahil.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2022-08-21-anthony_and_sahil.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2022-08-21-anthony_and_sahil.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Anthony:-Computer-Science-Before-APCSA">Anthony: Computer Science Before APCSA </a></li>
+<li class="toc-entry toc-h3"><a href="#Anthony:-My-AP-CSA-Experience">Anthony: My AP CSA Experience </a></li>
+<li class="toc-entry toc-h3"><a href="#Sahil:-Starting-Out">Sahil: Starting Out </a></li>
+<li class="toc-entry toc-h3"><a href="#Sahil:-AP-CSP">Sahil: AP CSP </a></li>
+<li class="toc-entry toc-h3"><a href="#Sahil:-After-AP-CSP">Sahil: After AP CSP </a></li>
+<li class="toc-entry toc-h3"><a href="#Anthony:-After-CSP">Anthony: After CSP </a></li>
+<li class="toc-entry toc-h3"><a href="#Final-Thoughts">Final Thoughts </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-08-21-anthony_and_sahil.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Anthony:-Computer-Science-Before-APCSA">
+<a class="anchor" href="#Anthony:-Computer-Science-Before-APCSA" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anthony: Computer Science Before APCSA<a class="anchor-link" href="#Anthony:-Computer-Science-Before-APCSA"> </a>
+</h3>
+<p>Hello! My name is Anthony Vo, and I graduated Del Norte with the class of 2022.</p>
+<p>My computer science journey started when I was in second grade. Khan Academy used to have a coding portion of its website, and I remember spending hours making programs that drew simple images. There was no logic involved in the coding, but as an introduction, it got me hooked on the subject. Here's a recreation of a pig that I made using Khan Academy:</p>
+<p><img src="https://github.com/nighthawkcoders/APCSP/blob/master/images/pig.PNG?raw=true" alt="Pig"></p>
+<p>In elementary school, I used Scratch to create a plethora of games. During the summer, I also took ID Tech Camps that taught me more about game design and programming. Though some of these camps weren't <em>that</em> helpful in learning computer science (Minecraft mapping isn't a skill I use to day), they furthered my interest in the subject. You can check out some of my scratch projects <a href="https://scratch.mit.edu/users/avo12345/">here</a>.</p>
+<p>I took more computer science classes in middle school with the two GTT classes. The classes still worked a lot with Scratch, but in 8th grade, I learned more about HTML, CSS, JavaScript, and Python. Those classes didn't result in the best programs, but it provided a solid foundation for problem solving and syntax that I continue to build off of today. Below are a few programs that I made in eighth grade (updated to conform to modern Python standards).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""Anthony Vo</span>
+<span class="sd">11-14-17</span>
+<span class="sd">coinflip.py</span>
+<span class="sd">To practice using random numbers"""</span>
+
+<span class="c1">#Imports random module</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1">#Initializes variables</span>
+<span class="n">numberOfHeads</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">numberOfTails</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">#Flips coins</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">coinSide</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">coinSide</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">numberOfHeads</span> <span class="o">=</span> <span class="n">numberOfHeads</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Heads"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">numberOfTails</span> <span class="o">=</span> <span class="n">numberOfTails</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Tails"</span><span class="p">)</span>
+
+<span class="c1">#Gives result</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Overall, heads was flipped </span><span class="si">{</span><span class="n">numberOfHeads</span><span class="si">}</span><span class="s2"> times while tails was flipped </span><span class="si">{</span><span class="n">numberOfTails</span><span class="si">}</span><span class="s2"> times."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Tails
+Tails
+Tails
+Tails
+Tails
+Heads
+Heads
+Tails
+Tails
+Tails
+Tails
+Tails
+Tails
+Tails
+Tails
+Heads
+Heads
+Tails
+Heads
+Tails
+Overall, heads was flipped 5 times while tails was flipped 15 times.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">"""Anthony Vo</span>
+<span class="sd">11-14-17</span>
+<span class="sd">fortunecookies.py</span>
+<span class="sd">To practice using random numbers"""</span>
+
+<span class="c1">#Imports random module</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1">#Gives messages</span>
+<span class="n">whichMessage</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">whichMessage</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You will soon have indigestion due to that fortune cookie."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">whichMessage</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"You will buy more Kung Pao Chicken in the future."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">whichMessage</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Following this retaurant's Facebook page will make you prosperous."</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">whichMessage</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"If you go to that fake Chinese restaurant Panda Express, you will become poor."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Not eating Chinese cuisine will cause you to have many unlucky days."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Following this retaurant's Facebook page will make you prosperous.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next computer science class that I took was Mr. Mortensen's Intro to Computer Science class (which has since been replaced with CSP). This was probably my favorite class in all of high school; hanging out in fifth period with my friends, coding, and having an overall good time was one of the highlights of high school... which probably says something about me ;). I learned how to use GitHub in this class and really collaborate with my peers, which helped me apply my skills to a practical environment. I also learned C which helped me understand more about how computers processed code. Below is a program I made which creates random questions. You can see how much better my programming got after taking this class!</p>
+
+</div>
+</div>
+</div>//
+//  main.c
+//  parameterFunctionQuestion(s)
+//
+//  Created by Vo, Anthony on 9/11/19.
+//  Copyright © 2019 Vo, Anthony. All rights reserved.
+//
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int questionMaker (double arg1, char operator, double arg2) { //function that creates math questions based off of given paramters
+    int input, randomizer, answer, i, j, seqChecker[4];
+    double answerSeq[4];
+    int score = 0, shutOff = 0;
+    srand(time(0)); //initializes score, input, and random seed
+    
+    switch (operator) {
+        case '+':
+            answer = arg1 + arg2;
+            break;
+        case '-':
+            answer = arg1 - arg2;
+            break;
+        case '/':
+            answer = arg1 / arg2;
+            break;
+        case '*':
+            answer = arg1 * arg2;
+            break;
+    } //determines correct answer
+    
+    double answer1 = arg1 + arg2;
+    double answer2 = arg1 - arg2;
+    double answer3 = arg1 / arg2;
+    double answer4 = arg1 * arg2; //gives possible answers
+    
+    if (answer1 == answer4) {
+        if (operator == '+') {
+            answer4 = answer1 - (rand() % 100) + 1;
+        } else {
+            answer1 = answer4 - (rand() % 100) + 1;
+        }
+    }
+    if (answer3 == answer4) {
+        if (operator == '*') {
+            answer3 = answer4 - (rand() % 100) + 1;
+        } else {
+            answer4 = answer3 - (rand() % 100) + 1;
+        }
+    }
+    if (answer2 == answer3) {
+        if (operator == '-') {
+            answer3 = answer2 - (rand() % 100) + 1;
+        } else {
+            answer2 = answer3 - (rand() % 100) + 1;
+        }
+    } //failsafe for if two answers are the same (i.e. 4 - 2 = 4 / 2)
+    
+    for (i = 0; i &lt; 4; i++) {
+        seqChecker[i] = 0;
+    } //cleans up seqChecker (has some random integers inside of it, not sure why)
+    
+    for (i = 0; i &lt; 4; i++) {
+        while (shutOff == 0) {
+            randomizer = rand() % 4;
+            if (seqChecker[0] != randomizer + 1 &amp;&amp; seqChecker[1] != randomizer + 1 &amp;&amp; seqChecker[2] != randomizer + 1 &amp;&amp; seqChecker[3] != randomizer + 1) {
+                shutOff = 1;
+            }
+            
+        }
+        
+        shutOff = 0;
+        randomizer ++;
+        switch(randomizer) {
+            case 1:
+                answerSeq[i] = answer1;
+                seqChecker[i] = 1;
+                break;
+            case 2:
+                answerSeq[i] = answer2;
+                seqChecker[i] = 2;
+                break;
+            case 3:
+                answerSeq[i] = answer3;
+                seqChecker[i] = 3;
+                break;
+            case 4:
+                answerSeq[i] = answer4;
+                seqChecker[i] = 4;
+                break;
+        }
+        
+    } //randomizes answers
+    
+    printf("%lf %c %lf is?\n", arg1, operator, arg2);
+    printf("1) %lf\n2) %lf\n3) %lf\n4) %lf\n", answerSeq[0], answerSeq[1], answerSeq[2], answerSeq[3]);
+    scanf("%d", &amp;input); //asks question
+    
+    if (answerSeq[input - 1] == answer) {
+        score++;
+        printf("Correct!\n");
+    } else {
+        printf("Incorrect\n");
+    } //checks for correct answer
+    
+    return score; //returns points gained
+}
+
+int main(void) {
+    srand(time(0));
+    int score = 0, questions = 0;
+    /* int i, operator;
+    for (i = 0; i &lt; (rand() % 5) + 1; i++) {
+        operator = rand() % 4;
+        switch(operator) {
+            case 0:
+                score += questionMaker(rand() % 20 + 1, '+', rand() % 20 + 1);
+                break;
+            case 1:
+                score += questionMaker(rand() % 20 + 1, '-', rand() % 20 + 1);
+                break;
+            case 2:
+                score += questionMaker(rand() % 20 + 1, '/', rand() % 20 + 1);
+                break;
+            case 3:
+                score += questionMaker(rand() % 20 + 1, '*', rand() % 20 + 1);
+                break;
+        }
+        questions++;
+    } */ //asks random questions (i.e. random arguments and operators)
+    questionMaker(10, '*', 8);
+    questions++;
+    
+    printf("Your final score is %d out of %d\n", score, questions);
+    
+    return 0;
+}
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Anthony:-My-AP-CSA-Experience">
+<a class="anchor" href="#Anthony:-My-AP-CSA-Experience" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anthony: My AP CSA Experience<a class="anchor-link" href="#Anthony:-My-AP-CSA-Experience"> </a>
+</h3>
+<p>Finally, we've reached junior year. I took AP CSA during the quarantine year, and it helped me improve my Object Oriented Programming skills by a lot. My success in the class stemmed mostly from motivation to code; I spent my first periods coding instead of playing Roblox (which was a popular alternative that I did in my English classes), and I made sure to finish all of my assignments on time without copying from others. Mr. Mortensen's AP study plan also helped a lot. We were required to finish a CollegeBoard unit quiz every week, so I would hop in a Discord call with my group members every Friday to do the quiz together. I have a lot of fond memories of staying up until 2 AM with my friends on Friday to meet Mr. Mortensen's assignment deadline (admittedly, it was a lot more fun than it sounds).</p>
+<p>For success in AP CSA, I would recommend completing everything on time. Though there is a grace period for a lot of assignments, if you fall behind one week and don't understand a concept, it can quickly snowball out of control. Get on top of your assignments, make sure you understand each week's concepts, and you'll succeed. You don't need to have had years of prior experience like me; you just need to try your best to understand and work on each week's work.</p>
+<p>After junior year, I realized that I had a big hole in my repretoire. I could code well, sure, but I couldn't actually present or make anything of substance. So, as I chose senior classes, I decided on CSP to work on my web development skills. I spent the summer writing college essays, playing League of Legends, and hanging out. I also found out that I got a 5 on the AP CSA exam! When fall came, I was ready to begin creating polished websites. During that first trimester, I met a new friend...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sahil:-Starting-Out">
+<a class="anchor" href="#Sahil:-Starting-Out" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sahil: Starting Out<a class="anchor-link" href="#Sahil:-Starting-Out"> </a>
+</h3>
+<p>Hey, I'm Sahil Samar. I'm currently a senior at Del Norte, in the graduating class of 2023.</p>
+<p>My computer science journey started out in around 8th grade when I got interested in game development. But game development was a super hard thing to start with! Unity uses a language called C#, and I didn't have any idea how to use it. I didn't really understand the architecture of Unity or C# at first; I just kind of dove in and started making projects. I would look up what I didn't know, and just copy paste in code to get things working. Even this was hard, because when something went wrong I had no idea how to fix it. But with way too many hours, I was able to make some projects. It isn't easy to get started getting into coding! By the time I got to AP CSP, I still had a lot to learn about the coding mindset.</p>
+<p>My very first game, 3D Pong:</p>
+<p><img src="https://user-images.githubusercontent.com/64157584/185832344-fecede54-be5d-4dcb-a7e7-b65b50fe49cb.png" alt="3D Pong"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sahil:-AP-CSP">
+<a class="anchor" href="#Sahil:-AP-CSP" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sahil: AP CSP<a class="anchor-link" href="#Sahil:-AP-CSP"> </a>
+</h3>
+<p>When I got to AP CSP, I still didn't really have an idea of how coding worked. I just knew how to find code and paste it into my project. But slowly, I began moving away from this. I met Anthony Vo, who you just read a little bit about, in my first trimester. Whenever I didn't understand something, he would always help me out. He wouldn't give me code to copy paste though. He would actually explain the code to me, so I could do it myself. This was huge for me, since I actually began to think about my code and be able to develop things on my own. Mr. Mortensen guided me through countless problems, but everytime I asked him for help I walked away with some new understanding of how to debug my code. At the start of the trimester, I would go up to Mr. Mortensen or Anthony as soon as I had a problem. But by the end of the year, I only used them as a last resort, after I had truly tried everything. At that point, I just needed a pair of fresh eyes, and not someone to guide me through the whole process. Moral of the story: you aren't expected to come in an expert at coding! But, if you use your resources properly, you can use this year to grow. You can develop the mindset of a programmer and learn how to create cool projects and debug your issues when things don't work out.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sahil:-After-AP-CSP">
+<a class="anchor" href="#Sahil:-After-AP-CSP" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sahil: After AP CSP<a class="anchor-link" href="#Sahil:-After-AP-CSP"> </a>
+</h3>
+<p>AP CSP shaped me to be the coder I am today; but you only get out of it what you put into it. If you work hard, then it can completely change your mindset (if you are a new coder), and teach you plenty of skills. After AP CSP, I was able to land a summer internship working in CS at the San Diego Supercomputer Center. During this internship, I worked with huge supercomputers and began to understand what servers really were and how they worked. Our project was called ICICLE. If you want to learn more about it, you could watch this short video: <a href="https://www.youtube.com/watch?v=gNFk5tDTtoU">https://www.youtube.com/watch?v=gNFk5tDTtoU</a>. I developed sophisticated authentication methods, and did a lot of "firsts" in the project. I went from having to be guided through basic code in CSP to creating things that had never been done before. It's possible! After doing a lot of stuff behind the scenes, we got to test our system on massive knowledge graphs and run some machine learning algorithms.</p>
+<p>Picture of one of the computers I worked with, called Expanse:</p>
+<p><img src="https://user-images.githubusercontent.com/64157584/185833475-cc0a4cbc-7f03-4129-bf5b-546adcfe33e3.png" alt="Expanse"></p>
+<p>Knowledge Graph of Asteroids, classified using a neural network on being hazarous or not:</p>
+<p><img src="https://user-images.githubusercontent.com/64157584/185832904-9f948eab-7519-40a9-bb36-b39f9ebbf06e.png" alt="Knowledge Graph"></p>
+<p>I also never gave up on making games! But now, I don't really need to follow tutorials anymore. I can architect a solution on my own, and when I do need to look something up I learn from it and implement it rather than just copying it. When something goes wrong, I'm not stuck; I know what to do, and I have confidence because I know that every problem has a solution. Here's a peek at one of the games I'm working on now:</p>
+<p><img src="https://user-images.githubusercontent.com/64157584/185833067-7c3aa46b-3c46-4edc-b1dd-49ac306d97b2.png" alt="Game"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Anthony:-After-CSP">
+<a class="anchor" href="#Anthony:-After-CSP" aria-hidden="true"><span class="octicon octicon-link"></span></a>Anthony: After CSP<a class="anchor-link" href="#Anthony:-After-CSP"> </a>
+</h3>
+<p>AP CSP helped immensely with my presentation and web development skills. For reference, here's a website I made for my 10th grade AP European History Final...</p>
+<p><img src="https://user-images.githubusercontent.com/54915685/185851569-0e62cdc8-b46b-461d-93ba-1fcc4e33f3a5.PNG" alt="website"></p>
+<p>As you can see, it looks like garbage! You can also check out my extremely great 11th grade website for AP CSA <a href="https://csa-project.herokuapp.com/">here</a>.</p>
+<p>After taking AP CSP, my websites looked a lot better. I updated a <a href="https://sdjuniorclub.com/">website for my golf coach</a> and made some personal websites. Here's a quick one that I made to create basketball teams:</p>
+<p><a href="https://tonyhieu.github.io/friday-six"><img src="https://user-images.githubusercontent.com/54915685/185852873-dad6158f-40f6-4a5c-8e48-aca1ee60aadb.png" alt="image"></a></p>
+<p>Even if you're new to CS as a whole, knowing how to make websites can help you show off the things you've done. Whether it's a personal portfolio website, an online shop, or anything else, web development is a great skill to have.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Final-Thoughts">
+<a class="anchor" href="#Final-Thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Final Thoughts<a class="anchor-link" href="#Final-Thoughts"> </a>
+</h3>
+<p>Anthony: I hope you have a great year in this class! If you put in the time and effort, you will be really successful and gain skills that you can use for the rest of your life. Best of luck to you all!</p>
+<p>Sahil:
+<br>
+<img src="https://user-images.githubusercontent.com/54915685/185855922-aa749acf-91f7-4282-ab32-5a92737ebd1d.png" alt="image"></p>
+
+</div>
+</div>
+</div>
+&lt;/div&gt;
+ 
+
+</time.h></stdlib.h></stdio.h>
+</div>
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/collegeboard/anthony-and-sahil" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="nighthawkcoders"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="NighthawkCoding"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use></svg></a></li><li><a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="YouTube"><svg class="svg-icon grey"><use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

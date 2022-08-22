@@ -46,6 +46,7 @@ title: Schedule
         <td><a href="{{site.baseurl}}/week/1">Introduction to Python</a></td>
         <td><a href="{{site.baseurl}}/collegeboard/python">Hello to Python</a></td>
         <td>
+            <a href="{{site.baseurl}}/techtalk/bash">Bash and Checks</a>,
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
             <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>       
         </td>

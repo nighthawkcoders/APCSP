@@ -105,7 +105,7 @@ title: Schedule
 </table>
 
 ## Trimester 1 - Introduction to Web Development
-> TBD
+> Websites are made up of three key parts: Frontend, Backend, and Deployment.  These weeks we are going to get these pieces in place so that we can be enabled to perform all the aspects of constructing a Website.  Once again, there will be a lot of learning focused on getting things working.  But after, students will be ready for Website development.
 
 <table>
 

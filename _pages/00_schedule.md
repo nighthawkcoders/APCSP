@@ -39,7 +39,6 @@ title: Schedule
             <a href="{{site.baseurl}}/week/2">Data Abstraction</a>
         </td>
         <td>
-            <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>,
             Alumni Panel
         </td>
         <td><a href="{{site.baseurl}}/collegeboard/python_lists">Python Lists and Dictionaries</a></td>
@@ -127,7 +126,9 @@ title: Schedule
         <td>
             <a href="">Backend Development: Flask/Python </a>
         </td>
-        <td></td>
+        <td>
+            <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>
+        </td>
         <td>
             <a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.2 Program Function and Purpose</a>
         </td>

@@ -34,7 +34,8 @@ title: Schedule
             <a href="{{site.baseurl}}/collegeboard/create">Create Performance Task</a>
         </td>
         <td>
-            <a href="{{site.baseurl}}/techtalk/javascript">JavaScript Tutorial</a>,
+            <a href="{{site.baseurl}}/techtalk/javascript">JavaScript Tutorial</a>
+            <br>
             <a href="{{site.baseurl}}/techtalk/applab">Program Design with AppLab</a>
         </td>
         <td>TBD</td>
@@ -58,6 +59,7 @@ title: Schedule
         </td>
         <td>
             <a href="{{apcsp}}/points/2">Data Abstraction Points</a>
+            <br>
             <a href="{{issues}}/21">Review Tickets</a>
         </td>
     </tr>
@@ -76,11 +78,13 @@ title: Schedule
             <a href="{{site.baseurl}}/collegeboard/python">Hello to Python</a>
         </td>
         <td>
-            <a href="{{site.baseurl}}/techtalk/bash">Bash and Checks</a>,
+            <a href="{{site.baseurl}}/techtalk/bash">Bash and Checks</a>
+            <br>
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>     
         </td>
         <td>
             <a href="{{canvas}}/2296689">Intro Python, Jupyter, Fastpages</a>
+            <br>
             <a href="{{issues}}/21">Review Tickets</a>
         </td>
     </tr>
@@ -102,6 +106,7 @@ title: Schedule
         <td>
 
             <a href="{{canvas}}/2206627">Tools Setup</a>
+            <br>
             <a href="{{issues}}/11">Review Tickets</a>
         </td>
     </tr>

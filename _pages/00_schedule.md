@@ -46,6 +46,7 @@ title: Schedule
         </td>
         <td>
             <a href="{{site.baseurl}}/collegeboard/python_lists">Python Lists and Dictionaries</a>
+        </td>
         <td>
             <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
         </td>

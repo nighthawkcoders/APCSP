@@ -24,7 +24,7 @@ title: Schedule
         <td>3</td>
         <td><a href="{{site.baseurl}}/week/3">Creative Development</a></td>
         <td>
-            <a href="{{site.baseurl}}/collegeboard/bria">How I got a  5!</a>,
+            <a href="{{site.baseurl}}/collegeboard/bria">How I got a  5!</a>
         </td>
         <td>
             <a href="{{site.baseurl}}/collegeboard/create">Create Performance Task</a>

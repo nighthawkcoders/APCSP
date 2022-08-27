@@ -6,6 +6,8 @@ title: Schedule
 
 <!-- Canvas Course -->
 {% assign canvas = "https://poway.instructure.com/courses/127268/assignments" %}
+{% assign apcsp = "https://nighthawkcoders.github.io/APCSP" %}
+{% assign issues = "https://github.com/nighthawkcoders/APCSP/issues" %}
 
 ## Introduction to Tools and Resources
 > The initial weeks focus on introducing Tools, Pair Programming, and the AP Resources that we plan to use throughout the year. At the end of Weeks 0-3, students will be exposed to blogging with GitHub Pages; developing with Jupyter Notebooks, Python, JavaScript, HTML, and Code.org AppLab; working with AP classroom and becoming familiar with Create Performance Task project requirements.
@@ -37,7 +39,9 @@ title: Schedule
     </tr>
 
     <tr>
-        <td>2 🚧</td>
+        <td>
+            2 🚧
+        </td>
         <td>
             <a href="{{site.baseurl}}/week/2">Data Abstraction</a>
         </td>
@@ -52,11 +56,15 @@ title: Schedule
         </td>
         <td>
             <a href="{{canvas}}/2340164">Data Abstraction</a>
+            <a href={{issues}}/21">Review Tickets</a>
+
         </td>
     </tr>
 
     <tr>
-        <td>1 💰</td>
+        <td>
+            1 💰
+        </td>
         <td>
             <a href="{{site.baseurl}}/week/1">Introduction to Python</a>
         </td>
@@ -72,11 +80,14 @@ title: Schedule
         </td>
         <td>
             <a href="{{canvas}}/2296689">Intro Python, Jupyter, Fastpages</a>
+            <a href={{issues}}/21">Review Tickets</a>
         </td>
     </tr>
     
     <tr>
-        <td>0 💰</td>
+        <td>
+            0 💰
+        </td>
         <td><a href="{{site.baseurl}}/week/0">Tool Setup</a></td>
         <td>
             <a href="{{site.baseurl}}/collegeboard/history">Scoring History</a>
@@ -89,6 +100,7 @@ title: Schedule
         </td>
         <td>
             <a href="{{canvas}}/2206627">Tools Setup</a>
+            <a href={{issues}}/11">Review Tickets</a>
         </td>
     </tr>
     

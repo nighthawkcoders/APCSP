@@ -58,7 +58,7 @@ title: Schedule
         </td>
         <td>
             <a href="{{apcsp}}/points/2">Data Abstraction Points</a>
-            <a href={{issues}}/21">Review Tickets</a>
+            <a href="{{issues}}/21">Review Tickets</a>
         </td>
     </tr>
 
@@ -81,7 +81,7 @@ title: Schedule
         </td>
         <td>
             <a href="{{canvas}}/2296689">Intro Python, Jupyter, Fastpages</a>
-            <a href={{issues}}/21">Review Tickets</a>
+            <a href="{{issues}}/21">Review Tickets</a>
         </td>
     </tr>
     
@@ -102,9 +102,7 @@ title: Schedule
         <td>
 
             <a href="{{canvas}}/2206627">Tools Setup</a>
-<!--
-            <a href={{issues}}/11">Review Tickets</a>
--->
+            <a href="{{issues}}/11">Review Tickets</a>
         </td>
     </tr>
     

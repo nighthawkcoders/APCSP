@@ -50,7 +50,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
         </td>
         <td>
-            <a href="{{canvas}}/2340164>Data Abstraction</a>
+            <a href="{{canvas}}/2340164">Data Abstraction</a>
         </td>
     </tr>
 
@@ -70,7 +70,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>     
         </td>
         <td>
-            <a href="{{canvas}}/2296689>Intro Python, Jupyter, Fastpages</a>
+            <a href="{{canvas}}/2296689">Intro Python, Jupyter, Fastpages</a>
         </td>
     </tr>
     
@@ -87,7 +87,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/tools">Tools and Equipment</a>
         </td>
         <td>
-            <a href="{{canvas}}/2206627>Tools Setup</a>
+            <a href="{{canvas}}/2206627">Tools Setup</a>
         </td>
     </tr>
     

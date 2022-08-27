@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      6 min read
     
 </span></p>
 
@@ -132,6 +132,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Look-inside-Fastpages/Github-page-project">Look inside Fastpages/Github page project </a></li>
 <li class="toc-entry toc-h3"><a href="#Look-inside-a-Markdown-File">Look inside a Markdown File </a></li>
 <li class="toc-entry toc-h3"><a href="#Env,-Git-and-GitHub">Env, Git and GitHub </a></li>
+<li class="toc-entry toc-h3"><a href="#Student-Request---Make-a-file-in-Bash">Student Request - Make a file in Bash </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
@@ -428,6 +429,74 @@ ls -l
 <span class="nb">echo</span> <span class="s2">""</span>
 <span class="nb">echo</span> <span class="s2">"look at config file"</span>
 cat config
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Student-Request---Make-a-file-in-Bash">
+<a class="anchor" href="#Student-Request---Make-a-file-in-Bash" aria-hidden="true"><span class="octicon octicon-link"></span></a>Student Request - Make a file in Bash<a class="anchor-link" href="#Student-Request---Make-a-file-in-Bash"> </a>
+</h3>
+<blockquote>
+<p>This example was requested by a student (Jun Lim, CSA). The request was to make jupyer file using bash, I adapted the request to markdown.  This type of thought will have great extrapolation to coding and possibilities of using List, Arrays, or APIs to build user interfaces.  JavaScript is a language where building HTML is very common.</p>
+<p>To get more interesting output from terminal, this will require using something like mdless (<a href="https://github.com/ttscoff/mdless">https://github.com/ttscoff/mdless</a>).  This enables see markdown in rendered format.- On Desktop <a href="https://www.macports.org/install.php">Install PKG from MacPorts</a></p>
+<ul>
+<li>In Terminal on MacOS<ul>
+<li><a href="https://ports.macports.org/port/ncurses/">Install ncurses</a></li>
+<li><code>gem install mdless</code></li>
+</ul>
+</li>
+</ul>
+<p>Output of the example is much nicer in "jupyter"</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">cd</span> /tmp
+
+<span class="nv">file</span><span class="o">=</span><span class="s2">"sample.md"</span>
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">"</span><span class="nv">$file</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    rm <span class="nv">$file</span>
+<span class="k">fi</span>
+
+tee -a <span class="nv">$file</span> &gt;/dev/null <span class="s">&lt;&lt;EOF</span>
+<span class="s"># Show Generated Markdown</span>
+<span class="s">This introductory paragraph and this line and the title above are generated using tee with the standard input (&lt;&lt;) redirection operator.</span>
+<span class="s">- This bulleted element is still part of the tee body.</span>
+<span class="s">EOF</span>
+
+<span class="nb">echo</span> <span class="s2">"- This bulleted element and lines below are generated using echo with standard output (&gt;&gt;) redirection operator."</span> &gt;&gt; <span class="nv">$file</span>
+<span class="nb">echo</span> <span class="s2">"- The list definition, as is, is using space to seperate lines.  Thus the use of commas and hyphens in output."</span> &gt;&gt; <span class="nv">$file</span>
+<span class="nv">actions</span><span class="o">=(</span><span class="s2">"ls,list-directory"</span> <span class="s2">"cd,change-directory"</span> <span class="s2">"pwd,present-working-directory"</span> <span class="s2">"if-then-fi,test-condition"</span> <span class="s2">"env,bash-environment-variables"</span> <span class="s2">"cat,view-file-contents"</span> <span class="s2">"tee,write-to-output"</span> <span class="s2">"echo,display-content-of-string"</span> <span class="s2">"echo_text_&gt;\$file,write-content-to-file"</span> <span class="s2">"echo_text_&gt;&gt;\$file,append-content-to-file"</span><span class="o">)</span>
+<span class="k">for</span> action in <span class="si">${</span><span class="nv">actions</span><span class="p">[@]</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>  <span class="c1"># for loop is very similar to other language, though [@], semi-colon, do are new</span>
+  <span class="nv">action</span><span class="o">=</span><span class="si">${</span><span class="nv">action</span><span class="p">//-/ </span><span class="si">}</span>  <span class="c1"># convert dash to space</span>
+  <span class="nv">action</span><span class="o">=</span><span class="si">${</span><span class="nv">action</span><span class="p">//,/: </span><span class="si">}</span> <span class="c1"># convert comma to colon</span>
+  <span class="nv">action</span><span class="o">=</span><span class="si">${</span><span class="nv">action</span><span class="p">//_text_/ </span><span class="se">\"</span><span class="nv">sample</span><span class="p"> text</span><span class="se">\"</span><span class="p"> </span><span class="si">}</span> <span class="c1"># convert _text_ to sample text, note escape character \ to avoid "" having meaning</span>
+  <span class="nb">echo</span> <span class="s2">"    - </span><span class="si">${</span><span class="nv">action</span><span class="p">//-/ </span><span class="si">}</span><span class="s2">"</span> &gt;&gt; <span class="nv">$file</span>  <span class="c1"># echo is redirected to file with &gt;&gt;</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span> <span class="s2">""</span>
+<span class="nb">echo</span> <span class="s2">"File listing and status"</span>
+ls -l <span class="nv">$file</span> <span class="c1"># list file</span>
+wc <span class="nv">$file</span>   <span class="c1"># show words</span>
+mdless <span class="nv">$file</span>  <span class="c1"># this requires installation, but renders markown from terminal</span>
+
+rm <span class="nv">$file</span>  <span class="c1"># clean up termporary file</span>
 </pre></div>
 
     </div>

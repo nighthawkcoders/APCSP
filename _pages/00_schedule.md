@@ -23,7 +23,9 @@ title: Schedule
     </tr>
 
     <tr>
-        <td>3</td>
+        <td>
+            3
+        </td>
         <td><a href="{{site.baseurl}}/week/3">Creative Development</a></td>
         <td>
             <a href="{{site.baseurl}}/collegeboard/bria">How I got a  5!</a>
@@ -55,9 +57,9 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
         </td>
         <td>
-            <a href="{{canvas}}/2340164">Data Abstraction</a>
+            <a href="{{apcsp}}/points/2">Data Abstraction Points</a>
             <a href={{issues}}/21">Review Tickets</a>
-
+            
         </td>
     </tr>
 

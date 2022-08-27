@@ -60,7 +60,7 @@ title: Schedule
         <td>
             <a href="{{apcsp}}/points/2">Data Abstraction Points</a>
             <br>
-            <a href="{{issues}}/21">Review Tickets</a>
+            <a href="{{issues}}/22">Review Tickets</a>
         </td>
     </tr>
 

@@ -160,7 +160,7 @@ title: Schedule
 
 
 ## Fundamental of Programming and Algorithms
-> TBD
+> The tough solution to problems in Computer Science generally require an algorithm.  An algorithm usually involves data, for instance Data Science is a field that focuses on on data and algorithms.  These weeks focus on some very detailed algorithms, but we hope to express these details visually.  Data and binary are sometimes considered boring, but when focussed with analytics or images it can become very interesting.
 
 <table>
 

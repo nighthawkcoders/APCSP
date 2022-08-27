@@ -45,7 +45,9 @@ title: Schedule
         <td>
             <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
         </td>
-        <td>TBD</td>
+        <td>
+        <a href="https://poway.instructure.com/courses/127268/assignments/2340164>Data Abstraction</>
+        </td>
     </tr>
 
     <tr>

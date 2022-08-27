@@ -32,7 +32,11 @@ title: Schedule
 
     <tr>
         <td>2</td>
-        <td><a href="{{site.baseurl}}/week/2">Data Abstraction</a></td>
+        <td>
+           <a href="{{site.baseurl}}/week/2">Data Abstraction</a>,
+           <a href="{{site.baseurl}}/collegeboard/anthony-and-sahil">Reflections on Computer Science</a>,
+           <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>
+        </td>
         <td><a href="{{site.baseurl}}/collegeboard/python_lists">Python Lists and Dictionaries</a></td>
         <td>
             <a href="{{site.baseurl}}/techtalk/agile">Agile and Roles</a>,
@@ -45,13 +49,11 @@ title: Schedule
         <td>1</td>
         <td><a href="{{site.baseurl}}/week/1">Introduction to Python</a></td>
         <td>
-            <a href="{{site.baseurl}}/collegeboard/python">Hello to Python</a>,
-            <a href="{{site.baseurl}}/collegeboard/anthony-and-sahil">Reflections on Computer Science</a>
+            <a href="{{site.baseurl}}/collegeboard/python">Hello to Python</a>
         </td>
         <td>
             <a href="{{site.baseurl}}/techtalk/bash">Bash and Checks</a>,
-            <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>,
-            <a href="{{site.baseurl}}/techtalk/focus">Focus and Habits</a>     
+            <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>     
         </td>
         <td><a href="https://poway.instructure.com/courses/127268/assignments/2296689">Intro Python, Jupyter, Fastpages</a></td>
     </tr>

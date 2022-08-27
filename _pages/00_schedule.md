@@ -37,7 +37,7 @@ title: Schedule
     </tr>
 
     <tr>
-        <td>2</td>
+        <td>2 🚧</td>
         <td>
             <a href="{{site.baseurl}}/week/2">Data Abstraction</a>
         </td>
@@ -56,7 +56,7 @@ title: Schedule
     </tr>
 
     <tr>
-        <td>1 ✓</td>
+        <td>1 💰</td>
         <td>
             <a href="{{site.baseurl}}/week/1">Introduction to Python</a>
         </td>
@@ -76,7 +76,7 @@ title: Schedule
     </tr>
     
     <tr>
-        <td>0 ✓</td>
+        <td>0 💰</td>
         <td><a href="{{site.baseurl}}/week/0">Tool Setup</a></td>
         <td>
             <a href="{{site.baseurl}}/collegeboard/history">Scoring History</a>

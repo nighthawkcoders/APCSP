@@ -39,7 +39,7 @@ title: Schedule
             <a href="{{site.baseurl}}/week/2">Data Abstraction</a>
         </td>
         <td>
-            Alumni Panel (blog for extra credit)
+            Alumni Panel (blog take ways for extra credit)
         </td>
         <td><a href="{{site.baseurl}}/collegeboard/python_lists">Python Lists and Dictionaries</a></td>
         <td>

@@ -57,10 +57,8 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
         </td>
         <td>
-<!--
             <a href="{{apcsp}}/points/2">Data Abstraction Points</a>
             <a href={{issues}}/21">Review Tickets</a>
--->
         </td>
     </tr>
 
@@ -82,10 +80,8 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>     
         </td>
         <td>
-<!--
             <a href="{{canvas}}/2296689">Intro Python, Jupyter, Fastpages</a>
             <a href={{issues}}/21">Review Tickets</a>
--->
         </td>
     </tr>
     

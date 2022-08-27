@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -164,34 +164,46 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># variable of type string</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is the variable name/key?"</span><span class="p">,</span> <span class="s2">"value?"</span><span class="p">,</span> <span class="s2">"type?"</span><span class="p">,</span> <span class="s2">"primitive or collection, why?"</span><span class="p">)</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">"John Doe"</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
+<span class="nb">print</span><span class="p">()</span>
+
+
 <span class="c1"># variable of type integer</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is the variable name/key?"</span><span class="p">,</span> <span class="s2">"value?"</span><span class="p">,</span> <span class="s2">"type?"</span><span class="p">,</span> <span class="s2">"primitive or collection, why?"</span><span class="p">)</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"age"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">))</span>
 
+<span class="nb">print</span><span class="p">()</span>
+
 <span class="c1"># variable of type float</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is the variable name/key?"</span><span class="p">,</span> <span class="s2">"value?"</span><span class="p">,</span> <span class="s2">"type?"</span><span class="p">,</span> <span class="s2">"primitive or collection, why?"</span><span class="p">)</span>
 <span class="n">score</span> <span class="o">=</span> <span class="mf">90.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"score"</span><span class="p">,</span> <span class="n">score</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># variable of type list (many values in one variable)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is variable name/key?"</span><span class="p">,</span> <span class="s2">"value?"</span><span class="p">,</span> <span class="s2">"type?"</span><span class="p">,</span> <span class="s2">"primitive or collection?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is different about the list output?"</span><span class="p">)</span>
 <span class="n">langs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"JavaScript"</span><span class="p">,</span> <span class="s2">"Java"</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"langs"</span><span class="p">,</span> <span class="n">langs</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"langs"</span><span class="p">,</span> <span class="n">langs</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">),</span> <span class="s2">"length"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">langs</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"- langs[0]"</span><span class="p">,</span> <span class="n">langs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">langs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># variable of type dictionary (a group of keys and values)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is the variable name/key?"</span><span class="p">,</span> <span class="s2">"value?"</span><span class="p">,</span> <span class="s2">"type?"</span><span class="p">,</span> <span class="s2">"primitive or collection, why?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What is different about the dictionary output?"</span><span class="p">)</span>
 <span class="n">person</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"name"</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span>
     <span class="s2">"age"</span><span class="p">:</span> <span class="n">age</span><span class="p">,</span>
     <span class="s2">"score"</span><span class="p">:</span> <span class="n">score</span><span class="p">,</span>
     <span class="s2">"langs"</span><span class="p">:</span> <span class="n">langs</span>
 <span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"person"</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"person"</span><span class="p">,</span> <span class="n">person</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">),</span> <span class="s2">"length"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'- person["name"]'</span><span class="p">,</span> <span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">],</span> <span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]))</span>
 </pre></div>
 
@@ -208,18 +220,18 @@ window.onload = wrap_img;
 <h3 id="List-and-Dictionary-purpose">
 <a class="anchor" href="#List-and-Dictionary-purpose" aria-hidden="true"><span class="octicon octicon-link"></span></a>List and Dictionary purpose<a class="anchor-link" href="#List-and-Dictionary-purpose"> </a>
 </h3>
-<p>Our society is being build on information.  <mark>List and Dictionaries are used to collect information</mark>.  Mostly, when information is collected it is formed into patterns.  As that pattern is established you will collect many instances of that pattern.</p>
+<p>Our society is being built on information.  <mark>List and Dictionaries are used to collect information</mark>.  Mostly, when information is collected it is formed into patterns.  As that pattern is established you will be able collect many instances of that pattern.</p>
 <ul>
-<li>List is used to collect many</li>
+<li>List is used to collect many instances of a pattern</li>
 <li>Dictionary is used to define data patterns.</li>
 <li>Iteration is often used to process through lists.</li>
 </ul>
-<p>To start exploring more deeply into List, Dictionary and Iteration we will explore constructing a List of people and cars.</p>
+<p>To start exploring more deeply into List, Dictionary and Iteration this example will explore constructing a List of people and cars.</p>
 <ul>
-<li>As we learned above, List is a data type: class 'list'</li>
-<li>A <mark>'list' data type has the method '.append(expression)'</mark> that allows you to add to the list</li>
-<li>In the example below,  the expression appended to the 'list' is the data type: class 'dict'</li>
-<li>At the end, you see a fairly complicated data structure.  This is a <mark>list of dictionaries</mark>.  The output looks similar to JSON and we will see this often, you will be required to understand this data structure and understand the parts.  Easy peasy ;).</li>
+<li>As we learned above, a List is a data type: class 'list'</li>
+<li>A <mark>'list' data type has the method '.append(expression)'</mark> that allows you to add to the list.  A class usually has extra method to support working with its objects/instances.</li>
+<li>In the example below,  the expression is appended to the 'list' is the data type: class 'dict'</li>
+<li>At the end, you see a fairly complicated data structure.  This is a <mark>list of dictionaries</mark>, or a collection of many similar data patterns.  The output looks similar to JavaScript Object Notation (JSON), Jekyll/GitHub pages yml files, FastPages Front Matter. As discussed we will see this key/value patter often, you will be required to understand this data structure and understand the parts.  Just believe it is peasy ;) and it will become so.</li>
 </ul>
 
 </div>
@@ -233,6 +245,8 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">InfoDb</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># InfoDB is a data structure with expected Keys and Values</span>
 
 <span class="c1"># Append to List a Dictionary of key/values related to a person and cars</span>
 <span class="n">InfoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
@@ -262,6 +276,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[{'FirstName': 'John', 'LastName': 'Mortensen', 'DOB': 'October 21', 'Residence': 'San Diego', 'Email': 'jmortensen@powayusd.com', 'Owns_Cars': ['2015-Fusion', '2011-Ranger', '2003-Excursion', '1997-F350', '1969-Cadillac']}, {'FirstName': 'Sunny', 'LastName': 'Naidu', 'DOB': 'August 2', 'Residence': 'Temecula', 'Email': 'snaidu@powayusd.com', 'Owns_Cars': ['4Runner']}]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -271,7 +299,7 @@ window.onload = wrap_img;
 <h3 id="Formatted-output-of-List/Dictionary---for-loop">
 <a class="anchor" href="#Formatted-output-of-List/Dictionary---for-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Formatted output of List/Dictionary - for loop<a class="anchor-link" href="#Formatted-output-of-List/Dictionary---for-loop"> </a>
 </h3>
-<p>Managing data in Lists and Dictionaries is for the convenience of passing the data across the internet or preparing it to be stored into a database.  Also, it is a great way to exchange data inside of our own programs.</p>
+<p>Managing data in Lists and Dictionaries is for the convenience of passing the data across the internet, to applications, or preparing it to be stored into a database.  It is a great way to exchange data between programs and programmers.  Exchange of data between programs includes the data type the method/function and the format of the data type.  These concepts are key to learning how to write functions, receive, and return data.  This process is often referred to as an <mark>Application Programming Interface (API)</mark>.</p>
 <p>Next, we will take the stored data and output it within our notebook.  There are multiple steps to this process...</p>
 <ul>
 <li>
@@ -291,7 +319,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="n">d_rec</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># print function: given a dictionary of InfoDb content</span>
+<span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="n">d_rec</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">d_rec</span><span class="p">[</span><span class="s2">"FirstName"</span><span class="p">],</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"LastName"</span><span class="p">])</span>  <span class="c1"># using comma puts space between values</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Residence:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"Residence"</span><span class="p">])</span> <span class="c1"># \t is a tab indent</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Birth Day:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"DOB"</span><span class="p">])</span>
@@ -300,7 +329,7 @@ window.onload = wrap_img;
     <span class="nb">print</span><span class="p">()</span>
 
 
-<span class="c1"># for loop iterates on length of InfoDb</span>
+<span class="c1"># for loop algorithm iterates on length of InfoDb</span>
 <span class="k">def</span> <span class="nf">for_loop</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"For loop output</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">InfoDb</span><span class="p">:</span>
@@ -310,6 +339,31 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>For loop output
+
+John Mortensen
+	 Residence: San Diego
+	 Birth Day: October 21
+	 Cars: 2015-Fusion, 2011-Ranger, 2003-Excursion, 1997-F350, 1969-Cadillac
+
+Sunny Naidu
+	 Residence: Temecula
+	 Birth Day: August 2
+	 Cars: 4Runner
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -337,7 +391,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">while_loop</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># while loop algorithm contains an initial n and an index incrementing statement (n += 1)</span>
+<span class="k">def</span> <span class="nf">while_loop</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"While loop output</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">):</span>
@@ -350,6 +405,31 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>While loop output
+
+John Mortensen
+	 Residence: San Diego
+	 Birth Day: October 21
+	 Cars: 2015-Fusion, 2011-Ranger, 2003-Excursion, 1997-F350, 1969-Cadillac
+
+Sunny Naidu
+	 Residence: Temecula
+	 Birth Day: August 2
+	 Cars: 4Runner
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -379,7 +459,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">recursive_loop</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># recursion algorithm loops incrementing on each call (n + 1) until exit condition is met</span>
+<span class="k">def</span> <span class="nf">recursive_loop</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">InfoDb</span><span class="p">):</span>
         <span class="n">record</span> <span class="o">=</span> <span class="n">InfoDb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="n">print_data</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>

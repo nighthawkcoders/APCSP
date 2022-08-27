@@ -4,7 +4,7 @@ permalink: /schedule
 title: Schedule
 ---
 
-## Trimester 1 - Introduction to Tools and Resources
+## Introduction to Tools and Resources
 > The initial weeks focus on introducing Tools, Pair Programming, and the AP Resources that we plan to use throughout the year. At the end of Weeks 0-3, students will be exposed to blogging with GitHub Pages; developing with Jupyter Notebooks, Python, JavaScript, HTML, and Code.org AppLab; working with AP classroom and becoming familiar with Create Performance Task project requirements.
 
 <table>
@@ -15,22 +15,6 @@ title: Schedule
      <th>AP Test Prep</th>
      <th>Career Tech</th>
      <th>Canvas</th>
-    </tr>
-    
-    <tr>
-        <td>4</td>
-        <td><a href="{{site.baseurl}}/week/3">Creative Development</a></td>
-        <td>
-            <a href="{{site.baseurl}}/collegeboard/anthony-and-sahil">Reflections on Computer Science</a>
-        </td>
-        <td>
-            <a href="{{site.baseurl}}/collegeboard/create">Create Performance Task</a>
-        </td>
-        <td>
-            <a href="{{site.baseurl}}/techtalk/javascript">JavaScript Tutorial</a>,
-            <a href="{{site.baseurl}}/techtalk/applab">Program Design with AppLab</a>
-        </td>
-        <td>TBD</td>
     </tr>
 
     <tr>
@@ -104,7 +88,7 @@ title: Schedule
     
 </table>
 
-## Trimester 1 - Introduction to Web Development
+## Introduction to Web Development
 > Websites are made up of three key parts: Frontend, Backend, and Deployment.  These weeks we are going to get these pieces in place so that we can be enabled to perform all the aspects of constructing a Website.  Once again, there will be a lot of learning focused on getting things working.  But after, students will be ready for Website development.
 
 <table>
@@ -120,38 +104,60 @@ title: Schedule
 
     <tr>
         <td>6</td>
-        <td><a href="">Deployment: AWS, Docker, Nginx</a></td>
-        <td><a href="{{site.baseurl}}/techtalk/agile">Agile and Roles</a></td>
-        <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.3 Program Design and Development</a></td>
+        <td>
+            <a href="">Deployment: AWS, Docker, Nginx</a>
+        </td>
+        <td>
+            <a href="{{site.baseurl}}/techtalk/agile">Agile and Roles</a>
+        </td>
+        <td>
+            <a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.3 Program Design and Development</a>
+        </td>
         <td>
             <a href="{{site.baseurl}}/techtalk/bash">Bash Introduction</a>,
             <a href="{{site.baseurl}}/techtalk/deploy">Deployment Guide</a>
         </td>
-        <td><a href="https://poway.instructure.com/courses/127268/assignments/2206627">Tools Setup</a></td>
+        <td>
+            <a href="https://poway.instructure.com/courses/127268/assignments/2206627">Tools Setup</a>
+        </td>
     </tr>
 
     <tr>
         <td>5</td>
-        <td><a href="">Backend Development: Flask/Python </a></td>
+        <td>
+            <a href="">Backend Development: Flask/Python </a>
+        </td>
         <td></td>
-        <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.2 Program Function and Purpose</a></td>
-        <td><a href="{{site.baseurl}}/techtalk/webapi">Python API Endpoints using Jokes</a></td>
+        <td>
+            <a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.2 Program Function and Purpose</a>
+        </td>
+        <td>
+            <a href="{{site.baseurl}}/techtalk/webapi">Python API Endpoints using Jokes</a>
+        </td>
         <td>TBD</td>
     </tr>
 
     <tr>
         <td>4</td>
-        <td><a href="">Frontend Development: HTML/JavaScript </a></td>
-        <td></td>
-        <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.1 Collaboration</a></td>
-        <td><a href="{{site.baseurl}}/frontend/overview.html">Frontend with Fastpages</a></td>
+        <td>
+            <a href="">Frontend Development: HTML/JavaScript </a>
+        </td>
+        <td>
+            <a href="{{site.baseurl}}/collegeboard/anthony-and-sahil">Reflections on Computer Science</a>
+        </td>
+        <td>
+            <a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.1 Collaboration</a>
+        </td>
+        <td>
+            <a href="{{site.baseurl}}/frontend/overview.html">Frontend with Fastpages</a>
+        </td>
         <td>TBD</td>
     </tr>
 
 </table>
 
 
-## Trimester 1 - Fundamental of Programming and Algorithms
+## Fundamental of Programming and Algorithms
 > TBD
 
 <table>

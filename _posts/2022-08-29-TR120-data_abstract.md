@@ -1,6 +1,6 @@
 ---
 toc: true
-comments: true
+comments: false
 layout: post
 title: Data Abstraction in Python
 description: A computer application without data is typically simple and not very useful.  Think of all the fields in Computer Science that are related to data.  This week, using Pair Programming, students will get familiar with storing data in Python.
@@ -17,17 +17,9 @@ As you use Python, as with all programming languages, <mark>managing data is a k
 
 
 ## Daily Plans Week 2
-Introduce some concepts in [Big Idea 2 Data](https://apclassroom.collegeboard.org/103/home?unit=3), [Big Idea Section 3.2 Data Abstraction](https://apclassroom.collegeboard.org/103/home?unit=3).  Practice Pair Programming Habit of 30 minutes/30 minutes/1 commit.
-- Monday: "Live Review" with pairs: show personal progress in Python, Variables, and Assignments.
+Introduce some concepts in [College Board: Big Idea 2 Data (All Sections)](https://apclassroom.collegeboard.org/103/home?unit=2), [College Board: Big Idea Section 3.2 Data Abstraction](https://apclassroom.collegeboard.org/103/home?unit=3).
+- Monday: Introduction for Week.  "Live Review" with full Table (4s).  Start review topics in College Board.  Build your vocabulary blog.
 - Tuesday: Test Prep - Discuss Lists and Dictionaries  
-- Wednesday: Tech Talk - Agile Development Methodology
+- Wednesday: Tech Talk - Practice Pair Programming Habit of 25 minutes/25 minutes each having 1 commit on Wednesday and prepare comment for next weeks review.
 - Thursday: Tech Talk - HTML fragments, including behind the Scenes Layout
-- Friday: Pair Code/Code/Code, Completing hacks for the week
-
-
-# Points and Tangibles
-- Points (see canvas), live reviews will be scheduled in class on Monday of next week.  Everything will be crossover graded using a "Review Ticket"
-    - Individual/Pair
-        - _notebook: "Lists and Dictionary Pair Programming"
-        - _posts: "HTML fragment notes"
-        - demo/code review of Github Pages / Fastpages original work
+- Friday: Code/Code/Code, Completing canvas assignment

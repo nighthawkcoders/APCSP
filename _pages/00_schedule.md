@@ -4,6 +4,9 @@ permalink: /schedule
 title: Schedule
 ---
 
+<!-- Canvas Course -->
+{% assign canvas = "https://poway.instructure.com/courses/127268/assignments" %}
+
 ## Introduction to Tools and Resources
 > The initial weeks focus on introducing Tools, Pair Programming, and the AP Resources that we plan to use throughout the year. At the end of Weeks 0-3, students will be exposed to blogging with GitHub Pages; developing with Jupyter Notebooks, Python, JavaScript, HTML, and Code.org AppLab; working with AP classroom and becoming familiar with Create Performance Task project requirements.
 
@@ -47,7 +50,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/html">HTML Fragments and Layouts</a>
         </td>
         <td>
-            <a href="https://poway.instructure.com/courses/127268/assignments/2340164>Data Abstraction</a>
+            <a href="{{canvas}}/2340164>Data Abstraction</a>
         </td>
     </tr>
 
@@ -67,7 +70,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/fastpages">Fastpages, Jupyter Notebooks, Markdown</a>     
         </td>
         <td>
-            <a href="https://poway.instructure.com/courses/127268/assignments/2296689">Intro Python, Jupyter, Fastpages</a>
+            <a href="{{canvas}}/2296689>Intro Python, Jupyter, Fastpages</a>
         </td>
     </tr>
     
@@ -84,7 +87,7 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/tools">Tools and Equipment</a>
         </td>
         <td>
-            <a href="https://poway.instructure.com/courses/127268/assignments/2206627">Tools Setup</a>
+            <a href="{{canvas}}/2206627>Tools Setup</a>
         </td>
     </tr>
     

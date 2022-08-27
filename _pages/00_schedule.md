@@ -204,7 +204,7 @@ title: Schedule
         <td>7</td>
         <td><a href="">Methodology: Test Driven Development</a></td>
         <td></td>
-        <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.4 Identifying and Correct Errors</a></td>
+        <td><a href="https://apclassroom.collegeboard.org/103/home?unit=1">1.4 Identifying and Correcting Errors</a></td>
         <td><a href="{{site.baseurl}}/api/overview">Frontend and Backend APIs</a></td>
         <td>TBD</td>
     </tr>

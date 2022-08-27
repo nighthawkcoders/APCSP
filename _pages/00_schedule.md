@@ -117,7 +117,6 @@ title: Schedule
             <a href="{{site.baseurl}}/techtalk/deploy">Deployment Guide</a>
         </td>
         <td>
-            <a href="https://poway.instructure.com/courses/127268/assignments/2206627">Tools Setup</a>
         </td>
     </tr>
 
@@ -135,7 +134,8 @@ title: Schedule
         <td>
             <a href="{{site.baseurl}}/techtalk/webapi">Python API Endpoints using Jokes</a>
         </td>
-        <td>TBD</td>
+        <td>
+        </td>
     </tr>
 
     <tr>
@@ -152,7 +152,8 @@ title: Schedule
         <td>
             <a href="{{site.baseurl}}/frontend/overview.html">Frontend with Fastpages</a>
         </td>
-        <td>TBD</td>
+        <td>
+        </td>
     </tr>
 
 </table>

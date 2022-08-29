@@ -49,8 +49,9 @@ title: Schedule
             <a href="{{site.baseurl}}/week/2">Data Abstraction</a>
         </td>
         <td>
-            Alumni Panel (blog take ways for extra credit)
-        </td>
+            <a href="{{site.baseurl}}/collegeboard/anthony-and-sahil">Reflections on Computer Science</a>
+            <br/>
+            Alumni Panel (extra credit)        </td>
         <td>
             <a href="{{site.baseurl}}/collegeboard/python_lists">Python Lists and Dictionaries</a>
         </td>

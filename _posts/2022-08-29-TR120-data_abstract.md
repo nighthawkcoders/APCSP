@@ -21,5 +21,5 @@ Introduce some concepts in [College Board: Big Idea 2 Data (All Sections)](https
 - Monday: Introduction for Week.  "Live Review" with full Table (4s).  Start review topics in College Board.  Build your vocabulary blog.
 - Tuesday: Test Prep - Discuss Lists and Dictionaries  
 - Wednesday: Tech Talk - Practice Pair Programming Habit of 25 minutes/25 minutes each having 1 commit on Wednesday and prepare comment for next weeks review.
-- Thursday: Tech Talk - HTML fragments, including behind the Scenes Layout
-- Friday: Code/Code/Code, Completing canvas assignment
+- Thursday: Human Day - Anthony and Sahil blogging interests and progress in CS.
+- Friday: HTML fragments, including behind the Scenes Layout, Code/Code/Code, Completing canvas assignment

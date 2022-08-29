@@ -67,7 +67,7 @@ title: Schedule
 
     <tr>
         <td>
-            1 🚧
+            1 💰
         </td>
         <td>
             <a href="{{site.baseurl}}/week/1">Introduction to Python</a>

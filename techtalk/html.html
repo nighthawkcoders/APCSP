@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -100,6 +100,7 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#html-fragments-and-markdown">HTML Fragments and Markdown</a>
 <ul>
+<li class="toc-entry toc-h3"><a href="#web-page-layout">Web Page Layout</a></li>
 <li class="toc-entry toc-h3"><a href="#alert-to-students">Alert to Students</a></li>
 <li class="toc-entry toc-h3"><a href="#review-these-fragments">Review these Fragments</a>
 <ul>
@@ -115,6 +116,41 @@ window.onload = wrap_img;
 </ul><h2 id="html-fragments-and-markdown">
 <a class="anchor" href="#html-fragments-and-markdown" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML Fragments and Markdown</h2>
 <p>Building an entire Web Application frontend requires HTML, CSS and JavaScript.  In our Fastpages/GitHub Pages a lot of the frontend design work has been done.   Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website.</p>
+
+<h3 id="web-page-layout">
+<a class="anchor" href="#web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web Page Layout</h3>
+<p>A complete HTML Web Application is typically made off of a Layout and a series of Fragments (sometimes called templates).</p>
+<ul>
+  <li>
+<a href="https://padlet.com/jmortensen7/weblayout">Web Page Layout</a>.  This illustration becomes important when you make your own layout and fragments using frameworks like Jinja2 (for Python)  or Thymeleaf (for Java).</li>
+  <li>The design of GitHub pages allows us to change themes with the _config.yml file (theme: minima) key/value, change the value to a <a href="https://pages.github.com/themes/">supported theme</a> and page should work, but will look different. Try out the different themes by copying the remote theme to the following location in your _config.yml
+<img src="/APCSP/images/remote_theme.png" alt="">
+</li>
+  <li>
+<a href="https://github.com/jekyll/minima/blob/master/_layouts/default.html">Minima theme</a>, click on link for accurate syntax.  Everywhere you see an “include” this layout is including a fragment to complement the page, things like CSS, JavaScript, headers and footers are included into the layout.  Where you see “content”, this is the statement that includes page specific fragments we have designed added within the layout.  You should associate all of this to “Procedural Abstraction”.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+    "include head.html"
+
+    <span class="nt">&lt;body&gt;</span>
+
+        "include header.html"
+
+        <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"page-content"</span> <span class="na">aria-label=</span><span class="s">"Content"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+            "content"
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/main&gt;</span>
+
+        "include footer.html"
+
+    <span class="nt">&lt;/body&gt;</span>
+
+    <span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
 
 <h3 id="alert-to-students">
 <a class="anchor" href="#alert-to-students" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alert to Students</h3>

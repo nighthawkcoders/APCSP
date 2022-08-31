@@ -44,3 +44,10 @@ tags: [APExam]
 [FINAL DRAFT](https://github.com/nadirahaddach/4Gs/blob/main/templates/maptest.html)
 
 [LINK TO VIDEO RUNTIME](https://user-images.githubusercontent.com/89234851/166164333-9bd98278-ef7b-47c4-ac39-7aeaddc23c12.mp4)
+
+## Hacks
+
+*Students should create a Sprint Backlog. Here are some focus...
+ *Educational zone(s), how to prepare for AP Classroom (MCQ)
+ *Interest/Fun zone, unique idea(s) for create task
+ *Blogging and Review zone(s), showing what you did and how

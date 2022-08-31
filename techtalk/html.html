@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -100,8 +100,6 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#html-fragments-and-markdown">HTML Fragments and Markdown</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#web-page-layout">Web Page Layout</a></li>
-<li class="toc-entry toc-h3"><a href="#alert-to-students">Alert to Students</a></li>
 <li class="toc-entry toc-h3"><a href="#review-these-fragments">Review these Fragments</a>
 <ul>
 <li class="toc-entry toc-h4"><a href="#table-fragments">Table Fragments</a></li>
@@ -110,12 +108,49 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#tagging">Tagging</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#web-page-layout">Web Page Layout</a></li>
+<li class="toc-entry toc-h3"><a href="#dark-mode">Dark Mode</a></li>
+<li class="toc-entry toc-h3"><a href="#alert-to-students">Alert to Students</a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#hacks">Hacks</a></li>
 </ul><h2 id="html-fragments-and-markdown">
 <a class="anchor" href="#html-fragments-and-markdown" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML Fragments and Markdown</h2>
-<p>Building an entire Web Application frontend requires HTML, CSS and JavaScript.  In our Fastpages/GitHub Pages a lot of the frontend design work has been done.   Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website.</p>
+<p>Building an entire Web Application frontend requires HTML, CSS and JavaScript.  In our Fastpages/GitHub Pages a lot of the frontend design work has been done by using Fastpages and Minima theme.   Jekyll takes our choice of layouts in our _config.yml file (theme: minima), along with our HTML and Markdown fragments and build a complete static website.</p>
+
+<h3 id="review-these-fragments">
+<a class="anchor" href="#review-these-fragments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Review these Fragments</h3>
+<h4 id="table-fragments">
+<a class="anchor" href="#table-fragments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table Fragments</h4>
+<p>In Fastpages you can build a table in HTML or Markdown.  Building in markdown allows you to take advantage of Jekyll.</p>
+<ul>
+  <li>The index.html does markdown conversion and builds a table with blogs</li>
+  <li>The _posts/**pseudo_code.md file builds a table with Markdown</li>
+</ul>
+
+<h4 id="images">
+<a class="anchor" href="#images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Images</h4>
+<p>In Fastpages you can insert images in HTML or Markdown.  The Teacher finds &lt;img&gt; easier to work with for embedding links when trying to control size.</p>
+<ul>
+  <li>See index.html for “img” usage</li>
+  <li>Lookup ![]() syntax for images in markdown guides</li>
+</ul>
+
+<h4 id="links">
+<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h4>
+<p>Look up &lt;href&gt; and []() syntax in both HTML and Markdown.  These should become easy and familiar.</p>
+
+<h4 id="tagging">
+<a class="anchor" href="#tagging" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging</h4>
+<p>Make sure to use tagging and make it provide a nice index into your information under “Tags” menu.  If you have a page Week1, Week2, Week3, in a post, perhaps</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+toc: true
+layout: post
+description: HTML fragments are portions of code used in a greater coding system that enable functionality specific to the current page.  Fragments in HTML are a way to abstract complexity.  The greater coding system we use is GitHub Pages which uses Jekyll and Liquid to build and programmatically construct fragments into the larger web site.
+categories: [weeks]
+title:  Week 2 - HTML Fragments
+---
+</code></pre></div></div>
 
 <h3 id="web-page-layout">
 <a class="anchor" href="#web-page-layout" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web Page Layout</h3>
@@ -123,7 +158,7 @@ window.onload = wrap_img;
 <ul>
   <li>
 <a href="https://padlet.com/jmortensen7/weblayout">Web Page Layout</a>.  This illustration becomes important when you make your own layout and fragments using frameworks like Jinja2 (for Python)  or Thymeleaf (for Java).</li>
-  <li>The design of GitHub pages allows us to change themes with the _config.yml file (theme: minima) key/value, change the value to a <a href="https://pages.github.com/themes/">supported theme</a> and page should work, but will look different. Try out the different themes by copying the remote theme to the following location in your _config.yml
+  <li>The design of GitHub pages allows us to change themes with the _config.yml file (theme: minima) key/value, change the value to a <a href="https://pages.github.com/themes/">supported theme</a>. But, on my tries it does not work because fastpages has added many features specific to minima. However, you can temporarily change to different look by changing the remote theme to the following location in your _config.yml
 <img src="/APCSP/images/remote_theme.png" alt="">
 </li>
   <li>
@@ -152,52 +187,32 @@ window.onload = wrap_img;
     <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
+<h3 id="dark-mode">
+<a class="anchor" href="#dark-mode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dark Mode</h3>
+<blockquote>
+  <p>I have seen several student customize CSS on their front page.  This enables them to add color.  In our fastpages project, there is a special way to customize.  Look for the direct _sass, it has a minima folder.  Inside this directory you will see many sccs files, this is the Sassy of customize your project.</p>
+  <ul>
+    <li>Article and findings by Vunsh in CSA to customize to <a href="https://vunsh.github.io/blogging/fastpages/jupyter/darkmode/2022/08/30/22-Darkmode.html">Darkmode</a>
+</li>
+    <li>People have customized the dark-mode.scss file to alternate color schemes for different colors, for instance instead of black, I saw Saatvicka change to dark green</li>
+  </ul>
+</blockquote>
+
 <h3 id="alert-to-students">
 <a class="anchor" href="#alert-to-students" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alert to Students</h3>
 <p>Students <mark>spending majority or large portions of time writing custom CSS will be counter productive</mark> to College Board goals and CTE goals for this class.  Be aware that HTML style is important, but we are trying to focus more on utilizing framework (GitHub Pages) to maximize our success in the style area.   Developers, particularly new Developers, need to ensure they are spending majority of time in the key technical of instruction.  <mark>Pair Programming and Team Programming are aids in speeding up learning</mark>, these collaborative techniques are not intended to be used to defer key technical learnings to others!!!  In our first week, <mark>I saw code that was not understood by the person asking questions<mark>. In 2021-2022 several students lost a grade (A down to B) at the end of the trimester because they were out of balance and were solely focused on CSS/style.</mark></mark></p>
 
 <p>As an illustration, look at the <a href="https://github.com/jekyll/minima">minima them</a>.  Look at the analytics and work that went into it.  Leverage off it, don’t recreate it!</p>
 
-<h3 id="review-these-fragments">
-<a class="anchor" href="#review-these-fragments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Review these Fragments</h3>
-<h4 id="table-fragments">
-<a class="anchor" href="#table-fragments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table Fragments</h4>
-<p>In Fastpages you can build a table in HTML or Markdown.  Building in markdown allows you to take advantage of Jekyll.</p>
-<ul>
-  <li>The index.html does markdown conversion and builds a table with blogs</li>
-  <li>The _posts/**pseudo.md file builds a table with Markdown</li>
-</ul>
-
-<h4 id="images">
-<a class="anchor" href="#images" aria-hidden="true"><span class="octicon octicon-link"></span></a>Images</h4>
-<p>In Fastpages you can insert images in HTML or Markdown.  The Teacher finds &lt;img&gt; easier to work with for embedding links and controlling size.</p>
-<ul>
-  <li>See index.html for “img” usage</li>
-</ul>
-
-<h4 id="links">
-<a class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h4>
-<p>Look up &lt;href&gt; and []() syntax in both HTML and Markdown.  These should become easy and familiar.</p>
-
-<h4 id="tagging">
-<a class="anchor" href="#tagging" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tagging</h4>
-<p>Make sure to use tagging and make it provide a nice index into your information under “Tags” menu.  Here is sample.</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-toc: true
-layout: post
-description: 
-categories: [techtalk]
-title: TT 1.2.0 HTML Fragments
----
-</code></pre></div></div>
-
 <h2 id="hacks">
 <a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h2>
-<p>At the end of this week you should have your theme, index.html and multiple external references in your site.</p>
+<p>At the end of this week you should have your theme complements (try altering dark-mode), index.html alterations, a table, multiple external links, and multiple images in your site.</p>
 <ul>
+  <li>Take a screen shot of temporarily changing remote theme, analyze problems in sight after doing so.  Blog your findings.</li>
   <li>Time Box fragments are very important to show what you have done each week.  I want to see cumulative personal history for the Trimester and for the Year.</li>
   <li>You should be able to show how you have considered naming an Tagging to help you find materials under categories.</li>
-  <li>You should be able to show home you have considered search and how you are able to find key elements.</li>
+  <li>You should be able to show how you have considered search and how you are able to find key elements in your site.</li>
+  <li>Advanced and part of what would be considered Coding….   Look at how blog or tags is displayed, look at adding data to _config.yml.  Look at liquid, put all this together to make a table or time box the lazy programmer way.</li>
 </ul>
 
   </div><a class="u-url" href="/APCSP/techtalk/html" hidden></a>

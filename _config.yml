@@ -83,7 +83,7 @@ html_escape:
 
 # Everything below here should be left alone. Modifications may break fastpages
 future: true
-theme: minima
+theme: cayman
 plugins:
   - jekyll-feed
   - jekyll-gist
@@ -97,12 +97,13 @@ plugins:
   - jekyll-sitemap
   - jemoji
 
+
 # See https://jekyllrb.com/docs/pagination/
 # For pagination to work, you cannot have index.md at the root of your repo, instead you must rename this file to index.html
 paginate: 15
 paginate_path: /page:num/
 
-remote_theme: jekyll/minima
+remote_theme: pages-themes/cayman@v0.2.0
 
 titles_from_headings:
   enabled:     true

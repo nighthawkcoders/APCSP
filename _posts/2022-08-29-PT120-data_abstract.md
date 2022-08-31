@@ -22,7 +22,7 @@ categories: [tri1]
 > As we are learning Lists, this week I believe it is very important for each student to build a Table.  This can be done in markdown or html.   This should have individual look, collaboration is OK, but you must have a distinct table.
 - This to be something "Productive".
 - This requires you to use {{ }} liquid syntax somewhere in the table.  Please make sure you comment source of this key/value.
-- Add a little flair for that extra appeal.
+- Add a little flair for that extra appeal.  An idea, is to add Input to adding records to InfoDb (combining learnings from last lesson).  Don't show up with a straight copy, this will not be meeting expectations.
 
 ### Live Grading Presentation.  
 > Each individual needs to perform their own work and updates.  However, I would like you to work with the same InfoDB as your pair.   In presentation, consider the following...

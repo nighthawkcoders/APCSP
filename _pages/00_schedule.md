@@ -38,7 +38,11 @@ title: Schedule
             <br>
             <a href="{{site.baseurl}}/techtalk/applab">Program Design with AppLab</a>
         </td>
-        <td>TBD</td>
+        <td>
+            <a href="{{apcsp}}/points/3">Creative Development Points</a>
+            <br>
+            <a href="{{issues}}/33">Review Tickets</a>
+        </td>
     </tr>
 
     <tr>

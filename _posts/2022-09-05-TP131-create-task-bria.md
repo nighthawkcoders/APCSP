@@ -47,7 +47,7 @@ tags: [APExam]
 
 ## Hacks
 
-*Students should create a Sprint Backlog. Here are some focus...
- *Educational zone(s), how to prepare for AP Classroom (MCQ)
- *Interest/Fun zone, unique idea(s) for create task
- *Blogging and Review zone(s), showing what you did and how
+- Students should create a Sprint Backlog. Here are some focus...
+ - Educational zone(s), how to prepare for AP Classroom (MCQ)
+ - Interest/Fun zone, unique idea(s) for create task
+ - Blogging and Review zone(s), showing what you did and how

@@ -6,25 +6,6 @@ permalink: /frontend/overview
 
 {% include nav_frontend.html %}
 
-### Code in this Sub Menu
-> HTML, CSS, and JavaScript are the front-end of the Web.  Many tools and languages complement development using markup, style and javascript.  This section of the Del Note CS website is providing some code samples.  These are intended to spark your own PBL ideas.  Each of these were generated after watching others teach or interacting with students.
-- Tutorial: This is a Jupyter Notebook built using the JavaScript kernel.  This provides a few fundamentals of JavaScript language.  Pull this file into VSCode and explore the fundamentals of the language.
-- Calculator: This calculator was inspired by Mr. Mortensen's calculator that he built in Objective-C during his first year of teaching at DNHS. It was recreated by former student Anthony using GitHub pages, HTML, JavaScript, and CSS in 2022.
-    - Creating a calculator helps developers to learn how to store data, manage presentation, associate input to output, and work with logic
-    - Visually shows how math works within a language; specific functions, handling of very big vs. very small numbers, etc.
-- Binary: This example was created after watching Harvard CS50 by David J. Malan in 2020, he had built a machine to turn on and off lights/binary digits.  My thought after watching machine, why not simulate it in software?
-    - Liquid is used to generate the HTML bits and parameters for onclick actions
-    - JavaScript is used base 2, 8, 16 calculations
-- Grades: This grade calculator was created to show interaction of HTML and JavaScript to perform input.  Additionally, it show how to add element to HTML Document Object Model <mark>(DOM)</mark>.  FYI, the IJavaScript kernel did not support input as of this writing.
-- Graph: This was created when a student named Bryant 2022 asked me the question "how would I plot data?" as described in an FRQ.
-    - JavaScript canvas is used to draw grid, axis, lines
-- Life: This was created by Nathaniel 2022 when I asked him about something interesting to show students in JS that relates to school.
-    - Built on Conway's Game of Life ([Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life), [Original](https://playgameoflife.com/))
-    - Somewhat pure JavaScript, no canvas usage even though it has a grid.
-- Snake: This was interest of students in each of my 3 years, inspiration and some of the code came from a student named Nolan 2021.
-    - Contains menu and settings, as well as Grid
-    - Uses JavaScript canvas and key events
-
 ### Frontend Web Development Overview
 
 <div>
@@ -53,6 +34,26 @@ permalink: /frontend/overview
     </div>
 
 </div>
+
+### Code in this Sub Menu
+> HTML, CSS, and JavaScript are the front-end of the Web.  Many tools and languages complement development using markup, style and javascript.  This section of the Del Note CS website is providing some code samples.  These are intended to spark your own PBL ideas.  Each of these were generated after watching others teach or interacting with students.
+- Tutorial: This is a Jupyter Notebook built using the JavaScript kernel.  This provides a few fundamentals of JavaScript language.  Pull this file into VSCode and explore the fundamentals of the language.
+- Calculator: This calculator was inspired by Mr. Mortensen's calculator that he built in Objective-C during his first year of teaching at DNHS. It was recreated by former student Anthony using GitHub pages, HTML, JavaScript, and CSS in 2022.
+    - Creating a calculator helps developers to learn how to store data, manage presentation, associate input to output, and work with logic
+    - Visually shows how math works within a language; specific functions, handling of very big vs. very small numbers, etc.
+- Binary: This example was created after watching Harvard CS50 by David J. Malan in 2020, he had built a machine to turn on and off lights/binary digits.  My thought after watching machine, why not simulate it in software?
+    - Liquid is used to generate the HTML bits and parameters for onclick actions
+    - JavaScript is used base 2, 8, 16 calculations
+- Grades: This grade calculator was created to show interaction of HTML and JavaScript to perform input.  Additionally, it show how to add element to HTML Document Object Model <mark>(DOM)</mark>.  FYI, the IJavaScript kernel did not support input as of this writing.
+- Graph: This was created when a student named Bryant 2022 asked me the question "how would I plot data?" as described in an FRQ.
+    - JavaScript canvas is used to draw grid, axis, lines
+- Life: This was created by Nathaniel 2022 when I asked him about something interesting to show students in JS that relates to school.
+    - Built on Conway's Game of Life ([Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life), [Original](https://playgameoflife.com/))
+    - Somewhat pure JavaScript, no canvas usage even though it has a grid.
+- Snake: This was interest of students in each of my 3 years, inspiration and some of the code came from a student named Nolan 2021.
+    - Contains menu and settings, as well as Grid
+    - Uses JavaScript canvas and key events
+
 
 
 

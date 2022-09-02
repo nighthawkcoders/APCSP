@@ -11,7 +11,7 @@ categories: [tri1, points]
 
 ## Points will be awarded on these three key elements
 
-### Python Tech Talk.  
+### Python Tech Talk
 > It is important that you create your own InfoDb.  This must be a data capture of your own interest.  The Jupyter page should include.  There must be a pair element in the programming.
 - Cell focused on InfoDb database definition.  
 - Function(s) that focus on printing your InfoDb according to your data abstraction and data definition requirements
@@ -21,7 +21,7 @@ categories: [tri1, points]
 ### HTML/Markdown Fragments.  
 > As we are learning Lists, this week I believe it is very important for each student to build a Table.  This can be done in markdown or html.   This should have individual look, collaboration is OK, but you must have a distinct table.
 - This to be something "Productive".
-- This requires you to use {{ }} liquid syntax somewhere in the table.  Please make sure you comment source of this key/value.
+- This requires you to use \{\{ \}\} liquid syntax somewhere in the table.  Please make sure you comment source of this key/value.
 - Add a little flair for that extra appeal.  An idea, is to add Input to adding records to InfoDb (combining learnings from last lesson).  Don't show up with a straight copy, this will not be meeting expectations.
 
 ### Live Grading Presentation.  

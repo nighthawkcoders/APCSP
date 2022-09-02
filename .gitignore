@@ -56,3 +56,14 @@ __pycache__/
 
 # Ignore code-workspaces
 *.code-workspace
+images/copied_from_nb/
+_posts/2022-08-29-TP120-python_lists.md
+_posts/2022-09-05-TT130-js_tutorial.md
+_posts/2022-08-25-tool_check.md
+_posts/2022-08-22-TT110-bash_tutorial.md
+_posts/2022-08-22-TT110-anthony_and_sahil.md
+_posts/2022-08-22-TP110-python_hello.md
+_posts/2022-07-21-PBL-neo4j_intro.md
+_posts/2022-06-01-TT150-webapi_tutorial.md
+Gemfile.lock
+settings.ini

@@ -53,7 +53,3 @@ permalink: /frontend/overview
 - Snake: This was interest of students in each of my 3 years, inspiration and some of the code came from a student named Nolan 2021.
     - Contains menu and settings, as well as Grid
     - Uses JavaScript canvas and key events
-
-
-
-

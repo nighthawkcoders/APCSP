@@ -8,6 +8,8 @@ image: /images/pseudo_code.png
 permalink: /collegeboard/pseudo_code
 categories: [collegeboard]
 tags: [pseudoCode]
+type: ap
+week: 0
 
 ---
 ## Learning College Board Pseudo Code

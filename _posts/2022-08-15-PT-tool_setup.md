@@ -7,6 +7,8 @@ description: Don't do it alone.  Pair Programming allows you to have secondary t
 permalink: /week/0
 image: /images/pair_programming.png
 categories: [tri1]
+type: plan
+week: 0
 ---
 
 # AP CSA COURSE OUTLINE

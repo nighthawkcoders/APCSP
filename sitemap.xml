@@ -97,10 +97,6 @@
 <lastmod>2022-08-22T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/focus</loc>
-<lastmod>2022-08-22T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://nighthawkcoders.github.io/APCSP/techtalk/bash_checks</loc>
 <lastmod>2022-08-25T00:00:00-05:00</lastmod>
 </url>
@@ -145,8 +141,12 @@
 <lastmod>2022-09-05T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/techtalk/agile</loc>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/focus</loc>
 <lastmod>2022-09-12T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/techtalk/agile</loc>
+<lastmod>2022-09-19T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/schedule</loc>

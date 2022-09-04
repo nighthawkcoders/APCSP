@@ -30,7 +30,7 @@ week: 4
 - Select Python that is in Conda environment
 ![python interpreter]({{site.baseurl}}/images/python_conda.png)
 - In VSCode terminal install project dependencies: `pip3 install -r requirements.txt`
-- Select main.py from VSCode navigator and press ▶️ in upper right corner.  Observe terminal output, this sample illustrates a good outcome.
+- Select main.py from VSCode navigator and press ▶️ in upper right corner. An alternate method is type `python3 main.py` in terminal.  Observe terminal output, this sample illustrates a good outcome.
 ![python interpreter]({{site.baseurl}}/images/python_terminal_output.png)
 - In terminal output you can shift-click on http://127.0.0.1:5000/, or goto Browser and type: `127.0.0.1:5000`
 - Navigate the site, look for things to change.

@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title: Data Abstraction in Python Sprint
+title: Data Abstraction in Python
 description: A computer application without data is typically simple and not very useful.  Think of all the fields in Computer Science that are related to data.  This week, using Pair Programming, students will get familiar with storing data in Python.
 permalink: /week/2
 image: /images/python_data.jpeg
@@ -24,6 +24,6 @@ As you use Python, as with all programming languages, <mark>managing data is a k
 Introduce some concepts in [College Board: Big Idea 2 Data (All Sections)](https://apclassroom.collegeboard.org/103/home?unit=2), [College Board: Big Idea Section 3.2 Data Abstraction](https://apclassroom.collegeboard.org/103/home?unit=3).
 - Monday: Introduction for Week.  "Live Review" with full Table (4s).  Start review topics in College Board.  Build your vocabulary blog.
 - Tuesday: Test Prep - Discuss Lists and Dictionaries  
-- Wednesday: Tech Talk - Practice Pair Programming Habit of 25 minutes/25 minutes each having 1 commit on Wednesday and prepare comment for next weeks review.
+- Wednesday: Tech Talk - HTML fragments, including behind the Scenes Layout, Code/Code/Code, Completing canvas assignment 
 - Thursday: Human Day - Anthony and Sahil blogging interests and progress in CS.
-- Friday: HTML fragments, including behind the Scenes Layout, Code/Code/Code, Completing canvas assignment
+- Friday: Practice Pair Programming Habit of 20 minutes/20 minutes each having 1 commit on Wednesday and prepare comment for next weeks review.

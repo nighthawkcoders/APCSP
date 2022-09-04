@@ -11,7 +11,7 @@ type: plan
 week: 4
 ---
 
-## Plans Week 2
+## Plans Week 4
 > Focus on running Python and Fastpages local Web Servers.   Additionally, students will start process of making videos to show work.
 - Monday: Live Review
 - Tuesday: Test Prep - Collaboration

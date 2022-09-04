@@ -33,6 +33,12 @@ week: 4
 - Select main.py from VSCode navigator and press ▶️ in upper right corner.  Observe terminal output, this sample illustrates a good outcome.
 ![python interpreter]({{site.baseurl}}/images/python_terminal_output.png)
 - In terminal output you can shift-click on http://127.0.0.1:5000/, or goto Browser and type: `127.0.0.1:5000`
+- Navigate the site, look for things to change.
+
+
+## Hacks
+> Try a little bit of customization and make sure you are able to run, edit, and push.  Most changes should update while server is running
+
 - Conclude setup activity by pushing a minor change to Stub.html.  This will verify GitHub support with VSCode.   
     - Click for [VSCode guide for version control](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)
     - Stub.html lines of code to for simple change
@@ -43,3 +49,8 @@ week: 4
     <p class="text-secondary">Put your name here</p>
 </div>
 ```
+
+>  Group activity.  Try to customize Projects menu to point to all of your Fastpages sites.
+- Make a team project, make each person as a Collaborators through GitHub settings.
+- Each member take the HTML file under the Project menu and customize to point to each individuals material.
+- GitHub gotcha.  Remember to Pull before you Push/Sync.

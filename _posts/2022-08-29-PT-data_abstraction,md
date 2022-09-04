@@ -7,7 +7,11 @@ description: A computer application without data is typically simple and not ver
 permalink: /week/2
 image: /images/python_data.jpeg
 categories: [tri1]
+type: plan
+week: 2
 ---
+
+[Points Link](https://github.com/nighthawkcoders/APCSP/issues/22)
 
 # Data Abstraction - Week 2
 As you use Python, as with all programming languages, <mark>managing data is a key skill</mark>.  Data abstraction is the reduction of a particular body of data to a simplified representation of the whole. Or in other words, something that is easier for the developer to understand.  <mark>Data Abstraction<mark>, along with <mark>Procedural Abstraction</mark>, are the keys making successful programs.  Data Abstraction is vital when sharing data amongst developers, sharing data across the internet, or working in technologies like BioMed, Data Science, etc.

@@ -8,6 +8,8 @@ image: /images/applab-tool.png
 permalink: /techtalk/applab
 categories: [techtalk]
 tags: [javascript]
+type: pbl
+week: 3
 ---
 
 ## AppLab 

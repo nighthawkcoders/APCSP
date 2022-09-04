@@ -7,7 +7,11 @@ description: Creative development is a key skill that Teachers will be looking a
 permalink: /week/3
 image: /images/agile_manifesto.jpeg
 categories: [tri1]
+type: plan
+week: 3
 ---
+
+[Points Link](https://github.com/nighthawkcoders/APCSP/issues/33)
 
 # Creative Development - Week 3
 > In the Student handout... College Board states that Students need to obtain knowledge and skills that can include, but need not be limited to, "<mark>the iterative development process</mark>, strategies for collaboration, the development of both data and procedural abstractions, and describing an algorithm’s purpose and explaining how it functions. <mark>A development process includes ideation, research, reflection, design, implementation, and testing your program</mark>.

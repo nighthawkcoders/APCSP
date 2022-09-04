@@ -7,6 +7,8 @@ description: GitHub Pages and Fastpages can change the way you think about infor
 image: /images/github_pages.jpeg
 permalink: /techtalk/fastpages
 categories: [techtalk]
+type: pbl
+week: 1
 ---
 
 ## Tour of Fastpages

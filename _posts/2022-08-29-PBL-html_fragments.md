@@ -6,6 +6,8 @@ description: HTML fragments are portions of code used in a greater coding system
 image: /images/html-css-js.jpeg
 permalink: /techtalk/html
 categories: [techtalk]
+type: pbl
+week: 2
 ---
 
 ## HTML Fragments and Markdown

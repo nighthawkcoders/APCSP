@@ -7,6 +7,8 @@ description: 30% of the student AP Test and a big portion of achievement in clas
 permalink: /collegeboard/create
 image: /images/create_performance_task.png
 categories: [collegeboard]
+type: ap
+week: 3
 ---
 
 ## Learning Create Performance Task, 30% of grade on AP exam

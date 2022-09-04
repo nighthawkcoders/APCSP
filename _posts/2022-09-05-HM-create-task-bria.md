@@ -8,6 +8,8 @@ image: /images/map_dnhs.png
 permalink: /collegeboard/bria
 categories: [collegeboard]
 tags: [APExam]
+type: human
+week: 3
 ---
 
 ## EXAM PREPARATION

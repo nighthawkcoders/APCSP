@@ -11,6 +11,8 @@ type: plan
 week: 0
 ---
 
+[Points Link](https://github.com/nighthawkcoders/APCSP/issues/11)
+
 # AP CSA COURSE OUTLINE
 - Methodology.  
     - Project Based Learning (PBL) 

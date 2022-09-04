@@ -7,7 +7,11 @@ description: Python is a key language in the class and will be used to build the
 permalink: /week/1
 image: /images/python.png
 categories: [tri1]
+type: plan
+week: 1
 ---
+
+[Points Link](https://github.com/nighthawkcoders/APCSP/issues/21)
 
 # Introduction to Python - Week 1
 Introduction to Python sprint is a time to learn and obtain basic skills needed to Code a little bit.  

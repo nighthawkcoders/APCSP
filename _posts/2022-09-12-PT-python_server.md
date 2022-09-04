@@ -44,7 +44,7 @@ week: 4
 - On Fastpages show GitHub pages reflected change using Browser
     
 > Live Review.  Review will of overview of grading and playing a Video.
-- Incorporate something you took away for Focus and Habits in Review Ticket, Video, or personal Blog.
+- Incorporate something you took away for Focus and Habits in Review Ticket, Video, or personal Blog.  Perhaps something that shows Collaboration would get you to 3 points.
 - It is suggested that you Create a YouTube channel, if you don't have one.  Videos should be placed in YouTube or Google Drive, not in GitHub.
 - Create Comment in this Points Blog.  Include crossover grades, crossover comments, and blog(s) used during week.
 - Be prepared to present fast, be clear, and show everything in under 5 minutes.  

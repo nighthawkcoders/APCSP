@@ -50,7 +50,7 @@ week: 4
 </div>
 ```
 
->  Group activity.  Try to customize Projects menu to point to all of your Fastpages sites.
-- Make a team project, make each person as a Collaborators through GitHub settings.
-- Each member take the HTML file under the Project menu and customize to point to each individuals material.
-- GitHub gotcha.  Remember to Pull before you Push/Sync.
+>  Group/Collaboration activity. Share a GitHub project.
+- Make a team project, make each person as a Collaborator through GitHub settings.
+- Each member take the HTML file under the Project menu and customize it to point to individuals material (aka Fastpages).
+- GitHub gotcha when Collaborating on a Repo.  Remember to Pull before you Push/Sync.  The repository will be updating while your copy is isolated.  Pull or Rebase gets you back on track with the shared branch of code.

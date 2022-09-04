@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title:  Python Web Server
+title:  Python Web Server Project
 description: This week introduces a Python Web server project.  
 permalink: /points/4
 image: /images/points.jpeg

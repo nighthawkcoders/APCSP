@@ -19,8 +19,8 @@ week: 4
 
 ### Setup Flask/Python Project
 > Start Flask/Python GitHub repo from a Template.  Setup VSCode project to run python.  Make a change and push to GitHub.
-- Click here to generate repository: https://github.com/nighthawkcoders/flask_portfolio/generate
-- "Copy" https address of repository, this is a sample of mine:
+- Generate your own copy of repository GitHub: [https://github.com/nighthawkcoders/flask_portfolio/generate](https://github.com/nighthawkcoders/flask_portfolio/generate)
+- "Copy" https address of newly Generated repository, use screen that looks like this:
 ![clone-address]({{site.baseurl}}/images/clone_http_address.png)
 - Open terminal and goto your vscode directory: `cd ~/vscode`
 - Clone new GitHub project by run `git clone <paste/replace with https address>`

@@ -24,6 +24,12 @@ week: 6
 - Be sure to pick something that you don't burn out on after a couple of weeks.  If you are a couple days into something and it is not working it is best to change. 
 - IMO, it is much more interesting to work on something that has 3rd party interest and that you can ultimately acquire a 3rd party interest.  Working to acquire accolades is a big motivator.
 
+> PBL. Concept/Idea in CSP Education.  This could be achieved using Blogging and Jupyter.  Some have said, it is possible to pass the AP exam in 1 month of study.  This would be 30 lessons / 1 hour lessons.
+- Highlight all 10 Units from CB.
+- Remake CB site to be Student Interest/Friendly, More Code, and less Video.
+- The Web Site covers key topics from CB, also includes short coding exercises in Python or JavaScript (ie Mini-labs). Thus, everything  should be interactive.  The code and visuals should teach more than the words.
+- Unit #1, #4, #5 would be a different style and these units are not directly on coding.  A lot of Human and Social materials.
+
 ## Hacks
 > Now is time to transition from Purpose to Design and Development.Designs are required and must meet Teacher Approval.  These need to be put together in a Blog. 
 - Brain Write. The process of just elaborating on ideas and sharing them with your team.

@@ -397,12 +397,12 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /etc/nginx/sites-available
 </code></pre></div>    </div>
   </li>
-  <li>Open editor to Create your own “Nginx server configuration”
+  <li>Open editor to Create your own “Nginx server configuration”.  For clarity, name should be after domain or subdomain.
     <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nano nighthawk
 </code></pre></div>    </div>
   </li>
-  <li>Edit your own Nginx server configuration making modifications to <mark>primary server</mark> file:
+  <li>Edit your own Nginx server configuration making modifications to <mark>primary server</mark> file, (1 is required):
     <ul>
       <li>DNS Name(s): nighthawkcodingsociety.com www.nighthawkcodingsociety.com</li>
       <li>docker-compose, proxy pass Port: 8086</li>
@@ -434,7 +434,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 </code></pre></div></div>
 
 <ul>
-  <li>Or, edit your own Nginx server configuration making modifications to <mark>subdomain</mark> file:
+  <li>Or, or in addition, edit your own Nginx server configuration making modifications to <mark>subdomain</mark> file (0 to many):
     <ul>
       <li>DNS Name(s): flask.nighthawkcodingsociety.com</li>
       <li>docker-compose, proxy pass Port: 8086</li>
@@ -467,10 +467,14 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 
 <ul>
   <li>Activate/enabled Nginx server configuration:
-    <div class="language-bash highlighter-rouge">
+    <ul>
+      <li>nginx configuration file: nighthawk
+        <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /etc/nginx/sites-available/nighthawk /etc/nginx/sites-enabled
 <span class="nv">$ </span><span class="nb">sudo </span>nginx <span class="nt">-t</span>
-</code></pre></div>    </div>
+</code></pre></div>        </div>
+      </li>
+    </ul>
   </li>
   <li>If there are no errors, restart NGINX so the server is an endpoint to the internet:
     <div class="language-bash highlighter-rouge">
@@ -489,7 +493,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:8086<span class="p">;</span>
 </code></pre></div>    </div>
   </li>
-  <li>Testing unsecure HTTP endpoint on the internet.  Go to a browser an type your DNS domain: http://nighthawkcodingsociety.com.
+  <li>Testing unsecure HTTP endpoint on the internet.  Go to a browser an type your DNS domain: <code class="language-plaintext highlighter-rouge">http://nighthawkcodingsociety.com</code>.
     <ul>
       <li>Timeout.  This means something is wrong with EC2 Public IP.</li>
       <li>Nginx Default page.  This means DNS is working, but something is wrong with you Nginx configuration.</li>

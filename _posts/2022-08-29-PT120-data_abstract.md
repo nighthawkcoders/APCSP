@@ -17,12 +17,12 @@ categories: [tri1, points]
 - Function(s) that focus on printing your InfoDb according to your data abstraction and data definition requirements
 - Independent cells that show your data work with For loop, For loop with index, While Loop, and Recursion
 - The page needs Markdown and Code cells. Markdown sections should describe objective and purpose at the beginning, as well as describe each of the Code cells.  Additionally, each Python cell should contain comments.
-
+- Add a little flair for that extra appeal. One idea is to add user input to your code to construct a new entry for InfoDB.
+- 
 ### HTML/Markdown Fragments.  
 > As we are learning Lists, this week I believe it is very important for each student to build a Table.  This can be done in markdown or html.   This should have individual look, collaboration is OK, but you must have a distinct table.
 - This to be something "Productive".
 - This requires you to use \{\{ \}\} liquid syntax somewhere in the table.  Please make sure you comment source of this key/value.
-- Add a little flair for that extra appeal.  An idea, is to add Input to adding records to InfoDb (combining learnings from last lesson).  Don't show up with a straight copy, this will not be meeting expectations.
 
 ### Live Grading Presentation.  
 > Each individual needs to perform their own work and updates.  However, I would like you to work with the same InfoDB as your pair.   In presentation, consider the following...

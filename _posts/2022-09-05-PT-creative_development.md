@@ -22,8 +22,8 @@ week: 3
 
 ### Weekly Schedule
 - Tuesday (makeup Monday): PBL review below; "Live Review" with pairs: show personal progress in ideation and prototyping.
-- Wednesday: Test Prep - Discuss Create Performance Task.  
-- Thursday: Tech Talk - Code.org AppLab
+- Wednesday: Test Prep - Code.org AppLab, Finish live review  
+- Thursday: Tech Talk - Discuss Create Performance Task.
 - Friday: Crossover Review last 15-20 minutes with crossover grading 
 
 ### PBL Ideation

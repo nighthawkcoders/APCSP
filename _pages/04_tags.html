@@ -13,14 +13,14 @@ search_exclude: true
     {% assign categories = categories | push: c[0] %}
   {% endfor %}
   {% assign categories = categories | sort_natural %}
-
-  <font size="+20">Standards</font>
   
   <ul>
   {% for category in categories %}
     <li><a href="#{{ category }}">{{ category }}</a></li>
   {% endfor %}
   </ul>
+
+<h2>Standards</h2>
 
   {% for category in categories %}
       <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }}</h3>

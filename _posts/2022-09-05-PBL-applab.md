@@ -17,6 +17,21 @@ week: 3
 
 <mark>To start</mark>, please create a [code.org](https://studio.code.org/users/sign_in) account and click the [link](https://studio.code.org/projects/applab)
 
+### Exploring App Lab
+* Go ahead and take a look at the interface, discuss with a partner what features you see.
+
+#### Console
+> In the code toolbox click variables and look at: console.log("message")  Drag this into your workspace. You can change the message if you would like
+* The message does not print in the app. Where does it print?
+* Why would it be useful to have a print statement that the user does not see?
+
+#### Elements
+> Make sure you are in design mode and select the elements to drag into the app. Take a look at the changeable attributes of each elements. You can use the workspace to change these manually or you can try to change the attributes with a line of code.
+
+- In the code toolbox click UI controls. There are multiple functions that can affect the elements. Go ahead and play around with the different elements and see what you can do.
+    - Share something interesting you found with your partner.
+    - How can you keep track of all the elements you created?
+
 ## Development and Design Activity
 Here are some key requirements for this Activity...
 - Design and Development activity will start by reviewing a running example application
@@ -33,25 +48,11 @@ This is an [example](https://studio.code.org/projects/applab/rEkq6_-HMk-W8WkN1Wo
 #### Design
 > Come up with your own idea for 3 question quiz.  You will be creating your own quiz with a partner on a topic of your choice. The most important thing you do before coding is <mark>to PLAN</mark>. Make an outline of the quiz you would like to create before you do any coding, do this in your Blog!!!
 
-### Exploring App Lab
-* Go ahead and take a look at the interface, discuss with a partner what features you see.
-
-#### Console
-> In the code toolbox click variables and look at: console.log("message")  Drag this into your workspace. You can change the message if you would like
-* The message does not print in the app. Where does it print?
-* Why would it be useful to have a print statement that the user does not see?
-
-#### Elements
-> Make sure you are in design mode and select the elements to drag into the app. Take a look at the changeable attributes of each elements. You can use the workspace to change these manually or you can try to change the attributes with a line of code.
-
-- In the code toolbox click UI controls. There are multiple functions that can affect the elements. Go ahead and play around with the different elements and see what you can do.
-    - Share something interesting you found with your partner.
-    - How can you keep track of all the elements you created?
-
 - When you are done:
     - Share your program with the class [here](https://docs.google.com/forms/d/e/1FAIpQLSd1t5TTelZpp0JxCWKjNu-VVLvWZMg6UP7LKPlTQhkp26Cz8w/viewform?usp=sf_link)
     - Class programs can be found [here](https://docs.google.com/spreadsheets/d/1kgPNS4tkcuUmpm0f6piw5ARTW-JW2qN8FYb681z8syY/edit?usp=sharing)
 
 ## Hacks
 > The Hack on this assignment is described in the information above
+- Blog your discoveries, challenges, successes
 - If you finish your quiz early, try coming up with a different concept or idea for an app you think could work within App Lab. Remember to make a plan before you start any coding.

@@ -6,7 +6,7 @@ title: Big Idea 1 'Program Purpose'
 description: Many have said... The best way to learn how to code is to start a project.  Additionally, make sure that project has 'purpose' and is in your interests.
 permalink: /collegeboard/purpose
 image: /images/apcsp.png
-categories: [collegeboard]
+categories: [collegeboard, 1.A Investigate the situation context or task, 3.A Generalize data sources through variables, 4.A Explain how a code segment or program functions]
 type: ap
 week: 5
 ---

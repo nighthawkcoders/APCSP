@@ -6,7 +6,7 @@ title: Big Idea 1 'Program Design'
 description: 
 permalink: /collegeboard/design
 image: /images/apcsp.png
-categories: [collegeboard]
+categories: [collegeboard, 1.B Determine and design an appropriate method or approach to achieve the purpose, 1.C Explain how collaboration affects the development of a solution, 4.A Explain how a code segment or program functions, 6.C Acknowledge the intellectual property of others]
 type: ap
 week: 6
 ---

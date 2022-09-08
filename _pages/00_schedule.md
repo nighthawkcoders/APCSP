@@ -21,13 +21,13 @@ title: Schedule
       {% assign start = 4 %}
       {% assign end = 7 %}
 ## Unit {{unit}}: Introduction to Web Development
-> Websites are made up of three key parts: Frontend, Backend, and Deployment.  The focus for these weeks is to enable students to perform all the aspects of constructing constructing and deploying a Website.  Fastpages got us started on these concepts, but now we will build a Website from the ground up.   Once again, there will be a lot of learning focused tools and getting things working.  But, in the end, students will be ready to learn all aspects of Website Development.
+> Websites are made up of three key parts: Frontend, Backend, and Deployment.  The focus for these weeks is to enable students to perform all the aspects of constructing constructing and deploying a Website.  Fastpages got us started on these concepts, but now we will build a Website from the ground up.   Once again, there will be a lot of learning focused tools and getting things working.  But, in the end, students will be ready to produce all aspects of Web Development.
 
   {% elsif unit == 3 %} 
       {% assign start = 8 %}
       {% assign end = 11 %}
-## Unit {{unit}}: Fundamental of Programming and Algorithms
-> The tough solutions to problems in Computer Science generally require an algorithm.  Each algorithm usually involves data, for instance Data Science is a field that focuses on data with algorithms.  The next few week focuses on some very detailed algorithms, but we hope to express these details visually with our Web and Blogging capabilities.  Data and binary are sometimes considered boring, but we produce data with analytics or learn to alter the internals of images,  the data and algorithms can become VERY interesting.
+## Unit {{unit}}: N@tM Project, Algorithms, and Data
+> On Nov 3rd our Trimester work will end with a project and student participation in Electives Department "Night at the Museum" (N@tM).  Team projects should contain a tough solutions to a problem (algorithm) as well as a visual representation to show results (data).  Additionally, project should have a theme of interest and be purposeful.  The final few weeks focuses on web building, algorithms and data.  N@tM is GREAT opportunity to show case our accomplishments.
       
   {% endif %}
 

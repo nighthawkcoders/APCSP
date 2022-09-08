@@ -53,6 +53,12 @@ This is an [example](https://studio.code.org/projects/applab/rEkq6_-HMk-W8WkN1Wo
     - Class programs can be found [here](https://docs.google.com/spreadsheets/d/1kgPNS4tkcuUmpm0f6piw5ARTW-JW2qN8FYb681z8syY/edit?usp=sharing)
 
 ## Hacks
-> The Hack on this assignment is described in the information above
-- Blog your discoveries, challenges, successes
+> The Hacks on this assignment is described in the information above.
+- Blog your "design", "successes", discoveries, challenges.  For "design", and "successes" try to blog according to Create Performance Task skills and rubric.
+    - Program Purpose and Function
+    - Data Abstraction
+    - Managing Complexity
+    - Procedural Abstraction
+    - Algorithm Implementation
+    - Testing
 - If you finish your quiz early, try coming up with a different concept or idea for an app you think could work within App Lab. Remember to make a plan before you start any coding.

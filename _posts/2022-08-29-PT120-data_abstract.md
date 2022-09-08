@@ -29,7 +29,7 @@ categories: [tri1, points]
 - Each individual contains two looping algorithms in their own repository.  All four are covered between pair.
 - Be sure to discuss your HTML/Markdown table and any additional flair
 - Every time requirements
-    - Create Comment in Python Blog.  Crossover grades, Crossover Comments, and Blog(s) used during week.
-    - Be prepared to go fast, but show everything we should be under 5 minutes.  3.5 minutes is preferred time for 4 people.
+    - Create Comment in Blog.  Crossover grades, Crossover Comments, and Blog(s) used during week.
+    - Be prepared to go fast, but show everything we should be under 5 minutes.  1 minute per person.
     - Jupyter Notebooks contain comments and Markdown cells
     - Output of Jupyter code is required

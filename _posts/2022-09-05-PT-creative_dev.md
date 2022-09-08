@@ -32,10 +32,10 @@ categories: [tri1, points]
 ### Live Grading Presentation.  
 > Each individual needs to perform their own AppLab work and updates.  However, we would like you to work on the design and solving problems as a pair.   On preliminary design and planning for Create Performance Task, work can be shared...
 - AppLab project runs with no errors and provides score at the end.  Show all features in your app.
-- AppLab project has Blog in each individuals Fastpages that points to individual Code.org work.
-- Create Performance Task Planning/Draft showing initial ideas, things you know how to do, things you need to learn.  Plan to continue to use this blog to fill in the gaps.
+- AppLab project has Blog in each individuals Fastpages that points to their AppLab project and contains design work according to hack guidelines.
+- Base off of AppLab project experience.  Start to Brain Storm/Idea write a Create Performance Task Planning/Draft showing initial thoughts/purpose for a project, things you know how to do, things you need to learn.  Plan to continue to use this blog to fill in future week to fill in the gaps.
 - Every time requirements
     - Create Review Ticket.  Crossover grades, Crossover Comments, and Blog(s) used during week.
-    - Be prepared to go fast, but show everything we should be under 5 minutes.  3.5 minutes is preferred time for 4 people.
+    - Be prepared to go fast, but show everything we should be under 5 minutes.  1 minute per person.
     - Jupyter Notebooks contain  Markdown cells with comments to support code.
  

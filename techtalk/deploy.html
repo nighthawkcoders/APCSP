@@ -295,6 +295,11 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio/
 </code></pre></div>    </div>
   </li>
+  <li>install docker-compose
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>docker-compose <span class="nt">-y</span>
+</code></pre></div>    </div>
+  </li>
   <li>Run docker-compose
     <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
@@ -378,7 +383,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 
 <p>A minimum configuration will have the two “A” type definitions using you Public IP address.  These two are resolved with a single Web Application.  The “CNAME” type is used for subdomains, these will resolve to a different Web Application.</p>
 
-<p>&lt;img atl=”Setup a Domain” src=”/APCSP/images/freenom.png” title=”DNS Provider”</p>
+<p><img alt="Setup a Domain" src="/APCSP/images/freenom.png" title="DNS Provider"></p>
 
 <h4 id="nginx-install-configuration-and-services">
 <a class="anchor" href="#nginx-install-configuration-and-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx install, configuration, and services</h4>

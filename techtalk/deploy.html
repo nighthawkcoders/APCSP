@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      18 min read
     
 </span></p>
 
@@ -101,7 +101,15 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#deployment-overview">Deployment Overview</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#keyvalues-required-as-you-go-through-these-procedures">Key/Values required as you go through these procedures</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#server-setup-and-initial-deployment">Server Setup and Initial Deployment</a>
+<ul>
 <li class="toc-entry toc-h3"><a href="#amazon-web-services-aws-electric-cloud-compute-ec2-setup">Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#deployment-process">Deployment Process</a>
+<ul>
 <li class="toc-entry toc-h3"><a href="#update-upgrade-and-install-packages">Update, Upgrade, and Install packages</a></li>
 <li class="toc-entry toc-h3"><a href="#clone-and-change-directory-to-project-location">Clone and Change Directory to project location</a></li>
 <li class="toc-entry toc-h3"><a href="#test-web-service">Test Web Service</a></li>
@@ -119,22 +127,29 @@ window.onload = wrap_img;
 </li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#update-deployment">Update Deployment</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#goto-project-directory">Goto Project directory</a></li>
+<li class="toc-entry toc-h3"><a href="#shutdown-process-and-update-source">Shutdown process and update source</a></li>
+<li class="toc-entry toc-h3"><a href="#rebuild-and-restart-web-application">Rebuild and Restart Web Application</a></li>
+</ul>
+</li>
 </ul><h2 id="deployment-overview">
 <a class="anchor" href="#deployment-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment Overview</h2>
-<p>Deploying a Web Application enables a Server to serve the components of a Web Application to clients. Deployment is the tools and service used to enable the Web Application on the Internet.  The process of can use many different cloud servers, as well as choice in tools and services.</p>
+<p>Deploying a Web Application enables a Server and Web Application to be available to users on the Internet. Development Operations (DevOps) is understanding the tools and service used to enable the Web Application on the Internet.  This process can use many different cloud services, as well as choice of many different tools.  Here is an overview of what is covered in the procedure.</p>
 
 <ul>
-  <li>EC2: Amazon Web Services is a cloud computing platform that the PUSD district has provided for us to serve our Web Application.</li>
-  <li>GitHub: At this point in time, we should be aware that we are using GitHub is an open platform to share our Web Application code on the Internet.</li>
-  <li>Docker and docker-compose: To host a Web Application you need to prepare an environment that contains the Web Application code and all the dependencies (requirements.txt for Python)  Docker is an open platform for developing, shipping, and running applications.</li>
-  <li>Nginx: To find a Web Application on a server, there needs to be a process to listen for the Web request and direct it to the Web Application.  Nginx is an open source software for web serving, reverse proxy, caching, load balancing, media streaming, and more.</li>
-  <li>Certbot: Web traffic on internet is reliably served over Secure Hyper Text Transfer Protocol (https).  Certbot is a free, open source software tool for automatically using Let’s Encrypt certifications</li>
-  <li>DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to our Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the service used to register the nighthawkcodingsociety.com domain.</li>
+  <li>EC2: Amazon Web Services is a cloud computing platform that the PUSD district has provided for their students to serve our Web Application.</li>
+  <li>GitHub: The leading open platform to share a code across the Internet.</li>
+  <li>Docker and docker-compose: Used to host a Web Application.  A Docker container prepares an environment that contains the Web Application code and all the dependencies (requirements.txt for Python)  Docker is an open platform for developing, shipping, and running applications.</li>
+  <li>Nginx: In order to find a Web Application on a server, there needs to be a process that listens for the Web Application request and directs it to the Web Application service.  Nginx is an open source software for web serving, reverse proxy, caching, load balancing, media streaming, and more.</li>
+  <li>Certbot: Web traffic on internet is reliably served over Secure Hyper Text Transfer Protocol (https).  Certbot is a free, open source software tool for automatically using Let’s Encrypt certifications.</li>
+  <li>DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to a Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the cloud service described in this blog and has been used to register the nighthawkcodingsociety.com domain.</li>
 </ul>
 
 <h3 id="keyvalues-required-as-you-go-through-these-procedures">
 <a class="anchor" href="#keyvalues-required-as-you-go-through-these-procedures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key/Values required as you go through these procedures</h3>
-<p>Listed are Keys, you need to obtain Values.  It is important that you recognize the sample Values as you work through these procedures, then replace them with the Values that are specific to your use case.</p>
+<p>Listed are Keys, you need to obtain “values” specific to your Web Application setup.  It is important that you recognize the sample “values” as you work through these procedures, then replace them with the “values” that are specific to your use case.</p>
 
 <ul>
   <li>GitHub HTTPS link:</li>
@@ -145,29 +160,44 @@ window.onload = wrap_img;
   <li>DNS Subdomain name(s)</li>
   <li>Docker Port:</li>
   <li>docker-compose, proxy pass Port:</li>
-  <li>docker-compose, docker Image:</li>
+  <li>docker-compose, docker Image name:</li>
   <li>Nginx server file(s):</li>
 </ul>
 
-<h3 id="amazon-web-services-aws-electric-cloud-compute-ec2-setup">
+<h2 id="server-setup-and-initial-deployment">
+<a class="anchor" href="#server-setup-and-initial-deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Setup and Initial Deployment</h2>
+<blockquote>
+  <p>Development Operations (DevOps) begins with server setup.</p>
+  <h3 id="amazon-web-services-aws-electric-cloud-compute-ec2-setup">
 <a class="anchor" href="#amazon-web-services-aws-electric-cloud-compute-ec2-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Amazon Web Services (AWS): Electric Cloud Compute (EC2) Setup</h3>
-<p>Preparing and AWS EC2 instance is the process of creating a cloud computer.  This process starts by logging into your AWS IAM user, searching for EC2.</p>
-<ul>
-  <li>To get started, launch a new AWS EC2 instance to learn process and understand how to work with Linux. here are some key considerations.
-    <ul>
-      <li>Choose an Amazon Machine Image (AMI), the class will be using Ubuntu you should check on last verified version with a Teacher before proceeding</li>
-      <li>When it comes to picking memory or disk it is VERY important to pick Free Tier.  As stated, this will only be used for testing and then it will be disposed for cost efficiency.</li>
-      <li>When presented with access dialog for http and https, make sure you check these boxes.  Remember you are making a Web application that will run over http and https.</li>
-      <li>Name the security group (.pem) file after your team.  It may be necessary to use SSH to access your EC2 instance.</li>
-      <li>The remainder of the steps you can use the defaults, refer to AWS documentation for guidance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html</li>
-      <li>At the end of this process you need to “Connect to Instance”. This will provide you a terminal like experience.</li>
-    </ul>
-  </li>
-</ul>
+  <p>Preparing and AWS EC2 instance is the process of creating a cloud computer.  This process starts by logging into your AWS IAM user, searching for EC2.</p>
+  <ul>
+    <li>To get started, launch a new AWS EC2 instance to learn process and understand how to work with Linux. here are some key considerations.
+      <ul>
+        <li>Choose an Amazon Machine Image (AMI), the class will be using Ubuntu you should check on last verified version with a Teacher before proceeding</li>
+        <li>When it comes to picking memory or disk it is VERY important to pick Free Tier.  As stated, this will only be used for testing and then it will be disposed for cost efficiency.</li>
+        <li>When presented with access dialog for http and https, make sure you check these boxes.  Remember you are making a Web application that will run over http and https.</li>
+        <li>Name the security group (.pem) file after your self or team.  It may be necessary to use SSH to access your EC2 instance.</li>
+        <li>The remainder of the steps you can use the defaults, refer to AWS documentation for guidance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html</li>
+        <li>At the end of this process you need to “Connect to Instance”. This will provide you a terminal like experience.</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="deployment-process">
+<a class="anchor" href="#deployment-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment Process</h2>
+<blockquote>
+  <p>Connect to an Ubuntu EC2 instance on AWS and then begin the system and software setup.</p>
+</blockquote>
 
 <h3 id="update-upgrade-and-install-packages">
 <a class="anchor" href="#update-upgrade-and-install-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update, Upgrade, and Install packages</h3>
-<p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 name.  These commands update and then upgrade all your packages in your system.</p>
+<p>Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 instance.  It is advised that you try to comprehend and learn these commands as you go through these procedures.  Understanding steps is how you become a DevOps Engineer.</p>
+
+<blockquote>
+  <p>These commands update and then upgrade packages in your system.</p>
+</blockquote>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt upgrade
 <span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>python3-pip nginx
@@ -176,7 +206,9 @@ window.onload = wrap_img;
 
 <h3 id="clone-and-change-directory-to-project-location">
 <a class="anchor" href="#clone-and-change-directory-to-project-location" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone and Change Directory to project location</h3>
-<p>This command move your Web Application code onto you EC2 cloud computer.The sample GithUb HTTPs Link is demonstration is: https://github.com/nighthawkcoders/flask_portfolio.git.</p>
+<blockquote>
+  <p>This command moves your Web Application code onto you EC2 cloud computer. The example GithUb HTTPs Link is demonstration is: https://github.com/nighthawkcoders/flask_portfolio.git.</p>
+</blockquote>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span>
 <span class="nv">$ </span>git clone https://github.com/nighthawkcoders/flask_portfolio.git
@@ -185,7 +217,9 @@ window.onload = wrap_img;
 
 <h3 id="test-web-service">
 <a class="anchor" href="#test-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test Web Service</h3>
-<p>These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.</p>
+<blockquote>
+  <p>These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.</p>
+</blockquote>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio
 <span class="nv">$ </span>virtualenv <span class="nt">-p</span> /usr/bin/python3 webapp
@@ -224,13 +258,18 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 
 <h3 id="create-dockerfile-to-run-web-service">
 <a class="anchor" href="#create-dockerfile-to-run-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Dockerfile to run Web Service</h3>
-<p>A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!</p>
+<blockquote>
+  <p>A Dockerfile is a configuration used to run the Web Service.  This is placed in a file called Dockerfile.  It is best to add this to VS Code and pull it, or you can update in place with nano, vi, or vim editor and use command line commands to push it into your repository.  The Dockerfile should be considered Code!</p>
+</blockquote>
+
+<blockquote>
+  <p>Edit the Dockerfile</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nano Dockerfile
+</code></pre></div></div>
+
 <ul>
-  <li>Edit the Dockerfile
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nano Dockerfile
-</code></pre></div>    </div>
-  </li>
   <li>Insert the Dockerfile commands, note that they are similar to Bash commands performed earlier.  Follow prompts on screen to save file when complete, look for Key/Value (GitHub HTTPS link) that requires change for your project.
     <div class="language-dockerfile highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> docker.io/python:3.9</span>
@@ -254,15 +293,21 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 
 <h3 id="create-docker-compose-file-share-web-service">
 <a class="anchor" href="#create-docker-compose-file-share-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create docker-compose file share Web Service</h3>
-<p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.</p>
+<blockquote>
+  <p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.</p>
+  <ul>
+    <li>Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.</li>
+  </ul>
+</blockquote>
 
-<p>Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.</p>
+<blockquote>
+  <p>Edit docker-compose.yml</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nano docker-compose.yml
+</code></pre></div></div>
+
 <ul>
-  <li>Edit docker-compose.yml
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nano docker-compose.yml
-</code></pre></div>    </div>
-  </li>
   <li>Insert the docker-compose.yml Keys/Values.
     <div class="language-yml highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
@@ -287,7 +332,9 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 
 <h3 id="running-docker-using-docker-composeyml">
 <a class="anchor" href="#running-docker-using-docker-composeyml" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running Docker using docker-compose.yml</h3>
-<p>At this point, it is best to review complete files on GitHub and for Docker and docker-compose: https://github.com/nighthawkcoders/flask_portfolio.   Review the Key/Values mentioned in this document.  Make sure your Docker and docker-compose files a personalized to your project.</p>
+<blockquote>
+  <p>At this point, it is best to review complete files on GitHub and for Docker and docker-compose: https://github.com/nighthawkcoders/flask_portfolio.   Review the Key/Values mentioned in this document.  Make sure your Docker and docker-compose files a personalized to your project.</p>
+</blockquote>
 
 <ul>
   <li>Make sure you are in project directory
@@ -295,16 +342,23 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio/
 </code></pre></div>    </div>
   </li>
-  <li>install docker-compose
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>docker-compose <span class="nt">-y</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Run docker-compose
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
-</code></pre></div>    </div>
-  </li>
+</ul>
+
+<blockquote>
+  <p>install docker-compose</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>docker-compose <span class="nt">-y</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Run docker-compose</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker-compose up <span class="nt">-d</span>
+</code></pre></div></div>
+
+<ul>
   <li>Output from docker-compose.  When running this command, docker-compose will run all the Docker steps and build a Web Application running in a Docker container, a virtual environment.</li>
 </ul>
 
@@ -324,17 +378,20 @@ Creating flask_portfolio_web_1 ... <span class="k">done</span>
 
 <h3 id="verifying-web-application-via-docker-commands">
 <a class="anchor" href="#verifying-web-application-via-docker-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Verifying Web Application via Docker commands</h3>
-<p>Here is a look at some of the commands behind the scenes.  None of these are required to get things working, but show the results of the Docker and docker-compose.yml files and commands.</p>
+<blockquote>
+  <p>Here is a look at some of the commands behind the scenes.  None of these are required to get things working, but show the results of the Docker and docker-compose.yml files and commands.</p>
+  <ul>
+    <li>docker-compose ps   The running Web process, “ps” is a linux command or option that provides information related to the processes on a system.  Look at headings in relation to outputs of the docker-compose process.</li>
+  </ul>
+</blockquote>
 
-<ul>
-  <li>docker-compose ps   The running Web process, “ps” is a linux command or option that provides information related to the processes on a system.  Look at headings in relation to outputs of the docker-compose process.
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code> ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>docker-compose ps
-      Name                 Command        State                    Ports                  
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>docker-compose ps
+        Name                 Command        State                    Ports                  
 <span class="nt">--------------------------------------------------------------------------------------------</span>
 flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086-&gt;8080/tcp,:::8086-&gt;8080/tcp
-</code></pre></div>    </div>
-  </li>
+</code></pre></div></div>
+
+<ul>
   <li>docker ps   A more comprehensive list of all the docker processes on the system.  In this process reports, many of the alternate projects running on this AWS server are show.  The flask_portfolio_web_1 process is the items specific to this tutorial.
     <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>buntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span>docker ps
@@ -594,6 +651,114 @@ IMPORTANT NOTES:
    Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
    Donating to EFF:                    https://eff.org/donate-le
 </code></pre></div></div>
+
+<h2 id="update-deployment">
+<a class="anchor" href="#update-deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update Deployment</h2>
+<blockquote>
+  <p>This procedure is a very short, as much of the deployment performed is persistent on your EC2/Ubuntu.</p>
+</blockquote>
+
+<h3 id="goto-project-directory">
+<a class="anchor" href="#goto-project-directory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Goto Project directory</h3>
+
+<blockquote>
+  <p>Check your docker processes.  Make sure git has nothing to commit.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/flask_portfolio
+<span class="nv">$ </span>docker-compose ps
+       Name                 Command        State                    Ports                  
+<span class="nt">--------------------------------------------------------------------------------------------</span>
+flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086-&gt;8080/tcp,:::8086-&gt;8080/tcp
+
+<span class="nv">$ </span>docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS        PORTS                                       NAMES
+ee3fd0edfdcd   flask_port_v1   <span class="s2">"gunicorn main:app"</span>      6 weeks ago    Up 6 weeks    0.0.0.0:8086-&gt;8080/tcp, :::8086-&gt;8080/tcp   flask_portfolio_web_1
+
+<span class="nv">$ </span>git status
+On branch main
+Your branch is up to <span class="nb">date </span>with <span class="s1">'origin/main'</span><span class="nb">.</span>
+
+nothing to commit, working tree clean
+</code></pre></div></div>
+
+<h3 id="shutdown-process-and-update-source">
+<a class="anchor" href="#shutdown-process-and-update-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shutdown process and update source</h3>
+
+<blockquote>
+  <p>Stop docker processes and git pull</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose <span class="nb">kill</span>  <span class="c"># run ps on docker-compose and docker and you should observe changes</span>
+Killing flask_portfolio_web_1 ... <span class="k">done</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p>At this point your server is down, look at it from browser</p>
+  <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>502 Bad Gateway
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p>Update code</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git pull    <span class="c"># dialog will look as follows</span>
+remote: Enumerating objects: 42, <span class="k">done</span><span class="nb">.</span>
+remote: Counting objects: 100% <span class="o">(</span>42/42<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Compressing objects: 100% <span class="o">(</span>23/23<span class="o">)</span>, <span class="k">done</span><span class="nb">.</span>
+remote: Total 33 <span class="o">(</span>delta 17<span class="o">)</span>, reused 24 <span class="o">(</span>delta 9<span class="o">)</span>, pack-reused 0
+Unpacking objects: 100% <span class="o">(</span>33/33<span class="o">)</span>, 7.42 KiB | 474.00 KiB/s, <span class="k">done</span><span class="nb">.</span>
+From https://github.com/nighthawkcoders/flask_portfolio
+   f0b6ba1..def0da9  main       -&gt; origin/main
+
+... These are the files you changed ...
+
+model_jokes.py                                 |   4 ++--
+requirements.txt                               |   8 ++++----
+</code></pre></div></div>
+
+<h3 id="rebuild-and-restart-web-application">
+<a class="anchor" href="#rebuild-and-restart-web-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rebuild and Restart Web Application</h3>
+
+<blockquote>
+  <p>Force rebuild of docker container.  This can take a couple of minutes.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose build <span class="nt">--no-cache</span>
+Building web
+Step 1/9 : FROM docker.io/python:3.9
+ <span class="nt">---</span><span class="o">&gt;</span> d0ce03c9330c
+Step 2/9 : WORKDIR /app
+ <span class="nt">---</span><span class="o">&gt;</span> Running <span class="k">in </span>3f705fefc681
+Removing intermediate container 3f705fefc681
+ <span class="nt">---</span><span class="o">&gt;</span> 9c6ebd23dcb1
+
+... Build steps 1 through 9 ...
+
+Step 9/9 : CMD <span class="o">[</span> <span class="s2">"gunicorn"</span>, <span class="s2">"main:app"</span> <span class="o">]</span>
+ <span class="nt">---</span><span class="o">&gt;</span> Running <span class="k">in </span>9ca595a79669
+Removing intermediate container 9ca595a79669
+ <span class="nt">---</span><span class="o">&gt;</span> 54ca7ab064b4
+Successfully built 54ca7ab064b4
+Successfully tagged flask_port_v1:latest
+</code></pre></div></div>
+
+<blockquote>
+  <p>Run docker-compose</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose up <span class="nt">-d</span>
+Recreating flask_portfolio_web_1 ... <span class="k">done</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<blockquote>
+  <p>Now server is up, test in Browser for recent change</p>
+  <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>Python Home Page
+</code></pre></div>  </div>
+</blockquote>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"

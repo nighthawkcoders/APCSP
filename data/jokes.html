@@ -210,7 +210,7 @@ window.onload = wrap_img;
     };
 
     // fetch the API
-    fetch(url, options)
+    fetch(local_url, local_options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -221,11 +221,15 @@ window.onload = wrap_img;
       response.json().then(data => {
           console.log(data);
           if (type === HAHA)
-            document.getElementById(elemID).innerHTML = data[row].haha;
+            document.getElementById(elemID).innerHTML = data.haha;
           else
-            document.getElementById(elemID).innerHTML = data[row].boohoo;
+            document.getElementById(elemID).innerHTML = data.boohoo;
       })
     })
+    // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+      console.log(err);
+    });
     
   }
 

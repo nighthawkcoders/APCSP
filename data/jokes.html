@@ -105,6 +105,10 @@ window.onload = wrap_img;
   // prepare fetch options
   const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
 
+  // keys for jokes
+  const HAHA = "haha";
+  const BOOHOO = "boohoo";
+
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -145,20 +149,20 @@ window.onload = wrap_img;
             // td for haha cell
             const haha = document.createElement("td");
               const haha_b = document.createElement('button');
-              haha_b.id = "haha"+row.id   // establishes JS id for cell
+              haha_b.id = HAHA+row.id   // establishes JS id for cell
               haha_b.innerHTML = row.haha;
               haha_b.onclick = function () {
-                reaction(row.id, row.haha, haha_b.id);
+                reaction(HAHA, row.id, haha_b.id);
               };
               haha.appendChild(haha_b);
 
             // td for boohoo cell
             const boohoo = document.createElement("td");
               const boohoo_b = document.createElement('button');
-              boohoo_b.id = "boohoo"+row.id  // establishes JS id for cell
+              boohoo_b.id = BOOHOO+row.id  // establishes JS id for cell
               boohoo_b.innerHTML = row.boohoo;
               boohoo_b.onclick = function () {
-                reaction(row.id, row.boohoo, boohoo_b.id);
+                reaction(BOOHOO, row.id, boohoo_b.id);
               };
               boohoo.appendChild(boohoo_b);
              
@@ -183,9 +187,46 @@ window.onload = wrap_img;
   });
 
   // TBD, reaction function to update server
-  function reaction(id, count, elemID) {
-    count++
-    document.getElementById(elemID).innerHTML = count;
+  function reaction(type, row, elemID) {
+    
+    var local_url = url;
+    if (type === HAHA) {
+      local_url += "/like/" + row;
+    } else if (type === BOOHOO) {
+      local_url += "/jeer/" + row;
+    } else {
+      return;  // should not happen
+    }
+  
+    const local_options = {
+      method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    };
+
+    // fetch the API
+    fetch(url, options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          return;  // api failure
+      }
+      // valid response will have json data
+      response.json().then(data => {
+          console.log(data);
+          if (type === HAHA)
+            document.getElementById(elemID).innerHTML = data[row].haha;
+          else
+            document.getElementById(elemID).innerHTML = data[row].boohoo;
+      })
+    })
+    
   }
 
 </script>

@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fetch of Backend Jokes" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An introductory example of Frontend talking to Backend Java application serving jokes." />
-<meta property="og:description" content="An introductory example of Frontend talking to Backend Java application serving jokes." />
+<meta name="description" content="An example of Frontend talking to Backend Python application serving jokes. This example provides the ability to react to the Joke (haha or boohoo)." />
+<meta property="og:description" content="An example of Frontend talking to Backend Python application serving jokes. This example provides the ability to react to the Joke (haha or boohoo)." />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/data/jokes" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/data/jokes" />
 <meta property="og:site_name" content="APCSP" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/jokes.png" />
 <meta property="twitter:title" content="Fetch of Backend Jokes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-10T00:00:00-05:00","datePublished":"2022-07-10T00:00:00-05:00","description":"An introductory example of Frontend talking to Backend Java application serving jokes.","headline":"Fetch of Backend Jokes","image":"https://nighthawkcoders.github.io/APCSP/images/jokes.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/data/jokes"},"url":"https://nighthawkcoders.github.io/APCSP/data/jokes"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-10T00:00:00-05:00","datePublished":"2022-07-10T00:00:00-05:00","description":"An example of Frontend talking to Backend Python application serving jokes. This example provides the ability to react to the Joke (haha or boohoo).","headline":"Fetch of Backend Jokes","image":"https://nighthawkcoders.github.io/APCSP/images/jokes.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/data/jokes"},"url":"https://nighthawkcoders.github.io/APCSP/data/jokes"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -96,19 +96,22 @@ window.onload = wrap_img;
   </tbody>
 </table>
 
-<!-- Script is layed out in a sequence (no function) and will execute when page is loaded -->
+<!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
 <script>
 
-  // prepare HTML result container for new output
+  // prepare HTML defined "result" container for new output
   const resultContainer = document.getElementById("result");
 
-  // prepare fetch options
-  const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
-
-  // keys for jokes
+  // keys for joke reactions
   const HAHA = "haha";
   const BOOHOO = "boohoo";
 
+  // prepare fetch urls
+  const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
+  const like_url = url + "/like/";  // haha reaction
+  const jeer_url = url + "/jeer/";  // boohoo reaction
+
+  // prepare fetch GET options
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -119,6 +122,8 @@ window.onload = wrap_img;
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   };
+  // prepare fetch PUT options, clones with JS Spread Operator (...)
+  const put_options = {...options, method: 'PUT'}; // clones and replaces method
 
   // fetch the API
   fetch(url, options)
@@ -126,111 +131,98 @@ window.onload = wrap_img;
     .then(response => {
       // check for response errors
       if (response.status !== 200) {
-          const errorMsg = 'Database response error: ' + response.status;
-          console.log(errorMsg);
-          const tr = document.createElement("tr");
-          const td = document.createElement("td");
-          td.innerHTML = errorMsg;
-          tr.appendChild(td);
-          resultContainer.appendChild(tr);
+          error('GET API response failure: ' + response.status);
           return;
       }
-      // valid response will have json data
+      // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
           for (const row of data) {
-            // tr for each row
+            // make "tr element" for each "row of data"
             const tr = document.createElement("tr");
             
             // td for joke cell
             const joke = document.createElement("td");
-              joke.innerHTML = row.id + ". " + row.joke;
+              joke.innerHTML = row.id + ". " + row.joke;  // add fetched data to innerHTML
 
-            // td for haha cell
+            // td for haha cell with onclick actions
             const haha = document.createElement("td");
-              const haha_b = document.createElement('button');
-              haha_b.id = HAHA+row.id   // establishes JS id for cell
-              haha_b.innerHTML = row.haha;
-              haha_b.onclick = function () {
-                reaction(HAHA, row.id, haha_b.id);
+              const haha_but = document.createElement('button');
+              haha_but.id = HAHA+row.id   // establishes a HAHA JS id for cell
+              haha_but.innerHTML = row.haha;  // add fetched "haha count" to innerHTML
+              haha_but.onclick = function () {
+                // onclick function call with "like parameters"
+                reaction(HAHA, like_url+row.id, haha_but.id);  
               };
-              haha.appendChild(haha_b);
+              haha.appendChild(haha_but);  // add "haha button" to haha cell
 
-            // td for boohoo cell
+            // td for boohoo cell with onclick actions
             const boohoo = document.createElement("td");
-              const boohoo_b = document.createElement('button');
-              boohoo_b.id = BOOHOO+row.id  // establishes JS id for cell
-              boohoo_b.innerHTML = row.boohoo;
-              boohoo_b.onclick = function () {
-                reaction(BOOHOO, row.id, boohoo_b.id);
+              const boohoo_but = document.createElement('button');
+              boohoo_but.id = BOOHOO+row.id  // establishes a BOOHOO JS id for cell
+              boohoo_but.innerHTML = row.boohoo;  // add fetched "boohoo count" to innerHTML
+              boohoo_but.onclick = function () {
+                // onclick function call with "jeer parameters"
+                reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
               };
-              boohoo.appendChild(boohoo_b);
+              boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
              
-            // this builds all td's (cells) into tr (row)
+            // this builds ALL td's (cells) into tr (row) element
             tr.appendChild(joke);
             tr.appendChild(haha);
             tr.appendChild(boohoo);
 
-            // add HTML to container
+            // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
           }
       })
   })
-  // catch fetch errors (ie ACCESS to server blocked)
+  // catch fetch errors (ie Nginx ACCESS to server blocked)
   .catch(err => {
+    error(err + " " + url);
+  });
+
+  // Reaction function to likes or jeers user actions
+  function reaction(type, put_url, elemID) {
+
+    // fetch the API
+    fetch(put_url, put_options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          error("PUT API response failure: " + response.status)
+          return;  // api failure
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+          console.log(data);
+          // Likes or Jeers updated/incremented
+          if (type === HAHA) // like data element
+            document.getElementById(elemID).innerHTML = data.haha;  // fetched haha data assigned to haha Document Object Model (DOM)
+          else if (type === BOOHOO) // jeer data element
+            document.getElementById(elemID).innerHTML = data.boohoo;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
+          else
+            error("unknown type: " + type);  // should never occur
+      })
+    })
+    // catch fetch errors (ie Nginx ACCESS to server blocked)
+    .catch(err => {
+      error(err + " " + put_url);
+    });
+    
+  }
+
+  // Something went wrong with actions or responses
+  function error(err) {
+    // log as Error in console
     console.error(err);
+    // append error to resultContainer
     const tr = document.createElement("tr");
     const td = document.createElement("td");
     td.innerHTML = err;
     tr.appendChild(td);
     resultContainer.appendChild(tr);
-  });
-
-  // TBD, reaction function to update server
-  function reaction(type, row, elemID) {
-    
-    var local_url = url;
-    if (type === HAHA) {
-      local_url += "/like/" + row;
-    } else if (type === BOOHOO) {
-      local_url += "/jeer/" + row;
-    } else {
-      return;  // should not happen
-    }
-  
-    const local_options = {
-      method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'omit', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    };
-
-    // fetch the API
-    fetch(local_url, local_options)
-    // response is a RESTful "promise" on any successful fetch
-    .then(response => {
-      // check for response errors
-      if (response.status !== 200) {
-          return;  // api failure
-      }
-      // valid response will have json data
-      response.json().then(data => {
-          console.log(data);
-          if (type === HAHA)
-            document.getElementById(elemID).innerHTML = data.haha;
-          else
-            document.getElementById(elemID).innerHTML = data.boohoo;
-      })
-    })
-    // catch fetch errors (ie ACCESS to server blocked)
-    .catch(err => {
-      console.log(err);
-    });
-    
   }
 
 </script>

@@ -98,6 +98,7 @@ window.onload = wrap_img;
 
 <!-- Script is layed out in a sequence (no function) and will execute when page is loaded -->
 <script>
+
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
 
@@ -136,18 +137,36 @@ window.onload = wrap_img;
           for (const row of data) {
             // tr for each row
             const tr = document.createElement("tr");
-            // td for each column
+            
+            // td for joke cell
             const joke = document.createElement("td");
+              joke.innerHTML = row.id + ". " + row.joke;
+
+            // td for haha cell
             const haha = document.createElement("td");
+              const haha_b = document.createElement('button');
+              haha_b.id = "haha"+row.id   // establishes JS id for cell
+              haha_b.innerHTML = row.haha;
+              haha_b.onclick = function () {
+                reaction(row.id, row.haha, haha_b.id);
+              };
+              haha.appendChild(haha_b);
+
+            // td for boohoo cell
             const boohoo = document.createElement("td");
-            // data is specific to the API
-            joke.innerHTML = row.joke;
-            haha.innerHTML = row.haha; 
-            boohoo.innerHTML = row.boohoo; 
-            // this build td's into tr
+              const boohoo_b = document.createElement('button');
+                boohoo_b.id = "boohoo"+row.id  // establishes JS id for cell
+                boohoo_b.innerHTML = row.boohoo;
+                boohoo_b.onclick = function () {
+                reaction(row.id, row.boohoo, boohoo_b.id);
+              };
+              boohoo.appendChild(boohoo_b);
+             
+            // this builds all td's (cells) into tr (row)
             tr.appendChild(joke);
             tr.appendChild(haha);
             tr.appendChild(boohoo);
+
             // add HTML to container
             resultContainer.appendChild(tr);
           }
@@ -162,6 +181,13 @@ window.onload = wrap_img;
     tr.appendChild(td);
     resultContainer.appendChild(tr);
   });
+
+  // TBD, reaction function to update server
+  function reaction(id, count, elemID) {
+    count++
+    document.getElementById(elemID).innerHTML = count;
+  }
+
 </script>
 
 

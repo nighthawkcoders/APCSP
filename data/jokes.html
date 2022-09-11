@@ -155,9 +155,9 @@ window.onload = wrap_img;
             // td for boohoo cell
             const boohoo = document.createElement("td");
               const boohoo_b = document.createElement('button');
-                boohoo_b.id = "boohoo"+row.id  // establishes JS id for cell
-                boohoo_b.innerHTML = row.boohoo;
-                boohoo_b.onclick = function () {
+              boohoo_b.id = "boohoo"+row.id  // establishes JS id for cell
+              boohoo_b.innerHTML = row.boohoo;
+              boohoo_b.onclick = function () {
                 reaction(row.id, row.boohoo, boohoo_b.id);
               };
               boohoo.appendChild(boohoo_b);

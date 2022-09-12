@@ -43,8 +43,8 @@ week: 4
 - On Fastpages show initiated Action from change
 - On Fastpages show GitHub pages reflected change using Browser
     
-> Live Review.  Review ticket and playing a Video.
-- Incorporate something you took away for Focus and Habits in the Review Ticket, Video, or personal Blog.  Perhaps something that shows Collaboration could get you to 3 points.
-- It is suggested that you Create a YouTube channel, if you don't have one.  Videos should be placed in YouTube or Google Drive, not in GitHub.
-- Create Comment in this Points Blog.  Include crossover grades, crossover comments, and blog(s) used during week.
-- Be prepared to present fast, be clear, and show everything in under 5 minutes.  
+> Live Review.  Review ticket and playing a Video.  3 Teams/Tables will observe all other members.  Approx. 12 - 1 minute videos.
+- Videos should incorporate something you took away for Focus and Habits in the Review Ticket, Video, or personal Blog.  Perhaps something that shows Collaboration could get you and team toward 3 points.
+- It is suggested that you Create a YouTube channel, if you don't have one.  Videos should be placed in YouTube or Google Drive. NOT in GitHub, NOT in Slack.
+- Make sure you have a Team review ticket with all Video links.  The twelve people watching should have a place to comment on each individual.
+- Be prepared to present fast, be quick, we think you should show everything in under 5 minutes for a Team of 4.

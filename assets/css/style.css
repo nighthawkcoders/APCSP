@@ -425,6 +425,42 @@ pre code { font-size: 15px !important; }
 
 .youtube-iframe-wrapper iframe, .youtube-iframe-wrapper object, .youtube-iframe-wrapper embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+html, body, input, textarea, select, button { color: rgba(216, 249, 221, 0.87) !important; background-color: #001e14 !important; }
+
+a { color: #c64949 !important; }
+
+a:hover { color: rgba(216, 249, 221, 0.87) !important; }
+
+.site-title, .site-title:visited, .site-nav, .page-link { color: rgba(216, 249, 221, 0.87) !important; }
+
+.site-nav { background-color: #001e14; border-color: #243e35; }
+
+* { scrollbar-color: #001e14 #243e35; }
+
+pre, code { border-color: #243e35; background-color: #0d2920; }
+
+.page-description { color: rgba(216, 249, 221, 0.69); }
+
+.post-meta { color: rgba(216, 249, 221, 0.38); }
+
+.post-content p, .post-content li { color: rgba(216, 249, 221, 0.69); }
+
+.btn { background-color: #0d2920 !important; color: rgba(216, 249, 221, 0.87) !important; border-color: #243e35 !important; }
+
+.btn:hover { background-color: #001e14 !important; }
+
+table th { background-color: #0d2920; border-color: #243e35; color: rgba(216, 249, 221, 0.87); }
+
+table td { background-color: #001e14; border-color: #243e35; color: rgba(216, 249, 221, 0.69); }
+
+.flash { color: #001e14 !important; filter: brightness(80%); }
+
+canvas { filter: invert(100%); }
+
+.post-list > li > div { box-shadow: none !important; background-color: #0d2920; border: none !important; }
+
+li .post-meta-description { color: rgba(216, 249, 221, 0.69) !important; }
+
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 .language-python + .language-plaintext { border-left: 1px solid grey; margin-left: 1rem !important; }

@@ -443,7 +443,7 @@
     
         ,"post40": {
             "title": "Database CRUD Operations",
-            "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . Database API .",
+            "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . Database API . Name ID .",
             "url": "https://nighthawkcoders.github.io/APCSP/data/database",
             "relUrl": "/data/database",
             "date": " • Jul 10, 2022"
@@ -558,8 +558,8 @@
 
   
       ,"page5": {
-          "title": "About Us",
-          "content": "This site is built with fastpages . Key Links . GitHub Repos: github.com/nighthawkcoders | AWS Deployments: csp.nighthawkcodingsociety.com | Slack: Join Link | . | 2021-2022 Archives: Fall, Early Winter, Late Winter, Spring | . Name ID .",
+          "title": "About",
+          "content": "This site is built with fastpages . Key Links . GitHub Repos: github.com/nighthawkcoders | AWS Deployments: csp.nighthawkcodingsociety.com | Slack: Join Link | 2021-2022 Archives: Fall, Early Winter, Late Winter, Spring | .",
           "url": "https://nighthawkcoders.github.io/APCSP/about/",
           "relUrl": "/about/",
           "date": ""

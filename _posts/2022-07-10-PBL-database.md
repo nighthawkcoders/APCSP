@@ -4,7 +4,7 @@ layout: default
 description: An advanced example of do database operation asynchronously between JavaScript and Backend Database.
 permalink: /data/database
 image: /images/database.png
-categories: [pbl]
+categories: []
 tags: [javascript, fetch, get, post, put]
 ---
 

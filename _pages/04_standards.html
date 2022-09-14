@@ -1,12 +1,12 @@
 ---
 layout: categories
 permalink: /categories/
-title: Tags
+title: Standards
 search_exclude: true
 ---
 
 {% if site.categories.size > 0 %}
-<h2>Contents</h2>
+<h2>Standards</h2>
 
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
@@ -19,8 +19,6 @@ search_exclude: true
     <li><a href="#{{ category }}">{{ category }}</a></li>
   {% endfor %}
   </ul>
-
-<h2>Standards</h2>
 
   {% for category in categories %}
       <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }}</h3>

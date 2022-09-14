@@ -6,7 +6,7 @@ toc: false
 comments: true
 permalink: /frontend/javascript
 image: /images/javascript.png
-categories: [techtalk]
+categories: [3.B  Use abstraction to manage complexity in a program]
 ---
 {% include nav_frontend.html %}
 

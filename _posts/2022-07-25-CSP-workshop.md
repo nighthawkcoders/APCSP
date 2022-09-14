@@ -6,7 +6,7 @@ image: /images/code_logo.svg
 layout: post
 description: Primary focus of workshop is to provide a Curriculum Guide and overview of Code.org materials.  Code.org is a concept first and soft launch into coding.  My approach is pretty much the opposite, jump into deep-end with life supports.  
 permalink: /workshop/code_dot_org
-categories: [resources]
+categories: []
 tags: [csp]
 ---
 

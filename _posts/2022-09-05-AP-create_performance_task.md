@@ -6,7 +6,7 @@ title: College Board Create Performance Task
 description: 30% of the student AP Test and a big portion of achievement in class is in building your own application. Start thinking about this now!
 permalink: /collegeboard/create
 image: /images/create_performance_task.png
-categories: [collegeboard]
+categories: [1.B  Determine and design an appropriate method or approach to achieve the purpose, 3.C  Explain how abstraction manages complexity]
 type: ap
 week: 3
 ---

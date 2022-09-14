@@ -5,7 +5,7 @@ title: Student Scoring on AP Exam
 description: History of student scores on exam using results from 2022 and 2021.  Teacher provides insight and history on successes and failures.
 permalink: /collegeboard/history
 image: /images/ap_scores.png
-categories: [units]
+categories: []
 type: human
 week: 0
 ---

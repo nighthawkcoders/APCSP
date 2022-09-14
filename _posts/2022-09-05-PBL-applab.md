@@ -6,7 +6,7 @@ title: Program Design with App Lab by Code.org
 description: This Tech Talk focuses on Program Design and enables the student to build a prototype UI through block or script coding using the AppLab tool by Code.org.
 image: /images/applab-tool.png
 permalink: /techtalk/applab
-categories: [techtalk]
+categories: [1.B  Determine and design an appropriate method or approach to achieve the purpose, 2.B  Implement and apply an algorithm, 3.A  Generalize data sources through variables, 4.C  Identify and correct errors in algorithms and programs, including error discovery through testing]
 tags: [javascript]
 type: pbl
 week: 3

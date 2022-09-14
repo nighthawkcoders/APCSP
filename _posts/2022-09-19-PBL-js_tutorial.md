@@ -6,7 +6,7 @@ toc: true
 comments: true
 permalink: /techtalk/javascript
 image: /images/javascript.png
-categories: [techtalk]
+categories: [1.A  Investigate the situation context or task, 3.B  Use abstraction to manage complexity in a program]
 type: pbl
 week: 5
 nb_path: _notebooks/2022-09-19-PBL-js_tutorial.ipynb

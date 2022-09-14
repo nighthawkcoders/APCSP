@@ -6,7 +6,7 @@ title: Big Idea 1 'Collaboration'
 description: Collaboration is the 1st topic in the AP Classroom materials.  Additionally, pair programming partners is the 1st thing we setup in the Classroom.  It is not because it is easy, it is probably the hardest and most important thing to learn in all STEM careers.
 permalink: /collegeboard/collaboration
 image: /images/apcsp.png
-categories: [1.C Explain how collaboration affects the development of a solution, 6.A Collaborate in the development of solutions]
+categories: [1.C  Explain how collaboration affects the development of a solution, 6.A  Collaborate in the development of solutions]
 type: ap
 week: 4
 ---

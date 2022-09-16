@@ -16,7 +16,15 @@ search_exclude: true
   
   <ul>
   {% for category in categories %}
-    <li><a href="#{{ category }}">{{ category }}</a></li>
+    {% if category == "1.A" %}
+      <li><a href="#{{ category }}">{{ category }} Investigate the situation, context, or task </a></li>
+    {% elsif category == "1.B" %}
+      <li><a href="#{{ category }}">{{ category }} Determine and design an appropriate method or approach to achieve the purpose </a></li>
+    {% elsif category == "1.C" %}
+      <li><a href="#{{ category }}">{{ category }} Explain how collaboration affects the development of a solution </a></li>
+    {% elsif category == "1.D" %}
+      <li><a href="#{{ category }}">{{ category }} Evaluate solution options </a></li>
+    {% endif %}  
   {% endfor %}
   </ul>
 

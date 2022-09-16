@@ -5,7 +5,7 @@ title: HTML Fragments
 description: HTML fragments are portions of code used in a greater coding system that enable functionality specific to the current page.  Fragments in HTML are a way to abstract complexity.  The greater coding system we use is GitHub Pages which uses Jekyll and Liquid to build and programmatically construct fragments into the larger web site.
 image: /images/html-css-js.jpeg
 permalink: /techtalk/html
-categories: [1.B  Determine and design an appropriate method or approach to achieve the purpose]
+categories: [1.B]
 type: pbl
 week: 2
 ---

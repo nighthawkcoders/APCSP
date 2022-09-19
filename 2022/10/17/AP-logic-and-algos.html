@@ -120,11 +120,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Algorithm">Algorithm </a></li>
 <li class="toc-entry toc-h2"><a href="#Truth-Tables">Truth Tables </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Truth-Table---Algorithm-1">Truth Table - Algorithm 1 </a></li>
+<li class="toc-entry toc-h3"><a href="#Exploring-Truth-Tables-operations">Exploring Truth Tables operations </a></li>
+<li class="toc-entry toc-h3"><a href="#Algorithm-1">Algorithm 1 </a></li>
 <li class="toc-entry toc-h3"><a href="#Truth-Table---Algorithm-2">Truth Table - Algorithm 2 </a></li>
 <li class="toc-entry toc-h3"><a href="#Linear-Sequence-of-code">Linear Sequence of code </a></li>
 <li class="toc-entry toc-h3"><a href="#Procedure-(Function)">Procedure (Function) </a></li>
-<li class="toc-entry toc-h3"><a href="#Class-/-Object-Oriented-Programming-(OOP)">Class / Object Oriented Programming (OOP) </a></li>
 <li class="toc-entry toc-h3"><a href="#Hacks">Hacks </a></li>
 </ul>
 </li>
@@ -159,11 +159,71 @@ window.onload = wrap_img;
 <blockquote>
 <p>Logical expressions are the basis of all selection and iteration statements. The code that follows displays the results of logical operators AND, OR, XOR, NAND, NOR versus binary 1 and 0.   The output produces a 'Truth Table', this is the basis of a logical expression.</p>
 </blockquote>
-<h3 id="Truth-Table---Algorithm-1">
-<a class="anchor" href="#Truth-Table---Algorithm-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Truth Table - Algorithm 1<a class="anchor-link" href="#Truth-Table---Algorithm-1"> </a>
+<h3 id="Exploring-Truth-Tables-operations">
+<a class="anchor" href="#Exploring-Truth-Tables-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exploring Truth Tables operations<a class="anchor-link" href="#Exploring-Truth-Tables-operations"> </a>
 </h3>
 <blockquote>
-<p>This algorithm focuses on small reusable procedures/function (def).</p>
+<p>Exploration of the topic.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"OR"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"1 | 0 = "</span><span class="p">,</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"~(1 | 0) = "</span><span class="p">,</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">|</span> <span class="mi">0</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 1 is an integer, not a bit</span>
+<span class="c1"># test AND</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"AND"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"1 &amp; 0 = "</span><span class="p">,</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"~(1 &amp; 0) = "</span><span class="p">,</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 1 is an integer, not a bit</span>
+<span class="c1"># test XOR</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"XOR"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s2">"1 ^ 1 = "</span><span class="p">,</span> <span class="mi">1</span> <span class="o">^</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>OR
+1 | 0 =  1
+~(1 | 0) =  0
+AND
+1 &amp; 0 =  0
+~(1 &amp; 0) =  1
+XOR
+1 ^ 1 =  0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Algorithm-1">
+<a class="anchor" href="#Algorithm-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithm 1<a class="anchor-link" href="#Algorithm-1"> </a>
+</h3>
+<blockquote>
+<p>This algorithm focuses on small reusable procedures/functions (def).   From the exploratory  experience it seems like a lot of typing would be necessary to represent possibilities.</p>
 </blockquote>
 
 </div>
@@ -270,7 +330,7 @@ Bitwise ^
 <a class="anchor" href="#Truth-Table---Algorithm-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Truth Table - Algorithm 2<a class="anchor-link" href="#Truth-Table---Algorithm-2"> </a>
 </h3>
 <blockquote>
-<p>This algorithm focuses on truth table and a linear sequence of loops.</p>
+<p>This algorithm focuses on truth table and a linear sequence of loops.  This seemed more understandable to me than my 1st attempt.</p>
 </blockquote>
 
 </div>
@@ -351,7 +411,7 @@ xor 0 ^ 0: 0
 <a class="anchor" href="#Linear-Sequence-of-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Sequence of code<a class="anchor-link" href="#Linear-Sequence-of-code"> </a>
 </h3>
 <blockquote>
-<p>The order of executions is strictly from top to bottom. This is good for learning, but is typically a poor method for an Algorithm!</p>
+<p>The order of executions is strictly from top to bottom. This is good for learning, but is typically a poor method for an Algorithm!  This was my exploration above.</p>
 </blockquote>
 
 </div>
@@ -364,20 +424,7 @@ xor 0 ^ 0: 0
 <a class="anchor" href="#Procedure-(Function)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Procedure (Function)<a class="anchor-link" href="#Procedure-(Function)"> </a>
 </h3>
 <blockquote>
-<p>A Procedure is a set of code instructions that has been abstracted into logical parts. Each code abstraction is called "Procedural Abstraction".  In Python, using procedures (def) means you are starting to write "good" code vs "bad" code. A procedure performs a defined set of instructions, typically receives input parameters, and returns an output result.  A procedure needs to be activated, or called! A procedure is a great foundation for writing Algorithm!</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Class-/-Object-Oriented-Programming-(OOP)">
-<a class="anchor" href="#Class-/-Object-Oriented-Programming-(OOP)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class / Object Oriented Programming (OOP)<a class="anchor-link" href="#Class-/-Object-Oriented-Programming-(OOP)"> </a>
-</h3>
-<blockquote>
-<p>Variables combined with Procedures form the basis of Object-Oriented Programming. Procedures are called, only after first creating an object. This is a philosophy of thinking about the data and the end result, when designing your code and algorithms. Combining data and procedures together into a class is called "encapsulation". This is a advanced way to combine variables and data in meeting the needs of an algorithm. The "Class" in Python is the "encapsulating" word, everything tabbed inside the "Class" word is part of the "Class". The procedures (def) are called through the object reference using dot (.) notation.  In Python, you use the dot notation often, when using procedures through import.</p>
+<p>A Procedure is a set of code instructions that has been abstracted into logical parts. Each code abstraction is called "Procedural Abstraction".  In Python, using procedures (def) means you are starting to write "good" code vs "bad" code, mostly in terms of reusability. A procedure performs a defined set of instructions, typically receives input parameters, and returns an output result.  A procedure needs to be activated, this is performed in the <strong>main</strong> areas above.</p>
 </blockquote>
 
 </div>
@@ -390,12 +437,15 @@ xor 0 ^ 0: 0
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h3>
 <blockquote>
-<p>Pick your hack, use something to leverage off of your project need.</p>
+<p>Pick your Algorithmic hack, here are some ideas..</p>
 <ul>
+<li>Binary, Hexadecimal, Decimal</li>
 <li>Fibonacci</li>
 <li>Palindrome</li>
-<li>Images</li>
+<li>Other</li>
 </ul>
+<p>Begin learning by showing linear exploration that helps you understand how you would solve your algorithm.</p>
+<p>Come up with a Procedure/Function that shows greater command on the topic.</p>
 </blockquote>
 
 </div>

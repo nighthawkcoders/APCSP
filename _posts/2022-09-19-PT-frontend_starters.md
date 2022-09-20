@@ -25,10 +25,10 @@ week: 5
 - Change or personalize stub menu and stub.html.  Rename according to interests.
 
 ### HTML Fastpages project (Individual)
-> Review W3Schools and Bootstrap to come up with individual design elements. 
+> Review W3Schools and JavaScript lesson to come up with individual design elements. 
 - add new _pages with submenu
-- have link to Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel
-- have link to regular Post that uses HTML fragments and JavaScript to build a table
+- have a link from submenu to Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel
+- have a link from submenu to a regular Post that uses HTML fragments and JavaScript data to build a table
 
 ### HTML Python/Flask project (Team)
 > Build or Draft a couple screens to introduce your final project idea.

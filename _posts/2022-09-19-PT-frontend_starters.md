@@ -30,11 +30,11 @@ week: 5
 - have a link from submenu to Jupyter Notebook that shows personal usage of Jupyter JavaScript kernel
 - have a link from submenu to a regular Post that uses HTML fragments and JavaScript data to build a table
 
-### HTML Python/Flask project (Team)
+### Team Project
 > Build or Draft a couple screens to introduce your final project idea.
 - Key objective is to show Program Purpose
-- One screen should be either _notebook or _post highlight purpose of project and roles within the SCRUM team.
-- One screen should be HTML/CSS/JS that engages observers into program purpose
+- One screen should be Fastpages blog either _notebook or _post highlight purpose of project and roles within the SCRUM team.
+- One screen should be Flask of Fastpages HTML/CSS/JS that engages observers into program purpose
 
 ### Resources
 > Refer to these resources to speed your introduction to Frontend Development

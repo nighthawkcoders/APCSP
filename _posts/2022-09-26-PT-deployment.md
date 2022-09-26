@@ -29,7 +29,7 @@ week: 6
 - show the output of your curl command when you are done
 - make a change and show the change made in the browser
 
-### Github 
+### Github Fastpages Blog
 > Build a plan for your final project
 - Key objective is to show Program Design
 - Create an outline for the design of your project, do not forget the 6 college board criteria

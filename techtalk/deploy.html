@@ -110,6 +110,7 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#deployment-process">Deployment Process</a>
 <ul>
+<li class="toc-entry toc-h3"><a href="#connect-to-ec2-through-cloud">Connect to EC2 through cloud</a></li>
 <li class="toc-entry toc-h3"><a href="#update-upgrade-and-install-packages">Update, Upgrade, and Install packages</a></li>
 <li class="toc-entry toc-h3"><a href="#clone-and-change-directory-to-project-location">Clone and Change Directory to project location</a></li>
 <li class="toc-entry toc-h3"><a href="#test-web-service">Test Web Service</a></li>
@@ -187,8 +188,23 @@ window.onload = wrap_img;
 
 <h2 id="deployment-process">
 <a class="anchor" href="#deployment-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment Process</h2>
+
+<h3 id="connect-to-ec2-through-cloud">
+<a class="anchor" href="#connect-to-ec2-through-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect to EC2 through cloud</h3>
 <blockquote>
   <p>Connect to an Ubuntu EC2 instance on AWS and then begin the system and software setup.</p>
+  <ul>
+    <li>Select your machine and press “Connect” at top middle.
+<img src="/APCSP/images/aws_connect.png" alt="AWS Connect">
+</li>
+    <li>On next screen ensure things are lined “EC2 Instance Connect” and press “Connect” at bottom.
+<img src="/APCSP/images/aws_connect2.png" alt="AWS2 Connect">
+</li>
+    <li>Only if this fails you will need to connect from our Anaconda terminal, we need pem file so place it in your home directory.
+<img src="/APCSP/images/aws_ssh.png" alt="AWS SSH">
+</li>
+    <li>Either connection should work at home, school WIFI may be blocking, I have been trying to get this open.  A Hot spot or VPN will solve connection errors.</li>
+  </ul>
 </blockquote>
 
 <h3 id="update-upgrade-and-install-packages">

@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      19 min read
+      20 min read
     
 </span></p>
 
@@ -118,17 +118,18 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#create-docker-compose-file-share-web-service">Create docker-compose file share Web Service</a></li>
 <li class="toc-entry toc-h3"><a href="#running-docker-using-docker-composeyml">Running Docker using docker-compose.yml</a></li>
 <li class="toc-entry toc-h3"><a href="#verifying-web-application-via-docker-commands">Verifying Web Application via Docker commands</a></li>
-<li class="toc-entry toc-h3"><a href="#preparing-the-docker-web-application-for-internet-access">Preparing the Docker Web Application for Internet Access</a>
+<li class="toc-entry toc-h3"><a href="#testing-localhost-endpoint">Testing localhost endpoint</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#preparing-the-docker-web-application-for-internet-access">Preparing the Docker Web Application for Internet Access</a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#dns-provider-and-setup">DNS provider and setup</a></li>
-<li class="toc-entry toc-h4"><a href="#nginx-install-configuration-and-services">Nginx install, configuration, and services</a></li>
-<li class="toc-entry toc-h4"><a href="#testing-http-endpoint">Testing HTTP endpoint</a></li>
-<li class="toc-entry toc-h4"><a href="#certbot-install-and-configuration">Certbot install and configuration</a></li>
+<li class="toc-entry toc-h3"><a href="#dns-provider-and-setup">DNS provider and setup</a></li>
+<li class="toc-entry toc-h3"><a href="#nginx-install-configuration-and-services">Nginx install, configuration, and services</a></li>
+<li class="toc-entry toc-h3"><a href="#testing-http-endpoint">Testing HTTP endpoint</a></li>
+<li class="toc-entry toc-h3"><a href="#certbot-install-and-configuration">Certbot install and configuration</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#update-deployment">Update Deployment</a>
+<li class="toc-entry toc-h2"><a href="#update-deployment-this-process-is-after-you-change-code">Update Deployment, this process is after you change code</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#goto-project-directory">Goto Project directory</a></li>
 <li class="toc-entry toc-h3"><a href="#shutdown-process-and-update-source">Shutdown process and update source</a></li>
@@ -188,6 +189,9 @@ window.onload = wrap_img;
 
 <h2 id="deployment-process">
 <a class="anchor" href="#deployment-process" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment Process</h2>
+<blockquote>
+  <p>Deployment begins with terminal connections.   It is necessary to run commands to setup files to enable your Web Application to run on the Internet.</p>
+</blockquote>
 
 <h3 id="connect-to-ec2-through-cloud">
 <a class="anchor" href="#connect-to-ec2-through-cloud" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect to EC2 through cloud</h3>
@@ -439,12 +443,23 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
   </li>
 </ul>
 
-<h3 id="preparing-the-docker-web-application-for-internet-access">
-<a class="anchor" href="#preparing-the-docker-web-application-for-internet-access" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing the Docker Web Application for Internet Access</h3>
+<h3 id="testing-localhost-endpoint">
+<a class="anchor" href="#testing-localhost-endpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing localhost endpoint</h3>
+<p>Verify everything is working with your docker configurations.</p>
+
+<ul>
+  <li>Local Test of Web Application Endpoint.  This should return HTML related to the home page of your Web site.  If this fails, you need to review Docker and docker-compose configurations.  <code class="language-plaintext highlighter-rouge">Failed to connect</code> means review your ports.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:8086
+</code></pre></div></div>
+
+<h2 id="preparing-the-docker-web-application-for-internet-access">
+<a class="anchor" href="#preparing-the-docker-web-application-for-internet-access" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparing the Docker Web Application for Internet Access</h2>
 <p>There are a couple of steps to this preparation. We need to direct the internet to the Server running the Web Application, this is done using Domain Name Service (DNS).   After being directed to the Web Server, the server needs to respond to the Hyper Text Transfer Protocol (HTTP), this will be manged by Nginx.   Additionally, we will be required to support Secure HTTP (HTTPS), a utility called Certbot will augment our Nginx configuration with a certificate.</p>
 
-<h4 id="dns-provider-and-setup">
-<a class="anchor" href="#dns-provider-and-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNS provider and setup</h4>
+<h3 id="dns-provider-and-setup">
+<a class="anchor" href="#dns-provider-and-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNS provider and setup</h3>
 <p>Each student scrum team is required to learn how to obtain a DNS provider and setup an independent domain.  However, the final set up will be using a Subdomain under nighthawkcodingsociety.com.</p>
 
 <p>A picture is included to show key elements in setting up a domain with a DNS provider.  The nighthawkcodingsociety.com is using Freenom as its service provider.  As you build your own DNS server you will need to obtain your own IP address and domain.</p>
@@ -460,8 +475,8 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 
 <p><img alt="Setup a Domain" src="/APCSP/images/freenom.png" title="DNS Provider"></p>
 
-<h4 id="nginx-install-configuration-and-services">
-<a class="anchor" href="#nginx-install-configuration-and-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx install, configuration, and services</h4>
+<h3 id="nginx-install-configuration-and-services">
+<a class="anchor" href="#nginx-install-configuration-and-services" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx install, configuration, and services</h3>
 <p>Each student scrum team will perform Nginx installation and setup on an AWS EC2 test server.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.</p>
 
 <p>Enable Nginx to retrieve Python Web Application on internet request (Reverse Proxy)! Make a server file located at /etc/nginx/sites-available/nighthawk.</p>
@@ -563,17 +578,19 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
   </li>
 </ul>
 
-<h4 id="testing-http-endpoint">
-<a class="anchor" href="#testing-http-endpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing HTTP endpoint</h4>
-<p>Before finishing, this is a good opportunity to test everything you have done.</p>
+<h3 id="testing-http-endpoint">
+<a class="anchor" href="#testing-http-endpoint" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing HTTP endpoint</h3>
+<p>Before finishing, this is a good opportunity to review everything you have done.</p>
 
 <ul>
-  <li>Direct Test of Web Application Endpoint.  This should return HTML related to the home page of the Web site.  If this fails, you need to review Docker and docker-compose configurations.
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:8086
-</code></pre></div>    </div>
-  </li>
-  <li>Testing unsecure HTTP endpoint on the internet.  Go to a browser an type your DNS domain: <code class="language-plaintext highlighter-rouge">http://nighthawkcodingsociety.com</code>.
+  <li>Make sure curl is still working on local machine.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:8086
+</code></pre></div></div>
+
+<ul>
+  <li>Now test unsecure HTTP endpoint on the internet.  Go to a browser anywhere and type your DNS domain: <code class="language-plaintext highlighter-rouge">http://nighthawkcodingsociety.com</code>.
     <ul>
       <li>Timeout.  This means something is wrong with EC2 Public IP.</li>
       <li>Nginx Default page.  This means DNS is working, but something is wrong with you Nginx configuration.</li>
@@ -582,8 +599,8 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
   </li>
 </ul>
 
-<h4 id="certbot-install-and-configuration">
-<a class="anchor" href="#certbot-install-and-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certbot install and configuration</h4>
+<h3 id="certbot-install-and-configuration">
+<a class="anchor" href="#certbot-install-and-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certbot install and configuration</h3>
 <p>Each student scrum team will learn Certbot on on AWS EC2 test server, establish working https web application.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>snap <span class="nb">install </span>core<span class="p">;</span> <span class="nb">sudo </span>snap refresh core
@@ -673,8 +690,8 @@ IMPORTANT NOTES:
    Donating to EFF:                    https://eff.org/donate-le
 </code></pre></div></div>
 
-<h2 id="update-deployment">
-<a class="anchor" href="#update-deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update Deployment</h2>
+<h2 id="update-deployment-this-process-is-after-you-change-code">
+<a class="anchor" href="#update-deployment-this-process-is-after-you-change-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update Deployment, this process is after you change code</h2>
 <blockquote>
   <p>This procedure is a very short, as much of the deployment performed is persistent on your EC2/Ubuntu.</p>
 </blockquote>

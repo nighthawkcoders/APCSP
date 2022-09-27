@@ -49,6 +49,7 @@ Preparing and AWS EC2 instance is the process of creating a cloud computer.  Thi
 
 
 ## Deployment Process 
+> Deployment begins with terminal connections.   It is necessary to run commands to setup files to enable your Web Application to run on the Internet.
 
 ### Connect to EC2 through cloud
 > Connect to an Ubuntu EC2 instance on AWS and then begin the system and software setup.
@@ -254,10 +255,19 @@ alpine          latest          e66264b98777   8 weeks ago      5.53MB
 openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 ```
 
-### Preparing the Docker Web Application for Internet Access
+### Testing localhost endpoint
+Verify everything is working with your docker configurations.  
+
+* Local Test of Web Application Endpoint.  This should return HTML related to the home page of your Web site.  If this fails, you need to review Docker and docker-compose configurations.  ```Failed to connect``` means review your ports.
+
+```bash
+$ curl http://localhost:8086
+```
+
+## Preparing the Docker Web Application for Internet Access
 There are a couple of steps to this preparation. We need to direct the internet to the Server running the Web Application, this is done using Domain Name Service (DNS).   After being directed to the Web Server, the server needs to respond to the Hyper Text Transfer Protocol (HTTP), this will be manged by Nginx.   Additionally, we will be required to support Secure HTTP (HTTPS), a utility called Certbot will augment our Nginx configuration with a certificate.
 
-#### DNS provider and setup
+### DNS provider and setup
 Each student scrum team is required to learn how to obtain a DNS provider and setup an independent domain.  However, the final set up will be using a Subdomain under nighthawkcodingsociety.com.
 
 A picture is included to show key elements in setting up a domain with a DNS provider.  The nighthawkcodingsociety.com is using Freenom as its service provider.  As you build your own DNS server you will need to obtain your own IP address and domain.
@@ -272,7 +282,7 @@ A minimum configuration will have the two "A" type definitions using you Public 
 <img alt="Setup a Domain" src="{{site.baseurl}}/images/freenom.png" title="DNS Provider">
 
 
-#### Nginx install, configuration, and services
+### Nginx install, configuration, and services
 Each student scrum team will perform Nginx installation and setup on an AWS EC2 test server.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.
 
 Enable Nginx to retrieve Python Web Application on internet request (Reverse Proxy)! Make a server file located at /etc/nginx/sites-available/nighthawk.
@@ -360,21 +370,22 @@ $ sudo nginx -t
 $ sudo systemctl restart nginx
 ```
 
-#### Testing HTTP endpoint
-Before finishing, this is a good opportunity to test everything you have done.  
+### Testing HTTP endpoint
+Before finishing, this is a good opportunity to review everything you have done.  
 
-* Direct Test of Web Application Endpoint.  This should return HTML related to the home page of the Web site.  If this fails, you need to review Docker and docker-compose configurations.
+* Make sure curl is still working on local machine.
+
 ```bash
 $ curl http://localhost:8086
 ```
 
-* Testing unsecure HTTP endpoint on the internet.  Go to a browser an type your DNS domain: ```http://nighthawkcodingsociety.com```. 
+* Now test unsecure HTTP endpoint on the internet.  Go to a browser anywhere and type your DNS domain: ```http://nighthawkcodingsociety.com```. 
    * Timeout.  This means something is wrong with EC2 Public IP.
    * Nginx Default page.  This means DNS is working, but something is wrong with you Nginx configuration.
    * Broken Gateway.  This means Nginx is working, but something is wrong with Web Application endpoint on machine, if this fails something is wrong with Web Application.  This requires you to look at Docker and docker-compose configuration.
    
 
-#### Certbot install and configuration
+### Certbot install and configuration
 Each student scrum team will learn Certbot on on AWS EC2 test server, establish working https web application.  The final configuration will be on AWS server managed by Teachers or Student DevOps Engineers.
 
 ```bash
@@ -466,7 +477,7 @@ IMPORTANT NOTES:
    Donating to EFF:                    https://eff.org/donate-le
 ```
 
-## Update Deployment
+## Update Deployment, this process is after you change code
 > This procedure is a very short, as much of the deployment performed is persistent on your EC2/Ubuntu.  
 
 ### Goto Project directory 

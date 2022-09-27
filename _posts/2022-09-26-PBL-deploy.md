@@ -48,8 +48,18 @@ Preparing and AWS EC2 instance is the process of creating a cloud computer.  Thi
     - At the end of this process you need to "Connect to Instance". This will provide you a terminal like experience.
 
 
-## Deployment Process
+## Deployment Process 
+
+### Connect to EC2 through cloud
 > Connect to an Ubuntu EC2 instance on AWS and then begin the system and software setup.
+- Select your machine and press "Connect" at top middle.
+![AWS Connect]({{site.baseurl}}/images/aws_connect.png)
+- On next screen ensure things are lined "EC2 Instance Connect" and press "Connect" at bottom.
+![AWS2 Connect]({{site.baseurl}}/images/aws_connect2.png)
+- Only if this fails you will need to connect from our Anaconda terminal, we need pem file so place it in your home directory.
+![AWS SSH]({{site.baseurl}}/images/aws_ssh.png)
+- Either connection should work at home, school WIFI may be blocking, I have been trying to get this open.  A Hot spot or VPN will solve connection errors.
+
 
 ### Update, Upgrade, and Install packages
 Terminal commands are shown, these commands will be run from Terminal after you connect to your EC2 instance.  It is advised that you try to comprehend and learn these commands as you go through these procedures.  Understanding steps is how you become a DevOps Engineer.  

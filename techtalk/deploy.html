@@ -138,7 +138,7 @@ window.onload = wrap_img;
 </li>
 </ul><h2 id="deployment-overview">
 <a class="anchor" href="#deployment-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployment Overview</h2>
-<p>Deploying a Web Application enables a Server and Web Application to be available to users on the Internet. Development Operations (DevOps) is understanding the tools and service used to enable the Web Application on the Internet.  This process can use many different cloud services, as well as choice of many different tools.  Here is an overview of what is covered in the procedure.</p>
+<p>Deploying a Web Application enables a Server and Web Application to be available to users on the Internet. Development Operations (DevOps) is understanding the tools and service used to enable the Web Application on the Internet.  This process can use many different cloud services, as well as choice of many different tools.  Here is an overview of what is covered in this procedure.</p>
 
 <ul>
   <li>EC2: Amazon Web Services is a cloud computing platform that the PUSD district has provided for their students to serve our Web Application.</li>
@@ -151,7 +151,7 @@ window.onload = wrap_img;
 
 <h3 id="keyvalues-required-as-you-go-through-these-procedures">
 <a class="anchor" href="#keyvalues-required-as-you-go-through-these-procedures" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key/Values required as you go through these procedures</h3>
-<p>Listed are Keys, you need to obtain “values” specific to your Web Application setup.  It is important that you recognize the sample “values” as you work through these procedures, then replace them with the “values” that are specific to your use case.</p>
+<p>Listed are Keys, you need to obtain “values” specific to your Web Application setup.  It is important that you recognize the sample “values” as you work through these procedures, then replace them with the “values” that are specific to your Web Application use case.</p>
 
 <ul>
   <li>GitHub HTTPS link:</li>
@@ -234,6 +234,11 @@ window.onload = wrap_img;
 <span class="nv">$ </span>git clone https://github.com/nighthawkcoders/flask_portfolio.git
 <span class="nv">$ </span><span class="nb">cd </span>flask_portfolio
 </code></pre></div></div>
+
+<ul>
+  <li>Clone needs to be repeated for each Web application on the EC2 instance (Team repository and each individual repository).  If repo is named the same use option parameter at the end of clone command <code class="language-plaintext highlighter-rouge">git clone https://github.com/nighthawkcoders/flask_portfolio.git flask_portfolio_john</code>, then <code class="language-plaintext highlighter-rouge">cd flask_portfolio_john</code>
+</li>
+</ul>
 
 <h3 id="test-web-service">
 <a class="anchor" href="#test-web-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Test Web Service</h3>
@@ -318,6 +323,8 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
   <p>A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.</p>
   <ul>
     <li>Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.</li>
+    <li>The <code class="language-plaintext highlighter-rouge">image:</code> needs to have unique name for each application on server (ie flask_john_v1)</li>
+    <li>The <code class="language-plaintext highlighter-rouge">ports:</code> left value 8086 needs to be unique for each application on server (ie 8087:8080, 8088:8080, etc)</li>
   </ul>
 </blockquote>
 
@@ -448,7 +455,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 <p>Verify everything is working with your docker configurations.</p>
 
 <ul>
-  <li>Local Test of Web Application Endpoint.  This should return HTML related to the home page of your Web site.  If this fails, you need to review Docker and docker-compose configurations.  <code class="language-plaintext highlighter-rouge">Failed to connect</code> means review your ports.</li>
+  <li>Local Test of Web Application Endpoint.  This should return HTML related to the home page of your Web site.  If this fails, you need to review Docker and docker-compose configurations.  <code class="language-plaintext highlighter-rouge">Failed to connect</code> means review your port on docker-compose.</li>
 </ul>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl http://localhost:8086
@@ -492,7 +499,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> /etc/nginx/sites-available
 </code></pre></div>    </div>
   </li>
-  <li>Open editor to Create your own “Nginx server configuration”.  For clarity, name should be after domain or subdomain.
+  <li>Open editor to Create your own “Nginx server configuration”.  For clarity, the name <code class="language-plaintext highlighter-rouge">nighthawk</code> should reflect your application name, domain or subdomain.  The name needs to be unique for each web application (ie john_nighthawk).
     <div class="language-bash highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>nano nighthawk
 </code></pre></div>    </div>

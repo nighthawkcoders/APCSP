@@ -12,7 +12,7 @@ week: 6
 ---
 
 ## Deployment Overview
-Deploying a Web Application enables a Server and Web Application to be available to users on the Internet. Development Operations (DevOps) is understanding the tools and service used to enable the Web Application on the Internet.  This process can use many different cloud services, as well as choice of many different tools.  Here is an overview of what is covered in the procedure.
+Deploying a Web Application enables a Server and Web Application to be available to users on the Internet. Development Operations (DevOps) is understanding the tools and service used to enable the Web Application on the Internet.  This process can use many different cloud services, as well as choice of many different tools.  Here is an overview of what is covered in this procedure.
 
 - EC2: Amazon Web Services is a cloud computing platform that the PUSD district has provided for their students to serve our Web Application.
 - GitHub: The leading open platform to share a code across the Internet.
@@ -22,7 +22,7 @@ Deploying a Web Application enables a Server and Web Application to be available
 - DNS: Natively, the web works off of IP addresses.  Domain Name Services (DNS) allows the assignment of a friendly name to a Web Server.  This name is built into Nginx/Certbot configuration files.  Freenom is the cloud service described in this blog and has been used to register the nighthawkcodingsociety.com domain.
 
 ### Key/Values required as you go through these procedures
-Listed are Keys, you need to obtain "values" specific to your Web Application setup.  It is important that you recognize the sample "values" as you work through these procedures, then replace them with the "values" that are specific to your use case.
+Listed are Keys, you need to obtain "values" specific to your Web Application setup.  It is important that you recognize the sample "values" as you work through these procedures, then replace them with the "values" that are specific to your Web Application use case.
 
 - GitHub HTTPS link:
 - IAM user:
@@ -81,6 +81,8 @@ $ cd
 $ git clone https://github.com/nighthawkcoders/flask_portfolio.git
 $ cd flask_portfolio
 ```
+
+* Clone needs to be repeated for each Web application on the EC2 instance (Team repository and each individual repository).  If repo is named the same use option parameter at the end of clone command ```git clone https://github.com/nighthawkcoders/flask_portfolio.git flask_portfolio_john```, then ```cd flask_portfolio_john```
 
 ### Test Web Service
 > These steps will require you to understand a few new commands that will not be part of final deployment process.  However, these commands will help you understand machine dependencies and validate your requirements.txt for completeness.
@@ -152,6 +154,8 @@ CMD [ "gunicorn", "main:app" ]
 ### Create docker-compose file share Web Service
 > A docker-compose file is a configuration used to share your Docker Web Service and resources with the Linux system.  This file enable Linux to have access to the container and the persistent data application via the /volumes location.  
 - Once again it is best to add the docker-compose.yml in VS Code and pull it.  You can edit it on the machine itself using vi, vim, or nano.
+- The ```image:``` needs to have unique name for each application on server (ie flask_john_v1)
+- The ```ports:``` left value 8086 needs to be unique for each application on server (ie 8087:8080, 8088:8080, etc)
 
 > Edit docker-compose.yml
 
@@ -258,7 +262,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 ### Testing localhost endpoint
 Verify everything is working with your docker configurations.  
 
-* Local Test of Web Application Endpoint.  This should return HTML related to the home page of your Web site.  If this fails, you need to review Docker and docker-compose configurations.  ```Failed to connect``` means review your ports.
+* Local Test of Web Application Endpoint.  This should return HTML related to the home page of your Web site.  If this fails, you need to review Docker and docker-compose configurations.  ```Failed to connect``` means review your port on docker-compose.
 
 ```bash
 $ curl http://localhost:8086
@@ -297,7 +301,7 @@ $ sudo apt install nginx
 $ cd /etc/nginx/sites-available
 ```
 
-* Open editor to Create your own "Nginx server configuration".  For clarity, name should be after domain or subdomain.
+* Open editor to Create your own "Nginx server configuration".  For clarity, the name ```nighthawk``` should reflect your application name, domain or subdomain.  The name needs to be unique for each web application (ie john_nighthawk).
 ```bash
 $ sudo nano nighthawk
 ```

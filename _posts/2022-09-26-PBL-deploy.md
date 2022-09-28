@@ -59,7 +59,7 @@ Preparing and AWS EC2 instance is the process of creating a cloud computer.  Thi
 ![AWS2 Connect]({{site.baseurl}}/images/aws_connect2.png)
 - Only if this fails you will need to connect from our Anaconda terminal, we need pem file so place it in your home directory.
 ![AWS SSH]({{site.baseurl}}/images/aws_ssh.png)
-- Either connection should work at home, school WIFI may be blocking, I have been trying to get this open.  A Hot spot or VPN will solve connection errors.
+- Either connection should work at home, school WIFI may be blocking, I have been trying to get this open.  A Hot spot or [VPN]({{site.baseurl}}/tutorial/vpn) will solve connection errors.
 
 
 ### Update, Upgrade, and Install packages

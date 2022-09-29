@@ -8,7 +8,7 @@ image: /images/git.webp
 permalink: /techtalk/github
 categories: [1.C, 6.A]
 type: human
-week: 6
+week: 7
 ---
 
 ![git-pic]({{site.baseurl}}/images/git.webp)

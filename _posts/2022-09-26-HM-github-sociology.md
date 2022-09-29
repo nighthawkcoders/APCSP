@@ -11,7 +11,7 @@ type: human
 week: 6
 ---
 
-![git-pic]({{sit.baseurl}}/images/git.webp)
+![git-pic]({{site.baseurl}}/images/git.webp)
 
 ## GitHub and Git
 > GitHub.com was launched in April 2008 by Tom Preston-Werner, Chris Wanstrath, P. J. Hyett and Scott Chaco.  GitHub is a subsidiary of Microsoft since 2018 (kind of ironic with Git quote below), but GitHub is not Git it helps manage the server or backend.

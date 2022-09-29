@@ -302,8 +302,8 @@ ModuleNotFoundError: No module named <span class="s1">'flask'</span>
 <span class="c"># --- Update environment and install python and pip ---</span>
 <span class="k">RUN </span>apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="se">\
 </span>  apt-get <span class="nb">install</span> <span class="nt">-y</span> python3 python3-pip git
-<span class="c"># --- This should be the repository you created last week ---</span>
-<span class="k">RUN </span>git clone https://github.com/nighthawkcoders/flask_portfolio /app
+<span class="c"># --- Copy repo you updated with clone or pull ---</span>
+<span class="k">COPY</span><span class="s"> . /app</span>
 <span class="c"># --- Install project specific dependencies ---</span>
 <span class="k">RUN </span>pip3 <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">-r</span> requirements.txt
 <span class="k">RUN </span>pip3 <span class="nb">install </span>gunicorn

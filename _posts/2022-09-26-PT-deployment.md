@@ -29,12 +29,7 @@ week: 6
 - show the output of your curl command when you are done
 - make a change and show the change made in the browser
 
-### Github Fastpages Blog
-> Build a plan for your final project
-- Key objective is to show Program Design
-- Create an outline for the design of your project, do not forget the 6 college board criteria
-
 ## Live Grading Presentation.  
 > We will follow 3 to 4 team review format.   
-- Observers will grade up to 1.8/2 on deployment and 0.9/1 on the other two criteria. Be sure to total up to 2.7/3
+- Observers will grade up to 1.8/2 on deployment and 0.9/1 on AP prep. Be sure to total up to 2.7/3
 - Observers will note anything that was completed that is not mentioned in the outline.  This needs to be tangible!!!  If student met 2.7 standard, then extra items can make score 2.7+.

@@ -119,8 +119,8 @@ window.onload = wrap_img;
 <blockquote>
   <p>Linus Torvalds invented Linux and about 2005 invented Git.  Quotes by Linus:</p>
   <ul>
-    <li>“Talk is cheap. Show me the code.”</li>
-    <li>“Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.”</li>
+    <li>“<mark>Talk is cheap. Show me the code.</mark>”</li>
+    <li>“Most good programmers do programming not because they expect to get paid or get adulation by the public, but <mark>because it is fun to program.</mark>”</li>
     <li>Microsoft isn’t evil; they just make really crappy operating systems.</li>
   </ul>
 </blockquote>
@@ -137,9 +137,8 @@ window.onload = wrap_img;
     <li>A “git clone” makes a local Git repository (decentralized) from the cloud server (GitHub/Git).</li>
     <li>A .git directory contains a local database (see illustration) that keeps track of local changes.</li>
     <li>A “git commit” makes a child snapshot of the original parent on the local database.  Git commits over time are a series of Secure Hashing Algorithms (SHA’s).  This is the math behind a git snapshot.</li>
-    <li>The .gitignore file tells .git to ignore certain files in directory tree (ie files constructed from source or derived files).</li>
-    <li>The “git push” command moves files from local system back to cloud server (GitHub).  However, 
-often a merge is required as the decentralized system can have many simultaneous contributors.  Students will experience this when they share a repository.</li>
+    <li>The .gitignore file tells .git to ignore certain files in directory tree (ie files constructed from source or derived files, <mark>like ipynb files that turn into md files</mark>).</li>
+    <li>The “git push” command moves files from local system back to cloud server (GitHub).  However, often a merge is required as the decentralized system can have many simultaneous contributors.  Students will experience this when they share a repository.</li>
     <li>To minimize conflicts, Developers use Git branches and/or GitHub Forks to push code to an isolated locations on the server/cloud.  This simply delays the inevitable merge, but has benefit of keeping developers branch of project stable.</li>
     <li>Pull requests is common process used to merge code from isolated Fork back to the primary GitHub repository.</li>
     <li>A “git rebase” is a common command for Developer on an isolated Git branch to update their environment from the “main” branch.  Often this is done prior to a “git push” back the “main” branch.</li>
@@ -160,6 +159,7 @@ often a merge is required as the decentralized system can have many simultaneous
   <ul>
     <li>What is the main repository for your project?</li>
     <li>Did you create a .gitignore to avoid committing files that ‘don’t belong in version control?  Look at <a href="https://www.toptal.com/developers/gitignore/">this</a> tool for guidance.</li>
+    <li>Do you have a requirements.txt file to manage dependencies introduced to your Code Base?</li>
     <li>Have you established Issues as part of your Development process? <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue">Creating Issues</a>
 </li>
     <li>Have you considered making Pull Requests to track development?  <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">Create Pull Request</a>

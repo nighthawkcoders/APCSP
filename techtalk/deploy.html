@@ -507,32 +507,33 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
   <li>Edit your own Nginx server configuration making modifications to:
     <ul>
       <li>IP Address: 3.233.212.71</li>
-      <li>docker-compose, proxy pass Port: 8086
-```nginx
-server {
-  listen 80;
-  listen [::]:80;
-  server_name 3.233.212.71;</li>
+      <li>docker-compose, proxy pass Port: 8086</li>
     </ul>
-
-    <p>location / {
-      proxy_pass http://localhost:8086;
-      # Simple requests
-      if ($request_method ~* “(GET|POST)”) {
-              add_header “Access-Control-Allow-Origin”  *;
-      }</p>
-
-    <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>  # Preflight requests
-  if ($request_method = OPTIONS ) {
-          add_header "Access-Control-Allow-Origin"  *;
-          add_header "Access-Control-Allow-Methods" "GET, POST, OPTIONS, HEAD";
-          add_header "Access-Control-Allow-Headers" "Authorization, Origin, X-Requested-With, Content-Type, Accept";
-          return 200;
-  }   } } ```
-</code></pre></div>    </div>
   </li>
 </ul>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">listen</span> <span class="s">[::]:80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="mi">3</span><span class="s">.233.212.71</span><span class="p">;</span>
+
+    <span class="kn">location</span> <span class="n">/</span> <span class="p">{</span>
+        <span class="kn">proxy_pass</span> <span class="s">http://localhost:8086</span><span class="p">;</span>
+        <span class="c1"># Simple requests</span>
+        <span class="kn">if</span> <span class="s">(</span><span class="nv">$request_method</span> <span class="p">~</span><span class="sr">*</span> <span class="s">"(GET|POST)")</span> <span class="p">{</span>
+                <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Origin"</span>  <span class="s">*</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1"># Preflight requests</span>
+        <span class="kn">if</span> <span class="s">(</span><span class="nv">$request_method</span> <span class="p">=</span> <span class="s">OPTIONS</span> <span class="s">)</span> <span class="p">{</span>
+                <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Origin"</span>  <span class="s">*</span><span class="p">;</span>
+                <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Methods"</span> <span class="s">"GET,</span> <span class="s">POST,</span> <span class="s">OPTIONS,</span> <span class="s">HEAD"</span><span class="p">;</span>
+                <span class="kn">add_header</span> <span class="s">"Access-Control-Allow-Headers"</span> <span class="s">"Authorization,</span> <span class="s">Origin,</span> <span class="s">X-Requested-With,</span> <span class="s">Content-Type,</span> <span class="s">Accept"</span><span class="p">;</span>
+                <span class="kn">return</span> <span class="mi">200</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="activating-nginx-configuration">
 <a class="anchor" href="#activating-nginx-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Activating Nginx configuration</h3>

@@ -342,8 +342,11 @@ $ sudo nginx -t
 ```
 
 * If there are errors, something is wrong...
-    * Perhaps you are missing semicolon at the end of server)name or proxy_pass lines
-    * Perhaps link to file in sites-enabled is bad.  There are two directories ```/etc/nginx/sites-available``` and ```/etc/nginx/sites-enabled```.  The 1st is for preliminary editing, the second is for activation.  Perform ```ls``` in ```/etc/nginx/sites-enabled``` and make sure all the names look correct.  You can ```rm``` mistake in ```/etc/nginx/sites-enabled``` without deleting original file in ```/etc/nginx/sites-available```.
+    * Perhaps you are missing semicolon at the end of server)name or proxy_pass lines.
+    * Perhaps link to file in sites-enabled is bad as a result of bad syntax in ```ln -a``` command.  
+        * There are two directories ```/etc/nginx/sites-available``` and ```/etc/nginx/sites-enabled```.  
+        * The 1st is for preliminary editing, the second is for activation.  Perform ```ls``` in ```/etc/nginx/sites-enabled``` and make sure all the names look correct.  
+        * Correct by ```rm``` of mistake in ```/etc/nginx/sites-enabled``` without deleting original file in ```/etc/nginx/sites-available```.  Then repeat ```ln -s``` command.
 
 * If there are no errors, restart NGINX so the server to activate ```/etc/nginx/sites-enabled``` files:
 ```bash
@@ -351,14 +354,20 @@ $ sudo systemctl restart nginx
 ```
 
 ### Testing HTTP endpoint
-* Make sure curl is still working on local machine.  Make sure endpoint you placed in Nginx test file match.
+> When completing this section, you will show that the Internet is resolving your Web application and port from an IP address (aka reverse proxy).  
+
+* Verify AWS Web application again.  Make sure curl is still working on local machine.  Make sure endpoint you placed in Nginx test file match.
 ```bash
 $ curl http://localhost:8086
 ```
-* Now test unsecure public IP on the internet.  Go to a browser anywhere and type your DNS domain: ```http://3.233.212.71```. 
-   * Timeout.  This means something is wrong with EC2 Public IP.
+* Now test public IP on the internet.  Go to a browser anywhere in the world and type your IP address:
+```
+http://3.233.212.71
+``` 
+   * Note.  Address is Unsecure and you are using IP address versus Domain.
+   * Timeout problem.  This means something is wrong with EC2 Public IP.
    * Nginx Default page.  This means Nginx is working, but something is wrong with you Nginx test configuration.
-   * Broken Gateway.  This means Nginx is working, but something is wrong with Web Application endpoint on machine, if this fails something is wrong with Web Application.  This requires you to look at port configuration.
+   * Broken Gateway.  This means Nginx is working, but something is wrong with Web Application endpoint on machine. This requires you to look at port configuration OR restart Docker.
 
 > Congratulations.  If you have arrived at this point you now have capability to access your team Web Application from the Internet.  Hurray!!!
 

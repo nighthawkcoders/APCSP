@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -104,7 +104,220 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#binary-abstraction-and-logic-gates">Binary Abstraction and Logic Gates</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#multiply-and-divide-by-2-shift">Multiply and Divide by 2 (Shift)</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#ui-conceptdesign">UI Concept/Design</a></li>
+<li class="toc-entry toc-h3"><a href="#logic-of-shift">Logic of Shift</a></li>
+<li class="toc-entry toc-h3"><a href="#elaboration-of-shift">Elaboration of Shift</a></li>
 </ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#unicode-vs-ascii">Unicode vs ASCII</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#unicode-can-be-utf-8-16-or-32-ascii-is-preserved-in-unicode">Unicode can be UTF-8, 16 or 32, ASCII is preserved in Unicode.</a></li>
+<li class="toc-entry toc-h3"><a href="#ui-conceptdesign-1">UI Concept/Design</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#color-codes">Color Codes</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#color-code-is-a-24-bit-abstraction">Color code is a 24 bit abstraction.</a></li>
+<li class="toc-entry toc-h3"><a href="#ui-design">UI Design</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#logic-gates">Logic Gates</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#logic-gates-can-be-simulated-with-2-bits">Logic Gates can be simulated with 2 bits</a></li>
+<li class="toc-entry toc-h3"><a href="#ui-concept">UI Concept</a></li>
+<li class="toc-entry toc-h3"><a href="#ui-design-1">UI Design</a></li>
+<li class="toc-entry toc-h3"><a href="#logic-of-logic-gates">Logic of Logic Gates</a></li>
+<li class="toc-entry toc-h3"><a href="#practical-application">Practical Application</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#unsigned-addition">Unsigned Addition</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#initial-ui-implementation">Initial UI Implementation</a></li>
+<li class="toc-entry toc-h3"><a href="#unsigned-addition-1">Unsigned Addition</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#signed-addition">Signed Addition</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#common-concept-for-integer-math">Common concept for Integer Math</a></li>
+<li class="toc-entry toc-h3"><a href="#basic-concept-but-not-typically-used">Basic concept, but not typically used</a></li>
+<li class="toc-entry toc-h3"><a href="#inverting-numbers-twos-complement">Inverting numbers, twos complement</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#technical-helpers">Technical helpers</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#algorithm-in-jinja2-to-limit-bits-per-row">Algorithm in Jinja2 to limit Bits per row</a></li>
+<li class="toc-entry toc-h3"><a href="#binary-addition-overview">Binary Addition overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#hacks">Hacks</a></li>
+</ul><h1 id="binary-abstraction-and-logic-gates">
+<a class="anchor" href="#binary-abstraction-and-logic-gates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binary Abstraction and Logic Gates</h1>
+<blockquote>
+  <p>Concepts and Visualization Ideas</p>
+</blockquote>
+
+<h2 id="multiply-and-divide-by-2-shift">
+<a class="anchor" href="#multiply-and-divide-by-2-shift" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multiply and Divide by 2 (Shift)</h2>
+<p>Shifting bits is a common computer operation
+Look for shift on <a href="https://www.w3schools.com/js/js_bitwise.asp">w3schools</a></p>
+
+<h3 id="ui-conceptdesign">
+<a class="anchor" href="#ui-conceptdesign" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Concept/Design</h3>
+<p><img src="/APCSP/images/binary_shift.png" alt="">
+<em>n Right Shifts (divides by 2^n); n Left Shifts (mutliplies by 2^n)</em>
+Add buttons for  “«”   and  “ »”</p>
+
+<h3 id="logic-of-shift">
+<a class="anchor" href="#logic-of-shift" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logic of Shift</h3>
+<p><img src="/APCSP/images/logic_of_shift.png" alt=""></p>
+
+<h3 id="elaboration-of-shift">
+<a class="anchor" href="#elaboration-of-shift" aria-hidden="true"><span class="octicon octicon-link"></span></a>Elaboration of Shift</h3>
+<p><img src="/APCSP/images/elaboration_of_shift.png" alt="">
+<em>Arithmetic Shift</em></p>
+
+<p>In an arithmetic shift, the bits that are shifted out of either end are discarded. In a left arithmetic shift, zeros are shifted in on the right; in a right arithmetic shift, the sign bit (the MSB in two’s complement) is shifted in on the left, thus preserving the sign of the operand.
+This example uses an 8-bit register, interpreted as two’s complement:
+In the first case, the leftmost digit was shifted past the end of the register, and a new 0 was shifted into the rightmost position. In the second case, the rightmost 1 was shifted out (perhaps into the carry flag), and a new 1 was copied into the leftmost position, preserving the sign of the number.</p>
+
+<h2 id="unicode-vs-ascii">
+<a class="anchor" href="#unicode-vs-ascii" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unicode vs ASCII</h2>
+
+<h3 id="unicode-can-be-utf-8-16-or-32-ascii-is-preserved-in-unicode">
+<a class="anchor" href="#unicode-can-be-utf-8-16-or-32-ascii-is-preserved-in-unicode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unicode can be UTF-8, 16 or 32, ASCII is preserved in Unicode.</h3>
+<p><img src="/APCSP/images/sample_unicode.png" alt="">
+<em>Sample of Unicode characters.</em></p>
+
+<h3 id="ui-conceptdesign-1">
+<a class="anchor" href="#ui-conceptdesign-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Concept/Design</h3>
+<p><img src="/APCSP/images/ascii_label.png" alt="">
+<em>Original ASCII</em></p>
+
+<p>The ASCII label in picture should be change based off of the type of evaluation you are doing.  Bits displayed, label, and evaluation would be specific to evaluation type:</p>
+<ul>
+  <li>ASCII - 7 bits</li>
+  <li>UTF-8</li>
+  <li>UTF-16</li>
+  <li>UTF-32</li>
+</ul>
+
+<h2 id="color-codes">
+<a class="anchor" href="#color-codes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color Codes</h2>
+
+<h3 id="color-code-is-a-24-bit-abstraction">
+<a class="anchor" href="#color-code-is-a-24-bit-abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color code is a 24 bit abstraction.</h3>
+<p><img src="/APCSP/images/color_code.png" alt="">
+<em>255 * 255 * 255 combinations of R, G, B</em></p>
+
+<h3 id="ui-design">
+<a class="anchor" href="#ui-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Design</h3>
+<p><img src="/APCSP/images/color_block.png" alt="">
+3 rows representing R, G, B 
+Resulting color displayed in block</p>
+
+<h2 id="logic-gates">
+<a class="anchor" href="#logic-gates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logic Gates</h2>
+
+<h3 id="logic-gates-can-be-simulated-with-2-bits">
+<a class="anchor" href="#logic-gates-can-be-simulated-with-2-bits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logic Gates can be simulated with 2 bits</h3>
+<p><em>by Anthony Vo</em>
+Look for bitwise operators on <a href="https://www.w3schools.com/js/js_bitwise.asp">w3schools</a></p>
+
+<h3 id="ui-concept">
+<a class="anchor" href="#ui-concept" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Concept</h3>
+<p><img src="/APCSP/images/logic_gates.png" alt="">
+<em>Logic Gates</em>
+Establish check boxes for A / B on and off
+Show result of Boolean Expression using Gate visual</p>
+
+<h3 id="ui-design-1">
+<a class="anchor" href="#ui-design-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>UI Design</h3>
+<p><img src="/APCSP/images/logic_gate_lab.png" alt="">
+<em>by Kylie Scharf</em>
+AB checkboxes with Submit button
+Table with Symbol, Description, and Result</p>
+
+<h3 id="logic-of-logic-gates">
+<a class="anchor" href="#logic-of-logic-gates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logic of Logic Gates</h3>
+<p>A logic gate can have two inputs (a,b) and by how changing these inputs it impacts the output(c).</p>
+
+<p>There are four possible inputs:</p>
+<ul>
+  <li>0 0</li>
+  <li>0 1</li>
+  <li>1 0</li>
+  <li>1 1</li>
+</ul>
+
+<p>Understanding the output enables us to understand a logical expressions.  All outputs are routed in Logic Gates (similar to how a language is routed in Latin).</p>
+<ul>
+  <li>AND is true for 1 1; NAND is true opposite of AND 0 0, 0 1, 1 0</li>
+  <li>OR is true for 1 1, 0 1, 1 0, NOR is true opposite of OR 0 0</li>
+  <li>XOR is true for 0 1, 1 0</li>
+</ul>
+
+<h3 id="practical-application">
+<a class="anchor" href="#practical-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Practical Application</h3>
+<p><img src="/APCSP/images/logic_gate_application.png" alt=""></p>
+
+<h2 id="unsigned-addition">
+<a class="anchor" href="#unsigned-addition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unsigned Addition</h2>
+<p>Here we are requesting 3 rows of bits to simulate Math. This could be done with 4, 8, or 16 bits.</p>
+
+<h3 id="initial-ui-implementation">
+<a class="anchor" href="#initial-ui-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initial UI Implementation</h3>
+<p><img src="/APCSP/images/binary_math_conversion.png" alt="">
+Action buttons for +1 and -1
+Additional actions for Turn On and Turn Off</p>
+
+<h3 id="unsigned-addition-1">
+<a class="anchor" href="#unsigned-addition-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unsigned Addition</h3>
+<p><img src="/APCSP/images/unsigned_addition.png" alt=""></p>
+
+<h2 id="signed-addition">
+<a class="anchor" href="#signed-addition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Signed Addition</h2>
+<p>Integers in most languages are int8, int16, int32, or int64. They typically reserve left most bit for sign.</p>
+
+<h3 id="common-concept-for-integer-math">
+<a class="anchor" href="#common-concept-for-integer-math" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common concept for Integer Math</h3>
+<p><img src="/APCSP/images/integer_math_pos.png" alt="">
+<em>Positive number</em></p>
+
+<h3 id="basic-concept-but-not-typically-used">
+<a class="anchor" href="#basic-concept-but-not-typically-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic concept, but not typically used</h3>
+<p><img src="/APCSP/images/integer_math_neg.png" alt="">
+<em>Negative number</em></p>
+
+<h3 id="inverting-numbers-twos-complement">
+<a class="anchor" href="#inverting-numbers-twos-complement" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inverting numbers, twos complement</h3>
+<p><img src="/APCSP/images/twos_complement.png" alt="">
+<em>Two’s complement allows adding for signed and unsigned numbers</em></p>
+
+<p>Basic concept is to invert/negate bits to produce negative. This allows numbers to be added together for expected results. » and »&gt; have been adapted to handle signed and zero filled shifting.</p>
+
+<h2 id="technical-helpers">
+<a class="anchor" href="#technical-helpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Technical helpers</h2>
+
+<h3 id="algorithm-in-jinja2-to-limit-bits-per-row">
+<a class="anchor" href="#algorithm-in-jinja2-to-limit-bits-per-row" aria-hidden="true"><span class="octicon octicon-link"></span></a>Algorithm in Jinja2 to limit Bits per row</h3>
+<p><img src="/APCSP/images/binary_math_conversion_example.png" alt="">
+<em>8 images per row by Kylie Scharf</em>
+Modulo 8 algorithm add &lt;tr&gt; for every eight bits (code).</p>
+
+<h3 id="binary-addition-overview">
+<a class="anchor" href="#binary-addition-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binary Addition overview</h3>
+<p><a href="https://chortle.ccsu.edu/AssemblyTutorial/Chapter-08/ass08_1.html">CHAPTER 8 - Binary Addition and Two’s Complement</a>
+<em>Overview find by Val Wilson</em></p>
+
+<h1 id="hacks">
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h1>
+
 
   </div><a class="u-url" href="/APCSP/collegeboard/binary" hidden></a>
 </article>

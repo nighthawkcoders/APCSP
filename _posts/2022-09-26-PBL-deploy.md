@@ -343,7 +343,7 @@ $ sudo nginx -t
 
 * If there are errors, something is wrong...
     * Perhaps you are missing semicolon at the end of server)name or proxy_pass lines
-    * Perhaps link to file in sites-enabled is bad.  There are two directories ```/etc/nginx/sites-available``` and ```/etc/nginx/sites-enabled```.  The 1st is for preliminary editing, the second is for activation.  Perform ```ls``` in ```/etc/nginx/sites-enabled``` and make sure all the names look correct.  You can ```rm``` mistake in ```/etc/nginx/sites-enabled``` without deleting original file in ```/etc/nginx/sites-available``.
+    * Perhaps link to file in sites-enabled is bad.  There are two directories ```/etc/nginx/sites-available``` and ```/etc/nginx/sites-enabled```.  The 1st is for preliminary editing, the second is for activation.  Perform ```ls``` in ```/etc/nginx/sites-enabled``` and make sure all the names look correct.  You can ```rm``` mistake in ```/etc/nginx/sites-enabled``` without deleting original file in ```/etc/nginx/sites-available```.
 
 * If there are no errors, restart NGINX so the server to activate ```/etc/nginx/sites-enabled``` files:
 ```bash

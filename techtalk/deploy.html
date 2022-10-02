@@ -413,7 +413,7 @@ Creating flask_portfolio_web_1 ... <span class="k">done</span>
 <ul>
   <li>docker-compose ps  View the running Web process, “ps” is a linux command or option that provides information related to the processes on a system.  Look at name and ports in relation to outputs of the docker-compose process and settings in docker-compose.yml file.
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker-compose ps
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker-compose ps
       Name                 Command        State                    Ports                  
 <span class="nt">--------------------------------------------------------------------------------------------</span>
 flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086-&gt;8080/tcp,:::8086-&gt;8080/tcp
@@ -421,7 +421,7 @@ flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086-&gt;8080/tcp,::
   </li>
   <li>docker ps  View a more comprehensive list of all the docker processes on the system.  In this process reports, many of the alternate projects running on this AWS server are show (ie your Team Members).  You should be able to identify your IMAGE and PORTS, as they should be unique according to your docker-compose.yml file.
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker ps
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker ps
 CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
 749a93bc11ce   flask_port_v1   <span class="s2">"gunicorn main:app"</span>      45 minutes ago   Up 45 minutes   0.0.0.0:8086-&gt;8080/tcp, :::8086-&gt;8080/tcp   flask_portfolio_web_1
 89155782b853   java_springv1   <span class="s2">"java -jar target/sp…"</span>   6 days ago       Up 6 days       0.0.0.0:8085-&gt;8080/tcp, :::8085-&gt;8080/tcp   spring_portfolio_web_1
@@ -433,7 +433,7 @@ abd77b8e77af   java_csav2      <span class="s2">"java -jar target/cs…"</span> 
   </li>
   <li>docker images   This lists all of the docker images, or containers, that are used to serve the process shown above.  The flask_port_v1 is the REPOSITORY is named in docker-compose.yml.  The IMAGE ID is container for the running Web application.
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>ubuntu@ip-172-31-1-138:~/flask_portfolio<span class="nv">$ </span><span class="nb">sudo </span>docker images
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker images
 REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
 flask_port_v1   latest          68d68ad9699b   51 minutes ago   1.01GB
 java_springv1   latest          e85a584b1836   6 days ago       523MB
@@ -448,7 +448,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
   </li>
   <li>docker volume ls   This list volume names are the locations where application stores files that that the developer wants to keep.  The volume name is specified in the docker-compose.yml file.
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>docker volume <span class="nb">ls
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker volume <span class="nb">ls
 </span>DRIVER    VOLUME NAME
 <span class="nb">local     </span>flask_portfolio_persistent_volume
 <span class="nb">local     </span>nighthawk_csa_persistent_volume

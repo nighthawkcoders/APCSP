@@ -309,6 +309,7 @@ $ sudo nano test
 * Edit your own Nginx server configuration making modifications to:
     * IP Address: 3.233.212.71
     * docker-compose, proxy pass Port: 8086
+    
 ```nginx
 server {
     listen 80;

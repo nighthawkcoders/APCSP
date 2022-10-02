@@ -224,7 +224,7 @@ Creating flask_portfolio_web_1 ... done
 
 * docker-compose ps  View the running Web process, "ps" is a linux command or option that provides information related to the processes on a system.  Look at name and ports in relation to outputs of the docker-compose process and settings in docker-compose.yml file.
 ```bash
-$ docker-compose ps
+$ sudo docker-compose ps
         Name                 Command        State                    Ports                  
 --------------------------------------------------------------------------------------------
 flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086->8080/tcp,:::8086->8080/tcp
@@ -232,7 +232,7 @@ flask_portfolio_web_1   gunicorn main:app   Up      0.0.0.0:8086->8080/tcp,:::80
 
 * docker ps  View a more comprehensive list of all the docker processes on the system.  In this process reports, many of the alternate projects running on this AWS server are show (ie your Team Members).  You should be able to identify your IMAGE and PORTS, as they should be unique according to your docker-compose.yml file.
 ```bash
-$ docker ps
+$ sudo docker ps
 CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                                       NAMES
 749a93bc11ce   flask_port_v1   "gunicorn main:app"      45 minutes ago   Up 45 minutes   0.0.0.0:8086->8080/tcp, :::8086->8080/tcp   flask_portfolio_web_1
 89155782b853   java_springv1   "java -jar target/sp…"   6 days ago       Up 6 days       0.0.0.0:8085->8080/tcp, :::8085->8080/tcp   spring_portfolio_web_1
@@ -244,7 +244,7 @@ abd77b8e77af   java_csav2      "java -jar target/cs…"   5 weeks ago      Up 5 
 
 * docker images   This lists all of the docker images, or containers, that are used to serve the process shown above.  The flask_port_v1 is the REPOSITORY is named in docker-compose.yml.  The IMAGE ID is container for the running Web application.
 ```bash
-ubuntu@ip-172-31-1-138:~/flask_portfolio$ sudo docker images
+$ sudo docker images
 REPOSITORY      TAG             IMAGE ID       CREATED          SIZE
 flask_port_v1   latest          68d68ad9699b   51 minutes ago   1.01GB
 java_springv1   latest          e85a584b1836   6 days ago       523MB
@@ -259,7 +259,7 @@ openjdk         16-alpine3.13   2aa8569968b8   17 months ago    324MB
 
 * docker volume ls   This list volume names are the locations where application stores files that that the developer wants to keep.  The volume name is specified in the docker-compose.yml file.
 ```bash
-$ docker volume ls
+$ sudo docker volume ls
 DRIVER    VOLUME NAME
 local     flask_portfolio_persistent_volume
 local     nighthawk_csa_persistent_volume

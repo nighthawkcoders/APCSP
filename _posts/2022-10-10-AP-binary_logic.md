@@ -58,13 +58,13 @@ The ASCII label in picture should be change based off of the type of evaluation 
 
 ### UI Design
 ![]({{site.baseurl}}/images/color_block.png)
+*by Anthony Vo*
 3 rows representing R, G, B 
 Resulting color displayed in block
 
 ## Logic Gates
 
 ### Logic Gates can be simulated with 2 bits
-*by Anthony Vo*
 Look for bitwise operators on [w3schools](https://www.w3schools.com/js/js_bitwise.asp)
 
 ### UI Concept

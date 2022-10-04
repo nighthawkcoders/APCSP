@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      24 min read
+      26 min read
     
 </span></p>
 
@@ -139,6 +139,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#goto-project-directory">Goto Project directory</a></li>
 <li class="toc-entry toc-h3"><a href="#shutdown-process-and-update-source">Shutdown process and update source</a></li>
 <li class="toc-entry toc-h3"><a href="#rebuild-and-restart-web-application">Rebuild and Restart Web Application</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#good-examples">Good Examples</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#docker-composeyml-sudo-docker-compose-up--d">docker-compose.yml (sudo docker-compose up -d)</a></li>
+<li class="toc-entry toc-h3"><a href="#docker-ps">Docker PS</a></li>
+<li class="toc-entry toc-h3"><a href="#nginx-ip-test-file-sudo-systemctl-nginx-restart">Nginx IP test file (sudo systemctl nginx restart)</a></li>
+<li class="toc-entry toc-h3"><a href="#nginx-sites-available-cd-etcnginxsites-available">Nginx sites-available (cd /etc/nginx/sites-available)</a></li>
+<li class="toc-entry toc-h3"><a href="#nginx-file-published-to-work-with-a-domain-nano-ava_nighthawk">Nginx file published to work with a domain (nano ava_nighthawk)</a></li>
+<li class="toc-entry toc-h3"><a href="#nginx-sites-enable-cd-etcnginxsites-enabled">Nginx sites-enable (cd /etc/nginx/sites-enabled)</a></li>
 </ul>
 </li>
 </ul><h2 id="deployment-overview">
@@ -923,6 +933,89 @@ Recreating flask_portfolio_web_1 ... <span class="k">done</span>
   <p>Now server is up, test in Browser for recent change</p>
   <div class="language-plaintext highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code>Python Home Page
+</code></pre></div>  </div>
+</blockquote>
+
+<h2 id="good-examples">
+<a class="anchor" href="#good-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Good Examples</h2>
+<blockquote>
+  <p>git clone   Plan what your name will be on shared server and this can be different than repo name by using 4th argument.</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>git clone &lt;git_project&gt; avaflaskproject  <span class="c"># identifiable name </span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="docker-composeyml-sudo-docker-compose-up--d">
+<a class="anchor" href="#docker-composeyml-sudo-docker-compose-up--d" aria-hidden="true"><span class="octicon octicon-link"></span></a>docker-compose.yml (sudo docker-compose up -d)</h3>
+<blockquote>
+  <p>docker-compose.yml  Setup before you clone, this needs to be versioned controlled.  There are 3 edits!</p>
+  <div class="language-yml highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+        <span class="na">web</span><span class="pi">:</span>
+                <span class="na">image</span><span class="pi">:</span> <span class="s">flask_ava_v1</span>  <span class="c1"># identifiable name for shared machine</span>
+                <span class="na">build</span><span class="pi">:</span> <span class="s">.</span>
+                <span class="na">ports</span><span class="pi">:</span>
+                        <span class="pi">-</span> <span class="s2">"</span><span class="s">8089:8080"</span> <span class="c1"># port distinct from others</span>
+                <span class="na">volumes</span><span class="pi">:</span>
+                        <span class="pi">-</span> <span class="s">persistent_volume:/app/volumes</span>
+<span class="na">volumes</span><span class="pi">:</span>
+  <span class="na">persistent_volume</span><span class="pi">:</span>
+    <span class="na">driver</span><span class="pi">:</span> <span class="s">local</span>
+    <span class="na">driver_opts</span><span class="pi">:</span>
+      <span class="na">o</span><span class="pi">:</span> <span class="s">bind</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">none</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/home/ubuntu/avaflaskproject/volumes</span>  <span class="c1"># name consistent with repo</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="docker-ps">
+<a class="anchor" href="#docker-ps" aria-hidden="true"><span class="octicon octicon-link"></span></a>Docker PS</h3>
+<blockquote>
+  <p>sudo docker ps  Verification shows practice of easy to identify owners and ports.  At this point it is very clear to see who owns Ports.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CONTAINER ID   IMAGE              COMMAND               CREATED        STATUS        PORTS                                       NAMES
+6f4572c00f22   flask_shruthi_v1   <span class="s2">"gunicorn main:app"</span>   3 hours ago    Up 3 hours    0.0.0.0:8083-&gt;8080/tcp, :::8083-&gt;8080/tcp   flaskpython_web_1
+0dd6254cf662   flask_ava_v1       <span class="s2">"gunicorn main:app"</span>   17 hours ago   Up 17 hours   0.0.0.0:8089-&gt;8080/tcp, :::8089-&gt;8080/tcp   avaflaskproject_web_1
+</code></pre></div></div>
+
+<h3 id="nginx-ip-test-file-sudo-systemctl-nginx-restart">
+<a class="anchor" href="#nginx-ip-test-file-sudo-systemctl-nginx-restart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx IP test file (sudo systemctl nginx restart)</h3>
+<blockquote>
+  <p>nginx IP address test file   There are 2 edits.  Notice the Public IP address on screen.  Identify that with configuration.  Also, what application will run on the IP address?</p>
+</blockquote>
+
+<p><img src="/APCSP/images/nginx_test.png" alt="nginx test"></p>
+
+<h3 id="nginx-sites-available-cd-etcnginxsites-available">
+<a class="anchor" href="#nginx-sites-available-cd-etcnginxsites-available" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx sites-available (cd /etc/nginx/sites-available)</h3>
+<blockquote>
+  <p>available directory names   Notice names and how they can be identified.  This is were you work on configurations.</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ubuntu@ip-172-31-18-94:/etc/nginx/sites-available<span class="nv">$ </span><span class="nb">ls
+</span>ava_nighthawk  default  shruthi_nighthawk  <span class="nb">test</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="nginx-file-published-to-work-with-a-domain-nano-ava_nighthawk">
+<a class="anchor" href="#nginx-file-published-to-work-with-a-domain-nano-ava_nighthawk" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx file published to work with a domain (nano ava_nighthawk)</h3>
+<blockquote>
+  <p>nginx domain name file  This is identical to test file, but now it is working off of the domain versus the IP address.</p>
+  <div class="language-nginx highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>    <span class="k">server_name</span> <span class="s">ava.nighthawkcodingsociety.com</span><span class="p">;</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="nginx-sites-enable-cd-etcnginxsites-enabled">
+<a class="anchor" href="#nginx-sites-enable-cd-etcnginxsites-enabled" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx sites-enable (cd /etc/nginx/sites-enabled)</h3>
+<blockquote>
+  <p>enabled directory names   Notice how names point back to sites-available.  This is setup with <code class="language-plaintext highlighter-rouge">ln -s</code> command.  Whose file still needs to be published.</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>ubuntu@ip-172-31-18-94:/etc/nginx/sites-enabled<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+total 0
+lrwxrwxrwx 1 root root 34 Sep 28 21:31 default -&gt; /etc/nginx/sites-available/default
+lrwxrwxrwx 1 root root 44 Oct  2 20:19 shruthi_nighthawk -&gt; /etc/nginx/sites-available/shruthi_nighthawk
+lrwxrwxrwx 1 root root 31 Oct  4 00:48 <span class="nb">test</span> -&gt; /etc/nginx/sites-available/test
 </code></pre></div>  </div>
 </blockquote>
 

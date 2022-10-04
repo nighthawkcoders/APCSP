@@ -662,3 +662,67 @@ Recreating flask_portfolio_web_1 ... done
 ```
 Python Home Page
 ```
+
+## Good Examples
+> git clone   Plan what your name will be on shared server and this can be different than repo name by using 4th argument.
+```bash
+git clone <git_project> avaflaskproject  # identifiable name 
+```
+
+### docker-compose.yml (sudo docker-compose up -d)
+> docker-compose.yml  Setup before you clone, this needs to be versioned controlled.  There are 3 edits!
+```yml
+services:
+        web:
+                image: flask_ava_v1  # identifiable name for shared machine
+                build: .
+                ports:
+                        - "8089:8080" # port distinct from others
+                volumes:
+                        - persistent_volume:/app/volumes
+volumes:
+  persistent_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ubuntu/avaflaskproject/volumes  # name consistent with repo
+```
+
+### Docker PS
+> sudo docker ps  Verification shows practice of easy to identify owners and ports.  At this point it is very clear to see who owns Ports.
+
+```bash
+CONTAINER ID   IMAGE              COMMAND               CREATED        STATUS        PORTS                                       NAMES
+6f4572c00f22   flask_shruthi_v1   "gunicorn main:app"   3 hours ago    Up 3 hours    0.0.0.0:8083->8080/tcp, :::8083->8080/tcp   flaskpython_web_1
+0dd6254cf662   flask_ava_v1       "gunicorn main:app"   17 hours ago   Up 17 hours   0.0.0.0:8089->8080/tcp, :::8089->8080/tcp   avaflaskproject_web_1
+```
+
+### Nginx IP test file (sudo systemctl nginx restart)
+> nginx IP address test file   There are 2 edits.  Notice the Public IP address on screen.  Identify that with configuration.  Also, what application will run on the IP address?  
+
+![nginx test]({{site.baseurl}}/images/nginx_test.png)
+
+
+### Nginx sites-available (cd /etc/nginx/sites-available)
+> available directory names   Notice names and how they can be identified.  This is were you work on configurations.
+```bash
+ubuntu@ip-172-31-18-94:/etc/nginx/sites-available$ ls
+ava_nighthawk  default  shruthi_nighthawk  test
+```
+
+### Nginx file published to work with a domain (nano ava_nighthawk)
+> nginx domain name file  This is identical to test file, but now it is working off of the domain versus the IP address.
+```nginx
+    server_name ava.nighthawkcodingsociety.com;
+```
+
+### Nginx sites-enable (cd /etc/nginx/sites-enabled)
+> enabled directory names   Notice how names point back to sites-available.  This is setup with ```ln -s``` command.  Whose file still needs to be published.
+```bash
+ubuntu@ip-172-31-18-94:/etc/nginx/sites-enabled$ ls -l
+total 0
+lrwxrwxrwx 1 root root 34 Sep 28 21:31 default -> /etc/nginx/sites-available/default
+lrwxrwxrwx 1 root root 44 Oct  2 20:19 shruthi_nighthawk -> /etc/nginx/sites-available/shruthi_nighthawk
+lrwxrwxrwx 1 root root 31 Oct  4 00:48 test -> /etc/nginx/sites-available/test
+```

@@ -6,9 +6,13 @@ permalink: /data/covid
 image: /images/rapidapi.png
 categories: []
 tags: [javascript, fetch, dom, getElementID, appendChild]
+week: 8
+type: pbl
 ---
 
 {% include nav_data.html %}
+
+[Review Source](https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-10-PBL-rapidapi.md)
 
 <!-- HTML table fragment for page -->
 <table>

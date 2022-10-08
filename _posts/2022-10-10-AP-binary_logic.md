@@ -8,7 +8,7 @@ permalink: /collegeboard/binary
 image: /images/apcsp.png
 categories: [1.D, 2.B, 3.C]
 type: ap
-week: 8
+week: 10
 ---
 
 # Binary Abstraction and Logic Gates

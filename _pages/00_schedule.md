@@ -9,7 +9,7 @@ title: Schedule
 {% assign all = all | concat:site.posts | concat:site.pages %}
 
 <!-- Setup order for Units -->
-{% assign units = "3,2,1" | split: ',' %}
+{% assign units = "3,2,1,4" | split: ',' %}
 {% for unit in units %}
 
   <!-- Each Unit has a range of weeks and a heading -->
@@ -27,8 +27,14 @@ title: Schedule
   {% elsif unit == "3" %} 
       {% assign start = 8 %}
       {% assign end = 11 %}
-## Unit {{unit}}: N@tM Project, Web, Algorithms, and Data
-> On Nov 3rd our Trimester work will end with a project and student participation in Electives Department "Night at the Museum" (N@tM).  Team projects should contain a solution to a problem (algorithm) and a visual representation of results (data).  Additionally, each project should have a theme of interest and be purposeful.  The final few weeks focuses on web building, algorithms and data.  N@tM is GREAT opportunity to show case individual and team accomplishments.
+## Unit {{unit}}: N@tM Project, Web, Systems, and Data
+> On Nov 3rd our Trimester work will end with a project and student participation in Electives Department "Night at the Museum" (N@tM).  Team projects should contain interaction of systems, data and a visual representations (web).  Additionally, each project should have a theme of interest and be purposeful.  N@tM is GREAT opportunity to show case individual and team accomplishments.
+
+{% elsif unit == "4" %} 
+      {% assign start = 12 %}
+      {% assign end = 15 %}
+## Unit {{unit}}: Algorithmic Programming
+> Trimester 1 will end and Trimester 2 begin with continue with data and then focus algorithms. 
       
   {% endif %}
 

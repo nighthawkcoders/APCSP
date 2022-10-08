@@ -52,7 +52,7 @@ type: pbl
   const resultContainer = document.getElementById("result");
 
   // prepare fetch options
-  const url = "https://spring.nighthawkcodingsociety.com/api/covid/daily";
+  const url = "https://flask.nighthawkcodingsociety.com/api/covid/";
 
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.

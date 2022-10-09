@@ -1,7 +1,7 @@
 ---
-title: Fetch of Covid19 data with RapidAPI
+title: Fetch of Python data using RapidAPI
 layout: default
-description: An introductory example of talking to Backend Java application serving 3rd Party API.  Fetching data and formatting results is a way to visuals information, in this case Covid19 statistics across the Globe. 
+description: An introductory example of talking to Backend Python application serving 3rd Party API.  Fetching data and formatting results is a way to visuals information, in this case Covid19 statistics across the Globe. 
 permalink: /data/covid
 image: /images/rapidapi.png
 categories: []
@@ -12,7 +12,7 @@ type: pbl
 
 {% include nav_data.html %}
 
-[Review Source](https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-10-PBL-rapidapi.md)
+[Review Frontend Code](https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-10-PBL-rapidapi.md), [Review Backend Code](https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/covid.py)
 
 <!-- HTML table fragment for page -->
 <table>
@@ -53,8 +53,7 @@ type: pbl
 
   // prepare fetch options
   const url = "https://flask.nighthawkcodingsociety.com/api/covid/";
-
-  const options = {
+  const headers = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
@@ -66,7 +65,7 @@ type: pbl
   };
 
   // fetch the API
-  fetch(url, options)
+  fetch(url, headers)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -109,7 +108,7 @@ type: pbl
             deaths.innerHTML = row.deaths; 
             active.innerHTML = row.active_cases; 
 
-            // this build td's into tr
+            // this builds td's into tr
             tr.appendChild(name);
             tr.appendChild(cases);
             tr.appendChild(deaths);

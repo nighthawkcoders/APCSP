@@ -6,6 +6,8 @@ permalink: /frontend/binary
 image: /images/binary.png
 categories: []
 tags: [html, liquid, javascript]
+week: 10
+type: pbl
 ---
 
 <!-- Hack 1: add a character display to text when 8 bits, determine if printable or not printable -->

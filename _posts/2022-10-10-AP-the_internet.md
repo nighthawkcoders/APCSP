@@ -14,8 +14,8 @@ week: 8
 ## The Internet
 > To date, with deployment individuals and teams have been very active Computing Systems and Networks.  Here are some key elements that have been a part of the students Internet experience...
 1. HTTP/HTTPs protocol.  Think about elements in videos and experience so far in class that relate to this College Board topic.
-2. DNS.  Where is this show in the College Board materials.  Think about Domain Name Service provider and places where you configured or used a Domain.  Also, identify a Sub Domain and how it is different than a Domain.  Include in discussion usage an purpose of https://www.whatsmydns.net/, A record and CNAME.
-3. IP Address.  Try to describe at least 6 IP addresses you use daily.  Try using and understanding https://www.whatsmyip.org/.
+2. DNS.  Where is this show in the College Board materials.  Think about Domain Name Service provider and places where you configured or used a Domain.  Also, identify a Sub Domain and how it is different than a Domain.  Include in discussion usage an purpose of [https://www.whatsmydns.net/](https://www.whatsmydns.net/), A record and CNAME.
+3. IP Address.  Try to describe at least 6 IP addresses you use daily.  Try using and understanding [https://www.whatsmyip.org/](https://www.whatsmyip.org/).
 4. Observe Internet Traffic.  Try Linux tools bandwidth tools [Article](https://www.binarytides.com/linux-commands-monitor-network/)
 5. Finish up with OSI.  Try to make it real, according to what we have done.
 

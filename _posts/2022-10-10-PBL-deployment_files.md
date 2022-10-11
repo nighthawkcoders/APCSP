@@ -9,7 +9,7 @@ type: pbl
 week: 8
 ---
 
-## Communication on Machines, Project, Docker Image, and Nginx
+## Communication on Machines, Project, Port, Docker Image, and Nginx
 > It would be nice if there were some standards published.  Here are some ideas.  It takes about 15 minutes to plan or many hours to fix.
 
 ## P3 MORT: http://nighthawkcodescrums.gq/

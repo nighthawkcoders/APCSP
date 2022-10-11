@@ -18,7 +18,7 @@ week: 8
     - Access Control, firewall issues in Backend
 3. FastPages/JavaScript handles formatting of data.
 
-[Review APIs](https://www.techfunnel.com/information-technology/application-programming-interface/)
+[Review API Terms](https://www.techfunnel.com/information-technology/application-programming-interface/)
 
 ![]({{site.baseurl}}/images/api.webp)
 

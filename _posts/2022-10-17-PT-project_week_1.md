@@ -4,7 +4,7 @@ comments: true
 layout: post
 title:  Project Week 1
 description: Scrum Board, Issues, Tangibles
-permalink: /points/8
+permalink: /points/9
 image: /images/points.jpeg
 categories: []
 type: plan

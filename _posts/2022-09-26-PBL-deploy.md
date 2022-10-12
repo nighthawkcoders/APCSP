@@ -5,7 +5,7 @@ layout: post
 description: Description of key methods process used to deploy a Flask/Python website; AWS EC2, Docker, docker-compose, and Nginx 
 permalink: /techtalk/deploy
 image: /images/aws.png
-categories: [6.B]
+categories: [6.B, C7.0, C7.1, C7.2]
 tags: [aws, ec2. docker, nginx, certbot, dns]
 type: pbl
 week: 6

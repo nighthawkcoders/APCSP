@@ -163,6 +163,7 @@ search_exclude: true
   </ul>
 
   {% for category in categories %}
+    {% if category != "1.A" or category != "1.B" or category != "1.C" or category != "1.D" or category != "2.A" or category != "2.B" or category != "3.A" or category != "3.B" or category != "3.C" or category != "4.A" or category != "4.B" or category != "4.C" or category != "5.A" or category != "5.B" or category != "5.C" or category != "5.D" or category != "5.E" or category != "6.A" or category != "6.B" or category != "6.C" %}
       <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }}</h3>
       <a name="{{ category | slugize }}"></a>
       {% for post in site.categories[category] %}
@@ -173,6 +174,7 @@ search_exclude: true
         </article>
         {% endif %}
       {% endfor %}
+    {% endif %}  
   {% endfor %}
 
 {% endif %}

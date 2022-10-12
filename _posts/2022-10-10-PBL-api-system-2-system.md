@@ -10,16 +10,14 @@ week: 8
 ---
 
 ## API Frontend to Backend Overview
-> This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data.  Additionally, it is shows that access to data can occur across Web Applications. Here are highlights of this article.
-1. JavaScript to Flask/Python to RapidAPI interface.
+> This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data.  Additionally, it is shows that access to data can occur across Web Applications. Key takeaways from this blog...
+1. [Review API Terms](https://www.techfunnel.com/information-technology/application-programming-interface/)
 2. Flask/Python to provide API to simplify access for JavaScript Frontend developer.  
     - API credentials are hidden
     - Cache and calling RapidAPI or other APIs less
     - Access Control, firewall issues in Backend
 3. FastPages/JavaScript handles formatting of data.
-
-[Review API Terms](https://www.techfunnel.com/information-technology/application-programming-interface/)
-
+4. <mark>Understand Fastpages server <--> Flask Server <--> RapidAPI Server</mark>
 ![]({{site.baseurl}}/images/api.webp)
 
 ### [Flask/Python Code](https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/covid.py)

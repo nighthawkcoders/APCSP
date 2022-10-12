@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="System to System APIs" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="API Frontend to Backend Overview This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data. Additionally, it is shows that access to data can occur across Web Applications. Here are highlights of this article. JavaScript to Flask/Python to RapidAPI interface. Flask/Python to provide API to simplify access for JavaScript Frontend developer. API credentials are hidden Cache and calling RapidAPI or other APIs less Access Control, firewall issues in Backend FastPages/JavaScript handles formatting of data." />
-<meta property="og:description" content="API Frontend to Backend Overview This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data. Additionally, it is shows that access to data can occur across Web Applications. Here are highlights of this article. JavaScript to Flask/Python to RapidAPI interface. Flask/Python to provide API to simplify access for JavaScript Frontend developer. API credentials are hidden Cache and calling RapidAPI or other APIs less Access Control, firewall issues in Backend FastPages/JavaScript handles formatting of data." />
+<meta name="description" content="API Frontend to Backend Overview This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data. Additionally, it is shows that access to data can occur across Web Applications. Key takeaways from this blog… Review API Terms Flask/Python to provide API to simplify access for JavaScript Frontend developer. API credentials are hidden Cache and calling RapidAPI or other APIs less Access Control, firewall issues in Backend FastPages/JavaScript handles formatting of data. Understand Fastpages server &lt;--&gt; Flask Server &lt;--&gt; RapidAPI Server" />
+<meta property="og:description" content="API Frontend to Backend Overview This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data. Additionally, it is shows that access to data can occur across Web Applications. Key takeaways from this blog… Review API Terms Flask/Python to provide API to simplify access for JavaScript Frontend developer. API credentials are hidden Cache and calling RapidAPI or other APIs less Access Control, firewall issues in Backend FastPages/JavaScript handles formatting of data. Understand Fastpages server &lt;--&gt; Flask Server &lt;--&gt; RapidAPI Server" />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2022/10/10/PBL-api-system-2-system.html" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2022/10/10/PBL-api-system-2-system.html" />
 <meta property="og:site_name" content="APCSP" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="System to System APIs" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-10T00:00:00-05:00","datePublished":"2022-10-10T00:00:00-05:00","description":"API Frontend to Backend Overview This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data. Additionally, it is shows that access to data can occur across Web Applications. Here are highlights of this article. JavaScript to Flask/Python to RapidAPI interface. Flask/Python to provide API to simplify access for JavaScript Frontend developer. API credentials are hidden Cache and calling RapidAPI or other APIs less Access Control, firewall issues in Backend FastPages/JavaScript handles formatting of data.","headline":"System to System APIs","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2022/10/10/PBL-api-system-2-system.html"},"url":"https://nighthawkcoders.github.io/APCSP/2022/10/10/PBL-api-system-2-system.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-10T00:00:00-05:00","datePublished":"2022-10-10T00:00:00-05:00","description":"API Frontend to Backend Overview This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data. Additionally, it is shows that access to data can occur across Web Applications. Key takeaways from this blog… Review API Terms Flask/Python to provide API to simplify access for JavaScript Frontend developer. API credentials are hidden Cache and calling RapidAPI or other APIs less Access Control, firewall issues in Backend FastPages/JavaScript handles formatting of data. Understand Fastpages server &lt;--&gt; Flask Server &lt;--&gt; RapidAPI Server","headline":"System to System APIs","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2022/10/10/PBL-api-system-2-system.html"},"url":"https://nighthawkcoders.github.io/APCSP/2022/10/10/PBL-api-system-2-system.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -99,9 +99,9 @@ window.onload = wrap_img;
 </ul><h2 id="api-frontend-to-backend-overview">
 <a class="anchor" href="#api-frontend-to-backend-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Frontend to Backend Overview</h2>
 <blockquote>
-  <p>This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data.  Additionally, it is shows that access to data can occur across Web Applications. Here are highlights of this article.</p>
+  <p>This blog expects an understanding of RapdiAPI and using Python for request and response to obtain data.  Additionally, it is shows that access to data can occur across Web Applications. Key takeaways from this blog…</p>
   <ol>
-    <li>JavaScript to Flask/Python to RapidAPI interface.</li>
+    <li><a href="https://www.techfunnel.com/information-technology/application-programming-interface/">Review API Terms</a></li>
     <li>Flask/Python to provide API to simplify access for JavaScript Frontend developer.
       <ul>
         <li>API credentials are hidden</li>
@@ -110,12 +110,12 @@ window.onload = wrap_img;
       </ul>
     </li>
     <li>FastPages/JavaScript handles formatting of data.</li>
+    <li>
+<mark>Understand Fastpages server &lt;--&gt; Flask Server &lt;--&gt; RapidAPI Server</mark>
+<img src="/APCSP/images/api.webp" alt="">
+</li>
   </ol>
 </blockquote>
-
-<p><a href="https://www.techfunnel.com/information-technology/application-programming-interface/">Review API Terms</a></p>
-
-<p><img src="/APCSP/images/api.webp" alt=""></p>
 
 <h3 id="flaskpython-code">
 <a class="anchor" href="#flaskpython-code" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/covid.py">Flask/Python Code</a>
@@ -133,15 +133,19 @@ window.onload = wrap_img;
   <ul>
     <li>Blueprint for covid.py, the interaction and registration with main.py</li>
     <li>The use of updateTime(), to only call API every 24 hours</li>
-    <li>A main tester method that help with development and debugging
+    <li>Being able to <mark>Debug main tester method</mark>, this is critical to speeding development.
 <img src="/APCSP/images/debug_tester.png" alt="">
 </li>
     <li>Understanding the API resources and how they are run as a service through the Web Application
       <ul>
-        <li>Run server, select to right of play button an pick Debug
+        <li>
+<mark>Set Breakpoint</mark> in covid.py file.</li>
+        <li>
+<mark>Run Server in Debug</mark>, select to right of play button an pick Debug.
   <img src="/APCSP/images/debug_server.png" alt="">
 </li>
-        <li>Debug Python Covid API, set a breakpoint in covid.py file and run server through browser
+        <li>
+<mark>Access API through browser</mark>, this will stop at selected breakpoint.
   <img src="/APCSP/images/debug_python_api.png" alt="">
 </li>
       </ul>
@@ -153,7 +157,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#fastpagesjavascript-code" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-10-PBL-rapidapi.md">Fastpages/JavaScript Code</a>
 </h3>
 <blockquote>
-  <p>The JavaScript Code has been documented and featured in the Fastpages site.  The lecture that goes with this document will share how to debug the JavaScript using the Chrome Browser.</p>
+  <p>The JavaScript Code has been documented and featured in the Fastpages site.  The lecture that goes with this blog will share how to debug the JavaScript using the Chrome Browser.</p>
   <ul>
     <li>VSCode Project: APCSP</li>
     <li>JavaScript/Markdown File: 2022-07-10-PBL-rapidapi.md</li>
@@ -165,7 +169,7 @@ window.onload = wrap_img;
   <ul>
     <li>In this example. an HTML table is setup and JavaScript is used to Create and Update Element IDs in the Table.  This is similar to the JavaScript table made in the Python Jupyter notebook, the big difference is the DOM syntax.</li>
     <li>The concept of for loop is the same, though the syntax <code class="language-plaintext highlighter-rouge">for (const row of data.countries_stat)</code> and keywords are different.</li>
-    <li>Visual showing Inspect on a Chrome Browser</li>
+    <li>Visual shows <mark>Inspect on a Chrome Browser</mark>.  Load correct source, set breakpoints and reload page.  Code is in center and data is on the right in illustration.  This can reorient according to size of Source window.</li>
   </ul>
 </blockquote>
 

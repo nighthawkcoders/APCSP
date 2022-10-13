@@ -6,165 +6,159 @@ search_exclude: true
 ---
 
 {% if site.categories.size > 0 %}
-<h2>Standards</h2>
+<h2>CTE Standards</h2>
 
   {% assign categories = "" | split:"" %}
   {% for c in site.categories %}
     {% assign categories = categories | push: c[0] %}
   {% endfor %}
   {% assign categories = categories | sort_natural %}
-  
-  <ul>
-  {% for category in categories %}
-    {% if category == "C1.0" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and apply the systemes development process. </a></li>
-    {% elsif category == "C1.1" %}
-      <li><a href="#{{ category }}">{{ category }} Identify the phases of the systems development life cycle, including analysis, design, programming, testing, implementation, maintenance, and improvement. </a></li>
-    {% elsif category == "C1.2" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and describe models of systems development, systems development life cycle (SDLC), and agile computing. </a></li>
-    {% elsif category == "C1.3" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and describe how specifications and requirements are developed for new and existing software applications. </a></li>
-    {% elsif category == "C1.4" %}
-      <li><a href="#{{ category }}">{{ category }} Work as a member of, and within the scope and boundaries of, a development project team. </a></li>
-    {% elsif category == "C1.5" %}
-      <li><a href="#{{ category }}">{{ category }} Track development project milestones using the concept of versions. </a></li>
-    {% elsif category == "C1.6" %}
-      <li><a href="#{{ category }}">{{ category }} Diagram processes using flowcharts and the Unified Modeling Language. </a></li>
-    {% elsif category == "C2.0" %}
-      <li><a href="#{{ category }}">{{ category }} Define and analyze systems and software requirements. </a></li>
-    {% elsif category == "C2.1" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the major purposes and benefits of development, including automation, improving productivity, modeling and analysis, and entertainment. </a></li>
-    {% elsif category == "C2.2" %}
-      <li><a href="#{{ category }}">{{ category }} Recognize and prevent unintended consequences of development work: programming errors, security issues, health and environmental risks, and privacy concerns. </a></li>
-    {% elsif category == "C2.3" %}
-      <li><a href="#{{ category }}">{{ category }} Develop strategies that target the specific needs and desires of the customer. </a></li>
-    {% elsif category == "C2.4" %}
-      <li><a href="#{{ category }}">{{ category }} Analyze customers’ needs for development. </a></li>
-    {% elsif category == "C2.5" %}
-      <li><a href="#{{ category }}">{{ category }} Determine and document the requirements and alternative solutions to fulfill the customers’ needs. </a></li>
-    {% elsif category == "C3.0" %}
-      <li><a href="#{{ category }}">{{ category }} Create effective interfaces between humans and technology. </a></li>
-    {% elsif category == "C3.1" %}
-      <li><a href="#{{ category }}">{{ category }} Describe and apply the basic process of input, processing, and output. </a></li>
-    {% elsif category == "C3.2" %}
-      <li><a href="#{{ category }}">{{ category }} Design effective and intuitive interfaces using knowledge of cognitive, physical, and social interactions. </a></li>
-    {% elsif category == "C3.3" %}
-      <li><a href="#{{ category }}">{{ category }} Support methods of accessibility for all potential users, including users with disabilities and non-English-speaking users. </a></li>
-    {% elsif category == "C4.0" %}
-      <li><a href="#{{ category }}">{{ category }} Develop software using programming languages. </a></li>
-    {% elsif category == "C4.1" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and describe the abstraction level of programming languages from low-level, hardware-based languages to high-level, interpreted, Web-based languages. </a></li>
-    {% elsif category == "C4.2" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the interaction and integration of programming languages and protocols such as how client-side programming can work with server-side programming to use a query language to access a database. </a></li>
-    {% elsif category == "C4.3" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and use different authoring tools and integrated development environments (IDEs). </a></li>
-    {% elsif category == "C4.4" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and apply data types and encoding. </a></li>
-    {% elsif category == "C4.5" %}
-      <li><a href="#{{ category }}">{{ category }} Demonstrate awareness of various programming paradigms, including procedural, object oriented, event-driven, and multithreaded programing. </a></li>
-    {% elsif category == "C4.6" %}
-      <li><a href="#{{ category }}">{{ category }} Use proper programming language syntax. </a></li>
-    {% elsif category == "C4.7" %}
-      <li><a href="#{{ category }}">{{ category }} Use various data structures, arrays, objects, files, and databases. </a></li>
-    {% elsif category == "C4.8" %}
-      <li><a href="#{{ category }}">{{ category }} Use object oriented programming concepts, properties, methods, and inheritance. </a></li>
-    {% elsif category == "C4.9" %}
-      <li><a href="#{{ category }}">{{ category }} Create programs using control structures, procedures, functions, parameters, variables, error recovery, and recursion. </a></li>
-    {% elsif category == "C4.10" %}
-      <li><a href="#{{ category }}">{{ category }} Create and know the comparative advantages of various queue, sorting, and searching algorithms. </a></li>
-    {% elsif category == "C4.11" %}
-      <li><a href="#{{ category }}">{{ category }} Document development work for various audiences, such as comments for other programmers, and manuals for users. </a></li>
-    {% elsif category == "C5.0" %}
-      <li><a href="#{{ category }}">{{ category }} Test, debug, and improve software development work. </a></li>
-    {% elsif category == "C5.1" %}
-      <li><a href="#{{ category }}">{{ category }} Identify the characteristics of reliable, effective, and efficient products. </a></li>
-    {% elsif category == "C5.2" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the ways in which specification changes and technological advances can require the modification of programs. </a></li>
-    {% elsif category == "C5.3" %}
-      <li><a href="#{{ category }}">{{ category }} Use strategies to optimize code for improved performance. </a></li>
-    {% elsif category == "C5.4" %}
-      <li><a href="#{{ category }}">{{ category }} Test software and projects. </a></li>
-    {% elsif category == "C5.5" %}
-      <li><a href="#{{ category }}">{{ category }} Evaluate results against initial requirements. </a></li>
-    {% elsif category == "C5.6" %}
-      <li><a href="#{{ category }}">{{ category }} Debug software as part of the quality assurance process. </a></li>
-    {% elsif category == "C6.0" %}
-      <li><a href="#{{ category }}">{{ category }} Integrate a variety of media into development projects. </a></li>
-    {% elsif category == "C6.1" %}
-      <li><a href="#{{ category }}">{{ category }} Identify the basic design elements necessary to produce effective print, video, audio, and interactive media. </a></li>
-    {% elsif category == "C6.2" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the various encoding methods of media and trade-offs: vector graphics vs. bitmaps, and bit depth. </a></li>
-    {% elsif category == "C6.3" %}
-      <li><a href="#{{ category }}">{{ category }} Use media design and editing software: keyframe animation, drawing software, image editors, and three-dimensional design. </a></li>
-    {% elsif category == "C6.4" %}
-      <li><a href="#{{ category }}">{{ category }} Develop a presentation or other multimedia project: video, game, or interactive Web sites, from storyboard to production. </a></li>
-    {% elsif category == "C6.5" %}
-      <li><a href="#{{ category }}">{{ category }} Analyze the use of media to determine the appropriate file format and level of compression. </a></li>
-    {% elsif category == "C6.6" %}
-      <li><a href="#{{ category }}">{{ category }} Integrate media into a full project using appropriate tools. </a></li>
-    {% elsif category == "C6.7" %}
-      <li><a href="#{{ category }}">{{ category }} Create and/or capture professional-quality media, images, documents, audio, and video clips. </a></li>
-    {% elsif category == "C7.0" %}
-      <li><a href="#{{ category }}">{{ category }} Develop Web and online projects. </a></li>
-    {% elsif category == "C7.1" %}
-      <li><a href="#{{ category }}">{{ category }} Identify the hardware (server) and software required for Web hosting and other services. </a></li>
-    {% elsif category == "C7.2" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the full process of online content delivery, registering domain names, setting up hosting, and setting up e-mail addresses. </a></li>
-    {% elsif category == "C7.3" %}
-      <li><a href="#{{ category }}">{{ category }} Attract Web-site visitors through search engine optimization using various strategies like keywords and meta-tags. </a></li>
-    {% elsif category == "C7.4" %}
-      <li><a href="#{{ category }}">{{ category }} Enable e-commerce capabilities to sell products, create a shopping cart, and handle credit card transactions. </a></li>
-    {% elsif category == "C7.5" %}
-      <li><a href="#{{ category }}">{{ category }} Create an online project, Web-based business, and e-portfolio. </a></li>
-    {% elsif category == "C7.6" %}
-      <li><a href="#{{ category }}">{{ category }} Optimize fast delivery and retrieval of online content such as Web pages. </a></li>
-    {% elsif category == "C8.0" %}
-      <li><a href="#{{ category }}">{{ category }} Develop databases. </a></li>
-    {% elsif category == "C8.1" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the critical function of databases in modern organizations. </a></li>
-    {% elsif category == "C8.2" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and use the basic structures of databases, fields, records, tables, and views. </a></li>
-    {% elsif category == "C8.3" %}
-      <li><a href="#{{ category }}">{{ category }} Identify and explain the types of relationships between tables (one-to-one, one-to-many, many-to-many) and use methods to establish these relationships, including primary keys, foreign keys, and indexes. </a></li>
-    {% elsif category == "C8.4" %}
-      <li><a href="#{{ category }}">{{ category }} Use data modeling techniques to create databases based upon business needs. </a></li>
-    {% elsif category == "C8.5" %}
-      <li><a href="#{{ category }}">{{ category }} Use queries to extract and manipulate data (select queries, action queries). </a></li>
-    {% elsif category == "C8.6" %}
-      <li><a href="#{{ category }}">{{ category }} Develop databases that are properly normalized using appropriate schemas. </a></li>
-    {% elsif category == "C8.7" %}
-      <li><a href="#{{ category }}">{{ category }} Export and import data to and from other applications and a database recognizing the limitations and challenges inherent in the process. </a></li>
-    {% elsif category == "C8.8" %}
-      <li><a href="#{{ category }}">{{ category }} Analyze and display data to assist with decision making using methods like cross tabulations, graphs, and charts. </a></li>
-    {% elsif category == "C9.0" %}
-      <li><a href="#{{ category }}">{{ category }} Develop software for a variety of devices, including robotics. </a></li>
-    {% elsif category == "C9.1" %}
-      <li><a href="#{{ category }}">{{ category }} Demonstrate awareness of the applications of device development work, including personalized computing, robotics, and smart appliances. </a></li>
-    {% elsif category == "C9.2" %}
-      <li><a href="#{{ category }}">{{ category }} Install equipment, assemble hardware, and perform tests using appropriate tools and technology. </a></li>
-    {% elsif category == "C9.3" %}
-      <li><a href="#{{ category }}">{{ category }} Use hardware to gain input, process information, and take action. </a></li>
-    {% elsif category == "C9.4" %}
-      <li><a href="#{{ category }}">{{ category }} Apply the concepts of embedded programming, including digital logic, machine-level representation of data, and memory-system organization. </a></li>
-    {% elsif category == "C9.5" %}
-      <li><a href="#{{ category }}">{{ category }} Program a micro-controller for a device or robot. </a></li>
-    {% elsif category == "C10.0" %}
-      <li><a href="#{{ category }}">{{ category }} Develop intelligent computing. </a></li>
-    {% elsif category == "C10.1" %}
-      <li><a href="#{{ category }}">{{ category }} Describe models of intelligent behavior and what distinguishes humans from machines. </a></li>
-    {% elsif category == "C10.2" %}
-      <li><a href="#{{ category }}">{{ category }} Describe the major areas of intelligent computing, including perception, proximity, processing, and control. </a></li>
-    {% elsif category == "C10.3" %}
-      <li><a href="#{{ category }}">{{ category }} Know artificial intelligence methods such as neural networks, Bayesian inferences, fuzzy logic, and finite state machines. </a></li>
-    {% elsif category == "C10.4" %}
-      <li><a href="#{{ category }}">{{ category }} Implement artificial intelligent behavior through various methods: mathematical modeling, reinforcement learning, and probabilistic analysis. </a></li>
-    {% endif %}  
-  {% endfor %}
-  </ul>
 
   {% for category in categories %}
     {% if category == "C1.0" or category == "C1.1" or category == "C1.2" or category == "C1.3" or category == "C1.4" or category == "C1.5" or category == "C1.6" or category == "C2.0" or category == "C2.1" or category == "C2.2" or category == "C2.3" or category == "C2.4" or category == "C2.5" or category == "C3.0" or category == "C3.1" or category == "C3.2" or category == "C3.3" or category == "C4.0" or category == "C4.1" or category == "C4.2" or category == "C4.3" or category == "C4.4" or category == "C4.5" or category == "C4.6" or category == "C4.7" or category == "C4.8" or category == "C4.9" or category == "C4.10" or category == "C4.11" or category == "C5.0" or category == "C5.1" or category == "C5.2" or category == "C5.3" or category == "C5.4" or category == "C5.5" or category == "C5.6" or category == "C6.0" or category == "C6.1" or category == "C6.2"or category == "C6.3" or category == "C6.4" or category == "C6.5" or category == "C6.6" or category == "C6.7" or category == "C7.0" or category == "C7.1" or category == "C7.2" or category == "C7.3" or category == "C7.4" or category == "C7.5" or category == "C7.6" or category == "C8.0" or category == "C8.1" or category == "C8.2" or category == "C8.3" or category == "C8.4" or category == "C8.5" or category == "C8.6" or category == "C8.7" or category == "C8.8" or category == "C9.0" or category == "C9.1" or category == "C9.2" or category == "C9.3" or category == "C9.4" or category == "C9.5" or category == "C10.0" or category == "C10.1" or category == "C10.2" or category == "C10.3" or category == "C10.4" %}
-      <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }}</h3>
+      {% if category == "C1.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and apply the systemes development process. </h3>
+      {% elsif category == "C1.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify the phases of the systems development life cycle, including analysis, design, programming, testing, implementation, maintenance, and improvement. </h3>
+      {% elsif category == "C1.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and describe models of systems development, systems development life cycle (SDLC), and agile computing. </h3>
+      {% elsif category == "C1.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and describe how specifications and requirements are developed for new and existing software applications. </h3>
+      {% elsif category == "C1.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Work as a member of, and within the scope and boundaries of, a development project team. </h3>
+      {% elsif category == "C1.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Track development project milestones using the concept of versions. </h3>
+      {% elsif category == "C1.6" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Diagram processes using flowcharts and the Unified Modeling Language. </h3>
+      {% elsif category == "C2.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Define and analyze systems and software requirements. </h3>
+      {% elsif category == "C2.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the major purposes and benefits of development, including automation, improving productivity, modeling and analysis, and entertainment. </h3>
+      {% elsif category == "C2.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Recognize and prevent unintended consequences of development work: programming errors, security issues, health and environmental risks, and privacy concerns. </h3>
+      {% elsif category == "C2.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop strategies that target the specific needs and desires of the customer. </h3>
+      {% elsif category == "C2.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Analyze customers’ needs for development. </h3>
+      {% elsif category == "C2.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Determine and document the requirements and alternative solutions to fulfill the customers’ needs. </h3>
+      {% elsif category == "C3.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Create effective interfaces between humans and technology. </h3>
+      {% elsif category == "C3.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe and apply the basic process of input, processing, and output. </h3>
+      {% elsif category == "C3.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Design effective and intuitive interfaces using knowledge of cognitive, physical, and social interactions. </h3>
+      {% elsif category == "C3.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Support methods of accessibility for all potential users, including users with disabilities and non-English-speaking users. </h3>
+      {% elsif category == "C4.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop software using programming languages. </h3>
+      {% elsif category == "C4.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and describe the abstraction level of programming languages from low-level, hardware-based languages to high-level, interpreted, Web-based languages. </h3>
+      {% elsif category == "C4.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the interaction and integration of programming languages and protocols such as how client-side programming can work with server-side programming to use a query language to access a database. </h3>
+      {% elsif category == "C4.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and use different authoring tools and integrated development environments (IDEs). </h3>
+      {% elsif category == "C4.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and apply data types and encoding. </h3>
+      {% elsif category == "C4.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Demonstrate awareness of various programming paradigms, including procedural, object oriented, event-driven, and multithreaded programing. </h3>
+      {% elsif category == "C4.6" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use proper programming language syntax. </h3>
+      {% elsif category == "C4.7" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use various data structures, arrays, objects, files, and databases. </h3>
+      {% elsif category == "C4.8" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use object oriented programming concepts, properties, methods, and inheritance. </h3>
+      {% elsif category == "C4.9" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Create programs using control structures, procedures, functions, parameters, variables, error recovery, and recursion. </h3>
+      {% elsif category == "C4.10" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Create and know the comparative advantages of various queue, sorting, and searching algorithms. </h3>
+      {% elsif category == "C4.11" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Document development work for various audiences, such as comments for other programmers, and manuals for users. </h3>
+      {% elsif category == "C5.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Test, debug, and improve software development work. </h3>
+      {% elsif category == "C5.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify the characteristics of reliable, effective, and efficient products. </h3>
+      {% elsif category == "C5.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the ways in which specification changes and technological advances can require the modification of programs. </h3>
+      {% elsif category == "C5.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use strategies to optimize code for improved performance. </h3>
+      {% elsif category == "C5.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Test software and projects. </h3>
+      {% elsif category == "C5.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Evaluate results against initial requirements. </h3>
+      {% elsif category == "C5.6" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Debug software as part of the quality assurance process. </h3>
+      {% elsif category == "C6.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Integrate a variety of media into development projects. </h3>
+      {% elsif category == "C6.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify the basic design elements necessary to produce effective print, video, audio, and interactive media. </h3>
+      {% elsif category == "C6.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the various encoding methods of media and trade-offs: vector graphics vs. bitmaps, and bit depth. </h3>
+      {% elsif category == "C6.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use media design and editing software: keyframe animation, drawing software, image editors, and three-dimensional design. </h3>
+      {% elsif category == "C6.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop a presentation or other multimedia project: video, game, or interactive Web sites, from storyboard to production. </h3>
+      {% elsif category == "C6.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Analyze the use of media to determine the appropriate file format and level of compression. </h3>
+      {% elsif category == "C6.6" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Integrate media into a full project using appropriate tools. </h3>
+      {% elsif category == "C6.7" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Create and/or capture professional-quality media, images, documents, audio, and video clips. </h3>
+      {% elsif category == "C7.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop Web and online projects. </h3>
+      {% elsif category == "C7.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify the hardware (server) and software required for Web hosting and other services. </h3>
+      {% elsif category == "C7.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the full process of online content delivery, registering domain names, setting up hosting, and setting up e-mail addresses. </h3>
+      {% elsif category == "C7.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Attract Web-site visitors through search engine optimization using various strategies like keywords and meta-tags. </h3>
+      {% elsif category == "C7.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Enable e-commerce capabilities to sell products, create a shopping cart, and handle credit card transactions. </h3>
+      {% elsif category == "C7.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Create an online project, Web-based business, and e-portfolio. </h3>
+      {% elsif category == "C7.6" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Optimize fast delivery and retrieval of online content such as Web pages. </h3>
+      {% elsif category == "C8.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop databases. </h3>
+      {% elsif category == "C8.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the critical function of databases in modern organizations. </h3>
+      {% elsif category == "C8.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and use the basic structures of databases, fields, records, tables, and views. </h3>
+      {% elsif category == "C8.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and explain the types of relationships between tables (one-to-one, one-to-many, many-to-many) and use methods to establish these relationships, including primary keys, foreign keys, and indexes. </h3>
+      {% elsif category == "C8.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use data modeling techniques to create databases based upon business needs. </h3>
+      {% elsif category == "C8.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use queries to extract and manipulate data (select queries, action queries). </h3>
+      {% elsif category == "C8.6" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop databases that are properly normalized using appropriate schemas. </h3>
+      {% elsif category == "C8.7" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Export and import data to and from other applications and a database recognizing the limitations and challenges inherent in the process. </h3>
+      {% elsif category == "C8.8" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Analyze and display data to assist with decision making using methods like cross tabulations, graphs, and charts. </h3>
+      {% elsif category == "C9.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop software for a variety of devices, including robotics. </h3>
+      {% elsif category == "C9.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Demonstrate awareness of the applications of device development work, including personalized computing, robotics, and smart appliances. </h3>
+      {% elsif category == "C9.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Install equipment, assemble hardware, and perform tests using appropriate tools and technology. </h3>
+      {% elsif category == "C9.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use hardware to gain input, process information, and take action. </h3>
+      {% elsif category == "C9.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Apply the concepts of embedded programming, including digital logic, machine-level representation of data, and memory-system organization. </h3>
+      {% elsif category == "C9.5" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Program a micro-controller for a device or robot. </h3>
+      {% elsif category == "C10.0" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Develop intelligent computing. </h3>
+      {% elsif category == "C10.1" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe models of intelligent behavior and what distinguishes humans from machines. </h3>
+      {% elsif category == "C10.2" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the major areas of intelligent computing, including perception, proximity, processing, and control. </h3>
+      {% elsif category == "C10.3" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Know artificial intelligence methods such as neural networks, Bayesian inferences, fuzzy logic, and finite state machines. </h3>
+      {% elsif category == "C10.4" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Implement artificial intelligent behavior through various methods: mathematical modeling, reinforcement learning, and probabilistic analysis. </h3>
+      {% endif %}  
       <a name="{{ category | slugize }}"></a>
       {% for post in site.categories[category] %}
         {% if post.hide != true %}

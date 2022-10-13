@@ -20,6 +20,7 @@ week: 8
 4. <mark>Understand Fastpages server <--> Flask Server <--> RapidAPI Server</mark>
 ![]({{site.baseurl}}/images/api.webp)
 
+
 ### [Flask/Python Code](https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/covid.py)
 > The Flask/Python Code has been heavily commented.  Additionally, the file can be run, tested, and debugged.  The lecture that goes with this will required students to step through debugging session as they review the code.
 - VSCode Project: flask_portfolio

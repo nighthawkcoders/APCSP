@@ -1,0 +1,72 @@
+---
+layout: categories
+permalink: /categories/ap
+title: AP Standards
+search_exclude: true
+---
+
+{% if site.categories.size > 0 %}
+<h2>AP Standards</h2>
+
+  {% assign categories = "" | split:"" %}
+  {% for c in site.categories %}
+    {% assign categories = categories | push: c[0] %}
+  {% endfor %}
+  {% assign categories = categories | sort_natural %}
+
+  {% for category in categories %}
+    {% if category == "1.A" or category == "1.B" or category == "1.C" or category == "1.D" or category == "2.A" or category == "2.B" or category == "3.A" or category == "3.B" or category == "3.C" or category == "4.A" or category == "4.B" or category == "4.C" or category == "5.A" or category == "5.B" or category == "5.C" or category == "5.D" or category == "5.E" or category == "6.A" or category == "6.B" or category == "6.C" %}
+      {% if category == "1.A" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Investigate the situation, context, or task </h3>
+      {% elsif category == "1.B" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Determine and design an appropriate method or approach to achieve the purpose </h3>
+      {% elsif category == "1.C" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Explain how collaboration affects the development of a solution </h3>
+      {% elsif category == "1.D" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Evaluate solution options </h3>
+      {% elsif category == "2.A" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Represent algorithmic processes without using a programming language </h3>
+      {% elsif category == "2.B" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Implement and apply an algorithm </h3>
+      {% elsif category == "3.A" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Generalize data sources through variables </h3>
+      {% elsif category == "3.B" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use abstraction to manage complexity in a program </h3>
+      {% elsif category == "3.C" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Explain how abstraction manages complexity </h3>
+      {% elsif category == "4.A" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Explain how a code segment or program functions </h3>
+      {% elsif category == "4.B" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Determine the result of code segments </h3>
+      {% elsif category == "4.C" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Identify and correct errors in algorithms and programs, including error discovery through testing </h3>
+      {% elsif category == "5.A" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Explain how computing systems work </h3>
+      {% elsif category == "5.B" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Explain how knowledge can be generated from data </h3>
+      {% elsif category == "5.C" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the impact of a computing innovation </h3>
+      {% elsif category == "5.D" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Describe the impact of gathering data </h3>
+      {% elsif category == "5.E" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Evaluate the use of computing based on legal and ethical factors </h3>
+      {% elsif category == "6.A" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Collaborate in the development of solutions </h3>
+      {% elsif category == "6.B" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Use safe and secure methods when using computing devices </h3>
+      {% elsif category == "6.C" %}
+        <h3 id ="{{ category }}"><i class="fas fa-tags category-tags-icon"></i></i> {{ category }} Acknowledge the intellectual property of others </h3>
+      {% endif %}  
+      <a name="{{ category | slugize }}"></a>
+      {% for post in site.categories[category] %}
+        {% if post.hide != true %}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <article class="archive-item">
+          <p class="post-meta post-meta-title"><a class="page-meta" href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a>  • {{ post.date | date: date_format }}</p>
+        </article>
+        {% endif %}
+      {% endfor %}
+    {% endif %}  
+  {% endfor %}
+  
+{% endif %}

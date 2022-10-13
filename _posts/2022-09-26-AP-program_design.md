@@ -6,7 +6,7 @@ title: Big Idea 1 'Program Design'
 description: Look for a real need.  Program Design, ideation, and eventual development work a lot better if you have a real need or an idea of purpose.
 permalink: /collegeboard/design
 image: /images/UML_logo.png
-categories: [1.B, 5.C, 6.A, 6.C]
+categories: [1.B, 5.C, 6.A, 6.C, C2.0, C2.1, C2.2, C2.3, C2.4, C2.5]
 type: ap
 week: 6
 ---

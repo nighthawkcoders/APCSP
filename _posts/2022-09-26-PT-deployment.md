@@ -6,7 +6,7 @@ title:  Deployment
 description: 
 permalink: /points/6
 image: /images/points.jpeg
-categories: [tri1]
+categories: [C7.6]
 type: plan
 week: 6
 ---

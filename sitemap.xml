@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/compsysnet</loc>
-<lastmod>2022-06-01T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://nighthawkcoders.github.io/APCSP/legal</loc>
 <lastmod>2022-06-01T00:00:00-05:00</lastmod>
 </url>
@@ -219,6 +215,10 @@
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/points/8</loc>
 <lastmod>2022-10-10T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/5.a/c7.1/c9.3/2022/10/17/AP-computer_systems_networks.html</loc>
+<lastmod>2022-10-17T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/techtalk/cte</loc>

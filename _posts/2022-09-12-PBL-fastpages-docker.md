@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Serving Fastpages locally using Docker.  This allows local machine testing of each change of code without the delay of GitHub Actions.  
-categories: []
+categories: [C7.1]
 title: Fastpages local server
 author: Ellen Xu
 image: /images/fastpages_docker.png

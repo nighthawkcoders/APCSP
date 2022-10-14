@@ -6,7 +6,7 @@ title: Creative Development Points
 description: Don't do it alone.  4 person grading.
 permalink: /points/3
 image: /images/points.jpeg
-categories: []
+categories: [C1.5]
 ---
 
 ## Points will be awarded on these key elements

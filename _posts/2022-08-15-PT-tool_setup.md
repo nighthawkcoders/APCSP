@@ -6,7 +6,7 @@ title: Tool Setup Sprint and Pair Programming
 description: Don't do it alone.  Pair Programming allows you to have secondary thinking as you work, not just a reflection after you are done, but real time.
 permalink: /week/0
 image: /images/pair_programming.png
-categories: []
+categories: [C1.4]
 type: plan
 week: 0
 ---

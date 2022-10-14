@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Setting up a Flask/Python project.  Flask is a Web Application framework written in Python.
-categories: [5.A]
+categories: [5.A, C7.1]
 title: Flask/Python Web Application
 image: /images/flask.png
 type: pbl

@@ -6,7 +6,7 @@ title: GitHub and Git Sociology
 description: GitHub and Git are a social computing tools.  GitHub is a cloud-based Git repository hosting service. Git is underneath GitHub and it does the Job of managing files and versions in a series of snapshots. Git helps developer work together, by sharing Code.   Additionally, GitHub has many tools that help in the sociology of managing software (ie Issues, Pull Requests, Project Boards, GitHub Pages, etc).
 image: /images/git.webp
 permalink: /techtalk/github
-categories: [1.C, 6.A]
+categories: [1.C, 6.A, C1.2]
 type: human
 week: 7
 ---

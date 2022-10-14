@@ -6,7 +6,7 @@ title:  UI Starters
 description: 
 permalink: /points/5
 image: /images/points.jpeg
-categories: [tri1]
+categories: [C1.6]
 type: plan
 week: 5
 ---

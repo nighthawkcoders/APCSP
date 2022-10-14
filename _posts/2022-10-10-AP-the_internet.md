@@ -6,7 +6,7 @@ title: Big Idea 4 'The Internet'
 description: Reviewing the internet and protocols
 permalink: /collegeboard/internet
 image: /images/apcsp.png
-categories: []
+categories: [C7.2]
 type: ap
 week: 8
 ---

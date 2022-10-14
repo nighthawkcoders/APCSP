@@ -6,7 +6,7 @@ title: How I got a 5!
 description: Bria provides her path to success on the AP Exam and Create Task project
 image: /images/map_dnhs.png
 permalink: /collegeboard/bria
-categories: []
+categories: [C1.3]
 tags: [APExam]
 type: human
 week: 3

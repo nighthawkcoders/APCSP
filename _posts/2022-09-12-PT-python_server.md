@@ -6,7 +6,7 @@ title:  Python Web Server Project
 description: This week introduces a Python Web server project.  
 permalink: /points/4
 image: /images/points.jpeg
-categories: []
+categories: [C7.1]
 type: plan
 week: 4
 ---

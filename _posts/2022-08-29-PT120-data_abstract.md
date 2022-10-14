@@ -6,7 +6,7 @@ title: Data Abstraction Points
 description: Don't do it alone.  4 person grading.
 permalink: /points/2
 image: /images/points.jpeg
-categories: []
+categories: [C4.4]
 ---
 
 ## Points will be awarded on these three key elements

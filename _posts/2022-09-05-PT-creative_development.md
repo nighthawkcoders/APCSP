@@ -6,7 +6,7 @@ title: Creative Development Sprint
 description: Creative development is a key skill that Teachers will be looking at through the year.  The development process requires inspiration, research, and go both inside and outside the box.  At these early stages of development it is about pair programming, collaborating with each other and teacher, and responding to change.
 permalink: /week/3
 image: /images/agile_manifesto.jpeg
-categories: []
+categories: [C1.5]
 type: plan
 week: 3
 ---

@@ -6,7 +6,7 @@ title: Introduction to Python
 description: Python is a key language in the class and will be used to build the backend of our Web Applications throughout the year.
 permalink: /week/1
 image: /images/python.png
-categories: []
+categories: [C5.0]
 type: plan
 week: 1
 ---

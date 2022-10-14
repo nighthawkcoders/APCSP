@@ -27,6 +27,7 @@ week: 9
 - Must Using API across multiple systems 
     - Create a HTML Frontend table or view fetching from Backend using an Flask API
     - Show Flask API using RapidAPI 
+- Impressive/Extra show Debugging in video
 
 ### Scrum Master
 > Describe Program Purpose and Function.  Also, highlight key system used to track, collaborate and review software.

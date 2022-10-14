@@ -11,6 +11,9 @@ type: plan
 week: 8
 ---
 
+
+<mark> Cancelled </mark>
+
 ## Plans Week 8
 > Discussing the internet, connection using API, and work on final project
 - Monday: Live Review, Test Prep

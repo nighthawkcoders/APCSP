@@ -13,14 +13,20 @@ week: 9
 
 ## Plans Week 9
 > Focus on PBL - Commitment to your Agile Development process and tangibles.
-- Monday: Human Prep, Live Review
+- Monday: Review CB 4.1 and Blog
 - Tuesday: Code, Code, Code, Live Review
 - Wednesday: Career Tech, Live Review
-- Thursday: Code, Code, Code
+- Thursday: Show FE to BE working, Script for Video
 - Friday: Code, Code, Code
 
 ## Team
 > Prepare for Teacher project audit.  Also, analysis of the following will speed Scrum Team plan, work, improve quality, and make a better N@tM final.
+
+### API Frontend to Backend Overview
+> Show demo of work in progress.   
+- Must Using API across multiple systems 
+    - Create a HTML Frontend table or view fetching from Backend using an Flask API
+    - Show Flask API using RapidAPI 
 
 ### Scrum Master
 > Describe Program Purpose and Function.  Also, highlight key system used to track, collaborate and review software.
@@ -79,9 +85,8 @@ week: 9
 
 
 ### Hacks (Video 2).  Recommend...  Minimize talking, minimize mouse movements, and share Tangibles.
-> Make a less than 4 minute video.  Each individual should code and develop systems as well as make their part of the video.  
+> Make a less than 4 minute video.  Each individual should talk in video, code, and make their part of the video. Consider crossing over to other tables and share methods and methodologies of those working on similar roles.
 - Scrum Master should make sure all things come together.  
 - DevOps should ensure there is a working project to Demo at all times.
 - Everyone should complete their part(s).
 - Everyone should help other Team Members when struggling.
-- Consider crossing over to other tables and share methods and methodologies of those working on similar roles.

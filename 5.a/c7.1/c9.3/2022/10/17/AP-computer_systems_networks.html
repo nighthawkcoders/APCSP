@@ -157,7 +157,7 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<p><img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/httpstack.png" alt="http"></p>
+<p><img src="/APCSP/images/httpstack.png" alt="http"></p>
 
 <h2 id="fault-tolerence">
 <a class="anchor" href="#fault-tolerence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fault Tolerence</h2>
@@ -171,20 +171,21 @@ window.onload = wrap_img;
 
 <ol>
   <li>As we are at school, using an HTTP client we request a page via LAN or Campus Network.  This Network has a router and an ISP router that directs us to the public internet.</li>
-  <li>DNS is used to translate https://nighthawkcodinnsociety.com to an IP address.</li>
+  <li>DNS is used to translate <a href="https://nighthawkcodingsociety.com">https://nighthawkcodingsociety.com</a> to an IP address, see <a href="https://www.whatsmydns.net/#A/nighthawkcodingsociety.com">What’s My DNS</a>
+</li>
   <li>This targets the Web Server, the request is directed through a router to the Server running Nginx, which intern directs request to Gunicorn application hosting the Flask Website.</li>
 </ol>
 
-<p><img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/internetserver.png" alt="http"></p>
+<p><img src="/APCSP/images/internetserver.png" alt="webserver"></p>
 
 <ul>
   <li>Fault tolerant “routing” and “systems” on the internet is achieved by having redundancy in routing paths and computer functions.  Networks and Systems become stronger because of many routes and redundancy of function.  This AWS picture shows load balancing, multiple zones, redundant equipment, standby and fail over equipment and paths.  This is much more than just having multiple connections, there is A LOT of planning in making fault tolerance.  This is why there is such a rise in companies like AWS, Azure, Google Cloud, etc.</li>
 </ul>
 
-<p><img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/faulttolerant.png" alt="http"></p>
+<p><img src="/APCSP/images/faulttolerant.png" alt="aws"></p>
 
 <ul>
-  <li>The path the TCP/IP packet will follow might be different from other packets, for instance from the same HTTP communication. The routers in the network are responsible for the right addressing, depending on traffic volume, errors in the network, etc.  Since the Internet is Fault Tolerant, there are many paths to a destination, similar to Google Maps providing alternate paths when we travel.  Routes and time can be see with TraceRoute command…</li>
+  <li>The path the TCP/IP packet will follow might be different from other packets, for instance from the same HTTP communication. The routers in the network are responsible for the right addressing, depending on traffic volume, errors in the network, etc.  Since the Internet is Fault Tolerant, there are many paths to a destination, similar to Google Maps providing alternate paths when we travel. Time can be seen with Ping. Routes and time can be see with TraceRoute command…</li>
 </ul>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MacBook-Pro-3:~ johnmortensen$ traceroute yahoo.com
@@ -228,7 +229,7 @@ traceroute to yahoo.com (74.6.231.20), 64 hops max, 52 byte packets
   <li>Distributed Computing - Bitcoin mining is an example of distributed computing.  A tough digital computing puzzle illustrates need for CPU/GPU power.  A distributed ledger amongst multiple miners is verified to avoid fraud.  The result of this distributed computing network is a new financial economy.</li>
 </ul>
 
-<p><img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/bitcoin.png" alt="http"></p>
+<p><img src="/APCSP/images/bitcoin_system.png" alt="bitcoin"></p>
 
 <ul>
   <li>
@@ -236,7 +237,7 @@ traceroute to yahoo.com (74.6.231.20), 64 hops max, 52 byte packets
 
     <ul>
       <li>
-        <p>Browser process interacts with information from internet. This has multiple functions: Webcontents represents a tab within the browser.  Render View manages all IPC (Inter Process Communication), for instance the HTTP actions.</p>
+        <p>Browser process interacts with information from internet. This has multiple functions: Web contents represents a tab within the browser.  Render View manages all IPC (Inter Process Communication), for instance the HTTP actions.</p>
       </li>
       <li>
         <p>Render process is responsible for constructing a web page.  Webkit is the engine and contains WebCore which constructs DOM (layout) and the JavaScript interpreter.</p>
@@ -245,7 +246,7 @@ traceroute to yahoo.com (74.6.231.20), 64 hops max, 52 byte packets
   </li>
 </ul>
 
-<p><img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/chrome.png" alt="http"></p>
+<p><img src="/APCSP/images/chrome_system.png" alt="chrome"></p>
 
   </div><a class="u-url" href="/APCSP/5.a/c7.1/c9.3/2022/10/17/AP-computer_systems_networks.html" hidden></a>
 </article>

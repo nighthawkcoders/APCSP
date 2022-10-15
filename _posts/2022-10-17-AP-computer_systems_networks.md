@@ -29,7 +29,7 @@ Internet, Word Wide Web, Local Area Network, HTTP, DNS, TCP, UDP, IP.   Discussi
 
 * Network Layer - The wireless and physical layers that move bits and bytes "11010001" across the internet.
 
-![http](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/httpstack.png)
+![http]({{site.baseurl}}/images/httpstack.png)
 
 
 ## Fault Tolerence
@@ -39,17 +39,18 @@ Know how to determine if vertex of graph has more than one connection.  Multiple
 * Understanding Computer, Routers, Systems, and Purpose are a pre-requisite to understanding Fault Tolerance systems.  Regarding College Board videos, for clarification, a Router is typically used to connect computers.  Here is an illustration that is very similar to the key components we have used in this class and should be familiar to those who have done deployment.
 
 1. As we are at school, using an HTTP client we request a page via LAN or Campus Network.  This Network has a router and an ISP router that directs us to the public internet.
-1. DNS is used to translate https://nighthawkcodinnsociety.com to an IP address.
+1. DNS is used to translate [https://nighthawkcodingsociety.com](https://nighthawkcodingsociety.com) to an IP address, see [What's My DNS](https://www.whatsmydns.net/#A/nighthawkcodingsociety.com)
 1. This targets the Web Server, the request is directed through a router to the Server running Nginx, which intern directs request to Gunicorn application hosting the Flask Website.
 
-![http](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/internetserver.png)
+![webserver]({{site.baseurl}}/images/internetserver.png)
+
 
 * Fault tolerant "routing" and "systems" on the internet is achieved by having redundancy in routing paths and computer functions.  Networks and Systems become stronger because of many routes and redundancy of function.  This AWS picture shows load balancing, multiple zones, redundant equipment, standby and fail over equipment and paths.  This is much more than just having multiple connections, there is A LOT of planning in making fault tolerance.  This is why there is such a rise in companies like AWS, Azure, Google Cloud, etc.
 
-![http](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/faulttolerant.png)
+![aws]({{site.baseurl}}/images/faulttolerant.png)
 
 
-* The path the TCP/IP packet will follow might be different from other packets, for instance from the same HTTP communication. The routers in the network are responsible for the right addressing, depending on traffic volume, errors in the network, etc.  Since the Internet is Fault Tolerant, there are many paths to a destination, similar to Google Maps providing alternate paths when we travel.  Routes and time can be see with TraceRoute command...
+* The path the TCP/IP packet will follow might be different from other packets, for instance from the same HTTP communication. The routers in the network are responsible for the right addressing, depending on traffic volume, errors in the network, etc.  Since the Internet is Fault Tolerant, there are many paths to a destination, similar to Google Maps providing alternate paths when we travel. Time can be seen with Ping. Routes and time can be see with TraceRoute command...
 
 ```
 MacBook-Pro-3:~ johnmortensen$ traceroute yahoo.com
@@ -90,12 +91,12 @@ Single Core versus Multiple Cores allows allows parallel computing.  Using multi
 
 * Distributed Computing - Bitcoin mining is an example of distributed computing.  A tough digital computing puzzle illustrates need for CPU/GPU power.  A distributed ledger amongst multiple miners is verified to avoid fraud.  The result of this distributed computing network is a new financial economy.
 
-![http](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/bitcoin.png)
+![bitcoin]({{site.baseurl}}/images/bitcoin_system.png)
 
 * Parallel Computing - Chrome, the browser most of us use to run our Web Application is a great example of a multi process architecture.  There are two primary types of processes in Chrome : the browser process and the render process.
 
-    * Browser process interacts with information from internet. This has multiple functions: Webcontents represents a tab within the browser.  Render View manages all IPC (Inter Process Communication), for instance the HTTP actions.
+    * Browser process interacts with information from internet. This has multiple functions: Web contents represents a tab within the browser.  Render View manages all IPC (Inter Process Communication), for instance the HTTP actions.
 
     * Render process is responsible for constructing a web page.  Webkit is the engine and contains WebCore which constructs DOM (layout) and the JavaScript interpreter.
 
-![http](https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/chrome.png)
+![chrome]({{site.baseurl}}/images/chrome_system.png)

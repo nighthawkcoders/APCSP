@@ -447,7 +447,7 @@ window.onload = wrap_img;
 <span class="n">count_json</span> <span class="o">=</span> <span class="n">count_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="n">count</span> <span class="o">=</span> <span class="n">count_json</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span>
 
-<span class="c1"># Update likes/dislikes test sequence</span>
+<span class="c1"># Update likes/dislikes test sequence using random joke</span>
 <span class="n">num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># test a random record</span>
 <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
     <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">+</span><span class="n">num</span><span class="p">)</span>  <span class="c1"># Get/read joke by id</span>

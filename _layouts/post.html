@@ -39,9 +39,9 @@ layout: default
       {% for category in  page.categories  %}
         {%- assign prefix = category | slice: 0 -%}
         {% if prefix == "C" %}
-          <a class="category-tags-link" href="{{site.baseurl}}/categories/cte/#{{category|slugize}}">{{category}}</a>
+          <a class="category-tags-link" href="{{site.baseurl}}/categories/cte#{{category|slugize}}">{{category}}</a>
         {% else %}
-          <a class="category-tags-link" href="{{site.baseurl}}/categories/ap/#{{category|slugize}}">{{category}}</a>
+          <a class="category-tags-link" href="{{site.baseurl}}/categories/ap#{{category|slugize}}">{{category}}</a>
         {% endif %}
         {% unless forloop.last %}&nbsp;{% endunless %}
       {% endfor %}

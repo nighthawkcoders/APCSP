@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -155,12 +155,13 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The code below holds the info that is being generated in an HTML table.</p>
+<p>The code below holds the info that is being <mark>generated into an HTML table</mark>.</p>
 <p>Key things to know:</p>
 <ul>
-<li>&lt; tr &gt; creates a ROW</li>
-<li>&lt; th &gt; makes the text a HEADER</li>
 <li>&lt; table &gt; creates a TABLE </li>
+<li>&lt; tr &gt; creates a ROW</li>
+<li>&lt; th &gt; makes the text a column HEADER</li>
+<li>&lt; tbody  id = "results" &gt; defines an element id, to be used within JavaScript</li>
 </ul>
 
 </div>
@@ -200,9 +201,10 @@ window.onload = wrap_img;
 <p>Constant variables are declared here with keyword const</p>
 <p>Key things to know:</p>
 <ul>
-<li>The document object represents your web page.</li>
-<li>If you want to access any element in an HTML page, you always start with accessing the document object.</li>
-<li>Storing the api is done using the variable url</li>
+<li>The document object "result" represents table body in the HTML above.</li>
+<li>If you want to access any element in an HTML page in JavaScript, you always start by accessing the document object.  In this case, we are accessing "result" and defining a "resultContainer"</li>
+<li>In the code, in following cells, document elements are created and organized for each Joke, each is added to the "resultContainer" as a row in the table body.</li>
+<li>Accessing the api is done using the variables url and options, this is setup to fetch the Jokes from the backend</li>
 </ul>
 
 </div>
@@ -252,11 +254,13 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The below code uses a function called fetch to gather the data and place them in a table using a for loop. The creation of the buttons is also done at the same time.</p>
+<p>The below code uses a function called fetch to gather the data from the backend.</p>
 <p>Key things to understand:</p>
 <ul>
-<li>The url is checked in case the site is down and returns an error</li>
-<li>Updates are occuring with onclick</li>
+<li>The "url" "response" is checked in case the site is down and returns an error</li>
+<li>On successful fetch, the code places each Joke in the HTML table body using a "for" loop and creating document elements from each "row" of the fetched "data".</li>
+<li>The creation of each Haha and Boohoo "onclick" "button" is also done in the same loop.</li>
+<li>Updates to backend are setup to occur with each onclick, each click calls the "reaction" function</li>
 </ul>
 
 </div>
@@ -337,7 +341,13 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This function reaction stores the responses and globally updates the web page.</p>
+<p>The below code uses fetch to update backend data using "put_options". The purpose is to update Hahaa and Bohoo counters in backend.</p>
+<p>Key things to understand:</p>
+<ul>
+<li>The "url" "response" is checked to verify update occurred</li>
+<li>The element id of button clicked is updated with the data returned from the API.  </li>
+<li>Note, the elemID is received as parameter.  This data was setup when the button was created in former cell.</li>
+</ul>
 
 </div>
 </div>
@@ -405,7 +415,7 @@ window.onload = wrap_img;
 <h1 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h1><blockquote><p>The code below relates to the rapidapi you worked with last week.</p>
 <ul>
 <li>What are some similarities you see with the javascript for the jokes api? </li>
-<li>In a blogpost, break up the code like done above and try to describe what this code is doing. </li>
+<li>In a blogpost, break up the code in cells like done above and try to describe what this code is doing. </li>
 </ul>
 </blockquote>
 

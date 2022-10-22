@@ -2,8 +2,8 @@
 toc: true
 comments: false
 layout: post
-title: Lesson about Binary and Algorithms
-description: Taking a look at binary abstractions, logic gates, etc
+title: Binary and Abstraction
+description: Taking a look at binary abstractions (ASCII, Unicode, Images),logic gates, etc
 image: /images/apcsp.png
 categories: [1.D, 2.B, 3.C, C4/4]
 type: ap

@@ -32,7 +32,7 @@ title: Schedule
 
 {% elsif unit == "4" %} 
       {% assign start = 13 %}
-      {% assign end = 17 %}
+      {% assign end = 16 %}
 ## Unit {{unit}}: Algorithmic Programming
 > Trimester 1 will end and Trimester 2 begin with continue with data and then focus algorithms. 
       

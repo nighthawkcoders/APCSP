@@ -6,6 +6,8 @@ permalink: /frontend/grades
 image: /images/grade_calc.png
 categories: [2.C]
 tags: [javascript, html, input, onblur]
+week: 10
+type: pbl
 ---
 
 <!-- For hacks take inspiration form here: https://www.rapidtables.com/calc/grade/grade-calculator.html -->

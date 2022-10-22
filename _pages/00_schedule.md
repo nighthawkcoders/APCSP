@@ -22,17 +22,17 @@ title: Schedule
       {% assign start = 4 %}
       {% assign end = 7 %}
 ## Unit {{unit}}: Introduction to Web Development
-> Websites are made up of several key parts: Frontend, Backend, Data and Deployment.  The focus for these weeks is to enable students to perform the aspects of constructing and deploying a simple Website.  Fastpages got us started on these concepts, but now we will start building a Website from the ground up.   Once again, there will be a lot of learning focused tools and getting things working.  But, by the end of the Unit, students will be ready to start many of the technical coding aspects of Web Development, having established a Deployed Website.
+> Websites are made up of several key parts: Frontend, Backend, Data and Deployment.  The focus for these weeks is to enable students to perform the aspects of constructing and deploying a simple Website.  Fastpages got us started on these concepts, but now we will start building a Website from the ground up.   Once again, there will be a lot of learning focused tools and getting things working.  But, by the end of the Unit, students will be ready to start many of the technical coding aspects of Web Development, having established a Deployed Website.  On Nov 3rd our Trimester work will end with a project and student participation in Electives Department "Night at the Museum" (N@tM). 
 
   {% elsif unit == "3" %} 
       {% assign start = 8 %}
-      {% assign end = 11 %}
+      {% assign end = 12 %}
 ## Unit {{unit}}: N@tM Project, Web, Systems, and Data
-> On Nov 3rd our Trimester work will end with a project and student participation in Electives Department "Night at the Museum" (N@tM).  Team projects should contain interaction of systems, data and a visual representations (web).  Additionally, each project should have a theme of interest and be purposeful.  N@tM is GREAT opportunity to show case individual and team accomplishments.
+>  The beginning of Trimester 2 is focussed on Algorithms and Coding.  Student need to build their own portfolio.  That portfolio should focus on their interests in Python and JavaScript programming.  
 
 {% elsif unit == "4" %} 
-      {% assign start = 12 %}
-      {% assign end = 15 %}
+      {% assign start = 13 %}
+      {% assign end = 16 %}
 ## Unit {{unit}}: Algorithmic Programming
 > Trimester 1 will end and Trimester 2 begin with continue with data and then focus algorithms. 
       

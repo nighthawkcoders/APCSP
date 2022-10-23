@@ -34,7 +34,7 @@ title: Schedule
       {% assign start = 13 %}
       {% assign end = 16 %}
 ## Unit {{unit}}: Algorithmic Programming
-> Trimester 1 will end and Trimester 2 begin with continue with data and then focus algorithms. 
+> Trimester 2 begins with student teaching and a focus algorithms.  It is very important to be building blogs and mini-labs to support learning.  Each week has student teaching assignment and career tech ideas that correspond to one or more topics for the week.
       
   {% endif %}
 

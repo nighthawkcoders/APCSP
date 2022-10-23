@@ -34,7 +34,7 @@ title: Schedule
       {% assign start = 13 %}
       {% assign end = 16 %}
 ## Unit {{unit}}: Algorithmic Programming
-> Trimester 2 begins with student teaching and a focus algorithms.  It is very important to be building blogs and mini-labs to support learning.  Each week has student teaching assignment and career tech ideas that correspond to one or more topics for the week.
+> Trimester 2 begins with student teaching and a focus on algorithms.  Coding and algorithms is more impactful if you have projects(s) as you are learning.  Each week a "Student Team" has a teaching assignment supported by College Board materials.  Additionally, the Teacher is providing Career Tech mini-labs that correspond to one or more topics for the week.  Use the two things together as you improve your personal blog with Frontend algorithms and/or Jupyter Notebooks.
       
   {% endif %}
 

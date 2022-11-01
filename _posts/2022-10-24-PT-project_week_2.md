@@ -19,11 +19,6 @@ week: 10
 - Thursday: Live Reviews
 - Friday: Live Reviews
 
-## Video (5 points)
-> Summary of Points
-- Production and Theme 1 pt
-- Jobs 1 pt each x 4 (Individual)
-
 ## Live Review (3 points)
 > Summary of Points
 - 1 point for issues

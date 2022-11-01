@@ -25,6 +25,6 @@ week: 11
 - 7:00pm Period 3 (A101), Yeung 5 (A153)
 ## N@tM Day (12 points)
 > Summary of Points
-- Theme, Presentation and Professionalism Status 1 pt x 4 (make sure I see you in class or at the N@tM)
+- Theme, Presentation and Professionalism Status 1 pt x 4  N@tM is required, make sure I see you for 1 minute prior to leaving
 - Key Technicals BE + DB 1 pt x 5
 - Key Technicals FE 1 pt x 3

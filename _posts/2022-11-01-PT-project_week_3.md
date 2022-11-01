@@ -18,7 +18,7 @@ week: 11
 - Wednesday: Work Day
 - Thursday: N@tM 6 to 7:30pm
 - Friday: Final Exam Open
-### N@tM Schedule
+## N@tM Schedule
 > Schedule for room and time on evening of event.
 - 6:00pm Period 1 (A101), Mort 4 (A153)
 - 6:30pm Period 2 (A101), Yeung 4 (A153)

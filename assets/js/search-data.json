@@ -816,6 +816,17 @@
         
     
   
+    
+        ,"post75": {
+            "title": "Intro to Computer Science Ideas",
+            "content": "Class Logistics . 1 trimester course of App Design or Game Design | 2 trimester course of App Design and Game Design | Targeting students in 9th grade or 10th if space is available. | . Start with: . Introduction to tools (Github, vscode) | Scratch | . Move on to main focus: . Create an Apple App using Xcode and Swift (https://www.apple.com/education/k12/learn-to-code/) AND/OR | Unity Game Development Curriculum (https://learn.unity.com/course/teaching-game-design-and-development) | .",
+            "url": "https://nighthawkcoders.github.io/APCSP/csintro",
+            "relUrl": "/csintro",
+            "date": " • Jun 1, 2022"
+        }
+        
+    
+  
 
   
   
@@ -938,10 +949,21 @@
   
 
   
+      ,"page17": {
+          "title": "",
+          "content": "Objectives . . This Conceptual Framework teaches College Boards 5 Big Ideas of AP Computer Science Principles, Python, JavaScript, and Web Site application development together in an integrated fashion. The purpose is to teach College Board requirements while adding languages, tools, frameworks, and methodologies that meet Career Technical Education (CTE) needs. The outcome is preparing the High School student for the AP Test and simultaneously building the skills required for Computer Science internships. . . Blogs .",
+          "url": "https://nighthawkcoders.github.io/APCSP/page6/",
+          "relUrl": "/page6/",
+          "date": ""
+      }
+      
   
 
   
-      ,"page18": {
+  
+
+  
+      ,"page19": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://nighthawkcoders.github.io/APCSP/robots.txt",

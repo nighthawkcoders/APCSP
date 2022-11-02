@@ -11,9 +11,10 @@ week: 13
 ---
 
 ## Data, Binary Abstraction (ASCII, Unicode, Color Codes), and Logic Gates
-> Algorithms and Data often go together.  It is very important to have a topic as you venture into Algorithms and Lessons.  This article is a random collection of ideas in Data that could assist in learning about data and how to code data.  
-- As you do hacks in Algorithms, pick a topic
+> Algorithms and Data often go together.  It is ***required*** to have a topic as you venture into Algorithms and Lessons.  This article is a random collection of ideas in Data that could be ***your topic***. Use ***your topic*** as you learn algorithms and programming.
+- As you do hacks in Algorithms, make sure you have a data topic
 - Explore that topic in Computer Science manner (research, jupyter notebooks, frontend / backend coding)
+- Build a lesson that is more interesting, by explaining algorithm and logic with topic at the same time.
 
 ## Math in Binary
 > Learn binary by bitwise operators and more.  Shifting bits is a common computer operation and does wonderful things in math like multiply and divide.  Last bit always determines odd or even.
@@ -172,6 +173,8 @@ Basic concept is to invert/negate bits to produce negative. This allows numbers 
 
 ## Technical helpers
 
+### [Harvard CS50](https://cs50.harvard.edu/x/2022/weeks/0/) minute 0 to minute 50 to provide background on some of the information below.
+
 ### Algorithm in Jinja2 to limit Bits per row
 ![]({{site.baseurl}}/images/binary_math_conversion_example.png)
 *8 images per row by Kylie Scharf*
@@ -186,3 +189,4 @@ Modulo 8 algorithm add <tr> for every eight bits (code).
 - Use data abstraction in your topic
 - Make sure you learn all of the elements above as you learn algorithms
 - Add Science into your process (research, jupyter notebook, and ultimately running application)
+- Topics not on list need to be approved by Teacher.  The topics above focus on data ideas from Unit 2 of AP Classroom.

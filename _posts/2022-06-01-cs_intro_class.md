@@ -15,6 +15,6 @@ permalink: /csintro
 - Scratch
 
 ## Move on to main focus:
-- Create an Apple App using Xcode and Swift (https://www.apple.com/education/k12/learn-to-code/)
+- [Create an Apple App using Xcode and Swift](https://www.apple.com/education/k12/learn-to-code/)
     AND/OR
-- Unity Game Development Curriculum (https://learn.unity.com/course/teaching-game-design-and-development)
+- [Unity Game Development Curriculum](https://learn.unity.com/course/teaching-game-design-and-development)

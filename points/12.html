@@ -97,6 +97,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#coding-for-extra-credit">Coding for Extra Credit</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#step-1---javascript-document-element-updates">Step 1 - JavaScript document element updates</a></li>
+<li class="toc-entry toc-h3"><a href="#step-2---javascript-update-backend-content">Step 2 - JavaScript update backend content</a></li>
+<li class="toc-entry toc-h3"><a href="#step-2-python-option---update-backend-content">Step 2 (Python Option) - update backend content</a></li>
 <li class="toc-entry toc-h3"><a href="#step-2-bash-option---do-updates-on-server">Step 2 (Bash Option) - do updates on server</a></li>
 </ul>
 </li>
@@ -151,25 +153,27 @@ window.onload = wrap_img;
 <span class="nx">setInterval</span><span class="p">(</span><span class="nx">clock</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>### Step 2 - JavaScript update backend content
- To make the updates document elements meaningful you would need to have an interval to update the Haha or Boohoo content.  This could be done in same or different JavaScript timer.  This would be calling appropriate fetch in add to the counters.  Together, these would give the same effect as the World-O-Meter.</p>
+<h3 id="step-2---javascript-update-backend-content">
+<a class="anchor" href="#step-2---javascript-update-backend-content" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2 - JavaScript update backend content</h3>
+<p>To make the updates document elements meaningful you would need to have an interval to update the Haha or Boohoo content.  This could be done in same or different JavaScript timer.  This would be calling appropriate fetch in add to the counters.  Together, these would give the same effect as the World-O-Meter.</p>
 
-<p>### Step 2 (Python Option) - update backend content</p>
+<h3 id="step-2-python-option---update-backend-content">
+<a class="anchor" href="#step-2-python-option---update-backend-content" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2 (Python Option) - update backend content</h3>
 <blockquote>
   <p>Instead of having frontend update counter, you could have backend update the counter.  The below could be adapted to purpose.</p>
 </blockquote>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">threading</span>  <span class="c1"># import threading
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">threading</span>  <span class="c1"># import threading
 </span>
 <span class="k">def</span> <span class="nf">keepUpdating</span><span class="p">():</span> <span class="c1"># build a function to run over and over
-</span>    <span class="c1"># global variable setup
-</span>    <span class="k">global</span> <span class="n">run</span>  
-    <span class="k">try</span><span class="p">:</span> <span class="n">run</span>
-    <span class="k">except</span><span class="p">:</span> <span class="n">run</span> <span class="o">=</span> <span class="mi">0</span>
+# global variable setup
+</span><span class="k">global</span> <span class="n">run</span>  
+<span class="k">try</span><span class="p">:</span> <span class="n">run</span>
+<span class="k">except</span><span class="p">:</span> <span class="n">run</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="k">print</span><span class="p">(</span><span class="s">"Seconds:"</span><span class="p">,</span> <span class="n">run</span><span class="p">)</span>  <span class="c1"># replace this line with updates to data
-</span>    <span class="n">run</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># this is update to global variable
-</span>    <span class="n">threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">keepUpdating</span><span class="p">).</span><span class="n">start</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Seconds:"</span><span class="p">,</span> <span class="n">run</span><span class="p">)</span>  <span class="c1"># replace this line with updates to data
+</span><span class="n">run</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># this is update to global variable
+</span><span class="n">threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">keepUpdating</span><span class="p">).</span><span class="n">start</span><span class="p">()</span>
 
 <span class="n">keepUpdating</span><span class="p">()</span>  <span class="c1"># you need to call this function at application startup
 </span></code></pre></div></div>

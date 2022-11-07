@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -94,6 +94,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#plans-week-12">Plans Week 12</a></li>
 <li class="toc-entry toc-h2"><a href="#final-exam-3-points">Final Exam (3 points)</a></li>
 <li class="toc-entry toc-h2"><a href="#extra-credit-review-and-makeups-must-be-complete-before-eod-thu">Extra Credit Review and Makeups must be complete before EOD Thu</a></li>
+<li class="toc-entry toc-h2"><a href="#coding-for-extra-credit">Coding for Extra Credit</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#step-1---javascript-document-element-updates">Step 1 - JavaScript document element updates</a></li>
+<li class="toc-entry toc-h3"><a href="#step-2-bash-option---do-updates-on-server">Step 2 (Bash Option) - do updates on server</a></li>
+</ul>
+</li>
 </ul><h2 id="plans-week-12">
 <a class="anchor" href="#plans-week-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>Plans Week 12</h2>
 <blockquote>
@@ -120,6 +126,74 @@ window.onload = wrap_img;
 <blockquote>
   <p>Posters is an example</p>
 </blockquote>
+
+<h2 id="coding-for-extra-credit">
+<a class="anchor" href="#coding-for-extra-credit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coding for Extra Credit</h2>
+<blockquote>
+  <p>There are always opportunities to show understanding of coding.  This weekend I was observing <a href="https://www.worldometers.info/">World-O-Meter</a>.  How would you do this with our group projects.</p>
+</blockquote>
+
+<h3 id="step-1---javascript-document-element-updates">
+<a class="anchor" href="#step-1---javascript-document-element-updates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1 - JavaScript document element updates</h3>
+<p>Below is a code segment that updates a clock on a page every second, adaptation would be to update data from API fetch on an interval, then updating all document elements after fetch.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Clock Control</span>
+<span class="c1">// clockElement global element set for convenience</span>
+<span class="kd">let</span> <span class="nx">clockElement</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">clock</span><span class="dl">'</span><span class="p">)</span>
+<span class="c1">// Execute clock function on load</span>
+<span class="nx">clock</span><span class="p">();</span>
+<span class="c1">// Clock update executes on each interval set by timer</span>
+<span class="kd">function</span> <span class="nx">clock</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="nx">clockElement</span><span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleString</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="c1">// Clock refresh timer, a reoccurring event</span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">clock</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>### Step 2 - JavaScript update backend content
+ To make the updates document elements meaningful you would need to have an interval to update the Haha or Boohoo content.  This could be done in same or different JavaScript timer.  This would be calling appropriate fetch in add to the counters.  Together, these would give the same effect as the World-O-Meter.</p>
+
+<p>### Step 2 (Python Option) - update backend content</p>
+<blockquote>
+  <p>Instead of having frontend update counter, you could have backend update the counter.  The below could be adapted to purpose.</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kn">import</span> <span class="nn">threading</span>  <span class="c1"># import threading
+</span>
+<span class="k">def</span> <span class="nf">keepUpdating</span><span class="p">():</span> <span class="c1"># build a function to run over and over
+</span>    <span class="c1"># global variable setup
+</span>    <span class="k">global</span> <span class="n">run</span>  
+    <span class="k">try</span><span class="p">:</span> <span class="n">run</span>
+    <span class="k">except</span><span class="p">:</span> <span class="n">run</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">"Seconds:"</span><span class="p">,</span> <span class="n">run</span><span class="p">)</span>  <span class="c1"># replace this line with updates to data
+</span>    <span class="n">run</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># this is update to global variable
+</span>    <span class="n">threading</span><span class="p">.</span><span class="n">Timer</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">keepUpdating</span><span class="p">).</span><span class="n">start</span><span class="p">()</span>
+
+<span class="n">keepUpdating</span><span class="p">()</span>  <span class="c1"># you need to call this function at application startup
+</span></code></pre></div></div>
+
+<h3 id="step-2-bash-option---do-updates-on-server">
+<a class="anchor" href="#step-2-bash-option---do-updates-on-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2 (Bash Option) - do updates on server</h3>
+<blockquote>
+  <p>Update content using curl and scheduling on the system.  To make a PUT request with Curl, you need to use the -X PUT command-line option.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-X</span> PUT localhost:8080/api/like/1
+</code></pre></div></div>
+
+<blockquote>
+  <p>This command would need to be added to crontab or a bash script and crontab to run repeatedly.</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>crontab <span class="nt">-l</span>
+<span class="c"># Edit this file to introduce tasks to be run by cron.</span>
+<span class="c"># </span>
+<span class="c"># Each task to run has to be defined through a single line</span>
+<span class="c"># indicating with different fields when the task will be run</span>
+<span class="c"># and what command to run for the task</span>
+</code></pre></div></div>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"

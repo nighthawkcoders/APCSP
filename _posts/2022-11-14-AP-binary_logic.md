@@ -2,7 +2,7 @@
 toc: true
 comments: false
 layout: post
-title: Binary and Abstraction
+title: Binary Logic and Abstraction
 description: Taking a look at binary abstractions (ASCII, Unicode, Images),logic gates, etc
 image: /images/apcsp.png
 categories: [1.D, 2.B, 3.C, C4/4]

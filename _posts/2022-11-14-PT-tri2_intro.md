@@ -22,7 +22,7 @@ week: 13
 ## Tools and Issue Verification (3 points)
 > Summary of Points.
 - Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  Python, JavaScript Jupyter Notebook on Fastpages.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure tools are run out of Anaconda environment.
-- Team Lesson and Issue(s) Plan requires individual checkboxes
-    - Individual Binary Logic and Abstraction Hacks Individual Issue with checkboxes, no more than people per team on same topic, show running code in Fastpages.  Look at Hacks!!!
-    - For lessons on Week 2 and beyond you can look at other hacks.
-    - Objective in lessons is to teach Algorithm and key Data topics at the same time.
+- Individual Binary Logic and Abstraction Hacks Individual Issue with checkboxes, show running code in Fastpages for Binary.  Look at Hacks for Binary Logic and ALgorithms!!!  Attempt to do something new.
+- Team Lesson and Issue(s) Plan, requires checkboxes
+    - For lessons on Week 14,15,16 you can look at CTE Topics/Hacks for week.  Coordinate with other Teams for the week.  Coordinate on Homework.
+    - Objective in lessons is to teach Algorithm and key Data topics at the same time.  Make sure Jupyter Notebook or FE code is created for homework.

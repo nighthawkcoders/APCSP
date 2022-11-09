@@ -15,6 +15,8 @@ week: 13
 - As you do hacks in Algorithms, make sure you have a data topic
 - Explore that topic in Computer Science manner (research, jupyter notebooks, frontend / backend coding)
 - Build a lesson that is more interesting, by explaining algorithm and logic with topic at the same time.
+- You can share learning topic with team member, but in the end you should have your on code.
+- Use [Binary Frontend Code](https://nighthawkcoders.github.io/APCSP/frontend/binary) to get you started.
 
 ## Math in Binary
 > Learn binary by bitwise operators and more.  Shifting bits is a common computer operation and does wonderful things in math like multiply and divide.  Last bit always determines odd or even.

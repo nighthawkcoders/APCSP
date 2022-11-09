@@ -17,9 +17,9 @@ week: 13
 - Tuesday: [Harvard CS50](https://cs50.harvard.edu/x/2022/weeks/0/) minute 0 to minute 50 to provide background on binary, complete all 50 minutes recommended
 - Wednesday: Binary Logic and Abstractions
 - Thursday: Work Day
-- Friday: Tools Verification
+- Friday: Tools and Issue Verification
 
-## Tools Verification (3 points)
+## Tools and Issue Verification (3 points)
 > Summary of Points.
 - Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  Python, JavaScript Jupyter Notebook on Fastpages.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure tools are run out of Anaconda environment.
 - Team Lesson and Issue(s) Plan requires individual checkboxes

@@ -9,7 +9,7 @@ title: Schedule
 {% assign all = all | concat:site.posts | concat:site.pages %}
 
 <!-- Setup order for Units -->
-{% assign units = "3,2,1,4" | split: ',' %}
+{% assign units = "4,3,2,1" | split: ',' %}
 {% for unit in units %}
 
   <!-- Each Unit has a range of weeks and a heading -->
@@ -34,7 +34,7 @@ title: Schedule
       {% assign start = 13 %}
       {% assign end = 16 %}
 ## Unit {{unit}}: Algorithmic Programming
-> Trimester 2 begins with student teaching and a focus on algorithms.  Coding and algorithms is more impactful if you have projects(s) as you are learning.  Each week a "Student Team" has a teaching assignment supported by College Board materials.  Additionally, the Teacher is providing Career Tech mini-labs that correspond to one or more topics for the week.  Use the two things together as you improve your personal blog with Frontend algorithms and/or Jupyter Notebooks.
+> Trimester 2 begins with student teaching and a focus on algorithms.  Each week a "Student Team" has a teaching assignment supported by College Board materials.  Additionally, the Teacher is providing Career Tech mini-labs that correspond to one or more topics for the week.  Use the two things together as you improve your learning experience, Frontend blog and Jupyter Notebooks.
       
   {% endif %}
 

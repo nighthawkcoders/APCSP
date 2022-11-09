@@ -188,7 +188,7 @@ Modulo 8 algorithm add <tr> for every eight bits (code).
 
 ## Hacks
 > Data and Algorithms work together.  Data helps supply a topic to an algorithm.  It will be expected that you have a topic as you go through various algorithms.
-- Use data abstraction in your topic
-- Make sure you learn all of the elements above as you learn algorithms
-- Add Science into your process (research, jupyter notebook, and ultimately running application)
-- Topics not on list need to be approved by Teacher.  The topics above focus on data ideas from Unit 2 of AP Classroom.
+- Use data abstraction in your topic/lesson
+- Make sure you teach/learn elements from above as you learn algorithms
+- Add "Science" into your process (research, jupyter notebook, and ultimately running application)
+- Topics used in teaching, not listed in mini-labs need to be approved by Teacher.  The topics above focus on data ideas from Unit 2 of AP Classroom.

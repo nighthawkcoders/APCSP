@@ -15,7 +15,7 @@ week: 13
 - As you do hacks in Algorithms, make sure you have a data topic
 - Explore that topic in Computer Science manner (research, jupyter notebooks, frontend / backend coding)
 - Build a lesson that is more interesting, by explaining algorithm and logic with topic at the same time.
-- You can share learning topic with team member, but in the end you should have your on code.
+- You can share learning ideas and topic with a team member, but in the end you should have your on code.  The next few weeks are about individual production.
 - Use [Binary Frontend Code](https://nighthawkcoders.github.io/APCSP/frontend/binary) to get you started.
 
 ## Math in Binary

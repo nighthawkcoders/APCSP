@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: post
-title:  Tools Verification and Plans
-description: Individual Data, Algorithms, and Programming Unit.
+title:  Tri 2 Into, Tools and Issues
+description: Overview of objectives for Trimester 2.  Lessons, Algorithms, and Create Performance Task.
 permalink: /points/13
 image: /images/points.jpeg
 categories: []
@@ -23,7 +23,7 @@ week: 13
 - At the end of the Trimester students will be expected to present Fastpages/Blog with Homework assignments and a FE Binary application.
 
 ## Trimester 2 Post-Holiday Objectives
-> Create Performance Task Project.
+> Create Performance Task completed.
 - After additional Data and Algorithm mastery in initial 5 weeks of trimester... students and teams will transition to "Create Performance Task" projects.  12 hours of class time will be allocated to this task over the final 7 weeks.  Additionally, you will use this project in Trimester 2 N@tM presentations.  
     - Be sure to have an interactive portion to this project
     - During the 7 weeks we will be learning to our APIs and processes with Upload (images), creating Frontend forms, storing forms in Databases, learning Login and Security.  Additionally, you should be able to comment as well as like posts.

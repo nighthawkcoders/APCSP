@@ -34,13 +34,13 @@ week: 13
 > Weeks Plans
 - Monday: Form Teams, Pick Teaching Topic, Setup Team, Carry over or establish Team repositories, Establish scrum board, Verify Tools and Kernels.  
 - Tuesday: [Harvard CS50](https://cs50.harvard.edu/x/2022/weeks/0/) minute 0 to minute 50 to provide background on binary, complete all 50 minutes recommended
-- Wednesday: Binary Logic and Abstractions
-- Thursday: Work Day
+- Wednesday: Work Day
+- Thursday: Binary Logic and Abstractions
 - Friday: Tools and Issue Verification
 
 ## Tools and Issue Verification (3 points)
 > Summary of Points.
-- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages MD files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform make server to pretest prior to commits.  Show ***running code*** in Fastpages for as is Binary md. 
+- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages MD files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform make server to pretest prior to commits.  Show ***running code*** in Fastpages for Binary md. 
 - Plan Individual Binary Logic and Abstraction Hacks.  Create ***Individual Issue*** with checkboxes. Look at Hacks for Binary Logic and ALgorithms and build all issues that you interpret as valuable/required!!!  Plan something new.  Consider redesign and how many different md files you will need.
 - Plan Team Lesson and Issue(s) Plan, requires checkboxes
     - Consider lessons for Week 14,15,16, consider using Binary project to supplement learning.  Consider other CTE Topics/Hacks for week.  Coordinate with other Teams for the same week, all projects should be coordinated in Python Notebooks or Fastpages Md on the same week.  Coordinate on Homework.

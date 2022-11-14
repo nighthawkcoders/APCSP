@@ -13,7 +13,7 @@ week: 13
 
 ## Plans Week 13
 > Weeks Plans
-- Monday: ***Form Teams, Pick Teaching Topic, Setup Team, Carry over or establish new Projects and Team repositories, Establish scrum board*** . Teachers will have very ***little tolerance for tools that are not working!!!***  Verify Tools, Fastpages Kernels, WSL, and Anaconda as applicable (Due Friday).
+- Monday: ***Check #announcements daily, Form Teams, Pick Teaching Topic, Setup Team, Carry over or establish new Projects and Team repositories, Establish scrum board*** . Teachers will have very ***little tolerance for tools that are not working!!!***  Verify Tools, Fastpages Kernels, WSL, and Anaconda as applicable (Due Friday).
 - Tuesday: [Harvard CS50](https://cs50.harvard.edu/x/2022/weeks/0/) minute 0 to minute 50 to provide background on binary, complete all 50 minutes recommended
 - Wednesday: Binary Logic and Abstractions
 - Thursday: Work Day

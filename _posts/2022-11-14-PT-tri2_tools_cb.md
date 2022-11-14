@@ -13,14 +13,14 @@ week: 13
 
 ## Plans Week 13
 > Weeks Plans
-- Monday: ***Form Teams, Pick Teaching Topic, Setup Team, Carry over or establish Projects and Team repositories, Establish scrum board*** . Teachers will have very ***little tolerance for tools that are not working!!!***  Verify Tools, Fastpages Kernels, WSL, and Anaconda as applicable.
+- Monday: ***Form Teams, Pick Teaching Topic, Setup Team, Carry over or establish new Projects and Team repositories, Establish scrum board*** . Teachers will have very ***little tolerance for tools that are not working!!!***  Verify Tools, Fastpages Kernels, WSL, and Anaconda as applicable (Due Friday).
 - Tuesday: [Harvard CS50](https://cs50.harvard.edu/x/2022/weeks/0/) minute 0 to minute 50 to provide background on binary, complete all 50 minutes recommended
 - Wednesday: Binary Logic and Abstractions
 - Thursday: Work Day
 - Friday: ***Tools and Issue Verification Due**
 
 ## Trimester 2 Pre-Holiday Objectives
-> Unit 2 and Unit 3 mastery.
+> <mark>Unit 2 and Unit 3 mastery.</mark>
 - Students needs to master Big Idea 3 Algorithms and Programming from College Board online curriculum prior to winter break.
 - Students should master Unit 2, topics 2.1, 2.3, and 2.4 before winter break.
 - Teams will share a lesson.
@@ -40,8 +40,8 @@ week: 13
 
 ## Tools and Issue Verification (3 points)
 > Summary of Points.
-- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages MD files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary md. 
+- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages Markdown files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary md. 
 - ***Plan Individual Binary Logic and Abstraction Hacks.***  Create ***Individual Issue*** with checkboxes. Look at Hacks for Binary Logic and Algorithms and build all issues that you interpret as valuable/required!!!  Plan something new.  ***Consider redesign and how many different md files you will need.***
 - ***Plan Team Lesson and Issue(s)***, requires checkboxes!!!
-    - Consider ***using Binary project to supplement learning.*** Consider Career Tech blogs as supplemental Topics/Hacks for week.  ***Coordinate with other Teams for the same week***, all projects should be coordinated in Python Notebooks or Fastpages md on the same week.  Coordinate on Homework.
+    - Consider ***using Binary project to supplement learning.*** Consider Career Tech blogs as supplemental Topics/Hacks for week.  ***Coordinate with other Teams for the same week***, all projects should be coordinated in Python Notebooks or Fastpages Markdown on the same week (one student deliverable location).  Coordinate on Homework.
     - Objective in ***each lesson is to teach Algorithm and key Data topics at the same time.***  Make sure Jupyter Notebook or Frontend code is created for homework.  Homework should be limited to 30 minutes.  Publish and receive materials on Comment page of blog.

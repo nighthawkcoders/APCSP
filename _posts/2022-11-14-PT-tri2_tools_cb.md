@@ -40,7 +40,7 @@ week: 13
 
 ## Tools and Issue Verification (3 points)
 > Summary of Points.
-- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages MD files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for as is Binary md. 
+- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages MD files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary md. 
 - ***Plan Individual Binary Logic and Abstraction Hacks.***  Create ***Individual Issue*** with checkboxes. Look at Hacks for Binary Logic and Algorithms and build all issues that you interpret as valuable/required!!!  Plan something new.  ***Consider redesign and how many different md files you will need.***
 - ***Plan Team Lesson and Issue(s)***, requires checkboxes!!!
     - Consider ***using Binary project to supplement learning.*** Consider Career Tech blogs as supplemental Topics/Hacks for week.  ***Coordinate with other Teams for the same week***, all projects should be coordinated in Python Notebooks or Fastpages md on the same week.  Coordinate on Homework.

@@ -4,6 +4,7 @@ title: Intro to Computer Science Ideas
 description: Preliminary ideas for a intro course for computer science 
 permalink: /csintro
 toc: true
+comments: true
 ---
 
 ## Intro Class Logistics (Del Norte desires title by end of meeting)

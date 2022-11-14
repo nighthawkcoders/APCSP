@@ -31,7 +31,7 @@ week: 13
 - Through the Trimester students will be expected to ***present Fastpages/Blog with Homework assignments and one-to-many Frontend JavaScrip web applications.**
 
 ## Trimester 2 Post-Holiday Objectives
-> Create Performance Task completed.
+> <mark>Create Performance Task completed.</mark>
 - After additional Data and Algorithm mastery in initial 5 weeks of trimester... students and teams will ***transition to "Create Performance Task" projects***.  12 hours of class time will be allocated to this task over the final 7 weeks.  Additionally, you will use this project in Trimester 2 N@tM presentations.  
     - Be sure to have an ***interactive portion to this project***, this is key to College Board Video and N@tM presentations.
     - During the 7 weeks we will be ***learning more about APIs, creating Frontend forms, storing forms in Databases, posting comments, uploading (images) and continuing with likes.  As we transition to Trimester 3 we will creating user login and site security.***

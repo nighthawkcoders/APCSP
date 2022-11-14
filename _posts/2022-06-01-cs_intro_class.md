@@ -40,7 +40,7 @@ toc: true
 - [Devops Engineer](https://www.linkedin.com/learning/paths/become-a-devops-engineer)
 
 ### Articulation Programs
-> There has been movement by Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for "CS113 – Data Structures".
+> There has been movement by Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for [CS113 – Data Structures](https://catalog.miracosta.edu/disciplines/computerscience/#courseinventory).
 
 ```
 CS 113: Basic Data Structures and Algorithms

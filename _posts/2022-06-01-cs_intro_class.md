@@ -28,10 +28,11 @@ toc: true
 - [Create an Apple App using Xcode and Swift](https://www.apple.com/education/k12/learn-to-code/)
     AND/OR
 - [Unity Game Development Curriculum](https://learn.unity.com/course/teaching-game-design-and-development)
+
 ## Certificate Programs
-> Certificates are available online.  Teachers could obtain them 1st and teach course with their own materials.  Students could register if they want to obtain certificates.
+> Certificates are available online and at many avenues (Udemy, LinkedIN, Apple, etc).  Teachers could/should learn and then perhaps teach courses that are aligned to certificates by an organization like LinkedIn.  This would enable Teachers and District to confidently state that their Teachers are current to CTE advisors.
 ### LinkedIn Certification Programs for Development Engineering Methodology
-> Skills required to teach Project Based Learning.
+> Skills to assist in teaching Project Based Learning.
 
 - [Github Issues](https://www.linkedin.com/learning/github-issues-and-projects-for-teams)
 
@@ -39,23 +40,8 @@ toc: true
 
 - [Devops Engineer](https://www.linkedin.com/learning/paths/become-a-devops-engineer)
 
-### Articulation Programs
-> There has been movement by Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for [CS113 – Data Structures](https://catalog.miracosta.edu/disciplines/computerscience/#courseinventory).
-
-```
-CS 113: Basic Data Structures and Algorithms
-
-Units: 3
-Prerequisites: CS 112.
-Acceptable for Credit: CSU, UC
-Lecture 2 hours, laboratory 3 hours.
-Course Typically Offered: Fall, Spring, and Summer
-
-The course uses topics of personal and social relevance to investigate the impact of computing through efficient algorithms and properly designed data structures. Students explore the software development process by developing effective solutions using industry-standard tools. Topics include searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs. C-ID COMP-132.
-```
-
 ### LinkedIn Certificates for Programming
-> Skills required to teach Intro to Programming, Computers Science Principles, Computer Science "A" development.
+> Certificates to assist in teaching Intro to Programming, Computers Science Principles, Computer Science "A" development.
 
 - [Intro Scratch](https://www.linkedin.com/learning/learning-scratch)
 
@@ -70,3 +56,24 @@ The course uses topics of personal and social relevance to investigate the impac
 - [CSA - Java Script Developer](https://www.linkedin.com/learning/paths/become-a-javascript-developer)
 
 
+## Articulation Programs
+> There has been movement by Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for [CS113 – Data Structures](https://catalog.miracosta.edu/disciplines/computerscience/#courseinventory).
+
+```
+CS 113: Basic Data Structures and Algorithms
+
+Units: 3
+Prerequisites: CS 112.
+Acceptable for Credit: CSU, UC
+Lecture 2 hours, laboratory 3 hours.
+Course Typically Offered: Fall, Spring, and Summer
+
+The course uses topics of personal and social relevance to investigate the impact of computing through efficient algorithms and properly designed data structures. Students explore the software development process by developing effective solutions using industry-standard tools. Topics include searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs. C-ID COMP-132.
+```
+
+## Del Norte 2022-2023 Course Outlines and Student Projects
+> Del Norte Materials are all online and maintained in GitHub.  Content produced is automatically deployed to a public Website.
+- [Computer Science "A"](https://nighthawkcoders.github.io/APCSA/schedule)
+    - [Trimester 1 CSA Student Projects/Review Tickets](https://nighthawkcoders.github.io/APCSA//points/11)
+- [Computer Science Principles](https://nighthawkcoders.github.io/APCSP/schedule)
+    - [Trimester 1 CSP Student Projects/Review Tickets](https://nighthawkcoders.github.io/APCSP//points/11)... Look at bottom of page.

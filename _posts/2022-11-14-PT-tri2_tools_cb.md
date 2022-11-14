@@ -39,7 +39,7 @@ week: 13
     - We will have Tech Talks in Career Tech, AP Test and Human Development during the last 7 weeks.
 
 ## Tools and Issue Verification (3 points)
-> Summary of Points.
+> <mark>Summary of Points.</mark>
 - Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages Markdown files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary Markdown and FastPage Python. 
 - ***Plan Individual Binary Logic and Abstraction Hacks.***  Create ***Individual Issue*** with checkboxes. Look at Hacks for Binary Logic and Algorithms and build all issues that you interpret as valuable/required!!!  Plan something new.  ***Consider redesign and how many different Markdown files you will need.***
 - ***Plan Team Lesson and Issue(s)***, requires checkboxes!!!

@@ -27,7 +27,7 @@ week: 13
     - Every team must present and be clearly involved in preparation.  Review tickets are required for each student with links to tangibles.
     - In lesson preparation and teaching students should try to use Binary as data in lessons.  All algorithms need data and there are many applications of Binary that can support the Algorithms from College Board Unit 3 
      - Exceptions can be made to Binary.  But, this must be discussed with Teacher in advance.
-- Students will be working with Fastpages, ***Jupyter Notebooks: Python, JavaScript kernels.*** Additionally, it students will work in ***Frontend JavaScript code in Fastpages*** (see [Frontend Examples](https://nighthawkcoders.github.io/APCSP/frontend/overview).
+- Students will be working with Fastpages, ***Jupyter Notebooks: Python, JavaScript kernels.*** Additionally, students will work in ***Frontend JavaScript code in Fastpages Markdown files*** (see [Frontend Examples](https://nighthawkcoders.github.io/APCSP/frontend/overview).
 - Through the Trimester students will be expected to ***present Fastpages/Blog with Homework assignments and one-to-many Frontend JavaScrip web applications.**
 
 ## Trimester 2 Post-Holiday Objectives

@@ -68,9 +68,9 @@ Prerequisites: CS 112.
 Acceptable for Credit: CSU, UC
 Lecture 2 hours, laboratory 3 hours.
 Course Typically Offered: Fall, Spring, and Summer
-
-The course uses topics of personal and social relevance to investigate the impact of computing through efficient algorithms and properly designed data structures. Students explore the software development process by developing effective solutions using industry-standard tools. Topics include searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs. C-ID COMP-132.
 ```
+
+- The course uses topics of personal and social relevance to investigate the impact of computing through efficient algorithms and properly designed data structures. Students explore the software development process by developing effective solutions using industry-standard tools. Topics include searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs. C-ID COMP-132.
 
 ## Del Norte 2022-2023 Course Outlines and Student Projects
 > Del Norte Materials are all online and maintained in GitHub.  Content produced is automatically deployed to a public Website.

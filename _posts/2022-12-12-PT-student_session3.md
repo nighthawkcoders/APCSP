@@ -8,7 +8,7 @@ permalink: /points/15
 image: /images/points.jpeg
 categories: []
 type: plan
-week: 15
+week: 16
 ---
 
 ## Plans Week 15

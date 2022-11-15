@@ -15,8 +15,8 @@ week: 13
 - ***Explore that topic in Computer Science manner*** (research, jupyter notebooks, frontend / backend coding)
 - Build a lesson that is more interesting, by explaining an algorithm and logic using a data topic.
 - Teach with examples... ***Segment from [CS50](https://youtu.be/1tnj3UCkuxU?t=336) and go to minute 13:15.***
-- ***Use [Binary Frontend Code](https://nighthawkcoders.github.io/APCSP/frontend/binary)*** to get you started.
-- Lecture will finish by ***review hacks***, the remainder of this blog and Binary Frontend Code is part of your research.
+- Tour the Code.  ***Use [Binary Frontend Code](https://nighthawkcoders.github.io/APCSP/frontend/binary)*** to get you started. <mark>Better clone APCSP project drag and drop _posts/2022-07-07-PBL-binary.md to your project and Debug</mark>
+- This Tech Talk will finish by ***reviewing hacks***, the remainder of this blog and Binary Frontend Code is part of your research.
 
 ## Math in Binary
 > Learn binary by bitwise operators and more.  Shifting bits is a common computer operation and does wonderful things in math like multiply and divide.  Last bit always determines odd or even.

@@ -80,6 +80,6 @@ Course Typically Offered: Fall, Spring, and Summer
     - [Trimester 1 CSP Student Projects/Review Tickets - AT BOTTOM OF LINK](https://nighthawkcoders.github.io/APCSP//points/11)
 
 
-## Please comment here to capture your input :) fyi, requires GitHub sign in ...
+## Please comment, requires GitHub sign-in ...
 
 

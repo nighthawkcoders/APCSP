@@ -10,13 +10,13 @@ type: ap
 week: 13
 ---
 
-## Data, Binary Abstraction (ASCII, Unicode, Color Codes), and Logic Gates
-> Algorithms and Data often go together.  It is ***required*** to have a topic as you venture into Algorithms and Lessons.  This article is a random collection of ideas in Data that could be ***your topic***. Use ***your topic*** as you learn algorithms and programming.
-- As you do hacks in Algorithms, make sure you have a data topic
-- Explore that topic in Computer Science manner (research, jupyter notebooks, frontend / backend coding)
-- Build a lesson that is more interesting, by explaining algorithm and logic with topic at the same time.
-- You can share learning ideas and topic with a team member, but in the end you should have your on code.  The next few weeks are about individual production.
-- Use [Binary Frontend Code](https://nighthawkcoders.github.io/APCSP/frontend/binary) to get you started.
+## Binary, Data, Data Structures, Data Abstraction (ASCII, Unicode, Color Codes), 
+> Algorithms, Data and Data Structures go together.  It is ***required*** to have a data topic as you venture into Algorithms and Lessons.  This blog is a collection of binary, data and data structures that should be ***your data topic***!!! Use ***a data topic*** as you learn algorithms and programming.
+- ***Explore that topic in Computer Science manner*** (research, jupyter notebooks, frontend / backend coding)
+- Build a lesson that is more interesting, by explaining an algorithm and logic using a data topic.
+- Teach with examples... ***Segment from [CS50](https://youtu.be/1tnj3UCkuxU?t=336) and go to minute 13:15.***
+- ***Use [Binary Frontend Code](https://nighthawkcoders.github.io/APCSP/frontend/binary)*** to get you started.
+- Lecture will finish by ***review hacks***, the remainder of this blog and Binary Frontend Code is part of your research.
 
 ## Math in Binary
 > Learn binary by bitwise operators and more.  Shifting bits is a common computer operation and does wonderful things in math like multiply and divide.  Last bit always determines odd or even.
@@ -187,8 +187,8 @@ Modulo 8 algorithm add <tr> for every eight bits (code).
 *Overview find by Val Wilson*
 
 ## Hacks
-> Data and Algorithms work together.  Data helps supply a topic to an algorithm.  It will be expected that you have a topic as you go through various algorithms.
-- Use data abstraction in your topic/lesson
-- Make sure you teach/learn elements from above as you learn algorithms
-- Add "Science" into your process (research, jupyter notebook, and ultimately running application)
-- Topics used in teaching, not listed in mini-labs need to be approved by Teacher.  The topics above focus on data ideas from Unit 2 of AP Classroom.
+> Data, Data Structures, and Algorithms work together.  Data helps supply an interests/topic to an algorithm.  It will be expected that you have a topic as you go through various algorithms.
+- Use data abstraction (ie data structures) in your lesson
+- ***Make sure you teach/learn elements from this blog as you learn algorithms***
+- ***Add "Science" into your process*** (research, jupyter notebook, and ultimately running application)
+- ***Topics used in teaching, not listed in lesson/labs/homework need to be approved by Teacher.***  The topics above focus on data ideas from Unit 2 of AP Classroom.

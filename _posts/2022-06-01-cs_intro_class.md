@@ -75,6 +75,11 @@ Course Typically Offered: Fall, Spring, and Summer
 ## Del Norte 2022-2023 Course Outlines and Student Projects
 > Del Norte Materials are all online and maintained in GitHub.  Content produced is automatically deployed to a public Website.
 - [Computer Science "A"](https://nighthawkcoders.github.io/APCSA/schedule)
-    - [Trimester 1 CSA Student Projects/Review Tickets](https://nighthawkcoders.github.io/APCSA//points/11)
+    - [Trimester 1 CSA Student Projects/Review Tickets - AT BOTTOM OF LINK](https://nighthawkcoders.github.io/APCSA//points/11)
 - [Computer Science Principles](https://nighthawkcoders.github.io/APCSP/schedule)
-    - [Trimester 1 CSP Student Projects/Review Tickets](https://nighthawkcoders.github.io/APCSP//points/11)... Look at bottom of page.
+    - [Trimester 1 CSP Student Projects/Review Tickets - AT BOTTOM OF LINK](https://nighthawkcoders.github.io/APCSP//points/11)
+
+
+## Please comment here to capture your input :) fyi, requires GitHub sign in ...
+
+

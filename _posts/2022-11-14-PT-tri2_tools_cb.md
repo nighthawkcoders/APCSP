@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title:  Tri 2 Into, Tools and Issues
+title:  Week of 11-14, Tri 2 Into, Tools and Issues
 description: Overview of objectives for Trimester 2.  Lessons, Algorithms, and Create Performance Task.
 permalink: /points/13
 image: /images/points.jpeg

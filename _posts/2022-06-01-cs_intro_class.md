@@ -52,9 +52,9 @@ comments: true
 
 - [CSP Python Developer](https://www.linkedin.com/learning/paths/become-a-python-developer-8969630)
 
-- [CSP JavaScript Developer](https://www.linkedin.com/learning/learning-the-javascript-language-2)
+- [CSP - JavaScript Developer](https://www.linkedin.com/learning/paths/become-a-javascript-developer)
 
-- [CSA - Java Script Developer](https://www.linkedin.com/learning/paths/become-a-javascript-developer)
+- [CSA - Java Developer](https://www.linkedin.com/learning/learning-java-4)
 
 
 ## Articulation Programs

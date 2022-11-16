@@ -57,8 +57,12 @@ comments: true
 - [CSA - Java Developer](https://www.linkedin.com/learning/learning-java-4)
 
 
-## Articulation Programs
-> There has been movement by Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for [CS113 – Data Structures](https://catalog.miracosta.edu/disciplines/computerscience/#courseinventory).
+## Accreditation, Articulation and Beyond
+> In discussion on titles, it seems vital to a High School Pathway that it leads beyond.  A key contributor to increasing Del Norte student participation in Computer Science, ~100 tto ~240, is the introduction of Computer Science Principles.
+- ***Computer Science Principles has AP testing and UC accreditation*** as a 3rd Science, not just elective. 
+- ***Computer Science "A" has AP testing and UC accreditation*** as a 4th Math, not just elective.
+- ***Data Structure 1&2 with B or above graded will articulate to CS113 Data Structures.***  There has been movement by Emily Stephenson, Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for [CS113 – Data Structures](https://catalog.miracosta.edu/disciplines/computerscience/#courseinventory).
+- ***Beyond College***, it seems the other "Big Thing" that High School Computer Science can do is to prepare students for internships and jobs.  Del Norte has been placing people regularly at Northrop Grumman (2 per year), UCSD Supercomputer (2 per year), Code Ninjas (2 per year).  Additionally, I have 2 reports of students Teaching in CompSci Labs on campus (Harvard and Mira Costa College).  Lastly, I have heard of a Purdue freshmen that is currently getting a Government clearance for internship in Summer 2023.  An absolute key is having projects published on GitHub!  The Purdue freshmen said the internship interviewer said "they reviewed projects on GitHub and new that he could code". These opportunities seem to come because of Agile Methodology, Scrum, Python/Flask, Java/Spring, AWS, SQL, Linux, Anaconda, Docker, Nginx, GitHub. 
 
 ```
 CS 113: Basic Data Structures and Algorithms

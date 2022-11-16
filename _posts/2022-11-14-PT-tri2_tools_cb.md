@@ -40,7 +40,10 @@ week: 13
 
 ## Tools and Issue Verification (3 points)
 > <mark>Summary of Points.</mark>
-- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages Markdown files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary Markdown and FastPage Python. 
+- Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages Markdown files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary Markdown and FastPage Python.
+- Each member of team pick a different hack or pair program 2 hacks.  Create ***Individual Issue*** with checkboxes.  This should be planned in Individual FastPages.  However, you should plan a hack that is beneficial to topic that you will be Teaching.  Consider this individual research.
+
+## Lesson Plans and Presentation, (7 points) . -- recording will be in parts
 - ***Plan Individual Binary Logic and Abstraction Hacks.***  Each member of team pick a different hack or pair program 2 hacks.  Create ***Individual Issue*** with checkboxes. Topics for Hacks are in Binary Logic and Algorithms Blog.  Build all hacks that you interpret as valuable/required for your lesson plan!!!  ***Consider redesign of screen or if you will build many different Markdown files for each hack.*** Plan to leave challenge when providing lesson.
 - ***Plan Team Lesson and Issue(s)***, requires checkboxes!!!
     - Planning and Presenting Lesson <mark>4 points</mark>

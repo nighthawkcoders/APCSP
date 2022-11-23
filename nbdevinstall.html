@@ -89,18 +89,18 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#install-nbdev">Install nbdev</a></li>
-<li class="toc-entry toc-h1"><a href="#install-quarto">Install Quarto</a></li>
-<li class="toc-entry toc-h1"><a href="#create-a-new-repository">Create a New Repository</a></li>
-</ul><h1 id="install-nbdev">
-<a class="anchor" href="#install-nbdev" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install nbdev</h1>
+<li class="toc-entry toc-h1"><a href="#create-new-repository-with-nbdev">Create new repository with nbdev</a></li>
+<li class="toc-entry toc-h1"><a href="#transfer-posts-from-old-repository">Transfer posts from old repository</a></li>
+</ul><h1 id="create-new-repository-with-nbdev">
+<a class="anchor" href="#create-new-repository-with-nbdev" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create new repository with nbdev</h1>
 
 <p><a href="https://nbdev.fast.ai/tutorials/tutorial.html">Documentation</a></p>
 
 <p>For the most part the documentation is pretty straight forward. Here are some extra details that might be helpful:</p>
 <ul>
   <li>When you initialize the repository, remember to use mkdir and do the commands in that directory.</li>
-  <li>You will be asked to generate a token for a password, you will need to make sure to give yourself repository permissions on the token otherwise the password will give you a 403 error when you run git push.</li>
+  <li>You will be asked to generate a token for a password, you will need to make sure to give yourself repository permissions on the token otherwise the password will give you a 403 error when you run git push. <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">More Info Here</a>
+</li>
 </ul>
 
 <p><a href="https://nbdev.fast.ai/tutorials/pre_commit.html">Install hooks for git-friendly notebooks</a></p>
@@ -120,37 +120,10 @@ window.onload = wrap_img;
 <p>Before commiting your changes to GitHub the developers recommend running:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nbdev_prepare
 </code></pre></div></div>
+<h1 id="transfer-posts-from-old-repository">
+<a class="anchor" href="#transfer-posts-from-old-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Transfer posts from old repository</h1>
 
-<p>’'’Delete below as needed’’’</p>
-
-<h1 id="install-quarto">
-<a class="anchor" href="#install-quarto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Quarto</h1>
-
-<p><a href="https://docs.posit.co/resources/install-quarto/#quarto-tar-file-install">Source</a></p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">QUARTO_VERSION</span><span class="o">=</span><span class="s2">"1.2.262"</span>
-</code></pre></div></div>
-<p>You can change the version to the latest version which can be found <a href="https://github.com/quarto-dev/quarto-cli/releases/">here</a></p>
-
-<p>Run these commands to install Quarto in WSL</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo mkdir</span> <span class="nt">-p</span> /opt/quarto/<span class="k">${</span><span class="nv">QUARTO_VERSION</span><span class="k">}</span>
-
-<span class="nv">$ </span><span class="nb">sudo </span>curl <span class="nt">-o</span> quarto.tar.gz <span class="nt">-L</span> <span class="se">\</span>
-    <span class="s2">"https://github.com/quarto-dev/quarto-cli/releases/download/v</span><span class="k">${</span><span class="nv">QUARTO_VERSION</span><span class="k">}</span><span class="s2">/quarto-</span><span class="k">${</span><span class="nv">QUARTO_VERSION</span><span class="k">}</span><span class="s2">-linux-amd64.tar.gz"</span>
-
-<span class="nv">$ </span><span class="nb">sudo tar</span> <span class="nt">-zxvf</span> quarto.tar.gz <span class="se">\</span>
-    <span class="nt">-C</span> <span class="s2">"/opt/quarto/</span><span class="k">${</span><span class="nv">QUARTO_VERSION</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-    <span class="nt">--strip-components</span><span class="o">=</span>1
-
-<span class="nv">$ </span><span class="nb">sudo rm </span>quarto.tar.gz
-
-<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /opt/quarto/<span class="k">${</span><span class="nv">QUARTO_VERSION</span><span class="k">}</span>/bin/quarto /usr/local/bin/quarto
-</code></pre></div></div>
-
-<h1 id="create-a-new-repository">
-<a class="anchor" href="#create-a-new-repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a New Repository</h1>
-
-<p>Create a new directory then run:</p>
+<p>In your new directory run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>quarto create-project <span class="nt">--type</span> website:blog <span class="nb">.</span>
 </code></pre></div></div>

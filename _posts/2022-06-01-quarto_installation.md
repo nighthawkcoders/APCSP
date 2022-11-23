@@ -6,13 +6,13 @@ permalink: /nbdevinstall
 toc: true
 comments: true
 ---
-# Install nbdev
+# Create new repository with nbdev
 
 [Documentation](https://nbdev.fast.ai/tutorials/tutorial.html)
 
 For the most part the documentation is pretty straight forward. Here are some extra details that might be helpful:
 * When you initialize the repository, remember to use mkdir and do the commands in that directory.
-* You will be asked to generate a token for a password, you will need to make sure to give yourself repository permissions on the token otherwise the password will give you a 403 error when you run git push. 
+* You will be asked to generate a token for a password, you will need to make sure to give yourself repository permissions on the token otherwise the password will give you a 403 error when you run git push. [More Info Here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 [Install hooks for git-friendly notebooks](https://nbdev.fast.ai/tutorials/pre_commit.html)
 
@@ -35,37 +35,9 @@ Before commiting your changes to GitHub the developers recommend running:
 ```bash
 nbdev_prepare
 ```
+# Transfer posts from old repository
 
-'''Delete below as needed''' 
-
-# Install Quarto
-
-[Source](https://docs.posit.co/resources/install-quarto/#quarto-tar-file-install)
-
-```bash
-$ export QUARTO_VERSION="1.2.262"
-```
-You can change the version to the latest version which can be found [here](https://github.com/quarto-dev/quarto-cli/releases/)
-
-Run these commands to install Quarto in WSL 
-```bash
-$ sudo mkdir -p /opt/quarto/${QUARTO_VERSION}
-
-$ sudo curl -o quarto.tar.gz -L \
-    "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz"
-
-$ sudo tar -zxvf quarto.tar.gz \
-    -C "/opt/quarto/${QUARTO_VERSION}" \
-    --strip-components=1
-
-$ sudo rm quarto.tar.gz
-
-$ sudo ln -s /opt/quarto/${QUARTO_VERSION}/bin/quarto /usr/local/bin/quarto
-```
-
-# Create a New Repository
-
-Create a new directory then run:
+In your new directory run:
 
 ```bash
 $ quarto create-project --type website:blog .

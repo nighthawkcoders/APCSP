@@ -59,15 +59,13 @@ $ cp ../blog/images/* posts
 $ cp -r ../blog/images/copied_from_nb/* posts/
 ```
 
-Install nbdev to migrate 
+Migrate (changes the front matter) the transfered posts  
 
 ```bash
-$ conda install -c fastai nbdev
-
 $ nbdev_migrate --path posts
 ```
+Note:
+* If you didn't delete the markdown posts I specified earlier you will run into an exception error. You will need to manually remove these files in the posts directory. 
+* Your front matter cannot have any empty values you will run into an exception for this reason as well.
 
-If you didn't delete the markdown posts I specified earlier you will run into an exception error. You will need to manually remove these files in the posts directory. 
-
-[Creating the Blog](https://nbdev.fast.ai/tutorials/blogging.html#creating-a-blog-within-a-nbdev-project)
- 
+[Creating a blog within a nbdev project](https://nbdev.fast.ai/tutorials/blogging.html#creating-a-blog-within-a-nbdev-project) 

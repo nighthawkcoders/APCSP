@@ -43,16 +43,7 @@ week: 13
 - Individual Tools Verification, VSCode, JavaScript and Python Kernels working on Laptop/Desktop.  "Python Jupyter Notebook" and "Javascript Fastpages Markdown files will be key technical platforms.  If you have problems currently, go back and re-install tools from 1st trimester guide.  Be sure VS Code is running out of Anaconda environment.  Perform ***make server*** to pretest prior to commits.  Show ***running code*** in Fastpages for Binary Markdown and FastPage Python.
 - Each member of team pick a different hack or pair program 2 hacks.  Create ***Individual Issue*** with checkboxes.  This should be planned in Individual FastPages.  However, you should plan a hack that is beneficial to topic that you will be Teaching.  Consider this individual research.
 
-## Lesson Plans and Presentation, (7 points) . -- recording will be in parts
-- ***Plan Individual Binary Logic and Abstraction Hacks.***  Each member of team pick a different hack or pair program 2 hacks.  Create ***Individual Issue*** with checkboxes. Topics for Hacks are in Binary Logic and Algorithms Blog.  Build all hacks that you interpret as valuable/required for your lesson plan!!!  ***Consider redesign of screen or if you will build many different Markdown files for each hack.*** Plan to leave challenge when providing lesson.
-- ***Plan Team Lesson and Issue(s)***, requires checkboxes!!!
-    - Planning and Presenting Lesson <mark>4 points</mark>
-        - Planning. Issues used in preparation and tangibles completed in individual portions of work.
-        - Topic, presentation quality and expertise.  Make sure you watch College Board videos on material, become expert on ideas.  Perform other research.  ***Quality of reflecting material is key to points***.  Communicate to student key ideas and learnings needed.
-        - Technicals and Data used.  You must consider ***using Binary project or hacks to supplement teaching/learning of lesson material.*** Consider Career Tech blogs on Schedule as supplemental Topics/Hacks to the initial Binary Tech Talk.  ***Coordinate with other Teams for the same week***.  Coordinate on Homework to make sure it is about 1.5 hours total, not on same hack.  Be sure to emphasize Topics and Ideas with Technicals.
-        - Algorithm and homework assignment.  Objective in ***each lesson is to teach Algorithm and key Data topics at the same time.***  Make sure Frontend code is created from homework.  Homework should be limited to 30 minutes a lesson, including activities or games.  Remainder of class should be to start homework.  Publish materials and receive homework on Comment page of blog where you signed up for lesson.
-    - Grading: <mark>2 points</mark>.  Plan to receive and grade homework.  Set due date and be sure to grade within 2 to 3 days after Teaching.  
-        - Grading participation.  Each person will be grading ~10 homeworks.  
-        - Completeness and quality.  ***Homework grading and presenting summary and scores to each student is key part to a lessons***.  Grade each student on 3 criteria, it will be worth 1 point total.  Set expectations at 90% if the attempt/meet criteria.  Plus or minus on adding or missing criteria.  Any submit is about 80%, any participation is about 70%.  
-    - Grading Summary: <mark>1 point</mark>.  Submit a summary of all grades and reflection to Teacher.  Make it easy for Teacher to record and know work was complete.
-   
+## Lesson Plans and Presentation, (7 points) . 
+> <mark>See Canvas for official guide on grading</mark> for this assignment.Recording for grading will be in parts.
+- Lesson 4 points (Planning, Topic Coverage, Technicals and Data, Algorithms and Homework)
+- Grading 3 points (Grading participation, Completeness and quality, Grading summary)

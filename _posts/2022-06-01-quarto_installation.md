@@ -1,3 +1,11 @@
+---
+layout: post
+title: NBDEV/Quarto Installation Guide
+description: This will be a step by step guide for setting up a NBDEV Blog using Quarto 
+permalink: /nbdevinstall
+toc: true
+comments: true
+---
 # Install nbdev
 
 [Documentation](https://nbdev.fast.ai/tutorials/tutorial.html)
@@ -5,6 +13,28 @@
 For the most part the documentation is pretty straight forward. Here are some extra details that might be helpful:
 * When you initialize the repository, remember to use mkdir and do the commands in that directory.
 * You will be asked to generate a token for a password, you will need to make sure to give yourself repository permissions on the token otherwise the password will give you a 403 error when you run git push. 
+
+[Install hooks for git-friendly notebooks](https://nbdev.fast.ai/tutorials/pre_commit.html)
+
+```bash
+conda install -c conda-forge pre-commit
+```
+Note: this command took me a long time.
+
+Install packages:
+```bash
+pip install -e '.[dev]'
+```
+
+This command is similar to make server:
+```bash
+nbdev_preview
+```
+
+Before commiting your changes to GitHub the developers recommend running: 
+```bash
+nbdev_prepare
+```
 
 '''Delete below as needed''' 
 
@@ -68,5 +98,4 @@ $ nbdev_migrate --path posts
 If you didn't delete the markdown posts I specified earlier you will run into an exception error. You will need to manually remove these files in the posts directory. 
 
 [Creating the Blog](https://nbdev.fast.ai/tutorials/blogging.html#creating-a-blog-within-a-nbdev-project)
-
-Publish 
+ 

@@ -15,6 +15,6 @@ week: 15
 > Weeks Plans
 - Monday: 3.8 and 3.10 Boolean Iteration and Lists
 - Tuesday: 3.9 and 3.11 Developing Algorithms and Binary Search
-- Wednesday: live reviews, 3.5-3.11, 3 points
+- Wednesday: live reviews, Algo Review #2, 3.5-3.11, 3 points
 - Thursday: 3.12 and 3.13 Calling and Developing Procedures
 - Friday: work day

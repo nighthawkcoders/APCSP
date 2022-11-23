@@ -17,4 +17,4 @@ week: 14
 - Tuesday: 3.3 and 3.4 Mathematical Expressions and Strings
 - Wednesday: work day
 - Thursday: 3.5-3.7 Boolean Expression, Conditionals, Nested Conditionals
-- Friday: live reviews 3.1-3.4, 2pts
+- Friday: live reviews Algo Review, 3.1-3.4, 2pts

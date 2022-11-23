@@ -142,17 +142,17 @@ window.onload = wrap_img;
 <span class="nv">$ </span><span class="nb">cp</span> <span class="nt">-r</span> ../blog/images/copied_from_nb/<span class="k">*</span> posts/
 </code></pre></div></div>
 
-<p>Install nbdev to migrate</p>
+<p>Migrate (changes the front matter) the transfered posts</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>conda <span class="nb">install</span> <span class="nt">-c</span> fastai nbdev
-
-<span class="nv">$ </span>nbdev_migrate <span class="nt">--path</span> posts
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nbdev_migrate <span class="nt">--path</span> posts
 </code></pre></div></div>
+<p>Note:</p>
+<ul>
+  <li>If you didn’t delete the markdown posts I specified earlier you will run into an exception error. You will need to manually remove these files in the posts directory.</li>
+  <li>Your front matter cannot have any empty values you will run into an exception for this reason as well.</li>
+</ul>
 
-<p>If you didn’t delete the markdown posts I specified earlier you will run into an exception error. You will need to manually remove these files in the posts directory.</p>
-
-<p><a href="https://nbdev.fast.ai/tutorials/blogging.html#creating-a-blog-within-a-nbdev-project">Creating the Blog</a></p>
-
+<p><a href="https://nbdev.fast.ai/tutorials/blogging.html#creating-a-blog-within-a-nbdev-project">Creating a blog within a nbdev project</a></p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"

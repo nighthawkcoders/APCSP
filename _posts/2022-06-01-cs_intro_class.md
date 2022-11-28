@@ -15,12 +15,12 @@ comments: true
 ## Pathway
 > The Computer Science Pathway, including Trimester modifications required at Del Norte High School.
 
-| Preferred Grade | Course | Trimesters | Notes/Experience |
-| 9th or 10th | Computer Science and Software Engineering (CSSE) | 2 | Entry to pathway |
-| 10th or 11th | AP Computer Science Principles (CSP) | 2 | Requires CSSE or equivalent experience |
-| 10th or 11th | Data Structures 1 (DS1) | 1 | Part of CSP contract |
-| 11th or 12th | AP Computer Science A (CSA) | 2 | Requires CSP, DS1 or experience in Technologies taught in Del Norte program. |
-| 11th or 12th | Data Structures 2 (DS2) | 1 | Part of CSA contract |
+| Preferred Grade | Course | Trimesters | Credit | Notes/Experience |
+| 9th or 10th | Computer Science and Software Engineering (CSSE) | 2 | UC G | Entry to pathway |
+| 10th or 11th | AP Computer Science Principles (CSP) | 2 | UC D or G| Requires CSSE or equivalent experience |
+| 10th or 11th | Data Structures 1 (DS1) | 1 | DS1/DS2 articulate | Part of CSP year and contract |
+| 11th or 12th | AP Computer Science A (CSA) | 2 | UC C or G | Requires CSP, DS1 or experience in Technologies taught in Del Norte program. |
+| 11th or 12th | Data Structures 2 (DS2) | 1 | DS1/DS2 articulate | Part of CSA year and contract |
 
 ### Start with:
 - Scratch Introduction

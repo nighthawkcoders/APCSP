@@ -8,15 +8,19 @@ comments: true
 ---
 
 ## Intro Class Logistics (Del Norte desires title by end of meeting)
-> Idea is to have a course to focusses on freshman/sophomore classes. The purpose at Del Norte, is to add to the beginning of the pathway that feeds into AP Computer Science Principles (CSP).
-- 1 trimester course of App Design or Game Design
-- 2 trimester course of App Design and Game Design
+> Idea is to have a course to focusses on freshman/sophomore classes. The purpose Computer Science and Software Engineering at Del Norte and PUSD, is to add to the beginning of the pathway that feeds into AP Computer Science Principles (CSP).  [Guide](https://docs.google.com/document/d/1XNNVmkB1hV4Vh7V084HifSchucYB8LKiSgJA1CW9nlw/edit)
+- 1st trimester course is Game Design
+- 2nd trimester course is Game Design with an App Focus
 
 ## Pathway
-> The Pathway modifications at Del Norte High School with Intro course.
-1. 24 Weeks. Intro to Computer Science, no experience
-2. 36 Weeks (contract required). AP CSP, Data Structures 1 is targeting 10th-11th, prerequisite is Intro to Computer Science, waiver of Intro requires experience in Technologies taught in Del Norte program.
-3. 36 Weeks (contract required). AP CSA, Data Structures 2 is targeting 11th-12th, prerequisite CSP and DS1, no waiver, minimum starting point is CSP 
+> The Computer Science Pathway, including Trimester modifications required at Del Norte High School.
+
+| Preferred Grade | Course | Trimesters | Notes/Experience |
+| 9th or 10th | Computer Science and Software Engineering (CSSE) | 2 | Entry to pathway |
+| 10th or 11th | AP Computer Science Principles (CSP) | 2 | Requires CSSE or equivalent experience |
+| 10th or 11th | Data Structures 1 (DS1) | 1 | Part of CSP contract |
+| 11th or 12th | AP Computer Science A (CSA) | 2 | Requires CSP, DS1 or experience in Technologies taught in Del Norte program. |
+| 11th or 12th | Data Structures 2 (DS2) | 1 | Part of CSA contract |
 
 ### Start with:
 - Scratch Introduction

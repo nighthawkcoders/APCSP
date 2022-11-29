@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Mathematical Expressions and Strings | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Mathematical Expressions and Strings" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AP Computer Science Principles course materials." />
+<meta property="og:description" content="AP Computer Science Principles course materials." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/jupyter/lesson2" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/jupyter/lesson2" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-11-28T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Mathematical Expressions and Strings" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-11-28T00:00:00-06:00","datePublished":"2022-11-28T00:00:00-06:00","description":"AP Computer Science Principles course materials.","headline":"Mathematical Expressions and Strings","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/jupyter/lesson2"},"url":"https://nighthawkcoders.github.io/APCSP/jupyter/lesson2"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Mathematical Expressions and Strings</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-11-28T00:00:00-06:00" itemprop="datePublished">
+        Nov 28, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+          <a class="category-tags-link" href="/APCSP/categories/ap#jupyter">jupyter</a>
+        
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2022-11-28-AP-BigIdea3dot3and4.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2022-11-28-AP-BigIdea3dot3and4.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2022-11-28-AP-BigIdea3dot3and4.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2022-11-28-AP-BigIdea3dot3and4.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-11-28-AP-BigIdea3dot3and4.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-an-Algorithm?">What is an Algorithm?<a class="anchor-link" href="#What-is-an-Algorithm?"> </a></h2><p><strong>An algorithm:</strong> a set of instructions that can accomplish a specific task.</p>
+<h3 id="An-Algorithm-Has-Three-Components">An Algorithm Has Three Components<a class="anchor-link" href="#An-Algorithm-Has-Three-Components"> </a></h3><ol>
+<li><strong>Sequencing:</strong> Algorithms do tasks in the order of specification.</li>
+</ol>
+<p><img src="https://github.com/manigggg18/manimani/blob/master/images/first.jpg?raw=true" alt="img1" /></p>
+<ol>
+<li><strong>Selection:</strong> Helps choose two different outcomes based off a decision.</li>
+</ol>
+<p><img src="https://github.com/manigggg18/manimani/blob/master/images/1234.png?raw=true" alt="img1" /></p>
+<ol>
+<li><strong>Iteration:</strong> If a condition is true, then the code can repeat. </li>
+</ol>
+<p><img src="https://github.com/manigggg18/manimani/blob/master/images/123.png?raw=true" alt="img1" /></p>
+<h3 id="Algorithms-Can-Be-Represented-in-Two-Ways">Algorithms Can Be Represented in Two Ways<a class="anchor-link" href="#Algorithms-Can-Be-Represented-in-Two-Ways"> </a></h3><ol>
+<li><strong>Flowcharts:</strong> Use shapes and arrows to represent the steps of an algorithm. </li>
+</ol>
+<p><img src="https://github.com/manigggg18/manimani/blob/master/images/123456.png?raw=true" alt="img1" /></p>
+<p><img src="https://github.com/manigggg18/manimani/blob/master/images/12345.png?raw=true" alt="img1" /></p>
+<ol>
+<li><strong>Pseudocode:</strong> A blend of human language and coding format. </li>
+</ol>
+<h3 id="Hacks:-Jamboard-Flowchart">Hacks: Jamboard Flowchart<a class="anchor-link" href="#Hacks:-Jamboard-Flowchart"> </a></h3><p><a href="https://jamboard.google.com/d/1qpPFYt9cyjJOSzpT4ODND8Jj6gk8DUWPbLAksaOTCvA/viewer?f=0">Click on this link for a group activity</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<hr />
+<h2 id="Arithmetic-Operations">Arithmetic Operations<a class="anchor-link" href="#Arithmetic-Operations"> </a></h2><p>Arithmetic operations exist in most programming languages.</p>
+<h3 id="Basic-Operations">Basic Operations<a class="anchor-link" href="#Basic-Operations"> </a></h3><p><strong>Subtraction</strong>:</p>
+<ul>
+<li>Represented by “-"</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Addition</strong>:</p>
+<ul>
+<li>Represented by "+"</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Multiplication</strong>:</p>
+<ul>
+<li>Represented by “*”</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Division</strong>:</p>
+<ul>
+<li>Represented by “/”</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">/</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Getting the Remainder</strong>:</p>
+<ul>
+<li>Represented by “MOD” (% in python)</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Different-Uses">Different Uses<a class="anchor-link" href="#Different-Uses"> </a></h3><blockquote><p>Items can be numbers or variables.</p>
+</blockquote>
+<p>Examples:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">-</span> <span class="mi">25</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">num1</span>
+<span class="n">num4</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+<span class="n">num5</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">%</span> <span class="n">num4</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Order-of-Operations">Order of Operations<a class="anchor-link" href="#Order-of-Operations"> </a></h3><p>Arithmetic operations in programming are performed in the same order as operations in mathematics:</p>
+<ul>
+<li><p>Operations in parentheses should be done first.</p>
+</li>
+<li><p>Division and multiplication should be done before addition and subtraction.</p>
+</li>
+<li><p>Modulus works similar to multiplication and division.</p>
+</li>
+</ul>
+<p>Example: Evaluate num1</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">2</span> <span class="p">)</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">6</span> <span class="o">-</span> <span class="mi">4</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>10.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<hr />
+<h2 id="Variables">Variables<a class="anchor-link" href="#Variables"> </a></h2><h3 id="Different-Ways-Values-are-Stored-in-Variables">Different Ways Values are Stored in Variables<a class="anchor-link" href="#Different-Ways-Values-are-Stored-in-Variables"> </a></h3><ol>
+<li><p>Numerical value stored in a variable</p>
+</li>
+<li><p>Value of another variable stored in a variable</p>
+</li>
+<li><p>Result of an operation stored in a variable</p>
+</li>
+<li><p>Result of a procedure call stored in a variable</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># 1</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">newScore</span>    <span class="c1"># 2</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">newScore</span> <span class="o">+</span> <span class="mi">2</span>    <span class="c1"># 3</span>
+<span class="n">avgScore</span> <span class="o">=</span> <span class="n">allscores</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>    <span class="c1"># 4</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sequencing-is-Important!">Sequencing is Important!<a class="anchor-link" href="#Sequencing-is-Important!"> </a></h3><p>Changing the order of the steps changes the overall outcome, since every time the value assigned to a variable is changed, it overrides the last value which was assigned to the same variable. That is why it is important to track the value of variables, especially in code where the value is constantly changing.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span>      <span class="c1"># num1 is now 4 + 6, which is 10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num3</span>      <span class="c1"># num2 is now (the new num1) 10 + 6, which is 16</span>
+<span class="c1"># output: num1 = 10, num2 = 16, num3 = 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>VS</strong></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num3</span>  <span class="c1">#num2 is now 8</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span>  <span class="c1"># num1 is now 14</span>
+<span class="c1"># output: num1 = 14, num2 = 8, num3 = 6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tracking-Variables">Tracking Variables<a class="anchor-link" href="#Tracking-Variables"> </a></h3><p>Tracking variables is a common question found on AP exams and is an important thing to keep in mind when writing any code. If the value of your variables changes a lot, not accounting for these changes can result in an unwanted outcome.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">var1</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">var3</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">#var = var1 + 5</span>
+<span class="c1">#var2 = var1 - var3</span>
+<span class="c1">#var1 = var2</span>
+<span class="c1">#var3 = (var1 + var2) / 2</span>
+<span class="c1">#var2 = 6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hacks/Homework">Hacks/Homework<a class="anchor-link" href="#Hacks/Homework"> </a></h3><h4 id="Evaluate-the-variable-&quot;result&quot;.">Evaluate the variable "result".<a class="anchor-link" href="#Evaluate-the-variable-&quot;result&quot;."> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Num1</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">Num2</span> <span class="o">=</span> <span class="n">Num1</span> <span class="o">%</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">15</span>
+<span class="n">Num3</span> <span class="o">=</span> <span class="n">Num2</span> <span class="o">/</span> <span class="n">Num1</span> <span class="o">+</span> <span class="p">(</span> <span class="n">Num2</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">)</span>
+<span class="n">Num4</span> <span class="o">=</span> <span class="n">Num3</span> <span class="o">+</span> <span class="n">Num1</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">10</span>
+<span class="n">Result</span> <span class="o">=</span> <span class="n">Num4</span> <span class="o">-</span> <span class="n">Num2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Num1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">Num2</span> <span class="o">=</span> <span class="n">Num1</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
+<span class="n">Num1</span> <span class="o">=</span> <span class="n">Num2</span>
+<span class="n">Num3</span> <span class="o">=</span> <span class="n">Num1</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">Result</span> <span class="o">=</span> <span class="n">Num3</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">valueA</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">valueB</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">valueC</span> <span class="o">=</span> <span class="mi">17</span>
+<span class="n">valueB</span> <span class="o">=</span> <span class="n">valueC</span> <span class="o">-</span> <span class="n">valueA</span>
+<span class="n">valueA</span> <span class="o">=</span> <span class="n">valueA</span> <span class="o">*</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">valueB</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valueC</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;curly&quot;</span>
+<span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;brown&quot;</span>
+<span class="n">length</span> <span class="o">=</span> <span class="s2">&quot;short&quot;</span>
+<span class="nb">type</span> <span class="o">=</span> <span class="s2">&quot;straight&quot;</span>
+<span class="n">hair</span> <span class="o">=</span> <span class="nb">type</span> <span class="o">+</span> <span class="n">color</span> <span class="o">+</span> <span class="n">length</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hair</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr />
+<hr />
+<h2 id="Strings">Strings<a class="anchor-link" href="#Strings"> </a></h2><h3 id="What-is-a-String?">What is a String?<a class="anchor-link" href="#What-is-a-String?"> </a></h3><p><strong>A String</strong>: A string is a collection of characters. What is a character as character can be anything from numbers, letters, spaces, special symbols, etc.</p>
+<p>A string is a collection of characters. What is a character as character can be anything from numbers, letters, spaces, special symbols, etc.</p>
+<p>Certain procedures may be used with strings and they vary from programming language to language Python examples</p>
+<p><code>len()</code> to find the length of a string</p>
+<p><code>lower()</code> to convert to lowercase</p>
+<p>etc. Pseudocode examples</p>
+<p><code>len()</code> returns the length of a string</p>
+<p><code>concat()</code> returns a string made up of the concatenated strings ex. concat("string1", "string2") would return string1string2</p>
+<p><code>substring()</code> returns the characters from the string beginning at the at the first position to the last so an example of this would be substring <code>("abcdefghijk", 2, 5)</code> would print <code>bcde</code> (pseudocode starts at 1)</p>
+<h3 id="String-Concatenation">String Concatenation<a class="anchor-link" href="#String-Concatenation"> </a></h3><p>What is string concatenation?</p>
+<p>String concatenation is combining 2 or more strings to make a new strings in order to create a new string</p>
+<p><code>concat()</code> in pseudocode and varys from language to language can be used to combine to strings such as <code>concat("cookie","monster")</code> returns <code>cookiemonster</code></p>
+<h3 id="Substrings">Substrings<a class="anchor-link" href="#Substrings"> </a></h3><p><strong>What is a substring?</strong></p>
+<p>A substring is a part of and already existing string.</p>
+<p>In pseudocode <code>substring()</code> method is used for instance for <code>concat("Mr.Mortenson is very handsome" 1, 2)</code> the system would return <code>Mr</code> (remember that pseudocode starts at 1)</p>
+<h3 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h3><h4 id="Find-the-result-of-the-following-problems.-Then-convert-the-pseudocode-to-working-python-code-using-your-knowledge-of-python-string-operators.">Find the result of the following problems. Then convert the pseudocode to working python code using your knowledge of python string operators.<a class="anchor-link" href="#Find-the-result-of-the-following-problems.-Then-convert-the-pseudocode-to-working-python-code-using-your-knowledge-of-python-string-operators."> </a></h4><p><strong>Problem 1</strong></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Noun</span> <span class="o">=</span> <span class="s2">&quot;Mr.Mortenson&quot;</span> 
+<span class="n">Adjective</span> <span class="o">=</span> <span class="s2">&quot;handsome&quot;</span> 
+<span class="n">Adjective2</span> <span class="o">=</span> <span class="s2">&quot;Very&quot;</span> 
+<span class="n">Verb</span> <span class="o">=</span> <span class="s2">&quot;is&quot;</span> 
+<span class="n">abrev</span> <span class="o">=</span> <span class="n">subtring</span><span class="p">(</span><span class="n">Noun</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> 
+<span class="n">yoda</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="n">Adjective2</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">Adjective</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">abrev</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">Verb</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span> 
+<span class="n">display</span><span class="p">[</span><span class="n">yoda</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Problem 2</strong></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cookie</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;choclate&quot;</span><span class="p">)</span> 
+<span class="n">cookie2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;rasin&quot;</span><span class="p">)</span> 
+<span class="n">len1</span> <span class="o">=</span> <span class="n">cookie</span> <span class="o">/</span> <span class="mi">2</span> 
+<span class="n">len2</span> <span class="o">=</span> <span class="n">cookie2</span> <span class="o">*</span> <span class="mi">45</span> 
+<span class="n">vote1</span> <span class="o">=</span> <span class="p">(</span><span class="n">cookie</span><span class="p">,</span> <span class="s2">&quot;vote&quot;</span><span class="p">,</span> <span class="n">len2</span><span class="p">)</span> 
+<span class="n">vote2</span> <span class="o">=</span> <span class="p">(</span><span class="n">cookie2</span><span class="p">,</span> <span class="s2">&quot;vote&quot;</span><span class="p">,</span> <span class="n">len1</span><span class="p">)</span> 
+<span class="n">votes</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="n">vote1</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">vote2</span><span class="p">)</span> 
+<span class="n">display</span><span class="p">[</span><span class="n">votes</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/jupyter/lesson2" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

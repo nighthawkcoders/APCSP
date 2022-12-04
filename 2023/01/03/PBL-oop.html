@@ -4,23 +4,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Python backend | APCSP</title>
+<title>Python OOP | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Python backend" />
+<meta property="og:title" content="Python OOP" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The project based learning objective is to create a purposeful backend, something that can’t be done in frontend JavaScript. A database storing persistent data are a primary focus of most backend systems. An SQLite Database using the Python SQLAlchemy framework is is the outcome of this lesson. As students learn databases using SQLAlchemy, they will also learn about Object Oriented Programming in Python." />
-<meta property="og:description" content="The project based learning objective is to create a purposeful backend, something that can’t be done in frontend JavaScript. A database storing persistent data are a primary focus of most backend systems. An SQLite Database using the Python SQLAlchemy framework is is the outcome of this lesson. As students learn databases using SQLAlchemy, they will also learn about Object Oriented Programming in Python." />
-<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-backend.html" />
-<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-backend.html" />
+<meta name="description" content="Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods." />
+<meta property="og:description" content="Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html" />
 <meta property="og:site_name" content="APCSP" />
 <meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-01-03T00:00:00-06:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
-<meta property="twitter:title" content="Python backend" />
+<meta property="twitter:title" content="Python OOP" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-03T00:00:00-06:00","datePublished":"2023-01-03T00:00:00-06:00","description":"The project based learning objective is to create a purposeful backend, something that can’t be done in frontend JavaScript. A database storing persistent data are a primary focus of most backend systems. An SQLite Database using the Python SQLAlchemy framework is is the outcome of this lesson. As students learn databases using SQLAlchemy, they will also learn about Object Oriented Programming in Python.","headline":"Python backend","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-backend.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-backend.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-03T00:00:00-06:00","datePublished":"2023-01-03T00:00:00-06:00","description":"Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods.","headline":"Python OOP","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,13 +75,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Python backend</h1><p class="page-description">The project based learning objective is to create a purposeful backend, something that can't be done in frontend JavaScript.  A  database storing persistent data are a primary focus of most backend systems.  An SQLite Database using the Python SQLAlchemy framework is is the outcome of this lesson.  As students learn databases using SQLAlchemy, they will also learn about Object Oriented Programming in Python.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-03T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Python OOP</h1><p class="page-description">Object Oriented Programming is very common in Python.  The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database.  The foundations for a database is defining a Class and understanding instance data and methods.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-03T00:00:00-06:00" itemprop="datePublished">
         Jan 3, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -92,24 +92,24 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-justify-center">
           <div class="px-2">
 
-    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-01-03-PBL-backend.ipynb" role="button" target="_blank">
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-01-03-PBL-oop.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-01-03-PBL-backend.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-01-03-PBL-oop.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-01-03-PBL-backend.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-01-03-PBL-oop.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
           <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-01-03-PBL-backend.ipynb" target="_blank">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-01-03-PBL-oop.ipynb" target="_blank">
       <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
   </a>
 </div>
@@ -120,13 +120,14 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Class-and-Object-Terms">Class and Object Terms </a></li>
-<li class="toc-entry toc-h2"><a href="#Database-and-Table-Terms">Database and Table Terms </a></li>
-<li class="toc-entry toc-h2"><a href="#Reference">Reference </a></li>
+<li class="toc-entry toc-h2"><a href="#Class-and-Object-Code">Class and Object Code </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+<li class="toc-entry toc-h2"><a href="#Start-Code-for-Hacks">Start Code for Hacks </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2023-01-03-PBL-backend.ipynb
+# file to edit: _notebooks/2023-01-03-PBL-oop.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -138,14 +139,42 @@ window.onload = wrap_img;
 <a class="anchor" href="#Class-and-Object-Terms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class and Object Terms<a class="anchor-link" href="#Class-and-Object-Terms"> </a>
 </h2>
 <blockquote>
-<p>The foundations of Object-Oriented Programming is a Class</p>
+<p>The foundations of Object-Oriented Programming is a <strong><em>Class</em></strong></p>
 <ul>
-<li>A Class has a collection of data (ie variables)</li>
-<li>A Class has collection of Functions/Procedures.  These are called <strong>*Methods</strong> when they exist inside a Class definition.</li>
-<li>In Object-Oriented Programming (OOP), a class is a blueprint for creating an <strong><em>Object</em></strong> (a data structure).  An Object is used like many other Python variables.</li>
+<li>In Object-Oriented Programming (OOP), a class is a blueprint for creating an <strong><em>Object</em></strong>. (a data structure).  An Object is used like many other Python variables.</li>
+<li>A Class has ...<ul>
+<li>a collection of data, these are called <strong><em>Variables</em></strong> and in Python are pre-fixed using the keyword <strong><em>self</em></strong>
+</li>
+<li>a collection of Functions/Procedures.  These are called <strong>*Methods</strong> when they exist inside a Class definition.</li>
+</ul>
+</li>
+<li>An Object is created from the Class/Template.  Characteristics of objects ...<ul>
+<li>an Object is an <strong><em>Instance</em></strong> of the Class/Template</li>
+<li>there can be many Objects created from the same Class</li>
+<li>each Object contains its own <strong><em>Instance Data</em></strong>
+</li>
+<li>the data is setup by the <strong><em>Constructor</em></strong>, this is the "<strong>init</strong>" method in a Python class</li>
+<li>all methods in the Class/Template become part of the Object, methods are accessed using <strong><em>dot notation</em></strong> (object.method())</li>
+</ul>
+</li>
+<li>A Python Class allow for the definition of @ decorators, these allow access to instance data without the use of functions ...<ul>
+<li>@property decorator (aka getter).  This enables developers to reference/get instance data in a shorthand fashion (object.name versus object.get_name())</li>
+<li>@name.setter decorator (aka setter).  This enables developers to update/set instance data in a shorthand fashion (object.name = "John" versus object.set_name("John"))</li>
+<li>observe all instance data (self._name, self.<em>email ...) are prefixed with "</em>", this convention allows setters and getters to work with more natural variable name (name, email ...)</li>
+</ul>
+</li>
 </ul>
 </blockquote>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Class-and-Object-Code">
+<a class="anchor" href="#Class-and-Object-Code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class and Object Code<a class="anchor-link" href="#Class-and-Object-Code"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -156,7 +185,12 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -- A User represents the data we want to manage</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A gateway in necessary as a web server cannot communicate directly with Python.</span>
+<span class="c1"># In this case, imports are focused on generating hash code to protect passwords.</span>
+<span class="kn">from</span> <span class="nn">werkzeug.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
+
+<span class="c1"># Define a User Class/Template</span>
+<span class="c1"># -- A User represents the data we want to manage</span>
 <span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
     
     <span class="c1"># constructor of a User object, initializes the instance variables within object (self)</span>
@@ -188,26 +222,32 @@ window.onload = wrap_img;
     <span class="c1"># check if email matches email in object</span>
     <span class="k">def</span> <span class="nf">is_email_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span> <span class="o">==</span> <span class="n">email</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"..."</span> <span class="c1"># because of security only show 1st characters</span>
 
-    <span class="c1"># password needs to be encrypted when stored</span>
+    <span class="c1"># update password, this is conventional setter</span>
     <span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-        <span class="sd">"""Create hashed password."""</span>
-        <span class="c1"># self.password = generate_password_hash(password, method='sha256')</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">password</span>
+        <span class="sd">"""Create a hashed password."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha256'</span><span class="p">)</span>
 
-    <span class="c1"># check password versus stored/encrypted password</span>
+    <span class="c1"># check password parameter versus stored/encrypted password</span>
     <span class="k">def</span> <span class="nf">is_password_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
-        <span class="sd">"""Check hashed password."""</span>
-        <span class="c1"># result = check_password_hash(self.password, password)</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">==</span> <span class="n">password</span>
+        <span class="sd">"""Check against hashed password."""</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
 
 <span class="c1"># tester method to print users</span>
 <span class="k">def</span> <span class="nf">tester</span><span class="p">(</span><span class="n">users</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+        <span class="c1"># test for match in database</span>
         <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">==</span> <span class="s2">"agbell@att.com"</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_password_match</span><span class="p">(</span><span class="s2">"123lex"</span><span class="p">):</span>  <span class="c1"># check for match</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"* "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">+</span> <span class="s2">": "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="c1"># observe simple extraction of data from object</span>
+        <span class="c1"># print @property abstraction from object</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"email: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">+</span> 
+              <span class="s2">", name: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> 
+              <span class="s2">", psw: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
         
 <span class="c1"># define user objects</span>
 <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Thomas Edison'</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">'tedison@ge.com'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123toby'</span><span class="p">)</span>
@@ -235,23 +275,47 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Test 1
+email: tedison@ge.com, name: Thomas Edison, psw: sha256$PkF...
+email: ntesla@twitter.com, name: Nicholas Tesla, psw: sha256$5pX...
+* email: agbell@att.com, name: Alexander Graham Bell, psw: sha256$4Bs...
+email: eliw@farmers.com, name: Eli Whitney, psw: sha256$ZZh...
+email: hedy@wifi.com, name: Hedy Lemarr, psw: sha256$oFG...
+Test 2
+email: tedison@ge.com, name: Thomas Edison, psw: sha256$PkF...
+email: ntesla@twitter.com, name: Nicholas Tesla, psw: sha256$5pX...
+email: jmort1021@gmail.com, name: John Mortensen, psw: sha256$9g5...
+email: eliw@farmers.com, name: Eli Whitney, psw: sha256$ZZh...
+email: hedy@wifi.com, name: Hedy Lemarr, psw: sha256$oFG...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Database-and-Table-Terms">
-<a class="anchor" href="#Database-and-Table-Terms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database and Table Terms<a class="anchor-link" href="#Database-and-Table-Terms"> </a>
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
 <blockquote>
-<p>The foundations of database is defining one or more <strong><em>Tables</em></strong>.  In Python, a database can be constructed using the foundation we just learned with a class.</p>
+<p>Add Date of Birth (dob) to the Class.  This will require investigation into Python datetime objects as shown in example code.</p>
 <ul>
-<li>A "Table" is a Data Model/Structure within a Database.  </li>
-<li>A "Table" definition in Python/SQLAlchemy is manifested by defining a "<strong><em>Class</em></strong>" in Python.  </li>
-<li>A <strong><em>Class can inherit code and functionality</em></strong> of from other packages.  This is how developers turn a Class into a Table within a database.</li>
-<li>Writing methods in the Class for Create, Read, Update, Delete (<strong><em>CRUD</em></strong>) is how we initiate database operations.</li>
+<li>Add setter and getter for dob</li>
+<li>Add instance variable for age, make sure if dob changes age changes</li>
 </ul>
+<p>My recommendation is to have constructor and setter work off from a string parameter for dob, it is more common that a date over an API would have string form "2023/12/31".  Store the data as a date, do conversions from string to date and date to string.</p>
 </blockquote>
 
 </div>
@@ -260,42 +324,56 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Review this code to understand concepts so far...</p>
-<ol>
-<li>Model Defining the <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/model.py#L25">Table</a> Class</li>
-<li>Model <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/model.py#L84">Testing and Initial Setup</a>
-</li>
-<li>Model Defining function to support <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/model.py#L40-L81">CRUD operations</a> </li>
-<li>Control Methods for <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py#L63-L113">Create</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py#L63-L113">Read</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py#L63-L113">Update</a>, <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py#L63-L113">Delete</a> or Alternative <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/app_crud.py#L138-L189">CRUD API definitions </a>
-</li>
-<li>View Here is a <a href="https://csp.nighthawkcodingsociety.com/crud/">runtime</a> showing off some CRUD. All the MVC code is show at the bottom of this page.</li>
-</ol>
-<p>To get started with databases, perhaps you can simply try to get some Database Code running in your project.  Then you could try to define a new Table in you database.  After pulling code, you will need to Init your database and table by running the <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/crud/model.py#L121">Tester Method</a>.</p>
-<p><a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/#user-guide">Flask SQLAlchemy reference</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Reference">
-<a class="anchor" href="#Reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reference<a class="anchor-link" href="#Reference"> </a>
+<h2 id="Start-Code-for-Hacks">
+<a class="anchor" href="#Start-Code-for-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Start Code for Hacks<a class="anchor-link" href="#Start-Code-for-Hacks"> </a>
 </h2>
-<ul>
-<li><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
-<li><a href="https://www.ffnext.io/blog/python-backend-with-flask-for-beginners#:~:text=You%20can%20create%20an%20HTTP,command%3A%20python%20app.py.">Python Backend with Flask, SQLite</a></li>
-<li><a href="https://www.ffnext.io/blog/python-backend-with-flask-for-beginners#:~:text=You%20can%20create%20an%20HTTP,command%3A%20python%20app.py.">Backend API and Flask</a></li>
-</ul>
-
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="k">def</span> <span class="nf">calculate_age</span><span class="p">(</span><span class="n">born</span><span class="p">):</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">born</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">born</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">born</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+
+<span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>17
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
 
-  </div><a class="u-url" href="/APCSP/2023/01/03/PBL-backend.html" hidden></a>
+  </div><a class="u-url" href="/APCSP/2023/01/03/PBL-oop.html" hidden></a>
 </article>
 
       </div>

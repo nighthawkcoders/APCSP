@@ -9,7 +9,7 @@ title: Schedule
 {% assign all = all | concat:site.posts | concat:site.pages %}
 
 <!-- Setup order for Units -->
-{% assign units = "4,3,2,1" | split: ',' %}
+{% assign units = "4,3,2,1,5" | split: ',' %}
 {% for unit in units %}
 
   <!-- Each Unit has a range of weeks and a heading -->
@@ -35,6 +35,12 @@ title: Schedule
       {% assign end = 16 %}
 ## Unit {{unit}}: Algorithmic Programming
 > Trimester 2 begins with student teaching and a focus on algorithms.  Each week a "Student Team" has a teaching assignment supported by College Board materials.  Additionally, the Teacher is providing Career Tech mini-labs that correspond to one or more topics for the week.  Use the two things together as you improve your learning experience, Frontend blog and Jupyter Notebooks.
+      
+  {% elsif unit == "5" %} 
+      {% assign start = 17 %}
+      {% assign end = 21 %}
+## Unit {{unit}}: Intro to OOP, Databases, and Backend Programming
+> Trimester 2 continues with student learning OOP and immediately applying it to Databases.  Each week a "Student Team" will be working on elements for their Create Performance Task.  OOP will be a great way to develop code and a database will meet every project requirement.
       
   {% endif %}
 

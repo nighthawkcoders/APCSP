@@ -49,6 +49,7 @@
         "Vunsh",
         "webapi",
         "webp",
+        "werkzeug",
         "WORKDIR",
         "WSGI",
         "Yeaton"

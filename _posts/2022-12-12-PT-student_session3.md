@@ -4,7 +4,7 @@ comments: false
 layout: post
 title:  Week of 12-12, Student Teaching Week 3, Pop Live Reviews
 description: Student led Teaching with some data instruction by Teachers.
-permalink: /points/15
+permalink: /points/16
 image: /images/points.jpeg
 categories: []
 type: plan

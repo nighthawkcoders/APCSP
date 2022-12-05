@@ -11,7 +11,7 @@ type: plan
 week: 16
 ---
 
-## Plans Week 15
+## Plans Week 16
 > Weeks Plans include final Algorithms Blog and Review Ticket.
 - Monday: 3.14 and 3.15 Libraries and Random Values
 - Tuesday: 3.16 Simulations

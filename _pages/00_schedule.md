@@ -40,7 +40,7 @@ title: Schedule
       {% assign start = 17 %}
       {% assign end = 21 %}
 ## Unit {{unit}}: Intro to OOP, Databases, and Backend Programming
-> Trimester 2 continues with student learning OOP and immediately applying it to Databases.  Each week a "Student Team" will be working on elements for their Create Performance Task.  OOP will be a great way to develop code and a database will meet every project requirement.
+> Trimester 2 continues with student learning OOP and immediately applying it to Databases.  Each week a "Student Team" will be working on elements for their Create Performance Task (CPT).  OOP will be a great way to develop code and a database which will exceed every CPT requirement.
       
   {% endif %}
 

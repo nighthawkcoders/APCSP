@@ -10,8 +10,8 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods." />
 <meta property="og:description" content="Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods." />
-<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html" />
-<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-model.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-model.html" />
 <meta property="og:site_name" content="APCSP" />
 <meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
 <meta property="og:type" content="article" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
 <meta property="twitter:title" content="Python Backend - OOP" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-03T00:00:00-06:00","datePublished":"2023-01-03T00:00:00-06:00","description":"Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods.","headline":"Python Backend - OOP","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-oop.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-03T00:00:00-06:00","datePublished":"2023-01-03T00:00:00-06:00","description":"Object Oriented Programming is very common in Python. The objective of this blog is to introduce OOP with the intention of quickly transitioning to creating a database. The foundations for a database is defining a Class and understanding instance data and methods.","headline":"Python Backend - OOP","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-model.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/03/PBL-model.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -92,24 +92,24 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-justify-center">
           <div class="px-2">
 
-    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-01-03-PBL-oop.ipynb" role="button" target="_blank">
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-01-03-PBL-model.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-01-03-PBL-oop.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-01-03-PBL-model.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-01-03-PBL-oop.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-01-03-PBL-model.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
           <div class="px-2">
-  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-01-03-PBL-oop.ipynb" target="_blank">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-01-03-PBL-model.ipynb" target="_blank">
       <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
   </a>
 </div>
@@ -127,7 +127,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2023-01-03-PBL-oop.ipynb
+# file to edit: _notebooks/2023-01-03-PBL-model.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -143,7 +143,7 @@ window.onload = wrap_img;
 <ul>
 <li>In Object-Oriented Programming (OOP), a class is a blueprint for creating an <strong><em>Object</em></strong>. (a data structure).  An Object is used like many other Python variables.</li>
 <li>A Class has ...<ul>
-<li>a collection of data, these are called <strong><em>Variables</em></strong> and in Python are pre-fixed using the keyword <strong><em>self</em></strong>
+<li>a collection of data, these are called <strong><em>Attributes</em></strong> and in Python are pre-fixed using the keyword <strong><em>self</em></strong>
 </li>
 <li>a collection of Functions/Procedures.  These are called <strong>*Methods</strong> when they exist inside a Class definition.</li>
 </ul>
@@ -194,9 +194,9 @@ window.onload = wrap_img;
 <span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
     
     <span class="c1"># constructor of a User object, initializes the instance variables within object (self)</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>    <span class="c1"># variables with self prefix become part of the object, </span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
 
     <span class="c1"># a name getter method, extracts name from object</span>
@@ -211,17 +211,17 @@ window.onload = wrap_img;
     
     <span class="c1"># a getter method, extracts email from object</span>
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span>
+    <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span>
     
     <span class="c1"># a setter function, allows name to be updated after initial object creation</span>
-    <span class="nd">@email</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_email</span> <span class="o">=</span> <span class="n">email</span>
+    <span class="nd">@uid</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
         
     <span class="c1"># check if email matches email in object</span>
-    <span class="k">def</span> <span class="nf">is_email_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span> <span class="o">==</span> <span class="n">email</span>
+    <span class="k">def</span> <span class="nf">is_email_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_id</span> <span class="o">==</span> <span class="nb">id</span>
     
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -237,24 +237,31 @@ window.onload = wrap_img;
         <span class="sd">"""Check against hashed password."""</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
+    
+    <span class="c1"># output content using str(object) in human readable form, uses getter</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">, id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s1">, psw: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="si">}</span><span class="s1">'</span>
+
+    <span class="c1"># output command to recreate the object, uses attribute directly</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'Person(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s1">, uid=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_uid</span><span class="si">}</span><span class="s1">, password=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="si">}</span><span class="s1">)'</span>
+
 
 <span class="c1"># tester method to print users</span>
 <span class="k">def</span> <span class="nf">tester</span><span class="p">(</span><span class="n">users</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
         <span class="c1"># test for match in database</span>
-        <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">==</span> <span class="s2">"agbell@att.com"</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_password_match</span><span class="p">(</span><span class="s2">"123lex"</span><span class="p">):</span>  <span class="c1"># check for match</span>
+        <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">uid</span> <span class="o">==</span> <span class="s2">"lex"</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_password_match</span><span class="p">(</span><span class="s2">"123lex"</span><span class="p">):</span>  <span class="c1"># check for match</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"* "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
-        <span class="c1"># print @property abstraction from object</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"email: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">+</span> 
-              <span class="s2">", name: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> 
-              <span class="s2">", psw: "</span> <span class="o">+</span> <span class="n">user</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+        <span class="c1"># print using __str__ method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
         
 <span class="c1"># define user objects</span>
-<span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Thomas Edison'</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">'tedison@ge.com'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123toby'</span><span class="p">)</span>
-<span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Nicholas Tesla'</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">'ntesla@twitter.com'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123nick'</span><span class="p">)</span>
-<span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Alexander Graham Bell'</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">'agbell@att.com'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123lex'</span><span class="p">)</span>
-<span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Eli Whitney'</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">'eliw@farmers.com'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123eli'</span><span class="p">)</span>
-<span class="n">u5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Hedy Lemarr'</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">'hedy@wifi.com'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123hedy'</span><span class="p">)</span>
+<span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Thomas Edison'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'toby'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123toby'</span><span class="p">)</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Nicholas Tesla'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'nick'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123nick'</span><span class="p">)</span>
+<span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Alexander Graham Bell'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'lex'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123lex'</span><span class="p">)</span>
+<span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Eli Whitney'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'eli'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123eli'</span><span class="p">)</span>
+<span class="n">u5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Hedy Lemarr'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'hedy'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123hedy'</span><span class="p">)</span>
 
 <span class="c1"># put user objects in list for convenience</span>
 <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">,</span> <span class="n">u4</span><span class="p">,</span> <span class="n">u5</span><span class="p">]</span>
@@ -266,7 +273,7 @@ window.onload = wrap_img;
 <span class="c1"># Change user 3 in list</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 2"</span><span class="p">)</span>
 <span class="n">u3</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"John Mortensen"</span>
-<span class="n">u3</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="s2">"jmort1021@gmail.com"</span>
+<span class="n">u3</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="s2">"jm1021"</span>
 <span class="n">u3</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">"123qwerty"</span><span class="p">)</span>
 <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
 </pre></div>
@@ -282,17 +289,17 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test 1
-email: tedison@ge.com, name: Thomas Edison, psw: sha256$PkF...
-email: ntesla@twitter.com, name: Nicholas Tesla, psw: sha256$5pX...
-* email: agbell@att.com, name: Alexander Graham Bell, psw: sha256$4Bs...
-email: eliw@farmers.com, name: Eli Whitney, psw: sha256$ZZh...
-email: hedy@wifi.com, name: Hedy Lemarr, psw: sha256$oFG...
+name: Thomas Edison, id: toby, psw: sha256$SYo...
+name: Nicholas Tesla, id: nick, psw: sha256$OQ7...
+* name: Alexander Graham Bell, id: lex, psw: sha256$8ZW...
+name: Eli Whitney, id: eli, psw: sha256$Wr4...
+name: Hedy Lemarr, id: hedy, psw: sha256$YG3...
 Test 2
-email: tedison@ge.com, name: Thomas Edison, psw: sha256$PkF...
-email: ntesla@twitter.com, name: Nicholas Tesla, psw: sha256$5pX...
-email: jmort1021@gmail.com, name: John Mortensen, psw: sha256$9g5...
-email: eliw@farmers.com, name: Eli Whitney, psw: sha256$ZZh...
-email: hedy@wifi.com, name: Hedy Lemarr, psw: sha256$oFG...
+name: Thomas Edison, id: toby, psw: sha256$SYo...
+name: Nicholas Tesla, id: nick, psw: sha256$OQ7...
+name: John Mortensen, id: jm1021, psw: sha256$XzC...
+name: Eli Whitney, id: eli, psw: sha256$Wr4...
+name: Hedy Lemarr, id: hedy, psw: sha256$YG3...
 </pre>
 </div>
 </div>
@@ -310,12 +317,23 @@ email: hedy@wifi.com, name: Hedy Lemarr, psw: sha256$oFG...
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
 <blockquote>
-<p>Add Date of Birth (dob) to the Class.  This will require investigation into Python datetime objects as shown in example code.</p>
+<p>Add new attributes/variables to the Class.</p>
 <ul>
-<li>Add setter and getter for dob</li>
-<li>Add instance variable for age, make sure if dob changes age changes</li>
+<li>Add classOf attribute to define year of graduation<ul>
+<li>Add setter and getter for classOf</li>
 </ul>
-<p>My recommendation is to have constructor and setter work off from a string parameter for dob, it is more common that a date over an API would have string form "2023/12/31".  Store the data as a date, do conversions from string to date and date to string.</p>
+</li>
+<li>Add dob attribute to define date of birth<ul>
+<li>This will require investigation into Python datetime objects as shown in example code below</li>
+<li>Add setter and getter for dob</li>
+</ul>
+</li>
+<li>Add instance variable for age, make sure if dob changes age changes<ul>
+<li>Add getter for age, but don't add/allow setter for age</li>
+</ul>
+</li>
+<li>Update and format tester function to </li>
+</ul>
 </blockquote>
 
 </div>
@@ -373,7 +391,7 @@ email: hedy@wifi.com, name: Hedy Lemarr, psw: sha256$oFG...
 
 
 
-  </div><a class="u-url" href="/APCSP/2023/01/03/PBL-oop.html" hidden></a>
+  </div><a class="u-url" href="/APCSP/2023/01/03/PBL-model.html" hidden></a>
 </article>
 
       </div>

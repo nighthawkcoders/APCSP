@@ -18,3 +18,5 @@ week: 15
 - Wednesday: live reviews, Algo Review #2, 3.5-3.7, 3.8, 3.10, 3 points (2 points unit, 1 point blog quality and organization)
 - Thursday: 3.12 and 3.13 Calling and Developing Procedures
 - Friday: work day
+
+> Now, Winter break and 1st week of New Year.  Plan frontend / backend project for Create Performance Task.   Establish 4 or 5 individual features, each which meet all the Create Performance Task project requirements.

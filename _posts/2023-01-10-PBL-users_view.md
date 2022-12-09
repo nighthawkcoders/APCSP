@@ -14,6 +14,7 @@ tags: [javascript, view]
   <tr>
     <th>Name</th>
     <th>ID</th>
+    <th>Actions</th>
   </tr>
   </thead>
   <tbody id="table">
@@ -23,17 +24,11 @@ tags: [javascript, view]
 
 <script>
 
-// Static data
-const data = [
-  {
-    name: "John Doe",
-    email: "johndoe@example.com"
-  },
-  {
-    name: "Jane Doe",
-    email: "janedoe@example.com"
-  }
-];
+// Static json
+const json = '[{"_name": "Thomas Edison", "_uid": "toby"}, {"_name": "Nicholas Tesla", "_uid": "nick"}, {"_name": "John Mortensen", "_uid": "jm1021"}, {"_name": "Eli Whitney", "_uid": "eli"}, {"_name": "Hedy Lemarr", "_uid": "hedy"}]';
+
+// Convert json string to object
+const data = JSON.parse(json);
 
 // prepare HTML result container for new output
 const table = document.getElementById("table");
@@ -42,12 +37,32 @@ data.forEach(user => {
     const tr = document.createElement("tr");
     const name = document.createElement("td");
     const id = document.createElement("td");
-    // data is specific to the API
-    name.innerHTML = user.name; 
-    id.innerHTML = user.email; 
-    // add HTML to container
+    const action = document.createElement("td");
+                                 
+    name.innerHTML = user._name; 
+    id.innerHTML = user._uid; 
+
+    var updateBtn = document.createElement('input');
+    updateBtn.type = "button";
+    updateBtn.className = "button";
+    updateBtn.value = "Update";
+    updateBtn.onclick = function () {
+      alert("Update: " + user._uid);
+    };
+    action.appendChild(updateBtn);
+
+    var deleteBtn = document.createElement('input');
+    deleteBtn.type = "button";
+    deleteBtn.className = "button";
+    deleteBtn.value = "Delete";
+    deleteBtn.onclick = function () {
+      alert("Delete: " + user._uid);
+    };
+    action.appendChild(deleteBtn);  
+
     tr.appendChild(name);
     tr.appendChild(id);
+    tr.appendChild(action);
     table.appendChild(tr);
 });
 

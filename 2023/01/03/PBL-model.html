@@ -292,6 +292,10 @@ window.onload = wrap_img;
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 3, make a dictionary"</span><span class="p">)</span>
 <span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="n">user</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Test 4, make a dictionary"</span><span class="p">)</span>
+<span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="nb">vars</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -305,19 +309,21 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test 1, find user 3
-name: "Thomas Edison", id: "toby", psw: "sha256$AYY..."
-name: "Nicholas Tesla", id: "nick", psw: "sha256$fOI..."
-* name: "Alexander Graham Bell", id: "lex", psw: "sha256$e5d..."
-name: "Eli Whitney", id: "eli", psw: "sha256$fyc..."
-name: "Hedy Lemarr", id: "hedy", psw: "sha256$Jqt..."
+name: "Thomas Edison", id: "toby", psw: "sha256$ml0..."
+name: "Nicholas Tesla", id: "nick", psw: "sha256$4UV..."
+* name: "Alexander Graham Bell", id: "lex", psw: "sha256$qC8..."
+name: "Eli Whitney", id: "eli", psw: "sha256$qVr..."
+name: "Hedy Lemarr", id: "hedy", psw: "sha256$dpb..."
 Test 2, change user 3
-name: "Thomas Edison", id: "toby", psw: "sha256$AYY..."
-name: "Nicholas Tesla", id: "nick", psw: "sha256$fOI..."
-* name: "John Mortensen", id: "jm1021", psw: "sha256$1Cq..."
-name: "Eli Whitney", id: "eli", psw: "sha256$fyc..."
-name: "Hedy Lemarr", id: "hedy", psw: "sha256$Jqt..."
+name: "Thomas Edison", id: "toby", psw: "sha256$ml0..."
+name: "Nicholas Tesla", id: "nick", psw: "sha256$4UV..."
+* name: "John Mortensen", id: "jm1021", psw: "sha256$laY..."
+name: "Eli Whitney", id: "eli", psw: "sha256$qVr..."
+name: "Hedy Lemarr", id: "hedy", psw: "sha256$dpb..."
 Test 3, make a dictionary
-[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$AYYmTmlqOOgTReUJ$8f3aa1e887e6fb82c5508db7197fc0f7ed465cae33f8336f124d1419c441c00c"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$fOIY8rryB8yteMko$79cc685e68d446541762aab88c8928600705a13da24d715d38de9153670f5260"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$1CqcTlAwDMgEtTCn$b522d0d20950ca02920b2fb3ec6110d305f211a7974f6f8db9a10de16f30891d"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$fycF7yQ5gYejfbDl$f19a98e328686da147e320e7b4204e3d122c085f77262713cdea7530e715d7c5"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$JqtZg31hqG5BZMrt$37e3f51d3114e1684ba79f3ea23291f0b50c4823058e9f2187a4a969c0fe7edc"}]
+[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$ml0DURPSNagqImqh$4e8a8ae949acafe39bb390dab4ee0327e0b56a7d2b75073b3d8476b1465b77ae"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$4UV2rVTOECmF5JeR$ac2270216772e5aa774a497d5bacbc3fa788c0e7be4a39cfd1a6f8fc3ae02e60"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$laYxxAPQkPjZihub$cfe7fef669670fc1ba0c28178796ffcb904d22206e853c0f1f30b5032fb44a23"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$qVr5jymLn2cPjG7Y$4c11ecac0c9bcabfb5670e8fa86f88922b510679ff80588de008b1da4ca5d59b"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$dpbB2p0MsgRKAwxG$c01acfbdc0dd4d89ba335916adc1b1ba914fdd25800cf0a25724b1b030b55ed2"}]
+Test 4, make a dictionary
+[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$ml0DURPSNagqImqh$4e8a8ae949acafe39bb390dab4ee0327e0b56a7d2b75073b3d8476b1465b77ae"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$4UV2rVTOECmF5JeR$ac2270216772e5aa774a497d5bacbc3fa788c0e7be4a39cfd1a6f8fc3ae02e60"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$laYxxAPQkPjZihub$cfe7fef669670fc1ba0c28178796ffcb904d22206e853c0f1f30b5032fb44a23"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$qVr5jymLn2cPjG7Y$4c11ecac0c9bcabfb5670e8fa86f88922b510679ff80588de008b1da4ca5d59b"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$dpbB2p0MsgRKAwxG$c01acfbdc0dd4d89ba335916adc1b1ba914fdd25800cf0a25724b1b030b55ed2"}]
 </pre>
 </div>
 </div>

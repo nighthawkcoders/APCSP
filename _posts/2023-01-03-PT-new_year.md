@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 01-03, Starting FrontEnd for New Years Project
-description: Student building out Frontend for their Team Project
+title:  Week of 01-03, Starting Create Performance Task
+description: Student designing Frontend and Backend for their Create Performance Task project
 permalink: /points/17
 image: /images/points.jpeg
 categories: []
@@ -17,3 +17,6 @@ week: 17
 - Wednesday: Workday, Plan frontend project for Create Performance Task.  Establish 4 or 5 individual features.
 - Thursday: Backend.  Model, Python, Backend, OOP.  Starting an object Model following [Hacks](https://nighthawkcoders.github.io/APCSP//2023/01/03/PBL-model.html#Hacks)
 - Friday: Workday. Plan backend project for Create Performance Task.  Establish 4 or 5 features to go with frontend features already formed, each which should now meet all the Create Performance Task project requirements.
+
+## Look ahead
+> Monday will be Live Review with points 3 points focused on Issue 1 Hacks.

@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 01-03, Starting Create Performance Task
-description: Student designing Frontend and Backend for their Create Performance Task project
+title:  Week of 01-03, New Years Code Warmup
+description: Student review Frontend and start Backend for their Create Performance Task project
 permalink: /points/17
 image: /images/points.jpeg
 categories: []
@@ -12,7 +12,7 @@ week: 17
 ---
 
 ## Plans Week 17
-> Teams ***Ideate Create Performance Task*** while creating GitHub Pages Frontend and learning about OOP.
+> Teams ***Ideate their Create Performance Task*** while reviewing the creation of GitHub Pages Frontend and learning about OOP.
 - Tuesday: Frontend.  The Reunion Project and starting [Issue 1](https://github.com/jm1021/leuck_reunion/issues/1)
 - Wednesday: Workday, Plan frontend project for Create Performance Task.  Establish 4 or 5 individual features.
 - Thursday: Backend.  Model, Python, Backend, OOP.  Starting an object Model following [Hacks](https://nighthawkcoders.github.io/APCSP//2023/01/03/PBL-model.html#Hacks)

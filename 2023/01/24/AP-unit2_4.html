@@ -144,9 +144,9 @@ window.onload = wrap_img;
 <span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
+<span class="c1"># filter data for requirement</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">'countries_stat'</span><span class="p">])</span>  <span class="c1"># filter endpoint for country stats</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># show top 5 records</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'country_name'</span><span class="p">:</span><span class="s1">'deaths'</span><span class="p">])</span> <span class="c1"># show row 0 through 5 and columns country_name through deaths</span>
 </pre></div>
 
     </div>
@@ -159,26 +159,13 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>  country_name       cases     deaths region total_recovered new_deaths  \
-0          USA  82,649,779  1,018,316             80,434,925          0   
-1        India  43,057,545    522,193             42,519,479          0   
-2       Brazil  30,345,654    662,663             29,364,400          0   
-3       France  28,244,977    145,020             25,852,832          0   
-4      Germany  24,109,433    134,624             21,243,000          0   
-
-  new_cases serious_critical active_cases total_cases_per_1m_population  \
-0         0            1,465    1,196,538                       247,080   
-1         0              698       15,873                        30,657   
-2         0            8,318      318,591                       140,954   
-3         0            1,677    2,247,125                       430,996   
-4         0            1,980    2,731,809                       286,106   
-
-  deaths_per_1m_population    total_tests tests_per_1m_population  
-0                    3,044  1,000,275,726               2,990,303  
-1                      372    834,717,702                 594,319  
-2                    3,078     63,776,166                 296,238  
-3                    2,213    266,484,045               4,066,333  
-4                    1,598    122,332,384               1,451,714  
+<pre>  country_name       cases     deaths
+0          USA  82,649,779  1,018,316
+1        India  43,057,545    522,193
+2       Brazil  30,345,654    662,663
+3       France  28,244,977    145,020
+4      Germany  24,109,433    134,624
+5           UK  21,933,206    173,352
 </pre>
 </div>
 </div>

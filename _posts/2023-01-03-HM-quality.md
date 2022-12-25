@@ -3,7 +3,7 @@ toc: true
 comments: true
 layout: post
 title: Quality Culture
-description: Manage software quality as a vital part of every stage of project.  Continually on the lookout for ways to improve your software quality.
+description: Manage software quality as a vital part of every stage of project.  Continually be on the lookout for ways to improve your software quality.
 image: /images/.jpeg
 type: human
 week: 17
@@ -37,8 +37,9 @@ week: 17
 
 
 ## Hacks
-> Each team role needs to establish quality goals.  To improve software quality it is important that all parties to the project have full understanding of quality requirement through a fluid communication channel.  Thus, establish a quality plan.  Here are some ideas ...
-- `Scrum Master` should have Issue and Customer/Teacher/Grader review goals.
-- `DevOps` should have CI/CD goals
-- `Backend Developer` should have tester methods that don't depend on Frontend code.
-- `Frontend Developer` should establish full system checks before grading/reviews.
+> Quality 1st and Features 2nd will be keys to 2nd Trimester.  Each team role needs to establish quality goals.  To improve software quality it is important that all parties in the project have full understanding of quality requirements through fluid communication channels.  Thus, establishing a quality plan is a requirement.  Here are some ideas ...
+- `Feature Focus` keep an up to date blog/readme on the features of your project.  The focus is to have 4 to 5 major features and the team should keep an up to date status of the progress of those features.  This includes how each feature meets all the criteria of College Board Create Task.  
+- `Scrum Master` should have Team Member Issues and Customer/Teacher/Grader review ticket always in plan.  The review ticket should line up with Quality and Feature Focus.  Scrum Master maintain features/quality plan and holds team members accountable to plan.
+- `DevOps` should have CI/CD goals.  Process should be able to identify failures when the occur and by what change.
+- `Backend Developer` should have tester methods that don't depend on Frontend code or CI/CD process.
+- `Frontend Developer` should establish full system checks before grading/reviews.  All system checks should be able to be performed on localhost frontend server.

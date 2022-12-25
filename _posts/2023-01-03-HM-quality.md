@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Quality Culture
 description: Manage software quality as a vital part of every stage of project.  Continually be on the lookout for ways to improve your software quality.
-image: /images/.jpeg
+image: /images/agile_manifesto.jpeg
 type: human
 week: 17
 ---

@@ -39,7 +39,7 @@ week: 17
 ## Hacks
 > Quality 1st and Features 2nd will be keys to 2nd Trimester.  Each team role needs to establish quality goals.  To improve software quality it is important that all parties in the project have full understanding of quality requirements through fluid communication channels.  Thus, establishing a quality plan is a requirement.  Here are some ideas ...
 - `Feature Focus` keep an up to date blog/readme on the features of your project.  The focus is to have 4 to 5 major features and the team should keep an up to date status of the progress of those features.  This includes how each feature meets all the criteria of College Board Create Task.  
-- `Scrum Master` should have Team Member Issues and Customer/Teacher/Grader review ticket always in plan.  The review ticket should line up with Quality and Feature Focus.  Scrum Master maintain features/quality plan and holds team members accountable to plan.
+- `Scrum Master` should have Team Member Issues and Customer/Teacher/Grader review ticket always in plan.  The review ticket should line up with Quality and Feature Focus.  Scrum Master maintain features/quality plan and holds team members accountable to plan.  Think about Scrum Board, README, and Issues as key artifacts to plan.
 - `DevOps` should have CI/CD goals.  Process should be able to identify failures when the occur and by what change.
 - `Backend Developer` should have tester methods that don't depend on Frontend code or CI/CD process.
 - `Frontend Developer` should establish full system checks before grading/reviews.  All system checks should be able to be performed on localhost frontend server.

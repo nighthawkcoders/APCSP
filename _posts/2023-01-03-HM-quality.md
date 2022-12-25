@@ -11,7 +11,8 @@ week: 17
 
 ## Start with a Comment
 > Every person listening involved in this lecture needs to comment on this blog...
-- How should I improve on to improve my software deliverables?
+- On a scale of 1 to 3, "How would you evaluate your quality on your individual Algorithm blog?
+- How should I improve my software deliverables?
 
 
 ### Quality Method and Mantra
@@ -43,3 +44,7 @@ week: 17
 - `DevOps` should have CI/CD goals.  Process should be able to identify failures when the occur and by what change.
 - `Backend Developer` should have tester methods that don't depend on Frontend code or CI/CD process.
 - `Frontend Developer` should establish full system checks before grading/reviews.  All system checks should be able to be performed on localhost frontend server.
+
+## Edit your Comment
+> Every person should modify their comment.
+- What will be my key focus in quality the last half of Trimester 2?

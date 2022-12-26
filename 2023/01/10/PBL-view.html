@@ -336,7 +336,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="View/Blog-Concepts">View/Blog Concepts<a class="anchor-link" href="#View/Blog-Concepts"> </a></h2><blockquote><p>A notes/blog will be created to add <strong><em>Notes</em></strong> between students and teacher.</p>
+<h2 id="View/Blog-Concepts">View/Blog Concepts<a class="anchor-link" href="#View/Blog-Concepts"> </a></h2><blockquote><p>A notes/blog could be created to add <strong><em>Notes</em></strong> between students and teacher.  Notes could be used for many types of applications.</p>
 <ul>
 <li>Most recent message on top</li>
 <li>Messages support inclusion of images</li>
@@ -352,11 +352,12 @@ window.onload = wrap_img;
 <h2 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h2><blockquote><p>Build your Design for Create Performance Task (CPT), this is requirement from College Board.  Correlate design between backend model, frontend view., and visuals above. This particular Jupyter Notebook and code within it are used to help establish a design.   This is to place ideas and use JavaScript and HTML to establish concepts.  Student teams can use Student/Teacher project for starters, but ultimately will create their own Project.  Start a design...</p>
 <ul>
 <li>The project must have View and Model.  Describe your project.</li>
-<li>The project should contain a relationship between of data, this means that a student can have 0 to many blogs.  This is called a 1-to-Many relationship.  Google <strong><em>Unified Model Language (UML)</em></strong>, this is a means to describe data.  Make sure attributes between Model and View are consistent in your design.  For instance, if you use Student/Teacher as your initial project there are many things that are inconsistent or incomplete the provided View Notebook and the Model Notebook.</li>
+<li>The project should contain a relationship between of data, this means that a student can have 0 to many blogs.  This is called a 0-to-Many or a 1-to-Many relationship.  Google <strong><em>Unified Model Language (UML)</em></strong>, this is a means to describe data.  Make sure attributes between Model and View are consistent in your design.  For instance, if you use Student/Teacher as your initial project there are many things that are inconsistent or incomplete the provided View Notebook and the Model Notebook.</li>
 <li>Describe your View.  <strong><em>UML</em></strong>, visuals, tables are used to characterize a project.  This is strong way to show CPT graders understanding of planning by mixing Model and View.</li>
 <li>Start a design in a Jupyter Notebook and create Issues in your Teams GitHub repository. </li>
 <li>Issues should discuss problems/challenges, in Teacher/Student data here are a couple ... <ul>
 <li>This design will have many JavaScript actions, at least one for each CRUD operation.  See if you can think of JavaScript functions to replace alerts in example code above.</li>
+<li>There can be different roles for CRUD operations.  For instance, student will only interact with their own account.  Teacher may interact with many accounts.   This could lead to different Views depending on Role.   In fact, you may want to have Flask be View for Admin role, or Teacher role.   GitHub pages may only have view for Student role.</li>
 <li>Given these CRUD operations what kind of APIs do you think you will need.  They should map closely button/on click requirements.</li>
 <li>In model design, there has been a choice to go away from email to uid (github user id), to protect user but still have a unique id.  Figure out what your unique piece of data is in your project to look up a record.</li>
 <li>In model design, there are data issues for how to handle dob and age.  Some data is stored and some is calculated.  What do we want to see in table, what do we want to see on update screen.

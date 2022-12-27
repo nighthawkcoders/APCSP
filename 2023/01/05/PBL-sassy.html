@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Welcome to SASS | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Welcome to SASS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Some tips and terms on using SASS. Contributions from Charlie Zhu, class of 2022." />
+<meta property="og:description" content="Some tips and terms on using SASS. Contributions from Charlie Zhu, class of 2022." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-05T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Welcome to SASS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-05T00:00:00-06:00","datePublished":"2023-01-05T00:00:00-06:00","description":"Some tips and terms on using SASS. Contributions from Charlie Zhu, class of 2022.","headline":"Welcome to SASS","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Welcome to SASS</h1><p class="page-description">Some tips and terms on using SASS.  Contributions from Charlie Zhu, class of 2022.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-05T00:00:00-06:00" itemprop="datePublished">
+        Jan 5, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#welcome-to-sass">Welcome to SASS</a></li>
+<li class="toc-entry toc-h2"><a href="#sass-prerequisites">SASS Prerequisites</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#downloads--command-prompt-lines">Downloads / Command Prompt Lines</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#sass-tips">SASS Tips</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#features--functionality">Features / Functionality</a></li>
+<li class="toc-entry toc-h3"><a href="#aspect-1-partials">Aspect 1: Partials</a></li>
+<li class="toc-entry toc-h3"><a href="#aspect-2-defining-colors--variables">Aspect 2: Defining Colors / Variables</a></li>
+<li class="toc-entry toc-h3"><a href="#aspect-3-nested-styling">Aspect 3: Nested Styling</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#college-apps-are-coming">College Apps Are Coming!</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#be-prepared">Be Prepared</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#supporting-videos">Supporting Videos</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2 id="welcome-to-sass">
+<a class="anchor" href="#welcome-to-sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to SASS</h2>
+<blockquote>
+  <p>SASS helps process a SASS file and compile it like the usual CSS file.  Using SASS let’s us leverage off of a lot of implementation that has already been performed, such as GitHub pages.  But it also lets you more programmatically build CSS.</p>
+</blockquote>
+
+<p><img src="https://user-images.githubusercontent.com/72889453/149642880-22b11bab-1c1c-4741-999b-77c1697ce1ec.png" alt="image"></p>
+
+<h2 id="sass-prerequisites">
+<a class="anchor" href="#sass-prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS Prerequisites</h2>
+<blockquote>
+  <p>Skip this section unless you have issues.</p>
+</blockquote>
+
+<h3 id="downloads--command-prompt-lines">
+<a class="anchor" href="#downloads--command-prompt-lines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloads / Command Prompt Lines</h3>
+<ul>
+  <li>
+    <p>Check for <code class="language-plaintext highlighter-rouge">npm --version</code>, or download node.js <a href="https://nodejs.org/en/">here</a> (just download the LTS version).</p>
+  </li>
+  <li>This line of code is just used to check that you actually have npm installed, if not run installer :
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>npm --version
+</code></pre></div>    </div>
+  </li>
+  <li>Next you will use check for sass :
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>npm view sass version
+</code></pre></div>    </div>
+  </li>
+  <li>Install sass if required :
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>npm install -g sass
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="sass-tips">
+<a class="anchor" href="#sass-tips" aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS Tips</h2>
+<h3 id="features--functionality">
+<a class="anchor" href="#features--functionality" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features / Functionality</h3>
+<ul>
+  <li>As mentioned, the great thing about scss is that <strong><em>it writes the css for you</em></strong>, making it much less tedious. However, there are many aspects as to why it actually simplifies the process.</li>
+</ul>
+
+<h3 id="aspect-1-partials">
+<a class="anchor" href="#aspect-1-partials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 1: Partials</h3>
+<ul>
+  <li>Sass naturally transpiles all the .scss files directly. However, when you want to import a file, you do not need the file to be transpiled directly. Sass has a mechanism for this: If you start the filename with an underscore, Sass will not transpile it. Files named this way are called partials and they allow you to work in a much more organized space.
+<img src="https://user-images.githubusercontent.com/72889453/149645411-25d66017-4dd9-4fa5-8728-2f92cc38eac9.png" alt="dwankawkldnalwdlkwandklawjdklajdlkwajdlajwldjalwd">
+</li>
+</ul>
+
+<h3 id="aspect-2-defining-colors--variables">
+<a class="anchor" href="#aspect-2-defining-colors--variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 2: Defining Colors / Variables</h3>
+<ul>
+  <li>Rather than retyping the hexadecimal values of each color every single time, you can define all of the ones you want to use in a partial and then just reference them with $[color] when you want to use it. However, make sure you import the partial into the scss file where you are going to use it in.
+    <div class="language-scss highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$light</span><span class="p">:</span> <span class="mh">#f7f7f7</span><span class="p">;</span>
+<span class="nv">$dark</span><span class="p">:</span> <span class="mh">#222121</span><span class="p">;</span>
+<span class="nv">$lime</span><span class="p">:</span> <span class="mh">#00cc66</span><span class="p">;</span>
+<span class="nv">$orangeRed</span><span class="p">:</span> <span class="mh">#fb4b4e</span><span class="p">;</span>
+<span class="nv">$blue</span><span class="p">:</span> <span class="mh">#2541b2</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Example shown here:
+    <div class="language-scss highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nc">.navbar</span> <span class="p">{</span>
+<span class="nl">background</span><span class="p">:</span> <span class="nv">$light</span><span class="p">;</span> <span class="c1">// see how instead of having to retype the hexadecimal, I can just reference it like this WOWOW so COOL</span>
+<span class="nl">height</span><span class="p">:</span> <span class="m">80px</span><span class="p">;</span>
+<span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-between</span><span class="p">;</span>
+<span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="mi">.5rem</span> <span class="nf">calc</span><span class="p">((</span><span class="m">100vw</span> <span class="o">-</span> <span class="m">1200px</span><span class="p">)</span> <span class="o">/</span> <span class="m">2</span><span class="p">);</span>
+<span class="nl">z-index</span><span class="p">:</span> <span class="m">10</span><span class="p">;</span>
+<span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="aspect-3-nested-styling">
+<a class="anchor" href="#aspect-3-nested-styling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 3: Nested Styling</h3>
+<ul>
+  <li>Another unique aspect about scss is that you can actually nest styles, so if you want an aspect like let’s say color to apply to everything you are working on for that portion of the html, you can actually nest the rest of the formatting, animations, etc within that definition.</li>
+  <li>Implementation shown here with the Hero section in my scss:
+    <div class="language-scss highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nc">.hero</span> <span class="p">{</span>
+<span class="nl">background-color</span><span class="p">:</span> <span class="nv">$light</span><span class="p">;</span> <span class="c1">// see how the rest of the code is indented / nested within .hero</span>
+
+<span class="k">&amp;</span><span class="nt">__container</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+  <span class="na">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span> <span class="m">1fr</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="na">justify-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">90vh</span><span class="p">;</span>
+  <span class="nl">z-index</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+
+  <span class="k">@include</span> <span class="nd">tablet</span> <span class="p">{</span> <span class="c1">// @include tablet and @include mobile will be explained next</span>
+    <span class="na">grid-template-columns</span><span class="p">:</span> <span class="m">1fr</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--left</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.2</span><span class="p">;</span>
+
+    <span class="k">@include</span> <span class="nd">tablet</span> <span class="p">{</span>
+      <span class="nl">padding</span><span class="p">:</span> <span class="m">5rem</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span>
+      <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$lime</span><span class="p">;</span>
+
+    <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5rem</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">h2</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$dark</span><span class="p">;</span>
+
+    <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$dark</span><span class="p">;</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+
+    <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5rem</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--btn</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$lime</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">14px</span> <span class="m">32px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$light</span><span class="p">;</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0</span><span class="mi">.3s</span><span class="p">;</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--btn</span> <span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$light</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--btn</span><span class="nd">:after</span> <span class="p">{</span> <span class="c1">// code animates home page button so that it transitions to red when hovered</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="nv">$orangeRed</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0</span><span class="mi">.3s</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--btn</span><span class="nd">:hover:after</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--right</span> <span class="p">{</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">&amp;</span><span class="nt">--img</span> <span class="p">{</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>You can see how this code works in tandem with the Hero section of the HTML, the class definitions are associated with every definition of styling coded above:
+``` html
+<!-- Hero Section -->
+</li>
+</ul>
+<div class="hero"> // each of the classes here correspond to what's defined above in the scss
+    <div class="hero__container">
+        <div class="hero__container--left">
+            <h1>
+<a class="anchor" href="#college-apps-are-coming" aria-hidden="true"><span class="octicon octicon-link"></span></a>College Apps Are Coming!</h1>
+            <h2>
+<a class="anchor" href="#be-prepared" aria-hidden="true"><span class="octicon octicon-link"></span></a>Be Prepared</h2>
+            <p>Sign up now to join the list.</p>
+            <button class="hero__container--btn"><a href="#">Sign Up</a></button>
+        </div>
+        <div class="hero__container--right">
+            <img src="images/img-2.svg" class="hero__container--img">
+        </div>
+    </div>
+</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+### Aspect 4: Easily Change Formatting Based on Device
+* With the power of scss, you can more easily than ever change the formatting of your site based on which device a person is using.
+* Such can be done by defining the resolutions in a partial like here:
+``` scss
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 280px) {
+    @content;
+  }
+}
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:
+``` scss
+  &amp;–left h1 {
+    font-size: 4rem;
+    color: $lime;</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>@include mobile { // in this case the font size changes because it's mobile
+  font-size: 1.5rem;
+}   }
+</code></pre></div>    </div>
+
+    <p>&amp;–left h2 {
+    font-size: 4rem;
+    color: $dark;</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>@include mobile {
+  font-size: 2rem;
+}   }
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+### Aspect 5: Extending, Inheritance, and Calculations
+* In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:
+``` scss
+%align-center {
+  display: flex;
+  align-items: center;
+}
+
+logo {
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 24px;
+    @extend %align-center; //it's inheriting the above values for display and align:items
+}
+</code></pre></div></div>
+<ul>
+  <li>Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
+    <div class="language-scss highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  <span class="k">&amp;</span><span class="nt">--btn</span><span class="nd">:hover:after</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">*</span> <span class="m">4</span><span class="p">;</span> <span class="c1">//makes the animation extend way farther, past the border of the button</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="supporting-videos">
+<a class="anchor" href="#supporting-videos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supporting Videos</h3>
+<ul>
+  <li>These are just some videos I found that are helpful, click on the images to go directly to the videos!
+<a href="https://www.youtube.com/watch?v=LtMgTdjWEuk" title="IntelliJ and SASS files compile with File watcher"><img src="https://img.youtube.com/vi/LtMgTdjWEuk/0.jpg" alt="IntelliJ and SASS files compile with File watcher"></a>
+<a href="https://www.youtube.com/watch?v=Zz6eOVaaelI" title="Learn Sass In 20 Minutes | Sass Crash Course"><img src="https://img.youtube.com/vi/Zz6eOVaaelI/0.jpg" alt="Learn Sass In 20 Minutes | Sass Crash Course"></a>
+</li>
+</ul>
+
+
+  </div><a class="u-url" href="/APCSP/2023/01/05/PBL-sassy.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

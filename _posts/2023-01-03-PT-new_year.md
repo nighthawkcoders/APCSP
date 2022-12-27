@@ -19,6 +19,6 @@ week: 17
 - Friday: Workday. Ideate/planning data required for Create Performance Task.  Populate some static data for 4 or 5 features and add to frontend pages.
 
 ## Look ahead
-> Teams work on Ideation, research, and 1st code for Create Performance Task project
-- Monday will be Live Review with points 3 points focused on Issue 1 Hacks, Layout or SASS changes, and personal improvements to blog.
+> Teams work on ideation, research, fe, and be code.
+- Monday will be Live Review with points 3 points focused on Issue 1 Hacks and hacks from Tech Talks
 

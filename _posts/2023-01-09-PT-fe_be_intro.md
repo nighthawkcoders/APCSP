@@ -21,5 +21,5 @@ week: 18
 
 ## Look ahead
 > Student enable Control code to connect Frontend and Backend development for their Create Performance Task project.
-- Monday will be Live Review focused on Hacks from Tech Talks
+- Monday will be Silent Review focused on Hacks from Tech Talks
 

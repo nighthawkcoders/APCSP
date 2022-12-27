@@ -13,7 +13,7 @@ week: 21
 
 ## Plans Week 21
 > Teams perform continue in working on CPT projects.  Data Tools lectures by teachers and a student practice quiz.
-- Monday: Practice Quiz from CB
+- Monday: Silent Review of Practice Quiz and Corrections
 - Tuesday: AP/Tech Talk: Unit 2.4 using Pandas and Numpy
 - Wednesday: Work Day - Coding hour 3
 - Thursday: AP/Tech Talk: Unit 2.2, uploading images, changing images using Image Lab and Numpy

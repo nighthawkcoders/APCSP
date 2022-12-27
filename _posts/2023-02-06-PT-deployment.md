@@ -11,7 +11,7 @@ type: plan
 week: 22
 ---
 
-## Plans Week 21
+## Plans Week 22
 > Student work on Issues from projects.  DevOps engineer puts CI/CD processes in place for frontend and backend.
 - Monday: Live Review
 - Tuesday: Work Day - Coding hour 5

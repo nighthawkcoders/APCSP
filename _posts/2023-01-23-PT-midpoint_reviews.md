@@ -16,8 +16,8 @@ week: 20
 - Monday: Work day - Coding hour 2
 - Tuesday: AP/Tech Talk: Units 2.3 using Pandas and Numpy
 - Wednesday: AP/Tech Talk: Unit 2.4 using Pandas and Numpy
-- Thursday: Team Reviews 5 minutes per team (half of the teams)
-- Friday: Team Reviews 5 minutes per team (other half of the teams)
+- Thursday: Start CB Practice Quiz and Corrections. Team/Ideation Reviews 5 minutes per team (half of the teams)
+- Friday: Finish CB Practice Quiz and Corrections.  Team/Ideation Reviews 5 minutes per team (other half of the teams)
 
 ## Look ahead
 > Development on CPT Issues

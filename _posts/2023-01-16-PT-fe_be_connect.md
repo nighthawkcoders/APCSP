@@ -13,7 +13,7 @@ week: 19
 
 ## Plans Week 19
 > Teams work on Ideation, research, and 1st code for Create Performance Task project
-- Monday: Live Review
+- Monday: Silent Review
 - Tuesday: Backend Tech Talk.  Model, Python, Backend, OOP.  Starting an object Model following [Hacks](https://nighthawkcoders.github.io/APCSP//2023/01/03/PBL-model.html#Hacks)
 - Wednesday: Perform Model, Python, Backend, OOP hacks.  Start your Model ipynb and adapt provided model to contain attributes that are specific to your project.
 - Thursday: Frontend Tech Talk.  View, JavaScript, Frontend.  

@@ -20,5 +20,5 @@ week: 23
 - Friday: Coding hour 12.
 
 ## Look ahead
-> Finals Week, capture the moment activities.
+> Finals Week, capture the moment activities.  Write-up and video are required, these will be peer-2-peer reviewed.  Reviews will be graded 1st week of trimester 3.
 

@@ -20,5 +20,5 @@ week: 23
 - Friday: Coding hour 12.
 
 ## Look ahead
-> Finals Week, Create Documentation and Videos.  This is primarily a student to student activity.  Teachers will not grade.
+> Finals Week, capture the moment activities.
 

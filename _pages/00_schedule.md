@@ -9,7 +9,7 @@ title: Schedule
 {% assign all = all | concat:site.posts | concat:site.pages %}
 
 <!-- Setup order for Units -->
-{% assign units = "5,4,3,2,1" | split: ',' %}
+{% assign units = "5,4,3,2,1,6" | split: ',' %}
 {% for unit in units %}
 
   <!-- Each Unit has a range of weeks and a heading -->
@@ -38,9 +38,15 @@ title: Schedule
       
   {% elsif unit == "5" %} 
       {% assign start = 17 %}
-      {% assign end = 21 %}
+      {% assign end = 20 %}
 ## Unit {{unit}}: Intro to OOP, Databases, and Backend Programming
-> Trimester 2 continues with student learning OOP and immediately applying it to Databases.  Each week a "Student Team" will be working on elements for their Create Performance Task (CPT).  OOP will be a great way to develop code and a database which will exceed every CPT requirement.
+> Trimester 2 continues with student learning OOP and immediately applying it to Databases.  Each week a "Student Teams" will be working on frontend and backend elements for their Create Performance Task (CPT).  GitHub pages will be focus of instruction for frontend, OOP in Python will be instruction provided to create a database which will help exceed every CPT requirement.
+
+{% elsif unit == "6" %} 
+      {% assign start = 21 %}
+      {% assign end = 24 %}
+## Unit {{unit}}: Trimester 2 N@tM and finish CPT
+> Trimester 2 concludes with student presenting their CPT project at N@tM.  Each person within "Student Teams" will have their own specialty within the student project that satisfied all their Create Performance Task requirements.   Student should be able to talk about design, coding, and present features of their portion of the system.
       
   {% endif %}
 

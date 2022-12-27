@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Welcome to SASS | APCSP</title>
+<title>Welcome to Midnight Theme and SASS | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Welcome to SASS" />
+<meta property="og:title" content="Welcome to Midnight Theme and SASS" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Some tips and terms on using SASS. Contributions from Charlie Zhu, class of 2022." />
-<meta property="og:description" content="Some tips and terms on using SASS. Contributions from Charlie Zhu, class of 2022." />
-<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html" />
-<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html" />
+<meta name="description" content="Some tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022." />
+<meta property="og:description" content="Some tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html" />
 <meta property="og:site_name" content="APCSP" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-01-05T00:00:00-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Welcome to SASS" />
+<meta property="twitter:title" content="Welcome to Midnight Theme and SASS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-05T00:00:00-06:00","datePublished":"2023-01-05T00:00:00-06:00","description":"Some tips and terms on using SASS. Contributions from Charlie Zhu, class of 2022.","headline":"Welcome to SASS","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-sassy.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-05T00:00:00-06:00","datePublished":"2023-01-05T00:00:00-06:00","description":"Some tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022.","headline":"Welcome to Midnight Theme and SASS","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,13 +73,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Welcome to SASS</h1><p class="page-description">Some tips and terms on using SASS.  Contributions from Charlie Zhu, class of 2022.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-05T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Welcome to Midnight Theme and SASS</h1><p class="page-description">Some tips on customizing Midnight theme, plus concepts and terms on using SASS.  Contributions on SASS from Charlie Zhu, class of 2022.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-05T00:00:00-06:00" itemprop="datePublished">
         Jan 5, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -89,6 +89,11 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#stylesheet-notes-from-midnight-theme">Stylesheet Notes from Midnight Theme</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#layouts-notes-from-midnight-theme">Layouts Notes from Midnight Theme</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#welcome-to-sass">Welcome to SASS</a></li>
 <li class="toc-entry toc-h2"><a href="#sass-prerequisites">SASS Prerequisites</a>
 <ul>
@@ -112,7 +117,42 @@ window.onload = wrap_img;
 </li>
 </ul>
 </li>
-</ul><h2 id="welcome-to-sass">
+</ul><h2 id="stylesheet-notes-from-midnight-theme">
+<a class="anchor" href="#stylesheet-notes-from-midnight-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stylesheet Notes from <a href="https://github.com/pages-themes/midnight/blob/master/README.md#stylesheet">Midnight Theme</a>
+</h2>
+
+<p>If you’d like to add your own custom styles:</p>
+
+<ol>
+  <li>Create a file called <code class="language-plaintext highlighter-rouge">/assets/css/style.scss</code> in your site</li>
+  <li>Add the following content to the top of the file, exactly as shown:
+    <div class="language-scss highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code> <span class="nt">---</span>
+ <span class="nt">---</span>
+
+ <span class="o">@</span><span class="nt">import</span> <span class="s2">"minima"</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Add any custom CSS (or Sass, including imports) you’d like immediately after the <code class="language-plaintext highlighter-rouge">@import</code> line</li>
+</ol>
+
+<p><em>Note: If you’d like to change the theme’s Sass variables, you must set new values before the <code class="language-plaintext highlighter-rouge">@import</code> line in your stylesheet.</em></p>
+
+<h3 id="layouts-notes-from-midnight-theme">
+<a class="anchor" href="#layouts-notes-from-midnight-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Layouts Notes from <a href="https://github.com/pages-themes/midnight/blob/master/README.md#layouts">Midnight Theme</a>
+</h3>
+
+<p>If you’d like to change the theme’s HTML layout:</p>
+
+<ol>
+  <li>For some changes such as a custom <code class="language-plaintext highlighter-rouge">favicon</code>, you can add custom files in your local <code class="language-plaintext highlighter-rouge">_includes</code> folder. The files <a href="https://github.com/pages-themes/midnight/tree/master/_includes">provided with the theme</a> provide a starting point and are included by the <a href="https://github.com/pages-themes/midnight/blob/master/_layouts/default.html">original layout template</a>.</li>
+  <li>For more extensive changes, <a href="https://github.com/pages-themes/midnight/blob/master/_layouts/default.html">copy the original template</a> from the theme’s repository<br>(<em>Pro-tip: click “raw” to make copying easier</em>)</li>
+  <li>Create a file called <code class="language-plaintext highlighter-rouge">/_layouts/default.html</code> in your site</li>
+  <li>Paste the default layout content copied in the first step</li>
+  <li>Customize the layout as you’d like</li>
+</ol>
+
+<h2 id="welcome-to-sass">
 <a class="anchor" href="#welcome-to-sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to SASS</h2>
 <blockquote>
   <p>SASS helps process a SASS file and compile it like the usual CSS file.  Using SASS let’s us leverage off of a lot of implementation that has already been performed, such as GitHub pages.  But it also lets you more programmatically build CSS.</p>
@@ -123,7 +163,7 @@ window.onload = wrap_img;
 <h2 id="sass-prerequisites">
 <a class="anchor" href="#sass-prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS Prerequisites</h2>
 <blockquote>
-  <p>Skip this section unless you have issues.</p>
+  <p>Skip downloads section unless you have issues.</p>
 </blockquote>
 
 <h3 id="downloads--command-prompt-lines">
@@ -412,7 +452,7 @@ logo {
 </ul>
 
 
-  </div><a class="u-url" href="/APCSP/2023/01/05/PBL-sassy.html" hidden></a>
+  </div><a class="u-url" href="/APCSP/2023/01/05/PBL-midnight_sassy.html" hidden></a>
 </article>
 
       </div>

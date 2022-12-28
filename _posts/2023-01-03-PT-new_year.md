@@ -12,10 +12,10 @@ week: 17
 ---
 
 ## Plans Week 17
-> Teams ***Ideate their Create Performance Task*** while reviewing the creation of GitHub Pages Frontend and learning about OOP.
-- Tuesday: 1. Quality.  Review quality culture.  2. Frontend.  The Reunion Project [Issue 1](https://github.com/jm1021/leuck_reunion/issues/1)
-- Wednesday: Workday, clean up personal blogs.   Start ideation or adaptation of Reunion project to something for you CPT project. Ideate 4 or 5 individual features all which meet requirements for CPT; one per individual.
-- Thursday: Tech Talk 1. Layouts 2. SASS.  
+> Teams ***Ideate their Create Performance Task*** while reviewing the creation of GitHub Pages Frontend.  Start ideation or adaptation of Reunion project to something for you CPT project. Ideate 4 or 5 individual features all which meet requirements for CPT; one per individual.
+- Tuesday: Frontend.  The Reunion Project [Issue 1](https://github.com/jm1021/leuck_reunion/issues/1). workday, hack challenge
+- Wednesday: Review Creative, Collaborative, and Quality Culture. workday, clean up personal blogs and/or ideate CPT
+- Thursday: Tech Talk Frontend Reviews, SASS, work day 
 - Friday: Workday. Ideate/planning data required for Create Performance Task.  Populate some static data for 4 or 5 features and add to frontend pages.
 
 ## Look ahead

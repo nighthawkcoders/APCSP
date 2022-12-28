@@ -20,5 +20,5 @@ week: 17
 
 ## Look ahead
 > Teams work on ideation, research, fe, and be code.
-- Monday will be Live Review with points 3 points focused on Issue 1 Hacks and hacks from Tech Talks
+- Monday will be Live Review with points 3 points focused on Issue 1 Hacks and Tech Talks Hacks
 

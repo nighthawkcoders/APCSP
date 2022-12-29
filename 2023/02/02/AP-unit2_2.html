@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unit 2.2 Data Compression, plus Images Lab | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Unit 2.2 Data Compression, plus Images Lab" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Learning about Lossy and Lossless compression. Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels." />
+<meta property="og:description" content="Learning about Lossy and Lossless compression. Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/02/02/AP-unit2_2.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/02/02/AP-unit2_2.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-02T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
+<meta property="twitter:title" content="Unit 2.2 Data Compression, plus Images Lab" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-02T00:00:00-06:00","datePublished":"2023-02-02T00:00:00-06:00","description":"Learning about Lossy and Lossless compression. Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels.","headline":"Unit 2.2 Data Compression, plus Images Lab","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/02/02/AP-unit2_2.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/02/02/AP-unit2_2.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 2.2 Data Compression, plus Images Lab</h1><p class="page-description">Learning about Lossy and Lossless compression.  Lab will perform alterations on images, manipulate RGB values, and reduce the number of pixels.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-02T00:00:00-06:00" itemprop="datePublished">
+        Feb 2, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-02-02-AP-unit2_2.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-02-02-AP-unit2_2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-02-02-AP-unit2_2.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-02-02-AP-unit2_2.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Enumerate-Big-Ideas-from">Enumerate Big Ideas from </a></li>
+<li class="toc-entry toc-h2"><a href="#>-The-Image-Lab-Project-contains-a-plethora-of-College-Board-Unit-2-and-Unit-3-concepts.-Enumerate-some-of-the-big-ideas-vocab-...--">&gt; The Image Lab Project contains a plethora of College Board Unit 2 and Unit 3 concepts. Enumerate some of the big ideas vocab ...-  </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+<li class="toc-entry toc-h2"><a href="#Image-Files-and-Size">Image Files and Size </a></li>
+<li class="toc-entry toc-h2"><a href="#>-Here-are-some-Images-Files.--WGet-some-of-these-files,-load-them-on-your-machine.---Describe-some-of-the-properties-of-the-files.--Describe-files-that-are-similar,-but-different-...-">&gt; Here are some Images Files.  WGet some of these files, load them on your machine.   Describe some of the properties of the files.  Describe files that are similar, but different ...- </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+<li class="toc-entry toc-h2"><a href="#Python-Libraries-used-in-Images-Lab">Python Libraries used in Images Lab </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#numpy">numpy </a></li>
+<li class="toc-entry toc-h3"><a href="#PIL-(Python-Image-Library)">PIL (Python Image Library) </a></li>
+<li class="toc-entry toc-h3"><a href="#base64">base64 </a></li>
+<li class="toc-entry toc-h3"><a href="#io,-BytesIO">io, BytesIO </a></li>
+<li class="toc-entry toc-h3"><a href="#pathlib">pathlib </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#>-File-paths-are-different-on-Windows-versus-Mac-and-Linux.--This-can-cause-problems-in-a-project-as-you-work-and-deploy-on-different-Operating-Systems-(OS's),-pathlib-is-a-solution-to-this-problem.--Enumerate-difference-in-shell-and-file-paths-on-Mac-versus-Windows-using-shell-commands-ls,-cd,-pwd-...">&gt; File paths are different on Windows versus Mac and Linux.  This can cause problems in a project as you work and deploy on different Operating Systems (OS&#39;s), pathlib is a solution to this problem.  Enumerate difference in shell and file paths on Mac versus Windows using shell commands ls, cd, pwd ... </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-02-02-AP-unit2_2.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Enumerate-Big-Ideas-from">
+<a class="anchor" href="#Enumerate-Big-Ideas-from" aria-hidden="true"><span class="octicon octicon-link"></span></a>Enumerate Big Ideas from<a class="anchor-link" href="#Enumerate-Big-Ideas-from"> </a>
+</h2>
+<h2 id="&gt;-The-Image-Lab-Project-contains-a-plethora-of-College-Board-Unit-2-and-Unit-3-concepts.-Enumerate-some-of-the-big-ideas-vocab-...--">
+<a class="anchor" href="#&gt;-The-Image-Lab-Project-contains-a-plethora-of-College-Board-Unit-2-and-Unit-3-concepts.-Enumerate-some-of-the-big-ideas-vocab-...--" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; The <a href="https://csp.nighthawkcodingsociety.com/starter/rgb/">Image Lab Project</a> contains a plethora of College Board Unit 2 and Unit 3 concepts. Enumerate some of the big ideas vocab ...- <a class="anchor-link" href="#&gt;-The-Image-Lab-Project-contains-a-plethora-of-College-Board-Unit-2-and-Unit-3-concepts.-Enumerate-some-of-the-big-ideas-vocab-...--"> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Image-Files-and-Size">
+<a class="anchor" href="#Image-Files-and-Size" aria-hidden="true"><span class="octicon octicon-link"></span></a>Image Files and Size<a class="anchor-link" href="#Image-Files-and-Size"> </a>
+</h2>
+<h2 id="&gt;-Here-are-some-Images-Files.--WGet-some-of-these-files,-load-them-on-your-machine.---Describe-some-of-the-properties-of-the-files.--Describe-files-that-are-similar,-but-different-...-">
+<a class="anchor" href="#&gt;-Here-are-some-Images-Files.--WGet-some-of-these-files,-load-them-on-your-machine.---Describe-some-of-the-properties-of-the-files.--Describe-files-that-are-similar,-but-different-...-" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Here are some <a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/starter/static/img">Images Files</a>.  WGet some of these files, load them on your machine.   Describe some of the properties of the files.  Describe files that are similar, but different ...-<a class="anchor-link" href="#&gt;-Here-are-some-Images-Files.--WGet-some-of-these-files,-load-them-on-your-machine.---Describe-some-of-the-properties-of-the-files.--Describe-files-that-are-similar,-but-different-...-"> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Libraries-used-in-Images-Lab">
+<a class="anchor" href="#Python-Libraries-used-in-Images-Lab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python Libraries used in Images Lab<a class="anchor-link" href="#Python-Libraries-used-in-Images-Lab"> </a>
+</h2>
+<h3 id="numpy">
+<a class="anchor" href="#numpy" aria-hidden="true"><span class="octicon octicon-link"></span></a>numpy<a class="anchor-link" href="#numpy"> </a>
+</h3>
+<blockquote>
+<p><a href="https://numpy.org/">Numpy</a> is described as "The fundamental package for scientific computing with Python".  In the Image Lab, a Numpy array is created from the image data in order to access and/or change the RGB values of the pixels.</p>
+<h3 id="PIL-(Python-Image-Library)">
+<a class="anchor" href="#PIL-(Python-Image-Library)" aria-hidden="true"><span class="octicon octicon-link"></span></a>PIL (Python Image Library)<a class="anchor-link" href="#PIL-(Python-Image-Library)"> </a>
+</h3>
+<p><a href="https://pillow.readthedocs.io/en/stable/">Pillow or PIL</a> add the ability to work with images in Python.  <a href="https://www.geeksforgeeks.org/working-images-python/?ref=lbp">Geeks for Geeks</a> show some ideas on working with images.</p>
+<h3 id="base64">
+<a class="anchor" href="#base64" aria-hidden="true"><span class="octicon octicon-link"></span></a>base64<a class="anchor-link" href="#base64"> </a>
+</h3>
+<p>Data abstraction is in play when we save files.  It is common in working with files to refer to file formats as Image formats, Audio formats, and Video formats, all of these are often called <strong>*Binary File formats</strong>.   In Web Application like Chrome, Safari, Edge they all focus on the usage of HTTP, or text file display like HTML.  Thus, <a href="https://en.wikipedia.org/wiki/Base64">base64</a> utilities convert binary encoded data (8-bit, ASCII/Unicode/Number abstractions) into a text encoded scheme 0f (24 bits, 6-bit Base64 digits).  Thus base64 is used to transport and embed binary images into textual assets such as HTML and CSS.- Look at table on Base64 pages.  How is this similar to Binary and Hexadecimal?</p>
+<ul>
+<li>Translate first 3 letters of your name to Base64.</li>
+</ul>
+</blockquote>
+<h3 id="io,-BytesIO">
+<a class="anchor" href="#io,-BytesIO" aria-hidden="true"><span class="octicon octicon-link"></span></a>io, BytesIO<a class="anchor-link" href="#io,-BytesIO"> </a>
+</h3>
+<blockquote>
+<p>Input and Output (I/O) is a fundamental of all Computer Programming. Input/output (I/O) buffering is a technique used to optimize I/O operations.  In large quantities of data, how many frames of input the server currently has queued is the buffer.  Buffering is sometimes implemented directly in hardware or other times it is a combination of hardware and software.</p>
+<ul>
+<li>Where have you been a consumer of buffering?  </li>
+<li>From your consumer experience, what effects have you experienced from buffering?  </li>
+<li>How do these effects apply to images?</li>
+</ul>
+</blockquote>
+<h3 id="pathlib">
+<a class="anchor" href="#pathlib" aria-hidden="true"><span class="octicon octicon-link"></span></a>pathlib<a class="anchor-link" href="#pathlib"> </a>
+</h3>
+<h2 id="&gt;-File-paths-are-different-on-Windows-versus-Mac-and-Linux.--This-can-cause-problems-in-a-project-as-you-work-and-deploy-on-different-Operating-Systems-(OS's),-pathlib-is-a-solution-to-this-problem.--Enumerate-difference-in-shell-and-file-paths-on-Mac-versus-Windows-using-shell-commands-ls,-cd,-pwd-...">
+<a class="anchor" href="#&gt;-File-paths-are-different-on-Windows-versus-Mac-and-Linux.--This-can-cause-problems-in-a-project-as-you-work-and-deploy-on-different-Operating-Systems-(OS's),-pathlib-is-a-solution-to-this-problem.--Enumerate-difference-in-shell-and-file-paths-on-Mac-versus-Windows-using-shell-commands-ls,-cd,-pwd-..." aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; File paths are different on Windows versus Mac and Linux.  This can cause problems in a project as you work and deploy on different Operating Systems (OS's), pathlib is a solution to this problem.  Enumerate difference in shell and file paths on Mac versus Windows using shell commands ls, cd, pwd ...<a class="anchor-link" href="#&gt;-File-paths-are-different-on-Windows-versus-Mac-and-Linux.--This-can-cause-problems-in-a-project-as-you-work-and-deploy-on-different-Operating-Systems-(OS's),-pathlib-is-a-solution-to-this-problem.--Enumerate-difference-in-shell-and-file-paths-on-Mac-versus-Windows-using-shell-commands-ls,-cd,-pwd-..."> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFilter</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>  <span class="c1"># https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f</span>
+
+
+<span class="c1"># image (PNG, JPG) to base64 conversion (string), learn about base64 on wikipedia https://en.wikipedia.org/wiki/Base64</span>
+<span class="k">def</span> <span class="nf">image_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">img_type</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">buffer</span><span class="p">:</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">img_type</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+
+
+<span class="c1"># formatter preps base64 string for inclusion, ie &lt;img src=[this return value] ... /&gt;</span>
+<span class="k">def</span> <span class="nf">image_formatter</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">img_type</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">"data:image/"</span> <span class="o">+</span> <span class="n">img_type</span> <span class="o">+</span> <span class="s2">";base64,"</span> <span class="o">+</span> <span class="n">image_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">img_type</span><span class="p">)</span>
+
+
+<span class="c1"># color_data prepares a series of images for data analysis</span>
+<span class="k">def</span> <span class="nf">image_data</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"static/img/"</span><span class="p">),</span> <span class="n">images</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted</span>
+    <span class="k">if</span> <span class="n">images</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># color_dict is defined with defaults</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Lassen Volcano"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"lassen-volcano-256.jpg"</span><span class="p">},</span>
+            <span class="p">{</span><span class="s1">'source'</span><span class="p">:</span> <span class="s2">"Peter Carolin"</span><span class="p">,</span> <span class="s1">'label'</span><span class="p">:</span> <span class="s2">"Clouds Impression"</span><span class="p">,</span> <span class="s1">'file'</span><span class="p">:</span> <span class="s2">"clouds-impression.png"</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="c1"># gather analysis data and meta data for each image, adding attributes to each row in table</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="c1"># File to open</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="n">image</span><span class="p">[</span><span class="s1">'file'</span><span class="p">]</span>  <span class="c1"># file with path</span>
+
+        <span class="c1"># Image open return PIL image object</span>
+        <span class="n">img_object</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># Python Image Library operations</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">format</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">mode</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">size</span>
+
+        <span class="c1"># Hacks here for images https://www.tutorialspoint.com/python_pillow/index.htm</span>
+        <span class="c1"># use the open img_object!!!</span>
+        <span class="n">img_object</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageFilter</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">)</span>
+
+        <span class="c1"># Conversion of original Image to Base64, a string format that serves HTML nicely</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'base64'</span><span class="p">]</span> <span class="o">=</span> <span class="n">image_formatter</span><span class="p">(</span><span class="n">img_object</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+
+        <span class="c1"># Get data, use Numpy is used to access to data</span>
+        <span class="n">img_data</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">getdata</span><span class="p">()</span>  <span class="c1"># Reference https://www.geeksforgeeks.org/python-pil-image-getdata/</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img_data</span><span class="p">)</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'hex_array'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'binary_array'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># 'data' is a list of RGB data, the list is traversed and hex and binary lists are calculated and formatted</span>
+        <span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">image</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]:</span>
+            <span class="c1"># hexadecimal conversions</span>
+            <span class="n">hex_value</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="nb">hex</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">+</span> <span class="nb">hex</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">2</span><span class="p">])[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+            <span class="n">hex_value</span> <span class="o">=</span> <span class="n">hex_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"x"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">)</span>
+            <span class="n">image</span><span class="p">[</span><span class="s1">'hex_array'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"#"</span> <span class="o">+</span> <span class="n">hex_value</span><span class="p">)</span>
+            <span class="c1"># binary conversions</span>
+            <span class="n">bin_value</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">bin</span><span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">2</span><span class="p">])[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+            <span class="n">image</span><span class="p">[</span><span class="s1">'binary_array'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bin_value</span><span class="p">)</span>
+
+            <span class="c1"># create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/</span>
+            <span class="n">average</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># integer division</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">))</span>
+        <span class="c1"># end for loop for pixels</span>
+
+        <span class="c1"># Conversion of modified Image to Base64</span>
+        <span class="n">img_object</span><span class="o">.</span><span class="n">putdata</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">])</span>
+        <span class="n">image</span><span class="p">[</span><span class="s1">'base64_GRAY'</span><span class="p">]</span> <span class="o">=</span> <span class="n">image_formatter</span><span class="p">(</span><span class="n">img_object</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+
+    <span class="c1"># end for loop for images</span>
+    <span class="k">return</span> <span class="n">images</span>  <span class="c1"># list is returned with all the attributes for each image in a dictionary</span>
+
+
+<span class="c1"># run this as standalone tester to see sample data printed in terminal</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">local_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"../starter/static/img/"</span><span class="p">)</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">(</span><span class="n">local_path</span><span class="p">)</span>  <span class="c1"># path of local run</span>
+    <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+        <span class="c1"># print some details about the image so you can validate that it looks like it is working</span>
+        <span class="c1"># meta data</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"---- meta data -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'label'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">])</span>
+        <span class="c1"># data</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"----  data  -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'data'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"----  gray data  -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"----  hex of data  -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'hex_array'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"----  bin of data  -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'binary_array'</span><span class="p">])</span>
+        <span class="c1"># base65</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"----  base64  -----"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'base64'</span><span class="p">])</span>
+
+        <span class="c1"># do so things to image that are not in image_info</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">local_path</span> <span class="o">/</span> <span class="n">image</span><span class="p">[</span><span class="s1">'file'</span><span class="p">]</span>
+        <span class="n">img_object</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># mess with the image</span>
+        <span class="n">img_object</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">FLIP_TOP_BOTTOM</span><span class="p">)</span>
+        <span class="n">img_object</span> <span class="o">=</span> <span class="n">img_object</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageFilter</span><span class="o">.</span><span class="n">RankFilter</span><span class="p">)</span>
+        <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">img_object</span><span class="p">)</span>
+        <span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">"Size is </span><span class="si">{0}</span><span class="s2"> X </span><span class="si">{1}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]))</span>  <span class="c1"># draw in image</span>
+
+        <span class="c1"># open on desktop</span>
+        <span class="n">img_object</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/2023/02/02/AP-unit2_2.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

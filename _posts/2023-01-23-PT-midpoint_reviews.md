@@ -13,12 +13,12 @@ week: 20
 
 ## Plans Week 20
 > Teams perform reviews and work on Python libraries and technicals for College Board.
-- Monday: Work day - Coding hour 2
-- Tuesday: AP/Tech Talk: Units 2.3 using Pandas and Numpy
-- Wednesday: AP/Tech Talk: Unit 2.4 using Pandas and Numpy
-- Thursday: Start CB Practice Quiz and Corrections. Team/Ideation Reviews 5 minutes per team (half of the teams)
-- Friday: Finish CB Practice Quiz and Corrections.  Team/Ideation Reviews 5 minutes per team (other half of the teams)
+- Monday: Classroom Time for College Board MCQ
+- Tuesday: AP/Tech Talk: Units 2.3 using Pandas
+- Wednesday: Work day - Coding hour 2
+- Thursday: Classroom Presentation - Team/Ideation Reviews 5 minutes per team
+- Friday: Classroom Presentation - Team/Ideation Reviews 5 minutes per team
 
 ## Look ahead
 > Development on CPT Issues
-- Monday: Practice Test, Hacks from 2.3, 2.4
+- Monday: Practice Test Review Ticket, Hacks from 2.3

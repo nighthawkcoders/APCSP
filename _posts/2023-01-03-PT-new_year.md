@@ -18,14 +18,7 @@ week: 17
 - Thursday: Tech Talk Frontend Reviews, SASS, work day 
 - Friday: Workday. Ideate/planning data required for Create Performance Task.  Populate some static data for 4 or 5 features and add to frontend pages.
 
-## Scoring for Week
-> Key elements for Individual and Team points.
-- Team. Reunion Project Hacks  and SASS hack +++ Teachers looking to see start in ideation or adaptation of Reunion project to something for you CPT project. Ideate 4 or 5 individual features all which meet requirements for CPT; one per individual. Show that you can customize something in SASS.
-- Team. Creative, Collaborative, and Quality Culture Hacks +++ Teachers look to see teamwork, creativity and quality is being considered at the start your project.  Looking to see some Issues created, completed, with tangible artifacts.  Looking for Roles and Responsibilities being blogged or managed within Scrum Board.
-- Individual. Performance Task Scoring blog  +++  Teachers want to see understanding of criteria and evaluations of CPT.   Also, we want to see influence on these reviews in how you will exceed CPT requirements.
-
-
 ## Look ahead
 > Teams work on ideation, research, fe, and be code.
-- Monday will be Live Review with 3 points/3 minutes focused per team on "Scoring for Week" above
+- Monday will be Live Review with 3 points/3 minutes focused per team on see [Canvas](https://poway.instructure.com/courses/128941/assignments/2461774) for scoring.  Review tickets are posted in ***Comments on this blog***.
 

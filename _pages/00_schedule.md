@@ -47,6 +47,19 @@ title: Schedule
       {% assign end = 24 %}
 ## Unit {{unit}}: Trimester 2 N@tM and finish CPT
 > Trimester 2 concludes with student presenting their CPT project at N@tM.  Each person within "Student Teams" will have their own specialty within the student project that satisfied all their Create Performance Task requirements.   Student should be able to talk about design, coding, and present features of their portion of the system.
+
+{% elsif unit == "7" %} 
+      {% assign start = 25 %}
+      {% assign end = 28 %}
+## Unit {{unit}}: Trimester 3 Data Structures
+> Trimester 3 begins with a focus social relevance and impact of computing.  These weeks will be final preparations for the May 2nd Create Performance Task and the May 8th exam.  Technical work includes reviews on algorithms, object-oriented design, lists, and dictionaries.
+
+% elsif unit == "8" %} 
+      {% assign start = 29 %}
+      {% assign end = 36 %}
+## Unit {{unit}}: Trimester 3 Data Structures
+> Trimester 3 finishes as a preparatory course for CS113 Data Structures, this concludes with Data Structure 2 that follow AP CSA. Topics include using Python to performs searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.
+
       
   {% endif %}
 

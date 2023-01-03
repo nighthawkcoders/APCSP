@@ -54,7 +54,7 @@ title: Schedule
 ## Unit {{unit}}: Trimester 3 Data Structures
 > Trimester 3 begins with a focus social relevance and impact of computing.  These weeks will be final preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  Technical work includes reviews on algorithms, object-oriented design, lists, and dictionaries.
 
-% elsif unit == "8" %} 
+{% elsif unit == "8" %} 
       {% assign start = 29 %}
       {% assign end = 36 %}
 ## Unit {{unit}}: Trimester 3 Data Structures

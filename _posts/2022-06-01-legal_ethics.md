@@ -6,7 +6,7 @@ title: Legal and Ethical Concerns
 description: Free Software Licensing is the primary topic of this section.  
 permalink: /legal
 categories: [5.E, 6.C]
-type: plan
+type: ap
 week: 25
 ---
 

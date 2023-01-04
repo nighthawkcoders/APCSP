@@ -21,12 +21,12 @@ week: 17
 ### Quality Method and Mantra
 > `Agile` fits in the process of building a software engineering culture to enable you to work on applications of interest and purpose. Agile development can help teams prioritize and deliver software while being creative...
 - Combining Agile methodologies and DevOps practices, you can create a light weight processes to increase efficiency of development and delivery.
-    - Create Issues with peer reviews 
-    - Make small incremental changes to avoid getting bogged down in bugs
-    - Setup Continuous Integration/Continuous Delivery (CI/CD), always be able to share where you are at, at any moment 
-    - Continuous Improvement, be open to change
-- In my experience, Teams that embrace collaborative culture start to produce a creative outcome.  Each person need to be teachable, allows suggestions. and avoids dictating orders and demanding changes. 
-- Additionally, be mutually focussed on building something of interest is directly linked to the Teams creativity and quality. 
+    - ***Create Issues and complete with peer reviews*** 
+    - Make ***small incremental changes*** to avoid getting bogged down in bugs
+    - Setup Continuous Integration/Continuous Delivery (CI/CD), ***always be able to share where you are at, at any moment*** 
+    - Continuous Improvement, ***be open to change***
+- In my experience, Teams that embrace collaborative culture start to ***produce a creative outcome***.  Each person need to ***be teachable***, allows suggestions. and avoids dictating orders and demanding changes. 
+- Additionally, ***be mutually focussed on building something of interest*** is directly linked to the Teams creativity and quality. 
 
 ### Caution on Deliverables
 > In my recent evaluations of personal blogs I have noticed `a lack of commitment to quality` in personal work.  - Definitions incomplete, out of date pages, incomplete review tickets, `not posting your score`.  

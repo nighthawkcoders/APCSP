@@ -106,16 +106,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#aspect-1-partials">Aspect 1: Partials</a></li>
 <li class="toc-entry toc-h3"><a href="#aspect-2-defining-colors--variables">Aspect 2: Defining Colors / Variables</a></li>
 <li class="toc-entry toc-h3"><a href="#aspect-3-nested-styling">Aspect 3: Nested Styling</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#college-apps-are-coming">College Apps Are Coming!</a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#be-prepared">Be Prepared</a>
-<ul>
+<li class="toc-entry toc-h3"><a href="#aspect-4-easily-change-formatting-based-on-device">Aspect 4: Easily Change Formatting Based on Device</a></li>
 <li class="toc-entry toc-h3"><a href="#aspect-5-extending-inheritance-and-calculations">Aspect 5: Extending, Inheritance, and Calculations</a></li>
 <li class="toc-entry toc-h3"><a href="#supporting-videos">Supporting Videos</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul><h2 id="stylesheet-notes-from-midnight-theme">
@@ -236,7 +229,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#aspect-3-nested-styling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 3: Nested Styling</h3>
 <ul>
   <li>Another unique aspect about scss is that you can actually nest styles, so if you want an aspect like let’s say color to apply to everything you are working on for that portion of the html, you can actually nest the rest of the formatting, animations, etc within that definition.</li>
-  <li>Implementation shown here with the Hero section in my scss:
+  <li>Implementation shown here with the Hero section in student scss:
     <div class="language-scss highlighter-rouge">
 <div class="highlight"><pre class="highlight"><code><span class="nc">.hero</span> <span class="p">{</span>
 <span class="nl">background-color</span><span class="p">:</span> <span class="nv">$light</span><span class="p">;</span> <span class="c1">// see how the rest of the code is indented / nested within .hero</span>
@@ -350,106 +343,96 @@ window.onload = wrap_img;
 <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
-  <li>You can see how this code works in tandem with the Hero section of the HTML, the class definitions are associated with every definition of styling coded above:
-``` html
-&lt;!– Hero Section</li>
+  <li>You can see how this code works in tandem with the Hero section of the HTML, the class definitions are associated with every definition of styling coded above:</li>
 </ul>
-<div class="hero"> // each of the classes here correspond to what's defined above in the scss
-    <div class="hero__container">
-        <div class="hero__container--left">
-            <h1>
-<a class="anchor" href="#college-apps-are-coming" aria-hidden="true"><span class="octicon octicon-link"></span></a>College Apps Are Coming!</h1>
-            <h2>
-<a class="anchor" href="#be-prepared" aria-hidden="true"><span class="octicon octicon-link"></span></a>Be Prepared</h2>
-            <p>Sign up now to join the list.</p>
-            <button class="hero__container--btn"><a href="#">Sign Up</a></button>
-        </div>
-        <div class="hero__container--right">
-            <img src="images/img-2.svg" class="hero__container--img">
-        </div>
-    </div>
-</div>
-<p>–&gt;</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-### Aspect 4: Easily Change Formatting Based on Device
-* With the power of scss, you can more easily than ever change the formatting of your site based on which device a person is using.
-* Such can be done by defining the resolutions in a partial like here:
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Hero HTML, each of the classes here correspond to what's defined above in the scss
+&lt;div class="hero"&gt;
+    &lt;div class="hero__container"&gt;
+        &lt;div class="hero__container--left"&gt;
+            &lt;h1&gt;College Apps Are Coming!&lt;/h1&gt;
+            &lt;h2&gt;Be Prepared&lt;/h2&gt;
+            &lt;p&gt;Sign up now to join the list.&lt;/p&gt;
+            &lt;button class="hero__container--btn"&gt;&lt;a href="#"&gt;Sign Up&lt;/a&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="hero__container--right"&gt;
+            &lt;img src="images/img-2.svg" class="hero__container--img" /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+--&gt;</span>
+</code></pre></div></div>
 
+<h3 id="aspect-4-easily-change-formatting-based-on-device">
+<a class="anchor" href="#aspect-4-easily-change-formatting-based-on-device" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 4: Easily Change Formatting Based on Device</h3>
+<ul>
+  <li>With the power of scss, you can more easily than ever change the formatting of your site based on which device a person is using.</li>
+  <li>Such can be done by defining the resolutions in a partial like here:
 ``` scss
-&lt;!--
 @mixin tablet {
-  @media screen and (max-width: 768px) {
-    @content;
-  }
+@media screen and (max-width: 768px) {
+  @content;
 }
+}</li>
+</ul>
 
-@mixin mobile {
+<p>@mixin mobile {
   @media screen and (max-width: 280px) {
     @content;
   }
-}
---&gt;
-</code></pre></div></div>
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:
+``` scss
+    &amp;--left h1 {
+      font-size: 4rem;
+      color: $lime;
 
-<ul>
-  <li>Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:</li>
-</ul>
+      @include mobile { // in this case the font size changes because it's mobile
+        font-size: 1.5rem;
+      }
+    }
 
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">h1</span> <span class="p">{</span>
-      <span class="nl">font-size</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nv">$lime</span><span class="p">;</span>
+    &amp;--left h2 {
+      font-size: 4rem;
+      color: $dark;
 
-      <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span> <span class="c1">// in this case the font size changes because it's mobile</span>
-        <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5rem</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-
-    <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">h2</span> <span class="p">{</span>
-      <span class="nl">font-size</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
-      <span class="nl">color</span><span class="p">:</span> <span class="nv">$dark</span><span class="p">;</span>
-
-      <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span>
-        <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
 
 </code></pre></div></div>
 
 <h3 id="aspect-5-extending-inheritance-and-calculations">
 <a class="anchor" href="#aspect-5-extending-inheritance-and-calculations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 5: Extending, Inheritance, and Calculations</h3>
 <ul>
-  <li>In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:</li>
+  <li>In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:
+``` scss
+%align-center {
+display: flex;
+align-items: center;
+}</li>
 </ul>
 
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">%align-center</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
-  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">logo</span> <span class="p">{</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="nv">$dark</span><span class="p">;</span>
-    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-    <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
-    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
-    <span class="k">@extend</span> <span class="nv">%align-center</span><span class="p">;</span> <span class="c1">//it's inheriting the above values for display and align:items</span>
-<span class="p">}</span>
+<p>logo {
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 24px;
+    @extend %align-center; //it’s inheriting the above values for display and align:items
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
+``` scss
+    &amp;--btn:hover:after {
+      width: 100% * 4; //makes the animation extend way farther, past the border of the button
+    }
 </code></pre></div></div>
-<ul>
-  <li>Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
-    <div class="language-scss highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>  <span class="k">&amp;</span><span class="nt">--btn</span><span class="nd">:hover:after</span> <span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">*</span> <span class="m">4</span><span class="p">;</span> <span class="c1">//makes the animation extend way farther, past the border of the button</span>
-  <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-</ul>
 
 <h3 id="supporting-videos">
 <a class="anchor" href="#supporting-videos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supporting Videos</h3>
 <ul>
-  <li>These are just some videos I found that are helpful, click on the images to go directly to the videos!
+  <li>These are just some videos Charlie found that he thinks are helpful, click on the images to go directly to the videos!
 <a href="https://www.youtube.com/watch?v=LtMgTdjWEuk" title="IntelliJ and SASS files compile with File watcher"><img src="https://img.youtube.com/vi/LtMgTdjWEuk/0.jpg" alt="IntelliJ and SASS files compile with File watcher"></a>
 <a href="https://www.youtube.com/watch?v=Zz6eOVaaelI" title="Learn Sass In 20 Minutes | Sass Crash Course"><img src="https://img.youtube.com/vi/Zz6eOVaaelI/0.jpg" alt="Learn Sass In 20 Minutes | Sass Crash Course"></a>
 </li>

@@ -9,6 +9,7 @@ type: pbl
 week: 17
 ---
 
+
 ## Stylesheet Notes from [Midnight Theme](https://github.com/pages-themes/midnight/blob/master/README.md#stylesheet)
 
 If you'd like to add your own custom styles:
@@ -94,7 +95,7 @@ $blue: #2541b2;
 
 ### Aspect 3: Nested Styling
 * Another unique aspect about scss is that you can actually nest styles, so if you want an aspect like let's say color to apply to everything you are working on for that portion of the html, you can actually nest the rest of the formatting, animations, etc within that definition.
-* Implementation shown here with the Hero section in my scss:
+* Implementation shown here with the Hero section in student scss:
 ``` scss
 .hero {
   background-color: $light; // see how the rest of the code is indented / nested within .hero
@@ -207,10 +208,12 @@ $blue: #2541b2;
   }
 }
 ```
+
 * You can see how this code works in tandem with the Hero section of the HTML, the class definitions are associated with every definition of styling coded above:
-``` html
-<!-- Hero Section
-<div class="hero"> // each of the classes here correspond to what's defined above in the scss
+
+```html
+<!-- Hero HTML, each of the classes here correspond to what's defined above in the scss
+<div class="hero">
     <div class="hero__container">
         <div class="hero__container--left">
             <h1>College Apps Are Coming!</h1>
@@ -219,10 +222,7 @@ $blue: #2541b2;
             <button class="hero__container--btn"><a href="#">Sign Up</a></button>
         </div>
         <div class="hero__container--right">
-            <img
-                    src="images/img-2.svg"
-                    class="hero__container--img"
-            />
+            <img src="images/img-2.svg" class="hero__container--img" />
         </div>
     </div>
 </div>
@@ -233,9 +233,7 @@ $blue: #2541b2;
 ### Aspect 4: Easily Change Formatting Based on Device
 * With the power of scss, you can more easily than ever change the formatting of your site based on which device a person is using.
 * Such can be done by defining the resolutions in a partial like here:
-
 ``` scss
-<!--
 @mixin tablet {
   @media screen and (max-width: 768px) {
     @content;
@@ -247,11 +245,8 @@ $blue: #2541b2;
     @content;
   }
 }
--->
 ```
-
 * Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:
-
 ``` scss
     &--left h1 {
       font-size: 4rem;
@@ -276,7 +271,6 @@ $blue: #2541b2;
 
 ### Aspect 5: Extending, Inheritance, and Calculations
 * In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:
-
 ``` scss
 %align-center {
   display: flex;
@@ -301,7 +295,7 @@ logo {
 
 
 ### Supporting Videos
-* These are just some videos I found that are helpful, click on the images to go directly to the videos!
+* These are just some videos Charlie found that he thinks are helpful, click on the images to go directly to the videos!
 [![IntelliJ and SASS files compile with File watcher](https://img.youtube.com/vi/LtMgTdjWEuk/0.jpg)](https://www.youtube.com/watch?v=LtMgTdjWEuk "IntelliJ and SASS files compile with File watcher")
 [![Learn Sass In 20 Minutes | Sass Crash Course](https://img.youtube.com/vi/Zz6eOVaaelI/0.jpg)](https://www.youtube.com/watch?v=Zz6eOVaaelI "Learn Sass In 20 Minutes | Sass Crash Course")
 

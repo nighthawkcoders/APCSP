@@ -211,7 +211,7 @@ $blue: #2541b2;
 
 * You can see how this code works in tandem with the Hero section of the HTML, the class definitions are associated with every definition of styling coded above:
 
-```html
+``` html
 <!-- Hero HTML, each of the classes here correspond to what's defined above in the scss
 <div class="hero">
     <div class="hero__container">
@@ -253,24 +253,23 @@ $blue: #2541b2;
 * Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:
 
 ``` scss
-    &--left h1 {
-      font-size: 4rem;
-      color: $lime;
+&--left h1 {
+  font-size: 4rem;
+  color: $lime;
 
-      @include mobile { // in this case the font size changes because it's mobile
-        font-size: 1.5rem;
-      }
-    }
+  @include mobile { // in this case the font size changes because it's mobile
+    font-size: 1.5rem;
+  }
+}
 
-    &--left h2 {
-      font-size: 4rem;
-      color: $dark;
+&--left h2 {
+  font-size: 4rem;
+  color: $dark;
 
-      @include mobile {
-        font-size: 2rem;
-      }
-    }
-
+  @include mobile {
+    font-size: 2rem;
+  }
+}
 ```
 
 
@@ -297,9 +296,9 @@ logo {
 
 * Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
 ``` scss
-    &--btn:hover:after {
-      width: 100% * 4; //makes the animation extend way farther, past the border of the button
-    }
+&--btn:hover:after {
+  width: 100% * 4; //makes the animation extend way farther, past the border of the button
+}
 ```
 
 

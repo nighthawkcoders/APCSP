@@ -2,17 +2,29 @@
 toc: true
 comments: false
 layout: post
-title:  Welcome to Midnight Theme and SASS
-description: Some tips on customizing Midnight theme, plus concepts and terms on using SASS.  Contributions on SASS from Charlie Zhu, class of 2022.
+title:  UX, Midnight Theme and SASS
+description: User Experience tips on customizing Midnight theme, plus concepts and terms on using SASS.  Contributions on SASS from Charlie Zhu, class of 2022.
 categories: []
 type: pbl
 week: 17
 ---
 
 
-## Stylesheet Notes from [Midnight Theme](https://github.com/pages-themes/midnight/blob/master/README.md#stylesheet)
+## User Experience Design
+* At Qualcomm, I was involved in projects related to Customer Experience.  In this design phase,  Corporate  User Experience designers would  create concepts of what that system would look like.  As a second phase, I would give those concepts to Frontend Designers that would put the concepts into code with motion.   We are trying to simulate these steps through Markdown, a little HTML, images, etc.  In this process, we can build a concept of a system, prior to having functional code behind the scenes, aka JavaScript, APIs, Backend.
 
-If you'd like to add your own custom styles:
+### Build GitHub pages SASS files
+* Build and explore the output of scss.  
+
+- Build per instruction in Project README
+    - bundle exec jekyll serve -H 0.0.0.0 -P 4002
+- Explore output CSS, for example look at customization for h1, h2, ...
+    - _site/assets/css/style.css
+- Look at other assets, see all the work that goes into Style.  Learn to leverage off of it.  Learn to customize on top of it using SASS tips in the blog.
+
+### Stylesheet Notes from [Midnight Theme](https://github.com/pages-themes/midnight/blob/master/README.md#stylesheet)
+
+Altering GitHub theme and adding custom styles:
 
 1. Create a file called `/assets/css/style.scss` in your site
 2. Add the following content to the top of the file, exactly as shown:
@@ -45,7 +57,7 @@ If you'd like to change the theme's HTML layout:
 > Skip downloads section unless you have issues.
 
 ### Downloads / Command Prompt Lines
-* Check for `npm --version`, or download node.js [here](https://nodejs.org/en/) (just download the LTS version).
+* Check for `npm --version` to verify install, or download node.js [here](https://nodejs.org/en/) (just download the LTS version).
 
 * This line of code is just used to check that you actually have npm installed, if not run installer :
 ```
@@ -63,7 +75,7 @@ npm install -g sass
 
 ## SASS Tips
 ### Features / Functionality
-* As mentioned, the great thing about scss is that ***it writes the css for you***, making it much less tedious. However, there are many aspects as to why it actually simplifies the process.
+* As the great thing about scss is that ***it writes the css for you***, making it much less tedious. There are many aspects as to why it actually simplifies the process.
 
 
 ### Aspect 1: Partials
@@ -306,5 +318,8 @@ logo {
 * These are just some videos Charlie found that he thinks are helpful, click on the images to go directly to the videos!
 [![IntelliJ and SASS files compile with File watcher](https://img.youtube.com/vi/LtMgTdjWEuk/0.jpg)](https://www.youtube.com/watch?v=LtMgTdjWEuk "IntelliJ and SASS files compile with File watcher")
 [![Learn Sass In 20 Minutes | Sass Crash Course](https://img.youtube.com/vi/Zz6eOVaaelI/0.jpg)](https://www.youtube.com/watch?v=Zz6eOVaaelI "Learn Sass In 20 Minutes | Sass Crash Course")
+
+## Hacks
+* All hacks related to SASS are with respect to design of your project(s)
 
 

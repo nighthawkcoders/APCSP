@@ -367,67 +367,80 @@ window.onload = wrap_img;
 <a class="anchor" href="#aspect-4-easily-change-formatting-based-on-device" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 4: Easily Change Formatting Based on Device</h3>
 <ul>
   <li>With the power of scss, you can more easily than ever change the formatting of your site based on which device a person is using.</li>
-  <li>Such can be done by defining the resolutions in a partial like here:
-``` scss
-@mixin tablet {
-@media screen and (max-width: 768px) {
-  @content;
-}
-}</li>
+  <li>Such can be done by defining the resolutions in a partial like here:</li>
 </ul>
 
-<p>@mixin mobile {
-  @media screen and (max-width: 280px) {
-    @content;
-  }
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:
-``` scss
-    &amp;--left h1 {
-      font-size: 4rem;
-      color: $lime;
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nt">--</span>
+<span class="o">@</span><span class="nt">mixin</span> <span class="nt">tablet</span> <span class="p">{</span>
+  <span class="k">@media</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="n">max-width</span><span class="o">:</span> <span class="m">768px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@content</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-      @include mobile { // in this case the font size changes because it's mobile
-        font-size: 1.5rem;
-      }
-    }
+<span class="k">@mixin</span> <span class="nf">mobile</span> <span class="p">{</span>
+  <span class="k">@media</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="n">max-width</span><span class="o">:</span> <span class="m">280px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@content</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="nt">--</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
-    &amp;--left h2 {
-      font-size: 4rem;
-      color: $dark;
+<ul>
+  <li>Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:</li>
+</ul>
 
-      @include mobile {
-        font-size: 2rem;
-      }
-    }
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">h1</span> <span class="p">{</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="nv">$lime</span><span class="p">;</span>
+
+      <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span> <span class="c1">// in this case the font size changes because it's mobile</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5rem</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">&amp;</span><span class="nt">--left</span> <span class="nt">h2</span> <span class="p">{</span>
+      <span class="nl">font-size</span><span class="p">:</span> <span class="m">4rem</span><span class="p">;</span>
+      <span class="nl">color</span><span class="p">:</span> <span class="nv">$dark</span><span class="p">;</span>
+
+      <span class="k">@include</span> <span class="nd">mobile</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
 
 </code></pre></div></div>
 
 <h3 id="aspect-5-extending-inheritance-and-calculations">
 <a class="anchor" href="#aspect-5-extending-inheritance-and-calculations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Aspect 5: Extending, Inheritance, and Calculations</h3>
 <ul>
-  <li>In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:
-``` scss
-%align-center {
-display: flex;
-align-items: center;
-}</li>
+  <li>In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:</li>
 </ul>
 
-<p>logo {
-    color: $dark;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-    margin-left: 24px;
-    @extend %align-center; //it’s inheriting the above values for display and align:items
-}</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
-``` scss
-    &amp;--btn:hover:after {
-      width: 100% * 4; //makes the animation extend way farther, past the border of the button
-    }
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nt">--</span>
+<span class="nv">%align-center</span> <span class="p">{</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">logo</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="nv">$dark</span><span class="p">;</span>
+    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">2rem</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
+    <span class="k">@extend</span> <span class="nv">%align-center</span><span class="p">;</span> <span class="c1">//it's inheriting the above values for display and align:items</span>
+<span class="p">}</span>
+<span class="nt">--</span><span class="o">&gt;</span>
 </code></pre></div></div>
+
+<ul>
+  <li>Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
+    <div class="language-scss highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  <span class="k">&amp;</span><span class="nt">--btn</span><span class="nd">:hover:after</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span> <span class="o">*</span> <span class="m">4</span><span class="p">;</span> <span class="c1">//makes the animation extend way farther, past the border of the button</span>
+  <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <h3 id="supporting-videos">
 <a class="anchor" href="#supporting-videos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supporting Videos</h3>

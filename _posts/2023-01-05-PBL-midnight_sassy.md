@@ -233,7 +233,9 @@ $blue: #2541b2;
 ### Aspect 4: Easily Change Formatting Based on Device
 * With the power of scss, you can more easily than ever change the formatting of your site based on which device a person is using.
 * Such can be done by defining the resolutions in a partial like here:
+
 ``` scss
+<!--
 @mixin tablet {
   @media screen and (max-width: 768px) {
     @content;
@@ -245,8 +247,11 @@ $blue: #2541b2;
     @content;
   }
 }
+-->
 ```
+
 * Then you can use @include to reference these resolutions and change the css/formatting based on the device like here:
+
 ``` scss
     &--left h1 {
       font-size: 4rem;
@@ -271,7 +276,9 @@ $blue: #2541b2;
 
 ### Aspect 5: Extending, Inheritance, and Calculations
 * In scss, you can also use @extend if you want certain classes to inherit attributes from previously defined classes, sort of similar to nesting inheritance (where the classes nested within inherit the attributes from outermost classes). An example is shown below:
+
 ``` scss
+<!--
 %align-center {
   display: flex;
   align-items: center;
@@ -285,7 +292,9 @@ logo {
     margin-left: 24px;
     @extend %align-center; //it's inheriting the above values for display and align:items
 }
+-->
 ```
+
 * Furthermore, you can actually use math operators like multiplication, addition, subtraction and division in scss. In the code below I use it to extend the animation of a button:
 ``` scss
     &--btn:hover:after {

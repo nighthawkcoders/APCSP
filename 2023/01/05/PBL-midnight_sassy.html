@@ -131,6 +131,15 @@ window.onload = wrap_img;
       <li>bundle exec jekyll serve -H 0.0.0.0 -P 4002</li>
     </ul>
   </li>
+  <li>After you do this, make sure .gitignore blocks
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>### Jekyll ###
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+</code></pre></div>    </div>
+  </li>
   <li>Explore output CSS, for example look at customization for h1, h2, …
     <ul>
       <li>_site/assets/css/style.css</li>

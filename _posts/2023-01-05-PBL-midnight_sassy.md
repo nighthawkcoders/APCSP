@@ -209,7 +209,7 @@ $blue: #2541b2;
 ```
 * You can see how this code works in tandem with the Hero section of the HTML, the class definitions are associated with every definition of styling coded above:
 ``` html
-<!-- Hero Section -->
+<!-- Hero Section
 <div class="hero"> // each of the classes here correspond to what's defined above in the scss
     <div class="hero__container">
         <div class="hero__container--left">
@@ -226,6 +226,7 @@ $blue: #2541b2;
         </div>
     </div>
 </div>
+-->
 ```
 
 

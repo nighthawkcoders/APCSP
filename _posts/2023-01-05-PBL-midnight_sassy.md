@@ -18,6 +18,14 @@ week: 17
 
 - Build per instruction in Project README
     - bundle exec jekyll serve -H 0.0.0.0 -P 4002
+- After you do this, make sure .gitignore blocks 
+```
+### Jekyll ###
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+```
 - Explore output CSS, for example look at customization for h1, h2, ...
     - _site/assets/css/style.css
 - Look at other assets, see all the work that goes into Style.  Learn to leverage off of it.  Learn to customize on top of it using SASS tips in the blog.
@@ -321,5 +329,4 @@ logo {
 
 ## Hacks
 * All hacks related to SASS are with respect to design of your project(s)
-
 

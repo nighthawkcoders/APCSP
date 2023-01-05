@@ -4,21 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Welcome to Midnight Theme and SASS | APCSP</title>
+<title>UX, Midnight Theme and SASS | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Welcome to Midnight Theme and SASS" />
+<meta property="og:title" content="UX, Midnight Theme and SASS" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Some tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022." />
-<meta property="og:description" content="Some tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022." />
+<meta name="description" content="User Experience tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022." />
+<meta property="og:description" content="User Experience tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022." />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html" />
 <meta property="og:site_name" content="APCSP" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-01-05T00:00:00-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Welcome to Midnight Theme and SASS" />
+<meta property="twitter:title" content="UX, Midnight Theme and SASS" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-05T00:00:00-06:00","datePublished":"2023-01-05T00:00:00-06:00","description":"Some tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022.","headline":"Welcome to Midnight Theme and SASS","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-05T00:00:00-06:00","datePublished":"2023-01-05T00:00:00-06:00","description":"User Experience tips on customizing Midnight theme, plus concepts and terms on using SASS. Contributions on SASS from Charlie Zhu, class of 2022.","headline":"UX, Midnight Theme and SASS","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/01/05/PBL-midnight_sassy.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,13 +73,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Welcome to Midnight Theme and SASS</h1><p class="page-description">Some tips on customizing Midnight theme, plus concepts and terms on using SASS.  Contributions on SASS from Charlie Zhu, class of 2022.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-05T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">UX, Midnight Theme and SASS</h1><p class="page-description">User Experience tips on customizing Midnight theme, plus concepts and terms on using SASS.  Contributions on SASS from Charlie Zhu, class of 2022.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-01-05T00:00:00-06:00" itemprop="datePublished">
         Jan 5, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -89,8 +89,10 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#stylesheet-notes-from-midnight-theme">Stylesheet Notes from Midnight Theme</a>
+<li class="toc-entry toc-h2"><a href="#user-experience-design">User Experience Design</a>
 <ul>
+<li class="toc-entry toc-h3"><a href="#build-github-pages-sass-files">Build GitHub pages SASS files</a></li>
+<li class="toc-entry toc-h3"><a href="#stylesheet-notes-from-midnight-theme">Stylesheet Notes from Midnight Theme</a></li>
 <li class="toc-entry toc-h3"><a href="#layouts-notes-from-midnight-theme">Layouts Notes from Midnight Theme</a></li>
 </ul>
 </li>
@@ -111,11 +113,37 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#supporting-videos">Supporting Videos</a></li>
 </ul>
 </li>
-</ul><h2 id="stylesheet-notes-from-midnight-theme">
-<a class="anchor" href="#stylesheet-notes-from-midnight-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stylesheet Notes from <a href="https://github.com/pages-themes/midnight/blob/master/README.md#stylesheet">Midnight Theme</a>
-</h2>
+<li class="toc-entry toc-h2"><a href="#hacks">Hacks</a></li>
+</ul><h2 id="user-experience-design">
+<a class="anchor" href="#user-experience-design" aria-hidden="true"><span class="octicon octicon-link"></span></a>User Experience Design</h2>
+<ul>
+  <li>At Qualcomm, I was involved in projects related to Customer Experience.  In this design phase,  Corporate  User Experience designers would  create concepts of what that system would look like.  As a second phase, I would give those concepts to Frontend Designers that would put the concepts into code with motion.   We are trying to simulate these steps through Markdown, a little HTML, images, etc.  In this process, we can build a concept of a system, prior to having functional code behind the scenes, aka JavaScript, APIs, Backend.</li>
+</ul>
 
-<p>If you’d like to add your own custom styles:</p>
+<h3 id="build-github-pages-sass-files">
+<a class="anchor" href="#build-github-pages-sass-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build GitHub pages SASS files</h3>
+<ul>
+  <li>
+    <p>Build and explore the output of scss.</p>
+  </li>
+  <li>Build per instruction in Project README
+    <ul>
+      <li>bundle exec jekyll serve -H 0.0.0.0 -P 4002</li>
+    </ul>
+  </li>
+  <li>Explore output CSS, for example look at customization for h1, h2, …
+    <ul>
+      <li>_site/assets/css/style.css</li>
+    </ul>
+  </li>
+  <li>Look at other assets, see all the work that goes into Style.  Learn to leverage off of it.  Learn to customize on top of it using SASS tips in the blog.</li>
+</ul>
+
+<h3 id="stylesheet-notes-from-midnight-theme">
+<a class="anchor" href="#stylesheet-notes-from-midnight-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stylesheet Notes from <a href="https://github.com/pages-themes/midnight/blob/master/README.md#stylesheet">Midnight Theme</a>
+</h3>
+
+<p>Altering GitHub theme and adding custom styles:</p>
 
 <ol>
   <li>Create a file called <code class="language-plaintext highlighter-rouge">/assets/css/style.scss</code> in your site</li>
@@ -164,7 +192,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#downloads--command-prompt-lines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Downloads / Command Prompt Lines</h3>
 <ul>
   <li>
-    <p>Check for <code class="language-plaintext highlighter-rouge">npm --version</code>, or download node.js <a href="https://nodejs.org/en/">here</a> (just download the LTS version).</p>
+    <p>Check for <code class="language-plaintext highlighter-rouge">npm --version</code> to verify install, or download node.js <a href="https://nodejs.org/en/">here</a> (just download the LTS version).</p>
   </li>
   <li>This line of code is just used to check that you actually have npm installed, if not run installer :
     <div class="language-plaintext highlighter-rouge">
@@ -188,7 +216,7 @@ window.onload = wrap_img;
 <h3 id="features--functionality">
 <a class="anchor" href="#features--functionality" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features / Functionality</h3>
 <ul>
-  <li>As mentioned, the great thing about scss is that <strong><em>it writes the css for you</em></strong>, making it much less tedious. However, there are many aspects as to why it actually simplifies the process.</li>
+  <li>As the great thing about scss is that <strong><em>it writes the css for you</em></strong>, making it much less tedious. There are many aspects as to why it actually simplifies the process.</li>
 </ul>
 
 <h3 id="aspect-1-partials">
@@ -448,6 +476,12 @@ window.onload = wrap_img;
 <a href="https://www.youtube.com/watch?v=LtMgTdjWEuk" title="IntelliJ and SASS files compile with File watcher"><img src="https://img.youtube.com/vi/LtMgTdjWEuk/0.jpg" alt="IntelliJ and SASS files compile with File watcher"></a>
 <a href="https://www.youtube.com/watch?v=Zz6eOVaaelI" title="Learn Sass In 20 Minutes | Sass Crash Course"><img src="https://img.youtube.com/vi/Zz6eOVaaelI/0.jpg" alt="Learn Sass In 20 Minutes | Sass Crash Course"></a>
 </li>
+</ul>
+
+<h2 id="hacks">
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h2>
+<ul>
+  <li>All hacks related to SASS are with respect to design of your project(s)</li>
 </ul>
 
 

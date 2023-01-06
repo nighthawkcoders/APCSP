@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      6 min read
     
 </span></p>
 
@@ -144,7 +144,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#View-Planning" aria-hidden="true"><span class="octicon octicon-link"></span></a>View Planning<a class="anchor-link" href="#View-Planning"> </a>
 </h2>
 <blockquote>
-<p>HTML, JavaScript, and a JavaScript fetch will be used to construct our final View solution.  The below example form the beginning of the year was used to establish View in Jupyter notebooks.  The key elements...</p>
+<p>HTML, JavaScript, and a JavaScript fetch will be used to construct our final View solution.  The below example shows the how to establish View in Jupyter notebooks.  The key elements...</p>
 <ul>
 <li>Style, the visual design.<ul>
 <li>In code below, from beginning of the year the <code>style</code> tag is used to capture very simple style for Notebook.</li>
@@ -229,84 +229,7 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div style="display:inline-block;border: 2px solid grey;box-shadow: 0.8em 0.4em 0.4em grey;"><table>
-<tr>
-<th><mark>Role</mark></th>
-<th><mark>Name</mark></th>
-<th><mark>GitHub ID</mark></th>
-<th><mark>Class Of</mark></th>
-<th><mark>Date of Birth</mark></th>
-<th><mark>Age</mark></th>
-</tr>
-<tr>
-<td>Student</td>
-<td>Anthony</td>
-<td>tonyhieu</td>
-<td>2022</td>
-<td>undefined</td>
-<td>undefined</td>
-</tr>
-<tr></tr>
-<tr>
-<td>Student</td>
-<td>Bria</td>
-<td>B-G101</td>
-<td>2023</td>
-<td>undefined</td>
-<td>undefined</td>
-</tr>
-<tr></tr>
-<tr>
-<td>Student</td>
-<td>Allie</td>
-<td>xiaoa0</td>
-<td>2023</td>
-<td>undefined</td>
-<td>undefined</td>
-</tr>
-<tr></tr>
-<tr>
-<td>Student</td>
-<td>Tigran</td>
-<td>Tigran7</td>
-<td>2023</td>
-<td>undefined</td>
-<td>undefined</td>
-</tr>
-<tr></tr>
-<tr>
-<td>Student</td>
-<td>Rebecca</td>
-<td>Rebecca-123</td>
-<td>2023</td>
-<td>undefined</td>
-<td>undefined</td>
-</tr>
-<tr></tr>
-<tr>
-<td>Student</td>
-<td>Vidhi</td>
-<td>unknown</td>
-<td>2024</td>
-<td>undefined</td>
-<td>undefined</td>
-</tr>
-<tr>&lt;/table&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
+</div>
     
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
@@ -315,7 +238,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#View/CRUD-Concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>View/CRUD Concepts<a class="anchor-link" href="#View/CRUD-Concepts"> </a>
 </h2>
 <blockquote>
-<p>In this database project, the key idea is to build a system for capturing key <strong><em>student information</em></strong> on students and allowing <strong>*blogging</strong> to Teacher.</p>
+<p>In this sample database project, the key idea is to build a system for capturing key <strong><em>student information</em></strong> on students and allowing <strong>*blogging</strong> to the Teacher.</p>
 <p>CRUD operations are as follows...</p>
 <ul>
 <li>Create new records</li>
@@ -325,10 +248,10 @@ window.onload = wrap_img;
 </ul>
 <p>HTML below shows basic layout of the table</p>
 <ul>
-<li>\<table>, \<tr> table row, \<th> table head/title&lt;/li&gt;
+<li>table, tr, th td</li>
 <li>The tbody tag is used to direct JavaScript on location of "table" data generated from JSON</li>
-&lt;/ul&gt;
-&lt;/blockquote&gt;
+</ul>
+</blockquote>
 <h3 id="Design-Idea">
 <a class="anchor" href="#Design-Idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Design Idea<a class="anchor-link" href="#Design-Idea"> </a>
 </h3>
@@ -354,10 +277,11 @@ window.onload = wrap_img;
 <ul>
 <li>JSON string is required, it is hardcoded in this example.  Typically JSON will come from a fetch.</li>
 <li>JSON object is required, it is created from JSON string.  This allows access to to elements in JSON using JavaScript dot notation (user._name)</li>
-<li>DOM is a huge part of the remainder of this example.  DOM is nested.   For instance each <code>td</code>  is nested in a <code>tr</code>.  <strong><em>Find example</em></strong> of DOM create and append in the code below.</li>
+<li>DOM is a huge part of the remainder of this example.  DOM is nested.   For instance each \<td>  is nested in a \</td>
+<tr>.  <strong><em>Find example</em></strong> of DOM create and append in the code below.&lt;/li&gt;
 <li>Notice the definition of <strong><em>table</em></strong> and build you own map or visual of how these things are put together.</li>
-</ul>
-</blockquote>
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 <div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
 
 <span class="c1">// Static json</span>
@@ -424,7 +348,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#View/Blog-Concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>View/Blog Concepts<a class="anchor-link" href="#View/Blog-Concepts"> </a>
 </h2>
 <blockquote>
-<p>A notes/blog could be created to add <strong><em>Notes</em></strong> between students and teacher.  Notes could be used for many types of applications.</p>
+<p>A notes/blog would be created to add <strong><em>Notes</em></strong> between students and teacher.  Notes could be used for many types of applications.</p>
 <ul>
 <li>Most recent message on top</li>
 <li>Messages support inclusion of images</li>
@@ -442,23 +366,22 @@ window.onload = wrap_img;
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
 <blockquote>
-<p>Build your Design for Create Performance Task (CPT), this is requirement from College Board.  Correlate design between backend model, frontend view., and visuals above. This particular Jupyter Notebook and code within it are used to help establish a design.   This is to place ideas and use JavaScript and HTML to establish concepts.  Student teams can use Student/Teacher project for starters, but ultimately will create their own Project.  Start a design...</p>
+<p>Build and correlate a design between backend model, frontend view., and visuals above. This particular Jupyter Notebook and code within it are used to help establish ideas.   Start a design for your project...</p>
 <ul>
 <li>The project must have View and Model.  Describe your project.</li>
-<li>The project should contain a relationship between of data, this means that a student can have 0 to many blogs.  This is called a 0-to-Many or a 1-to-Many relationship.  Google <strong><em>Unified Model Language (UML)</em></strong>, this is a means to describe data.  Make sure attributes between Model and View are consistent in your design.  For instance, if you use Student/Teacher as your initial project there are many things that are inconsistent or incomplete the provided View Notebook and the Model Notebook.</li>
-<li>Describe your View.  <strong><em>UML</em></strong>, visuals, tables are used to characterize a project.  This is strong way to show CPT graders understanding of planning by mixing Model and View.</li>
+<li>The project should contain a relationship between of data, this means that a student can have 0 to many blogs.  This is called a 0-to-Many or a 1-to-Many relationship.  Google <strong><em>Unified Model Language (UML)</em></strong>, this is a means to describe data, or start build a POJO.  Make sure attributes between Model and View are consistent in your design.</li>
+<li>Describe your View.  <strong><em>UML</em></strong>, visuals, tables are used to characterize a project.  This is strong way to show Teacher and Graders understanding of planning Model and View.</li>
 <li>Start a design in a Jupyter Notebook and create Issues in your Teams GitHub repository. </li>
 <li>Issues should discuss problems/challenges, in Teacher/Student data here are a couple ... <ul>
 <li>This design will have many JavaScript actions, at least one for each CRUD operation.  See if you can think of JavaScript functions to replace alerts in example code above.</li>
-<li>There can be different roles for CRUD operations.  For instance, student will only interact with their own account.  Teacher may interact with many accounts.   This could lead to different Views depending on Role.   In fact, you may want to have Flask be View for Admin role, or Teacher role.   GitHub pages may only have view for Student role.</li>
+<li>There can be different roles for CRUD operations.  For instance, student will only interact with their own account.  Teacher may interact with many accounts.   This could lead to different Views depending on Role.   In fact, you may want to have Flask be View for Admin role built into backend, aka the Teacher role.   GitHub pages may only have View for Student role.</li>
 <li>Given these CRUD operations what kind of APIs do you think you will need.  They should map closely button/on click requirements.</li>
-<li>In model design, there has been a choice to go away from email to uid (github user id), to protect user but still have a unique id.  Figure out what your unique piece of data is in your project to look up a record.</li>
-<li>In model design, there are data issues for how to handle dob and age.  Some data is stored and some is calculated.  What do we want to see in table, what do we want to see on update screen.
+<li>In Model design, I would make a choice to go away from email to uid (github user id), to protect user but still have a unique id.  Figure out what your unique piece of data is in your project to look up a record.</li>
+<li>In model design, there are data issues for how to handle dob and age.  Some data is stored and some is calculated.  Think about what data you want to see in table versus what do we want to user to update screen.
 Additional Design.  Thinking about View enhancements results in more Model and Other planning.</li>
 <li>In database design, database basics and  1-to-many relationships need to be learned.  There are many blogs for a user.</li>
 <li>JSON contract between frontend and backend needs to be created</li>
-<li>Control/APIs between Model and View need to be created based off of what we learned from Jokes.</li>
-<li>Project needs to be reviewed against Create Performance Task Requirements.</li>
+<li>Control/APIs between Model and View need to be created based off of what we learned from Jokes and earlier Databases.</li>
 </ul>
 </li>
 </ul>
@@ -470,21 +393,12 @@ Additional Design.  Thinking about View enhancements results in more Model and O
 &lt;/div&gt;
  
 
-</th>
 </tr>
-</table>
 </li>
 </ul>
 </blockquote>
 </div>
 </div></div>
-</tr>
-</table></div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 

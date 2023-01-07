@@ -122,8 +122,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#View-Planning">View Planning </a></li>
 <li class="toc-entry toc-h2"><a href="#View/CRUD-Concepts">View/CRUD Concepts </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Design-Idea">Design Idea </a></li>
-<li class="toc-entry toc-h3"><a href="#Code-Starters">Code Starters </a></li>
+<li class="toc-entry toc-h3"><a href="#Visual-of-the-Idea">Visual of the Idea </a></li>
+<li class="toc-entry toc-h3"><a href="#HTML-to-Obtain-Input-(Create)">HTML to Obtain Input (Create) </a></li>
+<li class="toc-entry toc-h3"><a href="#HTML-and-JavaScript-Display-Table-(Read)">HTML and JavaScript Display Table (Read) </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#View/Blog-Concepts">View/Blog Concepts </a></li>
@@ -175,54 +176,54 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">define</span> <span class="n">an</span> <span class="n">HTML</span> <span class="n">conversion</span> <span class="s2">"method"</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">Data</span>
-<span class="n">Classroom</span><span class="o">.</span><span class="n">prototype</span><span class="o">.</span><span class="n">_toHtml</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">HTML</span> <span class="n">Style</span> <span class="ow">is</span> <span class="n">build</span> <span class="n">using</span> <span class="n">inline</span> <span class="n">structure</span>
-    <span class="n">var</span> <span class="n">style</span> <span class="o">=</span> <span class="p">(</span>
+<div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define an HTML conversion "method" associated with Data</span>
+<span class="nx">Classroom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// HTML Style is build using inline structure</span>
+    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">(</span>
       <span class="s2">"display:inline-block;"</span> <span class="o">+</span>
       <span class="s2">"border: 2px solid grey;"</span> <span class="o">+</span>
       <span class="s2">"box-shadow: 0.8em 0.4em 0.4em grey;"</span>
     <span class="p">);</span>
   
-    <span class="o">//</span> <span class="n">HTML</span> <span class="n">Body</span> <span class="n">of</span> <span class="n">Table</span> <span class="ow">is</span> <span class="n">build</span> <span class="k">as</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">concatenations</span> <span class="p">(</span><span class="o">+=</span><span class="p">)</span>
-    <span class="n">var</span> <span class="n">body</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Heading</span> <span class="k">for</span> <span class="n">Array</span> <span class="n">Columns</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Role"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Name"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"GitHub ID"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Class Of"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Date of Birth"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Age"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">Data</span> <span class="n">of</span> <span class="n">Array</span><span class="p">,</span> <span class="n">iterate</span> <span class="n">through</span> <span class="n">each</span> <span class="n">row</span> <span class="n">of</span> <span class="n">compsci</span><span class="o">.</span><span class="n">classroom</span> 
-    <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">row</span> <span class="n">of</span> <span class="n">compsci</span><span class="o">.</span><span class="n">classroom</span><span class="p">)</span> <span class="p">{</span>
-      <span class="o">//</span> <span class="n">tr</span> <span class="k">for</span> <span class="n">each</span> <span class="n">row</span><span class="p">,</span> <span class="n">a</span> <span class="n">new</span> <span class="n">line</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
-      <span class="o">//</span> <span class="n">td</span> <span class="k">for</span> <span class="n">each</span> <span class="n">column</span> <span class="n">of</span> <span class="n">data</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">uid</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">classOf</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">dob</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">age</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="o">//</span> <span class="n">tr</span> <span class="n">to</span> <span class="n">end</span> <span class="n">line</span>
-      <span class="n">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
+    <span class="c1">// HTML Body of Table is build as a series of concatenations (+=)</span>
+    <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+    <span class="c1">// Heading for Array Columns</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Role"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Name"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"GitHub ID"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Class Of"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Date of Birth"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;mark&gt;"</span> <span class="o">+</span> <span class="s2">"Age"</span> <span class="o">+</span> <span class="s2">"&lt;/mark&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
+    <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// tr for each row, a new line</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
+      <span class="c1">// td for each column of data</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">uid</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">classOf</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">dob</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="c1">// tr to end line</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
     <span class="p">}</span>
   
-     <span class="o">//</span> <span class="n">Build</span> <span class="ow">and</span> <span class="n">HTML</span> <span class="n">fragment</span> <span class="n">of</span> <span class="n">div</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">table</span> <span class="n">body</span>
+     <span class="c1">// Build and HTML fragment of div, table, table body</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="s2">"&lt;div style='"</span> <span class="o">+</span> <span class="n">style</span> <span class="o">+</span> <span class="s2">"'&gt;"</span> <span class="o">+</span>
+      <span class="s2">"&lt;div style='"</span> <span class="o">+</span> <span class="nx">style</span> <span class="o">+</span> <span class="s2">"'&gt;"</span> <span class="o">+</span>
         <span class="s2">"&lt;table&gt;"</span> <span class="o">+</span>
-          <span class="n">body</span> <span class="o">+</span>
+          <span class="nx">body</span> <span class="o">+</span>
         <span class="s2">"&lt;/table&gt;"</span> <span class="o">+</span>
       <span class="s2">"&lt;/div&gt;"</span>
     <span class="p">);</span>
   
   <span class="p">};</span>
   
-  <span class="o">//</span> <span class="n">IJavaScript</span> <span class="n">HTML</span> <span class="n">processor</span> <span class="n">receive</span> <span class="n">parameter</span> <span class="n">of</span> <span class="n">defined</span> <span class="n">HTML</span> <span class="n">fragment</span>
-  <span class="err">$$</span><span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="n">compsci</span><span class="o">.</span><span class="n">_toHtml</span><span class="p">());</span>
+  <span class="c1">// IJavaScript HTML processor receive parameter of defined HTML fragment</span>
+  <span class="nx">$$</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">compsci</span><span class="p">.</span><span class="nx">_toHtml</span><span class="p">());</span>
 </pre></div>
 
     </div>
@@ -232,61 +233,136 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="View/CRUD-Concepts">
 <a class="anchor" href="#View/CRUD-Concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>View/CRUD Concepts<a class="anchor-link" href="#View/CRUD-Concepts"> </a>
 </h2>
 <blockquote>
-<p>In this sample database project, the key idea is to build a system for capturing key <strong><em>student information</em></strong> on students and allowing <strong>*blogging</strong> to the Teacher.</p>
+<p>In a database project, the key idea is to build a system for capturing key <strong><em>student information</em></strong> on students and allowing <strong>*blogging</strong> to the Teacher.</p>
 <p>CRUD operations are as follows...</p>
 <ul>
-<li>Create new records</li>
+<li>Create new student records</li>
 <li>Read a list of students</li>
 <li>Update student data</li>
 <li>Delete records</li>
 </ul>
-<p>HTML below shows basic layout of the table</p>
-<ul>
-<li>table, tr, th td</li>
-<li>The tbody tag is used to direct JavaScript on location of "table" data generated from JSON</li>
-</ul>
 </blockquote>
-<h3 id="Design-Idea">
-<a class="anchor" href="#Design-Idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Design Idea<a class="anchor-link" href="#Design-Idea"> </a>
+<h3 id="Visual-of-the-Idea">
+<a class="anchor" href="#Visual-of-the-Idea" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visual of the Idea<a class="anchor-link" href="#Visual-of-the-Idea"> </a>
 </h3>
 <p><img src="/APCSP/images/copied_from_nb/images/crud.png" alt="Screen Concept"></p>
-<h3 id="Code-Starters">
-<a class="anchor" href="#Code-Starters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Starters<a class="anchor-link" href="#Code-Starters"> </a>
+<h3 id="HTML-to-Obtain-Input-(Create)">
+<a class="anchor" href="#HTML-to-Obtain-Input-(Create)" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML to Obtain Input (Create)<a class="anchor-link" href="#HTML-to-Obtain-Input-(Create)"> </a>
 </h3>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Name<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>ID<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Actions<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">tbody</span> <span class="na">id</span><span class="o">=</span><span class="s">"table"</span><span class="p">&gt;</span>
-    <span class="c">&lt;!-- javascript generated data --&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-</pre></div>
-<blockquote>
-<p>JavaScript below shows elements needed to build a table from data</p>
 <ul>
-<li>JSON string is required, it is hardcoded in this example.  Typically JSON will come from a fetch.</li>
-<li>JSON object is required, it is created from JSON string.  This allows access to to elements in JSON using JavaScript dot notation (user._name)</li>
-<li>DOM is a huge part of the remainder of this example.  DOM is nested.   For instance each \<td>  is nested in a \</td>
-<tr>.  <strong><em>Find example</em></strong> of DOM create and append in the code below.&lt;/li&gt;
-<li>Notice the definition of <strong><em>table</em></strong> and build you own map or visual of how these things are put together.</li>
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<li>HTML input boxes</li>
+<li>onclick action</li>
+</ul>
 
-<span class="c1">// Static json</span>
-<span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="s1">'[{"_name":"Thomas Edison", "_uid": "toby"}, {"_name": "Nicholas Tesla", "_uid": "nick"}, {"_name": "John Mortensen", "_uid": "jm1021"}, {"_name": "Eli Whitney", "_uid": "eli"}, {"_name": "Hedy Lemarr", "_uid": "hedy"}]'</span><span class="p">;</span>
-<span class="c1">// Convert json string to object</span>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="cm">/*</span>
+<span class="cm">&lt;table class="table"&gt;</span>
+<span class="cm">    &lt;tr&gt;</span>
+<span class="cm">        &lt;th&gt;&lt;label for="name"&gt;Name&lt;/label&gt;&lt;/th&gt;</span>
+<span class="cm">        &lt;th&gt;&lt;label for="email"&gt;Email&lt;/label&gt;&lt;/th&gt;</span>
+<span class="cm">        &lt;th&gt;&lt;label for="password"&gt;Password&lt;/label&gt;&lt;/th&gt;</span>
+<span class="cm">        &lt;th&gt;&lt;label for="phone"&gt;Phone&lt;/label&gt;&lt;/th&gt;</span>
+<span class="cm">    &lt;/tr&gt;</span>
+<span class="cm">    &lt;tr&gt;</span>
+<span class="cm">        &lt;td&gt;&lt;input type="text" name="name" id="name" required&gt;&lt;/td&gt;</span>
+<span class="cm">        &lt;td&gt;&lt;input type="email" name="email" id="email" placeholder="abc@xyz.org" required&gt;&lt;/td&gt;</span>
+<span class="cm">        &lt;td&gt;&lt;input type="password" name="password" id="password" required&gt;&lt;/td&gt;</span>
+<span class="cm">        &lt;td&gt;&lt;input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required&gt;&lt;/td&gt;</span>
+<span class="cm">        &lt;td &gt;&lt;button onclick="create_User()"&gt;Create&lt;/button&gt;&lt;/td&gt;</span>
+<span class="cm">    &lt;/tr&gt;</span>
+<span class="cm">&lt;/table&gt;</span>
+<span class="cm">*/</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table class="table">
+    <tr>
+        <th><label for="name">Name</label></th>
+        <th><label for="email">Email</label></th>
+        <th><label for="password">Password</label></th>
+        <th><label for="phone">Phone</label></th>
+    </tr>
+    <tr>
+        <td><input type="text" name="name" id="name" required=""></td>
+        <td><input type="email" name="email" id="email" placeholder="abc@xyz.org" required=""></td>
+        <td><input type="password" name="password" id="password" required=""></td>
+        <td><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" placeholder="1234567890" required=""></td>
+        <td><button onclick="create_User()">Create</button></td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="HTML-and-JavaScript-Display-Table-(Read)">
+<a class="anchor" href="#HTML-and-JavaScript-Display-Table-(Read)" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTML and JavaScript Display Table (Read)<a class="anchor-link" href="#HTML-and-JavaScript-Display-Table-(Read)"> </a>
+</h3>
+<blockquote>
+<p>JavaScript below shows elements needed to construct the rows of data in the table.</p>
+<ul>
+<li>JSON is required, it is hardcoded in this example.  Typically JSON will come from a JavaScript fetch.</li>
+<li>JSON object is required, it is created from JSON string.  This allows access to to elements in JSON using JavaScript dot notation (user._name)</li>
+<li>DOM editing is a huge part of the remainder of this example.  DOM elements often nest inside of other DOM elements.   For instance each <code>td</code>  is nested in <code>tr</code>.  <strong><em>Find examples</em></strong> of DOM create and append in the code below.</li>
+<li>Notice the definition of <strong><em>table</em></strong> and build you own map or visual of how these things are put together.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-javascript"><pre><span></span><span class="cm">/*</span>
+<span class="cm">&lt;table&gt;</span>
+<span class="cm">  &lt;thead&gt;</span>
+<span class="cm">  &lt;tr&gt;</span>
+<span class="cm">    &lt;th&gt;Name&lt;/th&gt;</span>
+<span class="cm">    &lt;th&gt;ID&lt;/th&gt;</span>
+<span class="cm">    &lt;th&gt;Actions&lt;/th&gt;</span>
+<span class="cm">  &lt;/tr&gt;</span>
+<span class="cm">  &lt;/thead&gt;</span>
+<span class="cm">  &lt;tbody id="table"&gt;</span>
+<span class="cm">    &lt;!-- javascript generated data --&gt;</span>
+<span class="cm">  &lt;/tbody&gt;</span>
+<span class="cm">&lt;/table&gt;</span>
+<span class="cm">*/</span>
+
+<span class="c1">// Static json, this can be used to test data prior to API and Model being ready</span>
+<span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="s1">'[{"_name": "Thomas Edison", "_uid": "toby"}, {"_name": "Nicholas Tesla", "_uid": "nick"}, {"_name": "John Mortensen", "_uid": "jm1021"}, {"_name": "Eli Whitney", "_uid": "eli"}, {"_name": "Hedy Lemarr", "_uid": "hedy"}]'</span><span class="p">;</span>
+
+<span class="c1">// Convert JSON string to JSON object</span>
 <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
 
 <span class="c1">// prepare HTML result container for new output</span>
@@ -299,7 +375,7 @@ window.onload = wrap_img;
     <span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
     <span class="kr">const</span> <span class="nx">id</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
     <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
-
+           
     <span class="c1">// add content from user data          </span>
     <span class="nx">name</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">_name</span><span class="p">;</span> 
     <span class="nx">id</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">_uid</span><span class="p">;</span> 
@@ -334,13 +410,15 @@ window.onload = wrap_img;
     <span class="c1">// add row to table</span>
     <span class="nx">table</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">tr</span><span class="p">);</span>
 <span class="p">});</span>
-
-<span class="o">&lt;</span><span class="err">/script&gt;</span>
 </pre></div>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -348,10 +426,10 @@ window.onload = wrap_img;
 <a class="anchor" href="#View/Blog-Concepts" aria-hidden="true"><span class="octicon octicon-link"></span></a>View/Blog Concepts<a class="anchor-link" href="#View/Blog-Concepts"> </a>
 </h2>
 <blockquote>
-<p>A notes/blog would be created to add <strong><em>Notes</em></strong> between students and teacher.  Notes could be used for many types of applications.</p>
+<p>A notes/blog would be created to add <strong><em>Notes</em></strong> between students and teacher.  Notes could be used for many types of applications. We will learn how to do this later, but for now we want you to think about design.</p>
 <ul>
-<li>Most recent message on top</li>
-<li>Messages support inclusion of images</li>
+<li>In this design, most recent messages are on top</li>
+<li>Messages are intended to support markdown and inclusion of images</li>
 </ul>
 </blockquote>
 <p><img src="/APCSP/images/copied_from_nb/images/notes.png" alt="Notes and Images"></p>
@@ -366,22 +444,15 @@ window.onload = wrap_img;
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
 <blockquote>
-<p>Build and correlate a design between backend model, frontend view., and visuals above. This particular Jupyter Notebook and code within it are used to help establish ideas.   Start a design for your project...</p>
+<p>Build and correlate a technical design between backend model.  This blog is focussing on frontend view., and visual concepts on how CRUD operations are presented to user of system. This particular Jupyter Notebook and code within it are used to help establish technical ideas.   Start a design for your project...</p>
 <ul>
-<li>The project must have View and Model.  Describe your project.</li>
-<li>The project should contain a relationship between of data, this means that a student can have 0 to many blogs.  This is called a 0-to-Many or a 1-to-Many relationship.  Google <strong><em>Unified Model Language (UML)</em></strong>, this is a means to describe data, or start build a POJO.  Make sure attributes between Model and View are consistent in your design.</li>
-<li>Describe your View.  <strong><em>UML</em></strong>, visuals, tables are used to characterize a project.  This is strong way to show Teacher and Graders understanding of planning Model and View.</li>
-<li>Start a design in a Jupyter Notebook and create Issues in your Teams GitHub repository. </li>
+<li>Each project must have  a View (as pictured) and Model (json dat is passed to View).  Describe your project.</li>
+<li>Describe your View.  <strong><em>UML</em></strong>, visuals, tables are used to characterize a project.  This shows the Teacher and Graders understanding of planning Model and View.</li>
+<li>Start a design in a Blog Post or Jupyter Notebook</li>
 <li>Issues should discuss problems/challenges, in Teacher/Student data here are a couple ... <ul>
 <li>This design will have many JavaScript actions, at least one for each CRUD operation.  See if you can think of JavaScript functions to replace alerts in example code above.</li>
-<li>There can be different roles for CRUD operations.  For instance, student will only interact with their own account.  Teacher may interact with many accounts.   This could lead to different Views depending on Role.   In fact, you may want to have Flask be View for Admin role built into backend, aka the Teacher role.   GitHub pages may only have View for Student role.</li>
-<li>Given these CRUD operations what kind of APIs do you think you will need.  They should map closely button/on click requirements.</li>
-<li>In Model design, I would make a choice to go away from email to uid (github user id), to protect user but still have a unique id.  Figure out what your unique piece of data is in your project to look up a record.</li>
-<li>In model design, there are data issues for how to handle dob and age.  Some data is stored and some is calculated.  Think about what data you want to see in table versus what do we want to user to update screen.
-Additional Design.  Thinking about View enhancements results in more Model and Other planning.</li>
-<li>In database design, database basics and  1-to-many relationships need to be learned.  There are many blogs for a user.</li>
-<li>JSON contract between frontend and backend needs to be created</li>
-<li>Control/APIs between Model and View need to be created based off of what we learned from Jokes and earlier Databases.</li>
+<li>There can be different roles for CRUD operations.  For instance, student will only interact with their own account.  Teacher may interact with many accounts.</li>
+<li>Given these CRUD operations what kind of APIs do you think you will need?  They should map closely button/on click requirements.</li>
 </ul>
 </li>
 </ul>
@@ -390,16 +461,8 @@ Additional Design.  Thinking about View enhancements results in more Model and O
 </div>
 </div>
 </div>
-&lt;/div&gt;
- 
+</div>
 
-</tr>
-</li>
-</ul>
-</blockquote>
-</div>
-</div></div>
-</div>
 
 
   </div><a class="u-url" href="/APCSP/2023/01/12/PBL-view.html" hidden></a>

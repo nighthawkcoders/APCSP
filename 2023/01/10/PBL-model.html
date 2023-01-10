@@ -259,43 +259,46 @@ window.onload = wrap_img;
         <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">result</span>
         
-        
-<span class="c1"># define user objects</span>
-<span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Thomas Edison'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'toby'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123toby'</span><span class="p">)</span>
-<span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Nicholas Tesla'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'nick'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123nick'</span><span class="p">)</span>
-<span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Alexander Graham Bell'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'lex'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123lex'</span><span class="p">)</span>
-<span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Eli Whitney'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'eli'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123eli'</span><span class="p">)</span>
-<span class="n">u5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Hedy Lemarr'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'hedy'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123hedy'</span><span class="p">)</span>
 
-<span class="c1"># put user objects in list for convenience</span>
-<span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">,</span> <span class="n">u4</span><span class="p">,</span> <span class="n">u5</span><span class="p">]</span>
+<span class="c1"># place tester code inside of special if!  This allows include without tester running</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
 
-<span class="c1"># Find user</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Test 1, find user 3"</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u3</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123lex"</span><span class="p">)</span>
+    <span class="c1"># define user objects</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Thomas Edison'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'toby'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123toby'</span><span class="p">)</span>
+    <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Nicholas Tesla'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'nick'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123nick'</span><span class="p">)</span>
+    <span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Alexander Graham Bell'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'lex'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123lex'</span><span class="p">)</span>
+    <span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Eli Whitney'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'eli'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123eli'</span><span class="p">)</span>
+    <span class="n">u5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Hedy Lemarr'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'hedy'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123hedy'</span><span class="p">)</span>
 
+    <span class="c1"># put user objects in list for convenience</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">,</span> <span class="n">u4</span><span class="p">,</span> <span class="n">u5</span><span class="p">]</span>
 
-<span class="c1"># Change user</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Test 2, change user 3"</span><span class="p">)</span>
-<span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"John Mortensen"</span>
-<span class="n">u</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="s2">"jm1021"</span>
-<span class="n">u</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">"123qwerty"</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123qwerty"</span><span class="p">)</span>
+    <span class="c1"># Find user</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 1, find user 3"</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u3</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123lex"</span><span class="p">)</span>
 
 
-<span class="c1"># Make dictionary</span>
-<span class="sd">''' </span>
-<span class="sd">The __dict__ in Python represents a dictionary or any mapping object that is used to store the attributes of the object. </span>
-<span class="sd">Every object in Python has an attribute that is denoted by __dict__. </span>
-<span class="sd">Use the json.dumps() method to convert the list of Users to a JSON string.</span>
-<span class="sd">'''</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Test 3, make a dictionary"</span><span class="p">)</span>
-<span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="n">user</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+    <span class="c1"># Change user</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 2, change user 3"</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"John Mortensen"</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="s2">"jm1021"</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">"123qwerty"</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123qwerty"</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Test 4, make a dictionary"</span><span class="p">)</span>
-<span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="nb">vars</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
-<span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+
+    <span class="c1"># Make dictionary</span>
+    <span class="sd">''' </span>
+<span class="sd">    The __dict__ in Python represents a dictionary or any mapping object that is used to store the attributes of the object. </span>
+<span class="sd">    Every object in Python has an attribute that is denoted by __dict__. </span>
+<span class="sd">    Use the json.dumps() method to convert the list of Users to a JSON string.</span>
+<span class="sd">    '''</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 3, make a dictionary"</span><span class="p">)</span>
+    <span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="n">user</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 4, make a dictionary"</span><span class="p">)</span>
+    <span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="nb">vars</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -309,21 +312,21 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test 1, find user 3
-name: "Thomas Edison", id: "toby", psw: "sha256$ml0..."
-name: "Nicholas Tesla", id: "nick", psw: "sha256$4UV..."
-* name: "Alexander Graham Bell", id: "lex", psw: "sha256$qC8..."
-name: "Eli Whitney", id: "eli", psw: "sha256$qVr..."
-name: "Hedy Lemarr", id: "hedy", psw: "sha256$dpb..."
+name: "Thomas Edison", id: "toby", psw: "sha256$nTQ..."
+name: "Nicholas Tesla", id: "nick", psw: "sha256$JPM..."
+* name: "Alexander Graham Bell", id: "lex", psw: "sha256$iHV..."
+name: "Eli Whitney", id: "eli", psw: "sha256$US0..."
+name: "Hedy Lemarr", id: "hedy", psw: "sha256$2cC..."
 Test 2, change user 3
-name: "Thomas Edison", id: "toby", psw: "sha256$ml0..."
-name: "Nicholas Tesla", id: "nick", psw: "sha256$4UV..."
-* name: "John Mortensen", id: "jm1021", psw: "sha256$laY..."
-name: "Eli Whitney", id: "eli", psw: "sha256$qVr..."
-name: "Hedy Lemarr", id: "hedy", psw: "sha256$dpb..."
+name: "Thomas Edison", id: "toby", psw: "sha256$nTQ..."
+name: "Nicholas Tesla", id: "nick", psw: "sha256$JPM..."
+* name: "John Mortensen", id: "jm1021", psw: "sha256$2I7..."
+name: "Eli Whitney", id: "eli", psw: "sha256$US0..."
+name: "Hedy Lemarr", id: "hedy", psw: "sha256$2cC..."
 Test 3, make a dictionary
-[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$ml0DURPSNagqImqh$4e8a8ae949acafe39bb390dab4ee0327e0b56a7d2b75073b3d8476b1465b77ae"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$4UV2rVTOECmF5JeR$ac2270216772e5aa774a497d5bacbc3fa788c0e7be4a39cfd1a6f8fc3ae02e60"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$laYxxAPQkPjZihub$cfe7fef669670fc1ba0c28178796ffcb904d22206e853c0f1f30b5032fb44a23"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$qVr5jymLn2cPjG7Y$4c11ecac0c9bcabfb5670e8fa86f88922b510679ff80588de008b1da4ca5d59b"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$dpbB2p0MsgRKAwxG$c01acfbdc0dd4d89ba335916adc1b1ba914fdd25800cf0a25724b1b030b55ed2"}]
+[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$nTQxZ9alViZd3WOn$34c90a641520c96e3d91ac148340b8b07d3c0958249dfcfe4a3eb05e2621efef"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$JPMovUtCRid1pCTE$089368f59621e8878ea730e5328bd9fc442f1d63f40d99f52502c059f9921281"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$2I7yhf1jQOPNu2YE$473f9f24b42cbbd52d6fd4effe03b73ba41ff31ea5532940480aadef56b3ce2d"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$US0fsfAaoQix8ido$5b6bac49c74a9fe08b18147a8d0f5c41d7805c42238a9d29dc2e8dbafff8324f"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$2cC6Hp5Z4WcmxpBK$df9ed2dbe43edee11d7dc5101057274b2c47be5db95d6610ab7e4fba2dbf6d17"}]
 Test 4, make a dictionary
-[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$ml0DURPSNagqImqh$4e8a8ae949acafe39bb390dab4ee0327e0b56a7d2b75073b3d8476b1465b77ae"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$4UV2rVTOECmF5JeR$ac2270216772e5aa774a497d5bacbc3fa788c0e7be4a39cfd1a6f8fc3ae02e60"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$laYxxAPQkPjZihub$cfe7fef669670fc1ba0c28178796ffcb904d22206e853c0f1f30b5032fb44a23"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$qVr5jymLn2cPjG7Y$4c11ecac0c9bcabfb5670e8fa86f88922b510679ff80588de008b1da4ca5d59b"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$dpbB2p0MsgRKAwxG$c01acfbdc0dd4d89ba335916adc1b1ba914fdd25800cf0a25724b1b030b55ed2"}]
+[{"_name": "Thomas Edison", "_uid": "toby", "_password": "sha256$nTQxZ9alViZd3WOn$34c90a641520c96e3d91ac148340b8b07d3c0958249dfcfe4a3eb05e2621efef"}, {"_name": "Nicholas Tesla", "_uid": "nick", "_password": "sha256$JPMovUtCRid1pCTE$089368f59621e8878ea730e5328bd9fc442f1d63f40d99f52502c059f9921281"}, {"_name": "John Mortensen", "_uid": "jm1021", "_password": "sha256$2I7yhf1jQOPNu2YE$473f9f24b42cbbd52d6fd4effe03b73ba41ff31ea5532940480aadef56b3ce2d"}, {"_name": "Eli Whitney", "_uid": "eli", "_password": "sha256$US0fsfAaoQix8ido$5b6bac49c74a9fe08b18147a8d0f5c41d7805c42238a9d29dc2e8dbafff8324f"}, {"_name": "Hedy Lemarr", "_uid": "hedy", "_password": "sha256$2cC6Hp5Z4WcmxpBK$df9ed2dbe43edee11d7dc5101057274b2c47be5db95d6610ab7e4fba2dbf6d17"}]
 </pre>
 </div>
 </div>
@@ -391,20 +394,6 @@ Test 4, make a dictionary
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>17
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

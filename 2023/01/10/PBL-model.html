@@ -185,7 +185,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A gateway in necessary as a web server cannot communicate directly with Python.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Werkzeug is a collection of libraries that can be used to create a WSGI (Web Server Gateway Interface)</span>
+<span class="c1"># A gateway in necessary as a web server cannot communicate directly with Python.</span>
 <span class="c1"># In this case, imports are focused on generating hash code to protect passwords.</span>
 <span class="kn">from</span> <span class="nn">werkzeug.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -344,7 +345,7 @@ Test 4, make a dictionary
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h2>
 <blockquote>
-<p>Add new attributes/variables to the Class.</p>
+<p>Add new attributes/variables to the Class.  Make class specific to your CPT work.</p>
 <ul>
 <li>Add classOf attribute to define year of graduation<ul>
 <li>Add setter and getter for classOf</li>
@@ -360,6 +361,7 @@ Test 4, make a dictionary
 </ul>
 </li>
 <li>Update and format tester function to work with changes</li>
+<li>Start design a class for each of your own Full Stack project, use new <code>code cell</code> in this notebook</li>
 </ul>
 </blockquote>
 

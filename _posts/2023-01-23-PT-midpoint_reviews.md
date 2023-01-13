@@ -16,8 +16,8 @@ week: 20
 - Monday: Classroom Time for College Board MCQ
 - Tuesday: AP/Tech Talk: Units 2.3 using Pandas
 - Wednesday: Work day - Coding hour 2
-- Thursday: Classroom Presentation - Team/Ideation Reviews 5 minutes per team
-- Friday: Classroom Presentation - Team/Ideation Reviews 5 minutes per team
+- Thursday: Classroom Presentation - Team/Ideation Reviews 3-5 minutes per team
+- Friday: Classroom Presentation - Team/Ideation Reviews 3-5 minutes per team
 
 ## Look ahead
 > Development on CPT Issues

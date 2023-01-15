@@ -345,7 +345,7 @@ window.onload = wrap_img;
 <p><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/main.py#L47">Port and Host (testing)</a></p>
 </li>
 <li>
-<p><strong><em>Test locally as you develop</em></strong> Select main.py file in VSCode and press Play button, or press down arrow next to Play button to activate Debug testing.  The below dialog will appear in Terminal.</p>
+<p><strong><em><code>Run</code> locally as you develop</em></strong> Select main.py file in VSCode and press Play button, or press down arrow next to Play button to activate Debug testing.  The below dialog will appear in Terminal.</p>
 </li>
 </ol>
 <div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> machine:flask_portfolio user$  <span class="nb">cd</span> /Users/user/vscode/flask_portfolio <span class="p">;</span> /usr/bin/env /Users/user/opt/anaconda3/bin/python /Users/user/.vscode/extensions/ms-python.python-2022.20.2/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher <span class="m">61127</span> -- /Users/user/vscode/flask_portfolio/main.py 
@@ -363,7 +363,7 @@ window.onload = wrap_img;
 </pre></div>
 <ol>
 <li>
-<strong><em>Test with Docker prior to commit and deployment</em></strong>  It is much simpler to debug Docker issues in VSCode prior to Deployment on AWS.</li>
+<strong><em><code>Run</code> with Docker prior to commit and deployment</em></strong>  It is much simpler to debug Docker issues in VSCode prior to Deployment on AWS.  This will <code>create production database</code> sample, which will show up commits.  Simply delete file after testing, <code>do not commit it</code>.</li>
 </ol>
 <div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> machine:flask_portfolio user$ <span class="nb">pwd</span> <span class="c1"># verify directory</span>
 /Users/user/vscode/flask_portfolio

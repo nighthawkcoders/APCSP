@@ -15,8 +15,11 @@ tags: [javascript, fetch, get, post, put]
 <table>
   <thead>
   <tr>
+    <th>User</th>
     <th>Name</th>
-    <th>ID</th>
+    <th>Posts</th>
+    <th>DOB</th>
+    <th>Age</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -29,7 +32,7 @@ tags: [javascript, fetch, get, post, put]
   const resultContainer = document.getElementById("result");
 
   // prepare fetch options
-  const url = "https://csa.nighthawkcodingsociety.com/api/person/all";
+  const url = "https://flask.nighthawkcodingsociety.com/api/users";
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -60,16 +63,29 @@ tags: [javascript, fetch, get, post, put]
       response.json().then(data => {
           console.log(data);
           for (let row in data) {
-            // tr and td build out for each row
+            // tr and td element id's to build out for each row
             const tr = document.createElement("tr");
+            const uid = document.createElement("td");
             const name = document.createElement("td");
-            const id = document.createElement("td");
-            // data is specific to the API
+            const posts = document.createElement("td")
+            const dob = document.createElement("td");
+            const age = document.createElement("td");
+          
+
+            // obtain data that is specific to the API
+            uid.innerHTML = data[row].uid; 
             name.innerHTML = data[row].name; 
-            id.innerHTML = data[row].email; 
+            posts.innerHTML = data[row].posts.length;
+            dob.innerHTML = data[row].dob; 
+            age.innerHTML = data[row].age; 
+
             // add HTML to container
+            tr.appendChild(uid);
             tr.appendChild(name);
-            tr.appendChild(id);
+            tr.appendChild(posts);
+            tr.appendChild(dob);
+            tr.appendChild(age);
+
             resultContainer.appendChild(tr);
           }
       })

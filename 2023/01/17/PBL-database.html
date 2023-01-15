@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      9 min read
     
 </span></p>
 
@@ -157,7 +157,7 @@ window.onload = wrap_img;
 <ul>
 <li><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
 <li><a href="https://www.ffnext.io/blog/python-backend-with-flask-for-beginners#:~:text=You%20can%20create%20an%20HTTP,command%3A%20python%20app.py.">Python Backend with Flask, SQLite</a></li>
-<li><a href="https://www.ffnext.io/blog/python-backend-with-flask-for-beginners#:~:text=You%20can%20create%20an%20HTTP,command%3A%20python%20app.py.">Backend API and Flask</a></li>
+<li><a href="https://www.ffnext.io/blog/python-backend-with-flask-for-beginners#:~:text=You%20can%20create%20an%20HTTP,command%3A%20python%20app.py.">Python Backend starting Controller</a></li>
 </ul>
 
 </div>
@@ -327,15 +327,74 @@ window.onload = wrap_img;
 <blockquote>
 <p><strong><em>DevOps and the SQLite database</em></strong> requires file management and configuring Python to work in local and deployment environment.</p>
 <ol>
-<li>
-<a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/docker-compose.yml">Volumes in Deployment</a>2. <a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/__init__.py#L15">Database URI (deployment)</a>
-</li>
-<li><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/Dockerfile">Review Dockerfile</a></li>
-<li><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/main.py#L46">Database URI (testing)</a></li>
-<li><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/.gitignore#L4">Exclude/Ignore Testing Database</a></li>
-<li><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/main.py#L47">Port and Host (testing)</a></li>
+<li><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/docker-compose.yml">Volumes in Deployment</a></li>
+<li><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/__init__.py#L15">Database URI (deployment)</a></li>
 </ol>
 </blockquote>
+<ol>
+<li>
+<p><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/Dockerfile">Review Dockerfile</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/main.py#L46">Database URI (testing)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/.gitignore#L4">Exclude/Ignore Testing Database</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/main.py#L47">Port and Host (testing)</a></p>
+</li>
+<li>
+<p><strong><em>Test locally as you develop</em></strong> Select main.py file in VSCode and press Play button, or press down arrow next to Play button to activate Debug testing.  The below dialog will appear in Terminal.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> machine:flask_portfolio user$  <span class="nb">cd</span> /Users/user/vscode/flask_portfolio <span class="p">;</span> /usr/bin/env /Users/user/opt/anaconda3/bin/python /Users/user/.vscode/extensions/ms-python.python-2022.20.2/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher <span class="m">61127</span> -- /Users/user/vscode/flask_portfolio/main.py 
+ * Serving Flask app <span class="s2">"__init__"</span> <span class="o">(</span>lazy loading<span class="o">)</span>
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.75:8086/ <span class="o">(</span>Press CTRL+C to quit<span class="o">)</span>
+ * Restarting with watchdog <span class="o">(</span>fsevents<span class="o">)</span>
+ * Debugger is active!
+ * Debugger PIN: <span class="m">403</span>-552-045
+</pre></div>
+<ol>
+<li>
+<strong><em>Test with Docker prior to commit and deployment</em></strong>  It is much simpler to debug Docker issues in VSCode prior to Deployment on AWS.</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="o">(</span>base<span class="o">)</span> machine:flask_portfolio user$ <span class="nb">pwd</span> <span class="c1"># verify directory</span>
+/Users/user/vscode/flask_portfolio
+<span class="o">(</span>base<span class="o">)</span> machine:flask_portfolio user$ docker-compose build <span class="c1"># run docker build</span>
+<span class="o">[</span>+<span class="o">]</span> Building <span class="m">16</span>.0s <span class="o">(</span><span class="m">10</span>/10<span class="o">)</span> <span class="nv">FINISHED</span>                                                                                                  
+ <span class="o">=</span>&gt; <span class="o">[</span>internal<span class="o">]</span> load build definition from Dockerfile                                                                            <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; <span class="o">=</span>&gt; transferring dockerfile: 32B                                                                                             <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; <span class="o">[</span>internal<span class="o">]</span> load .dockerignore                                                                                               <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; <span class="o">=</span>&gt; transferring context: 2B                                                                                                 <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; <span class="o">[</span>internal<span class="o">]</span> load metadata <span class="k">for</span> docker.io/library/python:3.10                                                                  <span class="m">3</span>.0s
+ <span class="o">=</span>&gt; <span class="o">[</span>internal<span class="o">]</span> load build context                                                                                               <span class="m">0</span>.1s
+ <span class="o">=</span>&gt; <span class="o">=</span>&gt; transferring context: <span class="m">86</span>.18kB                                                                                            <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; <span class="o">[</span><span class="m">1</span>/6<span class="o">]</span> FROM docker.io/library/python:3.10@sha256:e9f824eec86879b1ffe8da9ef3eb4677dd6e89b63e8bce8cb35c572f550751d8            <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; CACHED <span class="o">[</span><span class="m">2</span>/6<span class="o">]</span> RUN apt-get update <span class="o">&amp;&amp;</span> apt-get upgrade -y <span class="o">&amp;&amp;</span>     apt-get install -y python3 python3-pip git                     <span class="m">0</span>.0s
+ <span class="o">=</span>&gt; <span class="o">[</span><span class="m">3</span>/6<span class="o">]</span> COPY . /                                                                                                              <span class="m">0</span>.2s
+ <span class="o">=</span>&gt; <span class="o">[</span><span class="m">4</span>/6<span class="o">]</span> RUN pip install --no-cache-dir -r requirements.txt                                                                    <span class="m">9</span>.7s
+ <span class="o">=</span>&gt; <span class="o">[</span><span class="m">5</span>/6<span class="o">]</span> RUN pip install gunicorn                                                                                              <span class="m">2</span>.7s
+ <span class="o">=</span>&gt; exporting to image                                                                                                          <span class="m">0</span>.3s 
+ <span class="o">=</span>&gt; <span class="o">=</span>&gt; exporting layers                                                                                                         <span class="m">0</span>.3s 
+ <span class="o">=</span>&gt; <span class="o">=</span>&gt; writing image sha256:47ccd2a3ca839139727dd8c8f57fc1ad6a36e670962059d960d21b3ad0cba292                                    <span class="m">0</span>.0s 
+ <span class="o">=</span>&gt; <span class="o">=</span>&gt; naming to docker.io/library/flask_port_v1                                                                                <span class="m">0</span>.0s 
+
+<span class="o">(</span>base<span class="o">)</span> machine:flask_portfolio user$ docker-compose up  <span class="c1"># enable for browser testing</span>
+<span class="o">[</span>+<span class="o">]</span> Running <span class="m">1</span>/1
+ ⠿ Container flask_portfolio-web-1  Recreated                                                                                   <span class="m">0</span>.1s
+Attaching to flask_portfolio-web-1
+flask_portfolio-web-1  <span class="p">|</span> <span class="o">[</span><span class="m">2023</span>-01-15 <span class="m">13</span>:08:19 +0000<span class="o">]</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Starting gunicorn <span class="m">20</span>.1.0
+flask_portfolio-web-1  <span class="p">|</span> <span class="o">[</span><span class="m">2023</span>-01-15 <span class="m">13</span>:08:19 +0000<span class="o">]</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Listening at: http://0.0.0.0:8086 <span class="o">(</span><span class="m">1</span><span class="o">)</span>
+flask_portfolio-web-1  <span class="p">|</span> <span class="o">[</span><span class="m">2023</span>-01-15 <span class="m">13</span>:08:19 +0000<span class="o">]</span> <span class="o">[</span><span class="m">1</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Using worker: sync
+flask_portfolio-web-1  <span class="p">|</span> <span class="o">[</span><span class="m">2023</span>-01-15 <span class="m">13</span>:08:19 +0000<span class="o">]</span> <span class="o">[</span><span class="m">7</span><span class="o">]</span> <span class="o">[</span>INFO<span class="o">]</span> Booting worker with pid: <span class="m">7</span>
+</pre></div>
 
 </div>
 </div>

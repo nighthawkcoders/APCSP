@@ -140,7 +140,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#Review-content-in-users-table">Review content in users table </a></li>
 <li class="toc-entry toc-h4"><a href="#Delete-content-in-users-table,-redisplay">Delete content in users table, redisplay </a></li>
 <li class="toc-entry toc-h4"><a href="#Quit-SQLite3-and-return-to-prompt">Quit SQLite3 and return to prompt </a></li>
-<li class="toc-entry toc-h4"><a href="#SQLite-Explorer">SQLite Explorer </a></li>
+<li class="toc-entry toc-h4"><a href="#sqlite-explorer">SQLite Explorer</a></li>
 </ul>
 </li>
 </ul>
@@ -498,86 +498,58 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="SQLite-Explorer">
-<a class="anchor" href="#SQLite-Explorer" aria-hidden="true"><span class="octicon octicon-link"></span></a>SQLite Explorer<a class="anchor-link" href="#SQLite-Explorer"> </a>
-</h4>
+<h4>
+<a class="anchor" href="#sqlite-explorer" aria-hidden="true"><span class="octicon octicon-link"></span></a>SQLite Explorer</h4>
 <table>
 <tr>
-<th>id</th>
-<th>_name</th>
-<th>_uid</th>
-<th>_password</th>
-<th>_dob</th>
-</tr>
-<tr></tr>
-<tr>
-<td>1</td>
-<td>Thomas Edison</td>
-<td>toby</td>
-<td>sha256$Yj69CENuKWaRDHw3$dcb731d06dd59b7a316a853944b6603197876aa3a9553a758865d849a2b0a502</td>
-<td>1847-02-11</td>
+    <th>id</th>
+    <th>_name</th>
+    <th>_uid</th>
+    <th>_password</th>
+    <th>_dob</th>
 </tr>
 <tr>
-<td>2</td>
-<td>Nicholas Tesla</td>
-<td>niko</td>
-<td>sha256$muQZzhqAFgXLERzC$cc7a02c80fc80190cd0b052d0dd010272cc8bc81971a7fe3cad6cee4a13e55e7</td>
-<td>2023-01-14</td>
+    <td>1</td>
+    <td>Thomas Edison</td>
+    <td>toby</td>
+    <td>sha256$Yj69CENuKWaRDHw3$dcb731d06dd59b7a316a853944b6603197876aa3a9553a758865d849a2b0a502</td>
+    <td>1847-02-11</td>
+</tr>
+    <tr>
+    <td>2</td>
+    <td>Nicholas Tesla</td>
+    <td>niko</td>
+    <td>sha256$muQZzhqAFgXLERzC$cc7a02c80fc80190cd0b052d0dd010272cc8bc81971a7fe3cad6cee4a13e55e7</td>
+    <td>2023-01-14</td>
 </tr>
 <tr>
-<td>3</td>
-<td>Alexander Graham Bell</td>
-<td>lex</td>
-<td>sha256$rBKtyle2TI1vY7y9$ace54fb1e44640213f4aa284d6fe05cd27bfbcd1f7ac6d2ba697400d0b78cb7e</td>
-<td>2023-01-14</td>
+    <td>3</td>
+    <td>Alexander Graham Bell</td>
+    <td>lex</td>
+    <td>sha256$rBKtyle2TI1vY7y9$ace54fb1e44640213f4aa284d6fe05cd27bfbcd1f7ac6d2ba697400d0b78cb7e</td>
+    <td>2023-01-14</td>
 </tr>
 <tr>
-<td>4</td>
-<td>Eli Whitney</td>
-<td>whit</td>
-<td>sha256$j31DNBdcLtDALA4x$d39828e9e016c675b6c27ce1e6a08e196ffa5b7740978d6b313d039e60756375</td>
-<td>2023-01-14</td>
+    <td>4</td>
+    <td>Eli Whitney</td>
+    <td>whit</td>
+    <td>sha256$j31DNBdcLtDALA4x$d39828e9e016c675b6c27ce1e6a08e196ffa5b7740978d6b313d039e60756375</td>
+    <td>2023-01-14</td>
 </tr>
 <tr>
-<td>5</td>
-<td>John Mortensen</td>
-<td>jm1021</td>
-<td>sha256$5gt0IT2TiQm0UWi5$3d74775d35d2e2b0865deefb8f59e22e2b35d8c19ab4b1c26c7e50a27d3bf9fd</td>
-<td>1959-10-21</td>
+    <td>5</td>
+    <td>John Mortensen</td>
+    <td>jm1021</td>
+    <td>sha256$5gt0IT2TiQm0UWi5$3d74775d35d2e2b0865deefb8f59e22e2b35d8c19ab4b1c26c7e50a27d3bf9fd</td>
+    <td>1959-10-21</td>
 </tr>
-<tr>
-<td>6</td>
-<td>Hedy Lamar</td>
-<td>hedy</td>
-<td>sha256$6zVEhBkXNhw44E9B$18853f476a58048da462032853b87c6b2432c8a1dd6b53d91b7a12266ed06c74</td>
-<td>2023-01-14</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Marie Currie</td>
-<td>marie</td>
-<td>sha256$iRjN3dw3Q6HIvnD1$b7a7e12810c0c4bdc2247c8afbcdcf5892d723f2e5b378a4081b48bc3c16eb15</td>
-<td>2023-01-14</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Wilma Flintstone</td>
-<td>wilma</td>
-<td>sha256$eivmX2PtyXBhCgyI$cf0a0e8a6832faa0cf6cdebacb46694c87f4fdb28c44d01b7ee5250b346565e1</td>
-<td>2023-01-14</td>
-</tr>
-<tr>
-<td>10</td>
-<td>Fred Flintstone</td>
-<td>fred</td>
-<td>sha256$5NwOaSjRobb3g4ZU$a617d1c6424acd2324806a6985b4dda651a6a9aaa641b4b5986a3241937dedb0</td>
-<td>0010-01-01</td>
-</tr>&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</table>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -628,13 +600,8 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-&lt;/div&gt;
- 
+</div>
 
-</table>
-</div>
-</div></div>
-</div>
 
 
   </div><a class="u-url" href="/APCSP/2023/01/17/PBL-database.html" hidden></a>

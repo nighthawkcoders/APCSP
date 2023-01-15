@@ -1037,7 +1037,7 @@
     
         ,"post94": {
             "title": "Database CRUD Operations",
-            "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . Database API . Name ID .",
+            "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . Database API . User Name Posts DOB Age .",
             "url": "https://nighthawkcoders.github.io/APCSP/data/database",
             "relUrl": "/data/database",
             "date": " • Jul 10, 2022"

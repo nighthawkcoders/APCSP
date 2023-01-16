@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 01-16, FE and BE Control Tech Talks
-description: Student enable Control code to connect Frontend and Backend development for their Create Performance Task project
+title:  Week of 01-16, API and Database Intro
+description: Student enable API/Control code to connect Database/Model for their Create Performance Task project
 permalink: /points/19
 image: /images/points.jpeg
 categories: []
@@ -12,7 +12,7 @@ week: 19
 ---
 
 ## Plans Week 19
-> Teams work on Ideation, research, and 1st code for Create Performance using hacks for Create Performance Task project
+> Teams work using Ideation and using last week and this weeks Tech Talks and Hacks, to form code to enable API/Control to connect to Database/Model.  This week CPT designs should become stronger as student start CPT coding.
 
 - Monday: Silent Review
 - Tuesday: Backend Tech Talk. Database/Model.
@@ -23,5 +23,5 @@ week: 19
 ## Look ahead
 > Teams prepare for CPT presentation.
 
-- Monday review Hack Starters and 4 to 5 features
+- Monday live review which includes Videos of API and Database hacks, plus CB MCQ testing
 

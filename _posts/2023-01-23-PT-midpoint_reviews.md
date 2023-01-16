@@ -14,8 +14,8 @@ week: 20
 ## Plans Week 20
 > Teams prepare for CPT presentation.
 
-- Monday: Classroom Time for College Board MCQ
-- Tuesday: AP/Tech Talk: Units 2.3 using Pandas
+- Monday: Live Reviews, plus Classroom Time for College Board MCQ assignment.
+- Tuesday: AP/Tech Talk: Unit 2.3 using Pandas
 - Wednesday: Work day - Coding hour 2
 - Thursday: Classroom Presentation - Team/Ideation Reviews 3-5 minutes per team
 - Friday: Classroom Presentation - Team/Ideation Reviews 3-5 minutes per team

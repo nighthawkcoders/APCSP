@@ -13,7 +13,7 @@ week: 23
 
 ## Plans Week 23
 > Big Coding week, focus on completing issues
-- Monday: Coding hour 8. Live Review Demo CI/CD by DevOps, 
+- Monday: Coding hour 8. Live Review Demo CI/CD by DevOps.
 - Tuesday: Coding hour 9. Scrum Master Reviews, tangible artifacts.
 - Wednesday: Coding hour 10. Frontend Developer Demos.
 - Thursday: Coding hour 11. Backend Developer Demos. (N@tM)

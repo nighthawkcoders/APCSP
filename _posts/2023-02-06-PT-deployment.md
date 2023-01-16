@@ -12,7 +12,8 @@ week: 22
 ---
 
 ## Plans Week 22
-> Student work on Issues from projects.  DevOps engineer puts CI/CD processes in place for frontend and backend.
+> Student work on Issues from projects.  DevOps engineer puts CI/CD processes in place.
+
 - Monday: Live Review
 - Tuesday: Work Day - Coding hour 5
 - Wednesday:Tech Talk: CI/CD on Flask Project
@@ -21,4 +22,5 @@ week: 22
 
 ## Look ahead
 > Big Coding week, focus on completing issues
-- Monday: Demo CI/CD, Scrum Master Reviews
+
+- Monday: DevOps, Scrum Master, Frontend, Backend Live Reviews

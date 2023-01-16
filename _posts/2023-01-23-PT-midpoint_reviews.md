@@ -12,7 +12,8 @@ week: 20
 ---
 
 ## Plans Week 20
-> Teams perform reviews and work on Python libraries and technicals for College Board.
+> Teams prepare for CPT presentation.
+
 - Monday: Classroom Time for College Board MCQ
 - Tuesday: AP/Tech Talk: Units 2.3 using Pandas
 - Wednesday: Work day - Coding hour 2
@@ -21,4 +22,5 @@ week: 20
 
 ## Look ahead
 > Development on CPT Issues
+
 - Monday: Practice Test Review Ticket, Hacks from 2.3

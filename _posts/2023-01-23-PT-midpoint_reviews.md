@@ -12,13 +12,13 @@ week: 20
 ---
 
 ## Plans Week 20
-> Teams prepare for Classroom presentation on Team CPT projects.
+> Teams prepare for Classroom presentation / Project Approval.
 
-- Monday: Live Reviews, plus Classroom Time for College Board MCQ assignment.
+- Monday: Live/Silent Reviews on API and Database assignment, work day
 - Tuesday: AP/Tech Talk: Unit 2.3 using Pandas
 - Wednesday: Work day - Coding hour 2
-- Thursday: Classroom Presentation - Team/Ideation Reviews 3-5 minutes per team
-- Friday: Classroom Presentation - Team/Ideation Reviews 3-5 minutes per team
+- Thursday: Classroom Presentation - Project Approval which includes Team/Ideation, 3-5 minutes per team
+- Friday: Classroom Presentation - Project Approval which includes Team/Ideation, 3-5 minutes per team
 
 ## Look ahead
 > Development on CPT Issues

@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 01-23, Half way ideation reviews.
+title:  Week of 01-23, Half way ideation reviews. CB MCQ Test.
 description: Student review projects with Teachers.  Start of lectures on data tools and the correlation to College Board.
 permalink: /points/20
 image: /images/points.jpeg

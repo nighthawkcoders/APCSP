@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 01-23, Half way to CPT, Classroom Presentations.
+title:  Week of 01-23, Half way CPT Classroom Presentations, MCQ Test.
 description: Student present projects to Class and Teachers.  Start of College Board Unit 2 data lectures.
 permalink: /points/20
 image: /images/points.jpeg

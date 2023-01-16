@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 01-23, Half way ideation reviews. CB MCQ Test.
-description: Student review projects with Teachers.  Start of lectures on data tools and the correlation to College Board.
+title:  Week of 01-23, Half way to CPT, Classroom Presentations.
+description: Student present projects to Class and Teachers.  Start of College Board Unit 2 data lectures.
 permalink: /points/20
 image: /images/points.jpeg
 categories: []
@@ -14,8 +14,8 @@ week: 20
 ## Plans Week 20
 > Teams prepare for Classroom presentation / Project Approval.
 
-- Monday: Live/Silent Reviews on API and Database assignment, work day
-- Tuesday: AP/Tech Talk: Unit 2.3 using Pandas
+- Monday: Live/Silent Reviews on API and Database assignment, CB MCQ test opened 'till 8:30 AM Monday to 8:30 AM Tuesday
+- Tuesday: AP/Tech Talk: Unit 2.3 using Pandas, work day
 - Wednesday: Work day - Coding hour 2
 - Thursday: Classroom Presentation - Project Approval which includes Team/Ideation, 3-5 minutes per team
 - Friday: Classroom Presentation - Project Approval which includes Team/Ideation, 3-5 minutes per team

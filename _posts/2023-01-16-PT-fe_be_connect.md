@@ -18,7 +18,7 @@ week: 19
 - Tuesday: Backend Tech Talk. Database/Model.
 - Wednesday: Perform Database/Model hacks/videos according to your project
 - Thursday: Backend Tech Talk.  API/Control.  
-- Friday: Coding hour 1.  Prepare for Project Approval Presentation or Tech Talk Hacks/Videos.
+- Friday: 1st Coding hour.  Prepare for Project Approval Presentation or Tech Talk Hacks/Videos.
 
 ## Look ahead
 > Teams prepare for CPT presentation.

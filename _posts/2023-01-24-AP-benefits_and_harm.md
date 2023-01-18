@@ -22,6 +22,6 @@ week: 20
 
 ![]({{site.baseurl}}/images/flowchart5_1.png)
 
-## GitHub pages action
+## Blog Post Reflection
 1. Come up with three of your own Beneficial and corresponding Harmful Effects of Computing
 1. Talk about dopamine issues above.  Real?  Parent conspiracy?  Anything that is impacting your personal study and success in High School?

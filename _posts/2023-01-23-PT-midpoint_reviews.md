@@ -15,7 +15,7 @@ week: 20
 > Teams prepare for Classroom presentation / Project Approval.
 
 - Monday: Live/Silent Reviews on API and Database assignment, CB MCQ test opened 'till 8:30 AM Monday to 8:30 AM Tuesday
-- Tuesday: AP/Tech Talk: Unit 2.3 using Pandas, work day
+- Tuesday: AP Unit 5.1 & 5.2, work day
 - Wednesday: Work day - Coding hour 2
 - Thursday: Classroom Presentation - Project Approval which includes Team/Ideation, 3-5 minutes per team
 - Friday: Classroom Presentation - Project Approval which includes Team/Ideation, 3-5 minutes per team

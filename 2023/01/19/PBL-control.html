@@ -181,7 +181,7 @@ window.onload = wrap_img;
 <li>
 <a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/user.py#L14-L54">Read/GET method</a>.  This shows off Object Relational Manager performing a User (class operation) to extract all records from the table and putting them into User objects.</li>
 <li>
-<a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/user.py#L62-L64">Define API endpoints</a>.  Endpoints are somewhat patters to be matched.  Note, url_prefix at top of file supplies "/api/users" prefix to each pattern.  Each pattern when matched invokes correspond class.  Methods are defined in class to correspond to expectations.</li>
+<a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/user.py#L62-L64">Define API endpoints</a>.  Endpoints are somewhat patterns to be matched.  Note, url_prefix at top of file supplies "/api/users" prefix for each pattern.  Each pattern when matched invokes the correspond class.  Methods are defined in class to correspond to expectations (POST, GET, UPDATE, DELETE).</li>
 </ol>
 
 </div>
@@ -200,10 +200,11 @@ window.onload = wrap_img;
 
 <span class="kn">from</span> <span class="nn">model.users</span> <span class="kn">import</span> <span class="n">User</span>
 
+<span class="c1"># blueprint, which is registered to app in main.py</span>
 <span class="n">user_api</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">'user_api'</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span>
                    <span class="n">url_prefix</span><span class="o">=</span><span class="s1">'/api/users'</span><span class="p">)</span>
 
-<span class="c1"># API docs https://flask-restful.readthedocs.io/en/latest/api.html</span>
+<span class="c1"># API docs https://flask-restful.readthedocs.io/en/latest/api.html#id1</span>
 <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">user_api</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">UserAPI</span><span class="p">:</span>        
     <span class="k">class</span> <span class="nc">_Create</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>

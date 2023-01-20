@@ -2,12 +2,12 @@
 toc: true
 comments: false
 layout: post
-title: Legal and Ethical Concerns
-description: Free Software Licensing is the primary topic of this section.  
+title: Big Idea 5.5 Legal and Ethical Concerns
+description: This tech talk discusses legal and ethics in computing
 permalink: /legal
-categories: [5.E, 6.C]
+categories: [5.E]
 type: ap
-week: 25
+week: 21
 ---
 
 ## Cost of Free
@@ -15,7 +15,7 @@ In my most recent years in industry, there were many Lawyers making a profession
 
 Qualcomm makes its **money on patents**, if you use GPL software you could be voiding your rights to charge for software and patents.  **Open Source** by nature, specifically GPL, says any derivative work is free and code should be shared.   Qualcomm wants all derivative work to **require a royalty payment** payment, also anyone who uses the idea/patent pays royalty.
 
-<img src="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/static/assets/blackduck.png" height="400">
+![]({{site.baseurl}}/images/blackduck.png)
 
 From synopsis.com, "Black Duck® software composition analysis (SCA) helps teams manage the security, quality, and license compliance risks that come from the use of open source and third-party code in applications and containers."  Qualcomm has had 20 technical jobs and 3 lawyers analyzing all the code produced, analyzing code for Open Source inclusion, and analyzing impact of such licenses to its ability to charge royalties for the use of their Patents.  
 
@@ -50,6 +50,6 @@ Long ago, I remember being amazed that Red Hat was not selling its Linux distrib
 
 Creative Commons, Open Source are free terminologies!  However, businesses will not last without income.  And today, businesses won't last without engineers pulling Open Source software.
 
-# GitHub pages actions:
+# Blog Post Reflection
 1. When you create a GitHub repository it requests a license type.  Review the license types in relationship to this Tech Talk and make some notes in GitHub pages.
 1. Make a license for your personal and Team project.  Document license you picked and why.

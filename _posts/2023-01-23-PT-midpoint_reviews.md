@@ -23,4 +23,4 @@ week: 20
 ## Look ahead
 > Development on CPT Issues
 
-- Monday: Practice Test Review Ticket, Hacks from 2.3
+- Monday: Practice Test Review Ticket, Hacks from 5.1 and 5.2

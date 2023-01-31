@@ -16,7 +16,7 @@ week: 22
 
 - Monday: Live Review
 - Tuesday: Work Day - Coding hour 5
-- Wednesday:Tech Talk: CI/CD on Flask Project
+- Wednesday:Tech Talk: CI/CD on Flask and Unit 5.5 and 5.6
 - Thursday: Work Day - Coding hour 6
 - Friday: Work Day  - Coding hour 7.  Update of review tickets with tangible artifacts per person.
 

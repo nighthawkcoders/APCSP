@@ -7,7 +7,7 @@ description: This tech talk discusses safe computing
 permalink: /safe
 categories: [5.D, 5.E]
 type: ap
-week: 21
+week: 22
 ---
 
 # Safe Computing

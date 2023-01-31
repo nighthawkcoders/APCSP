@@ -14,10 +14,10 @@ week: 21
 ## Plans Week 21
 > Teams continue in working on CPT projects.
 
-- Monday: 1-minute Live Review on Practice MCQ and Unit 5.1 and 5.2 Hacks 
-- Tuesday: AP/Tech Talk: Unit 5.3 and 5.4
-- Wednesday: Work Day - Coding hour 3
-- Thursday: AP/Tech Talk: Unit 5.5 and 5.6
+- Monday: No School
+- Tuesday: Scrum Master Review on Practice MCQ and Unit 5.1 and 5.2 Hacks 
+- Wednesday: AP/Tech Talk: Unit 5.3 and 5.4
+- Thursday: Work Day - Coding hour 3
 - Friday: Work Day - Coding hour 4
 
 ## Look ahead

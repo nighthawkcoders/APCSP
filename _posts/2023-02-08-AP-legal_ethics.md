@@ -7,7 +7,7 @@ description: This tech talk discusses legal and ethics in computing
 permalink: /legal
 categories: [5.E]
 type: ap
-week: 21
+week: 22
 ---
 
 ## Cost of Free

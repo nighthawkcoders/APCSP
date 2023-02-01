@@ -17,13 +17,13 @@ As programmers, you now have the possibility of creating algorithms.  It has bee
 
 ![]({{site.baseurl}}/images/computerbias.webp)
 
-### Intentional or Purposeful bias (Crossover Group Up)
+### Intentional or Purposeful bias (Crossover Group Up, 10 minutes)
 * Google "What age groups use Facebook" vs "... TikTok"?  What does the data say?  Is there purposeful exclusion in these platforms?  Is it harmful?  Should it be corrected?  Is it good business?
 * Why do virtual assistants have female voices? Amazon, Alexa Google, Apple Siri. Was this purposeful?  Is it harmful?  Should it be corrected?  Is it good business?
 * Talk about an algorithm that influences your decisions, think about these companies (ie FAANG - Facebook, Amazon, Apple,Netflix, Google)
 
 
-### Classroom
+### As Pairs (5 minutes)
 * Watch the video... [HP computers are racist](https://www.youtube.com/watch?v=t4DT3tQqgRM)
 * Come up with some thoughts on the video and be ready to discuss them as I call on you.  Here are some ideas...
     * Does the owner of the computer think this was intentional?

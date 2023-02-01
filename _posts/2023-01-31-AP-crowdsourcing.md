@@ -22,7 +22,7 @@ The more you crowdsource, the more you reach beyond your own community, the more
 * COVID data, it is easy to recognize areas that are contributing and not contributing.   This data has impacted all our lives and decision we make on attending public events, flying on planes, or wearing masks.  The community of data and analysts will spawn many new ways of thinking about data that impacts lives.  
 
 
-### Obtaining Data via Crowdsourcing (Crossover Group Up)
+### Obtaining Data via Crowdsourcing (Crossover Group Up, 10 minutes)
 * We have all experienced Crowdsourcing by using external data through API's, namely RapidAPI.  This data has influenced how we code and shown possibilities in obtaining and analyzing data. Discuss APIs you have used.
 * We have all participated in code Crowdsourcing by using GitHub.  Many of you have forked from the Teacher repository, or exchanged code with fellow students.  Not only can we analyze GitHub code, but we can obtain profiles and history about the persons coding history.  What is the biggest discovery you have found in GitHub?
 * [Kaggle datasets](https://www.kaggle.com/datasets) for code and science exploration.  The avenue of data points us youtube or netflix channels.  Analyzing crowd data helps us make decisions.  Exam top 10 to 20.  Did you see anything interesting?

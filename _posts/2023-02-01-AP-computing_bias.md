@@ -17,9 +17,10 @@ As programmers, you now have the possibility of creating algorithms.  It has bee
 
 ![]({{site.baseurl}}/images/computerbias.webp)
 
-### Intentional or Purposeful bias (Group up with Crossover)
+### Intentional or Purposeful bias (Crossover Group Up)
 * Google "What age groups use Facebook" vs "... TikTok"?  What does the data say?  Is there purposeful exclusion in these platforms?  Is it harmful?  Should it be corrected?  Is it good business?
 * Why do virtual assistants have female voices? Amazon, Alexa Google, Apple Siri. Was this purposeful?  Is it harmful?  Should it be corrected?  Is it good business?
+* Talk about an algorithm that influences your decisions, think about these companies (ie FAANG - Facebook, Amazon, Apple,Netflix, Google)
 
 
 ### Classroom

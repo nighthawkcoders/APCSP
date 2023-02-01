@@ -17,12 +17,12 @@ As programmers, you now have the possibility of creating algorithms.  It has bee
 
 ![]({{site.baseurl}}/images/computerbias.webp)
 
-### Intentional or Purposeful bias
-* Facebook vs TikTok, is there purposeful exclusion?  Is it harmful?  Should it be corrected?  Is it good business?
-* Amazon, Alexa Google, Apple Siri original had flaws in detecting accents or young voices, was this purposeful?  Is it harmful?  Should it be corrected?  Is it good business?
-* Netflix, do their algorithm purposely bias certain content to certain watchers?  Is it harmful?  Is it good business?
+### Intentional or Purposeful bias (Group up with Crossover)
+* Google "What age groups use Facebook" vs "... TikTok"?  What does the data say?  Is there purposeful exclusion in these platforms?  Is it harmful?  Should it be corrected?  Is it good business?
+* Why do virtual assistants have female voices? Amazon, Alexa Google, Apple Siri. Was this purposeful?  Is it harmful?  Should it be corrected?  Is it good business?
 
-### Blog Post Reflection
+
+### Classroom
 * Watch the video... [HP computers are racist](https://www.youtube.com/watch?v=t4DT3tQqgRM)
 * Come up with some thoughts on the video and be ready to discuss them as I call on you.  Here are some ideas...
     * Does the owner of the computer think this was intentional?
@@ -31,3 +31,6 @@ As programmers, you now have the possibility of creating algorithms.  It has bee
     * Is this harmful?  Was it intended to be harmful or exclude?
     * Should it be corrected?
     * What would you or should you do to produce a better outcome?
+
+## Hacks
+> Write summary/thoughts/conclusions from each of the exercises above.  Focus on avoiding Bias in algorithms or code you write.

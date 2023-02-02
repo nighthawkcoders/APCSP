@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Login using Flask | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Login using Flask" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Flask has an MVC login that handles common task of login, logout and maintaining a session." />
+<meta property="og:description" content="Flask has an MVC login that handles common task of login, logout and maintaining a session." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/02/08/PBL-login.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/02/08/PBL-login.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-08T00:00:00-06:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
+<meta property="twitter:title" content="Login using Flask" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-08T00:00:00-06:00","datePublished":"2023-02-08T00:00:00-06:00","description":"Flask has an MVC login that handles common task of login, logout and maintaining a session.","headline":"Login using Flask","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/02/08/PBL-login.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/02/08/PBL-login.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Login using Flask</h1><p class="page-description">Flask has an MVC login that handles common task of login, logout and maintaining a session.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-08T00:00:00-06:00" itemprop="datePublished">
+        Feb 8, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-02-08-PBL-login.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-02-08-PBL-login.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-02-08-PBL-login.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-02-08-PBL-login.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Flask_Login-Documentation">Flask_Login Documentation </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#MVC-initialization-init.py">MVC initialization init.py </a></li>
+<li class="toc-entry toc-h3"><a href="#MVC-MODEL:-model.py">MVC MODEL: model.py </a></li>
+<li class="toc-entry toc-h3"><a href="#MVC---VIEW">MVC - VIEW </a></li>
+<li class="toc-entry toc-h3"><a href="#MVC---CONTROL,-View-Driver-app_crud.py">MVC - CONTROL, View Driver app_crud.py </a></li>
+<li class="toc-entry toc-h3"><a href="#MVC---CONTROL-query.py">MVC - CONTROL query.py </a></li>
+<li class="toc-entry toc-h3"><a href="#Hacks:">Hacks: </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-02-08-PBL-login.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Flask_Login-Documentation">
+<a class="anchor" href="#Flask_Login-Documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flask_Login <a href="https://flask-login.readthedocs.io/en/latest/">Documentation</a><a class="anchor-link" href="#Flask_Login-Documentation"> </a>
+</h2>
+<blockquote>
+<p>Flask_Login provides user session management for Flask. It handles the common tasks of logging in, logging out, and remembering your("Remember Me")  users’ sessions over extended periods of time.</p>
+</blockquote>
+<ul>
+<li>Python/Flask Accounts and Login runtime example:<a href="https://csp.nighthawkcodingsociety.com/crud/">https://csp.nighthawkcodingsociety.com/crud/</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MVC-initialization-init.py">
+<a class="anchor" href="#MVC-initialization-init.py" aria-hidden="true"><span class="octicon octicon-link"></span></a>MVC initialization <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/__init__.py"><strong>init</strong>.py</a><a class="anchor-link" href="#MVC-initialization-init.py"> </a>
+</h3>
+<blockquote>
+<p>LoginManager is a part of Flask and need to be configured after you establish 'app'.  The below code needs to be adapted to JWT to work effectively with View that is run in a remote application.</p>
+</blockquote>
+<p>In a nutshell, how you can we authentication a Flask app that has a server side manged View:<em> Initialize Flask     </em> Use the Flask-Login library for session management</p>
+<ul>
+<li>Use the built-in Flask utility for hashing passwords  <ul>
+<li>Create Model  </li>
+<li>Use Flask-SQLAlchemy to create a User model. Add password encryption with werkzeug.security  </li>
+<li>Create Views    </li>
+<li>Create sign-up and login forms for the users to create accounts and log in</li>
+<li>Add protected pages to the app for logged in users only</li>
+<li>Control(check against DB):</li>
+<li>Flash error messages back to users when something goes wrong (email exists when on sign-up page or incorrect email/pwd when on login page)</li>
+<li>Use information from the user’s account to display on the profile page</li>
+<li>Logout user</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># __init__.py  </span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>  
+
+<span class="c1"># Setup of key Flask object (app)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">flask_login</span> <span class="kn">import</span> <span class="n">LoginManager</span>
+
+<span class="c1"># The most important part of an application that uses Flask-Login is the LoginManager class.</span>
+<span class="c1"># You should create one for your application like this:  </span>
+<span class="c1"># Setup LoginManager object (app)</span>
+<span class="n">login_manager</span> <span class="o">=</span> <span class="n">LoginManager</span><span class="p">()</span>
+
+<span class="c1"># The login manager contains the code that lets your application and Flask-Login work together, </span>
+<span class="c1"># such as how to load a user from an ID,  where to send users when they need to log in, and the like.  </span>
+<span class="c1"># Once the actual application object has been created, you can configure it for login with:</span>
+
+<span class="n">login_manager</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MVC-MODEL:-model.py">
+<a class="anchor" href="#MVC-MODEL:-model.py" aria-hidden="true"><span class="octicon octicon-link"></span></a>MVC MODEL: <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/cruddy/model.py">model.py</a><a class="anchor-link" href="#MVC-MODEL:-model.py"> </a>
+</h3>
+<blockquote>
+<p>Password encryption is implemented in model to protect user information.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># The class that you use to represent users needs to implement these properties and methods:  </span>
+<span class="c1"># is_authenticated, is_active, is_anonymous, get_id()</span>
+<span class="c1"># To make implementing a user class easier, you can inherit from UserMixin, which provides default implementations  </span>
+<span class="c1"># for all of these properties and methods.</span>
+
+<span class="kn">from</span> <span class="nn">flask_login</span> <span class="kn">import</span> <span class="n">UserMixin</span>
+<span class="c1"># Users DB is a collection Data Structure</span>
+<span class="k">class</span> <span class="nc">Users</span><span class="p">(</span><span class="n">UserMixin</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># define the Users schema</span>
+    <span class="n">userID</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">phone</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># constructor of a User object, initializes instance variables within object</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">phone</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">email</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="c1">#encrypt password</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phone</span> <span class="o">=</span> <span class="n">phone</span>
+
+<span class="c1"># required for login_user, overrides id (login_user default) to implemented userID</span>
+<span class="c1"># The method get_id() must return a str that uniquely identifies this user, and can be used to load the user  </span>
+<span class="c1"># from the user_loader callback.</span>
+<span class="k">def</span> <span class="nf">get_id</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">userID</span>
+
+<span class="c1">## Hashing Passwords With Werkzeug(German word meaning Tools)</span>
+
+<span class="sd">'''</span>
+<span class="sd">Any time you want to login to a website/app, you need a password. </span>
+<span class="sd">It's very important not to store passwords as-is in a database, instead you need to do something called hashing which converts the password into a hash which is a big long string of text and characters.</span>
+<span class="sd">Hashing is the process of scrambling raw information to the extent that it cannot reproduce it back to its original form. It takes a piece of information and passes it through a function that performs mathematical operations on the plaintext. </span>
+<span class="sd">This function is called the hash function, and the output is called the hash value/digest. Hashing is nearly impossible to revert, so if hackers get a hold of a database with hashed passwords, hash decoding is a futile task.  </span>
+<span class="sd">&lt;img width="520" alt="image" src="https://user-images.githubusercontent.com/88572244/161413976-32b5db62-56f4-4453-99c6-658bfbb995d1.png"&gt;</span>
+
+<span class="sd">The Secure Hash Algorithm(SHA) with a digest size of 256 bits, or the SHA 256 algorithm, is one of the most widely used hash algorithms. While there are other variants, SHA 256 has been at the forefront of real-world applications.</span>
+<span class="sd">Werkzeug is a comprehensive WSGI web application library. It is a WSGI toolkit that implements requests, response objects, and utility functions. </span>
+<span class="sd">This enables a web frame to be built on it. The Flask framework uses Werkzeug as one of its bases.**</span>
+
+<span class="sd">werkzeug.security methods generate_password_hash to create a hashed/encrypted password and, check_password_hash to check the hashed password</span>
+<span class="sd">'''</span>
+
+<span class="kn">from</span> <span class="nn">werkzeug.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
+
+ <span class="c1"># set password method is used to create encrypted password</span>
+<span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="sd">"""Create hashed password."""</span>
+    <span class="o">*</span> <span class="n">Procedural</span> <span class="n">Abstraction</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha256'</span><span class="p">)</span>
+
+<span class="c1"># check password to check versus encrypted password</span>
+<span class="k">def</span> <span class="nf">is_password_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="sd">"""Check hashed password."""</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MVC---VIEW">
+<a class="anchor" href="#MVC---VIEW" aria-hidden="true"><span class="octicon octicon-link"></span></a>MVC - VIEW<a class="anchor-link" href="#MVC---VIEW"> </a>
+</h3>
+<blockquote>
+<p>Password management has two parts.</p>
+<ul>
+<li>Sign-up <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/cruddy/templates/cruddy/authorize.html">authorize.html</a>, - Login <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/cruddy/templates/cruddy/login.html">login.html</a>
+</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">&lt;</span><span class="err">!</span><span class="o">---</span>
+<span class="c1"># authorize.html</span>
+<span class="c1"># The conventional HTML Sign-up screen </span>
+<span class="o">--&gt;</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"container bg-secondary py-4"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"p-5 mb-4 bg-light text-dark rounded-3"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">form</span> <span class="n">method</span><span class="o">=</span><span class="s2">"POST"</span> <span class="n">ID</span><span class="o">=</span><span class="s2">"authUser"</span> <span class="n">action</span><span class="o">=</span><span class="p">{{</span><span class="n">url_for</span><span class="p">(</span><span class="s1">'crud.crud_authorize'</span><span class="p">)}}</span> <span class="o">&gt;</span>   <span class="o">&lt;</span><span class="err">!</span><span class="o">---</span> <span class="n">url_for</span> <span class="ow">is</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">servers</span> <span class="n">side</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">th</span><span class="o">&gt;&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"user_name"</span><span class="o">&gt;</span><span class="n">Username</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">th</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nb">id</span><span class="o">=</span><span class="s1">'user_name'</span> <span class="n">name</span><span class="o">=</span><span class="s2">"user_name"</span> <span class="n">size</span><span class="o">=</span><span class="s2">"20"</span> <span class="n">required</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">th</span><span class="o">&gt;&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"email"</span><span class="o">&gt;</span><span class="n">Email</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">th</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"email"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"email"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"email"</span> <span class="n">size</span><span class="o">=</span><span class="s2">"20"</span> <span class="n">required</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="n">Hack</span> <span class="c1">#1 Add Phone Number to Sign-Up screen  </span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">th</span><span class="o">&gt;&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"password1"</span><span class="o">&gt;</span><span class="n">Password</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">th</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"password"</span> <span class="nb">id</span><span class="o">=</span><span class="s1">'password1'</span> <span class="n">name</span><span class="o">=</span><span class="s2">"password1"</span> <span class="n">size</span><span class="o">=</span><span class="s2">"20"</span> <span class="n">required</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">th</span><span class="o">&gt;&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s2">"password2"</span><span class="o">&gt;</span><span class="n">Password</span> <span class="n">Confirmation</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">th</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"password"</span> <span class="nb">id</span><span class="o">=</span><span class="s1">'password2'</span> <span class="n">name</span><span class="o">=</span><span class="s2">"password2"</span> <span class="n">size</span><span class="o">=</span><span class="s2">"20"</span> <span class="n">required</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">th</span><span class="o">&gt;&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"submit"</span> <span class="n">value</span><span class="o">=</span><span class="s2">"Submit"</span><span class="o">&gt;&lt;/</span><span class="n">th</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;&lt;</span><span class="n">td</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="p">{{</span><span class="n">url_for</span><span class="p">(</span><span class="s1">'crud.crud_login'</span><span class="p">)}}</span><span class="o">&gt;</span><span class="n">Log</span> <span class="n">In</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">td</span><span class="o">&gt;&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>    <span class="o">&lt;</span><span class="err">!</span><span class="o">---</span> <span class="n">url_for</span> <span class="ow">is</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">servers</span> <span class="n">side</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MVC---CONTROL,-View-Driver-app_crud.py">
+<a class="anchor" href="#MVC---CONTROL,-View-Driver-app_crud.py" aria-hidden="true"><span class="octicon octicon-link"></span></a>MVC - CONTROL, View Driver <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/cruddy/app_crud.py#L22-L33">app_crud.py</a><a class="anchor-link" href="#MVC---CONTROL,-View-Driver-app_crud.py"> </a>
+</h3>
+<ul>
+<li>Note. a function that needs a login will required @login_required annotation</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">flask_login</span><span class="o">.</span><span class="n">login_required</span>
+<span class="c1"># If you decorate a view(route) with this, it will ensure that the current user is logged in and authenticated before calling the actual view. </span>
+<span class="c1"># (If they are not, it calls the LoginManager.unauthorized callback.). </span>
+<span class="c1"># Use this example for Hack #3.</span>
+<span class="nd">@app_crud</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<span class="nd">@login_required</span>  <span class="c1"># Flask-Login uses this decorator to restrict access to logged in users</span>
+<span class="k">def</span> <span class="nf">crud</span><span class="p">():</span>
+    <span class="sd">"""obtains all Users from table and loads Admin Form"""</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"crud.html"</span><span class="p">,</span> <span class="n">table</span><span class="o">=</span><span class="n">users_all</span><span class="p">())</span>
+
+<span class="c1"># Unauthorized users do not get access to the SQL CRUD</span>
+<span class="c1"># Flask-Login directs unauthorized users to this unauthorized_handler</span>
+<span class="nd">@login_manager</span><span class="o">.</span><span class="n">unauthorized_handler</span>
+<span class="k">def</span> <span class="nf">unauthorized</span><span class="p">():</span>
+    <span class="sd">"""Redirect unauthorized users to Login page."""</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">'crud.crud_login'</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MVC---CONTROL-query.py">
+<a class="anchor" href="#MVC---CONTROL-query.py" aria-hidden="true"><span class="octicon octicon-link"></span></a>MVC - CONTROL <a href="https://github.com/nighthawkcoders/nighthawk_csp/blob/master/cruddy/query.py">query.py</a><a class="anchor-link" href="#MVC---CONTROL-query.py"> </a>
+</h3>
+<blockquote>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">__init__</span> <span class="kn">import</span> <span class="n">login_manager</span><span class="p">,</span> <span class="n">db</span>
+<span class="kn">from</span> <span class="nn">cruddy.model</span> <span class="kn">import</span> <span class="n">Users</span>
+<span class="kn">from</span> <span class="nn">flask_login</span> <span class="kn">import</span> <span class="n">current_user</span><span class="p">,</span> <span class="n">login_user</span><span class="p">,</span> <span class="n">logout_user</span>
+
+<span class="c1"># login user based off of email and password</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="c1"># sequence of checks</span>
+    <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">:</span>  <span class="c1"># return true if user is currently logged in</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">elif</span> <span class="n">is_user</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>  <span class="c1"># return true if email and password match</span>
+        <span class="n">user_row</span> <span class="o">=</span> <span class="n">user_by_email</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+        <span class="n">login_user</span><span class="p">(</span><span class="n">user_row</span><span class="p">)</span>  <span class="c1"># sets flask login_user</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># default condition is any failure</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="c1"># this function is needed for Flask-Login to work.</span>
+<span class="c1"># User_loader callback. This callback is used to reload the user object from the user ID stored in the session.   </span>
+<span class="c1"># It should take the str ID of a user, and return the corresponding user object.  </span>
+<span class="c1"># It should return None (not raise an exception) if the ID is not valid. </span>
+
+<span class="nd">@login_manager</span><span class="o">.</span><span class="n">user_loader</span>
+<span class="k">def</span> <span class="nf">user_loader</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+    <span class="sd">"""Check if user login status on each page protected by @login_required."""</span>
+    <span class="k">if</span> <span class="n">user_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Users</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="c1"># Authorize new user requires user_name, email, password</span>
+<span class="k">def</span> <span class="nf">authorize</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_user</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>   <span class="c1">#email already exist in DB</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># auth_user is an object of class Users</span>
+        <span class="n">auth_user</span> <span class="o">=</span> <span class="n">Users</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+            <span class="n">phone</span><span class="o">=</span><span class="s2">"1234567890"</span>  <span class="c1"># this should be added to authorize.html Hack #1</span>
+        <span class="p">)</span>
+        <span class="c1"># Password is encrypted in the init method of the class with self.set_password(password)</span>
+        <span class="c1"># Add it to the auth_user object</span>
+        <span class="n">auth_user</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="c1"># logout user</span>
+<span class="n">Hack</span> <span class="c1">#2 Add logout to CRUD screen  </span>
+<span class="k">def</span> <span class="nf">logout</span><span class="p">():</span>
+    <span class="n">logout_user</span><span class="p">()</span>  <span class="c1"># removes login state of user from session</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hacks:">
+<a class="anchor" href="#Hacks:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks:<a class="anchor-link" href="#Hacks:"> </a>
+</h3>
+<p>Hack #1 Add DOB to Sign Up screen<br>
+Hack #2 Add logout to Menu Bar. Display logged in User or Logout on the menu bar<br>
+Hack #3 Add login_required to portion(s) of project</p>
+<p>Common login features.</p>
+<ul>
+<li>Validate email/password on login page</li>
+<li>Validate email, check for duplicate email on sign up page</li>
+<li>Add lock symbol to menu items when running as anonymous</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/2023/02/08/PBL-login.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

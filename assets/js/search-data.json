@@ -146,7 +146,7 @@
     
         ,"post13": {
             "title": "CI/CD with Github and AWS",
-            "content": "",
+            "content": "Setting up Automatic Deployment . This is how to do automatic deployment using GitHub actions, which can run code after a push is made. . First, a secret will need to be set up from your AWS PEM file for your SSH key, in the Repository Settings &gt; Secrets create a new secret called SSH_KEY | This SSH_KEY should contain encoded output of your AWS PEM base64 -w 0 aws_ssh_key.pem (this encodes the key to use base64 ASCII characters). The pem file for your server can be found in .ssh director on &quot;theway&quot;. | GitHub Actions can be specified in the .github/workflows directory. In your repository create a file called .github/workflows/deploy_project.yml with the following content (this decodes the base64 key, uses SSH to update deployment project and rebuild docker container) | . yml name:Deploy to Serveron: [push] jobs: AWS-Deploy: runs-on: ubuntu-latest steps: - run: echo $ { { secrets.SSH_KEY } } | base64 -d &gt; key.pem - run: chmod 400 key.pem - run: ssh -i key.pem -o StrictHostKeyChecking=no ubuntu@[your server ip/domain name] &#39;cd ~/[your git folder]; git pull; docker-compose down; docker-compose up -d --build&#39; .",
             "url": "https://nighthawkcoders.github.io/APCSP/2023/02/08/PBL-cd_ci.html",
             "relUrl": "/2023/02/08/PBL-cd_ci.html",
             "date": " • Feb 8, 2023"

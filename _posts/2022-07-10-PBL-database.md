@@ -56,13 +56,17 @@ tags: [javascript, fetch, get, post, put]
 <script>
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
   //const url = "http://localhost:8086/api/users"
   const url = "https://flask.nighthawkcodingsociety.com/api/users"
   const create_fetch = url + '/create';
   const read_fetch = url + '/';
-  // load users on page entry
+
+  // Load users on page entry
   read_users();
 
+
+  // Display User Table, data is fetched from Backend Database
   function read_users() {
     // prepare fetch options
     const read_options = {
@@ -72,17 +76,16 @@ tags: [javascript, fetch, get, post, put]
       credentials: 'omit', // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
       },
     };
 
-    // fetch the API
+    // fetch the data from API
     fetch(read_fetch, read_options)
-        // response is a RESTful "promise" on any successful fetch
+      // response is a RESTful "promise" on any successful fetch
       .then(response => {
         // check for response errors
         if (response.status !== 200) {
-            const errorMsg = 'Database response error: ' + response.status;
+            const errorMsg = 'Database read error: ' + response.status;
             console.log(errorMsg);
             const tr = document.createElement("tr");
             const td = document.createElement("td");
@@ -133,16 +136,16 @@ tags: [javascript, fetch, get, post, put]
     // Fetch API call to the database to create a new user
     fetch(create_fetch, requestOptions)
       .then(response => {
-        // prepare HTML search result container for new output
-        const resultContainer = document.getElementById("result");
         // trap error response from Web API
         if (response.status !== 200) {
-            const errorMsg = 'Database response error: ' + response.status;
-            console.log(errorMsg);
-            // Email must be unique, no duplicates allowed
-            document.getElementById("pswError").innerHTML =
-                "Email already exists in the table";
-            return;
+          const errorMsg = 'Database create error: ' + response.status;
+          console.log(errorMsg);
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
+          return;
         }
         // response contains valid result
         response.json().then(data => {
@@ -155,28 +158,28 @@ tags: [javascript, fetch, get, post, put]
 
   function add_row(data) {
     const tr = document.createElement("tr");
-      const uid = document.createElement("td");
-      const name = document.createElement("td");
-      const posts = document.createElement("td")
-      const dob = document.createElement("td");
-      const age = document.createElement("td");
-    
+    const uid = document.createElement("td");
+    const name = document.createElement("td");
+    const posts = document.createElement("td")
+    const dob = document.createElement("td");
+    const age = document.createElement("td");
+  
 
-      // obtain data that is specific to the API
-      uid.innerHTML = data.uid; 
-      name.innerHTML = data.name; 
-      posts.innerHTML = data.posts.length;
-      dob.innerHTML = data.dob; 
-      age.innerHTML = data.age; 
+    // obtain data that is specific to the API
+    uid.innerHTML = data.uid; 
+    name.innerHTML = data.name; 
+    posts.innerHTML = data.posts.length;
+    dob.innerHTML = data.dob; 
+    age.innerHTML = data.age; 
 
-      // add HTML to container
-      tr.appendChild(uid);
-      tr.appendChild(name);
-      tr.appendChild(posts);
-      tr.appendChild(dob);
-      tr.appendChild(age);
+    // add HTML to container
+    tr.appendChild(uid);
+    tr.appendChild(name);
+    tr.appendChild(posts);
+    tr.appendChild(dob);
+    tr.appendChild(age);
 
-      resultContainer.appendChild(tr);
+    resultContainer.appendChild(tr);
   }
 
 </script>

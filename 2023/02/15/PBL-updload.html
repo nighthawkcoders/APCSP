@@ -170,9 +170,10 @@ See <a href="https://github.com/nighthawkcoders/pages_python/blob/main/contenty/
 </h3>
 <p>See <a href="https://github.com/nighthawkcoders/pages_python/blob/main/contenty/templates/contenty/content.html">content.html</a>.<br>
 From a high-level perspective, a client uploading a file is treated the same as any other form data submission. In other words, you have to define an HTML form with a file field in it.  The HTML <code>&lt;input type="file"&gt;</code> defines a file-select field and a "Browse" button for file uploads.</p>
-<p>An HTTP multipart request is an HTTP request that HTTP clients construct to send files and data over to an HTTP Server. It is commonly used by browsers and HTTP clients to upload files to the server.  This is server side implementation and needs to be adapted for JavaScript.<br>
-            <code>&lt;form id="upload" enctype="multipart/form-data" action = "" method = "POST"&gt;</code><br>
-The enctype attribute defines how the browser should format the data before it is submitted to the server.<br>
+<p>An HTTP multipart request is an HTTP request that HTTP clients construct to send files and data over to an HTTP Server. It is commonly used by browsers and HTTP clients to upload files to the server.  This is server side implementation and needs to be adapted for JavaScript.</p>
+
+<pre><code>&lt;form id="upload" enctype="multipart/form-data" action = "url_for('content.upload')" method = "POST"&gt;</code></pre>
+<p>The enctype attribute defines how the browser should format the data before it is submitted to the server.<br>
 multipart/form-data: This format is required when at least one of the fields in the form is a file field.</p>
 <h3 id="Refer-to-the-files-in-upload.py-folder-and-start-implementing-uploads-in-your-sponsor-project.">
 <a class="anchor" href="#Refer-to-the-files-in-upload.py-folder-and-start-implementing-uploads-in-your-sponsor-project." aria-hidden="true"><span class="octicon octicon-link"></span></a>Refer to the files in <a href="https://github.com/nighthawkcoders/pages_python/blob/main/uploady/app_upload.py">upload.py</a> folder and start implementing uploads in your sponsor project.<a class="anchor-link" href="#Refer-to-the-files-in-upload.py-folder-and-start-implementing-uploads-in-your-sponsor-project."> </a>

@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Week of 05-08",
-            "content": "Plans Week 33 . Monday: AP Exam Day | Tuesday: | Wednesday: | Thursday: | Friday: | . Look ahead .",
+            "content": "Plans Week 33 . Monday: AP Exam Day | Tuesday: Programming Labs, and Projects: Stack from ArrayList and Queues | Wednesday: | Thursday: | Friday: | . Look ahead .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/33",
             "relUrl": "/points/33",
             "date": " • May 8, 2023"
@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Week of 04-24",
-            "content": "Plans Week 31 . Monday: Live Review | Tuesday: Data Structures Week 5 | Wednesday: | Thursday: | Friday: AP MCQ 2020 Practice Exam | . Look ahead .",
+            "content": "Plans Week 31 . Monday: Live Review | Tuesday: Data Structures: Sort, Linear Search, Binary Search | Wednesday: | Thursday: | Friday: AP MCQ 2020 Practice Exam | . Look ahead .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/31",
             "relUrl": "/points/31",
             "date": " • Apr 24, 2023"
@@ -36,7 +36,7 @@
     
         ,"post3": {
             "title": "Week of 04-17",
-            "content": "Plans Week 30 . Monday: Live Review | Tuesday: Data Structures Week 4 | Wednesday: | Thursday: | Friday: AP MCQ 2018 Practice Exam | . Look ahead .",
+            "content": "Plans Week 30 . Monday: Data Structures: Search and Sorting Algorithms: Bubble, Insertion, Selection, Merge | Tuesday: | Wednesday: Big Idea 2 Review | Thursday: | Friday: AP MCQ 2018 Practice Exam | . Look ahead .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/30",
             "relUrl": "/points/30",
             "date": " • Apr 17, 2023"
@@ -47,7 +47,7 @@
     
         ,"post4": {
             "title": "Week of 04-03",
-            "content": "Plans Week 29 . Monday: Data Structures Week 3 | Tuesday: | Wednesday: | Thursday: | Friday: Big Idea 3 Review | . Look ahead .",
+            "content": "Plans Week 29 . Monday: Data Structures: Hashmaps, Sets, Hash Tables, Hashing and Collisions | Tuesday: | Wednesday: Big Idea 3 Part 2 Review | Thursday: | Friday: Live Review | . Look ahead .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/29",
             "relUrl": "/points/29",
             "date": " • Apr 3, 2023"
@@ -58,7 +58,7 @@
     
         ,"post5": {
             "title": "Week of 03-27",
-            "content": "Plans Week 28 . Monday: MCQ Test # 4 | Tuesday: Data Structures Week 2 | Wednesday: | Thursday: Big Idea 4 Review | Friday: Live Review | . Look ahead .",
+            "content": "Plans Week 28 . Monday: MCQ Test # 4 | Tuesday: Data Structures: 1D Arrays, 2D Arrays, ArrayList | Wednesday: | Thursday: Big Idea 3 Part 1 Review | Friday: Live Review | . Look ahead .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/28",
             "relUrl": "/points/28",
             "date": " • Mar 27, 2023"
@@ -69,7 +69,7 @@
     
         ,"post6": {
             "title": "Week of 03-20",
-            "content": "Plans Week 27 . Monday: Live Review | Tuesday: Data Structures Week 1 | Wednesday: | Thursday: Big Idea 5 Review | Friday: Live Review | . Look ahead .",
+            "content": "Plans Week 27 . Monday: Live Review | Tuesday: Data Structures: Space and Time Complexity and Big Oh Notation | Wednesday: | Thursday: Big Idea 5 Review | Friday: Live Review | . Look ahead .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/27",
             "relUrl": "/points/27",
             "date": " • Mar 20, 2023"
@@ -179,7 +179,7 @@
     
         ,"post16": {
             "title": "Week of 02-06, Continuous Integration / Continuous Delivery starts.",
-            "content": "Plans Week 22 . Student work on Issues from projects. DevOps engineer puts CI/CD processes in place. . Monday: Live Review | Tuesday: Work Day - Coding hour 5 | Wednesday:Tech Talk: CI/CD on Flask and Unit 5.5 and 5.6 | Thursday: Work Day - Coding hour 6 | Friday: Work Day - Coding hour 7. Update of review tickets with tangible artifacts per person. | . Look ahead . Big Coding week, focus on completing issues . Monday: DevOps, Scrum Master, Frontend, Backend Live Reviews | .",
+            "content": "Plans Week 22 . Student work on Issues from projects. DevOps engineer puts CI/CD processes in place. . Monday: Live Review - Scrum Master + Coding Hour 5.a | Tuesday: Live Review - Individuals + Coding hour 5.b | Wednesday:Tech Talk: CI/CD on Flask and Unit 5.5 and 5.6 | Thursday: Work Day - Coding hour 6 | Friday: Work Day - Coding hour 7. Update of review tickets with tangible artifacts per person. | . Look ahead . Big Coding week, focus on completing issues . Monday: DevOps, Scrum Master, Frontend, Backend Live Reviews | .",
             "url": "https://nighthawkcoders.github.io/APCSP/points/22",
             "relUrl": "/points/22",
             "date": " • Feb 6, 2023"

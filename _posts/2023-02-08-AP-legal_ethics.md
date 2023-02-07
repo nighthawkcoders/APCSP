@@ -52,4 +52,5 @@ Creative Commons, Open Source are free terminologies!  However, businesses will 
 
 # Blog Post Reflection
 1. When you create a GitHub repository it requests a license type.  Review the license types in relationship to this Tech Talk and make some notes in GitHub pages.
-1. Make a license for your personal and Team project.  Document license you picked and why.
+2. Make a license for your personal and Team project.  Document license you picked and why.
+3. Summarize the discussion from class.

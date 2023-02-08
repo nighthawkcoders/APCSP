@@ -57,4 +57,4 @@ Creative Commons, Open Source are free terminologies!  However, businesses will 
 # Blog Post Reflection
 1. When you create a GitHub repository it requests a license type.  Review the license types in relationship to this Tech Talk and make some notes in your personal blog.
 2. In your blog, summarize the discussions and personal analysis on Software Licenses/Options, Digital Rights, and other Legal and Ethical thoughts from this College Board topic.
-3. Make a license for your personal (blog) and Team repositories for the CPT project.  Be sure to have a license for both Team GitHub repositories (frontend/backend).  Document license(s) you picked and why.  FYI, frontend, since it is built on GitHub pages may come with a license and restrictions.
+3. Make a license for your personal (blog) and Team repositories for the CPT project.  Be sure to have a license for both Team GitHub repositories (frontend/backend).  Document license(s) you picked and why.  FYI, frontend, since it is built on GitHub pages may come with a license and restrictions.  Document in blog how team made license choice and process of update.

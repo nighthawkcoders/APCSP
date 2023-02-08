@@ -11,7 +11,7 @@ week: 22
 ---
 
 ## Cost of Free
-In my most recent years in industry, there were many Lawyers making a profession on Patents and how they can be impacted on General Public Licensing (GPL).  
+In Mr Mortensen's most recent years in industry, there were many Lawyers making a profession on Patents and how they can be impacted on General Public Licensing (GPL).  
 
 Qualcomm makes its **money on patents**, if you use GPL software you could be voiding your rights to charge for software and patents.  **Open Source** by nature, specifically GPL, says any derivative work is free and code should be shared.   Qualcomm wants all derivative work to **require a royalty payment** payment, also anyone who uses the idea/patent pays royalty.
 
@@ -31,12 +31,16 @@ This may sound like a simple problem, but think about the **Students of Today**,
 The Creative Commons CC0 Public Domain Dedication waives copyright interest in a work you've created and dedicates it to the world-wide public domain.
 
 ### Open Source [MIT License](https://choosealicense.com/licenses/mit/)
-This license in friendly to someone like Qualcomm!  This allows using code freely and making and distributing **closed source versions**.
+This license in friendly to someone like Qualcomm!  This allows using code freely and making and distributing **closed source versions**.  Typically, the author of software with MIT License want credit.  Credit could be as simple as adding the authors name in comments.
+
+Close source means the GitHub project could be private.
 
 ### Open Source GPL License
 The GNU GPLv3 also lets people do almost anything they want with your project, **except** distributing closed source versions.
 
-For a company like Qualcomm, they are required to institute many practices to deliver their code in parts.  Isolating their patent and secret code, far away from the GPL Creative Commons code.  In fact, a company that is protecting their patents may need to division engineers, split distribution code, etc.   Even though, the customer of the derivative work is required to put the code back together again to make it work.
+Open source means the GitHub project must be public.
+
+For a company like Qualcomm, they are required to institute many practices to deliver their code in parts (public vs private).  Isolating their patent and secret code, far away from the GPL or Creative Commons code.  In fact, a company that is protecting their patents may need to division engineers, split distribution, not deploy to public, etc.   After distribution, the customer of the Patented (ie Qualcomm) product is required to put the public/private domain code back together again.
 
 
 ## Legal and Ethically
@@ -44,13 +48,13 @@ We need to comply with the terms of licenses.  We need to cite sources.  (I am p
 
 As consumers, we have become aware that Music and Movie companies own content.  These companies build DRM (Digital Rights Management) software to protect, play, and/or distribute content.  Most of us buy subscriptions to services.  However, some figure out ways to bypass systems and allow download.  Often we will see these sites disappear, as they are illegal.
 
-In software, it can be more complicated to understand all the Creative Commons licenses and its impact to our own ideas and businesses.   Mostly, if we use things in class, there is no problem with Open Source as it is considered educational use.   Creative Commons software has enabled amazing innovation as we are able to do so much for free, as we have done in this class.  However, Individuals and Companies are required to figure out techniques and business models in order to use Open Source software according to terms of license.  
+In software, it can be more complicated to understand all the Creative Commons licenses and its impact to our own ideas and businesses.   Mostly, if we use things in class, there is "no problem" with Open Source as our usage is considered educational use.   Creative Commons software has enabled amazing innovation as we are able to do so much for free, as we have done in this class.  However, Individuals and Companies are required to figure out techniques and business models in order to use Open Source software according to terms of license.  
 
-Long ago, I remember being amazed that Red Hat was not selling its Linux distribution, they were giving away the software.  They had to as the terms of the license were GPL.   However, as an early pioneers in Linux distributions, they established a business model around buying their support agreement.  They rose in fortune, became a public company, and had an amazing Initial Public Offering (IPO).  Many, many vendors have followed the Red Hat model in building free distributions and establish unique business models.  Qualcomm figured out how to mix Patent and GPL businesses and have flourished since abandoning all proprietary, to include Android in its very complicated business model.
+Long ago, I remember being amazed that Red Hat was not selling its Linux distribution, they were giving away the software.  They had to! This was in the terms of the licenses they were using, GPL.   However, as an early pioneers in Linux distributions, they established a business model around buying their support agreement.  They rose in fortune, became a public company, and had an amazing Initial Public Offering (IPO).  Many, many vendors have followed the Red Hat model in building free distributions and establishing unique business models.  Qualcomm figured out how to mix Patent and GPL businesses and have flourished since abandoning all proprietary, to include Android in its very complicated business model using Android.
 
 Creative Commons, Open Source are free terminologies!  However, businesses will not last without income.  And today, businesses won't last without engineers pulling Open Source software.
 
 # Blog Post Reflection
-1. When you create a GitHub repository it requests a license type.  Review the license types in relationship to this Tech Talk and make some notes in GitHub pages.
-2. Make a license for your personal and Team project.  Document license you picked and why.
-3. Summarize the discussion from class.
+1. When you create a GitHub repository it requests a license type.  Review the license types in relationship to this Tech Talk and make some notes in your personal blog.
+2. In your blog, summarize the discussions and personal analysis on Software Licenses/Options, Digital Rights, and other Legal and Ethical thoughts from this College Board topic.
+3. Make a license for your personal (blog) and Team repositories for the CPT project.  Be sure to have a license for both Team GitHub repositories (frontend/backend).  Document license(s) you picked and why.  FYI, frontend, since it is built on GitHub pages may come with a license and restrictions.

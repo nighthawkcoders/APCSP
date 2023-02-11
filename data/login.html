@@ -4,23 +4,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Page 9 of 9 for APCSP | AP Computer Science Principles course materials.</title>
+<title>JWT Login | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="APCSP" />
+<meta property="og:title" content="JWT Login" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="AP Computer Science Principles course materials." />
-<meta property="og:description" content="AP Computer Science Principles course materials." />
-<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/page9/" />
-<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/page9/" />
+<meta name="description" content="A login screen that interacts with Java and obtains a JWT" />
+<meta property="og:description" content="A login screen that interacts with Java and obtains a JWT" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/data/login" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/data/login" />
 <meta property="og:site_name" content="APCSP" />
-<meta property="og:image" content="https://nighthawkcoders.github.io/APCSP/images/logo.png" />
-<meta property="og:type" content="website" />
-<link rel="prev" href="https://nighthawkcoders.github.io/APCSP/page8/" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/logo.png" />
-<meta property="twitter:title" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-10T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="JWT Login" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"AP Computer Science Principles course materials.","headline":"APCSP","image":"https://nighthawkcoders.github.io/APCSP/images/logo.png","url":"https://nighthawkcoders.github.io/APCSP/page9/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-10T00:00:00-05:00","datePublished":"2022-07-10T00:00:00-05:00","description":"A login screen that interacts with Java and obtains a JWT","headline":"JWT Login","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/data/login"},"url":"https://nighthawkcoders.github.io/APCSP/data/login"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,74 +70,82 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h2 id="objectives">Objectives</h2>
+        <table>
+    <tr>
+        <td><img src="/APCSP//images/logo.png" height="60" title="Data" alt="" /></td>
+        <td><a href="/APCSP/api/overview">Overview</a></td>
+        <td><a href="/APCSP/data/covid">Covid19 RapidAPI</a></td>
+        <td><a href="/APCSP/data/jokes">Jokes API</a></td>
+        <td><a href="/APCSP/data/database">Users Database</a></td>
+    </tr>
+</table>
 
-<div>
+<form action="javascript:login_user()">
+    <p><label>
+        User ID:
+        <input type="text" name="uid" id="uid" required="" />
+    </label></p>
+    <p><label>
+        Password:
+        <input type="password" name="password" id="password" required="" />
+    </label></p>
+    <p>
+        <button>Login</button>
+    </p>
+</form>
 
-    <div style="float: left; margin: 0px 10px 10px 0px;">
-        <a href="https://docs.google.com/document/d/1ibm_4fqSgfnRZKhUns2vVe83MVes70Ts/edit?usp=sharing&amp;ouid=115023546255406346351&amp;rtpof=true&amp;sd=true">
-            <img atl="Course Framework" src="/APCSP/images/apcsp.png" title="Course Framework inspired by Domingo David" width="200" />
-        </a>
-    </div>
-    <div>
-        <hr />
-        <p>
-            This Conceptual Framework teaches College Boards 5 Big Ideas of AP Computer Science Principles, Python, JavaScript, and Web Site application development together in an integrated fashion.  The purpose is to teach College Board requirements while adding languages, tools, frameworks, and methodologies that meet Career Technical Education (CTE) needs.  The outcome is preparing the High School student for the AP Test and simultaneously building the skills required for Computer Science internships.
-        </p>
-        <hr />
-    </div>
-
-</div>
-
-<h2 id="blogs">Blogs</h2>
+<script>
+    // URL for deployment
+    var url = "https://flask.nighthawkcodingsociety.com"
+    // Comment out next line for local testing
+    url = "http://localhost:8085"
+    // Authenticate endpoint
+    const login_url = url + '/api/users/authenticate';
 
 
+    function login_user(){
+        // Set body to include login data
+        const body = {
+            uid: document.getElementById("uid").value,
+            password: document.getElementById("password").value,
+        };
+
+        // Set Headers to support cross origin
+        const requestOptions = {
+            method: 'GET',
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            // credentials: 'include', // include, *same-origin, omit
+            body: JSON.stringify(body),
+            headers: {
+                "content-type": "application/json",
+            },
+        };
+
+        // Fetch JWT
+        fetch(login_url, requestOptions)
+        .then(response => {
+            // trap error response from Web API
+            if (response.status !== 200) {
+                const errorMsg = 'Login error: ' + response.status;
+                console.log(errorMsg);
+                localStorage.removeItem("uid");
+                localStorage.removeItem("visitor");
+                return;
+            }
+            // Valid response will contain json data
+            response.json().then(data => {
+                // Set user data to local storage
+                localStorage.setItem("uid", uid);
+                localStorage.setItem("visitor", data.name);
+            })
+        })
+    }
 
 
-  
+</script>
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
 
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/APCSP/csintro">
-            Intro to Computer Science Ideas
-          </a>
-        </h3>
-        <p class="post-meta-description">Preliminary ideas for a intro course for computer science</p>
-          <p class="post-meta">Jun 1, 2022</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/APCSP/nbdevinstall">
-            NBDEV/Quarto Installation Guide
-          </a>
-        </h3>
-        <p class="post-meta-description">This will be a step by step guide for setting up a NBDEV Blog using Quarto</p>
-          <p class="post-meta">Jun 1, 2022</p>
-      </div>
-  </div></li></ul>
-
-    
-      <div class="pager">
-        <ul class="pagination">
-          <li><a href="/APCSP/page8/" class="previous-page">8</a></li>
-          <li><div class="current-page">9</div></li>
-          <li><div class="pager-edge">•</div></li>
-        </ul>
-      </div></div>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/APCSP/"></data>

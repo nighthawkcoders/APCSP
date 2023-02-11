@@ -1223,6 +1223,17 @@
   
     
         ,"post111": {
+            "title": "JWT Login",
+            "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . User ID: . Password: . Login .",
+            "url": "https://nighthawkcoders.github.io/APCSP/data/login",
+            "relUrl": "/data/login",
+            "date": " • Jul 10, 2022"
+        }
+        
+    
+  
+    
+        ,"post112": {
             "title": "Fetch of Backend Jokes",
             "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . Joke HaHa Boohoo .",
             "url": "https://nighthawkcoders.github.io/APCSP/data/jokes",
@@ -1233,7 +1244,7 @@
     
   
     
-        ,"post112": {
+        ,"post113": {
             "title": "Database CRUD Operations",
             "content": "| Overview | Covid19 RapidAPI | Jokes API | Users Database | . Database API . User ID Name Posts DOB Age . Create API . User ID: . Name: . Password: Verify Password: . Birthday: . Create .",
             "url": "https://nighthawkcoders.github.io/APCSP/data/database",
@@ -1244,7 +1255,7 @@
     
   
     
-        ,"post113": {
+        ,"post114": {
             "title": "Classic Snake Game",
             "content": "| Overview | Tutorial | Calculator | Binary | Grades | Graph | Life | Snake | . Snake score: 0 . . Welcome to Snake, press space to begin . new game settings Game Over, press space to try again . new game settings Settings Screen, press space to go back to playing . new game Speed: Slow Normal Fast . Wall: On Off .",
             "url": "https://nighthawkcoders.github.io/APCSP/frontend/snake",
@@ -1255,7 +1266,7 @@
     
   
     
-        ,"post114": {
+        ,"post115": {
             "title": "Game of Life",
             "content": "| Overview | Tutorial | Calculator | Binary | Grades | Graph | Life | Snake | . Remix of Game of Life . start step",
             "url": "https://nighthawkcoders.github.io/APCSP/frontend/life",
@@ -1266,7 +1277,7 @@
     
   
     
-        ,"post115": {
+        ,"post116": {
             "title": "Graphing App",
             "content": "| Overview | Tutorial | Calculator | Binary | Grades | Graph | Life | Snake | . Graphing grid .",
             "url": "https://nighthawkcoders.github.io/APCSP/frontend/graph",
@@ -1277,7 +1288,7 @@
     
   
     
-        ,"post116": {
+        ,"post117": {
             "title": "Grade Calculator",
             "content": "| Overview | Tutorial | Calculator | Binary | Grades | Graph | Life | Snake | . Grade Calculator . Total : 0.0 Count : 0.0 Average : 0.0 Input scores, press tab to add new number:",
             "url": "https://nighthawkcoders.github.io/APCSP/frontend/grades",
@@ -1288,7 +1299,7 @@
     
   
     
-        ,"post117": {
+        ,"post118": {
             "title": "Binary Math",
             "content": "| Overview | Tutorial | Calculator | Binary | Grades | Graph | Life | Snake | . Binary Math with Conversions . Plus Binary Octal Hexadecimal Decimal Minus . +1 | 00000000 | 0 | 0 | 0 | -1 | . Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | Turn on | . | | | | | | | | .",
             "url": "https://nighthawkcoders.github.io/APCSP/frontend/binary",
@@ -1301,7 +1312,7 @@
     
   
     
-        ,"post119": {
+        ,"post120": {
             "title": "NBDEV/Quarto Installation Guide",
             "content": "Create new repository with nbdev . Documentation . For the most part the documentation is pretty straight forward. Here are some extra details that might be helpful: . When you initialize the repository, remember to use mkdir and do the commands in that directory. | You will be asked to generate a token for a password, you will need to make sure to give yourself repository permissions on the token otherwise the password will give you a 403 error when you run git push. More Info Here | . Install hooks for git-friendly notebooks . conda install -c conda-forge pre-commit . Note: this command took me a long time. . Install packages: . pip install -e &#39;.[dev]&#39; . This command is similar to make server: . nbdev_preview . Before commiting your changes to GitHub the developers recommend running: . nbdev_prepare . Transfer posts from old repository . In your new directory run: . $ quarto create-project --type website:blog . . Migrate posts and notebooks with these commands: *It is a good idea to delete all the markdown posts that were created by make server (the files you put into .gitignore) . $ cp -r ../blog/_notebooks/* posts $ cp -r ../blog/_posts/* posts . For me the .. is home/username and blog is replaced with the directory that the repository is called. . Do the same with images . $ cp ../blog/images/* posts $ cp -r ../blog/images/copied_from_nb/* posts/ . Migrate (changes the front matter) the transfered posts . $ nbdev_migrate --path posts . Note: . If you didn’t delete the markdown posts I specified earlier you will run into an exception error. You will need to manually remove these files in the posts directory. | Your front matter cannot have any empty values you will run into an exception for this reason as well. | . Creating a blog within a nbdev project .",
             "url": "https://nighthawkcoders.github.io/APCSP/nbdevinstall",
@@ -1312,7 +1323,7 @@
     
   
     
-        ,"post120": {
+        ,"post121": {
             "title": "Intro to Computer Science Ideas",
             "content": "Intro Class Logistics (Del Norte desires title by end of meeting) . Idea is to have a course to focusses on freshman/sophomore classes. The purpose Computer Science and Software Engineering at Del Norte and PUSD, is to add to the beginning of the pathway that feeds into AP Computer Science Principles (CSP). Guide . 1st trimester course is Game Design | 2nd trimester course is Game Design with an App Focus | . Pathway . The Computer Science Pathway, including Trimester modifications required at Del Norte High School. . Preferred Grade | Course | Trimesters | Credit | Notes/Experience | . 9th or 10th | Computer Science and Software Engineering (CSSE) | 2 | UC G | Entry to pathway | . 10th or 11th | AP Computer Science Principles (CSP) | 2 | UC D or G | Requires CSSE or equivalent experience | . 10th or 11th | Data Structures 1 (DS1) | 1 | DS1/DS2 articulate | Part of CSP year and contract | . 11th or 12th | AP Computer Science A (CSA) | 2 | UC C or G | Requires CSP, DS1 or experience in Technologies taught in Del Norte program. | . 11th or 12th | Data Structures 2 (DS2) | 1 | DS1/DS2 articulate | Part of CSA year and contract | . Start with: . Scratch Introduction | Course Plans Introduction to tools (e.g. IDE and Github) | Fundamentals in Programming in selected language (C# or Scratch) | Agile Development Fundamentals, Pair Programming, | . | . Move on to main focus: . Create an Apple App using Xcode and Swift AND/OR | Unity Game Development Curriculum | . Certificate Programs . Certificates are available online and at many avenues (Udemy, LinkedIN, Apple, etc). Teachers could/should learn and then perhaps teach courses that are aligned to certificates by an organization like LinkedIn. This would enable Teachers and District to confidently state that their Teachers are current to CTE advisors. . LinkedIn Certification Programs for Development Engineering Methodology . Skills to assist in teaching Project Based Learning. . Github Issues . | Agile Development . | Devops Engineer . | . LinkedIn Certificates for Programming . Certificates to assist in teaching Intro to Programming, Computers Science Principles, Computer Science “A” development. . Intro Scratch . | Intro C# Developer . | Intro Swift Developer . | CSP Python Developer . | CSP - JavaScript Developer . | CSA - Java Developer . | . Accreditation, Articulation and Beyond . In discussion on titles, it seems vital to a High School Pathway that it leads beyond. A key contributor to increasing Del Norte student participation in Computer Science, ~100 tto ~240, is the introduction of Computer Science Principles. . Computer Science Principles has AP testing and UC accreditation as a 3rd Science, not just elective. | Computer Science “A” has AP testing and UC accreditation as a 4th Math, not just elective. | Data Structure 1&amp;2 with B or above graded will articulate to CS113 Data Structures. There has been movement by Emily Stephenson, Del Norte and Mira Costa College regarding articulation. This begins with students taking CSP/DS1 in Fall of 2022, it completes with students finishing CSA/DSP2 in Summer of 2024, receiving credit for CS113 – Data Structures. | Beyond College, it seems the other “Big Thing” that High School Computer Science can do is to prepare students for internships and jobs. Del Norte has been placing people regularly at Northrop Grumman (2 per year), UCSD Supercomputer (2 per year), Code Ninjas (2 per year). Additionally, I have 2 reports of students Teaching in CompSci Labs on campus (Harvard and Mira Costa College). Lastly, I have heard of a Purdue freshmen that is currently getting a Government clearance for internship in Summer 2023. An absolute key is having projects published on GitHub! The Purdue freshmen said the internship interviewer said “they reviewed projects on GitHub and new that he could code”. These opportunities seem to come because of Agile Methodology, Scrum, Python/Flask, Java/Spring, AWS, SQL, Linux, Anaconda, Docker, Nginx, GitHub. | . CS 113: Basic Data Structures and Algorithms Units: 3 Prerequisites: CS 112. Acceptable for Credit: CSU, UC Lecture 2 hours, laboratory 3 hours. Course Typically Offered: Fall, Spring, and Summer . The course uses topics of personal and social relevance to investigate the impact of computing through efficient algorithms and properly designed data structures. Students explore the software development process by developing effective solutions using industry-standard tools. Topics include searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs. C-ID COMP-132. | . Del Norte 2022-2023 Course Outlines and Student Projects . Del Norte Materials are all online and maintained in GitHub. Content produced is automatically deployed to a public Website. . Computer Science “A” Trimester 1 CSA Student Projects/Review Tickets - AT BOTTOM OF LINK | . | Computer Science Principles Trimester 1 CSP Student Projects/Review Tickets - AT BOTTOM OF LINK | . | . Please comment, requires GitHub sign-in .",
             "url": "https://nighthawkcoders.github.io/APCSP/csintro",

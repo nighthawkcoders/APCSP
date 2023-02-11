@@ -77,6 +77,7 @@ window.onload = wrap_img;
         <td><a href="/APCSP/data/covid">Covid19 RapidAPI</a></td>
         <td><a href="/APCSP/data/jokes">Jokes API</a></td>
         <td><a href="/APCSP/data/database">Users Database</a></td>
+        <td><a href="/APCSP/data/login">User Login</a></td>
     </tr>
 </table>
 
@@ -98,7 +99,7 @@ window.onload = wrap_img;
     // URL for deployment
     var url = "https://flask.nighthawkcodingsociety.com"
     // Comment out next line for local testing
-    url = "http://localhost:8085"
+    //url = "http://localhost:8086"
     // Authenticate endpoint
     const login_url = url + '/api/users/authenticate';
 
@@ -112,7 +113,7 @@ window.onload = wrap_img;
 
         // Set Headers to support cross origin
         const requestOptions = {
-            method: 'GET',
+            method: 'POST',
             mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
             // credentials: 'include', // include, *same-origin, omit
@@ -136,7 +137,7 @@ window.onload = wrap_img;
             // Valid response will contain json data
             response.json().then(data => {
                 // Set user data to local storage
-                localStorage.setItem("uid", uid);
+                localStorage.setItem("uid", data.uid);
                 localStorage.setItem("visitor", data.name);
             })
         })

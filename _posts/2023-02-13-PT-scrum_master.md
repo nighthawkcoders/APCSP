@@ -13,11 +13,11 @@ week: 23
 
 ## Plans Week 23
 > Big Coding week, focus on completing issues
-- Monday: Coding hour 8. Live Review Demo CI/CD by DevOps.
-- Tuesday: Coding hour 9. Scrum Master Reviews, tangible artifacts.
-- Wednesday: Coding hour 10. Frontend Developer Demos.
+- Monday: Coding hour 8. See canvas for points this week.
+- Tuesday: Coding hour 9.
+- Wednesday: Coding hour 10.
 - Thursday: Coding hour 11. Backend Developer Demos. (N@tM)
-- Friday: Coding hour 12.
+- Friday: Coding hour 12.  Blog a draft of college board write-up.  Create a video to demo runtime.
 
 ## Look ahead
 > Finals Week, capture the moment activities.  Write-up and video are required, these will be peer-2-peer reviewed.  Reviews will be graded 1st week of trimester 3.

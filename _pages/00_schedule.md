@@ -60,7 +60,7 @@ title: Schedule
 ## Unit {{unit}}: Trimester 3 AP Weeks
 > Trimester 3 contains AP weeks where activities will be focused on supporting students in test preparations.  
 
-{% elsif unit == "8" %} 
+{% elsif unit == "9" %} 
       {% assign start = 34 %}
       {% assign end = 36 %}
 ## Unit {{unit}}: Trimester 3 Data Structures (continued)

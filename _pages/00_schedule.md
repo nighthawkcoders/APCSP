@@ -58,13 +58,13 @@ title: Schedule
       {% assign start = 32 %}
       {% assign end = 33 %}
 ## Unit {{unit}}: Trimester 3 AP Weeks
-> Trimester 3 contains AP weeks where activities will be focused on supporting students in test preparations.  
+> Trimester 3 contains AP weeks, where activities will be focused on supporting students in test preparations.  Day before a test can be used to study for exam in another class.  Days that are not focused on test preparation will be focused on planning for year end project/portfolio.
 
 {% elsif unit == "9" %} 
       {% assign start = 34 %}
       {% assign end = 36 %}
 ## Unit {{unit}}: Trimester 3 Data Structures (continued)
-> Trimester 3 finishes with a focus on presenting accomplishments for the year at the year end Night at the Museum.  These last 2 to 3 weeks will serve a year end final exam.
+> Trimester 3 finishes with a focus on presenting accomplishments for the year at the year end Night at the Museum.  These last 2 to 3 weeks will serve as the year end final exam.
       
   {% endif %}
 

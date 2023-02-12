@@ -52,7 +52,7 @@ title: Schedule
       {% assign start = 25 %}
       {% assign end = 31 %}
 ## Unit {{unit}}: Trimester 3 Data Structures
-> Trimester 3 begins is taught following college requirements for CS113 Data Structures.  Topics, using Python, include searching, sorting, hashing, algorithms, analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.  These weeks will also include the a focus on preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  
+> Trimester 3 is taught following college course requirements for CS113 Data Structures.  Topics, using Python, include searching, sorting, hashing, algorithms, analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.  These weeks will also include the a focus on preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  
 
 {% elsif unit == "8" %} 
       {% assign start = 32 %}

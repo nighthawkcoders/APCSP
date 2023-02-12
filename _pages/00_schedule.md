@@ -9,7 +9,7 @@ title: Schedule
 {% assign all = all | concat:site.posts | concat:site.pages %}
 
 <!-- Setup order for Units -->
-{% assign units = "6,1,2,3,4,5,7,8" | split: ',' %}
+{% assign units = "6,1,2,3,4,5,7,8,9" | split: ',' %}
 {% for unit in units %}
 
   <!-- Each Unit has a range of weeks and a heading -->
@@ -52,7 +52,7 @@ title: Schedule
       {% assign start = 25 %}
       {% assign end = 31 %}
 ## Unit {{unit}}: Trimester 3 Data Structures
-> Trimester 3 begins as a preparatory course for CS113 Data Structures.  Topics include using Python to performs searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.  These weeks will also include the a focus on preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  
+> Trimester 3 begins is taught following college requirements for CS113 Data Structures.  Topics, using Python, include searching, sorting, hashing, algorithms, analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.  These weeks will also include the a focus on preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  
 
 {% elsif unit == "8" %} 
       {% assign start = 32 %}
@@ -63,8 +63,8 @@ title: Schedule
 {% elsif unit == "8" %} 
       {% assign start = 34 %}
       {% assign end = 36 %}
-## Unit {{unit}}: Trimester 3 Data Structures
-> Trimester 3 finishes by qualifying students for CS113 Data Structures requirements.  We will be presenting a portfolio of accomplishments at the Night at the Museum.
+## Unit {{unit}}: Trimester 3 Data Structures (continued)
+> Trimester 3 finishes with a focus on presenting accomplishments for the year at the year end Night at the Museum.  These last 2 to 3 weeks will serve a year end final exam.
       
   {% endif %}
 

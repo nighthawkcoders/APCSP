@@ -50,16 +50,21 @@ title: Schedule
 
 {% elsif unit == "7" %} 
       {% assign start = 25 %}
-      {% assign end = 28 %}
+      {% assign end = 31 %}
 ## Unit {{unit}}: Trimester 3 Data Structures
-> Trimester 3 begins with a focus social relevance and impact of computing.  These weeks will be final preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  Technical work includes reviews on algorithms, object-oriented design, lists, and dictionaries.
+> Trimester 3 begins as a preparatory course for CS113 Data Structures.  Topics include using Python to performs searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.  These weeks will also include the a focus on preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  
 
 {% elsif unit == "8" %} 
-      {% assign start = 29 %}
+      {% assign start = 32 %}
+      {% assign end = 33 %}
+## Unit {{unit}}: Trimester 3 AP Weeks
+> Trimester 3 contains AP weeks where activities will be focused on supporting students in test preparations.  
+
+{% elsif unit == "8" %} 
+      {% assign start = 34 %}
       {% assign end = 36 %}
 ## Unit {{unit}}: Trimester 3 Data Structures
-> Trimester 3 finishes as a preparatory course for CS113 Data Structures, this concludes with Data Structure 2 that follow AP CSA. Topics include using Python to performs searching, sorting, hashing, algorithm analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.
-
+> Trimester 3 finishes by qualifying students for CS113 Data Structures requirements.  We will be presenting a portfolio of accomplishments at the Night at the Museum.
       
   {% endif %}
 

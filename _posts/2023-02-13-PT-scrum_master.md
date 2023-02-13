@@ -19,6 +19,8 @@ week: 23
 - Thursday: Coding hour 11. ***N@tM***
 - Friday: Coding hour 12.  Blog a draft of college board write-up.  Create a video to demo runtime.
 
+See [Canvas](https://poway.instructure.com/courses/128941/assignments/2517825) for more N@tM Final Project Scoring.
+
 ## Look ahead
 > Finals Week, capture the moment activities.  Write-up and video are required, these will be peer-2-peer reviewed.  Reviews will be graded 1st week of trimester 3.
 

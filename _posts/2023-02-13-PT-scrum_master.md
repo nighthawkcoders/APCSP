@@ -13,10 +13,10 @@ week: 23
 
 ## Plans Week 23
 > Big Coding week, focus on completing issues
-- Monday: Coding hour 8. See canvas for points this week.
+- Monday: Coding hour 8. See canvas for points and reviews.
 - Tuesday: Coding hour 9.
 - Wednesday: Coding hour 10.
-- Thursday: Coding hour 11. Backend Developer Demos. (N@tM)
+- Thursday: Coding hour 11. ***N@tM***
 - Friday: Coding hour 12.  Blog a draft of college board write-up.  Create a video to demo runtime.
 
 ## Look ahead

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Full Stack Create and Read operation | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Full Stack Create and Read operation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This describes markdown file that activates python API, this ultimately performs full stack using HTML, JavaScript, Python, SQL and return." />
+<meta property="og:description" content="This describes markdown file that activates python API, this ultimately performs full stack using HTML, JavaScript, Python, SQL and return." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-fe-be.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-fe-be.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-13T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Full Stack Create and Read operation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-13T00:00:00-06:00","datePublished":"2023-02-13T00:00:00-06:00","description":"This describes markdown file that activates python API, this ultimately performs full stack using HTML, JavaScript, Python, SQL and return.","headline":"Full Stack Create and Read operation","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-fe-be.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-fe-be.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Full Stack Create and Read operation</h1><p class="page-description">This describes markdown file that activates python API, this ultimately performs full stack using HTML, JavaScript, Python, SQL and return.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-13T00:00:00-06:00" itemprop="datePublished">
+        Feb 13, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-02-13-PBL-fe-be.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-02-13-PBL-fe-be.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-02-13-PBL-fe-be.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-02-13-PBL-fe-be.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Frontend-Runtime">Frontend Runtime </a></li>
+<li class="toc-entry toc-h2"><a href="#Frontend-JavaScript">Frontend JavaScript </a></li>
+<li class="toc-entry toc-h2"><a href="#Backend-Python-API">Backend Python API </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-02-13-PBL-fe-be.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Frontend-Runtime">
+<a class="anchor" href="#Frontend-Runtime" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://nighthawkcoders.github.io/APCSP/data/database">Frontend Runtime</a><a class="anchor-link" href="#Frontend-Runtime"> </a>
+</h2>
+<blockquote>
+<p>Try it out, to understand how things work and observe table update after adding new record through Create.  All data is coming persistently stored in backend database.</p>
+<ul>
+<li>Cross-Origin Resource Sharing.   This example is sharing data between servers.  <ul>
+<li>github.io front end server, fastpages/github pages web application</li>
+<li>AWS backend server, flask/python web application</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Frontend-JavaScript">
+<a class="anchor" href="#Frontend-JavaScript" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frontend JavaScript<a class="anchor-link" href="#Frontend-JavaScript"> </a>
+</h2>
+<blockquote>
+<p>Look at HTML, actions and fetch commands/options.  This is very similar to operations that can be performed in Postman.</p>
+<ul>
+<li>HTML code is gathering input and initiating creat_user() action</li>
+<li>The create_user() function obtains input from HTML, sets up options<ul>
+<li>POST passes JSON data through body key in header</li>
+<li>On success, data updates Document Elements on screen</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">---</span>
+<span class="n">title</span><span class="p">:</span> <span class="n">Database</span> <span class="n">CRUD</span> <span class="n">Operations</span>
+<span class="n">layout</span><span class="p">:</span> <span class="n">default</span>
+<span class="n">description</span><span class="p">:</span> <span class="n">An</span> <span class="n">advanced</span> <span class="n">example</span> <span class="n">of</span> <span class="n">do</span> <span class="n">database</span> <span class="n">operation</span> <span class="n">asynchronously</span> <span class="n">between</span> <span class="n">JavaScript</span> <span class="ow">and</span> <span class="n">Backend</span> <span class="n">Database</span><span class="o">.</span>
+<span class="n">permalink</span><span class="p">:</span> <span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">database</span>
+<span class="n">image</span><span class="p">:</span> <span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">database</span><span class="o">.</span><span class="n">png</span>
+<span class="n">categories</span><span class="p">:</span> <span class="p">[</span><span class="n">C4</span><span class="o">.</span><span class="mi">7</span><span class="p">,</span> <span class="n">C7</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">C8</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="n">C8</span><span class="o">.</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">tags</span><span class="p">:</span> <span class="p">[</span><span class="n">javascript</span><span class="p">,</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">get</span><span class="p">,</span> <span class="n">post</span><span class="p">,</span> <span class="n">put</span><span class="p">]</span>
+<span class="o">---</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">nav_data</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Database</span> <span class="n">API</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">thead</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">User</span> <span class="n">ID</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">Name</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">Posts</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">DOB</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">th</span><span class="o">&gt;</span><span class="n">Age</span><span class="o">&lt;/</span><span class="n">th</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">tr</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">thead</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">tbody</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"result"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="err">!</span><span class="o">--</span> <span class="n">javascript</span> <span class="n">generated</span> <span class="n">data</span> <span class="o">--&gt;</span>
+  <span class="o">&lt;/</span><span class="n">tbody</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">table</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Create</span> <span class="n">API</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">"javascript:create_user()"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+        <span class="n">User</span> <span class="n">ID</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"uid"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"uid"</span> <span class="n">required</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+        <span class="n">Name</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"name"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"name"</span> <span class="n">required</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+        <span class="n">Password</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"password"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"password"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"password"</span> <span class="n">required</span><span class="o">&gt;</span>
+        <span class="n">Verify</span> <span class="n">Password</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"password"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"passwordV"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"passwordV"</span> <span class="n">required</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+        <span class="n">Birthday</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"date"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"dob"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"dob"</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">button</span><span class="o">&gt;</span><span class="n">Create</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+  <span class="o">//</span> <span class="n">prepare</span> <span class="n">HTML</span> <span class="n">result</span> <span class="n">container</span> <span class="k">for</span> <span class="n">new</span> <span class="n">output</span>
+  <span class="n">const</span> <span class="n">resultContainer</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"result"</span><span class="p">);</span>
+  <span class="o">//</span> <span class="n">prepare</span> <span class="n">URL</span><span class="s1">'s to allow easy switch from deployment and localhost</span>
+  <span class="o">//</span><span class="n">const</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"http://localhost:8086/api/users"</span>
+  <span class="n">const</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/users"</span>
+  <span class="n">const</span> <span class="n">create_fetch</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s1">'/create'</span><span class="p">;</span>
+  <span class="n">const</span> <span class="n">read_fetch</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">;</span>
+
+  <span class="o">//</span> <span class="n">Load</span> <span class="n">users</span> <span class="n">on</span> <span class="n">page</span> <span class="n">entry</span>
+  <span class="n">read_users</span><span class="p">();</span>
+
+
+  <span class="o">//</span> <span class="n">Display</span> <span class="n">User</span> <span class="n">Table</span><span class="p">,</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">fetched</span> <span class="kn">from</span> <span class="nn">Backend</span> <span class="n">Database</span>
+  <span class="n">function</span> <span class="n">read_users</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">prepare</span> <span class="n">fetch</span> <span class="n">options</span>
+    <span class="n">const</span> <span class="n">read_options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> <span class="o">//</span> <span class="o">*</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">PUT</span><span class="p">,</span> <span class="n">DELETE</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+      <span class="n">mode</span><span class="p">:</span> <span class="s1">'cors'</span><span class="p">,</span> <span class="o">//</span> <span class="n">no</span><span class="o">-</span><span class="n">cors</span><span class="p">,</span> <span class="o">*</span><span class="n">cors</span><span class="p">,</span> <span class="n">same</span><span class="o">-</span><span class="n">origin</span>
+      <span class="n">cache</span><span class="p">:</span> <span class="s1">'default'</span><span class="p">,</span> <span class="o">//</span> <span class="o">*</span><span class="n">default</span><span class="p">,</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span> <span class="n">reload</span><span class="p">,</span> <span class="n">force</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span> <span class="n">only</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">cached</span>
+      <span class="n">credentials</span><span class="p">:</span> <span class="s1">'omit'</span><span class="p">,</span> <span class="o">//</span> <span class="n">include</span><span class="p">,</span> <span class="o">*</span><span class="n">same</span><span class="o">-</span><span class="n">origin</span><span class="p">,</span> <span class="n">omit</span>
+      <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span>
+      <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="o">//</span> <span class="n">fetch</span> <span class="n">the</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">API</span>
+    <span class="n">fetch</span><span class="p">(</span><span class="n">read_fetch</span><span class="p">,</span> <span class="n">read_options</span><span class="p">)</span>
+      <span class="o">//</span> <span class="n">response</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">RESTful</span> <span class="s2">"promise"</span> <span class="n">on</span> <span class="nb">any</span> <span class="n">successful</span> <span class="n">fetch</span>
+      <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">check</span> <span class="k">for</span> <span class="n">response</span> <span class="n">errors</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">const</span> <span class="n">errorMsg</span> <span class="o">=</span> <span class="s1">'Database read error: '</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">;</span>
+            <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">errorMsg</span><span class="p">);</span>
+            <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
+            <span class="n">const</span> <span class="n">td</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+            <span class="n">td</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">errorMsg</span><span class="p">;</span>
+            <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">td</span><span class="p">);</span>
+            <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">//</span> <span class="n">valid</span> <span class="n">response</span> <span class="n">will</span> <span class="n">have</span> <span class="n">json</span> <span class="n">data</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+              <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]);</span>
+              <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">})</span>
+    <span class="o">//</span> <span class="n">catch</span> <span class="n">fetch</span> <span class="n">errors</span> <span class="p">(</span><span class="n">ie</span> <span class="n">ACCESS</span> <span class="n">to</span> <span class="n">server</span> <span class="n">blocked</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="n">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+      <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
+      <span class="n">const</span> <span class="n">td</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+      <span class="n">td</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">err</span><span class="p">;</span>
+      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">td</span><span class="p">);</span>
+      <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+
+  <span class="n">function</span> <span class="n">create_user</span><span class="p">(){</span>
+    <span class="o">//</span><span class="n">Validate</span> <span class="n">Password</span> <span class="p">(</span><span class="n">must</span> <span class="n">be</span> <span class="mi">6</span><span class="o">-</span><span class="mi">20</span> <span class="n">characters</span> <span class="ow">in</span> <span class="nb">len</span><span class="p">)</span>
+    <span class="o">//</span><span class="n">verifyPassword</span><span class="p">(</span><span class="s2">"click"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">uid</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"uid"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">password</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"password"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">dob</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"dob"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="p">};</span>
+    <span class="n">const</span> <span class="n">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">body</span><span class="p">),</span>
+        <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+            <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'Bearer my-token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">};</span>
+
+    <span class="o">//</span> <span class="n">URL</span> <span class="k">for</span> <span class="n">Create</span> <span class="n">API</span>
+    <span class="o">//</span> <span class="n">Fetch</span> <span class="n">API</span> <span class="n">call</span> <span class="n">to</span> <span class="n">the</span> <span class="n">database</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">user</span>
+    <span class="n">fetch</span><span class="p">(</span><span class="n">create_fetch</span><span class="p">,</span> <span class="n">requestOptions</span><span class="p">)</span>
+      <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">trap</span> <span class="n">error</span> <span class="n">response</span> <span class="kn">from</span> <span class="nn">Web</span> <span class="n">API</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">const</span> <span class="n">errorMsg</span> <span class="o">=</span> <span class="s1">'Database create error: '</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">;</span>
+          <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">errorMsg</span><span class="p">);</span>
+          <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
+          <span class="n">const</span> <span class="n">td</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+          <span class="n">td</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">errorMsg</span><span class="p">;</span>
+          <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">td</span><span class="p">);</span>
+          <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+          <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">//</span> <span class="n">response</span> <span class="n">contains</span> <span class="n">valid</span> <span class="n">result</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="o">//</span><span class="n">add</span> <span class="n">a</span> <span class="n">table</span> <span class="n">row</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span><span class="o">/</span><span class="n">created</span> <span class="n">userid</span>
+            <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">}</span>
+
+  <span class="n">function</span> <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">uid</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">name</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">posts</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">)</span>
+    <span class="n">const</span> <span class="n">dob</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">age</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+  
+
+    <span class="o">//</span> <span class="n">obtain</span> <span class="n">data</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">the</span> <span class="n">API</span>
+    <span class="n">uid</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">uid</span><span class="p">;</span> 
+    <span class="n">name</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">;</span> 
+    <span class="n">posts</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">posts</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+    <span class="n">dob</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dob</span><span class="p">;</span> 
+    <span class="n">age</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">age</span><span class="p">;</span> 
+
+    <span class="o">//</span> <span class="n">add</span> <span class="n">HTML</span> <span class="n">to</span> <span class="n">container</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">uid</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">posts</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">dob</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+
+    <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Backend-Python-API">
+<a class="anchor" href="#Backend-Python-API" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/user.py">Backend Python API</a><a class="anchor-link" href="#Backend-Python-API"> </a>
+</h2>
+<blockquote>
+<p>CRUD and Security APIs, or web endpoints.  All receive requests and respond with results.  The results are JSON formatted data.</p>
+<ul>
+<li>THe class _Create contains a post method.  This method performs validation on HTML inputs and on success add record to user table in the database</li>
+<li>The clase _Read contains a get method.  This extract all users from user table.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span> <span class="c1"># used for REST API building</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="nn">model.users</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="n">user_api</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">'user_api'</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span>
+                   <span class="n">url_prefix</span><span class="o">=</span><span class="s1">'/api/users'</span><span class="p">)</span>
+
+<span class="c1"># API docs https://flask-restful.readthedocs.io/en/latest/api.html</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">user_api</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">UserAPI</span><span class="p">:</span>        
+    <span class="k">class</span> <span class="nc">_Create</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">''' Read data for json body '''</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+            
+            <span class="sd">''' Avoid garbage in, error checking '''</span>
+            <span class="c1"># validate name</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'name'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Name is missing, or is less than 2 characters'</span><span class="p">},</span> <span class="mi">400</span>
+            <span class="c1"># validate uid</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">uid</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'User ID is missing, or is less than 2 characters'</span><span class="p">},</span> <span class="mi">400</span>
+            <span class="c1"># look for password and dob</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'password'</span><span class="p">)</span>
+            <span class="n">dob</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'dob'</span><span class="p">)</span>
+
+            <span class="sd">''' #1: Key code block, setup USER OBJECT '''</span>
+            <span class="n">uo</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> 
+                      <span class="n">uid</span><span class="o">=</span><span class="n">uid</span><span class="p">)</span>
+            
+            <span class="sd">''' Additional garbage error checking '''</span>
+            <span class="c1"># set password if provided</span>
+            <span class="k">if</span> <span class="n">password</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">uo</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+            <span class="c1"># convert to date type</span>
+            <span class="k">if</span> <span class="n">dob</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">uo</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Date of birth format error </span><span class="si">{</span><span class="n">dob</span><span class="si">}</span><span class="s1">, must be mm-dd-yyyy'</span><span class="p">},</span> <span class="mi">400</span>
+            
+            <span class="sd">''' #2: Key Code block to add user to database '''</span>
+            <span class="c1"># create user in database</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">uo</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+            <span class="c1"># success returns json of user</span>
+            <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+            <span class="c1"># failure returns error</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Processed </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">, either a format error or User ID </span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s1"> is duplicate'</span><span class="p">},</span> <span class="mi">400</span>
+
+    <span class="k">class</span> <span class="nc">_Read</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>    <span class="c1"># read/extract all users from database</span>
+            <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">]</span>  <span class="c1"># prepare output in json</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">json_ready</span><span class="p">)</span>  <span class="c1"># jsonify creates Flask response object, more specific to APIs than json.dumps</span>
+    
+    <span class="k">class</span> <span class="nc">_Security</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">''' Read data for json body '''</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+            
+            <span class="sd">''' Get Data '''</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">uid</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'User ID is missing, or is less than 2 characters'</span><span class="p">},</span> <span class="mi">400</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'password'</span><span class="p">)</span>
+            
+            <span class="sd">''' Find user '''</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_uid</span><span class="o">=</span><span class="n">uid</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">is_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Invalid user id or password"</span><span class="p">},</span> <span class="mi">400</span>
+            
+            <span class="sd">''' authenticated user '''</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+            
+
+    <span class="c1"># building RESTapi endpoint</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Create</span><span class="p">,</span> <span class="s1">'/create'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Read</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_Security</span><span class="p">,</span> <span class="s1">'/authenticate'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/2023/02/13/PBL-fe-be.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

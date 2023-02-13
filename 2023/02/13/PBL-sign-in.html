@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Full Stack User Sign-in | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Full Stack User Sign-in" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This describes markdown file that activates security API, this performs user lookup in backend database." />
+<meta property="og:description" content="This describes markdown file that activates security API, this performs user lookup in backend database." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-sign-in.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-sign-in.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-13T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Full Stack User Sign-in" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-13T00:00:00-06:00","datePublished":"2023-02-13T00:00:00-06:00","description":"This describes markdown file that activates security API, this performs user lookup in backend database.","headline":"Full Stack User Sign-in","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-sign-in.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/02/13/PBL-sign-in.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Full Stack User Sign-in</h1><p class="page-description">This describes markdown file that activates security API, this performs user lookup in backend database.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-13T00:00:00-06:00" itemprop="datePublished">
+        Feb 13, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-02-13-PBL-sign-in.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-02-13-PBL-sign-in.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-02-13-PBL-sign-in.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-02-13-PBL-sign-in.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Runtime">Runtime </a></li>
+<li class="toc-entry toc-h2"><a href="#Frontend-code,-raw">Frontend code, raw </a></li>
+<li class="toc-entry toc-h2"><a href="#Backend-code">Backend code </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-02-13-PBL-sign-in.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Runtime">
+<a class="anchor" href="#Runtime" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://nighthawkcoders.github.io/APCSP/data/login">Runtime</a><a class="anchor-link" href="#Runtime"> </a>
+</h2>
+<blockquote>
+<p>Observe that on successful login “local storage” is updated , unsuccessful "local storage" is deleted.  This data can be used and displayed on other pages, as local storage is stored in the users browser.  This data can be used to associate user with things like a leader board, fitness statistics, or favorite cars.</p>
+<ul>
+<li>user id:toby- password: 123toby</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Frontend-code,-raw">
+<a class="anchor" href="#Frontend-code,-raw" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-10-PBL-login.md">Frontend code</a>, <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-10-PBL-login.md">raw</a><a class="anchor-link" href="#Frontend-code,-raw"> </a>
+</h2>
+<blockquote>
+<p>Sends input of user id and password to backend, if success it displays result</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="n">nav_data</span><span class="o">.</span><span class="n">html</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s2">"javascript:login_user()"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+        <span class="n">User</span> <span class="n">ID</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"uid"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"uid"</span> <span class="n">required</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+        <span class="n">Password</span><span class="p">:</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"password"</span> <span class="n">name</span><span class="o">=</span><span class="s2">"password"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"password"</span> <span class="n">required</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">button</span><span class="o">&gt;</span><span class="n">Login</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"message"</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="o">//</span> <span class="n">URL</span> <span class="k">for</span> <span class="n">deployment</span>
+    <span class="n">var</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com"</span>
+    <span class="o">//</span> <span class="n">Comment</span> <span class="n">out</span> <span class="nb">next</span> <span class="n">line</span> <span class="k">for</span> <span class="n">local</span> <span class="n">testing</span>
+    <span class="o">//</span><span class="n">url</span> <span class="o">=</span> <span class="s2">"http://localhost:8086"</span>
+    <span class="o">//</span> <span class="n">Authenticate</span> <span class="n">endpoint</span>
+    <span class="n">const</span> <span class="n">login_url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">+</span> <span class="s1">'/api/users/authenticate'</span><span class="p">;</span>
+
+
+    <span class="n">function</span> <span class="n">login_user</span><span class="p">(){</span>
+        <span class="o">//</span> <span class="n">Set</span> <span class="n">body</span> <span class="n">to</span> <span class="n">include</span> <span class="n">login</span> <span class="n">data</span>
+        <span class="n">const</span> <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">uid</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"uid"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="n">password</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"password"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="p">};</span>
+
+        <span class="o">//</span> <span class="n">Set</span> <span class="n">Headers</span> <span class="n">to</span> <span class="n">support</span> <span class="n">cross</span> <span class="n">origin</span>
+        <span class="n">const</span> <span class="n">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+            <span class="n">mode</span><span class="p">:</span> <span class="s1">'cors'</span><span class="p">,</span> <span class="o">//</span> <span class="n">no</span><span class="o">-</span><span class="n">cors</span><span class="p">,</span> <span class="o">*</span><span class="n">cors</span><span class="p">,</span> <span class="n">same</span><span class="o">-</span><span class="n">origin</span>
+            <span class="n">cache</span><span class="p">:</span> <span class="s1">'no-cache'</span><span class="p">,</span> <span class="o">//</span> <span class="o">*</span><span class="n">default</span><span class="p">,</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span> <span class="n">reload</span><span class="p">,</span> <span class="n">force</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span> <span class="n">only</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">cached</span>
+            <span class="o">//</span> <span class="n">credentials</span><span class="p">:</span> <span class="s1">'include'</span><span class="p">,</span> <span class="o">//</span> <span class="n">include</span><span class="p">,</span> <span class="o">*</span><span class="n">same</span><span class="o">-</span><span class="n">origin</span><span class="p">,</span> <span class="n">omit</span>
+            <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">body</span><span class="p">),</span>
+            <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">};</span>
+
+        <span class="o">//</span> <span class="n">Fetch</span> <span class="n">JWT</span>
+        <span class="n">fetch</span><span class="p">(</span><span class="n">login_url</span><span class="p">,</span> <span class="n">requestOptions</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="o">//</span> <span class="n">trap</span> <span class="n">error</span> <span class="n">response</span> <span class="kn">from</span> <span class="nn">Web</span> <span class="n">API</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">const</span> <span class="n">message</span> <span class="o">=</span> <span class="s1">'Login error: '</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">statusText</span><span class="p">;</span>
+                <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"message"</span><span class="p">)</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">message</span><span class="p">;</span>
+                <span class="n">localStorage</span><span class="o">.</span><span class="n">removeItem</span><span class="p">(</span><span class="s2">"uid"</span><span class="p">);</span>
+                <span class="n">localStorage</span><span class="o">.</span><span class="n">removeItem</span><span class="p">(</span><span class="s2">"visitor"</span><span class="p">);</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="o">//</span> <span class="n">Valid</span> <span class="n">response</span> <span class="n">will</span> <span class="n">contain</span> <span class="n">json</span> <span class="n">data</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="n">const</span> <span class="n">message</span> <span class="o">=</span> <span class="s1">'Login success: '</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">;</span>
+                <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"message"</span><span class="p">)</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">message</span><span class="p">;</span>
+                <span class="n">localStorage</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="s2">"uid"</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">uid</span><span class="p">);</span>
+                <span class="n">localStorage</span><span class="o">.</span><span class="n">setItem</span><span class="p">(</span><span class="s2">"visitor"</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">);</span>
+            <span class="p">})</span>
+        <span class="p">})</span>
+    <span class="p">}</span>
+
+
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Backend-code">
+<a class="anchor" href="#Backend-code" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/nighthawkcoders/flask_portfolio/blob/main/api/user.py#L63-L81">Backend code</a><a class="anchor-link" href="#Backend-code"> </a>
+</h2>
+<blockquote>
+<p>Looks up user id, validates password, returns data details from user table in database.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">_Security</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+
+        <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">''' Read data for json body '''</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+            
+            <span class="sd">''' Get Data '''</span>
+            <span class="n">uid</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'uid'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">uid</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'User ID is missing, or is less than 2 characters'</span><span class="p">},</span> <span class="mi">400</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'password'</span><span class="p">)</span>
+            
+            <span class="sd">''' Find user '''</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_uid</span><span class="o">=</span><span class="n">uid</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">user</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">is_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Invalid user id or password"</span><span class="p">},</span> <span class="mi">400</span>
+            
+            <span class="sd">''' authenticated user '''</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/2023/02/13/PBL-sign-in.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

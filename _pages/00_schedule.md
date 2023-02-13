@@ -50,12 +50,12 @@ title: Schedule
 
 {% elsif unit == "7" %} 
       {% assign start = 25 %}
-      {% assign end = 31 %}
+      {% assign end = 30 %}
 ## Unit {{unit}}: Trimester 3 Data Structures
 > Trimester 3 is taught following college course requirements for CS113 Data Structures.  Topics, using Python, include searching, sorting, hashing, algorithms, analysis, object-oriented design, collections, lists, stacks, queues, trees, sets, dictionaries, and graphs.  These weeks will also include the a focus on preparations for the ***May 2nd Create Performance Task*** and the ***May 8th Exam***.  
 
 {% elsif unit == "8" %} 
-      {% assign start = 32 %}
+      {% assign start = 31 %}
       {% assign end = 33 %}
 ## Unit {{unit}}: Trimester 3 AP Weeks
 > Trimester 3 contains AP weeks, where activities will be focused on supporting students in test preparations.  Day before a test can be used to study for exam in another class.  Days that are not focused on test preparation will be focused on planning for year end project/portfolio.

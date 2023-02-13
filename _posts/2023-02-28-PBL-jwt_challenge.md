@@ -2,11 +2,11 @@
 toc: true
 comments: false
 layout: post
-title:  Flask Security using JSON Web Tokens
+title:  Flask Security using JSON Web Tokens (research reqd)
 description: Manage access and roles to a backend Python Flask using JSON Web Tokens JWT
 categories: []
 type: pbl
-week: 23
+week: 24
 ---
 
 ## Flask Security using JSON Web Tokens (JWT))

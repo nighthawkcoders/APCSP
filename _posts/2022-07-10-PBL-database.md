@@ -57,8 +57,10 @@ tags: [javascript, fetch, get, post, put]
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
-  //const url = "http://localhost:8086/api/users"
-  const url = "https://flask.nighthawkcodingsociety.com/api/users"
+  var url = "https://flask.nighthawkcodingsociety.com/api/users"
+  //url = "http://localhost:8086/api/users"
+  
+
   const create_fetch = url + '/create';
   const read_fetch = url + '/';
 

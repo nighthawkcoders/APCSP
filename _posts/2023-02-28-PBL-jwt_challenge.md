@@ -50,7 +50,7 @@ However, for implementation we we will use *** #3 HttpOnly Cookie ***.
 
 ### Key Configuration Areas
 #### Nginx configuration snippet (Client to this Server):
-> Nginx. Focus on add_header in preflight sectionthat allow cross domain (github.io) to access server.
+> Nginx. Focus on add_header in preflight section that allow cross domain (github.io) to access server.
 ```java
 location / {
         proxy_pass http://localhost:8085;
@@ -211,157 +211,115 @@ You can then use the JWT for authentication in subsequent fetch requests as the 
 - GitHub Pages Application
     - Make a Login and SignUp option in upper left corner of page.  To handle this well it may require some them adjustment.  Login or Name should alway be displayed in upper right corner, review [csa.nighthawkcodingsociety.com](https://csa.nighthawkcodingsociety.com/) for example. 
     - Only block or present login/signup page when someone fails on a fetch of something that is unauthorized.
-- Spring Application
+- Flask Application
     - Add Roles to authentication
-    - Bring JavaScript or Spring/Thymeleaf Admin operations into this page.  Some Thymeleaf exists in the project,
+    - Bring JavaScript or Flask/Jinja2 Admin operations into this page.  Some Jinja2 exists in the flask_portfolio project,
 - Blog or Video on your successes and how you got there.
 
-## Hack Helpers
+## Hack Helpers for Flask
 > Additional user and security elements.
+- Flask-Security is a Flask extension that provides many security features, including user authentication and authorization. It allows you to easily integrate user authentication into your Flask application by providing a set of pre-built views and forms for login, registration, password reset, and more.
+- To use Flask-Security with your own user database, you will need to configure the extension to use your database instead of the default SQLite database. Here are the steps you can follow to configure Flask-Security to use your own user database:
+- Install Flask-Security and the necessary database driver. For example, if you are using PostgreSQL, you would install Flask-Security and the psycopg2 driver with the following commands:
+- Add to requirements.txt: Flask-Security, psycopg2-binary, Flask-JWT-Extended
+- Add Flask-Security extension in your Flask application: __init__py
 
-* security/SecurityConfig.java.   
-    * This code sets up BCrypt as password encoder, this is wired into Spring Security
-    * HTTP security is changed so that you white list things that you want secure.  It is possible to do this either way, white list authenticated `.antMatchers("/api/person/**").authenticated()` or white list permitted `.antMatchers("/", "/frontend/**").permitAll()`.  In either case, it is valuable to have a convention on naming endpoints to simplify rules.
+```python
+from flask_security import Security, SQLAlchemyUserDatastore
+from flask_sqlalchemy import SQLAlchemy
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 
-```java
-/*
-* To enable HTTP Security in Spring, extend the WebSecurityConfigurerAdapter. 
-*/
-@Configuration
-@EnableWebSecurity  // Beans to enable basic Web security
-@EnableGlobalMethodSecurity(prePostEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'your_database_uri'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['JWT_SECRET_KEY'] = 'your_secret_key'
+jwt = JWTManager(app)
 
-	@Autowired
-	private JwtRequestFilter jwtRequestFilter;
-
-	@Autowired
-	private PersonDetailsService personDetailsService;
-	
-    @Bean  // Sets up password encoding style
-    PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
-
-	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		// configure AuthenticationManager so that it knows from where to load
-		// user for matching credentials
-		// Use BCryptPasswordEncoder
-		auth.userDetailsService(personDetailsService).passwordEncoder(passwordEncoder());
-	}
-
-	@Override
-	@Bean
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
-
-    
-    ...
-}
-
+db = SQLAlchemy(app)
+security = Security(app, SQLAlchemyUserDatastore(db))
 ```
 
-* mvc\person\PersonDetailsService.java, implements UserDetailsService from JWT.
-    * UserDetailsService is how we train Spring Security to use Person and PersonRoles POJOs for security.
-    * PersonDetails makes sure each save use password encoding
-    * PersonDetails in my implementation is to build abstraction of all the Jpa complexities, allowing  API and MVC classes and methods to be simpler and reusable.
-
-```java
-@Service
-@Transactional
-public class PersonDetailsService implements UserDetailsService {  // "implements" ties ModelRepo to Spring Security
-    // Encapsulate many object into a single Bean (Person, Roles, and Scrum)
-    @Autowired  // Inject PersonJpaRepository
-    private PersonJpaRepository personJpaRepository;
-    @Autowired  // Inject RoleJpaRepository
-    private PersonRoleJpaRepository personRoleJpaRepository;
-    @Autowired  // Inject PasswordEncoder
-    private PasswordEncoder passwordEncoder;
-
-    /* UserDetailsService Overrides and maps Person & Roles POJO into Spring Security */
-    @Override
-    public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Person person = personJpaRepository.findByEmail(email); // setting variable user equal to the method finding the username in the database
-        if(person==null) {
-			    throw new UsernameNotFoundException("User not found with username: " + email);
-        }
-        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        person.getRoles().forEach(role -> { //loop through roles
-            authorities.add(new SimpleGrantedAuthority(role.getName())); //create a SimpleGrantedAuthority by passed in role, adding it all to the authorities list, list of roles gets past in for spring security
-        });
-        // train spring security to User and Authorities
-        return new org.springframework.security.core.userdetails.User(person.getEmail(), person.getPassword(), authorities);
-    }
+- This initializes the extension with a SQLAlchemyUserDatastore, which is responsible for interacting with your database.
 
 
-    // ....
+- Define your User and Role models in your application. These models should inherit from the SQLAlchemy db.Model class and implement the necessary fields and methods required by Flask-Security. For example: RoleMixin and UserMixin
 
-    // encode password prior to sava
-    public void save(Person person) {
-        person.setPassword(passwordEncoder.encode(person.getPassword()));
-        personJpaRepository.save(person);
-    }
+```python
+class Role(db.Model, RoleMixin):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(80), unique=True)
+    description = db.Column(db.String(255))
 
-    // ....
-
-    // custom JPA query to find anything containing term in name or email ignoring case
-    public  List<Person>listLike(String term) {
-        return personJpaRepository.findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase(term, term);
-    }
-
-    // ....
-
-}
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(255), unique=True)
+    password = db.Column(db.String(255))
+    active = db.Column(db.Boolean())
+    confirmed_at = db.Column(db.DateTime())
+    roles = db.relationship('Role', secondary=roles_users, backref=db.backref('users', lazy='dynamic'))
 ```
 
-* mvc\ModelInit.java, used to initialize database for testing
-   * The `CommandLineRunner run()` occurs prior to web site port being available.  Typically, there is only one Bean of type without application.properties override.  Thus, you see jokes and person in same runner.  Splitting this and having Person initialization in person package is desireable. 
-   * Class methods for Person (`Person.init`) is used to initialize object.  
-   * Each object is checked and saved using `personService` methods.
-   * Test Notes are added to ensure functionality.  Intention is to add notes into person package.
+- Create a SQLAlchemyUserDatastore and initialize the Flask-Security extension:
 
-```java
-@Component // Scans Application for ModelInit Bean, this detects CommandLineRunner
-public class ModelInit {  
-    @Autowired JokesJpaRepository jokesRepo;
-    @Autowired NoteJpaRepository noteRepo;
-    @Autowired PersonDetailsService personService;
-
-    @Bean
-    CommandLineRunner run() {  // The run() method will be executed after the application starts
-        return args -> {
-
-            // Joke database is populated with starting jokes
-            String[] jokesArray = Jokes.init();
-            for (String joke : jokesArray) {
-                List<Jokes> jokeFound = jokesRepo.findByJokeIgnoreCase(joke);  // JPA lookup
-                if (jokeFound.size() == 0)
-                    jokesRepo.save(new Jokes(null, joke, 0, 0)); //JPA save
-            }
-
-            // Person database is populated with test data
-            Person[] personArray = Person.init();
-            for (Person person : personArray) {
-                //findByNameContainingIgnoreCaseOrEmailContainingIgnoreCase
-                List<Person> personFound = personService.list(person.getName(), person.getEmail());  // lookup
-                if (personFound.size() == 0) {
-                    personService.save(person);  // save
-
-                    // Each "test person" starts with a "test note"
-                    String text = "Test " + person.getEmail();
-                    Note n = new Note(text, person);  // constructor uses new person as Many-to-One association
-                    noteRepo.save(n);  // JPA Save                  
-                }
-            }
-
-        };
-    }
-}
-
+```python
+user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+security = Security(app, user_datastore)
 ```
 
+- The create_access_token() function creates a JWT with the user's ID as the token's identity. You can customize the contents of the token by passing additional parameters to the function. For example, to include the user's email in the token, you can do:
+
+```python
+access_token = create_access_token(identity=user.id, additional_claims={'email': user.email})
+```
+
+
+- Define a route for user authentication, where the user provides their email and password in the request body. In this example, we'll assume that the email and password are stored in the User model we defined earlier.
+
+```python
+from models import User
+
+@app.route('/login', methods=['POST'])
+def login():
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+
+    user = User.query.filter_by(email=email).first()
+
+    if not user or not user.check_password(password):
+        return jsonify({'message': 'Invalid credentials'}), 401
+
+    access_token = create_access_token(identity=user.id)
+    return jsonify({'access_token': access_token}), 200
+```
+
+- Use the @login_required and @roles_accepted decorators to secure endpoints in your Flask views. The @login_required decorator ensures that only authenticated users can access the endpoint, while the @roles_accepted decorator ensures that only users with the specified roles can access the endpoint.
+
+```python
+@app.route('/protected', methods=['GET'])
+@jwt_required()
+def protected():
+    return jsonify({'message': 'This is a protected endpoint!'})
+
+@app.route('/admin')
+@roles_accepted('admin')
+def admin():
+    return 'This is a secured endpoint for users with the admin role only!'
+```
+
+- Restrict access to the admin endpoint to users with the admin role, you need to create a role with the name admin and assign it to the appropriate user(s):
+
+```python
+# create an admin role
+admin_role = user_datastore.create_role(name='admin', description='Administrator')
+
+# create a user with the admin role
+admin_user = user_datastore.create_user(email='admin@example.com', password='password')
+user_datastore.add_role_to_user(admin_user, admin_role)
+
+# commit the changes to the database
+db.session.commit()
+```
+
+- To implement authentication and return a JWT (JSON Web Token) in Flask, you can use the Flask-JWT-Extended extension. Here's an example of how to implement authentication and return a JWT:

@@ -71,7 +71,6 @@ exclude:
   - docker-compose.yml
   - action.yml
   - Makefile
-  - settings.ini
 
 
 # this setting allows you to keep pages organized in the _pages folder

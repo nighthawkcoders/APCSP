@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 title: Frontend
 permalink: /frontend/overview
 type: pbl

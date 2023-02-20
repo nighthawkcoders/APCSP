@@ -1,6 +1,6 @@
 ---
 title: Database CRUD Operations
-layout: default
+layout: base
 description: An advanced example of do database operation asynchronously between JavaScript and Backend Database.
 permalink: /data/database
 image: /images/database.png

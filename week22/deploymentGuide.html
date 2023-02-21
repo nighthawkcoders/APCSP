@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>AWS Deployment Guide | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="AWS Deployment Guide" />
+<meta name="author" content="Ethan Tran, Samit Poojary, and Azeem Khan" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This notebook will guide you step-by-step on how to configure your AWS instance and docker container in order to deploy your backend. Thank you to Samit Poojary, Ethan Tran, Edwin Abraham, Mr. Mortensen and Jeffrey Fonseca for resources and instructions." />
+<meta property="og:description" content="This notebook will guide you step-by-step on how to configure your AWS instance and docker container in order to deploy your backend. Thank you to Samit Poojary, Ethan Tran, Edwin Abraham, Mr. Mortensen and Jeffrey Fonseca for resources and instructions." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/week22/deploymentGuide" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/week22/deploymentGuide" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-20T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="AWS Deployment Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ethan Tran, Samit Poojary, and Azeem Khan"},"dateModified":"2023-02-20T00:00:00-06:00","datePublished":"2023-02-20T00:00:00-06:00","description":"This notebook will guide you step-by-step on how to configure your AWS instance and docker container in order to deploy your backend. Thank you to Samit Poojary, Ethan Tran, Edwin Abraham, Mr. Mortensen and Jeffrey Fonseca for resources and instructions.","headline":"AWS Deployment Guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/week22/deploymentGuide"},"url":"https://nighthawkcoders.github.io/APCSP/week22/deploymentGuide"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">AWS Deployment Guide</h1><p class="page-description">This notebook will guide you step-by-step on how to configure your AWS instance and docker container in order to deploy your backend. Thank you to Samit Poojary, Ethan Tran, Edwin Abraham, Mr. Mortensen and Jeffrey Fonseca for resources and instructions.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-20T00:00:00-06:00" itemprop="datePublished">
+        Feb 20, 2023
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Ethan Tran, Samit Poojary, and Azeem Khan</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+          <a class="category-tags-link" href="/APCSP/categories/ap#week 22">week 22</a>
+        
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Accessing-AWS">Accessing AWS </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Server-Setup-and-Initial-Deployment">Server Setup and Initial Deployment </a></li>
+<li class="toc-entry toc-h3"><a href="#Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-"Instances"-dropdown-on-AWS-and-select-"Instances."">Amazon Web Services (AWS):Electric Cloud Compute (EC2) Setup- To begin, head to  the &quot;Instances&quot; dropdown on AWS and select &quot;Instances.&quot; </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Local-Setup">Local Setup </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Finding-a-Port">Finding a Port </a></li>
+<li class="toc-entry toc-h3"><a href="#Setting-up-Docker">Setting up Docker </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#AWS-Setup">AWS Setup </a></li>
+<li class="toc-entry toc-h2"><a href="#DNS-&-NGINX-Setup">DNS &amp; NGINX Setup </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Nginx-setup-in-AWS-terminal">Nginx setup in AWS terminal </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Certbot-Config">Certbot Config </a></li>
+<li class="toc-entry toc-h2"><a href="#Updating-after-changing-code-in-Repository">Updating after changing code in Repository </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Changing-Code-in-VSCode">Changing Code in VSCode </a></li>
+<li class="toc-entry toc-h3"><a href="#Pulling-Changes-into-AWS">Pulling Changes into AWS </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Congratulations!">Congratulations! </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-02-20-deploymentGuide.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Accessing-AWS">
+<a class="anchor" href="#Accessing-AWS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessing AWS<a class="anchor-link" href="#Accessing-AWS"> </a>
+</h2>
+<h3 id="Server-Setup-and-Initial-Deployment">
+<a class="anchor" href="#Server-Setup-and-Initial-Deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Setup and Initial Deployment<a class="anchor-link" href="#Server-Setup-and-Initial-Deployment"> </a>
+</h3>
+<blockquote>
+<p>Development Operations (DevOps) begins with server setup.</p>
+<h3 id='Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-"Instances"-dropdown-on-AWS-and-select-"Instances."'>
+<a class="anchor" href="#Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-" instances aria-hidden="true"><span class="octicon octicon-link"></span></a>Amazon Web Services (AWS):Electric Cloud Compute (EC2) Setup- To begin, head to  the "Instances" dropdown on AWS and select "Instances."<a class="anchor-link" href="#Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-%22Instances%22-dropdown-on-AWS-and-select-%22Instances.%22"> </a>
+</h3>
+</blockquote>
+<p><img src="https://user-images.githubusercontent.com/109186517/220186297-adf65729-a8db-4506-ae03-cd75273d92d0.png" alt="image1"></p>
+<ul>
+<li>From here, a variety of instances will show up. For this project, depending on which teacher you have, select either "NCS.cf Yeung CSP" or "NCS.gq Mort CSP"</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/109186517/220186519-ca92be0c-c9e6-4173-bbdb-9715a13a8a69.png" alt="image2"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Local-Setup">
+<a class="anchor" href="#Local-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local Setup<a class="anchor-link" href="#Local-Setup"> </a>
+</h2>
+<h3 id="Finding-a-Port">
+<a class="anchor" href="#Finding-a-Port" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding a Port<a class="anchor-link" href="#Finding-a-Port"> </a>
+</h3>
+<p>In AWS;</p>
+<ol>
+<li>Run <code>docker ps</code> or <code>sudo docker ps</code> and find a port number starting in 8--- that is not in use. (I will be using 8081)</li>
+</ol>
+<h3 id="Setting-up-Docker">
+<a class="anchor" href="#Setting-up-Docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up Docker<a class="anchor-link" href="#Setting-up-Docker"> </a>
+</h3>
+<ol>
+<li>
+<p>Open VSCode and navigate to your Flask repository (backend)</p>
+</li>
+<li>
+<p>Make sure your <code>Dockerfile</code> matches the template below.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">FROM</span> <span class="n">docker</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">python</span><span class="p">:</span><span class="mf">3.10</span>
+
+<span class="n">WORKDIR</span> <span class="o">/</span>
+
+<span class="c1"># --- [Install python and pip] ---</span>
+<span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> <span class="o">&amp;&amp;</span> \
+    <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span>
+<span class="n">COPY</span> <span class="o">.</span> <span class="o">/</span><span class="n">app</span>
+
+<span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">gunicorn</span>
+
+<span class="n">ENV</span> <span class="n">GUNICORN_CMD_ARGS</span><span class="o">=</span><span class="s2">"--workers=3 --bind=0.0.0.0:8080"</span>
+
+<span class="n">EXPOSE</span> <span class="mi">8080</span>
+
+<span class="n">CMD</span> <span class="p">[</span> <span class="s2">"gunicorn"</span><span class="p">,</span> <span class="s2">"main:app"</span> <span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>Edit your <code>docker-compose.yml</code> according to the template below.</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">'3'</span>
+<span class="n">services</span><span class="p">:</span>
+        <span class="n">web</span><span class="p">:</span>
+                <span class="n">image</span><span class="p">:</span> <span class="n">flask_port_v1</span> <span class="c1"># Change the image name to something unique</span>
+                <span class="n">build</span><span class="p">:</span> <span class="o">.</span>
+                <span class="n">ports</span><span class="p">:</span>
+                        <span class="o">-</span> <span class="s2">"8---:8080"</span> <span class="c1"># Edit the number on the left to match the port you chose</span>
+                <span class="n">volumes</span><span class="p">:</span>
+                        <span class="o">-</span> <span class="o">./</span><span class="n">volumes</span><span class="p">:</span><span class="o">/</span><span class="n">volumes</span>
+                        <span class="o">-</span> <span class="o">./</span><span class="n">instance</span><span class="p">:</span><span class="o">/</span><span class="n">instance</span>
+                <span class="n">restart</span><span class="p">:</span> <span class="n">unless</span><span class="o">-</span><span class="n">stopped</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>Test <code>docker-compose up</code> or <code>sudo docker-compose up</code> in your VSCode terminal (don't forget to 'cd' into the right repo.)</p>
+</li>
+<li>
+<p>After it's done building, type in <code>http://localhost:8---</code> in your browser (replace '8---' with your port number you've chosen)</p>
+</li>
+<li>
+<p>If all runs smoothly, push your changes to Github and continue to <a href="https://azeem-khan1.github.io/fastpages-project/week22/deploymentGuide#AWS-Setup">AWS setup</a></p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="AWS-Setup">
+<a class="anchor" href="#AWS-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>AWS Setup<a class="anchor-link" href="#AWS-Setup"> </a>
+</h2>
+<p>In the AWS terminal;</p>
+<ol>
+<li>
+<p><code>cd ~</code></p>
+</li>
+<li>
+<p>Clone your backend repo: <code>git clone github.com/server/project.git my-unique-name</code></p>
+</li>
+<li>
+<p>Navigate to your repo: <code>cd my-unique-name</code></p>
+</li>
+<li>
+<p>Install your requirements: <code>pip install -r requirements.txt</code></p>
+</li>
+<li>
+<p>Build your site: <code>docker-compose up -d --build</code></p>
+</li>
+<li>
+<p>Test your site: <code>curl localhost:8---</code> (replace '8---' with your port number)</p>
+<blockquote>
+<p>This should show you all the html content of your site. Double check some things that are unique to your site to ensure your port is accurate and working.</p>
+</blockquote>
+</li>
+</ol>
+<p>If all runs smooth, continue to <a href="https://azeem-khan1.github.io/fastpages-project/week22/deploymentGuide#DNS-&amp;-NGINX-Setup">DNS &amp; NGINX Setup</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DNS-&amp;-NGINX-Setup">
+<a class="anchor" href="#DNS-&amp;-NGINX-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNS &amp; NGINX Setup<a class="anchor-link" href="#DNS-&amp;-NGINX-Setup"> </a>
+</h2>
+<blockquote>
+<p>Follow <a href="https://moonpiedumplings.github.io/quartotest/posts/duckdns/">Jeffrey's guide to duckdns</a> (public IP can be found below the terminal)</p>
+</blockquote>
+<h3 id="Nginx-setup-in-AWS-terminal">
+<a class="anchor" href="#Nginx-setup-in-AWS-terminal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx setup in AWS terminal<a class="anchor-link" href="#Nginx-setup-in-AWS-terminal"> </a>
+</h3>
+<ol>
+<li>
+<p>Navigate to nginx: <code>cd /etc/nginx/sites-available</code></p>
+</li>
+<li>
+<p>Create an nginx config file: <code>sudo nano yourUniqueName</code></p>
+</li>
+<li>
+<p>Use the format below to write into your config file</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span> <span class="p">{</span>
+   <span class="n">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="n">listen</span> <span class="p">[::]:</span><span class="mi">80</span><span class="p">;</span>
+    <span class="n">server_name</span> <span class="o">-----.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span><span class="p">;</span> <span class="c1"># CHANGE SERVER NAME TO YOUR REGISTERED DOMAIN</span>
+    <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+        <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8</span><span class="o">---</span><span class="p">;</span> <span class="c1"># CHANGE PORT TO YOUR UNIQUE PORT</span>
+        <span class="c1"># Simple requests</span>
+        <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">request_method</span> <span class="o">~*</span> <span class="err">“</span><span class="p">(</span><span class="n">GET</span><span class="o">|</span><span class="n">POST</span><span class="o">|</span><span class="n">PUT</span><span class="o">|</span><span class="n">DELETE</span><span class="p">)</span><span class="err">“</span><span class="p">)</span> <span class="p">{</span> <span class="c1"># Customize Request methods based on your needs</span>
+                <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Origin</span><span class="err">”</span>  <span class="o">*</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1"># Preflighted requests</span>
+        <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">request_method</span> <span class="o">=</span> <span class="n">OPTIONS</span> <span class="p">)</span> <span class="p">{</span>
+                <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Origin</span><span class="err">”</span>  <span class="o">*</span><span class="p">;</span>
+                <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Methods</span><span class="err">”</span> <span class="err">“</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">PUT</span><span class="p">,</span> <span class="n">DELETE</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">,</span> <span class="n">HEAD</span><span class="err">”</span><span class="p">;</span> <span class="c1"># Make sure the request methods above match here</span>
+                <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Headers</span><span class="err">”</span> <span class="err">“</span><span class="n">Authorization</span><span class="p">,</span> <span class="n">Origin</span><span class="p">,</span> <span class="n">X</span><span class="o">-</span><span class="n">Requested</span><span class="o">-</span><span class="n">With</span><span class="p">,</span> <span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">,</span> <span class="n">Accept</span><span class="err">”</span><span class="p">;</span>
+                <span class="k">return</span> <span class="mi">200</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>To save changes, <code>ctl X</code> or <code>cmd X</code>, then <code>y</code>, then <code>enter</code></p>
+</li>
+<li>
+<p>Create a symbolic link: <code>cd /etc/nginx/sites-enabled</code>, then <code>ln -s /etc/nginx/sites-available/yourUniqueName /etc/nginx/sites-enabled</code> (change yourUniqueName to your nginx config file name)</p>
+</li>
+<li>
+<p>Validate by running: <code>sudo nginx -t</code></p>
+</li>
+<li>
+<p>Restart nginx by running <code>sudo systemctl restart nginx</code></p>
+</li>
+<li>
+<p>Test your domain name in browser now (only http://, not https://)</p>
+</li>
+</ol>
+<p>If all runs smoothly, continue to <a href="https://azeem-khan1.github.io/fastpages-project/week22/deploymentGuide#Certbot-Config">Certbot config</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Certbot-Config">
+<a class="anchor" href="#Certbot-Config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Certbot Config<a class="anchor-link" href="#Certbot-Config"> </a>
+</h2>
+<blockquote>
+<p>Certbot allows your site to get a certificate in order for the http request to be secure (https)</p>
+</blockquote>
+<ol>
+<li>Run commands below</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+
+<span class="n">sudo</span> <span class="n">snap</span> <span class="n">install</span> <span class="n">core</span><span class="p">;</span> <span class="n">sudo</span> <span class="n">snap</span> <span class="n">refresh</span> <span class="n">core</span>
+<span class="n">sudo</span> <span class="n">snap</span> <span class="n">install</span> <span class="o">--</span><span class="n">classic</span> <span class="n">certbot</span>
+<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">snap</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">certbot</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">certbot</span>
+
+<span class="n">sudo</span> <span class="n">certbot</span> <span class="o">--</span><span class="n">nginx</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Ideal outcome is shown below</strong></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Saving</span> <span class="n">debug</span> <span class="n">log</span> <span class="n">to</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">.</span><span class="n">log</span>
+<span class="n">Plugins</span> <span class="n">selected</span><span class="p">:</span> <span class="n">Authenticator</span> <span class="n">nginx</span><span class="p">,</span> <span class="n">Installer</span> <span class="n">nginx</span>
+
+<span class="n">Which</span> <span class="n">names</span> <span class="n">would</span> <span class="n">you</span> <span class="n">like</span> <span class="n">to</span> <span class="n">activate</span> <span class="n">HTTPS</span> for<span class="o">?</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">coolcodersjava</span><span class="o">.</span><span class="n">pw</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">www</span><span class="o">.</span><span class="n">coolcodersjava</span><span class="o">.</span><span class="n">pw</span>
+<span class="mi">3</span><span class="p">:</span> <span class="n">ajarcade</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">4</span><span class="p">:</span> <span class="n">flowhealth</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">5</span><span class="p">:</span> <span class="n">goatedgroup</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">6</span><span class="p">:</span> <span class="n">jasj</span><span class="o">-</span><span class="n">inventory</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">7</span><span class="p">:</span> <span class="n">recipies</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">8</span><span class="p">:</span> <span class="n">ssvgcars</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">9</span><span class="p">:</span> <span class="n">userapi</span><span class="o">.</span><span class="n">duckdns</span><span class="o">.</span><span class="n">org</span>
+<span class="mi">10</span><span class="p">:</span> <span class="n">fr0st</span><span class="o">.</span><span class="n">ml</span>
+<span class="mi">11</span><span class="p">:</span> <span class="n">www</span><span class="o">.</span><span class="n">fr0st</span><span class="o">.</span><span class="n">ml</span>
+<span class="mi">12</span><span class="p">:</span> <span class="n">agenda</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">13</span><span class="p">:</span> <span class="n">coolcoders</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">14</span><span class="p">:</span> <span class="n">escaperoom</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">15</span><span class="p">:</span> <span class="n">frost</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">16</span><span class="p">:</span> <span class="n">jame</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">17</span><span class="p">:</span> <span class="n">lawnmowers</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">18</span><span class="p">:</span> <span class="n">loopholegames</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">19</span><span class="p">:</span> <span class="n">musicmania</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">20</span><span class="p">:</span> <span class="n">nba</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">21</span><span class="p">:</span> <span class="n">sadv</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">22</span><span class="p">:</span> <span class="n">ssjn</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">23</span><span class="p">:</span> <span class="n">stocks</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">24</span><span class="p">:</span> <span class="n">striver</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">25</span><span class="p">:</span> <span class="n">tngc</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">26</span><span class="p">:</span> <span class="n">white</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">27</span><span class="p">:</span> <span class="n">workwatch</span><span class="o">.</span><span class="n">nighthawkcodescrums</span><span class="o">.</span><span class="n">gq</span>
+<span class="mi">28</span><span class="p">:</span> <span class="n">cars</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="mi">29</span><span class="p">:</span> <span class="n">dolphin</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="mi">30</span><span class="p">:</span> <span class="n">saakd</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="mi">31</span><span class="p">:</span> <span class="n">pythonalflask</span><span class="o">.</span><span class="n">tk</span>
+<span class="mi">32</span><span class="p">:</span> <span class="n">www</span><span class="o">.</span><span class="n">pythonalflask</span><span class="o">.</span><span class="n">tk</span>
+<span class="mi">33</span><span class="p">:</span> <span class="n">teambrobro</span><span class="o">.</span><span class="n">tk</span>
+<span class="mi">34</span><span class="p">:</span> <span class="n">www</span><span class="o">.</span><span class="n">teambrobro</span><span class="o">.</span><span class="n">tk</span>
+<span class="mi">35</span><span class="p">:</span> <span class="n">teamcheeseatimetime</span><span class="o">.</span><span class="n">tk</span>
+<span class="mi">36</span><span class="p">:</span> <span class="n">www</span><span class="o">.</span><span class="n">teamcheeseatimetime</span><span class="o">.</span><span class="n">tk</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="n">Select</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="n">numbers</span> <span class="n">separated</span> <span class="n">by</span> <span class="n">commas</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">spaces</span><span class="p">,</span> <span class="ow">or</span> <span class="n">leave</span> <span class="nb">input</span>
+<span class="n">blank</span> <span class="n">to</span> <span class="n">select</span> <span class="nb">all</span> <span class="n">options</span> <span class="n">shown</span> <span class="p">(</span><span class="n">Enter</span> <span class="s1">'c'</span> <span class="n">to</span> <span class="n">cancel</span><span class="p">):</span> <span class="c1"># ENTER YOUR CORRESPONDING NUMBER</span>
+
+<span class="n">Cert</span> <span class="ow">not</span> <span class="n">yet</span> <span class="n">due</span> <span class="k">for</span> <span class="n">renewal</span>
+
+<span class="n">You</span> <span class="n">have</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">certificate</span> <span class="n">that</span> <span class="n">has</span> <span class="n">exactly</span> <span class="n">the</span> <span class="n">same</span> <span class="n">domains</span> <span class="ow">or</span> <span class="n">certificate</span> <span class="n">name</span> <span class="n">you</span> <span class="n">requested</span> <span class="ow">and</span> <span class="n">isn</span><span class="s1">'t close to expiry.</span>
+<span class="p">(</span><span class="n">ref</span><span class="p">:</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">renewal</span><span class="o">/</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="o">-</span><span class="mf">0001.</span><span class="n">conf</span><span class="p">)</span>
+
+<span class="n">What</span> <span class="n">would</span> <span class="n">you</span> <span class="n">like</span> <span class="n">to</span> do<span class="o">?</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">Attempt</span> <span class="n">to</span> <span class="n">reinstall</span> <span class="n">this</span> <span class="n">existing</span> <span class="n">certificate</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">Renew</span> <span class="o">&amp;</span> <span class="n">replace</span> <span class="n">the</span> <span class="n">cert</span> <span class="p">(</span><span class="n">limit</span> <span class="o">~</span><span class="mi">5</span> <span class="n">per</span> <span class="mi">7</span> <span class="n">days</span><span class="p">)</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="n">Select</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="n">number</span> <span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="n">then</span> <span class="p">[</span><span class="n">enter</span><span class="p">]</span> <span class="p">(</span><span class="n">press</span> <span class="s1">'c'</span> <span class="n">to</span> <span class="n">cancel</span><span class="p">):</span> <span class="mi">2</span>
+<span class="n">Renewing</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">certificate</span>
+<span class="n">Performing</span> <span class="n">the</span> <span class="n">following</span> <span class="n">challenges</span><span class="p">:</span>
+<span class="n">http</span><span class="o">-</span><span class="mi">01</span> <span class="n">challenge</span> <span class="k">for</span> <span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">http</span><span class="o">-</span><span class="mi">01</span> <span class="n">challenge</span> <span class="k">for</span> <span class="n">csa</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">http</span><span class="o">-</span><span class="mi">01</span> <span class="n">challenge</span> <span class="k">for</span> <span class="n">cso</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">http</span><span class="o">-</span><span class="mi">01</span> <span class="n">challenge</span> <span class="k">for</span> <span class="n">flm</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">Waiting</span> <span class="k">for</span> <span class="n">verification</span><span class="o">...</span>
+<span class="n">Cleaning</span> <span class="n">up</span> <span class="n">challenges</span>
+<span class="n">Deploying</span> <span class="n">Certificate</span> <span class="n">to</span> <span class="n">VirtualHost</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_society</span>
+<span class="n">Deploying</span> <span class="n">Certificate</span> <span class="n">to</span> <span class="n">VirtualHost</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_csa</span>
+<span class="n">Deploying</span> <span class="n">Certificate</span> <span class="n">to</span> <span class="n">VirtualHost</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_csp</span>
+<span class="n">Deploying</span> <span class="n">Certificate</span> <span class="n">to</span> <span class="n">VirtualHost</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_flm</span>
+
+<span class="n">Please</span> <span class="n">choose</span> <span class="n">whether</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">redirect</span> <span class="n">HTTP</span> <span class="n">traffic</span> <span class="n">to</span> <span class="n">HTTPS</span><span class="p">,</span> <span class="n">removing</span> <span class="n">HTTP</span> <span class="n">access</span><span class="o">.</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="mi">1</span><span class="p">:</span> <span class="n">No</span> <span class="n">redirect</span> <span class="o">-</span> <span class="n">Make</span> <span class="n">no</span> <span class="n">further</span> <span class="n">changes</span> <span class="n">to</span> <span class="n">the</span> <span class="n">webserver</span> <span class="n">configuration</span><span class="o">.</span>
+<span class="mi">2</span><span class="p">:</span> <span class="n">Redirect</span> <span class="o">-</span> <span class="n">Make</span> <span class="nb">all</span> <span class="n">requests</span> <span class="n">redirect</span> <span class="n">to</span> <span class="n">secure</span> <span class="n">HTTPS</span> <span class="n">access</span><span class="o">.</span> <span class="n">Choose</span> <span class="n">this</span> <span class="k">for</span>
+<span class="n">new</span> <span class="n">sites</span><span class="p">,</span> <span class="ow">or</span> <span class="k">if</span> <span class="n">you</span><span class="s1">'re confident your site works on HTTPS. You can undo this</span>
+<span class="n">change</span> <span class="n">by</span> <span class="n">editing</span> <span class="n">your</span> <span class="n">web</span> <span class="n">server</span><span class="s1">'s configuration.</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="n">Select</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="n">number</span> <span class="p">[</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="n">then</span> <span class="p">[</span><span class="n">enter</span><span class="p">]</span> <span class="p">(</span><span class="n">press</span> <span class="s1">'c'</span> <span class="n">to</span> <span class="n">cancel</span><span class="p">):</span> <span class="mi">2</span>
+<span class="n">Traffic</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">80</span> <span class="n">already</span> <span class="n">redirecting</span> <span class="n">to</span> <span class="n">ssl</span> <span class="ow">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_society</span>
+<span class="n">Traffic</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">80</span> <span class="n">already</span> <span class="n">redirecting</span> <span class="n">to</span> <span class="n">ssl</span> <span class="ow">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_csa</span>
+<span class="n">Traffic</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">80</span> <span class="n">already</span> <span class="n">redirecting</span> <span class="n">to</span> <span class="n">ssl</span> <span class="ow">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_csp</span>
+<span class="n">Traffic</span> <span class="n">on</span> <span class="n">port</span> <span class="mi">80</span> <span class="n">already</span> <span class="n">redirecting</span> <span class="n">to</span> <span class="n">ssl</span> <span class="ow">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">nginx</span><span class="o">/</span><span class="n">sites</span><span class="o">-</span><span class="n">enabled</span><span class="o">/</span><span class="n">nighthawk_flm</span>
+
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+<span class="n">Your</span> <span class="n">existing</span> <span class="n">certificate</span> <span class="n">has</span> <span class="n">been</span> <span class="n">successfully</span> <span class="n">renewed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">new</span> <span class="n">certificate</span>
+<span class="n">has</span> <span class="n">been</span> <span class="n">installed</span><span class="o">.</span>
+
+<span class="n">The</span> <span class="n">new</span> <span class="n">certificate</span> <span class="n">covers</span> <span class="n">the</span> <span class="n">following</span> <span class="n">domains</span><span class="p">:</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> 
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">csa</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> 
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">csp</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> <span class="ow">and</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">flm</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="p">,</span>
+
+<span class="n">You</span> <span class="n">should</span> <span class="n">test</span> <span class="n">your</span> <span class="n">configuration</span> <span class="n">at</span><span class="p">:</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ssllabs</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ssltest</span><span class="o">/</span><span class="n">analyze</span><span class="o">.</span><span class="n">html</span><span class="err">?</span><span class="n">d</span><span class="o">=</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ssllabs</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ssltest</span><span class="o">/</span><span class="n">analyze</span><span class="o">.</span><span class="n">html</span><span class="err">?</span><span class="n">d</span><span class="o">=</span><span class="n">csa</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ssllabs</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ssltest</span><span class="o">/</span><span class="n">analyze</span><span class="o">.</span><span class="n">html</span><span class="err">?</span><span class="n">d</span><span class="o">=</span><span class="n">csp</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ssllabs</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ssltest</span><span class="o">/</span><span class="n">analyze</span><span class="o">.</span><span class="n">html</span><span class="err">?</span><span class="n">d</span><span class="o">=</span><span class="n">flm</span><span class="o">.</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span>
+<span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span> <span class="o">-</span>
+
+<span class="n">IMPORTANT</span> <span class="n">NOTES</span><span class="p">:</span>
+ <span class="o">-</span> <span class="n">Congratulations</span><span class="o">!</span> Your certificate and chain have been saved at:
+   <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">live</span><span class="o">/</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="o">-</span><span class="mi">0001</span><span class="o">/</span><span class="n">fullchain</span><span class="o">.</span><span class="n">pem</span>
+   <span class="n">Your</span> <span class="n">key</span> <span class="n">file</span> <span class="n">has</span> <span class="n">been</span> <span class="n">saved</span> <span class="n">at</span><span class="p">:</span>
+   <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">letsencrypt</span><span class="o">/</span><span class="n">live</span><span class="o">/</span><span class="n">nighthawkcodingsociety</span><span class="o">.</span><span class="n">com</span><span class="o">-</span><span class="mi">0001</span><span class="o">/</span><span class="n">privkey</span><span class="o">.</span><span class="n">pem</span>
+   <span class="n">Your</span> <span class="n">cert</span> <span class="n">will</span> <span class="n">expire</span> <span class="n">on</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mf">06.</span> <span class="n">To</span> <span class="n">obtain</span> <span class="n">a</span> <span class="n">new</span> <span class="ow">or</span> <span class="n">tweaked</span>
+   <span class="n">version</span> <span class="n">of</span> <span class="n">this</span> <span class="n">certificate</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">future</span><span class="p">,</span> <span class="n">simply</span> <span class="n">run</span> <span class="n">certbot</span> <span class="n">again</span>
+   <span class="k">with</span> <span class="n">the</span> <span class="s2">"certonly"</span> <span class="n">option</span><span class="o">.</span> <span class="n">To</span> <span class="n">non</span><span class="o">-</span><span class="n">interactively</span> <span class="n">renew</span> <span class="o">*</span><span class="nb">all</span><span class="o">*</span> <span class="n">of</span>
+   <span class="n">your</span> <span class="n">certificates</span><span class="p">,</span> <span class="n">run</span> <span class="s2">"certbot renew"</span>
+ <span class="o">-</span> <span class="n">If</span> <span class="n">you</span> <span class="n">like</span> <span class="n">Certbot</span><span class="p">,</span> <span class="n">please</span> <span class="n">consider</span> <span class="n">supporting</span> <span class="n">our</span> <span class="n">work</span> <span class="n">by</span><span class="p">:</span>
+
+   <span class="n">Donating</span> <span class="n">to</span> <span class="n">ISRG</span> <span class="o">/</span> <span class="n">Let</span><span class="s1">'s Encrypt:   https://letsencrypt.org/donate</span>
+   <span class="n">Donating</span> <span class="n">to</span> <span class="n">EFF</span><span class="p">:</span>                    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">eff</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">donate</span><span class="o">-</span><span class="n">le</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Updating-after-changing-code-in-Repository">
+<a class="anchor" href="#Updating-after-changing-code-in-Repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating after changing code in Repository<a class="anchor-link" href="#Updating-after-changing-code-in-Repository"> </a>
+</h2>
+<h3 id="Changing-Code-in-VSCode">
+<a class="anchor" href="#Changing-Code-in-VSCode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Code in VSCode<a class="anchor-link" href="#Changing-Code-in-VSCode"> </a>
+</h3>
+<ol>
+<li>
+<p>Make sure to <code>git pull</code> before making changes; this will make sure that you pull any changes made by your team, and prevents merge conflicts</p>
+</li>
+<li>
+<p>Open terminal in VSCode and run <code>python3 main.py</code> (Make sure you cd into your repo)</p>
+<blockquote>
+<p>This should give you a local address where your flask is running. Open this in your browser to see your changes live</p>
+</blockquote>
+</li>
+<li>
+<p>Make changes that are needed (Refer to your live site to see the changes integrated into the site)</p>
+</li>
+<li>
+<p>Commit your changes</p>
+</li>
+<li>
+<p>Make sure your Docker Desktop app is running</p>
+</li>
+<li>
+<p>Test <code>docker-compose up</code> or <code>sudo docker-compose up</code> in your VSCode terminal (don't forget to 'cd' into the right repo.)</p>
+</li>
+<li>
+<p>After it's done building, type in <code>http://localhost:8---</code> in your browser (replace '8---' with your port number you've chosen)&gt; Your changes should now appear</p>
+</li>
+<li>
+<p>If all goes well, push to the repository using the Source Control tab on the left navbar</p>
+</li>
+</ol>
+<h3 id="Pulling-Changes-into-AWS">
+<a class="anchor" href="#Pulling-Changes-into-AWS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pulling Changes into AWS<a class="anchor-link" href="#Pulling-Changes-into-AWS"> </a>
+</h3>
+<p>In your AWS terminal;</p>
+<ol>
+<li>Navigate to your repo:<code>cd ~/yourRepo</code>
+</li>
+<li>
+<p>Run <code>docker-compose ps</code> or <code>sudo docker-compose ps</code></p>
+<blockquote>
+<p>It should show your docker container state as 'up' with correct port</p>
+</blockquote>
+</li>
+<li>
+<p><code>sudo docker ps</code> to check container and image</p>
+</li>
+<li>
+<p><code>git status</code> to see if you have any changes to your repo in AWS</p>
+</li>
+<li>
+<p><code>sudo docker-compose kill</code></p>
+<blockquote>
+<p>run ps on docker-compose and docker and you should observe changes
+Server should be down (502 Bad Gateway in browser)</p>
+</blockquote>
+</li>
+<li>
+<p><code>git pull</code></p>
+</li>
+<li>
+<p>Rebuild your docker container:<code>sudo docker-compose up -d --build</code></p>
+</li>
+<li>
+<p>Try to curl: <code>curl localhost:8---</code> (replace '8---' with your port number)</p>
+<blockquote>
+<p>If your changes were visible on index.html, you should see them here</p>
+</blockquote>
+</li>
+<li>
+<p>Test domain in browser (server should no longer be down)</p>
+</li>
+<li>
+<p>Run <code>docker-compose ps</code> or <code>sudo docker-compose ps</code> to check that docker is up</p>
+</li>
+<li>
+<p><code>sudo docker ps</code> to check container and image</p>
+</li>
+</ol>
+<p>If all went smooth, update is complete.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Congratulations!">
+<a class="anchor" href="#Congratulations!" aria-hidden="true"><span class="octicon octicon-link"></span></a>Congratulations!<a class="anchor-link" href="#Congratulations!"> </a>
+</h2>
+<p>Congratulations on deploying your site with AWS! A special thanks to Samit Poojary, Ethan Tran, Mr. Mortensen and Jeffrey Fonseca for helping put this together.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/week22/deploymentGuide" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

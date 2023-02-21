@@ -336,9 +336,9 @@ server {
 
 ### Activating Nginx configuration
 * Activate/enabled Nginx server configuration:
-  * nginx configuration file: test
+  * nginx configuration file can be called what you want it to be.
 ```bash
-$ sudo ln -s /etc/nginx/sites-available/test /etc/nginx/sites-enabled
+$ sudo ln -s /etc/nginx/sites-available/[your config file] /etc/nginx/sites-enabled[your config file]
 $ sudo nginx -t
 ```
 

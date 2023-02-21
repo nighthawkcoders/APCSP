@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -101,16 +101,17 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Accessing-AWS">Accessing AWS </a>
+<li class="toc-entry toc-h2"><a href="#Prerequisites">Prerequisites </a></li>
+<li class="toc-entry toc-h2"><a href="#Accessing-AWS-EC2">Accessing AWS EC2 </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Server-Setup-and-Initial-Deployment">Server Setup and Initial Deployment </a></li>
-<li class="toc-entry toc-h3"><a href="#Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-"Instances"-dropdown-on-AWS-and-select-"Instances."">Amazon Web Services (AWS):Electric Cloud Compute (EC2) Setup- To begin, head to  the &quot;Instances&quot; dropdown on AWS and select &quot;Instances.&quot; </a></li>
+<li class="toc-entry toc-h3"><a href="#Amazon-Web-Services-(AWS)-Management-Console">Amazon Web Services (AWS) Management Console </a></li>
+<li class="toc-entry toc-h3"><a href="#Unrestricted-Gateway-to-AWS-EC2-Terminal">Unrestricted Gateway to AWS EC2 Terminal </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Local-Setup">Local Setup </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Finding-a-Port">Finding a Port </a></li>
-<li class="toc-entry toc-h3"><a href="#Setting-up-Docker">Setting up Docker </a></li>
+<li class="toc-entry toc-h3"><a href="#Setting-up-Docker-using-VSCode">Setting up Docker using VSCode </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#AWS-Setup">AWS Setup </a></li>
@@ -139,23 +140,49 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Accessing-AWS">
-<a class="anchor" href="#Accessing-AWS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessing AWS<a class="anchor-link" href="#Accessing-AWS"> </a>
+<h2 id="Prerequisites">
+<a class="anchor" href="#Prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites<a class="anchor-link" href="#Prerequisites"> </a>
 </h2>
-<h3 id="Server-Setup-and-Initial-Deployment">
-<a class="anchor" href="#Server-Setup-and-Initial-Deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Setup and Initial Deployment<a class="anchor-link" href="#Server-Setup-and-Initial-Deployment"> </a>
-</h3>
 <blockquote>
-<p>Development Operations (DevOps) begins with server setup.</p>
-<h3 id='Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-"Instances"-dropdown-on-AWS-and-select-"Instances."'>
-<a class="anchor" href="#Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-" instances aria-hidden="true"><span class="octicon octicon-link"></span></a>Amazon Web Services (AWS):Electric Cloud Compute (EC2) Setup- To begin, head to  the "Instances" dropdown on AWS and select "Instances."<a class="anchor-link" href="#Amazon-Web-Services-(AWS):Electric-Cloud-Compute-(EC2)-Setup--To-begin,-head-to--the-%22Instances%22-dropdown-on-AWS-and-select-%22Instances.%22"> </a>
-</h3>
+<p>Fullfil these requirements prior to moving forward in this guide.</p>
+<ol>
+<li>Must have a backend repository on GitHub.</li>
+<li>Verify <strong>Backend is running on localhost</strong>. If it doesn't run on localhost, then it won't run on the deployment server!!!</li>
+<li>You must have a configured Domain Name pointing to the Public IP of your deployment server.  See <a href="https://moonpiedumplings.github.io/quartotest/posts/duckdns">Duck DNS Guide</a> for a guide on how to do this.​</li>
+</ol>
 </blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Accessing-AWS-EC2">
+<a class="anchor" href="#Accessing-AWS-EC2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accessing AWS EC2<a class="anchor-link" href="#Accessing-AWS-EC2"> </a>
+</h2>
+<blockquote>
+<p>Development Operations (DevOps) requires server access.</p>
+</blockquote>
+<h3 id="Amazon-Web-Services-(AWS)-Management-Console">
+<a class="anchor" href="#Amazon-Web-Services-(AWS)-Management-Console" aria-hidden="true"><span class="octicon octicon-link"></span></a>Amazon Web Services (AWS) Management Console<a class="anchor-link" href="#Amazon-Web-Services-(AWS)-Management-Console"> </a>
+</h3>
+<ul>
+<li>Login to AWS Console using your account.  Navigate to "EC2" and the "Instances" dropdown.</li>
+</ul>
 <p><img src="https://user-images.githubusercontent.com/109186517/220186297-adf65729-a8db-4506-ae03-cd75273d92d0.png" alt="image1"></p>
 <ul>
 <li>From here, a variety of instances will show up. For this project, depending on which teacher you have, select either "NCS.cf Yeung CSP" or "NCS.gq Mort CSP"</li>
 </ul>
 <p><img src="https://user-images.githubusercontent.com/109186517/220186519-ca92be0c-c9e6-4173-bbdb-9715a13a8a69.png" alt="image2"></p>
+<h3 id="Unrestricted-Gateway-to-AWS-EC2-Terminal">
+<a class="anchor" href="#Unrestricted-Gateway-to-AWS-EC2-Terminal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unrestricted Gateway to AWS EC2 Terminal<a class="anchor-link" href="#Unrestricted-Gateway-to-AWS-EC2-Terminal"> </a>
+</h3>
+<blockquote>
+<p>At school access theway.nighthawkcodingsociety.com and log in.  Follow the prompt to go to your appropriate server. (ex. type in <code>gocf</code> or <code>gogq</code> to match your Teachers server).</p>
+
+<pre><code>- Username is `ubuntu`. Password hint is 3 Musketeers</code></pre>
+</blockquote>
 
 </div>
 </div>
@@ -169,12 +196,12 @@ window.onload = wrap_img;
 <h3 id="Finding-a-Port">
 <a class="anchor" href="#Finding-a-Port" aria-hidden="true"><span class="octicon octicon-link"></span></a>Finding a Port<a class="anchor-link" href="#Finding-a-Port"> </a>
 </h3>
-<p>In AWS;</p>
+<p>In AWS EC2;</p>
 <ol>
-<li>Run <code>docker ps</code> or <code>sudo docker ps</code> and find a port number starting in 8--- that is not in use. (I will be using 8081)</li>
+<li>Run <code>docker ps</code> review list and find a port number starting in 8--- that is not in use. Valid ports are between 1024-49150, but we are asking that you stick to 8---.</li>
 </ol>
-<h3 id="Setting-up-Docker">
-<a class="anchor" href="#Setting-up-Docker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up Docker<a class="anchor-link" href="#Setting-up-Docker"> </a>
+<h3 id="Setting-up-Docker-using-VSCode">
+<a class="anchor" href="#Setting-up-Docker-using-VSCode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up Docker using VSCode<a class="anchor-link" href="#Setting-up-Docker-using-VSCode"> </a>
 </h3>
 <ol>
 <li>
@@ -225,7 +252,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Edit your <code>docker-compose.yml</code> according to the template below.</li>
+<li>Edit your <code>docker-compose.yml</code> according to the template below and comments.</li>
 </ol>
 
 </div>
@@ -241,10 +268,10 @@ window.onload = wrap_img;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">version</span><span class="p">:</span> <span class="s1">'3'</span>
 <span class="n">services</span><span class="p">:</span>
         <span class="n">web</span><span class="p">:</span>
-                <span class="n">image</span><span class="p">:</span> <span class="n">flask_port_v1</span> <span class="c1"># Change the image name to something unique</span>
+                <span class="n">image</span><span class="p">:</span> <span class="n">flask_port_v1</span> <span class="c1"># Change the image name to something unique to your project, aka my_unique_name_v1</span>
                 <span class="n">build</span><span class="p">:</span> <span class="o">.</span>
                 <span class="n">ports</span><span class="p">:</span>
-                        <span class="o">-</span> <span class="s2">"8---:8080"</span> <span class="c1"># Edit the number on the left to match the port you chose</span>
+                        <span class="o">-</span> <span class="s2">"8---:8080"</span> <span class="c1"># Edit the number on the left to match the port you selected</span>
                 <span class="n">volumes</span><span class="p">:</span>
                         <span class="o">-</span> <span class="o">./</span><span class="n">volumes</span><span class="p">:</span><span class="o">/</span><span class="n">volumes</span>
                         <span class="o">-</span> <span class="o">./</span><span class="n">instance</span><span class="p">:</span><span class="o">/</span><span class="n">instance</span>
@@ -263,7 +290,7 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
 <li>
-<p>Test <code>docker-compose up</code> or <code>sudo docker-compose up</code> in your VSCode terminal (don't forget to 'cd' into the right repo.)</p>
+<p>Test <code>docker-compose up</code> or <code>sudo docker-compose up</code> in your VSCode terminal (don't forget to 'cd' into the right repo.)  Errors will be shown in Terminal, be sure NOT to type -d.</p>
 </li>
 <li>
 <p>After it's done building, type in <code>http://localhost:8---</code> in your browser (replace '8---' with your port number you've chosen)</p>
@@ -282,19 +309,16 @@ window.onload = wrap_img;
 <h2 id="AWS-Setup">
 <a class="anchor" href="#AWS-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>AWS Setup<a class="anchor-link" href="#AWS-Setup"> </a>
 </h2>
-<p>In the AWS terminal;</p>
+<p>In the AWS EC2 terminal;</p>
 <ol>
 <li>
 <p><code>cd ~</code></p>
 </li>
 <li>
-<p>Clone your backend repo: <code>git clone github.com/server/project.git my-unique-name</code></p>
+<p>Clone your backend repo: <code>git clone github.com/server/project.git my_unique_name</code></p>
 </li>
 <li>
-<p>Navigate to your repo: <code>cd my-unique-name</code></p>
-</li>
-<li>
-<p>Install your requirements: <code>pip install -r requirements.txt</code></p>
+<p>Navigate to your repo: <code>cd my_unique_name</code></p>
 </li>
 <li>
 <p>Build your site: <code>docker-compose up -d --build</code></p>
@@ -318,7 +342,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#DNS-&amp;-NGINX-Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNS &amp; NGINX Setup<a class="anchor-link" href="#DNS-&amp;-NGINX-Setup"> </a>
 </h2>
 <blockquote>
-<p>Follow <a href="https://moonpiedumplings.github.io/quartotest/posts/duckdns/">Jeffrey's guide to duckdns</a> (public IP can be found below the terminal)</p>
+<p>Follow <a href="https://moonpiedumplings.github.io/quartotest/posts/duckdns/">Jeffrey's guide to duckdns</a> (public IP can be found below the AWS terminal)</p>
 </blockquote>
 <h3 id="Nginx-setup-in-AWS-terminal">
 <a class="anchor" href="#Nginx-setup-in-AWS-terminal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nginx setup in AWS terminal<a class="anchor-link" href="#Nginx-setup-in-AWS-terminal"> </a>
@@ -328,10 +352,10 @@ window.onload = wrap_img;
 <p>Navigate to nginx: <code>cd /etc/nginx/sites-available</code></p>
 </li>
 <li>
-<p>Create an nginx config file: <code>sudo nano yourUniqueName</code></p>
+<p>Create an nginx config file: <code>sudo nano myUniqueName</code></p>
 </li>
 <li>
-<p>Use the format below to write into your config file</p>
+<p>Use the format below to write into your config file, make updates according to comments</p>
 </li>
 </ol>
 
@@ -381,7 +405,7 @@ window.onload = wrap_img;
 <p>To save changes, <code>ctl X</code> or <code>cmd X</code>, then <code>y</code>, then <code>enter</code></p>
 </li>
 <li>
-<p>Create a symbolic link: <code>cd /etc/nginx/sites-enabled</code>, then <code>ln -s /etc/nginx/sites-available/yourUniqueName /etc/nginx/sites-enabled</code> (change yourUniqueName to your nginx config file name)</p>
+<p>Create a symbolic link: <code>cd /etc/nginx/sites-enabled</code>, then <code>ln -s /etc/nginx/sites-available/myUniqueName /etc/nginx/sites-enabled</code> (change myUniqueName to your nginx config file name)</p>
 </li>
 <li>
 <p>Validate by running: <code>sudo nginx -t</code></p>
@@ -390,7 +414,7 @@ window.onload = wrap_img;
 <p>Restart nginx by running <code>sudo systemctl restart nginx</code></p>
 </li>
 <li>
-<p>Test your domain name in browser now (only http://, not https://)</p>
+<p>Test your domain name on your desktop browser now (only http://, not https://)</p>
 </li>
 </ol>
 <p>If all runs smoothly, continue to <a href="https://azeem-khan1.github.io/fastpages-project/week22/deploymentGuide#Certbot-Config">Certbot config</a></p>
@@ -408,7 +432,7 @@ window.onload = wrap_img;
 <p>Certbot allows your site to get a certificate in order for the http request to be secure (https)</p>
 </blockquote>
 <ol>
-<li>Run commands below</li>
+<li>Run command below and follow prompts</li>
 </ol>
 
 </div>
@@ -421,13 +445,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
-
-<span class="n">sudo</span> <span class="n">snap</span> <span class="n">install</span> <span class="n">core</span><span class="p">;</span> <span class="n">sudo</span> <span class="n">snap</span> <span class="n">refresh</span> <span class="n">core</span>
-<span class="n">sudo</span> <span class="n">snap</span> <span class="n">install</span> <span class="o">--</span><span class="n">classic</span> <span class="n">certbot</span>
-<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">/</span><span class="n">snap</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">certbot</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">certbot</span>
-
-<span class="n">sudo</span> <span class="n">certbot</span> <span class="o">--</span><span class="n">nginx</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sudo</span> <span class="n">certbot</span> <span class="o">--</span><span class="n">nginx</span>
 </pre></div>
 
     </div>
@@ -576,6 +594,20 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>There are two outcomes after Certbot</li>
+</ol>
+<ul>
+<li>Success, test your domain name on your desktop browser now using https://</li>
+<li>Failure, follow prompt provided by CertBot</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Updating-after-changing-code-in-Repository">
 <a class="anchor" href="#Updating-after-changing-code-in-Repository" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating after changing code in Repository<a class="anchor-link" href="#Updating-after-changing-code-in-Repository"> </a>
 </h2>
@@ -605,10 +637,10 @@ window.onload = wrap_img;
 <p>Test <code>docker-compose up</code> or <code>sudo docker-compose up</code> in your VSCode terminal (don't forget to 'cd' into the right repo.)</p>
 </li>
 <li>
-<p>After it's done building, type in <code>http://localhost:8---</code> in your browser (replace '8---' with your port number you've chosen)&gt; Your changes should now appear</p>
+<p>After it's done building, type in <code>http://localhost:8---</code> in your browser (replace '8---' with your port number)&gt; Review changes should now appear</p>
 </li>
 <li>
-<p>If all goes well, push to the repository using the Source Control tab on the left navbar</p>
+<p>If all goes well, push to the repository using the Source Control tab on the left navbar. If you can't push, then pull and repeat steps 5 to 7.</p>
 </li>
 </ol>
 <h3 id="Pulling-Changes-into-AWS">
@@ -616,25 +648,12 @@ window.onload = wrap_img;
 </h3>
 <p>In your AWS terminal;</p>
 <ol>
-<li>Navigate to your repo:<code>cd ~/yourRepo</code>
+<li>Navigate to your repo:<code>cd ~/my_unique_name</code>
 </li>
 <li>
-<p>Run <code>docker-compose ps</code> or <code>sudo docker-compose ps</code></p>
+<p><code>sudo docker-compose down</code></p>
 <blockquote>
-<p>It should show your docker container state as 'up' with correct port</p>
-</blockquote>
-</li>
-<li>
-<p><code>sudo docker ps</code> to check container and image</p>
-</li>
-<li>
-<p><code>git status</code> to see if you have any changes to your repo in AWS</p>
-</li>
-<li>
-<p><code>sudo docker-compose kill</code></p>
-<blockquote>
-<p>run ps on docker-compose and docker and you should observe changes
-Server should be down (502 Bad Gateway in browser)</p>
+<p>Test Server in Browser, it should be down (502 Bad Gateway in browser)</p>
 </blockquote>
 </li>
 <li>
@@ -643,23 +662,23 @@ Server should be down (502 Bad Gateway in browser)</p>
 <li>
 <p>Rebuild your docker container:<code>sudo docker-compose up -d --build</code></p>
 </li>
+<li>Test Server in browser, it should be up</li>
+</ol>
+<p>Optional or Troubleshooting checks</p>
+<ol>
 <li>
 <p>Try to curl: <code>curl localhost:8---</code> (replace '8---' with your port number)</p>
 <blockquote>
-<p>If your changes were visible on index.html, you should see them here</p>
+<p>Verify home pages is yours, add endpoint to verify any other page</p>
 </blockquote>
 </li>
 <li>
-<p>Test domain in browser (server should no longer be down)</p>
+<p>Run <code>docker-compose ps</code> to check that docker is up</p>
 </li>
 <li>
-<p>Run <code>docker-compose ps</code> or <code>sudo docker-compose ps</code> to check that docker is up</p>
-</li>
-<li>
-<p><code>sudo docker ps</code> to check container and image</p>
+<p><code>docker ps</code> to check all containers and images</p>
 </li>
 </ol>
-<p>If all went smooth, update is complete.</p>
 
 </div>
 </div>
@@ -670,7 +689,7 @@ Server should be down (502 Bad Gateway in browser)</p>
 <h2 id="Congratulations!">
 <a class="anchor" href="#Congratulations!" aria-hidden="true"><span class="octicon octicon-link"></span></a>Congratulations!<a class="anchor-link" href="#Congratulations!"> </a>
 </h2>
-<p>Congratulations on deploying your site with AWS! A special thanks to Samit Poojary, Ethan Tran, Mr. Mortensen and Jeffrey Fonseca for helping put this together.</p>
+<p>Congratulations on deploying your site with AWS! A special thanks to Azeem Khan, Samit Poojary, Ethan Tran, Sophie Park, Edwin Abraham, Mr. Mortensen and Jeffrey Fonseca for helping put this together.</p>
 
 </div>
 </div>

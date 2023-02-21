@@ -133,7 +133,7 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Certbot-Config">Certbot Config </a></li>
-<li class="toc-entry toc-h2"><a href="#Change-Code-requires-Deployment-Updates">Change Code requires Deployment Updates </a>
+<li class="toc-entry toc-h2"><a href="#Changing-Code-will-require-Deployment-Updates">Changing Code will require Deployment Updates </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Changing-Code-in-VSCode">Changing Code in VSCode </a></li>
 <li class="toc-entry toc-h3"><a href="#Pulling-Changes-into-AWS-EC2-deployment">Pulling Changes into AWS EC2 deployment </a></li>
@@ -614,8 +614,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Change-Code-requires-Deployment-Updates">
-<a class="anchor" href="#Change-Code-requires-Deployment-Updates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Change Code requires Deployment Updates<a class="anchor-link" href="#Change-Code-requires-Deployment-Updates"> </a>
+<h2 id="Changing-Code-will-require-Deployment-Updates">
+<a class="anchor" href="#Changing-Code-will-require-Deployment-Updates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Code will require Deployment Updates<a class="anchor-link" href="#Changing-Code-will-require-Deployment-Updates"> </a>
 </h2>
 <h3 id="Changing-Code-in-VSCode">
 <a class="anchor" href="#Changing-Code-in-VSCode" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing Code in VSCode<a class="anchor-link" href="#Changing-Code-in-VSCode"> </a>
@@ -649,18 +649,18 @@ window.onload = wrap_img;
 </blockquote>
 </li>
 <li>
-<p>Before updating deployment run Docker Desktop app  and then test docker-compose up.</p>
+<p>Before updating deployment start <strong><em>Docker Desktop app</em></strong>  and test your Web Application.</p>
 <blockquote>
 <p>Test <code>docker-compose up</code> or <code>sudo docker-compose up</code> in your VSCode terminal (don't forget to 'cd' into the right repo).</p>
 </blockquote>
 </li>
 <li>
-<p>After it's done building, type in <code>http://localhost:8---</code> in your browser.&gt; Replace '8---' with your port number. Review your personal changes and team members changes in running site.  As long as Docker is running, you can make little changes and save, they should refresh in site within a few seconds.  <strong><em>Any errors, runtime errors, will appear in browser of VSCode terminal</em></strong>, read messages thoroughly and debug errors.</p>
+<p>After Docker is done building, type in <code>http://localhost:8---</code> in your browser.&gt; Replace '8---' with your port number. Review your personal changes and team members changes in running site.  As long as Docker Desktop and Docker App is running, you can make little changes and save, they should refresh in site within a few seconds.  <strong><em>Any errors, runtime errors, will appear in browser of VSCode terminal</em></strong>, read messages thoroughly and debug errors.  Docker Desktop may consume a lot of CPU resources, if you are unplugged you may want to close it after you are done testing.</p>
 </li>
 <li>
 <p>If all goes well, <code>Sync</code> change from UI or <code>git push</code> from terminal.</p>
 <blockquote>
-<p>If you can't push review <code>git status</code> from terminal.   Resolve all open files, then <code>git pull</code> and repeat steps 5 to 7.</p>
+<p>If you can't push review <code>git status</code> from terminal.   Resolve all open files <code>git restore</code> or <code>git commit</code>, then <code>git pull</code> and repeat steps 5 to 7.</p>
 </blockquote>
 </li>
 </ol>

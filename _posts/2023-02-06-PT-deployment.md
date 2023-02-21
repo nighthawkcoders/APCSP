@@ -14,9 +14,9 @@ week: 22
 ## Plans Week 22
 > Student work on Issues from projects.  DevOps engineer puts CI/CD processes in place.
 
-- Monday: Live Review
-- Tuesday: Work Day - Coding hour 5
-- Wednesday:Tech Talk: CI/CD on Flask Project
+- Monday: Live Review - Scrum Master + Coding Hour 5.a
+- Tuesday: Live Review - Individuals + Coding hour 5.b
+- Wednesday:Tech Talk: CI/CD on Flask and Unit 5.5 and 5.6
 - Thursday: Work Day - Coding hour 6
 - Friday: Work Day  - Coding hour 7.  Update of review tickets with tangible artifacts per person.
 

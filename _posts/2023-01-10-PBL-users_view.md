@@ -1,6 +1,6 @@
 ---
 title: Database from JavaScript
-layout: default
+layout: base
 description: A view of a JSON data defined in JavaScript.
 image: /images/database.png
 categories: [C4.7, C7.0, C8.1, C8.6]

@@ -1,6 +1,6 @@
 ---
 title: Classic Snake Game
-layout: default
+layout: base
 description: A pretty advanced use of JavaScript building classic snake game using menu controls, key events, snake simulation and timers.  
 permalink: /frontend/snake
 image: /images/snake.png

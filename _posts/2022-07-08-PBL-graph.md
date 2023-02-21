@@ -1,6 +1,6 @@
 ---
 title: Graphing App
-layout: default
+layout: base
 description: The concept behind making a graphing application using JavaScript canvas.
 permalink: /frontend/graph
 image: /images/graph.png

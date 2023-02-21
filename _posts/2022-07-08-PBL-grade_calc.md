@@ -1,6 +1,6 @@
 ---
 title: Grade Calculator
-layout: default
+layout: base
 description: Supports grade inputs and calculates average. 
 permalink: /frontend/grades
 image: /images/grade_calc.png

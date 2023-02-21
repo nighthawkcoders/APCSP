@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -137,7 +137,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#Changing-Code-in-VSCode">Changing Code in VSCode </a></li>
 <li class="toc-entry toc-h3"><a href="#Pulling-Changes-into-AWS-EC2-deployment">Pulling Changes into AWS EC2 deployment </a></li>
-<li class="toc-entry toc-h3"><a href="#Optional,-Troubleshooting-checks">Optional, Troubleshooting checks </a></li>
+<li class="toc-entry toc-h3"><a href="#Optional,-Troubleshooting-checks-on-AWS-EC2">Optional, Troubleshooting checks on AWS EC2 </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Congratulations!">Congratulations! </a></li>
@@ -339,7 +339,7 @@ window.onload = wrap_img;
 <li>
 <p>Test your site: <code>curl localhost:8---</code> (replace '8---' with your port number)</p>
 <blockquote>
-<p>This should show you all the html content of your site. Double check some things that are unique to your site to ensure your port is accurate and working.</p>
+<p>This should show you all the html content of your home page. If this provides 500 error you need to check your site on localhost.  If it produces broken pipe error you need to check your ports between docker-compose.yml and Docker files.  If the page does not have your content, you need to check <code>docker ps</code> as someone is using your number.</p>
 </blockquote>
 </li>
 </ol>
@@ -667,39 +667,45 @@ window.onload = wrap_img;
 <h3 id="Pulling-Changes-into-AWS-EC2-deployment">
 <a class="anchor" href="#Pulling-Changes-into-AWS-EC2-deployment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pulling Changes into AWS EC2 deployment<a class="anchor-link" href="#Pulling-Changes-into-AWS-EC2-deployment"> </a>
 </h3>
+<blockquote>
+<p>Updates should be quick and easy, as long as your teams verifies problems on localhost prior to these steps.</p>
+</blockquote>
 <p>In your AWS EC2 terminal;</p>
 <ol>
 <li>Navigate to your repo:<code>cd ~/my_unique_name</code>
 </li>
 <li>
-<p><code>sudo docker-compose down</code></p>
-<blockquote>
-<p>Test Server in Browser, it should be down (502 Bad Gateway in browser)</p>
+<code>docker-compose down</code><blockquote>
+<p>Test Server in browser using https://, it should be down (502 Bad Gateway in browser)</p>
 </blockquote>
 </li>
 <li>
 <p><code>git pull</code></p>
 </li>
 <li>
-<p>Rebuild your docker container:<code>sudo docker-compose up -d --build</code></p>
-</li>
-<li>Test Server in browser, it should be up and running on internet.</li>
-</ol>
-<h3 id="Optional,-Troubleshooting-checks">
-<a class="anchor" href="#Optional,-Troubleshooting-checks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional, Troubleshooting checks<a class="anchor-link" href="#Optional,-Troubleshooting-checks"> </a>
-</h3>
-<ol>
-<li>
-<p>Try to curl: <code>curl localhost:8---</code> (replace '8---' with your port number)</p>
+<p>Rebuild your docker container: <code>docker-compose up -d --build</code></p>
 <blockquote>
-<p>Verify home pages is yours, add endpoint to verify any other page</p>
+<p>Test Server in browser using https://, sll updates should be up and running on internet.</p>
+<h3 id="Optional,-Troubleshooting-checks-on-AWS-EC2">
+<a class="anchor" href="#Optional,-Troubleshooting-checks-on-AWS-EC2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Optional, Troubleshooting checks on AWS EC2<a class="anchor-link" href="#Optional,-Troubleshooting-checks-on-AWS-EC2"> </a>
+</h3>
+<p>These commands let you see status of your running web application on AWS EC2</p>
 </blockquote>
 </li>
 <li>
-<p>Run <code>docker-compose ps</code> to check that docker is up</p>
+<p>Try to curl:<code>curl localhost:8---</code> (replace '8---' with your port number)&gt; Verify home pages is yours</p>
 </li>
 <li>
-<p><code>docker ps</code> to check all containers and images</p>
+<p>Run <code>docker-compose ps</code></p>
+<blockquote>
+<p>Perform check on your container, verify docker is up</p>
+</blockquote>
+</li>
+<li>
+<p>Run <code>docker ps</code></p>
+<blockquote>
+<p>Perform checks on all containers and all images</p>
+</blockquote>
 </li>
 </ol>
 

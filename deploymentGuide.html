@@ -242,7 +242,7 @@ window.onload = wrap_img;
 <span class="c1"># --- [Install python and pip] ---</span>
 <span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span> <span class="o">-</span><span class="n">y</span> <span class="o">&amp;&amp;</span> \
     <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python3</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">git</span>
-<span class="n">COPY</span> <span class="o">.</span> <span class="o">/</span><span class="n">app</span>
+<span class="n">COPY</span> <span class="o">.</span> <span class="o">/</span>
 
 <span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="o">-</span><span class="nb">dir</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 <span class="n">RUN</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">gunicorn</span>

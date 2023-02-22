@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Unit 2.3 Extracting Information from Data" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Data connections, trends, and correlation. Pandas should be valuable for PBL control validation as well as understand College Board Topics." />
-<meta property="og:description" content="Data connections, trends, and correlation. Pandas should be valuable for PBL control validation as well as understand College Board Topics." />
+<meta name="description" content="Data connections, trends, and correlation. Pandas is introduced as it could valuable for PBL, data validation, as well as understanding College Board Topics." />
+<meta property="og:description" content="Data connections, trends, and correlation. Pandas is introduced as it could valuable for PBL, data validation, as well as understanding College Board Topics." />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/03/06/AP-unit2_3.html" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/03/06/AP-unit2_3.html" />
 <meta property="og:site_name" content="APCSP" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
 <meta property="twitter:title" content="Unit 2.3 Extracting Information from Data" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-06T00:00:00-06:00","datePublished":"2023-03-06T00:00:00-06:00","description":"Data connections, trends, and correlation. Pandas should be valuable for PBL control validation as well as understand College Board Topics.","headline":"Unit 2.3 Extracting Information from Data","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/03/06/AP-unit2_3.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/03/06/AP-unit2_3.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-06T00:00:00-06:00","datePublished":"2023-03-06T00:00:00-06:00","description":"Data connections, trends, and correlation. Pandas is introduced as it could valuable for PBL, data validation, as well as understanding College Board Topics.","headline":"Unit 2.3 Extracting Information from Data","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/03/06/AP-unit2_3.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/03/06/AP-unit2_3.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,13 +75,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Unit 2.3 Extracting Information from Data</h1><p class="page-description">Data connections, trends, and correlation.  Pandas should be valuable for PBL control validation as well as understand College Board Topics.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-06T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 2.3 Extracting Information from Data</h1><p class="page-description">Data connections, trends, and correlation.  Pandas is introduced as it could valuable for PBL, data validation, as well as understanding College Board Topics.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-06T00:00:00-06:00" itemprop="datePublished">
         Mar 6, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      5 min read
     
 </span></p>
 
@@ -120,9 +120,23 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Files-To-Get">Files To Get </a></li>
+<li class="toc-entry toc-h1"><a href="#Pandas-and-DataFrames">Pandas and DataFrames </a></li>
 <li class="toc-entry toc-h1"><a href="#Cleaning-Data">Cleaning Data </a></li>
-<li class="toc-entry toc-h1"><a href="#Extracting-Info">Extracting Info </a></li>
-<li class="toc-entry toc-h1"><a href="#Create-your-own-data-frame">Create your own data frame </a></li>
+<li class="toc-entry toc-h1"><a href="#Extracting-Info">Extracting Info </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Extract-Column">DataFrame Extract Column </a></li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Sort">DataFrame Sort </a></li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Selection-or-Filter">DataFrame Selection or Filter </a></li>
+<li class="toc-entry toc-h2"><a href="#DataFrame-Selection-Max-and-Min">DataFrame Selection Max and Min </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Create-your-own-DataFrame">Create your own DataFrame </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Python-Dictionary-to-Pandas-DataFrame">Python Dictionary to Pandas DataFrame </a></li>
+<li class="toc-entry toc-h2"><a href="#Examine-DataFrame-Rows">Examine DataFrame Rows </a></li>
+<li class="toc-entry toc-h2"><a href="#Pandas-DataFrame-Information">Pandas DataFrame Information </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Example-of-larger-data-set">Example of larger data set </a></li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a></li>
 </ul><!--
@@ -141,10 +155,26 @@ window.onload = wrap_img;
 <a class="anchor" href="#Files-To-Get" aria-hidden="true"><span class="octicon octicon-link"></span></a>Files To Get<a class="anchor-link" href="#Files-To-Get"> </a>
 </h1>
 <p>Save this file to your <strong>_notebooks</strong> folder</p>
-<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-01-24-AP-unit2_3.ipynb">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-01-24-AP-unit2_3.ipynb</a></p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-03-06-AP-unit2_3.ipynb">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-03-06-AP-unit2_3.ipynb</a></p>
 <p>Save these files into a subfolder named <strong>files</strong> in your <strong>_notebooks</strong> folder</p>
 <p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/data.csv">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/data.csv</a></p>
 <p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/grade.json">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/files/grade.json</a></p>
+<p>Save this image into a subfolder named <strong>images</strong> in your <strong>_notebooks</strong> folder</p>
+<p>wget <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/images/table_dataframe.svg">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/images/table_dataframe.svg</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pandas-and-DataFrames">
+<a class="anchor" href="#Pandas-and-DataFrames" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas and DataFrames<a class="anchor-link" href="#Pandas-and-DataFrames"> </a>
+</h1>
+<blockquote>
+<p>In this lesson we will be exploring data using Pandas.  <a href="https://pandas.pydata.org/docs/getting_started/index.html">From Pandas Overview</a> -- When working with tabular data, such as data stored in spreadsheets or databases, pandas is the right tool for you. pandas will help you to explore, clean, and process your data. In pandas, a data table is called a DataFrame.</p>
+</blockquote>
+<p><img src="/APCSP/images/copied_from_nb/images/table_dataframe.png" alt="DataFrame"></p>
 
 </div>
 </div>
@@ -156,7 +186,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas is used to gather data sets through its data frames implementation'''</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas is used to gather data sets through its DataFrames implementation'''</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
@@ -195,9 +225,37 @@ window.onload = wrap_img;
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="c1"># What part of the data set needs to be cleaned?</span>
+<span class="c1"># From PBL learning, what is a good time to clean data?  Hint, remember Garbage in, Garbage out?</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+0         123             12  3.57
+1         246             10  4.00
+2         578             12  2.78
+3         469             11  3.45
+4         324         Junior  4.75
+..        ...            ...   ...
+7         167             10  3.90
+8         235      9th Grade  3.15
+9         nil              9  2.80
+10        469             11  3.45
+11        456             10  2.75
+
+[12 rows x 3 columns]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -215,6 +273,15 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Extract-Column">
+<a class="anchor" href="#DataFrame-Extract-Column" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Extract Column<a class="anchor-link" href="#DataFrame-Extract-Column"> </a>
+</h2>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -223,17 +290,54 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'GPA'</span><span class="p">]])</span>
-<span class="c1">#remove the index from print statement</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'GPA'</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="c1">#sort values</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">]))</span>
-<span class="c1">#sort the values in reverse order</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="c1">#print only values with a specific criteria </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">&gt;</span> <span class="mf">3.00</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#try two columns and remove the index from print statement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">'Student ID'</span><span class="p">,</span><span class="s1">'GPA'</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>     GPA
+0   3.57
+1   4.00
+2   2.78
+3   3.45
+4   4.75
+5   3.33
+6   2.95
+7   3.90
+8   3.15
+9   2.80
+10  3.45
+11  2.75
+
+Student ID  GPA
+       123 3.57
+       246 4.00
+       578 2.78
+       469 3.45
+       324 4.75
+       313 3.33
+       145 2.95
+       167 3.90
+       235 3.15
+       nil 2.80
+       469 3.45
+       456 2.75
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -243,11 +347,185 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Create-your-own-data-frame">
-<a class="anchor" href="#Create-your-own-data-frame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create your own data frame<a class="anchor-link" href="#Create-your-own-data-frame"> </a>
-</h1>
-<p>Using Pandas allows you to create your own data frame with information that can be used. The following code will go over some features that Pandas provides.</p>
+<h2 id="DataFrame-Sort">
+<a class="anchor" href="#DataFrame-Sort" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Sort<a class="anchor-link" href="#DataFrame-Sort"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#sort the values in reverse order</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'GPA'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+11        456             10  2.75
+2         578             12  2.78
+9         nil              9  2.80
+6         145             12  2.95
+8         235      9th Grade  3.15
+5         313             20  3.33
+3         469             11  3.45
+10        469             11  3.45
+0         123             12  3.57
+7         167             10  3.90
+1         246             10  4.00
+4         324         Junior  4.75
+
+   Student ID Year in School   GPA
+4         324         Junior  4.75
+1         246             10  4.00
+7         167             10  3.90
+0         123             12  3.57
+3         469             11  3.45
+10        469             11  3.45
+5         313             20  3.33
+8         235      9th Grade  3.15
+6         145             12  2.95
+9         nil              9  2.80
+2         578             12  2.78
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Selection-or-Filter">
+<a class="anchor" href="#DataFrame-Selection-or-Filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Selection or Filter<a class="anchor-link" href="#DataFrame-Selection-or-Filter"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">&gt;</span> <span class="mf">3.00</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>   Student ID Year in School   GPA
+0         123             12  3.57
+1         246             10  4.00
+3         469             11  3.45
+4         324         Junior  4.75
+5         313             20  3.33
+7         167             10  3.90
+8         235      9th Grade  3.15
+10        469             11  3.45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="DataFrame-Selection-Max-and-Min">
+<a class="anchor" href="#DataFrame-Selection-Max-and-Min" aria-hidden="true"><span class="octicon octicon-link"></span></a>DataFrame Selection Max and Min<a class="anchor-link" href="#DataFrame-Selection-Max-and-Min"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">GPA</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">GPA</span> <span class="o">==</span> <span class="n">df</span><span class="o">.</span><span class="n">GPA</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  Student ID Year in School   GPA
+4        324         Junior  4.75
+
+   Student ID Year in School   GPA
+11        456             10  2.75
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Create-your-own-DataFrame">
+<a class="anchor" href="#Create-your-own-DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create your own DataFrame<a class="anchor-link" href="#Create-your-own-DataFrame"> </a>
+</h1>
+<p>Using Pandas allows you to create your own DataFrame in Python.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python-Dictionary-to-Pandas-DataFrame">
+<a class="anchor" href="#Python-Dictionary-to-Pandas-DataFrame" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python Dictionary to Pandas DataFrame<a class="anchor-link" href="#Python-Dictionary-to-Pandas-DataFrame"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -261,30 +539,149 @@ window.onload = wrap_img;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="c1">#the data can be stored as a python dictionary</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"calories"</span><span class="p">:</span> <span class="p">[</span><span class="mi">420</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">390</span><span class="p">],</span>
   <span class="s2">"duration"</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
 <span class="p">}</span>
 <span class="c1">#stores the data in a data frame</span>
-<span class="n">myvar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">myvar</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------------------------"</span><span class="p">)</span>
-<span class="c1">#With the index argument, you can name your own labels.</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------Dict_to_DF------------------"</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------------------------"</span><span class="p">)</span>
-<span class="c1">#refer to the row index:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"day1"</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------------------------"</span><span class="p">)</span>
-<span class="c1">#use a list for multiple indexes:</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"-------------------------------"</span><span class="p">)</span>
-<span class="c1">#print info about the data set</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"----------Dict_to_DF_labels--------------"</span><span class="p">)</span>
+
+<span class="c1">#or with the index argument, you can label rows.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------------Dict_to_DF------------------
+   calories  duration
+0       420        50
+1       380        40
+2       390        45
+----------Dict_to_DF_labels--------------
+      calories  duration
+day1       420        50
+day2       380        40
+day3       390        45
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examine-DataFrame-Rows">
+<a class="anchor" href="#Examine-DataFrame-Rows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examine DataFrame Rows<a class="anchor-link" href="#Examine-DataFrame-Rows"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"-------Examine Selected Rows---------"</span><span class="p">)</span>
+<span class="c1">#use a list for multiple labels:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">]])</span>
+
+<span class="c1">#refer to the row index:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--------Examine Single Row-----------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">"day1"</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------Examine Selected Rows---------
+      calories  duration
+day1       420        50
+day3       390        45
+--------Examine Single Row-----------
+calories    420
+duration     50
+Name: day1, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pandas-DataFrame-Information">
+<a class="anchor" href="#Pandas-DataFrame-Information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas DataFrame Information<a class="anchor-link" href="#Pandas-DataFrame-Information"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-------------------------------
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 3 entries, day1 to day3
+Data columns (total 2 columns):
+ #   Column    Non-Null Count  Dtype
+---  ------    --------------  -----
+ 0   calories  3 non-null      int64
+ 1   duration  3 non-null      int64
+dtypes: int64(2)
+memory usage: 180.0+ bytes
+None
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -297,7 +694,7 @@ window.onload = wrap_img;
 <h1 id="Example-of-larger-data-set">
 <a class="anchor" href="#Example-of-larger-data-set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of larger data set<a class="anchor-link" href="#Example-of-larger-data-set"> </a>
 </h1>
-<p>Pandas can also read csv files, run the following code to see more features with a larger data set</p>
+<p>Pandas can read CSV and many other types of files, run the following code to see more features with a larger data set</p>
 
 </div>
 </div>
@@ -311,20 +708,59 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/data.csv'</span><span class="p">)</span>
+<span class="c1">#read csv and sort 'Duration' largest to smallest</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/data.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'Duration'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1">#sets max rows to be printed</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">max_rows</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span> 
-<span class="c1"># if the number of rows is not specified, the head() method will return the top 5 rows.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Duration Top 10---------"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="c1"># There is also a tail() method for viewing the last rows of the DataFrame.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"--Duration Bottom 10------"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--Duration Top 10---------
+     Duration  Pulse  Maxpulse  Calories
+69        300    108       143    1500.2
+79        270    100       131    1729.0
+109       210    137       184    1860.4
+60        210    108       160    1376.0
+106       180     90       120     800.3
+90        180    101       127     600.1
+65        180     90       130     800.4
+61        160    110       137    1034.4
+62        160    109       135     853.0
+67        150    107       130     816.0
+--Duration Bottom 10------
+     Duration  Pulse  Maxpulse  Calories
+68         20    106       136     110.4
+100        20     95       112      77.7
+89         20     83       107      50.3
+135        20    136       156     189.0
+94         20    150       171     127.4
+95         20    151       168     229.4
+139        20    141       162     222.4
+64         20    110       130     131.4
+112        15    124       139     124.2
+93         15     80       100      50.5
+Duration     63.846154
+Pulse       107.461538
+Maxpulse    134.047337
+Calories    375.800000
+dtype: float64
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -338,8 +774,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h1>
 <ul>
-<li>Create your own dataset using a JSON file</li>
-<li>Extract info from that database (ex. max, min, etc.) using Pandas library functions </li>
+<li>Create your own dataset using a JSON file, integrating with your PBL project would be Kudos</li>
+<li>Extract info from that database (ex. max, min, mean, median, mode, etc.) using Pandas functions </li>
 <li>Answer College Board practice problems for 2.3</li>
 </ul>
 

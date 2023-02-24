@@ -188,7 +188,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#IPython" aria-hidden="true"><span class="octicon octicon-link"></span></a>IPython<a class="anchor-link" href="#IPython"> </a>
 </h3>
 <blockquote>
-<p>Support visualization of data in Jupyter notebooks.</p>
+<p>Support visualization of data in Jupyter notebooks.  Visualization is specific to View, for the web visualization needs to be converted to HTML.</p>
 </blockquote>
 <h3 id="pathlib">
 <a class="anchor" href="#pathlib" aria-hidden="true"><span class="octicon octicon-link"></span></a>pathlib<a class="anchor-link" href="#pathlib"> </a>
@@ -295,32 +295,45 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pil</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pilImage</span> <span class="c1"># as pilImage is used to avoid conflicts</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 <span class="kn">import</span> <span class="nn">base64</span>
 
+<span class="c1"># Large image scaled to baseWidth of 320</span>
+<span class="k">def</span> <span class="nf">scale_image</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="n">baseWidth</span> <span class="o">=</span> <span class="mi">320</span>
+    <span class="n">scalePercent</span> <span class="o">=</span> <span class="p">(</span><span class="n">baseWidth</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">scaleHeight</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="nb">float</span><span class="p">(</span><span class="n">scalePercent</span><span class="p">)))</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="n">baseWidth</span><span class="p">,</span> <span class="n">scaleHeight</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">image_to_html</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted        </span>
-    <span class="c1"># Image open return PIL image object</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">pil</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">])</span>
-
-    <span class="c1"># Python Image Library operations</span>
-    <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">format</span>
-    <span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span>
-    <span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
-    
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">],</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
-            <span class="n">encoded_string</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-    <span class="n">image</span><span class="p">[</span><span class="s1">'html'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">encoded_string</span>
-    
-<span class="k">def</span> <span class="nf">numpy_to_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
+<span class="c1"># PIL image converted to base64</span>
+<span class="k">def</span> <span class="nf">image_to_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">format</span><span class="p">):</span>
     <span class="k">with</span> <span class="n">BytesIO</span><span class="p">()</span> <span class="k">as</span> <span class="n">buffer</span><span class="p">:</span>
         <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">buffer</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">image_add_html_grey</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+<span class="c1"># Set Properties of Image, Scale, and convert to Base64</span>
+<span class="k">def</span> <span class="nf">image_management</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>  <span class="c1"># path of static images is defaulted        </span>
     <span class="c1"># Image open return PIL image object</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">pil</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">])</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">pilImage</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'filename'</span><span class="p">])</span>
+    
+    <span class="c1"># Python Image Library operations</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">format</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">mode</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+    <span class="c1"># Scale the Image</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">scale_image</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'pil'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'scaled_size'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">size</span>
+    <span class="c1"># Scaled HTML</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'html'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">image_to_base64</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'pil'</span><span class="p">],</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+    
+<span class="c1"># Create Grey Scale Base64 representation of Image</span>
+<span class="k">def</span> <span class="nf">image_management_add_html_grey</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="c1"># Image open return PIL image object</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="s1">'pil'</span><span class="p">]</span>
+    <span class="nb">format</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">]</span>
     
     <span class="n">img_data</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">getdata</span><span class="p">()</span>  <span class="c1"># Reference https://www.geeksforgeeks.org/python-pil-image-getdata/</span>
     <span class="n">image</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img_data</span><span class="p">)</span> <span class="c1"># PIL image to numpy array</span>
@@ -331,38 +344,34 @@ window.onload = wrap_img;
         <span class="c1"># create gray scale of image, ref: https://www.geeksforgeeks.org/convert-a-numpy-array-to-an-image/</span>
         <span class="n">average</span> <span class="o">=</span> <span class="p">(</span><span class="n">pixel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c1"># average pixel values and use // for integer division</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-            <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+            <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">pixel</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span> <span class="c1"># PNG format</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">,</span> <span class="n">average</span><span class="p">))</span>
         <span class="c1"># end for loop for pixels</span>
         
     <span class="n">img</span><span class="o">.</span><span class="n">putdata</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'gray_data'</span><span class="p">])</span>
-    <span class="n">image</span><span class="p">[</span><span class="s1">'html_grey'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">numpy_to_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
+    <span class="n">image</span><span class="p">[</span><span class="s1">'html_grey'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;img src="data:image/png;base64,</span><span class="si">%s</span><span class="s1">"&gt;'</span> <span class="o">%</span> <span class="n">image_to_base64</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">format</span><span class="p">)</span>
 
 
-
-<span class="c1"># Numpy limits terminal printing</span>
-<span class="k">def</span> <span class="nf">numpyPrint</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">data</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    
-<span class="c1"># run this as standalone tester to see sample data printed in terminal</span>
+<span class="c1"># Jupyter Notebook Visualization of Images</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">images</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">()</span>  <span class="c1"># path of local run</span>
     <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
-        <span class="n">image_to_html</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="n">image_management</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"---- meta data -----"</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'label'</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'source'</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'format'</span><span class="p">])</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'mode'</span><span class="p">])</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Original size: "</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'size'</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Scaled size: "</span><span class="p">,</span> <span class="n">image</span><span class="p">[</span><span class="s1">'scaled_size'</span><span class="p">])</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"-- original image --"</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'html'</span><span class="p">]))</span> 
         
-        <span class="n">image_add_html_grey</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"--- grey image ----"</span><span class="p">)</span>
+        <span class="n">image_management_add_html_grey</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">'html_grey'</span><span class="p">]))</span> 
-       
     <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 

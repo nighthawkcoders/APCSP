@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -119,8 +119,8 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#More-Practice-with-Data-Frames">More Practice with Data Frames </a></li>
-<li class="toc-entry toc-h1"><a href="#Using-your-own-Database">Using your own Database </a></li>
+<li class="toc-entry toc-h2"><a href="#APIs-are-a-Source-for-Writing-Programs-with-Data">APIs are a Source for Writing Programs with Data </a></li>
+<li class="toc-entry toc-h1"><a href="#Database-Programming-is-Program-with-Data">Database Programming is Program with Data </a></li>
 <li class="toc-entry toc-h1"><a href="#Schema-of-Users-table-in-Sqlite.db">Schema of Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h1"><a href="#Reading-Users-table-in-Sqlite.db">Reading Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h1"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
@@ -140,13 +140,13 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="More-Practice-with-Data-Frames">
-<a class="anchor" href="#More-Practice-with-Data-Frames" aria-hidden="true"><span class="octicon octicon-link"></span></a>More Practice with Data Frames<a class="anchor-link" href="#More-Practice-with-Data-Frames"> </a>
+<h2 id="APIs-are-a-Source-for-Writing-Programs-with-Data">
+<a class="anchor" href="#APIs-are-a-Source-for-Writing-Programs-with-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>APIs are a Source for Writing Programs with Data<a class="anchor-link" href="#APIs-are-a-Source-for-Writing-Programs-with-Data"> </a>
 </h2>
 <blockquote>
-<p>3rd Party APIs are a great source for Data Frames.</p>
+<p>3rd Party APIs are a great source for creating Pandas Data Frames.</p>
 <ul>
-<li>Data can be fetched and resulting json can be placed in Data Frame</li>
+<li>Data can be fetched and resulting json can be placed into a Data Frame</li>
 <li>Observe output, this looks very similar to a Database</li>
 </ul>
 </blockquote>
@@ -165,37 +165,20 @@ window.onload = wrap_img;
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="sd">'''Obtain data from an endpoint'''</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/covid/"</span>
-<span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">fetch</span><span class="p">():</span>
+    <span class="sd">'''Obtain data from an endpoint'''</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/covid/"</span>
+    <span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-<span class="c1"># filter data for requirement</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">'countries_stat'</span><span class="p">])</span>  <span class="c1"># filter endpoint for country stats</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'country_name'</span><span class="p">:</span><span class="s1">'deaths'</span><span class="p">])</span> <span class="c1"># show row 0 through 5 and columns country_name through deaths</span>
+    <span class="c1"># filter data for requirement</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">'countries_stat'</span><span class="p">])</span>  <span class="c1"># filter endpoint for country stats</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'country_name'</span><span class="p">:</span><span class="s1">'deaths'</span><span class="p">])</span> <span class="c1"># show row 0 through 5 and columns country_name through deaths</span>
+    
+<span class="c1"># fetch()</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>  country_name       cases     deaths
-0          USA  82,649,779  1,018,316
-1        India  43,057,545    522,193
-2       Brazil  30,345,654    662,663
-3       France  28,244,977    145,020
-4      Germany  24,109,433    134,624
-5           UK  21,933,206    173,352
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -205,14 +188,16 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Using-your-own-Database">
-<a class="anchor" href="#Using-your-own-Database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using your own Database<a class="anchor-link" href="#Using-your-own-Database"> </a>
+<h1 id="Database-Programming-is-Program-with-Data">
+<a class="anchor" href="#Database-Programming-is-Program-with-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database Programming is Program with Data<a class="anchor-link" href="#Database-Programming-is-Program-with-Data"> </a>
 </h1>
 <blockquote>
-<p>The Tri 2 Final Project is an example of a Program with Data.</p>
+<p>The Tri 2 Final Project is an example of a Program with Data.  We will use SQLite Database to learn more about using Programs with Data.</p>
 <ul>
 <li>Move <code>sqlite.db</code> into the <strong>_notebook/files</strong>. </li>
-<li>Examples are expecting column definitions for <code>users</code>
+<li>
+<p>Examples are expecting column definitions for <code>users</code></p>
+<p>Prepare to use SQLite in common Imperative Technique</p>
 </li>
 <li>Explore <a href="https://www.tutorialspoint.com/python_data_access/python_sqlite_establishing_connection.htm">SQLite Connect object</a> to establish database connection- Explore <a href="https://www.tutorialspoint.com/python_data_access/python_sqlite_cursor_object.htm">SQLite Cursor Object</a> to fetch data from a table within a database</li>
 </ul>
@@ -243,7 +228,7 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 
-<span class="n">database</span> <span class="o">=</span> <span class="s1">'files/sqlite.db'</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'files/sqlite.db'</span> <span class="c1"># this is location of database</span>
 
 <span class="k">def</span> <span class="nf">schema</span><span class="p">():</span>
     
@@ -334,7 +319,7 @@ window.onload = wrap_img;
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#read()</span>
+<span class="n">read</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -347,7 +332,14 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(1, 'John', 'john', '', '')
+<pre>(1, 'Thomas Edison', 'toby', 'sha256$emnmAqhZXtMKqQ8f$4cf572b1b9463d8a8ef5e9f26d28b58b51135e51c1999fd2ecff04a8e4fd9b88', '1847-02-11')
+(2, 'Nicholas Tesla', 'niko', 'sha256$BWkJINUztbZwOOIf$efba933e7f36f3aecf34bf77943897c12cc400bba729d5110521d9309b20b5ca', '2023-02-23')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$z2LndQpSdVmTVkwZ$087ceb79896d9f05b3bc3309bc97f21814da28cfde7e90d9cabf6eb2d81fb440', '2023-02-23')
+(4, 'Eli Whitney', 'whit', 'sha256$e3jKjqXVXKoCMQsO$e05dc702436e071382582f3270c4a5b3f19f8c3f11d46b69c0a5a3f40fe44ec4', '2023-02-23')
+(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
+(6, 'Indiana Jones', 'indi', 'indi', '1920-01-01')
+(7, 'Marian Ravenwood', 'marian', 'marian', '01-02-1920')
+(8, 'Henry Jones Sr.', 'henry', '123', '')
 </pre>
 </div>
 </div>
@@ -399,7 +391,7 @@ window.onload = wrap_img;
         <span class="c1"># Commit the changes to the database</span>
         <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"A new user record </span><span class="si">{</span><span class="n">uid</span><span class="si">}</span><span class="s2"> has been created"</span><span class="p">)</span>
-        
+                
     <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Error while executing the INSERT:"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
 
@@ -412,20 +404,6 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>user record john entered
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -493,20 +471,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>user id john password has been updated
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -564,20 +528,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Row with uid john was successfully deleted
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -601,8 +551,8 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">operation</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter: (C)reate (R)ead (U)pdate or (D)elete or (S)chema ... (X) to exit"</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="n">operation</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter: (C)reate (R)ead (U)pdate or (D)elete or (S)chema"</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'c'</span><span class="p">:</span>
         <span class="n">create</span><span class="p">()</span>
     <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'r'</span><span class="p">:</span>
@@ -613,10 +563,16 @@ window.onload = wrap_img;
         <span class="n">delete</span><span class="p">()</span>
     <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'s'</span><span class="p">:</span>
         <span class="n">schema</span><span class="p">()</span>
-    <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">'x'</span><span class="p">:</span>
-        <span class="k">break</span> <span class="c1"># exit loop</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># Escape Key</span>
+        <span class="k">return</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Please enter c, r, u, d, or x"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Please enter c, r, u, or d"</span><span class="p">)</span> 
+    <span class="n">menu</span><span class="p">()</span> <span class="c1"># recursion, repeat menu</span>
+        
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">menu</span><span class="p">()</span> <span class="c1"># start menu</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Perform Jupyter 'Run All' prior to starting menu"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -629,9 +585,22 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>No uid r was not found in the table
-(1, 'John M', 'john', 'jm', '1959-10-21')
-user id john password has been updated
+<pre>(1, 'Thomas Edison', 'toby', 'sha256$emnmAqhZXtMKqQ8f$4cf572b1b9463d8a8ef5e9f26d28b58b51135e51c1999fd2ecff04a8e4fd9b88', '1847-02-11')
+(2, 'Nicholas Tesla', 'niko', 'sha256$BWkJINUztbZwOOIf$efba933e7f36f3aecf34bf77943897c12cc400bba729d5110521d9309b20b5ca', '2023-02-23')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$z2LndQpSdVmTVkwZ$087ceb79896d9f05b3bc3309bc97f21814da28cfde7e90d9cabf6eb2d81fb440', '2023-02-23')
+(4, 'Eli Whitney', 'whit', 'sha256$e3jKjqXVXKoCMQsO$e05dc702436e071382582f3270c4a5b3f19f8c3f11d46b69c0a5a3f40fe44ec4', '2023-02-23')
+(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
+(6, 'Indiana Jones', 'indi', 'indi', '1920-01-01')
+(7, 'Marian Ravenwood', 'marian', 'marian', '01-02-1920')
+(8, 'Henry Jones Sr.', 'henry', '123', '')
+The row with uid henry was successfully deleted
+(1, 'Thomas Edison', 'toby', 'sha256$emnmAqhZXtMKqQ8f$4cf572b1b9463d8a8ef5e9f26d28b58b51135e51c1999fd2ecff04a8e4fd9b88', '1847-02-11')
+(2, 'Nicholas Tesla', 'niko', 'sha256$BWkJINUztbZwOOIf$efba933e7f36f3aecf34bf77943897c12cc400bba729d5110521d9309b20b5ca', '2023-02-23')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$z2LndQpSdVmTVkwZ$087ceb79896d9f05b3bc3309bc97f21814da28cfde7e90d9cabf6eb2d81fb440', '2023-02-23')
+(4, 'Eli Whitney', 'whit', 'sha256$e3jKjqXVXKoCMQsO$e05dc702436e071382582f3270c4a5b3f19f8c3f11d46b69c0a5a3f40fe44ec4', '2023-02-23')
+(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
+(6, 'Indiana Jones', 'indi', 'indi', '1920-01-01')
+(7, 'Marian Ravenwood', 'marian', 'marian', '01-02-1920')
 </pre>
 </div>
 </div>
@@ -650,7 +619,6 @@ user id john password has been updated
 </h1>
 <ul>
 <li>Build your own Blog, Using Programs with Data.  Begin the Blog with notes and answering the College Board practice problems for 2.4</li>
-<li>Implement the code above to reflect your Sqlite.db created for your final project.</li>
 </ul>
 
 </div>

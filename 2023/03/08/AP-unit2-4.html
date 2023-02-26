@@ -120,13 +120,29 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#APIs-are-a-Source-for-Writing-Programs-with-Data">APIs are a Source for Writing Programs with Data </a></li>
-<li class="toc-entry toc-h1"><a href="#Database-Programming-is-Program-with-Data">Database Programming is Program with Data </a></li>
-<li class="toc-entry toc-h1"><a href="#Schema-of-Users-table-in-Sqlite.db">Schema of Users table in Sqlite.db </a></li>
-<li class="toc-entry toc-h1"><a href="#Reading-Users-table-in-Sqlite.db">Reading Users table in Sqlite.db </a></li>
-<li class="toc-entry toc-h1"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h1"><a href="#Updating-a-User-in-table-in-Sqlite.db">Updating a User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h1"><a href="#Delete-a-User-in-table-in-Sqlite.db">Delete a User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h1"><a href="#Menu-Interface-to-CRUD-operations">Menu Interface to CRUD operations </a></li>
+<li class="toc-entry toc-h1"><a href="#Database-Programming-is-Program-with-Data">Database Programming is Program with Data </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Schema-of-Users-table-in-Sqlite.db">Schema of Users table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#Reading-Users-table-in-Sqlite.db">Reading Users table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+<li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#>-Uses-SQL-INSERT-to-add-row">&gt; Uses SQL INSERT to add row </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+<li class="toc-entry toc-h2"><a href="#Updating-a-User-in-table-in-Sqlite.db">Updating a User in table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#>-Uses-SQL-UPDATE-to-modify-password">&gt; Uses SQL UPDATE to modify password </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+<li class="toc-entry toc-h2"><a href="#Delete-a-User-in-table-in-Sqlite.db">Delete a User in table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#>-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id.">&gt; Uses a delete function to remove a user based on a user input of the id. </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Menu-Interface-to-CRUD-operations">Menu Interface to CRUD operations </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#>-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell.">&gt; CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell. </a></li>
+<li class="toc-entry toc-h2"><a href="#-">- </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a></li>
 </ul><!--
 #################################################
@@ -209,12 +225,18 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Schema-of-Users-table-in-Sqlite.db">
+<h2 id="Schema-of-Users-table-in-Sqlite.db">
 <a class="anchor" href="#Schema-of-Users-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Schema of Users table in Sqlite.db<a class="anchor-link" href="#Schema-of-Users-table-in-Sqlite.db"> </a>
-</h1>
+</h2>
 <blockquote>
-<p>Uses PRAGMA statement to read schema</p>
+<p>Uses PRAGMA statement to read schema.</p>
 </blockquote>
+<p>Describe Schema, here is resource <a href="https://www.sqlite.org/index.html">Resource</a>- What is a database schema?</p>
+<ul>
+<li>What is the purpose of identity Column in SQL database?</li>
+<li>What is the purpose of a primary key in SQL database?</li>
+<li>What are the Data Types in SQL table?</li>
+</ul>
 
 </div>
 </div>
@@ -255,37 +277,24 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, 'id', 'INTEGER', 1, None, 1)
-(1, '_name', 'VARCHAR(255)', 1, None, 0)
-(2, '_uid', 'VARCHAR(255)', 1, None, 0)
-(3, '_password', 'VARCHAR(255)', 1, None, 0)
-(4, '_dob', 'DATE', 0, None, 0)
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Reading-Users-table-in-Sqlite.db">
+<h2 id="Reading-Users-table-in-Sqlite.db">
 <a class="anchor" href="#Reading-Users-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reading Users table in Sqlite.db<a class="anchor-link" href="#Reading-Users-table-in-Sqlite.db"> </a>
-</h1>
+</h2>
 <blockquote>
 <p>Uses SQL SELECT statement to read data</p>
 </blockquote>
-
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -326,39 +335,22 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(1, 'Thomas Edison', 'toby', 'sha256$emnmAqhZXtMKqQ8f$4cf572b1b9463d8a8ef5e9f26d28b58b51135e51c1999fd2ecff04a8e4fd9b88', '1847-02-11')
-(2, 'Nicholas Tesla', 'niko', 'sha256$BWkJINUztbZwOOIf$efba933e7f36f3aecf34bf77943897c12cc400bba729d5110521d9309b20b5ca', '2023-02-23')
-(3, 'Alexander Graham Bell', 'lex', 'sha256$z2LndQpSdVmTVkwZ$087ceb79896d9f05b3bc3309bc97f21814da28cfde7e90d9cabf6eb2d81fb440', '2023-02-23')
-(4, 'Eli Whitney', 'whit', 'sha256$e3jKjqXVXKoCMQsO$e05dc702436e071382582f3270c4a5b3f19f8c3f11d46b69c0a5a3f40fe44ec4', '2023-02-23')
-(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
-(6, 'Indiana Jones', 'indi', 'indi', '1920-01-01')
-(7, 'Marian Ravenwood', 'marian', 'marian', '01-02-1920')
-(8, 'Henry Jones Sr.', 'henry', '123', '')
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Create-a-new-User-in-table-in-Sqlite.db">
+<h2 id="Create-a-new-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Create-a-new-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new User in table in Sqlite.db<a class="anchor-link" href="#Create-a-new-User-in-table-in-Sqlite.db"> </a>
-</h1>
-<blockquote>
-<p>Uses SQL INSERT to add row</p>
-</blockquote>
+</h2>
+<h2 id="&gt;-Uses-SQL-INSERT-to-add-row">
+<a class="anchor" href="#&gt;-Uses-SQL-INSERT-to-add-row" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses SQL INSERT to add row<a class="anchor-link" href="#&gt;-Uses-SQL-INSERT-to-add-row"> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+<p>-</p>
 
 </div>
 </div>
@@ -413,12 +405,16 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Updating-a-User-in-table-in-Sqlite.db">
+<h2 id="Updating-a-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Updating-a-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating a User in table in Sqlite.db<a class="anchor-link" href="#Updating-a-User-in-table-in-Sqlite.db"> </a>
-</h1>
-<blockquote>
-<p>Uses SQL UPDATE to modify password</p>
-</blockquote>
+</h2>
+<h2 id="&gt;-Uses-SQL-UPDATE-to-modify-password">
+<a class="anchor" href="#&gt;-Uses-SQL-UPDATE-to-modify-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses SQL UPDATE to modify password<a class="anchor-link" href="#&gt;-Uses-SQL-UPDATE-to-modify-password"> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+<p>-</p>
 
 </div>
 </div>
@@ -477,12 +473,16 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Delete-a-User-in-table-in-Sqlite.db">
+<h2 id="Delete-a-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Delete-a-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delete a User in table in Sqlite.db<a class="anchor-link" href="#Delete-a-User-in-table-in-Sqlite.db"> </a>
-</h1>
-<blockquote>
-<p>Uses a delete function to remove a user based on a user input of the id.</p>
-</blockquote>
+</h2>
+<h2 id="&gt;-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id.">
+<a class="anchor" href="#&gt;-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id." aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses a delete function to remove a user based on a user input of the id.<a class="anchor-link" href="#&gt;-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id."> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+<p>-</p>
 
 </div>
 </div>
@@ -537,9 +537,13 @@ window.onload = wrap_img;
 <h1 id="Menu-Interface-to-CRUD-operations">
 <a class="anchor" href="#Menu-Interface-to-CRUD-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Menu Interface to CRUD operations<a class="anchor-link" href="#Menu-Interface-to-CRUD-operations"> </a>
 </h1>
-<blockquote>
-<p>CRUD interactions from one location</p>
-</blockquote>
+<h2 id="&gt;-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell.">
+<a class="anchor" href="#&gt;-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell." aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.<a class="anchor-link" href="#&gt;-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell."> </a>
+</h2>
+<h2 id="-">
+<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
+</h2>
+<p>-</p>
 
 </div>
 </div>
@@ -579,35 +583,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(1, 'Thomas Edison', 'toby', 'sha256$emnmAqhZXtMKqQ8f$4cf572b1b9463d8a8ef5e9f26d28b58b51135e51c1999fd2ecff04a8e4fd9b88', '1847-02-11')
-(2, 'Nicholas Tesla', 'niko', 'sha256$BWkJINUztbZwOOIf$efba933e7f36f3aecf34bf77943897c12cc400bba729d5110521d9309b20b5ca', '2023-02-23')
-(3, 'Alexander Graham Bell', 'lex', 'sha256$z2LndQpSdVmTVkwZ$087ceb79896d9f05b3bc3309bc97f21814da28cfde7e90d9cabf6eb2d81fb440', '2023-02-23')
-(4, 'Eli Whitney', 'whit', 'sha256$e3jKjqXVXKoCMQsO$e05dc702436e071382582f3270c4a5b3f19f8c3f11d46b69c0a5a3f40fe44ec4', '2023-02-23')
-(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
-(6, 'Indiana Jones', 'indi', 'indi', '1920-01-01')
-(7, 'Marian Ravenwood', 'marian', 'marian', '01-02-1920')
-(8, 'Henry Jones Sr.', 'henry', '123', '')
-The row with uid henry was successfully deleted
-(1, 'Thomas Edison', 'toby', 'sha256$emnmAqhZXtMKqQ8f$4cf572b1b9463d8a8ef5e9f26d28b58b51135e51c1999fd2ecff04a8e4fd9b88', '1847-02-11')
-(2, 'Nicholas Tesla', 'niko', 'sha256$BWkJINUztbZwOOIf$efba933e7f36f3aecf34bf77943897c12cc400bba729d5110521d9309b20b5ca', '2023-02-23')
-(3, 'Alexander Graham Bell', 'lex', 'sha256$z2LndQpSdVmTVkwZ$087ceb79896d9f05b3bc3309bc97f21814da28cfde7e90d9cabf6eb2d81fb440', '2023-02-23')
-(4, 'Eli Whitney', 'whit', 'sha256$e3jKjqXVXKoCMQsO$e05dc702436e071382582f3270c4a5b3f19f8c3f11d46b69c0a5a3f40fe44ec4', '2023-02-23')
-(5, 'John Mortensen', 'jm1021', 'sha256$3vr6s8bl6FyEsRSZ$fa0104dcef546567e6b5518288d5c46eb268dfacd49a54770702a7888525fdd4', '1959-10-21')
-(6, 'Indiana Jones', 'indi', 'indi', '1920-01-01')
-(7, 'Marian Ravenwood', 'marian', 'marian', '01-02-1920')
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -618,7 +593,9 @@ The row with uid henry was successfully deleted
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h1>
 <ul>
-<li>Build your own Blog, Using Programs with Data.  Begin the Blog with notes and answering the College Board practice problems for 2.4</li>
+<li>Add Blog to you own Blogging site, title it "Using Programs with Data".  In the Blog add notes and observations on each code cell.</li>
+<li>Include College Board's practice problems for 2.4 in this Blog, make relationship between College Board and the material shown.</li>
+<li>Add your own database and CRUD operation.</li>
 </ul>
 
 </div>

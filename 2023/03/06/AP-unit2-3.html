@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      12 min read
+      9 min read
     
 </span></p>
 
@@ -138,6 +138,7 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Example-of-larger-data-set">Example of larger data set </a></li>
+<li class="toc-entry toc-h1"><a href="#APIs-are-a-Source-for-Writing-Programs-with-Data">APIs are a Source for Writing Programs with Data </a></li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Hack-Helpers">Hack Helpers </a>
@@ -516,40 +517,51 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
+</div>
+    
 
-<div class="output_area">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="APIs-are-a-Source-for-Writing-Programs-with-Data">
+<a class="anchor" href="#APIs-are-a-Source-for-Writing-Programs-with-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>APIs are a Source for Writing Programs with Data<a class="anchor-link" href="#APIs-are-a-Source-for-Writing-Programs-with-Data"> </a>
+</h1>
+<blockquote>
+<p>3rd Party APIs are a great source for creating Pandas Data Frames.</p>
+<ul>
+<li>Data can be fetched and resulting json can be placed into a Data Frame</li>
+<li>Observe output, this looks very similar to a Database</li>
+</ul>
+</blockquote>
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>--Duration Top 10---------
-     Duration  Pulse  Maxpulse  Calories
-69        300    108       143    1500.2
-79        270    100       131    1729.0
-109       210    137       184    1860.4
-60        210    108       160    1376.0
-106       180     90       120     800.3
-90        180    101       127     600.1
-65        180     90       130     800.4
-61        160    110       137    1034.4
-62        160    109       135     853.0
-67        150    107       130     816.0
---Duration Bottom 10------
-     Duration  Pulse  Maxpulse  Calories
-68         20    106       136     110.4
-100        20     95       112      77.7
-89         20     83       107      50.3
-135        20    136       156     189.0
-94         20    150       171     127.4
-95         20    151       168     229.4
-139        20    141       162     222.4
-64         20    110       130     131.4
-112        15    124       139     124.2
-93         15     80       100      50.5
-</pre>
 </div>
 </div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">'''Pandas can be used to analyze data'''</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="k">def</span> <span class="nf">fetch</span><span class="p">():</span>
+    <span class="sd">'''Obtain data from an endpoint'''</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/covid/"</span>
+    <span class="n">fetch</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">fetch</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="c1"># filter data for requirement</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">json</span><span class="p">[</span><span class="s1">'countries_stat'</span><span class="p">])</span>  <span class="c1"># filter endpoint for country stats</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'country_name'</span><span class="p">:</span><span class="s1">'deaths'</span><span class="p">])</span> <span class="c1"># show row 0 through 5 and columns country_name through deaths</span>
+    
+<span class="n">fetch</span><span class="p">()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -656,51 +668,6 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Titanic Data
-Index(['survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
-       'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
-       'alive', 'alone'],
-      dtype='object')
-     survived  pclass     sex   age  sibsp  parch   class     fare  \
-0           0       3    male  22.0      1      0   Third   7.2500   
-1           1       1  female  38.0      1      0   First  71.2833   
-2           1       3  female  26.0      0      0   Third   7.9250   
-3           1       1  female  35.0      1      0   First  53.1000   
-4           0       3    male  35.0      0      0   Third   8.0500   
-..        ...     ...     ...   ...    ...    ...     ...      ...   
-886         0       2    male  27.0      0      0  Second  13.0000   
-887         1       1  female  19.0      0      0   First  30.0000   
-888         0       3  female   NaN      1      2   Third  23.4500   
-889         1       1    male  26.0      0      0   First  30.0000   
-890         0       3    male  32.0      0      0   Third   7.7500   
-
-     embark_town  
-0    Southampton  
-1      Cherbourg  
-2    Southampton  
-3    Southampton  
-4    Southampton  
-..           ...  
-886  Southampton  
-887  Southampton  
-888  Southampton  
-889    Cherbourg  
-890   Queenstown  
-
-[891 rows x 9 columns]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -744,46 +711,6 @@ Index(['survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>     survived  pclass  sex   age  sibsp  parch      fare  alone  embarked_C  \
-0           0       3    1  22.0      1      0    7.2500      0         0.0   
-1           1       1    0  38.0      1      0   71.2833      0         1.0   
-2           1       3    0  26.0      0      0    7.9250      1         0.0   
-3           1       1    0  35.0      1      0   53.1000      0         0.0   
-4           0       3    1  35.0      0      0    8.0500      1         0.0   
-..        ...     ...  ...   ...    ...    ...       ...    ...         ...   
-705         0       2    1  39.0      0      0   26.0000      1         0.0   
-706         1       2    0  45.0      0      0   13.5000      1         0.0   
-707         1       1    1  42.0      0      0   26.2875      1         0.0   
-708         1       1    0  22.0      0      0  151.5500      1         0.0   
-710         1       1    0  24.0      0      0   49.5042      1         1.0   
-
-     embarked_Q  embarked_S  
-0           0.0         1.0  
-1           0.0         0.0  
-2           0.0         1.0  
-3           0.0         1.0  
-4           0.0         1.0  
-..          ...         ...  
-705         0.0         1.0  
-706         0.0         1.0  
-707         1.0         0.0  
-708         0.0         1.0  
-710         0.0         0.0  
-
-[564 rows x 11 columns]
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -834,31 +761,6 @@ Index(['survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>survived       0.000000
-pclass         2.464072
-sex            0.844311
-age           31.073353
-sibsp          0.562874
-parch          0.398204
-fare          24.835902
-alone          0.616766
-embarked_C     0.185629
-embarked_Q     0.038922
-embarked_S     0.775449
-dtype: float64
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
@@ -883,31 +785,6 @@ dtype: float64
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>survived       1.000000
-pclass         1.878261
-sex            0.326087
-age           28.481522
-sibsp          0.504348
-parch          0.508696
-fare          50.188806
-alone          0.456522
-embarked_C     0.152174
-embarked_Q     0.034783
-embarked_S     0.813043
-dtype: float64
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -936,43 +813,6 @@ dtype: float64
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>survived        1.0000
-pclass          3.0000
-sex             1.0000
-age            80.0000
-sibsp           4.0000
-parch           5.0000
-fare          512.3292
-alone           1.0000
-embarked_C      1.0000
-embarked_Q      1.0000
-embarked_S      1.0000
-dtype: float64
-survived      1.00
-pclass        1.00
-sex           0.00
-age           0.75
-sibsp         0.00
-parch         0.00
-fare          0.00
-alone         0.00
-embarked_C    0.00
-embarked_Q    0.00
-embarked_S    0.00
-dtype: float64
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1036,82 +876,6 @@ dtype: float64
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy: 0.7411764705882353
-Accuracy: 0.788235294117647
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/johnmortensen/opt/anaconda3/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py:814: ConvergenceWarning: lbfgs failed to converge (status=1):
-STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
-
-Increase the number of iterations (max_iter) or scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  n_iter_i = _check_optimize_result(
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy: 0.788235294117647
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/Users/johnmortensen/opt/anaconda3/lib/python3.9/site-packages/sklearn/linear_model/_logistic.py:814: ConvergenceWarning: lbfgs failed to converge (status=1):
-STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
-
-Increase the number of iterations (max_iter) or scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-Please also refer to the documentation for alternative solver options:
-    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
-  n_iter_i = _check_optimize_result(
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 

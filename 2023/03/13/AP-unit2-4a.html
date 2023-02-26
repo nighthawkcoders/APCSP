@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -120,23 +120,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Imports-and-Flask-Objects">Imports and Flask Objects </a></li>
-<li class="toc-entry toc-h2"><a href="#>-Defines-and-setups-Flask-and-Database-object">&gt; Defines and setups Flask and Database object </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Model-Definition">Model Definition </a></li>
-<li class="toc-entry toc-h2"><a href="#>-Define-columns,-initialization,-and-CRUD-methods-for-users-table-in-sqlite.db">&gt; Define columns, initialization, and CRUD methods for users table in sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Initial-Data">Initial Data </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Check-for-given-Credentials-in-users-table-in-sqlite.db">Check for given Credentials in users table in sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#>-Uses-SQLALchemy-and-custom-user.create()-method-to-add-row.">&gt; Uses SQLALchemy and custom user.create() method to add row. </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Reading-users-table-in-sqlite.db">Reading users table in sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a></li>
 </ul><!--
 #################################################
@@ -153,13 +141,16 @@ window.onload = wrap_img;
 <h2 id="Imports-and-Flask-Objects">
 <a class="anchor" href="#Imports-and-Flask-Objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Imports and Flask Objects<a class="anchor-link" href="#Imports-and-Flask-Objects"> </a>
 </h2>
-<h2 id="&gt;-Defines-and-setups-Flask-and-Database-object">
-<a class="anchor" href="#&gt;-Defines-and-setups-Flask-and-Database-object" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Defines and setups Flask and Database object<a class="anchor-link" href="#&gt;-Defines-and-setups-Flask-and-Database-object"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>Defines and key object creations</p>
+</blockquote>
+<ul>
+<li>Comment on where you have observed these working?</li>
+</ul>
+<ol>
+<li>Flask app object</li>
+<li>SQLAlchemy object</li>
+</ol>
 
 </div>
 </div>
@@ -203,23 +194,27 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Model-Definition">
 <a class="anchor" href="#Model-Definition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Definition<a class="anchor-link" href="#Model-Definition"> </a>
 </h2>
-<h2 id="&gt;-Define-columns,-initialization,-and-CRUD-methods-for-users-table-in-sqlite.db">
-<a class="anchor" href="#&gt;-Define-columns,-initialization,-and-CRUD-methods-for-users-table-in-sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Define columns, initialization, and CRUD methods for users table in sqlite.db<a class="anchor-link" href="#&gt;-Define-columns,-initialization,-and-CRUD-methods-for-users-table-in-sqlite.db"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>Define columns, initialization, and CRUD methods for users table in sqlite.db</p>
+</blockquote>
+<ul>
+<li>Comment on these items in the class</li>
+<li>class User purpose</li>
+<li>db.Model inheritance</li>
+<li>
+<em>init</em> method</li>
+<li>@property, @<column>.setter&lt;/li&gt;
+<li>additional methods</li>
+&lt;/ul&gt;
 
-</div>
-</div>
-</div>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -385,12 +380,15 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQLALchemy db.create_all() to initialize rows into sqlite.db</p>
 </blockquote>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
+<ul>
+<li>Comment on how these work?</li>
+</ul>
+<ol>
+<li>Create All Tables from db Object</li>
+<li>User Object Constructors</li>
+<li>Try / Except </li>
+</ol>
+
 </div>
 </div>
 </div>
@@ -447,14 +445,16 @@ window.onload = wrap_img;
 <a class="anchor" href="#Check-for-given-Credentials-in-users-table-in-sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check for given Credentials in users table in sqlite.db<a class="anchor-link" href="#Check-for-given-Credentials-in-users-table-in-sqlite.db"> </a>
 </h2>
 <blockquote>
-<p>Uses SQLALchemy query.all method to read data</p>
+<p>Use of ORM Query object and custom methods to identify user to credentials uid and password</p>
 </blockquote>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
+<ul>
+<li>Comment on purpose of following</li>
+</ul>
+<ol>
+<li>User.query.filter_by</li>
+<li>user.password</li>
+</ol>
+
 </div>
 </div>
 </div>
@@ -496,13 +496,18 @@ window.onload = wrap_img;
 <h2 id="Create-a-new-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Create-a-new-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new User in table in Sqlite.db<a class="anchor-link" href="#Create-a-new-User-in-table-in-Sqlite.db"> </a>
 </h2>
-<h2 id="&gt;-Uses-SQLALchemy-and-custom-user.create()-method-to-add-row.">
-<a class="anchor" href="#&gt;-Uses-SQLALchemy-and-custom-user.create()-method-to-add-row." aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses SQLALchemy and custom user.create() method to add row.<a class="anchor-link" href="#&gt;-Uses-SQLALchemy-and-custom-user.create()-method-to-add-row."> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>Uses SQLALchemy and custom user.create() method to add row.</p>
+</blockquote>
+<ul>
+<li>Comment on purpose of following</li>
+</ul>
+<ol>
+<li>user.find_by_uid() and try/except</li>
+<li>user = User(...)</li>
+<li>user.dob and try/except</li>
+<li>user.create() and try/except</li>
+</ol>
 
 </div>
 </div>
@@ -569,12 +574,14 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQLALchemy query.all method to read data</p>
 </blockquote>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
+<ul>
+<li>Comment on purpose of following</li>
+</ul>
+<ol>
+<li>User.query.all</li>
+<li>json_ready assignment</li>
+</ol>
+
 </div>
 </div>
 </div>
@@ -589,7 +596,7 @@ window.onload = wrap_img;
 <span class="k">def</span> <span class="nf">read</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span>
+    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># each user adds user.read() to list</span>
     <span class="k">return</span> <span class="n">json_ready</span>
 
 <span class="n">read</span><span class="p">()</span>
@@ -615,8 +622,15 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-</div>
+&lt;/div&gt;
+ 
 
+</column>
+</li>
+</ul>
+</div>
+</div></div>
+</div>
 
 
   </div><a class="u-url" href="/APCSP/2023/03/13/AP-unit2-4a.html" hidden></a>

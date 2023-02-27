@@ -418,7 +418,7 @@ window.onload = wrap_img;
 <p>To save changes, <code>ctl X</code> or <code>cmd X</code>, then <code>y</code>, then <code>enter</code></p>
 </li>
 <li>
-<p>Create a symbolic link: <code>cd /etc/nginx/sites-enabled</code>, then <code>ln -s /etc/nginx/sites-available/myUniqueName /etc/nginx/sites-enabled</code> (change myUniqueName to your nginx config file name)</p>
+<p>Create a symbolic link: <code>cd /etc/nginx/sites-enabled</code>, then <code>sudo ln -s /etc/nginx/sites-available/myUniqueName /etc/nginx/sites-enabled</code> (change myUniqueName to your nginx config file name)</p>
 </li>
 <li>
 <p>Validate by running: <code>sudo nginx -t</code></p>

@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -123,25 +123,12 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Schema-of-Users-table-in-Sqlite.db">Schema of Users table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Reading-Users-table-in-Sqlite.db">Reading Users table in Sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#>-Uses-SQL-INSERT-to-add-row">&gt; Uses SQL INSERT to add row </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Updating-a-User-in-table-in-Sqlite.db">Updating a User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#>-Uses-SQL-UPDATE-to-modify-password">&gt; Uses SQL UPDATE to modify password </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 <li class="toc-entry toc-h2"><a href="#Delete-a-User-in-table-in-Sqlite.db">Delete a User in table in Sqlite.db </a></li>
-<li class="toc-entry toc-h2"><a href="#>-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id.">&gt; Uses a delete function to remove a user based on a user input of the id. </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Menu-Interface-to-CRUD-operations">Menu Interface to CRUD operations </a>
-<ul>
-<li class="toc-entry toc-h2"><a href="#>-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell.">&gt; CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell. </a></li>
-<li class="toc-entry toc-h2"><a href="#-">- </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h1"><a href="#Menu-Interface-to-CRUD-operations">Menu Interface to CRUD operations </a></li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a></li>
 </ul><!--
 #################################################
@@ -236,12 +223,13 @@ window.onload = wrap_img;
 <blockquote>
 <p>Uses SQL SELECT statement to read data</p>
 </blockquote>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
+<ul>
+<li>What is a connection object?  After you google it, what do you think it does?</li>
+<li>Same for cursor object?</li>
+<li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?</li>
+<li>Is "results" an object?  How do you know?</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -291,13 +279,13 @@ window.onload = wrap_img;
 <h2 id="Create-a-new-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Create-a-new-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create a new User in table in Sqlite.db<a class="anchor-link" href="#Create-a-new-User-in-table-in-Sqlite.db"> </a>
 </h2>
-<h2 id="&gt;-Uses-SQL-INSERT-to-add-row">
-<a class="anchor" href="#&gt;-Uses-SQL-INSERT-to-add-row" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses SQL INSERT to add row<a class="anchor-link" href="#&gt;-Uses-SQL-INSERT-to-add-row"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>Uses SQL INSERT to add row</p>
+<ul>
+<li>Compore create() in both SQL lessons.  What is better or worse in the two implementations?</li>
+<li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
+</ul>
+</blockquote>
 
 </div>
 </div>
@@ -355,13 +343,14 @@ window.onload = wrap_img;
 <h2 id="Updating-a-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Updating-a-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Updating a User in table in Sqlite.db<a class="anchor-link" href="#Updating-a-User-in-table-in-Sqlite.db"> </a>
 </h2>
-<h2 id="&gt;-Uses-SQL-UPDATE-to-modify-password">
-<a class="anchor" href="#&gt;-Uses-SQL-UPDATE-to-modify-password" aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses SQL UPDATE to modify password<a class="anchor-link" href="#&gt;-Uses-SQL-UPDATE-to-modify-password"> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>Uses SQL UPDATE to modify password</p>
+<ul>
+<li>What does the hacked part do?</li>
+<li>Explain try/except, when would except occur?</li>
+<li>What code seems to be repeated in each of these examples to point, why is it repeated?</li>
+</ul>
+</blockquote>
 
 </div>
 </div>
@@ -423,13 +412,13 @@ window.onload = wrap_img;
 <h2 id="Delete-a-User-in-table-in-Sqlite.db">
 <a class="anchor" href="#Delete-a-User-in-table-in-Sqlite.db" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delete a User in table in Sqlite.db<a class="anchor-link" href="#Delete-a-User-in-table-in-Sqlite.db"> </a>
 </h2>
-<h2 id="&gt;-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id.">
-<a class="anchor" href="#&gt;-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id." aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; Uses a delete function to remove a user based on a user input of the id.<a class="anchor-link" href="#&gt;-Uses-a-delete-function-to-remove-a-user-based-on-a-user-input-of-the-id."> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>Uses a delete function to remove a user based on a user input of the id.</p>
+<ul>
+<li>Is DELETE a dangerous operation?  Why?</li>
+<li>What is the "f" and {uid} do?</li>
+</ul>
+</blockquote>
 
 </div>
 </div>
@@ -484,13 +473,13 @@ window.onload = wrap_img;
 <h1 id="Menu-Interface-to-CRUD-operations">
 <a class="anchor" href="#Menu-Interface-to-CRUD-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Menu Interface to CRUD operations<a class="anchor-link" href="#Menu-Interface-to-CRUD-operations"> </a>
 </h1>
-<h2 id="&gt;-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell.">
-<a class="anchor" href="#&gt;-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell." aria-hidden="true"><span class="octicon octicon-link"></span></a>&gt; CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.<a class="anchor-link" href="#&gt;-CRUD-and-Schema-interactions-from-one-location-by-running-menu.-Observe-input-at-the-top-of-VSCode,-observe-output-underneath-code-cell."> </a>
-</h2>
-<h2 id="-">
-<a class="anchor" href="#-" aria-hidden="true"><span class="octicon octicon-link"></span></a>-<a class="anchor-link" href="#-"> </a>
-</h2>
-<p>-</p>
+<blockquote>
+<p>CRUD and Schema interactions from one location by running menu. Observe input at the top of VSCode, observe output underneath code cell.</p>
+<ul>
+<li>Why does the menu repeat?</li>
+<li>Could you refactor this menu?  Make it work with a List?</li>
+</ul>
+</blockquote>
 
 </div>
 </div>
@@ -541,6 +530,9 @@ window.onload = wrap_img;
 </h1>
 <ul>
 <li>Add this Blog to you own Blogging site.  In the Blog add notes and observations on each code cell.</li>
+<li>Create a new Table or do something new, <a href="https://www.sqlitetutorial.net/sqlite-python/creating-tables/">sqlite documentation</a>
+</li>
+<li>In implementation in previous bullet, do you see procedural abstraction?</li>
 </ul>
 
 </div>

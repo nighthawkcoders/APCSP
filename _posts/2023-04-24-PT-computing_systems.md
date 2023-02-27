@@ -13,7 +13,7 @@ week: 31
 
 ## Plans Week 31
 > 
-- Monday: Live Review
+- Monday: Live Review 
 - Tuesday: Big Idea 4 Review
 - Wednesday: 
 - Thursday: 

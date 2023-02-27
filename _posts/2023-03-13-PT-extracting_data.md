@@ -13,7 +13,7 @@ week: 26
 
 ## Plans Week 26
 > 
-- Monday: Live Review
+- Monday: Live Review 2.2, 2.3
 - Tuesday: 2.4 Using Programs with Data A
 - Wednesday: Work Day
 - Thursday: 2.4 Using Programs with Data B

@@ -1,0 +1,23 @@
+---
+toc: true
+comments: true
+layout: post
+title:  Week of 03-20, Space and Time Complexity
+description: Third week of tri 3
+permalink: /points/27
+image: /images/points.jpeg
+categories: []
+type: plan
+week: 27
+---
+
+## Plans Week 27
+> 
+- Monday: Live Review 2.4, Big Idea Quiz #2
+- Tuesday: Work Day
+- Wednesday: Data Structures: Space and Time Complexity and Big Oh Notation
+- Thursday: Work Day 
+- Friday: MCQ Test #4
+
+## Look ahead
+> 

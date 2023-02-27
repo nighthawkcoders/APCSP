@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -119,12 +119,16 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Database-and-SQLAlchemy">Database and SQLAlchemy </a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#Imports-and-Flask-Objects">Imports and Flask Objects </a></li>
 <li class="toc-entry toc-h2"><a href="#Model-Definition">Model Definition </a></li>
 <li class="toc-entry toc-h2"><a href="#Initial-Data">Initial Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Check-for-given-Credentials-in-users-table-in-sqlite.db">Check for given Credentials in users table in sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
 <li class="toc-entry toc-h2"><a href="#Reading-users-table-in-sqlite.db">Reading users table in sqlite.db </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a></li>
 </ul><!--
 #################################################
@@ -135,6 +139,39 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Database-and-SQLAlchemy">
+<a class="anchor" href="#Database-and-SQLAlchemy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Database and SQLAlchemy<a class="anchor-link" href="#Database-and-SQLAlchemy"> </a>
+</h1>
+<blockquote>
+<p>In this blog we will explore using programs with data, focused on Databases.  We will use SQLite Database to learn more about using Programs with Data.</p>
+</blockquote>
+<ul>
+<li>
+<p>College Board talks about ideas like</p>
+<ul>
+<li>Program Usage. "iterative and interactive way when processing information"</li>
+<li>Managing Data.  "classifying data are part of the process in using programs", "data files in a Table"</li>
+<li>Insight "insight and knowledge can be obtained from ...  digitally represented information"</li>
+<li>Filter systems. 'tools for finding information and recognizing patterns"</li>
+<li>Application. "the preserve has two databases", "an employee wants to count the number of book"</li>
+</ul>
+</li>
+<li>
+<p>PBL, Databases, Iterative/OOP</p>
+<ul>
+<li>Iterative. Refers to a sequence of instructions or code being repeated until a specific end result is achieved</li>
+<li>OOP. A computer programming model that organizes software design around data, or objects, rather than functions and logic</li>
+<li>SQL. Structured Query Language, abbreviated as SQL, is a language used in programming, managing, and structuring data </li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -176,7 +213,7 @@ window.onload = wrap_img;
 <span class="c1"># Setup of key Flask object (app)</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="c1"># Setup SQLAlchemy object and properties for the database (db)</span>
-<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///files/sqlite.db'</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///files/sqlite.db'</span>  <span class="c1"># path and filename of database</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_TRACK_MODIFICATIONS'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">database</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SECRET_KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'SECRET_KEY'</span>

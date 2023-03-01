@@ -13,11 +13,15 @@ week: 28
 
 ## Plans Week 28
 > 
-- Monday: Live Review - Project Plan, Space/Time, MCQ Test #4
+- Monday: Live Review - Space/Time, MCQ Test #4
 - Tuesday: Work Day 
 - Wednesday: Data Structures: Hashmaps, Sets, Hash Tables, Hashing and Collisions
 - Thursday: Work Day 
 - Friday: Work Day
+
+## Scoring
+- Notes and questions answered for Hashmaps (.9)
+- Improvement on Final Project (1.8/2)
 
 ## Look ahead
 > 

@@ -19,5 +19,12 @@ week: 26
 - Thursday: 2.4 Using Programs with Data B
 - Friday: Big Idea 2 Quiz
 
+## Scoring
+- Notes and questions answered for 2.4 (.9)
+- Complete Hacks for 2.4 (.9)
+    - Must incorporate ideas from 2.4 into your Final Project for .9+
+- Big Idea 2 Quiz (.9 for > 50%) with test corrections 
+    - Must score > 90% for .9+
+
 ## Look ahead
 > Making project improvements based on the lessons of the last 2 weeks 

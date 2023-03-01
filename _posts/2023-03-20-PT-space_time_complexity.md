@@ -19,5 +19,11 @@ week: 27
 - Thursday: Work Day 
 - Friday: MCQ Test #4
 
+## Scoring
+- Notes and questions answered for Space and Time Complexity (.9)
+- Plan for improvement for Final Project 
+- MCQ Test #4 (.9 for > 50%) with test corrections 
+    - Must score > 90% for .9+
+
 ## Look ahead
 > 

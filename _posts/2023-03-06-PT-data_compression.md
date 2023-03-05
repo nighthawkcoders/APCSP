@@ -12,9 +12,9 @@ week: 25
 ---
 
 ## Plans Week 25
-> 
-- Monday: Minimum Day
-- Tuesday: 2.2 Data Compression and Image Lab
+> Kickoff College Course
+- Monday: Minimum Day, Review 2.2
+- Tuesday: Present Early Seed award, 2.2 Data Compression and Image Lab
 - Wednesday: Work Day
 - Thursday: 2.3 Extracting Information from Data
 - Friday: Work Day

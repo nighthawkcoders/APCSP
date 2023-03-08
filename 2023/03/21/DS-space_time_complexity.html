@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Data Structures- Space and Time Complexity" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Observing the time complexity of different algorithms," />
-<meta property="og:description" content="Observing the time complexity of different algorithms," />
+<meta name="description" content="Observing the time complexity of different algorithms" />
+<meta property="og:description" content="Observing the time complexity of different algorithms" />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/03/21/DS-space_time_complexity.html" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/03/21/DS-space_time_complexity.html" />
 <meta property="og:site_name" content="APCSP" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/python.png" />
 <meta property="twitter:title" content="Data Structures- Space and Time Complexity" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-21T00:00:00-05:00","datePublished":"2023-03-21T00:00:00-05:00","description":"Observing the time complexity of different algorithms,","headline":"Data Structures- Space and Time Complexity","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/03/21/DS-space_time_complexity.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/03/21/DS-space_time_complexity.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-21T00:00:00-05:00","datePublished":"2023-03-21T00:00:00-05:00","description":"Observing the time complexity of different algorithms","headline":"Data Structures- Space and Time Complexity","image":"https://nighthawkcoders.github.io/APCSP/images/python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/03/21/DS-space_time_complexity.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/03/21/DS-space_time_complexity.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,13 +75,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Data Structures- Space and Time Complexity</h1><p class="page-description">Observing the time complexity of different algorithms,</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-21T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Data Structures- Space and Time Complexity</h1><p class="page-description">Observing the time complexity of different algorithms</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-21T00:00:00-05:00" itemprop="datePublished">
         Mar 21, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -119,12 +119,18 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#Space-and-Time-Complexity">Space and Time Complexity </a></li>
+<li class="toc-entry toc-h1"><a href="#Space-Complexity">Space Complexity </a></li>
+<li class="toc-entry toc-h1"><a href="#Time-Complexity">Time Complexity </a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#Big-O-Notation">Big O Notation </a></li>
 <li class="toc-entry toc-h2"><a href="#Constant-Time-O(1)">Constant Time O(1) </a></li>
 <li class="toc-entry toc-h2"><a href="#Linear-Time-O(n)">Linear Time O(n) </a></li>
 <li class="toc-entry toc-h2"><a href="#Quadratic-Time-O(n^2)">Quadratic Time O(n^2) </a></li>
 <li class="toc-entry toc-h2"><a href="#Logarithmic-Time-O(logn)">Logarithmic Time O(logn) </a></li>
+<li class="toc-entry toc-h2"><a href="#Exponential-Time-O(2^n)">Exponential Time O(2^n) </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+</ul>
+</li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -137,11 +143,24 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Space-and-Time-Complexity">
-<a class="anchor" href="#Space-and-Time-Complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space and Time Complexity<a class="anchor-link" href="#Space-and-Time-Complexity"> </a>
-</h2>
+<h1 id="Space-Complexity">
+<a class="anchor" href="#Space-Complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space Complexity<a class="anchor-link" href="#Space-Complexity"> </a>
+</h1>
 <blockquote>
-<p>Time complexity refers to the amount of time required by an algorithm to run as the input size grows. It is usually measured in terms of the "Big O" notation, which describes the upper bound of an algorithm's time complexity. Space complexity, on the other hand, refers to the amount of memory used by an algorithm to complete its execution, as a function of the size of the input. It is also usually expressed using big O notation, which provides an upper bound on the amount of memory used by the algorithm as the size of the input increases.</p>
+<p>Space complexity refers to the amount of memory used by an algorithm to complete its execution, as a function of the size of the input. The space complexity of an algorithm can be affected by various factors such as the size of the input data, the data structures used in the algorithm, the number and size of temporary variables, and the recursion depth. Space complexity is often expressed in terms of the amount of memory required by an algorithm in the worst-case scenario, or in terms of the growth rate of the memory usage as the size of the input data increases. For example, an algorithm that uses an array of size n to solve a problem has a space complexity of O(n), while an algorithm that uses a two-dimensional array of size n x n has a space complexity of O(n^2). An algorithm that uses a recursive function to solve a problem may have a space complexity of O(n) if the recursion depth is proportional to the size of the input data.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Time-Complexity">
+<a class="anchor" href="#Time-Complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time Complexity<a class="anchor-link" href="#Time-Complexity"> </a>
+</h1>
+<blockquote>
+<p>Time complexity refers to the amount of time required by an algorithm to run as the input size grows. It is usually measured in terms of the "Big O" notation, which describes the upper bound of an algorithm's time complexity.</p>
 </blockquote>
 
 </div>
@@ -317,6 +336,55 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exponential-Time-O(2^n)">
+<a class="anchor" href="#Exponential-Time-O(2%5En)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exponential Time O(2^n)<a class="anchor-link" href="#Exponential-Time-O(2%5En)"> </a>
+</h2>
+<blockquote>
+<p>An example of an O(2^n) algorithm is the recursive implementation of the Fibonacci sequence. The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. The recursive implementation of the Fibonacci sequence calculates each number by recursively calling itself with the two preceding numbers until it reaches the base case (i.e., the first or second number in the sequence). The algorithm takes O(2^n) time in the worst case because it has to calculate each number in the sequence by making two recursive calls.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Using the time library, we are able to see the difference in time it takes to calculate the fibonacci function above.</p>
+<ul>
+<li>Based on what is known about the other time complexities, hypothesize the resulting elapsed time if the function is replaced. </li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -326,11 +394,15 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
-<span class="k">def</span> <span class="nf">constant_time</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">target</span><span class="p">])</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">34</span><span class="p">))</span>
+<span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">total_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Time taken:"</span><span class="p">,</span> <span class="n">total_time</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">)</span>
 
 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="n">constant_time</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="mi">263</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">35</span><span class="p">))</span>
 <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 
 <span class="n">total_time</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
@@ -341,24 +413,25 @@ window.onload = wrap_img;
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>263
-Time taken: 0.00010228157043457031 seconds
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h2>
+<ul>
+<li>Record your findings when testing the time elapsed of the different algorithms.</li>
+<li>Although we will go more in depth later, time complexity is a key concept that relates to the different sorting algorithms. Do some basic research on the different types of sorting algorithms and their time complexity.</li>
+<li>Why is time and space complexity important when choosing an algorithm?</li>
+<li>Should you always use a constant time algorithm / Should you never use an exponential time algorithm? Explain? </li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 

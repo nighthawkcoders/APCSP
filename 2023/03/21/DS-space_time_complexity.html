@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      7 min read
     
 </span></p>
 
@@ -119,15 +119,39 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#Space-Complexity">Space Complexity </a></li>
-<li class="toc-entry toc-h1"><a href="#Time-Complexity">Time Complexity </a>
+<li class="toc-entry toc-h1"><a href="#Space-and-Time-Complexity">Space and Time Complexity </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Big-O-Notation">Big O Notation </a></li>
-<li class="toc-entry toc-h2"><a href="#Constant-Time-O(1)">Constant Time O(1) </a></li>
-<li class="toc-entry toc-h2"><a href="#Linear-Time-O(n)">Linear Time O(n) </a></li>
-<li class="toc-entry toc-h2"><a href="#Quadratic-Time-O(n^2)">Quadratic Time O(n^2) </a></li>
-<li class="toc-entry toc-h2"><a href="#Logarithmic-Time-O(logn)">Logarithmic Time O(logn) </a></li>
-<li class="toc-entry toc-h2"><a href="#Exponential-Time-O(2^n)">Exponential Time O(2^n) </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Constant-O(1)">Constant O(1) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Time">Time </a></li>
+<li class="toc-entry toc-h3"><a href="#Space">Space </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Linear-O(n)">Linear O(n) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Time">Time </a></li>
+<li class="toc-entry toc-h3"><a href="#Space">Space </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Quadratic-O(n^2)">Quadratic O(n^2) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Time">Time </a></li>
+<li class="toc-entry toc-h3"><a href="#Space">Space </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Logarithmic-O(logn)">Logarithmic O(logn) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Time">Time </a></li>
+<li class="toc-entry toc-h3"><a href="#Space">Space </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Exponential-O(2^n)">Exponential O(2^n) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Time">Time </a></li>
+<li class="toc-entry toc-h3"><a href="#Space">Space </a></li>
 <li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
 </ul>
 </li>
@@ -143,11 +167,11 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Space-Complexity">
-<a class="anchor" href="#Space-Complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space Complexity<a class="anchor-link" href="#Space-Complexity"> </a>
+<h1 id="Space-and-Time-Complexity">
+<a class="anchor" href="#Space-and-Time-Complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space and Time Complexity<a class="anchor-link" href="#Space-and-Time-Complexity"> </a>
 </h1>
 <blockquote>
-<p>Space complexity refers to the amount of memory used by an algorithm to complete its execution, as a function of the size of the input. The space complexity of an algorithm can be affected by various factors such as the size of the input data, the data structures used in the algorithm, the number and size of temporary variables, and the recursion depth. Space complexity is often expressed in terms of the amount of memory required by an algorithm in the worst-case scenario, or in terms of the growth rate of the memory usage as the size of the input data increases. For example, an algorithm that uses an array of size n to solve a problem has a space complexity of O(n), while an algorithm that uses a two-dimensional array of size n x n has a space complexity of O(n^2). An algorithm that uses a recursive function to solve a problem may have a space complexity of O(n) if the recursion depth is proportional to the size of the input data.</p>
+<p>Space complexity refers to the amount of memory used by an algorithm to complete its execution, as a function of the size of the input. The space complexity of an algorithm can be affected by various factors such as the size of the input data, the data structures used in the algorithm, the number and size of temporary variables, and the recursion depth. Time complexity refers to the amount of time required by an algorithm to run as the input size grows. It is usually measured in terms of the "Big O" notation, which describes the upper bound of an algorithm's time complexity.</p>
 </blockquote>
 
 </div>
@@ -156,11 +180,11 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Time-Complexity">
-<a class="anchor" href="#Time-Complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time Complexity<a class="anchor-link" href="#Time-Complexity"> </a>
-</h1>
 <blockquote>
-<p>Time complexity refers to the amount of time required by an algorithm to run as the input size grows. It is usually measured in terms of the "Big O" notation, which describes the upper bound of an algorithm's time complexity.</p>
+<p>Why do you think a programmer should care about space and time complexity?</p>
+<ul>
+<li>?</li>
+</ul>
 </blockquote>
 
 </div>
@@ -173,11 +197,11 @@ window.onload = wrap_img;
 <a class="anchor" href="#Big-O-Notation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Big O Notation<a class="anchor-link" href="#Big-O-Notation"> </a>
 </h2>
 <ul>
-<li>Constant Time O(1)</li>
-<li>Linear Time O(n)</li>
-<li>Quadratic Time O(n^2) </li>
-<li>Logarithmic Time O(logn)</li>
-<li>Exponential time (O(2^n))</li>
+<li>Constant O(1)</li>
+<li>Linear O(n)</li>
+<li>Quadratic O(n^2) </li>
+<li>Logarithmic O(logn)</li>
+<li>Exponential (O(2^n))</li>
 </ul>
 
 </div>
@@ -203,9 +227,18 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Constant-Time-O(1)">
-<a class="anchor" href="#Constant-Time-O(1)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constant Time O(1)<a class="anchor-link" href="#Constant-Time-O(1)"> </a>
-</h2>
+<h1 id="Constant-O(1)">
+<a class="anchor" href="#Constant-O(1)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constant O(1)<a class="anchor-link" href="#Constant-O(1)"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time">
+<a class="anchor" href="#Time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time<a class="anchor-link" href="#Time"> </a>
+</h3>
 <blockquote>
 <p>An example of a constant time algorithm is accessing a specific element in an array. It does not matter how large the array is, accessing an element in the array takes the same amount of time. Therefore, the time complexity of this operation is constant, denoted by O(1).</p>
 </blockquote>
@@ -233,9 +266,49 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Linear-Time-O(n)">
-<a class="anchor" href="#Linear-Time-O(n)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Time O(n)<a class="anchor-link" href="#Linear-Time-O(n)"> </a>
-</h2>
+<h3 id="Space">
+<a class="anchor" href="#Space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space<a class="anchor-link" href="#Space"> </a>
+</h3>
+<blockquote>
+<p>This function takes two integer inputs and returns their sum. The function does not create any additional data structures or variables that are dependent on the input size, so its space complexity is constant, or O(1). Regardless of how large the input integers are, the function will always require the same amount of memory to execute.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Linear-O(n)">
+<a class="anchor" href="#Linear-O(n)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear O(n)<a class="anchor-link" href="#Linear-O(n)"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time">
+<a class="anchor" href="#Time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time<a class="anchor-link" href="#Time"> </a>
+</h3>
 <blockquote>
 <p>An example of a linear time algorithm is traversing a list or an array. When the size of the list or array increases, the time taken to traverse it also increases linearly with the size. Hence, the time complexity of this operation is O(n), where n is the size of the list or array being traversed.</p>
 </blockquote>
@@ -264,9 +337,53 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Quadratic-Time-O(n^2)">
-<a class="anchor" href="#Quadratic-Time-O(n%5E2)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quadratic Time O(n^2)<a class="anchor-link" href="#Quadratic-Time-O(n%5E2)"> </a>
-</h2>
+<h3 id="Space">
+<a class="anchor" href="#Space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space<a class="anchor-link" href="#Space"> </a>
+</h3>
+<blockquote>
+<p>This function takes a list of elements arr as input and returns a new list with the elements in reverse order. The function creates a new list reversed_arr of the same size as arr to store the reversed elements. The size of reversed_arr depends on the size of the input arr, so the space complexity of this function is O(n). As the input size increases, the amount of memory required to execute the function also increases linearly.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">reverse_list</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+    <span class="n">reversed_arr</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">reversed_arr</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">reversed_arr</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Quadratic-O(n^2)">
+<a class="anchor" href="#Quadratic-O(n%5E2)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quadratic O(n^2)<a class="anchor-link" href="#Quadratic-O(n%5E2)"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time">
+<a class="anchor" href="#Time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time<a class="anchor-link" href="#Time"> </a>
+</h3>
 <blockquote>
 <p>An example of a quadratic time algorithm is nested loops. When there are two nested loops that both iterate over the same collection, the time taken to complete the algorithm grows quadratically with the size of the collection. Hence, the time complexity of this operation is O(n^2), where n is the size of the collection being iterated over.</p>
 </blockquote>
@@ -296,9 +413,56 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Logarithmic-Time-O(logn)">
-<a class="anchor" href="#Logarithmic-Time-O(logn)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logarithmic Time O(logn)<a class="anchor-link" href="#Logarithmic-Time-O(logn)"> </a>
-</h2>
+<h3 id="Space">
+<a class="anchor" href="#Space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space<a class="anchor-link" href="#Space"> </a>
+</h3>
+<blockquote>
+<p>This function takes two matrices matrix1 and matrix2 as input and returns their product as a new matrix. The function creates a new matrix result with dimensions m by n to store the product of the input matrices. The size of result depends on the size of the input matrices, so the space complexity of this function is O(n^2). As the size of the input matrices increases, the amount of memory required to execute the function also increases quadratically.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">multiply_matrices</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span> <span class="n">matrix2</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix1</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">matrix2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">]</span> <span class="o">*</span> <span class="n">m</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix2</span><span class="p">)):</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">matrix1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">matrix2</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Logarithmic-O(logn)">
+<a class="anchor" href="#Logarithmic-O(logn)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logarithmic O(logn)<a class="anchor-link" href="#Logarithmic-O(logn)"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time">
+<a class="anchor" href="#Time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time<a class="anchor-link" href="#Time"> </a>
+</h3>
 <blockquote>
 <p>An example of a log time algorithm is binary search. Binary search is an algorithm that searches for a specific element in a sorted list by repeatedly dividing the search interval in half. As a result, the time taken to complete the search grows logarithmically with the size of the list. Hence, the time complexity of this operation is O(log n), where n is the size of the list being searched.</p>
 </blockquote>
@@ -339,9 +503,31 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Exponential-Time-O(2^n)">
-<a class="anchor" href="#Exponential-Time-O(2%5En)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exponential Time O(2^n)<a class="anchor-link" href="#Exponential-Time-O(2%5En)"> </a>
-</h2>
+<h3 id="Space">
+<a class="anchor" href="#Space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space<a class="anchor-link" href="#Space"> </a>
+</h3>
+<blockquote>
+<p>The same algorithm above has a O(logn) space complexity. The function takes an array arr, its lower and upper bounds low and high, and a target value target. The function searches for target within the bounds of arr by recursively dividing the search space in half until the target is found or the search space is empty. The function does not create any new data structures that depend on the size of arr. Instead, the function uses the call stack to keep track of the recursive calls. Since the maximum depth of the recursive calls is O(logn), where n is the size of arr, the space complexity of this function is O(logn). As the size of arr increases, the amount of memory required to execute the function grows logarithmically.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Exponential-O(2^n)">
+<a class="anchor" href="#Exponential-O(2%5En)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exponential O(2^n)<a class="anchor-link" href="#Exponential-O(2%5En)"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time">
+<a class="anchor" href="#Time" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time<a class="anchor-link" href="#Time"> </a>
+</h3>
 <blockquote>
 <p>An example of an O(2^n) algorithm is the recursive implementation of the Fibonacci sequence. The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. The recursive implementation of the Fibonacci sequence calculates each number by recursively calling itself with the two preceding numbers until it reaches the base case (i.e., the first or second number in the sequence). The algorithm takes O(2^n) time in the worst case because it has to calculate each number in the sequence by making two recursive calls.</p>
 </blockquote>
@@ -363,6 +549,40 @@ window.onload = wrap_img;
         <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Space">
+<a class="anchor" href="#Space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Space<a class="anchor-link" href="#Space"> </a>
+</h3>
+<blockquote>
+<p>This function takes a set s as input and generates all possible subsets of s. The function does this by recursively generating the subsets of the set without the first element, and then adding the first element to each of those subsets to generate the subsets that include the first element. The function creates a new list for each recursive call that stores the subsets, and each element in the list is a new list that represents a subset. The number of subsets that can be generated from a set of size n is 2^n, so the space complexity of this function is O(2^n). As the size of the input set increases, the amount of memory required to execute the function grows exponentially.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">generate_subsets</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[[]]</span>
+    <span class="n">subsets</span> <span class="o">=</span> <span class="n">generate_subsets</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="p">[[</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">subset</span> <span class="k">for</span> <span class="n">subset</span> <span class="ow">in</span> <span class="n">subsets</span><span class="p">]</span> <span class="o">+</span> <span class="n">subsets</span>
 </pre></div>
 
     </div>
@@ -426,13 +646,11 @@ window.onload = wrap_img;
 <li>Record your findings when testing the time elapsed of the different algorithms.</li>
 <li>Although we will go more in depth later, time complexity is a key concept that relates to the different sorting algorithms. Do some basic research on the different types of sorting algorithms and their time complexity.</li>
 <li>Why is time and space complexity important when choosing an algorithm?</li>
-<li>
-<p>Should you always use a constant time algorithm / Should you never use an exponential time algorithm? Explain?</p>
-</li>
-<li>
-<p><a href="https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/">Practice</a></p>
-</li>
+<li>Should you always use a constant time algorithm / Should you never use an exponential time algorithm? Explain? </li>
+<li>What are some general patterns that you noticed to determine each algorithm's time and space complexity?</li>
 </ul>
+<p>Complete the Time and Space Complexity analysis questions linked below.
+<a href="https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/">Practice</a></p>
 
 </div>
 </div>

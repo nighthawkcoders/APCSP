@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Guide to Dealing with CORS | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Guide to Dealing with CORS" />
+<meta name="author" content="Vivian Ni" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AP Computer Science Principles course materials." />
+<meta property="og:description" content="AP Computer Science Principles course materials." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/02/17/cors.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/02/17/cors.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-02-17T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Guide to Dealing with CORS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Vivian Ni"},"dateModified":"2023-02-17T00:00:00-06:00","datePublished":"2023-02-17T00:00:00-06:00","description":"AP Computer Science Principles course materials.","headline":"Guide to Dealing with CORS","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/02/17/cors.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/02/17/cors.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Guide to Dealing with CORS</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-02-17T00:00:00-06:00" itemprop="datePublished">
+        Feb 17, 2023
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Vivian Ni</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-02-17-cors.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-02-17-cors.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-02-17-cors.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-02-17-cors.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#What-is-CORS?">What is CORS? </a></li>
+<li class="toc-entry toc-h2"><a href="#Local-x-Local">Local x Local </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Setup-local-backend">Setup local backend </a></li>
+<li class="toc-entry toc-h4"><a href="#Setup-local-frontend">Setup local frontend </a></li>
+<li class="toc-entry toc-h4"><a href="#Solution-1:-Code-in-main.py">Solution 1: Code in main.py </a></li>
+<li class="toc-entry toc-h4"><a href="#Solution-2:-Download-google-Extension">Solution 2: Download google Extension </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Local-x-Deployed">Local x Deployed </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Local-Frontend">Local Frontend </a></li>
+<li class="toc-entry toc-h4"><a href="#Deployed-Backend">Deployed Backend </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Deployed-x-Local">Deployed x Local </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Deployed-Frontend">Deployed Frontend </a></li>
+<li class="toc-entry toc-h4"><a href="#Local-Backend">Local Backend </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Deployed-x-Deployed">Deployed x Deployed </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Deployed-Frontend">Deployed Frontend </a></li>
+<li class="toc-entry toc-h4"><a href="#Deployed-Backend">Deployed Backend </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-02-17-cors.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-CORS?">
+<a class="anchor" href="#What-is-CORS?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is CORS?<a class="anchor-link" href="#What-is-CORS?"> </a>
+</h2>
+<ul>
+<li>Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.</li>
+<li>Its essentially a security feature</li>
+</ul>
+<p>How it goes down:</p>
+<ol>
+<li>The browser(frontend) sends the GET request with an extra Origin HTTP header to service.example.com (deployed backend) containing the domain that served the parent page <br>
+<code>Origin: http://www.example.com</code> // frontend url</li>
+<li>The server at service.example.com sends one of these responses:
+<br>
+<code>Access-Control-Allow-Origin: http://www.example.com</code> //backend allows the frontend url to access its contents <br>
+<code>Access-Control-Allow-Origin: *</code> //backend allows any site to access its contents</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is the Access-Control-Allow-Origin response header?</p>
+<ul>
+<li>The Access-Control-Allow-Origin header is included in the response(response comes from backend) from site B to a request(fetch from frontend) site A, and identifies the permitted origin of the request. A web browser compares the Access-Control-Allow-Origin with the requesting website's origin and permits access to the response if they match.</li>
+<li>Including the Access-Control-Allow-Origin header in the client-side request can be useful in some cases, such as when you are working with a third-party API and want to make sure that your requests are allowed by the server. </li>
+<li>It can also be used during development or testing, when you may not have control over the server-side configuration
+<img src="https://github.com/vivianknee/FastPages/blob/master/images/sites.jpg?raw=true" alt="sites">
+A better model:
+<img src="https://github.com/vivianknee/FastPages/blob/master/images/system.jpg?raw=true" alt="system">
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Issues with CORS</p>
+<ul>
+<li>When trying to start a local server and test your frontend and backend connection, cors is often something that gets in the way.</li>
+<li>Unfortunately this error can prevent any sort of backend connection without proper code. Usually this error will appear when a header for cors is not specified or your backend url is not permitted by cors</li>
+</ul>
+<p><img src="https://github.com/vivianknee/FastPages/blob/master/images/error.jpg?raw=true" alt="error"></p>
+<p>I'm sure you've seen it... 
+So here's a method to bypass CORS locally. Eventually, when both your frontend and backend are deployed, it's good practice to have CORS implemented since your site could have some security risk if you simply bypass it.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Local-x-Local">
+<a class="anchor" href="#Local-x-Local" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local x Local<a class="anchor-link" href="#Local-x-Local"> </a>
+</h2>
+<h4 id="Setup-local-backend">
+<a class="anchor" href="#Setup-local-backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup local backend<a class="anchor-link" href="#Setup-local-backend"> </a>
+</h4>
+<blockquote>
+<p>How to bypass CORS with a local backend and frontend running</p>
+</blockquote>
+<ol>
+<li>Run your backend locally by running the main.py file on your flask repository in vscode</li>
+<li>Get the url of your backend server. </li>
+</ol>
+<p><img src="https://github.com/vivianknee/FastPages/blob/master/images/url.png?raw=true" alt="url"></p>
+<h4 id="Setup-local-frontend">
+<a class="anchor" href="#Setup-local-frontend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup local frontend<a class="anchor-link" href="#Setup-local-frontend"> </a>
+</h4>
+<ul>
+<li>run the command <code>bundle exec jekyll serve</code> in terminal to start your frontend locally </li>
+<li>Use the url from the picture above to write a 'fetch' statement (doesn't have to be like whats written below) to reference the local url and your api</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">fetch</span><span class="p">(</span><span class="s1">'http://127.0.0.1:8080/api/yourapi/'</span><span class="p">)</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">();</span>
+  <span class="p">});</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Solution-1:-Code-in-main.py">
+<a class="anchor" href="#Solution-1:-Code-in-main.py" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution 1: Code in main.py<a class="anchor-link" href="#Solution-1:-Code-in-main.py"> </a>
+</h4>
+<ul>
+<li>In the main.py file on your flask server, there should be a section of code at the bottom of the page that is already built in (by Mr. Mort) to aid in any cors errors. </li>
+<li>It looks like this:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="c1"># change name for testing</span>
+    <span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
+    <span class="n">cors</span> <span class="o">=</span> <span class="n">CORS</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Background info on <strong>flask_cors</strong></p>
+<ul>
+<li>
+<strong>flask_cors</strong> is a Flask extension for handling Cross Origin Resource Sharing (CORS), making cross-origin AJAX possible. This package has a simple philosophy: when you want to enable CORS, you wish to enable it for all use cases on a domain. This means no mucking around with different allowed headers, methods, etc.</li>
+<li>in simple terms, this extension allows you to avoid dealing with annoying headers and access the domains you need</li>
+</ul>
+</li>
+<li>
+<p>Possible errors</p>
+<ul>
+<li>"module cannot be resolved"<ul>
+<li>cd to your repository file path</li>
+<li>make sure you have the prefix (base) (aka type wsl)</li>
+<li>pip install -U flask-cors</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Solution-2:-Download-google-Extension">
+<a class="anchor" href="#Solution-2:-Download-google-Extension" aria-hidden="true"><span class="octicon octicon-link"></span></a>Solution 2: Download google Extension<a class="anchor-link" href="#Solution-2:-Download-google-Extension"> </a>
+</h4>
+<ul>
+<li>Good for quick testing purposes</li>
+<li>Download this Google chrome extension: <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en">Allow CORS: Access-Control-Allow-origin</a>
+</li>
+<li>Toggle the extension so that its ON
+<img src="https://github.com/vivianknee/FastPages/blob/master/images/cors.jpg?raw=true" alt="url">
+</li>
+</ul>
+<p>Now try interacting with your frontend site, and the fetch will work</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Local-x-Deployed">
+<a class="anchor" href="#Local-x-Deployed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local x Deployed<a class="anchor-link" href="#Local-x-Deployed"> </a>
+</h2>
+<ul>
+<li>It's worth noting that including the Access-Control-Allow-origin in the client-side(frontend repo) request does not actually enable cross-origin requests if the server(backend) is not configured to allow them. The server must still include the header in its response for the request to be allowed.</li>
+</ul>
+<h4 id="Local-Frontend">
+<a class="anchor" href="#Local-Frontend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local Frontend<a class="anchor-link" href="#Local-Frontend"> </a>
+</h4>
+<ul>
+<li>same steps as described previously to setup the local frontend.</li>
+<li>Instead of fetching from the local url, replace it with the domain url of your backend server.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">fetch</span><span class="p">(</span><span class="s1">'https://finalssvgcars.duckdns.org/api/cars/'</span><span class="p">)</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">function</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">();</span>
+  <span class="p">});</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Deployed-Backend">
+<a class="anchor" href="#Deployed-Backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployed Backend<a class="anchor-link" href="#Deployed-Backend"> </a>
+</h4>
+<ul>
+<li>In order to get the combination of local frontend and deployed backend to work, the Access-Control-Allow-origin must be configured on the server side. And it is</li>
+<li>Setup AWS by following the deployment guide on the APCSP Website</li>
+<li>When you set up the nginx configuration files, you'll notice:
+<img src="https://github.com/vivianknee/FastPages/blob/master/images/aws.jpg?raw=true" alt="aws">
+</li>
+<li>As you can see the header <code>"Access-Control-Allow-Origin" *</code> is present in the nginx files in sites-available and sites-enabled</li>
+<li>The line <code>proxy_pass http://localhost:8777</code> is allowing the frontend local url to access the deployed backend site</li>
+<li>Another thing to note however is that the "<em>" allows any frontend site to access the backend. In order to secure this, you need to put something different in place of the </em>. Will go over this in the next sections</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Deployed-x-Local">
+<a class="anchor" href="#Deployed-x-Local" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployed x Local<a class="anchor-link" href="#Deployed-x-Local"> </a>
+</h2>
+<ul>
+<li>This combination should work identical to the Local x Local combination. Thus any solutions for that combination also apply to this combination.</li>
+</ul>
+<h4 id="Deployed-Frontend">
+<a class="anchor" href="#Deployed-Frontend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployed Frontend<a class="anchor-link" href="#Deployed-Frontend"> </a>
+</h4>
+<ul>
+<li>Go to your repository on github</li>
+<li>when you scroll down, under the section called "Environment", click the link that says "github pages"</li>
+<li>Then click "view deployment"</li>
+<li>Your frontend deployed url should follow this format: <a href="https://username.github.io/name_of_repository/">https://username.github.io/name_of_repository/</a>
+</li>
+<li>Your fetch statement should use the local url of the backend server (identical to that of the Local x Local combination) </li>
+</ul>
+<h4 id="Local-Backend">
+<a class="anchor" href="#Local-Backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local Backend<a class="anchor-link" href="#Local-Backend"> </a>
+</h4>
+<ul>
+<li>run main.py</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Deployed-x-Deployed">
+<a class="anchor" href="#Deployed-x-Deployed" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployed x Deployed<a class="anchor-link" href="#Deployed-x-Deployed"> </a>
+</h2>
+<h4 id="Deployed-Frontend">
+<a class="anchor" href="#Deployed-Frontend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployed Frontend<a class="anchor-link" href="#Deployed-Frontend"> </a>
+</h4>
+<ul>
+<li>Your fetch statement should use the deployed url of the backend server (identical to that of the Local x Deployed combination) </li>
+</ul>
+<h4 id="Deployed-Backend">
+<a class="anchor" href="#Deployed-Backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deployed Backend<a class="anchor-link" href="#Deployed-Backend"> </a>
+</h4>
+<p><img src="https://github.com/vivianknee/FastPages/blob/master/images/aws.jpg?raw=true" alt="aws"></p>
+<ul>
+<li>In the Local x Deployed we talked about the the header <code>"Access-Control-Allow-Origin" *</code> that is present in the nginx files in sites-available and sites-enabled</li>
+<li>Instead of using the "*", replace it with the url of your frontend site.</li>
+<li>This secures you server and ensures that the only website that can access your backend server is the your frontend server!
+here is an example…</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+    <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8085</span><span class="p">;</span>
+    <span class="c1"># Preflighted requests</span>
+    <span class="k">if</span> <span class="p">(</span><span class="err">$</span><span class="n">request_method</span> <span class="o">=</span> <span class="n">OPTIONS</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Credentials</span><span class="err">”</span>  <span class="err">“</span><span class="n">true</span><span class="err">”</span><span class="p">;</span>
+            <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Origin</span><span class="err">”</span>  <span class="err">“</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">nighthawkcoders</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="err">”</span><span class="p">;</span>
+            <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Methods</span><span class="err">”</span> <span class="err">“</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">,</span> <span class="n">HEAD</span><span class="err">”</span><span class="p">;</span>
+            <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">MaxAge</span><span class="err">”</span>  <span class="mi">600</span><span class="p">;</span>
+            <span class="n">add_header</span> <span class="err">“</span><span class="n">Access</span><span class="o">-</span><span class="n">Control</span><span class="o">-</span><span class="n">Allow</span><span class="o">-</span><span class="n">Headers</span><span class="err">”</span> <span class="err">“</span><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">,</span> <span class="n">Authorization</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">csrf</span><span class="o">-</span><span class="n">token</span><span class="err">”</span><span class="p">;</span>
+            <span class="k">return</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/2023/02/17/cors.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

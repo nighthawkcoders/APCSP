@@ -182,12 +182,12 @@ window.onload = wrap_img;
 <p>Defines and key object creations</p>
 </blockquote>
 <ul>
-<li>Comment on where you have observed these working?</li>
-</ul>
-<ol>
+<li>Comment on where you have observed these working?  Provide a defintion of purpose.<ol>
 <li>Flask app object</li>
-<li>SQLAlchemy object</li>
+<li>SQLAlchemy db object</li>
 </ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -231,7 +231,8 @@ window.onload = wrap_img;
 </div>
     
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Model-Definition">
 <a class="anchor" href="#Model-Definition" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model Definition<a class="anchor-link" href="#Model-Definition"> </a>
@@ -240,18 +241,22 @@ window.onload = wrap_img;
 <p>Define columns, initialization, and CRUD methods for users table in sqlite.db</p>
 </blockquote>
 <ul>
-<li>Comment on these items in the class</li>
-<li>class User purpose</li>
+<li>Comment on these items in the class, purpose and defintion.<ul>
+<li>class User</li>
 <li>db.Model inheritance</li>
 <li>
 <em>init</em> method</li>
-<li>@property, @<column>.setter&lt;/li&gt;
-<li>additional methods</li>
-&lt;/ul&gt;
+<li>
+<code>@property</code>, <code>@&lt;column&gt;.setter</code>
+</li>
+<li>create, read, update, delete methods</li>
+</ul>
+</li>
+</ul>
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -304,12 +309,12 @@ window.onload = wrap_img;
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
     
-    <span class="c1"># a getter method, extracts email from object</span>
+    <span class="c1"># a getter method, extracts uid from object</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span>
     
-    <span class="c1"># a setter function, allows name to be updated after initial object creation</span>
+    <span class="c1"># a setter function, allows uid to be updated after initial object creation</span>
     <span class="nd">@uid</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
@@ -322,36 +327,37 @@ window.onload = wrap_img;
     <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"..."</span> <span class="c1"># because of security only show 1st characters</span>
 
-    <span class="c1"># update password, this is conventional setter</span>
+    <span class="c1"># update password, this is conventional method used for setter</span>
     <span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="sd">"""Create a hashed password."""</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha256'</span><span class="p">)</span>
 
-    <span class="c1"># check password parameter versus stored/encrypted password</span>
+    <span class="c1"># check password parameter against stored/encrypted password</span>
     <span class="k">def</span> <span class="nf">is_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="sd">"""Check against hashed password."""</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">result</span>
     
-    <span class="c1"># dob property is returned as string, to avoid unfriendly outcomes</span>
+    <span class="c1"># dob property is returned as string, a string represents date outside object</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">dob</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">dob_string</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%m-</span><span class="si">%d</span><span class="s1">-%Y'</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">dob_string</span>
     
-    <span class="c1"># dob should be have verification for type date</span>
+    <span class="c1"># dob setter, verifies date type before it is set or default to today</span>
     <span class="nd">@dob</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">dob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dob</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># not a date type     </span>
             <span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span> <span class="o">=</span> <span class="n">dob</span>
     
+    <span class="c1"># age is calculated field, age is returned according to date of birth</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
     
-    <span class="c1"># output content using str(object) in human readable form, uses getter</span>
+    <span class="c1"># output content using str(object) is in human readable form</span>
     <span class="c1"># output content using json dumps, this is ready for API response</span>
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
@@ -661,15 +667,8 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-&lt;/div&gt;
- 
+</div>
 
-</column>
-</li>
-</ul>
-</div>
-</div></div>
-</div>
 
 
   </div><a class="u-url" href="/APCSP/2023/03/13/AP-unit2-4a.html" hidden></a>

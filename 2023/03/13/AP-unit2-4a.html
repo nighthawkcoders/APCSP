@@ -424,13 +424,13 @@ window.onload = wrap_img;
 <p>Uses SQLALchemy db.create_all() to initialize rows into sqlite.db</p>
 </blockquote>
 <ul>
-<li>Comment on how these work?</li>
-</ul>
-<ol>
+<li>Comment on how these work?<ol>
 <li>Create All Tables from db Object</li>
 <li>User Object Constructors</li>
 <li>Try / Except </li>
 </ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -491,12 +491,12 @@ window.onload = wrap_img;
 <p>Use of ORM Query object and custom methods to identify user to credentials uid and password</p>
 </blockquote>
 <ul>
-<li>Comment on purpose of following</li>
-</ul>
-<ol>
+<li>Comment on purpose of following<ol>
 <li>User.query.filter_by</li>
 <li>user.password</li>
 </ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -543,14 +543,14 @@ window.onload = wrap_img;
 <p>Uses SQLALchemy and custom user.create() method to add row.</p>
 </blockquote>
 <ul>
-<li>Comment on purpose of following</li>
-</ul>
-<ol>
+<li>Comment on purpose of following<ol>
 <li>user.find_by_uid() and try/except</li>
 <li>user = User(...)</li>
 <li>user.dob and try/except</li>
 <li>user.create() and try/except</li>
 </ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -618,12 +618,12 @@ window.onload = wrap_img;
 <p>Uses SQLALchemy query.all method to read data</p>
 </blockquote>
 <ul>
-<li>Comment on purpose of following</li>
-</ul>
-<ol>
+<li>Comment on purpose of following<ol>
 <li>User.query.all</li>
-<li>json_ready assignment</li>
+<li>json_ready assignment, google List Comprehension</li>
 </ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -639,7 +639,7 @@ window.onload = wrap_img;
 <span class="k">def</span> <span class="nf">read</span><span class="p">():</span>
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
         <span class="n">table</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># each user adds user.read() to list</span>
+    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">table</span><span class="p">]</span> <span class="c1"># "List Comprehensions", for each user add user.read() to list</span>
     <span class="k">return</span> <span class="n">json_ready</span>
 
 <span class="n">read</span><span class="p">()</span>

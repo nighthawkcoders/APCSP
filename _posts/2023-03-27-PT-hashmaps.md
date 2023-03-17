@@ -21,7 +21,8 @@ week: 28
 
 ## Scoring
 - Notes and questions answered for Hashmaps (.9)
-- Improvement on Final Project (1.8/2)
+- Project (.9)
+- MCQ Test #4 
 
 ## Look ahead
 > 

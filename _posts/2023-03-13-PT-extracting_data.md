@@ -20,11 +20,9 @@ week: 26
 - Friday: Big Idea 2 Quiz
 
 ## Scoring
-- Notes and questions answered for 2.4 (.9)
-- Complete Hacks for 2.4 (.9)
-    - Must incorporate ideas from 2.4 into your Final Project for .9+
-- Big Idea 2 Quiz (.9 for > 50%) with test corrections 
-    - Must score > 90% for .9+
+- Build copies of Notebooks with answers/comments for all questions and hacks in 2.4a and 2.4b.  Debugging screenshoots showing understanding of key Objects. (.9+)
+- Create your own Jupyter Notebook, using your own table. (.9)
+- Create Menu/Tester with all CRUD operations, including Delete and Update). (.9)
 
 ## Look ahead
 > Making project improvements based on the lessons of the last 2 weeks 

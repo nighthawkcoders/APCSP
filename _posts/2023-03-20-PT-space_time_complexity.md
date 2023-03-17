@@ -13,7 +13,7 @@ week: 27
 
 ## Plans Week 27
 > 
-- Monday: Live Review 2.4, Big Idea Quiz #2
+- Monday: Live Review 2.4
 - Tuesday: Form Teams for Project
 - Wednesday: Data Structures: Space and Time Complexity and Big Oh Notation
 - Thursday: Work Day 

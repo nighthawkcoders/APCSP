@@ -26,4 +26,4 @@ week: 27
     - Must score > 90% for .9+
 
 ## Look ahead
-> 
+> Begin coding for project

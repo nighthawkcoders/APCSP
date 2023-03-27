@@ -19,10 +19,15 @@ week: 28
 - Thursday: Work Day 
 - Friday: Work Day
 
-## Scoring
-- Notes and questions answered for Hashmaps (.9)
-- Project (.9)
-- MCQ Test #4 
+## Scoring, "Project Check #1 (see canvas)"
+- Individual Points
+    - MCQ Test #4
+    - Hashmaps, Parallel Computing, or Space/Time Analysis. This can be related to project
+- Pair/Trio
+    - Project Work, Issue and Tangibles
+- Project/Team
+    - Lesson Plan / Outline
+    - Schedule Date with Teacher
 
 ## Look ahead
-> 
+> Big week of Lesson Prep

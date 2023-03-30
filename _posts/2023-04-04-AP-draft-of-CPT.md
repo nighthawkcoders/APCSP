@@ -10,7 +10,7 @@ type: ap
 week: 29
 ---
 
-## Close on CPT
+## Close on CPT activity
 > Before we return from Break we expect your Create Performance Task project to have ```Draft In```in your AP Digital Portfolio.  This is ***Warning Sign*** level in visual shown is Draft.
 - This includes:  Program Code, Written Response, and Video.
 - [Guidelines to CPT](https://apcentral.collegeboard.org/media/pdf/ap-csp-student-task-directions.pdf)
@@ -23,7 +23,7 @@ week: 29
 > Bria has a lot of information on her success regarding CPT.
 
 ## Hacks
-> Place all work in Draft and fully compete prior to April 17.  Slack/DM Teacher when Drafts are posted and ready for review.
+> Place all work in Draft and fully compete prior to April 17.  Slack/DM Teacher when Drafts (Test Takers) or Blogs (No APers) are ready for review.  Use a Review Ticket on this page for submission record.
 - 1 point for each
    - Program Code
    - Video

@@ -13,15 +13,21 @@ week: 28
 
 ## Plans Week 28
 > 
-- Monday: Live Review - Space/Time, MCQ Test #4
-- Tuesday: Work Day 
+- Monday: Project Lead Review - Space/Time, Project Plan
+- Tuesday: Parallel Processing
 - Wednesday: Data Structures: Hashmaps, Sets, Hash Tables, Hashing and Collisions
 - Thursday: Work Day 
 - Friday: Work Day
 
-## Scoring
-- Notes and questions answered for Hashmaps (.9)
-- Improvement on Final Project (1.8/2)
+## Scoring, "Project Check #1 (see canvas)"
+- Individual Points
+    - MCQ Test #4
+    - Hashmaps, Parallel Computing, or Space/Time Analysis. This can be related to project
+- Pair/Trio
+    - Project Work, Issue and Tangibles
+- Project/Team
+    - Lesson Plan / Outline
+    - Schedule Date with Teacher
 
 ## Look ahead
-> 
+> Big week of Lesson Prep

@@ -13,8 +13,8 @@ week: 27
 
 ## Plans Week 27
 > 
-- Monday: Live Review 2.4, Big Idea Quiz #2
-- Tuesday: Work Day
+- Monday: Live Review 2.4
+- Tuesday: Form Teams for Project
 - Wednesday: Data Structures: Space and Time Complexity and Big Oh Notation
 - Thursday: Work Day 
 - Friday: MCQ Test #4
@@ -22,8 +22,8 @@ week: 27
 ## Scoring
 - Notes and questions answered for Space and Time Complexity (.9)
 - Plan for improvement for Final Project 
-- MCQ Test #4 (.9 for > 50%) with test corrections 
+- Big Idea 2 Quiz (.9 for > 50%) with test corrections 
     - Must score > 90% for .9+
 
 ## Look ahead
-> 
+> Begin coding for project

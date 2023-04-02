@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Draft of CPT
 description: Stage your Project on AP Digital Portfolio
-image: /images/agile.webp
+image: /images/apcsp.png
 categories: []
 type: ap
 week: 29

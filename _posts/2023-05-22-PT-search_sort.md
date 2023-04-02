@@ -20,4 +20,4 @@ week: 35
 - Friday: Work Day
 
 ## Look ahead
-> 
+> Finals

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://nighthawkcoders.github.io/APCSP/sassguide</loc>
-<lastmod>2022-04-25T00:00:00-05:00</lastmod>
-</url>
-<url>
 <loc>https://nighthawkcoders.github.io/APCSP/csintro</loc>
 <lastmod>2022-06-01T00:00:00-05:00</lastmod>
 </url>
@@ -527,6 +523,10 @@
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/2023/04/24/PT-lesson2.html</loc>
 <lastmod>2023-04-24T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://nighthawkcoders.github.io/APCSP/2023/04/25/AP-GuideToSASS.html</loc>
+<lastmod>2023-04-25T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://nighthawkcoders.github.io/APCSP/points/32</loc>

@@ -3,8 +3,9 @@ toc: true
 comments: true
 layout: post
 title:  Our Lesson Plan 
-categories: []
-type: plan
+author: Kaylee Hou, Aaron Rubin, Sanika Shahapurkar, Jiya Salvani, Trent Cardall, Mani Taleban
+categories: [student]
+type: ap 
 week: 28
 ---
 

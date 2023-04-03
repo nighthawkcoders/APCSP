@@ -11,19 +11,19 @@ week: 29
 ---
 
 ## Requirements
-> Work through the blog and add definitions and pictures.
+> Work through College Board Unit 4... blog, add definitions, and pictures.  Be creative, for instance make a story of Computing and Networks that is related to your PBL experiences this year.
 
 
 ### How a Computer Works
-> As we have learned, a computer needs aa prgram to do something smart.  The sequence of a program initiates a series of actions with the computers Central Processing Unit (CPU). This component is essentially a binary machine focussing on instructions provided.  The CPU retrieives and stores information it acts upon in Random Access Memory (RAM). Between the CPU, RAM, and Storage Devices a computer can work with large amounts data.
+> As we have learned, a computer needs aa program to do something smart.  The sequence of a program initiates a series of actions with the computers Central Processing Unit (CPU). This component is essentially a binary machine focussing on program instructions provided.  The CPU retrieives and stores the data it acts upon in Random Access Memory (RAM). Between the CPU, RAM, and Storage Devices a computer can work with many programs and large amounts of data.
 
-List these specification of your Computer
+List specification of your Computer, or Computers if working as Pair/Trio
 - Processor GHz:
 - Memory in GB:
 - Storage in GB:
 - OS:
 
-Define or describe something from your experience. Picture preferred.
+Define or describe usage of Computer using Computer Programs. Pictures are preferred over a lot of text.  Use your experience.
 - Input devices
 - Output devices
 - Program File
@@ -39,19 +39,19 @@ Define or describe something from your experience. Picture preferred.
 
 
 ### The Internet
-> Watch College Board Daily Video for 4.1.1
+> Watch/review College Board Daily Video for 4.1.1
 
 - Essential Knowledge
     - A computing device is a physical artifact that can run a program. Some examples include computers, tablets, servers, routers, and smart sensors.
     - A computing system is a group of computing devices and programs working together for a common purpose.
-    - A computer network is a groupp of interconnected computing devices capable of sending or receiving data.
+    - A computer network is a group of interconnected computing devices capable of sending or receiving data.
     - A computer network is a type of computing system. 
     - A path between two computing devices on a computer network (a sender and a receiver) is a sequence of directly connected computing devices that begins at the sender and ends at the receiver.
     - Routing is the process of finding a path from sender to receiver.
     - The bandwidth of a computer network is the maximum amount of data that can be sent in a fixed amount of time.
     - Bandwidth is usually measured in bits per second
 
-- Complete Vocabulary Matching Activity
+- Complete Vocabulary Matching Activity.  Incorporate this into your learnings from year.  To analyze measure path and latency use `traceroute` and `ping` commands from Linux Terminal.  
     - Path 
     - Route
     - Computer System
@@ -59,7 +59,7 @@ Define or describe something from your experience. Picture preferred.
     - Bandwidth
     - Computer Network
 
-> Watch College Board Daily Video 4.1.2
+> Watch/review College Board Daily Video 4.1.2
 
 - Essential Knowledge
     - The internet is a computer network consisting of interconnected networks that use standardized, open (nonproprierary) communication protocols.
@@ -77,7 +77,7 @@ Define or describe something from your experience. Picture preferred.
     - HTTP is a protocol used by the world wide web
     - The world wide web uses the internet
 
-- Draw a diagram showing the internet and its many levels. Use your knowledge of deployment.
+- Draw a diagram showing the internet and its many levels. A preferred diagram would use your knowledge of frontend, backend, deployment (GitHub Page, AWS, EC2, Docker, Nginx, Certbot, DNS, APIs).
 
 - Complete True of False Questions
 
@@ -86,5 +86,12 @@ Define or describe something from your experience. Picture preferred.
 
 - Complete the network activity, summarize your understanding of fault tolerance.
 
+
+### Parallel and Distributed Computing
+> Review previous lecture on Parallel Computing and watch Daily vidoe 4.3.  Think of ways to make something in you team project to utilize Cores more effectively.  Here are some thoughts to add to your story of Computers and Networks...
+
+- Review this [article](https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray)...  Can you get parallel code to work more effectively?
+
+- Analyze this command in Docker: ```ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"```.   Determine if there is options in this command for parallel computing.  Here is an [article](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
 
 

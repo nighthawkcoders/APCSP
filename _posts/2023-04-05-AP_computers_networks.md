@@ -28,7 +28,7 @@ Define or describe something from your experience. Picture preferred.
 - Output devices
 - Program File
 - Program Code
-- Process
+- Processes
 - Ports
 - Data File
 - Inspect Running Code

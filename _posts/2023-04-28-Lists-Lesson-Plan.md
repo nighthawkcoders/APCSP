@@ -8,7 +8,6 @@ author: Haeryn Yu, Sophia Tang, Tanisha Patil, Naja Fonseca, Amitha Sanka
 categories: [student]
 type: ap
 week: 30
-
 ---
 ## Overview
 Teach about lists and dictionaries. 

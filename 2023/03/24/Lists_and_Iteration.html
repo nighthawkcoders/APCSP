@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Building Simulation/Interaction using Lists and Iteration | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Building Simulation/Interaction using Lists and Iteration" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AP Computer Science Principles course materials." />
+<meta property="og:description" content="AP Computer Science Principles course materials." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/03/24/Lists_and_Iteration.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/03/24/Lists_and_Iteration.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-03-24T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Building Simulation/Interaction using Lists and Iteration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-03-24T00:00:00-05:00","datePublished":"2023-03-24T00:00:00-05:00","description":"AP Computer Science Principles course materials.","headline":"Building Simulation/Interaction using Lists and Iteration","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/03/24/Lists_and_Iteration.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/03/24/Lists_and_Iteration.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Building Simulation/Interaction using Lists and Iteration</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-03-24T00:00:00-05:00" itemprop="datePublished">
+        Mar 24, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-03-24-Lists_and_Iteration.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-03-24-Lists_and_Iteration.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-03-24-Lists_and_Iteration.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-03-24-Lists_and_Iteration.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Vocabulary">Vocabulary </a></li>
+<li class="toc-entry toc-h2"><a href="#Simulations/Interactions">Simulations/Interactions </a></li>
+<li class="toc-entry toc-h2"><a href="#Lists">Lists </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-are-Lists?">What are Lists? </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Nested-Lists">Nested Lists </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Uses-of-Nested-lists">Uses of Nested lists </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Iteration">Iteration </a></li>
+<li class="toc-entry toc-h2"><a href="#Libaries">Libaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#APIs">APIs </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Code-Examples">Code Examples </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-03-24-Lists_and_Iteration.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vocabulary">
+<a class="anchor" href="#Vocabulary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vocabulary<a class="anchor-link" href="#Vocabulary"> </a>
+</h2>
+<ul>
+<li>
+<em>Iteration</em>  - Repitition of a Process <br>
+</li>
+<li>
+<em><code>For Loop</code></em> - FOR LOOP repeats a function for a set number of times; I is the number of times repeated <br>
+</li>
+<li>
+<em><code>While Loop</code></em>  - The while loop is used to repeat a section of code an unknown number of times until a specific condition is met <br>
+</li>
+<li>
+<em>Initialization</em> - What sets the counter variable to a starting value. For example (var i = 0) represents an initial value of 0. <br>
+</li>
+<li>
+<em>Condition</em> - Allows the computer to know whether or not to keep repeating the loop.</li>
+<li>
+<em>increment/decrement</em> - Modifies the counter variable after each repetition.</li>
+<li>
+<em>Indexing</em> / <em>List Index</em> - The position of an element in a list, starting from 0 <br>
+</li>
+<li>
+<em><code>append</code></em>, <em><code>remove</code></em>, <em><code>pop</code></em> - Various methods, append adds an element to the end, remove removes at an index, and pop removes the last item. <br>
+</li>
+<li>
+<em>Elements [in a list]</em> - An item in a list. <br>
+</li>
+<li>
+<em>Nesting</em> - Having one data type or function inside another data type or function, such as lists or loops. <br>
+</li>
+<li>
+<em>array</em> - Another name for a list, depends on the language <br>
+</li>
+<li>
+<em>Ke</em>y - the unique identifier associated with a value in a dictionary, such as name <br>
+</li>
+<li>
+<em>Value</em> - the data associated with a key in a dictionary, such as age <br>
+</li>
+<li>
+<em>Pair</em> - a key-value combination in a dictionary, such as a person's name + age <br>
+</li>
+<li>
+<em>Mutable</em> - the ability to be changed or modified &lt; br&gt;</li>
+<li>
+<em>Insertion</em> - the process of adding a new key-value pair to a dictionary <br>
+</li>
+<li>
+<em>Deletion</em>-  the process of removing a key-value pair from a dictionary <br>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simulations/Interactions">
+<a class="anchor" href="#Simulations/Interactions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simulations/Interactions<a class="anchor-link" href="#Simulations/Interactions"> </a>
+</h2>
+<p>Building a simulation or interaction using lists and iteration in VS Code can be accomplished using a few simple steps:</p>
+<ol>
+<li>
+<p>Define your data: First, you need to define the data that your simulation will be working with. This could be a list of numbers, a list of strings, or any other type of data that your simulation will be manipulating.</p>
+</li>
+<li>
+<p>Write your simulation code: Once you have defined your data, you can start writing the code for your simulation. This code will typically involve iterating over your list of data, performing some operation on each item in the list, and updating the list accordingly.</p>
+</li>
+<li>
+<p>Test your simulation: After you have written your simulation code, it is important to test it to make sure it is working as expected. You can do this by running your code and checking the output to see if it matches what you expect.</p>
+</li>
+<li>
+<p>Refine your simulation: Once you have tested your simulation, you may need to refine it based on the results. This could involve tweaking the code to make it more efficient, adding new features, or fixing any bugs that you have discovered.</p>
+</li>
+</ol>
+<p>Here's a simple example of a simulation in Python that uses lists and iteration to calculate the average of a list of numbers:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># Initialize the sum and count variables</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Iterate over the list of numbers, adding each number to the sum</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="nb">sum</span> <span class="o">+=</span> <span class="n">number</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Calculate the average of the list of numbers</span>
+<span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="n">count</span>
+
+<span class="c1"># Print the average</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The average of the list is:"</span><span class="p">,</span> <span class="n">average</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The average of the list is: 3.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This code defines a list of numbers, iterates over the list to calculate the sum and count of the numbers, and then calculates the average by dividing the sum by the count. Finally, it prints the average to the console.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lists">
+<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
+</h2>
+<p>For list operations, write expressions that use list indexing and list procedures. For algorithms involving elements of a list, write iteration statements to traverse a list.</p>
+<ul>
+<li>List procedures are implemented in accordance with the syntax rules of the programming language. </li>
+<li>Iteration statements can be used to traverse a list</li>
+<li>Knowldege of exisiting algorithms that use iteration can help in constructing new algorithms. Some are:<ul>
+<li>Determining a minimum or maximum value in a list</li>
+<li>Computing a sum or average of a list of numbers</li>
+</ul>
+</li>
+</ul>
+<h3 id="What-are-Lists?">
+<a class="anchor" href="#What-are-Lists?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are Lists?<a class="anchor-link" href="#What-are-Lists?"> </a>
+</h3>
+<ul>
+<li>Lists are a collection of data in a sequence that is an iterable</li>
+<li>Each sequence is demarcated with an <mark>index</mark>, starting from 0. This is known as <mark>base 0 indexing</mark>
+</li>
+<li>In memory, it is stored as a variable name with multiple pointers to each variable stored in a certain order</li>
+<li>Lists can also be called arrays</li>
+<li>Lists have methods that act upon the list and change them. This moves the pointers within RAM to change the parts of the list.</li>
+</ul>
+<h4 id="Nested-Lists">
+<a class="anchor" href="#Nested-Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nested Lists<a class="anchor-link" href="#Nested-Lists"> </a>
+</h4>
+<h5 id="Uses-of-Nested-lists">
+<a class="anchor" href="#Uses-of-Nested-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uses of Nested lists<a class="anchor-link" href="#Uses-of-Nested-lists"> </a>
+</h5>
+<p>Placing lists within lists allows you to have arrays of similar data together, and create complexity. <br></p>
+<p>Some uses include:</p>
+<ul>
+<li>Creating 2d Arrays </li>
+<li>Storing similar, but slightly different categories (sublists)</li>
+<li>Create a matrix</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Iteration">
+<a class="anchor" href="#Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iteration<a class="anchor-link" href="#Iteration"> </a>
+</h2>
+<p>Iterative statements are also called loops, and they repeat themselves over and over until the condition for stopping is met.</p>
+<ul>
+<li>In College Board's Pseudocode, the first is a REPEAT n TIMES loop, where the n represents some number.</li>
+</ul>
+<p>The second type of loop is a REPEAT UNTIL (condition) loop, where the loop will continue to run until a condition is met.</p>
+<p>Conceptually, a while loop is very similar to an if conditional, except that a while is continually executed until it's no longer true and an if is only executed once.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Libaries">
+<a class="anchor" href="#Libaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libaries<a class="anchor-link" href="#Libaries"> </a>
+</h2>
+<ul>
+<li>A software library contains procedures that may be used in creating new programs. </li>
+<li>Existing code segments can come from internal or external sources, such as libaries or previously written code. </li>
+<li>The use of libaries simplifies the task of creating complex programs.</li>
+</ul>
+<h3 id="APIs">
+<a class="anchor" href="#APIs" aria-hidden="true"><span class="octicon octicon-link"></span></a>APIs<a class="anchor-link" href="#APIs"> </a>
+</h3>
+<p>Application program interfaces (APIs) are specifications for how the procedures in a libary behave and can be used as documentation for an API/libary is necessary in understanding the behaviors provided by the API and how to use them.</p>
+<p>A file that contains procedures that can be used in a program is considered a libary.</p>
+<ul>
+<li>API provides specifications for how procedures in a library behave and can be used. </li>
+<li>Many companies use APIs for programmers to interact with their products. </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Code-Examples">
+<a class="anchor" href="#Code-Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Examples<a class="anchor-link" href="#Code-Examples"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Reverse a list utilizing features of lists and iteration</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">original_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"List before reverse : "</span><span class="p">,</span><span class="n">original_list</span><span class="p">)</span>
+<span class="n">reversed_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">original_list</span><span class="p">:</span>
+  <span class="n">reversed_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">+</span> <span class="n">reversed_list</span>
+<span class="c1"># print("List after reverse : ", reversed_list)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>List before reverse :  [1, 2, 3, 4, 5]
+List after reverse :  [5, 4, 3, 2, 1]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similar to insertion sort, this algorithm takes an unsorted array and returns a sorted array. Unlike insertion sort where you iterate through the each element and move the smaller elements to the front, this algorithm starts at the beginning and swaps the position of every element in the array</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"array before sort </span><span class="si">{</span><span class="nb">list</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)):</span> <span class="c1"># repeats through length of the array</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="c1"># shift number in slot i to the right</span>
+                <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="c1"># shift value left into slot i</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+
+<span class="n">IS</span> <span class="o">=</span> <span class="n">insertion_sort</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="c1"># print(f"array after sort {list}")</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>array before sort [9, 8, 4, 3, 5, 2, 6, 7, 1, 0]
+array after sort [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/2023/03/24/Lists_and_Iteration.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

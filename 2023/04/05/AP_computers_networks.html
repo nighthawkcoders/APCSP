@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -212,12 +212,56 @@ window.onload = wrap_img;
 
 <ul>
   <li>
-    <p>Review this <a href="https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray">article</a>…  Can you get parallel code to work more effectively?</p>
+    <p>What is naturally Distributed in Frontend/Backend archeticture?</p>
   </li>
   <li>
-    <p>Analyze this command in Docker: <code class="language-plaintext highlighter-rouge">ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"</code>.   Determine if there is options in this command for parallel computing.  Here is an <a href="https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7">article</a></p>
+    <p>Analyze this command in Docker: <code class="language-plaintext highlighter-rouge">ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"</code>.   Determine if there is options are options in this command for parallel computing within the server that runs python/gunicorn.  Here is an <a href="https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7">article</a></p>
   </li>
 </ul>
+
+<blockquote>
+  <p>Last week we discussed parallel computing on local machine.  There are many options.  Here is something to get parallel computing work with a tool called Ray.</p>
+  <ul>
+    <li>Review this <a href="https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray">article</a>…  Can you get parallel code on images to work more effectively?  I have not tried Ray.</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li>Code example from ChatGPT using squares.  This might be more interesting if nums we generated to be a lot bigger.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ray</span>
+
+<span class="c1"># define a simple function that takes a number and returns its square
+</span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="c1"># initialize Ray
+</span><span class="n">ray</span><span class="p">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="c1"># create a remote function that squares a list of numbers in parallel
+</span><span class="o">@</span><span class="n">ray</span><span class="p">.</span><span class="n">remote</span>
+<span class="k">def</span> <span class="nf">square_list</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">square</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">]</span>
+
+<span class="c1"># define a list of numbers to square
+</span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># split the list into two parts
+</span><span class="n">split_idx</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="n">part1</span><span class="p">,</span> <span class="n">part2</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[:</span><span class="n">split_idx</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="n">split_idx</span><span class="p">:]</span>
+
+<span class="c1"># call the remote function in parallel on the two parts
+</span><span class="n">part1_result</span> <span class="o">=</span> <span class="n">square_list</span><span class="p">.</span><span class="n">remote</span><span class="p">(</span><span class="n">part1</span><span class="p">)</span>
+<span class="n">part2_result</span> <span class="o">=</span> <span class="n">square_list</span><span class="p">.</span><span class="n">remote</span><span class="p">(</span><span class="n">part2</span><span class="p">)</span>
+
+<span class="c1"># get the results and combine them
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">ray</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">part1_result</span><span class="p">)</span> <span class="o">+</span> <span class="n">ray</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">part2_result</span><span class="p">)</span>
+
+<span class="c1"># print the result
+</span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div></div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->

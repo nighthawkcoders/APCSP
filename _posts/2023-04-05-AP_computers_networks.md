@@ -90,8 +90,47 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
 ### Parallel and Distributed Computing
 > Review previous lecture on Parallel Computing and watch Daily vidoe 4.3.  Think of ways to make something in you team project to utilize Cores more effectively.  Here are some thoughts to add to your story of Computers and Networks...
 
-- Review this [article](https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray)...  Can you get parallel code to work more effectively?
+- What is naturally Distributed in Frontend/Backend archeticture?  
 
-- Analyze this command in Docker: ```ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"```.   Determine if there is options in this command for parallel computing.  Here is an [article](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
+- Analyze this command in Docker: ```ENV GUNICORN_CMD_ARGS="--workers=1 --bind=0.0.0.0:8086"```.   Determine if there is options are options in this command for parallel computing within the server that runs python/gunicorn.  Here is an [article](https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7)
 
+
+> Last week we discussed parallel computing on local machine.  There are many options.  Here is something to get parallel computing work with a tool called Ray.
+- Review this [article](https://www.anyscale.com/blog/writing-your-first-distributed-python-application-with-ray)...  Can you get parallel code on images to work more effectively?  I have not tried Ray.
+
+- Code example from ChatGPT using squares.  This might be more interesting if nums we generated to be a lot bigger.
+
+```python
+import ray
+
+# define a simple function that takes a number and returns its square
+def square(x):
+    return x * x
+
+# initialize Ray
+ray.init()
+
+# create a remote function that squares a list of numbers in parallel
+@ray.remote
+def square_list(nums):
+    return [square(num) for num in nums]
+
+# define a list of numbers to square
+nums = [1, 2, 3, 4, 5]
+
+# split the list into two parts
+split_idx = len(nums) // 2
+part1, part2 = nums[:split_idx], nums[split_idx:]
+
+# call the remote function in parallel on the two parts
+part1_result = square_list.remote(part1)
+part2_result = square_list.remote(part2)
+
+# get the results and combine them
+result = ray.get(part1_result) + ray.get(part2_result)
+
+# print the result
+print(result)
+
+```
 

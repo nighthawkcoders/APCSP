@@ -35,4 +35,4 @@ Define or describe something from your experience. Picture preferred.
 - Inspect Variables
 
 
-![Computer Hardware]({{site.baseurl}}/cpu.jpeg)
+![Computer Hardware]({{site.baseurl}}/images/cpu.jpeg)

@@ -3,6 +3,10 @@ toc: true
 comments: true
 layout: post
 title: DevOps Lesson Plan
+author: Safin Singh, Aditya Nawandhar, Taiyo Iwazaki, Liav Bar, Arnav Kanekar
+categories: [student]
+type: ap
+week: 30
 ---
 
 ## Subtopics

@@ -14,7 +14,7 @@ week: 29
 ## Plans Week 29
 > Focus on completing CPT and preparing Lesson
 - Monday: Live Review, Schedule Lessons
-- Tuesday: Work Day
+- Tuesday: CPT Draft Review, Work Day
 - Wednesday: Big Idea 4 Reviews - Computers, Memory, Storage, Distributing Computing
 - Thursday: Work Day
 - Friday: MCQ #5 assigned, due April 24th

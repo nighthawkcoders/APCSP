@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DevOps Lesson Plan | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="DevOps Lesson Plan" />
+<meta name="author" content="Safin Singh, Aditya Nawandhar, Taiyo Iwazaki, Liav Bar, Arnav Kanekar" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Subtopics" />
+<meta property="og:description" content="Subtopics" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/student/2023/04/26/devops-lesson.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/student/2023/04/26/devops-lesson.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-26T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DevOps Lesson Plan" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Safin Singh, Aditya Nawandhar, Taiyo Iwazaki, Liav Bar, Arnav Kanekar"},"dateModified":"2023-04-26T00:00:00-05:00","datePublished":"2023-04-26T00:00:00-05:00","description":"Subtopics","headline":"DevOps Lesson Plan","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/student/2023/04/26/devops-lesson.html"},"url":"https://nighthawkcoders.github.io/APCSP/student/2023/04/26/devops-lesson.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">DevOps Lesson Plan</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-26T00:00:00-05:00" itemprop="datePublished">
+        Apr 26, 2023
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Safin Singh, Aditya Nawandhar, Taiyo Iwazaki, Liav Bar, Arnav Kanekar</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+          <a class="category-tags-link" href="/APCSP/categories/ap#student">student</a>
+        
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#subtopics">Subtopics</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#sqlite-on-rds">SQLite on RDS</a></li>
+<li class="toc-entry toc-h3"><a href="#nginx">NGINX</a></li>
+<li class="toc-entry toc-h3"><a href="#dns">DNS</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#lesson-plan-aws-and-dns">Lesson Plan: AWS and DNS</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#cors--certbot">CORS &amp; Certbot</a></li>
+<li class="toc-entry toc-h3"><a href="#kasm">KASM</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#lesson-plan-using-kasm-to-access-virtual-desktops">Lesson Plan: Using KASM to Access Virtual Desktops</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#hacks">Hacks</a></li>
+<li class="toc-entry toc-h2"><a href="#grading">Grading</a></li>
+</ul>
+</li>
+</ul><h2 id="subtopics">
+<a class="anchor" href="#subtopics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Subtopics</h2>
+
+<h3 id="sqlite-on-rds">
+<a class="anchor" href="#sqlite-on-rds" aria-hidden="true"><span class="octicon octicon-link"></span></a>SQLite on RDS</h3>
+
+<p>Intro</p>
+
+<ul>
+  <li>Talk about what SQlite is – and difference between different SQL types like MYSQL.</li>
+  <li>What RDS is and what services it provides</li>
+  <li>how does connecting local database with RDS helps and why it is effective and needed.</li>
+</ul>
+
+<p>Talk 1</p>
+
+<ul>
+  <li>How to make an RDS instance
+    <ul>
+      <li>Quick walk through</li>
+      <li>explanation of what each segment does like for example why we choose this out of all the options</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="https://camo.githubusercontent.com/c524ff8f1cd5f9c61d6319945a6b67fc6b15ece51ec4441f9d865a7d0bb14c95/68747470733a2f2f757365722d696d616765732e67697468756275736572636f6e74656e742e636f6d2f3130383034313338392f3232393431353832352d33616237613036392d393632342d343666392d623662352d3734626530653163363766622e706e67">Image</a></p>
+
+<p>Talk 2</p>
+
+<ul>
+  <li>Changes to be made in the flask site or the backend site</li>
+  <li>Init.py changes – why it is needed</li>
+  <li>Where the necessary values like port and host can be found</li>
+  <li>Why we do not need chang anything else</li>
+</ul>
+
+<p>Connecting EC2 to the database</p>
+
+<ul>
+  <li>everyone will not do this as one instance can have only one database attached, this will be shown just for their knowledge</li>
+  <li>using RDS and SQL commands in EC2 terminal and working with the data to show how RDS makes working with databases more effective.</li>
+</ul>
+
+<h3 id="nginx">
+<a class="anchor" href="#nginx" aria-hidden="true"><span class="octicon octicon-link"></span></a>NGINX</h3>
+
+<p>I. Introduction</p>
+
+<ul>
+  <li>Explanation of using Nginx as a reverse proxy for Flask applications</li>
+  <li>Overview of the benefits of using Nginx</li>
+  <li>Brief overview of using SSL with Certbot</li>
+</ul>
+
+<p>II. Setting Up Nginx</p>
+
+<ul>
+  <li>Installation of Nginx if not already installed</li>
+  <li>Creating a new Nginx configuration file in <code class="language-plaintext highlighter-rouge">/etc/nginx/sites-available/</code>
+</li>
+  <li>Sample configuration file to proxy requests to a Flask application running on <code class="language-plaintext highlighter-rouge">localhost:5000</code>
+</li>
+  <li>Enabling the configuration file by creating a symbolic link to it in the <code class="language-plaintext highlighter-rouge">sites-enabled</code> directory</li>
+  <li>Restarting Nginx to apply the changes</li>
+</ul>
+
+<p>III. Adding SSL with Certbot</p>
+
+<ul>
+  <li>Explanation of Certbot and Let’s Encrypt</li>
+  <li>Installation of Certbot</li>
+  <li>Obtaining an SSL certificate for the site using Certbot</li>
+  <li>Testing SSL is working by visiting the site using <code class="language-plaintext highlighter-rouge">https://</code>
+</li>
+</ul>
+
+<p>IV. Additional Security Headers</p>
+
+<ul>
+  <li>Explanation of security headers</li>
+  <li>Adding additional security headers to the Nginx configuration file</li>
+  <li>Explanation of the added headers and how they improve security</li>
+</ul>
+
+<p>V. Conclusion</p>
+
+<ul>
+  <li>Summary of the benefits of using Nginx as a reverse proxy for Flask applications</li>
+  <li>Recap of the steps to set up Nginx and SSL with Certbot</li>
+  <li>Recap of the added security headers and how they improve security.</li>
+</ul>
+
+<h3 id="dns">
+<a class="anchor" href="#dns" aria-hidden="true"><span class="octicon octicon-link"></span></a>DNS</h3>
+
+<h1 id="lesson-plan-aws-and-dns">
+<a class="anchor" href="#lesson-plan-aws-and-dns" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Plan: AWS and DNS</h1>
+
+<p>Students will learn how to use Amazon Web Services (AWS) to set up a domain name system (DNS) and configure DNS records.</p>
+
+<ul>
+  <li>AWS account</li>
+  <li>Access to the AWS Management Console</li>
+  <li>Basic understanding of DNS</li>
+</ul>
+
+<p>Introduction to AWS and DNS (10 minutes)</p>
+
+<ul>
+  <li>Brief overview of AWS and its services</li>
+  <li>Explanation of DNS and its importance in web applications</li>
+</ul>
+
+<p>Setting up a DNS Zone (15 minutes)</p>
+
+<ul>
+  <li>Log in to the AWS Management Console</li>
+  <li>Navigate to Route 53 service</li>
+  <li>Click “Create Hosted Zone”</li>
+  <li>Enter a domain name and click “Create”</li>
+  <li>Review the hosted zone details and take note of the nameservers</li>
+</ul>
+
+<p>Configuring DNS Records (25 minutes)</p>
+
+<ul>
+  <li>Navigate to the hosted zone created in step 2</li>
+  <li>Click “Create Record Set”</li>
+  <li>Enter the record name, type, and value</li>
+  <li>Click “Create”</li>
+  <li>Repeat for additional records</li>
+  <li>Test the records using a DNS lookup tool</li>
+</ul>
+
+<p>Code Snippets (30 minutes)</p>
+
+<ul>
+  <li>Provide students with code snippets for automating DNS record creation in AWS using the AWS SDK</li>
+  <li>Guide students through setting up and configuring the SDK on their local machines</li>
+  <li>Demonstrate how to use the SDK to create and modify DNS records</li>
+</ul>
+
+<p>Conclusion (10 minutes)</p>
+
+<ul>
+  <li>Recap the importance of DNS in web applications</li>
+  <li>Discuss the benefits of automating DNS record creation in AWS</li>
+  <li>Encourage students to explore other AWS services and incorporate DNS in their future projects</li>
+</ul>
+
+<h3 id="cors--certbot">
+<a class="anchor" href="#cors--certbot" aria-hidden="true"><span class="octicon octicon-link"></span></a>CORS &amp; Certbot</h3>
+
+<p>Lesson Plan: Advanced Security Certbot and Cross-origin Security Advancements</p>
+
+<ul>
+  <li>Objective:
+    <ul>
+      <li>Students will learn about Advanced Security Certbot and Cross-origin Security advancements, understand how to implement them into their own coding projects, and recognize the importance of CORS and Advanced Security Certbot.</li>
+    </ul>
+  </li>
+  <li>Materials:
+    <ul>
+      <li>Computer with internet access and web development software</li>
+    </ul>
+  </li>
+  <li>Prerequisites:
+    <ul>
+      <li>Basic knowledge of web development and security</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Introduction</p>
+
+<ul>
+  <li>Ask students if they have heard of Advanced Security Certbot or Cross-origin Resource Sharing (CORS).</li>
+  <li>Explain that in this lesson, they will learn how to implement Advanced Security Certbot and CORS into their own coding projects.</li>
+</ul>
+
+<p>Activity 1: Advanced Security Certbot</p>
+
+<ul>
+  <li>Define Advanced Security Certbot and explain why it is important.</li>
+  <li>Demonstrate how to install Certbot on a server and generate SSL/TLS certificates using Certbot.</li>
+</ul>
+
+<p>Activity 2: Cross-origin Security Advancements (CORS)</p>
+
+<ul>
+  <li>Define Cross-origin Resource Sharing (CORS) and explain why it is important.</li>
+  <li>Demonstrate how to implement CORS in a web application by adding the appropriate headers to the server’s response.</li>
+  <li>Explain the different types of CORS requests and how to handle them.</li>
+</ul>
+
+<p>Conclusion</p>
+
+<ul>
+  <li>Recap the importance of Advanced Security Certbot and Cross-origin Security advancements.</li>
+  <li>Discuss the benefits of implementing advanced security measures in web applications, including protecting websites and building trust with users.</li>
+  <li>Encourage students to continue exploring security best practices in their coding projects.</li>
+</ul>
+
+<h3 id="kasm">
+<a class="anchor" href="#kasm" aria-hidden="true"><span class="octicon octicon-link"></span></a>KASM</h3>
+
+<h1 id="lesson-plan-using-kasm-to-access-virtual-desktops">
+<a class="anchor" href="#lesson-plan-using-kasm-to-access-virtual-desktops" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Plan: Using KASM to Access Virtual Desktops</h1>
+
+<ul>
+  <li>Students will learn how to use KASM to access virtual desktops, understand the benefits of virtual desktops, and be able to set up KASM on their own machines.</li>
+</ul>
+
+<p>Introduction (10 minutes)</p>
+
+<ul>
+  <li>Introduce KASM as a virtual desktop interface</li>
+  <li>Explain the benefits of using virtual desktops in a classroom setting</li>
+</ul>
+
+<p>Step 1: Creating a Swap Partition (15 minutes)</p>
+
+<ul>
+  <li>Explain the importance of a swap partition</li>
+  <li>Demonstrate how to create a swap partition on a Linux server</li>
+  <li>Verify the swap file exists</li>
+  <li>Make the swap file available on boot</li>
+</ul>
+
+<p>Step 2: Downloading KASM (15 minutes)</p>
+
+<ul>
+  <li>Navigate to the /tmp directory</li>
+  <li>Download the latest version of KASM</li>
+  <li>Extract the KASM files</li>
+  <li>Install KASM</li>
+  <li>(Optional) Change the port number for KASM</li>
+</ul>
+
+<p>Step 3: Configuring KASM (20 minutes)</p>
+
+<ul>
+  <li>Explain the KASM configuration file</li>
+  <li>Demonstrate how to edit the KASM configuration file</li>
+  <li>Explain the different options available in the configuration file</li>
+  <li>Test KASM to make sure it is working correctly</li>
+</ul>
+
+<p>Conclusion (10 minutes)</p>
+
+<ul>
+  <li>Recap the importance of virtual desktops and KASM</li>
+  <li>Discuss potential use cases for virtual desktops in a classroom setting</li>
+  <li>Encourage students to continue exploring virtual desktops and KASM on their own machines</li>
+  <li>Provide additional resources for students to learn more about virtual desktops and KASM</li>
+</ul>
+
+<p>Optional Extension Activities:</p>
+
+<ul>
+  <li>Demonstrate how to set up and configure a Docker container in KASM</li>
+  <li>Explain how to use KASM to run programming environments such as Visual Studio Code or Jupyter Notebooks</li>
+</ul>
+
+<h2 id="hacks">
+<a class="anchor" href="#hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks</h2>
+
+<ul>
+  <li>CORS - I will grade them based on their explanations and if they implemented CORS or certbot correctly.
+    <ul>
+      <li>0.30 if they have CORS implementation</li>
+      <li>0.30 if they explained well in a blog or video</li>
+      <li>0.60 points total.</li>
+    </ul>
+  </li>
+  <li>Potentially request team to try hosting their own KASM server</li>
+  <li>Basic Nginx Configuration</li>
+  <li>Nginx Proxy Pass to Flask</li>
+  <li>Certbot SSL Configuration</li>
+  <li>DNS
+    <ul>
+      <li>For the hacks, it will be very simple…</li>
+      <li>The student will just be creating an AWS account and taking a screen shot of that.</li>
+      <li>Inside of the AWS, they will be configuring a record and using Postman to test the table.</li>
+    </ul>
+  </li>
+  <li>SQLite to RDS - change and verify init.py config and connect to RDS server</li>
+</ul>
+
+<h2 id="grading">
+<a class="anchor" href="#grading" aria-hidden="true"><span class="octicon octicon-link"></span></a>Grading</h2>
+
+<ul>
+  <li>Nginx (Safin) –&gt; 0.6 for successfully creating a working nginx configuration that passes <code class="language-plaintext highlighter-rouge">nginx -t</code> to host an http server</li>
+  <li>Kasm (Arnav) –&gt; 0.6 for successfully running Kasm + more (TBD)</li>
+  <li>Certbot and CORS (Liav) –&gt; 0.6 for implementing CORS to any of their projects, explaining it in video/blog</li>
+  <li>DNS (Taiyo) –&gt; 0.6 setting up DNS and show log in + Get custom DNS name from either Freenom or other sites + TBD</li>
+  <li>SQL on RDS –&gt; 0.6 for changing init.py, writing an explanation on why connecting to the RDS server is important + TBD</li>
+</ul>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/student/2023/04/26/devops-lesson.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

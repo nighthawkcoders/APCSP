@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      6 min read
     
 </span></p>
 
@@ -170,6 +170,9 @@ window.onload = wrap_img;
 </blockquote>
 
 <ul>
+  <li>
+    <p>Complete True of False Questions</p>
+  </li>
   <li>Essential Knowledge
     <ul>
       <li>The internet is a computer network consisting of interconnected networks that use standardized, open (nonproprierary) communication protocols.</li>
@@ -188,14 +191,36 @@ window.onload = wrap_img;
       <li>The world wide web uses the internet</li>
     </ul>
   </li>
-  <li>Go over AP videos and vocabulary.  Draw a diagram showing the internet and its many levels. A preferred diagram would use your knowledge of frontend, backend, deployment, etc.  This picture has some ideas, but needs College Board details.</li>
+  <li>Go over AP videos, vocabulary, and essential knowledge.  Draw a diagram showing the internet and its many levels. A preferred diagram would using your knowledge of frontend, backend, deployment, etc.  Picture would highligh vocabulary by illustration. The below illustration have some ideas</li>
 </ul>
 
 <p><img src="/APCSP/images/fullstack.png" alt="Full Stack"></p>
 
 <ul>
-  <li>Complete True of False Questions</li>
+  <li>Often we draw pictures of machines communicating over the Internet with arrows.  However, the real communication goes through protocol layers and the machine and then is trasported of the network.   For College Board and future Computer Knowledge you should become familiar with the following …</li>
 </ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     User Machine  &lt;---&gt; Frontend Server &lt;---&gt; Backend Server
+    +-----------+         +-----------+         +-----------+
+    |  Browser  |         |  GH Page  |         |   Flask   |
+    +-----------+    ^    +-----------+    ^    +-----------+
+    |    HTTP   |    |    |    HTTP   |    |    |    HTTP   |
+    +-----------+    |    +-----------+    |    +-----------+
+    |    TCP    |    |    |    TCP    |    |    |    TCP    |   
+    +-----------+    |    +-----------+    |    +-----------+
+    |     IP    |    V    |     IP    |    V    |     IP    |
+    +-----------+         +-----------+         +-----------+
+    |  Network  |  &lt;---&gt;  |  Network  |  &lt;---&gt;  |  Network  |
+    +-----------+         +-----------+         +-----------+
+</code></pre></div></div>
+
+<p>The “http” layer is an application layer protocol in the TCP/IP stack, used for <strong><em>communication between web browsers and web servers</em></strong>. It is the protocol used for transmitting data over the World Wide Web.</p>
+
+<p>The “transport” layer (TCP) is responsible for providing reliable data transfer between applications running on different hosts.  The TCP protocol segments the data into smaller <strong><em>chunks called “segments”</em></strong>. Each segment contains a sequence number that identifies its position in the original stream of data, as well as other control information such as source and destination port numbers, and checksums for error detection.</p>
+
+<p>The “ip” layer is responsible for packetizing data received from the TCP layer of the protocol stack, and then <strong><em>encapsulating the data into IP packets</em></strong>. The IP packets are then sent to the lower layers of the protocol stack for transmission over the network.</p>
+
+<p>The “network” layer is responsible for <strong><em>routing data packets between networks</em></strong> using the Internet Protocol (IP). This layer handles tasks such as packet addressing and routing, fragmentation and reassembly, and <strong><em>network congestion</em></strong> control.</p>
 
 <h3 id="fault-tolerance">
 <a class="anchor" href="#fault-tolerance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fault Tolerance</h3>

@@ -77,7 +77,10 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
     - HTTP is a protocol used by the world wide web
     - The world wide web uses the internet
 
-- Draw a diagram showing the internet and its many levels. A preferred diagram would use your knowledge of frontend, backend, deployment (GitHub Page, AWS, EC2, Docker, Nginx, Certbot, DNS, APIs).
+- Go over AP videos and vocabulary.  Draw a diagram showing the internet and its many levels. A preferred diagram would use your knowledge of frontend, backend, deployment, etc.  This picture has some ideas, but needs College Board details.
+
+![Full Stack]({{site.baseurl}}/images/fullstack.png)
+
 
 - Complete True of False Questions
 

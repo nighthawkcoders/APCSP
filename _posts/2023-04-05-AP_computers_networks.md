@@ -61,6 +61,8 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
 
 > Watch/review College Board Daily Video 4.1.2
 
+- Complete True of False Questions
+
 - Essential Knowledge
     - The internet is a computer network consisting of interconnected networks that use standardized, open (nonproprierary) communication protocols.
     - Access to the internet depends on the ability to connect a computing device to an internet connected device.
@@ -77,12 +79,36 @@ Define or describe usage of Computer using Computer Programs. Pictures are prefe
     - HTTP is a protocol used by the world wide web
     - The world wide web uses the internet
 
-- Go over AP videos and vocabulary.  Draw a diagram showing the internet and its many levels. A preferred diagram would use your knowledge of frontend, backend, deployment, etc.  This picture has some ideas, but needs College Board details.
+- Go over AP videos, vocabulary, and essential knowledge.  Draw a diagram showing the internet and its many levels. A preferred diagram would using your knowledge of frontend, backend, deployment, etc.  Picture would highligh vocabulary by illustration. The below illustration have some ideas
 
 ![Full Stack]({{site.baseurl}}/images/fullstack.png)
 
 
-- Complete True of False Questions
+- Often we draw pictures of machines communicating over the Internet with arrows.  However, the real communication goes through protocol layers and the machine and then is trasported of the network.   For College Board and future Computer Knowledge you should become familiar with the following ...
+
+```
+     User Machine  <---> Frontend Server <---> Backend Server
+    +-----------+         +-----------+         +-----------+
+    |  Browser  |         |  GH Page  |         |   Flask   |
+    +-----------+    ^    +-----------+    ^    +-----------+
+    |    HTTP   |    |    |    HTTP   |    |    |    HTTP   |
+    +-----------+    |    +-----------+    |    +-----------+
+    |    TCP    |    |    |    TCP    |    |    |    TCP    |   
+    +-----------+    |    +-----------+    |    +-----------+
+    |     IP    |    V    |     IP    |    V    |     IP    |
+    +-----------+         +-----------+         +-----------+
+    |  Network  |  <--->  |  Network  |  <--->  |  Network  |
+    +-----------+         +-----------+         +-----------+
+```
+
+The "http" layer is an application layer protocol in the TCP/IP stack, used for ***communication between web browsers and web servers***. It is the protocol used for transmitting data over the World Wide Web.
+
+The "transport" layer (TCP) is responsible for providing reliable data transfer between applications running on different hosts.  The TCP protocol segments the data into smaller ***chunks called "segments"***. Each segment contains a sequence number that identifies its position in the original stream of data, as well as other control information such as source and destination port numbers, and checksums for error detection.
+
+The "ip" layer is responsible for packetizing data received from the TCP layer of the protocol stack, and then ***encapsulating the data into IP packets***. The IP packets are then sent to the lower layers of the protocol stack for transmission over the network.
+
+The "network" layer is responsible for ***routing data packets between networks*** using the Internet Protocol (IP). This layer handles tasks such as packet addressing and routing, fragmentation and reassembly, and ***network congestion*** control.
+
 
 ### Fault Tolerance
 > Watch both Daily videos for 4.2

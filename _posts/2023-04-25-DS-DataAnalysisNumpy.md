@@ -1,8 +1,9 @@
 ---
 keywords: fastai
-description: Data Analysis with Numpy
-title: P4-M 4/25 Data Analysis with Numpy and Pandas
+description: Data Analysis using Numpy and Pandas
+title: P4-M 4/25 Data Analysis
 toc: true
+author: Ahad, James, Shruthi, Quinn, Yasha, Joshua
 badges: false
 comments: true
 categories: [student]

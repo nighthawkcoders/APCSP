@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title: P4-Y 4/26 DevOps Lessons
+title: P4-M 4/26 DevOps Lessons
 author: Safin Singh, Aditya Nawandhar, Taiyo Iwazaki, Liav Bar, Arnav Kanekar
 categories: [student]
 type: ap

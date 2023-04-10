@@ -4,13 +4,13 @@ comments: true
 layout: post
 title: Draft of CPT
 description: Stage your Project on AP Digital Portfolio
-image: /images/agile.webp
+image: /images/apcsp.png
 categories: []
 type: ap
 week: 29
 ---
 
-## Close on CPT activity
+## Close on CPT activity 
 > Before we return from Break we expect your Create Performance Task project to have ```Draft In```in your AP Digital Portfolio.  This is ***Warning Sign*** level in visual shown is Draft.
 - This includes:  Program Code, Written Response, and Video.
 - [Guidelines to CPT](https://apcentral.collegeboard.org/media/pdf/ap-csp-student-task-directions.pdf)
@@ -22,17 +22,14 @@ week: 29
 ### [Example from Bria](https://b-g101.github.io/create_task)
 > Bria has a lot of information on her success regarding CPT.
 
-## Hacks
+## Hacks (See Canvas for Points)
 > Place all work in Draft and fully compete prior to April 17.  Slack/DM Teacher when Drafts (Test Takers) or Blogs (No APers) are ready for review.  Use a Review Ticket on this page for submission record.
-- 1 point for each
    - Program Code
    - Video
    - Write-up
-- 100% scale if Slack DM is sent by April 10th (3.0/3.0)
-- 90% scale if sent after April 10th (2.7/3.0)
+
 
 > Students not taking exam are expected to send a Blog with the following.
-- 1 point for each and same timeline as above for 2.7 to 3.0
    - GitHub links to Code
    - Video
    - Blog Discussion on areas that are similar to Write-up...

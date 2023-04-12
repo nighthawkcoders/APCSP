@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      15 min read
     
 </span></p>
 
@@ -153,7 +153,7 @@ window.onload = wrap_img;
 <h2 id="Row-1:-Program-Purpose-and-Function">Row 1: Program Purpose and Function<a class="anchor-link" href="#Row-1:-Program-Purpose-and-Function"> </a></h2><ul>
 <li>Describes the overall purpose of the program.<ul>
 <li>The purpose of this program is to add and display users and their identify information.  </li>
-<li>Most Web Applications require user accounts and  user information.  This program is intended to be the basis of building a future system with users and roles based off of their identity informaion.</li>
+<li>Most Web Applications require user accounts and user information.  This program is intended to be the basis of building a future system with users and roles based off of their identity information.</li>
 </ul>
 </li>
 </ul>
@@ -194,7 +194,7 @@ window.onload = wrap_img;
 <li>The collection type used is an SQLite database, the class User(db.Model) inherits database functionality.</li>
 <li>Below the Class definition there is an initUsers() function.  This function create a database table and shows how to create a User objects in Python and then adds each of the User objects to a database table called 'users'. This creates and tests the process of creating records in the backend.  Such a function is used to allow testing of database without the frontend or the API. </li>
 <li>Each User needs goes through the process of validation and checking through try/except without impacting future operations, meaning if Thomas Edison failed then remaining users will still run and be added if validation passes. </li>
-<li>The user.create() method in the class validates database operation, specifically it makes sure uid is unique, no duplicates.</li>
+<li>The user.create() method in the class creates a new row in the database table.  Additionally, it validates database operation, specifically it makes sure uid is unique, no duplicates.</li>
 <li>The visual is a screen capture of the user table after this code is run.</li>
 </ul>
 </li>
@@ -495,7 +495,7 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><h2 id="ROW-3.--Managing-Complexity.">ROW 3.  Managing Complexity.<a class="anchor-link" href="#ROW-3.--Managing-Complexity."> </a></h2><p>Data creation and storage is used to illustrate "managing complexity".  Since input is coming from users, data needs to be validate prior to adding it to the system.  By creating a User object, data can be stagged and validated utilizing methods that are defined in the collection/object discussed in this section.</p>
+<h2 id="ROW-3.--Managing-Complexity.">ROW 3.  Managing Complexity.<a class="anchor-link" href="#ROW-3.--Managing-Complexity."> </a></h2><blockquote><p>Data creation and storage is used to illustrate "managing complexity".  Since input is coming from users, data needs to be validate prior to adding it to the system.  By creating a User object, data can be stagged and validated utilizing methods that are defined in the collection/object discussed in this section.</p>
 </blockquote>
 <ul>
 <li><p>includes a program code segment that shows a list being used to manage complexity in the program.</p>
@@ -590,7 +590,7 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ROW-4.--Procedural-Abstraction">ROW 4.  Procedural Abstraction<a class="anchor-link" href="#ROW-4.--Procedural-Abstraction"> </a></h2><blockquote><p>In a user system there is a need to store a password.  However, it is not appropriate to store a password without encryption.  Answer to questions and code snippets follow.</p>
+<h2 id="ROW-4.-Procedural-Abstraction">ROW 4. Procedural Abstraction<a class="anchor-link" href="#ROW-4.-Procedural-Abstraction"> </a></h2><blockquote><p>In a user system there is a need to store a password.  However, it is not appropriate to store a password without encryption.  Answer to questions and code snippets follow.</p>
 </blockquote>
 <ul>
 <li><p>includes two program code segments:- one showing a student-developed procedure with at least one parameter that has an effect on the functionality of the procedure.        - the code fragment below shows a procedure that sets the password in the user object <code>self._password</code>.  It receive a parameter <code>password</code> from the caller of the method.</p>
@@ -673,6 +673,36 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ROW-5.-Algorithm-Implementation">ROW 5. Algorithm Implementation<a class="anchor-link" href="#ROW-5.-Algorithm-Implementation"> </a></h2><blockquote><ul>
+<li>includes a program code segment of a studentdeveloped algorithm that includes<ul>
+<li>sequencing</li>
+<li>selection</li>
+<li>iteration</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>explains in detailed steps how the identified algorithm works in enough detail that someone else could recreate it.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="ROW-6.-Testing">ROW 6. Testing<a class="anchor-link" href="#ROW-6.-Testing"> </a></h2><blockquote><ul>
+<li>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.</li>
+<li>describes the condition(s) being tested by each call to the procedure.</li>
+<li>identifies the result of each call.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
 </div>
 
 

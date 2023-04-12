@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      18 min read
     
 </span></p>
 
@@ -152,7 +152,7 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Row-1:-Program-Purpose-and-Function">Row 1: Program Purpose and Function<a class="anchor-link" href="#Row-1:-Program-Purpose-and-Function"> </a></h2><ul>
 <li>Describes the overall purpose of the program.<ul>
-<li>The purpose of this program is to add and display users and their identify information.  </li>
+<li>The purpose of this program is to add and display users and their identity information.  </li>
 <li>Most Web Applications require user accounts and user information.  This program is intended to be the basis of building a future system with users and roles based off of their identity information.</li>
 </ul>
 </li>
@@ -675,7 +675,8 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ROW-5.-Algorithm-Implementation">ROW 5. Algorithm Implementation<a class="anchor-link" href="#ROW-5.-Algorithm-Implementation"> </a></h2><blockquote><ul>
+<h2 id="ROW-5.-Algorithm-Implementation">ROW 5. Algorithm Implementation<a class="anchor-link" href="#ROW-5.-Algorithm-Implementation"> </a></h2><blockquote><p>The most highly visible algorithm in this program is the code that displays the users.  This contains all the elements required:sequencing, selection, iteration.</p>
+<ul>
 <li>includes a program code segment of a studentdeveloped algorithm that includes<ul>
 <li>sequencing</li>
 <li>selection</li>
@@ -685,20 +686,119 @@ window.onload = wrap_img;
 </ul>
 </blockquote>
 <ul>
-<li>explains in detailed steps how the identified algorithm works in enough detail that someone else could recreate it.</li>
+<li>explains in detailed steps how the identified algorithm works in enough detail that someone else could recreate it.<ul>
+<li>the function contain the algorithm is called <code>read_users()</code> which has the purpose to display all Users in the database.</li>
+<li>in JavaScript, the fetch() method is used to make a request to the server, this begins the sequence<ul>
+<li><code>var url = "https://flask.nighthawkcodingsociety.com/api/users"</code> is the endpoint for API</li>
+<li><code>method: GET</code> means that we intend to retrieve information</li>
+<li><code>mode: cors</code> states that API is cross origin</li>
+<li><code>Content-Type: application/json</code> describes how we are passing data</li>
+</ul>
+</li>
+<li>in JavaScript, the response of the fetch() using GET method contains status and data, this continues the sequence and will enable need for both select and iteration<ul>
+<li><code>response.status</code> contains valid respone 200, or all other respones.</li>
+<li>the selection statement <code>if (response.status !== 200) {</code> traps all normal error conditions and builds an HTML container to display those errors to user.  Normal errors are handled by endpoint, such as invalid date.</li>
+<li>the <code>.catch</code> at bottom of procedure is another type of selection statement that traps all errors that are unexpected.  This would be errors that do not reach the endpoint, such as server being down.</li>
+<li>passing by the guards allows the sequence of code to progress to <code>response.json().then(data =&gt; {</code>.  This is a lamda expression that extracts the data and enables JavaScript to load the information that is returned by the server onto the web pages. </li>
+<li>the iteration statement <code>for (let row in data) {</code> extracts each row from the data.  The row is JSON and work as key/value pairs.</li>
+<li>through each iteration a call to <code>add_row(data[row]);</code> loads the data on screen</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Display</span> <span class="n">User</span> <span class="n">Table</span><span class="p">,</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">fetched</span> <span class="kn">from</span> <span class="nn">Backend</span> <span class="n">Database</span>
+<span class="n">var</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://flask.nighthawkcodingsociety.com/api/users&quot;</span>
+
+<span class="n">function</span> <span class="n">read_users</span><span class="p">()</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">prepare</span> <span class="n">fetch</span> <span class="n">options</span>
+  <span class="n">const</span> <span class="n">read_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">method</span><span class="p">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="o">//</span> <span class="o">*</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">PUT</span><span class="p">,</span> <span class="n">DELETE</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="s1">&#39;cors&#39;</span><span class="p">,</span> <span class="o">//</span> <span class="n">no</span><span class="o">-</span><span class="n">cors</span><span class="p">,</span> <span class="o">*</span><span class="n">cors</span><span class="p">,</span> <span class="n">same</span><span class="o">-</span><span class="n">origin</span>
+    <span class="n">cache</span><span class="p">:</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="o">//</span> <span class="o">*</span><span class="n">default</span><span class="p">,</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span> <span class="n">reload</span><span class="p">,</span> <span class="n">force</span><span class="o">-</span><span class="n">cache</span><span class="p">,</span> <span class="n">only</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">cached</span>
+    <span class="n">credentials</span><span class="p">:</span> <span class="s1">&#39;omit&#39;</span><span class="p">,</span> <span class="o">//</span> <span class="n">include</span><span class="p">,</span> <span class="o">*</span><span class="n">same</span><span class="o">-</span><span class="n">origin</span><span class="p">,</span> <span class="n">omit</span>
+    <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
+    <span class="p">},</span>
+  <span class="p">};</span>
+
+  <span class="o">//</span> <span class="n">fetch</span> <span class="n">the</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">API</span>
+  <span class="n">fetch</span><span class="p">(</span><span class="n">read_fetch</span><span class="p">,</span> <span class="n">read_options</span><span class="p">)</span>
+    <span class="o">//</span> <span class="n">response</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">RESTful</span> <span class="s2">&quot;promise&quot;</span> <span class="n">on</span> <span class="nb">any</span> <span class="n">successful</span> <span class="n">fetch</span>
+    <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="o">//</span> <span class="n">check</span> <span class="k">for</span> <span class="n">response</span> <span class="n">errors</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">const</span> <span class="n">errorMsg</span> <span class="o">=</span> <span class="s1">&#39;Database read error: &#39;</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">status</span><span class="p">;</span>
+          <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">errorMsg</span><span class="p">);</span>
+          <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">);</span>
+          <span class="n">const</span> <span class="n">td</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
+          <span class="n">td</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">errorMsg</span><span class="p">;</span>
+          <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">td</span><span class="p">);</span>
+          <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+          <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="o">//</span> <span class="n">valid</span> <span class="n">response</span> <span class="n">will</span> <span class="n">have</span> <span class="n">json</span> <span class="n">data</span>
+      <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+          <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]);</span>
+            <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]);</span>
+          <span class="p">}</span>
+      <span class="p">})</span>
+  <span class="p">})</span>
+  <span class="o">//</span> <span class="n">catch</span> <span class="n">fetch</span> <span class="n">errors</span> <span class="p">(</span><span class="n">ie</span> <span class="n">ACCESS</span> <span class="n">to</span> <span class="n">server</span> <span class="n">blocked</span><span class="p">)</span>
+  <span class="o">.</span><span class="n">catch</span><span class="p">(</span><span class="n">err</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">err</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;tr&quot;</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">td</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">&quot;td&quot;</span><span class="p">);</span>
+    <span class="n">td</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">err</span><span class="p">;</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">td</span><span class="p">);</span>
+    <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ROW-6.-Testing">ROW 6. Testing<a class="anchor-link" href="#ROW-6.-Testing"> </a></h2><blockquote><ul>
-<li>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.</li>
-<li>describes the condition(s) being tested by each call to the procedure.</li>
-<li>identifies the result of each call.</li>
-</ul>
+<h2 id="ROW-6.-Testing">ROW 6. Testing<a class="anchor-link" href="#ROW-6.-Testing"> </a></h2><blockquote><p>The frontend makes two calls to the backend API endpoint.</p>
 </blockquote>
+<ul>
+<li><p>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.</p>
+<ul>
+<li>The first, API GET method.  Read data from the backend database.</li>
+<li>The second, API POST method. Create a new row in the backend database.</li>
+</ul>
+</li>
+<li><p>describes the condition(s) being tested by each call to the procedure.</p>
+<ul>
+<li>The backend API detects the GET or POST method and directs the code to the get or post function/method in the API class.</li>
+</ul>
+</li>
+<li><p>identifies the result of each call.</p>
+<ul>
+<li>The first, returns Status code and on success returns JSON data that is loaded a displayed by the JavaScript Web server</li>
+<li>The second, creates a record and returns Status code on the soccess of operation</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>

@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      12 min read
     
 </span></p>
 
@@ -495,20 +495,24 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ROW-3.--Managing-Complexity.">ROW 3.  Managing Complexity.<a class="anchor-link" href="#ROW-3.--Managing-Complexity."> </a></h2><blockquote><p>Data creation and storage is used to illustrate "managing complexity".  Since input is coming from users, data needs to be validate prior to adding it to the system.  By creating a User object, data can be stagged and validated utilizing methods that are defined in the collection/object discussed in this seciont.</p>
+<h2 id="ROW-3.--Managing-Complexity.">ROW 3.  Managing Complexity.<a class="anchor-link" href="#ROW-3.--Managing-Complexity."> </a></h2><blockquote><p>Data creation and storage is used to illustrate "managing complexity".  Since input is coming from users, data needs to be validate prior to adding it to the system.  By creating a User object, data can be stagged and validated utilizing methods that are defined in the collection/object discussed in this section.</p>
 </blockquote>
 <ul>
 <li><p>includes a program code segment that shows a list being used to manage complexity in the program.</p>
 <ul>
-<li>The <code>class _Create(Resource):</code> has method <code>def post(self):</code> contains the variable <code>body</code>.  This is populated with the user input.  This collection contains all the input in one varialble.          - body contains user input of uid, name, dob</li>
-<li>The input data after it passes initial checks for errors is used to creat an object <code>uo = User(name=name, uid=uid)</code>, the uo object, user object, is the key to managing complexity of the user.  This <code>def post(self)</code> method ensures only clean data enters the database.</li>
+<li>The <code>class _Create(Resource):</code> has method <code>def post(self):</code> contains the variable <code>body</code>.  This is populated with the user input.  This collection contains a list of all the keys and values input by user in one varialble.          - the variable <code>body</code> contains the user input including: uid, name, dob</li>
+<li>The input data after it passes initial checks for errors is used to create an object <code>uo = User(name=name, uid=uid)</code>.   The uo object, user object, is assisting in managing the complexity of the user data.  The method <code>def post(self)</code> checks data and add it to the uo object as it ensures only clean data enters the database.  Ei</li>
 </ul>
 </li>
 <li><p>explains how the named, selected list manages complexity in the program code by explaining why the program code could not be written, or how it would be written differently, without using this list.</p>
 <ul>
-<li>The "uo" object, after it is created contains data from the user input, as well as a method to Create a record for that input data in the table.</li>
-<li>Additionally, there are methods to set the password as encrypted as well as ensure data is input and saved correctly, without error.</li>
-<li>Ultimately, after object is generated and all data is verified, the <code>uo.create()</code> method is called and a new row is committed into the database table.</li>
+<li>The "uo" object, after it is created contains data from the user input, as well as a method to Create, <code>`uo.create()</code> a record in the table.  The object activates code, through this method, that does not need to be throroughly understood by the implementor of the API.</li>
+<li>Additionally, there is a method to set the password, <code>uo.set_password(password)</code>.  This method abstracts complexity of password encryption.</li>
+<li>Also, there is a method to set the date of birth, <code>uo.dob = datetime.strptime(dob, '%Y-%m-%d').date()</code>.  Behind the scenes this calculates age of the user.</li>
+<li>Ultimately, after object is generated and all data is verified, the <code>uo.create()</code> method is called and a new row is committed into the database table.  In this step, all the commands required to interact with the SQL database have been abstracted.</li>
+<li>There are ways to write the <code>class User</code> code differently!  Primarly to make the code into a imperative sequence and perform everything done within the object in a serialized form of commands.  However, this would minimize the possibilities for code reuse.  For instance, in a <strong><em>User Management System</em></strong> there would be a need to <strong><em>Update</em></strong> user records, as well as this mentioned <strong><em>Create</em></strong> user record.   The user class and creating a <code>uo</code> object would similarly contain methods to support <strong><em>Update</em></strong> functionality.  For instance, the same  <code>password</code> and <code>dob</code> mutator/setter methods work for update.  Thus, an update API would be able to use these abstracted methods without a code modification or rewrite.   </li>
+<li>The concept of passing a list of Key/Value pairs through JSON, as illustrated with <code>body</code> variable is a foundation piece for REST API development.</li>
+<li>The concept of creating/updating a user object (<code>uo</code>) is common to Object Oriented Programming (OOP).  This enables the management of an Object (ie user object), which is a series of data elements, along with the code to  mutate and access that data in a reusable and reliable manner.  All things in code can be done in alternate ways, but OOP is great way to manage complexity on a list of attributes describing an object, aka user.</li>
 </ul>
 </li>
 </ul>

@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      21 min read
+      22 min read
     
 </span></p>
 
@@ -205,12 +205,15 @@ window.onload = wrap_img;
 <ul>
 <li>includes two program code segments: <ul>
 <li>one that shows how data has been stored in this list (or other collection type).<ul>
-<li>The majority of the code below is in a Python file called users.py, the imports are included to avoid warnings in the Jupyter notebook.</li>
-<li>The collection type used is an SQLite database, the class User(db.Model) inherits database functionality.</li>
-<li>Below the Class definition there is an initUsers() function.  This function create a database table and shows how to create a User objects in Python and then adds each of the User objects to a database table called 'users'. This creates and tests the process of creating records in the backend.  Such a function is used to allow testing of database without the frontend or the API. </li>
-<li>Each User needs goes through the process of validation and checking through try/except without impacting future operations, meaning if Thomas Edison failed then remaining users will still run and be added if validation passes. </li>
-<li>The user.create() method in the class creates a new row in the database table.  Additionally, it validates database operation, specifically it makes sure uid is unique, no duplicates.</li>
-<li>The visual is a screen capture of the user table after this code is run.</li>
+<li>There are two comments in the code that show how data is stored:  <strong><em>User Model Class</em></strong>, <strong><em>User Model Tester</em></strong>.</li>
+<li>The <strong><em>collection type</em></strong> used to illustrated Data Abstracition is an <strong><em>SQLite database</em></strong>.</li>
+<li>The <strong><em>User Model Class</em></strong> code defines a <code>class User(db.Model)</code> which inherits database functionality, through db.Model.  This is the file that defines schema for database as well as a template for an object that represent a row of data in the database.</li>
+<li>The <strong><em>User Model Tester</em></strong> code defines a function <code>def initUsers()</code>.  This function creates a database table using the schema from the User Model Class, aka tablename and db.Column definitions assist in definition of the table.</li>
+<li>The <strong><em>User Model Tester</em></strong>  instantiates User objects and then adds each of the User objects to a temporary list.  The list is used iterate through a process of creating records in the <code>users</code> table.</li>
+<li>Each User object needs goes through a process of validation.  Adding records is guarded with a try/except block to catch errors.  This guard will fail errors and duplicates, but it will continue (error or success)until every record in the list is processed. </li>
+<li>The user.create() method in the User class creates a new row in the database table.  It validates, adds and then commits the object to the table.</li>
+<li>After the creation of the table and adding rows to the to the table, this data is now ready for use in other parts of the program.</li>
+<li>A visual of the database is shown by screen capture below with comment <strong><em>users table</em></strong>.</li>
 </ul>
 </li>
 </ul>
@@ -227,7 +230,9 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Code Segment #1, Data Storage """</span>
+<span class="c1"># Import Section</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="kn">from</span> <span class="nn">sqlalchemy.exc</span> <span class="kn">import</span> <span class="n">IntegrityError</span>
@@ -236,6 +241,7 @@ window.onload = wrap_img;
 <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
 <span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
 
+<span class="c1"># Dependency Section</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="c1"># Setup SQLAlchemy object and properties for the database (db)</span>
 <span class="n">dbURI</span> <span class="o">=</span> <span class="s1">'sqlite:///volumes/sqlite.db'</span>
@@ -244,6 +250,7 @@ window.onload = wrap_img;
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SECRET_KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'SECRET_KEY'</span>
 <span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">()</span>
 
+<span class="sd">""" User Model Class """</span>
 <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>  <span class="c1"># table name is plural, class name is singular</span>
 
@@ -348,6 +355,7 @@ window.onload = wrap_img;
             <span class="s2">"posts"</span><span class="p">:</span> <span class="p">[</span><span class="n">post</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">]</span>
         <span class="p">}</span>
         
+<span class="sd">""" User Model Tester """</span>
 <span class="c1"># Builds working data for testing</span>
 <span class="k">def</span> <span class="nf">initUsers</span><span class="p">():</span>   
     <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
@@ -378,6 +386,23 @@ window.onload = wrap_img;
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" users table, created by User Model Tester """</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -389,27 +414,30 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Continuing with Data Abstraction</em></strong></p>
 <ul>
 <li>
 <p>one that shows the data in this same list being used as part of fulfilling the program’s purpose.</p>
 <ul>
-<li>The Frontend obtains an API response, inside the response is a Collection called JSON.  See response.json().then(data =&gt; to see how the JSON is obtained from API resonse into the "data" variable.</li>
-<li>The JSON response was formed in the backend, this data was abstracted from an SQLite database.</li>
-<li>The JavaScript syntax, via labda expression, allws the "data" to be abstracted into a JavaScript variable.</li>
-<li>The data is passed as a parameter to the add_row function.</li>
+<li>Shown below is a fragment of code showing the Frontend obtain an API response, inside the response is a the collection received.  See <strong><em>response.json().then(data =&gt; ...)</em></strong> to see how the JSON is obtained from API response into the "data" variable.</li>
+<li>The JSON response was formed in the backend, this data was abstracted from an database.</li>
+<li>The JavaScript syntax, via lambda expression, allows the <strong><em>data</em></strong> to be abstracted into a JavaScript variable.</li>
+<li>Each data[row] is passed as a parameter to the add_row function.</li>
 </ul>
 </li>
 <li>
 <p>identifies the name of the variable representing the list being used in this response.</p>
 <ul>
-<li>the variable is called "data"</li>
+<li>the variable is called <strong><em>"data"</em></strong>
+</li>
 </ul>
 </li>
 <li>
 <p>describes what the data contained in this list is representing in the program.</p>
 <ul>
-<li>JavaScript supports a data.key notation, this allows abstraction of the data from this key which is  assigned into innerHTML on the page and in the table.  </li>
-<li>Keys are uid, name, dob, and age, the values of these keys are assigned to the innerHTML.</li>
+<li>JavaScript supports a <strong><em>data.key</em></strong> notation as illustrated in the <code>add_row(data)</code> function, this allows abstraction of the data from its key which is then assigned into innerHTML of the page and in the HTML table.  </li>
+<li>
+<strong><em>Keys shown</em></strong> are uid, name, dob, and age, these name <strong><em>correspond to schema</em></strong> of columns in the database.</li>
 </ul>
 </li>
 </ul>
@@ -424,28 +452,18 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">response</span> <span class="n">contains</span> <span class="n">valid</span> <span class="n">result</span>
+<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Code</span> <span class="n">Segment</span> <span class="c1">#2, Data Use */</span>
+
+<span class="o">//</span> <span class="n">response</span> <span class="n">contains</span> <span class="n">valid</span> <span class="n">result</span>
 <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="o">//</span><span class="n">add</span> <span class="n">a</span> <span class="n">table</span> <span class="n">row</span> <span class="k">for</span> <span class="n">the</span> <span class="n">new</span><span class="o">/</span><span class="n">created</span> <span class="n">userid</span>
-    <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]);</span>
+      <span class="p">}</span>
 <span class="p">})</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
 
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">HTML</span> <span class="n">table</span> <span class="n">row</span> <span class="ow">and</span> <span class="n">columnar</span> <span class="n">data</span> <span class="n">generation</span>
+<span class="o">//</span> <span class="n">HTML</span> <span class="n">table</span> <span class="n">row</span> <span class="ow">and</span> <span class="n">columnar</span> <span class="n">data</span> <span class="n">generation</span>
 <span class="n">function</span> <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
     <span class="n">const</span> <span class="n">uid</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
@@ -468,6 +486,23 @@ window.onload = wrap_img;
 
     <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
   <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Sample</span> <span class="n">Output</span> <span class="o">*/</span>
 </pre></div>
 
     </div>

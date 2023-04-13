@@ -83,7 +83,7 @@ window.onload = wrap_img;
     </tr>
 </table>
 
-<p>Database API</p>
+<p>Read Users API / GET Method</p>
 
 <table>
   <thead>
@@ -100,7 +100,7 @@ window.onload = wrap_img;
   </tbody>
 </table>
 
-<p>Create API</p>
+<p>Create User API / POST Method</p>
 
 <form action="javascript:create_user()">
     <p><label>
@@ -194,7 +194,7 @@ window.onload = wrap_img;
         password: document.getElementById("password").value,
         dob: document.getElementById("dob").value
     };
-    const requestOptions = {
+    const postOptions = {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
@@ -205,7 +205,7 @@ window.onload = wrap_img;
 
     // URL for Create API
     // Fetch API call to the database to create a new user
-    fetch(url, requestOptions)
+    fetch(url, postOptions)
       .then(response => {
         // trap error response from Web API
         if (response.status !== 200) {

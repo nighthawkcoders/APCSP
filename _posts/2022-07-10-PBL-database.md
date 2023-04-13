@@ -10,7 +10,7 @@ tags: [javascript, fetch, get, post, put]
 
 {% include nav_data.html %}
 
-<p>Database API</p>
+<p>Read Users API / GET Method</p>
 
 <table>
   <thead>
@@ -27,7 +27,7 @@ tags: [javascript, fetch, get, post, put]
   </tbody>
 </table>
 
-<p>Create API</p>
+<p>Create User API / POST Method</p>
 
 <form action="javascript:create_user()">
     <p><label>
@@ -121,7 +121,7 @@ tags: [javascript, fetch, get, post, put]
         password: document.getElementById("password").value,
         dob: document.getElementById("dob").value
     };
-    const requestOptions = {
+    const postOptions = {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
@@ -132,7 +132,7 @@ tags: [javascript, fetch, get, post, put]
 
     // URL for Create API
     // Fetch API call to the database to create a new user
-    fetch(url, requestOptions)
+    fetch(url, postOptions)
       .then(response => {
         // trap error response from Web API
         if (response.status !== 200) {

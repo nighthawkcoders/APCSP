@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      20 min read
+      21 min read
     
 </span></p>
 
@@ -833,24 +833,28 @@ window.onload = wrap_img;
 <p>The frontend makes two HTTP method calls (post, get) to the backend API endpoint.  A single API endpoint is defined in the <code>clase UserAPI</code> it is at the bottom of code sequence <code>api.add_resource(_CRUD, '/')</code>.  The supported backend methods <code>post(self), get(self)</code> can be found inside of the <code>class _CRUD(Resource):</code>.</p>
 <ul>
 <li>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.<ul>
-<li>The backend API <code>class _CRUD(Resource):</code> detects the GET or POST method through the <code>Resource</code> and directs the action to the <code>def get(self):</code> or the <code>def post(self):</code> method.</li>
+<li>Both calls are using same  JavaScript fetch url endpoint variable <code>url = "https://flask.nighthawkcodingsociety.com/api/users"</code>, but activate different HTTP methods.  These methods are activated by options passed into the API.</li>
+<li>The first call a data structure call <code>body</code> and sends the<code>POST</code> HTTP method.</li>
+<li>The second call sends the <code>GET</code> HTTP method.  </li>
 </ul>
 </li>
 </ul>
 </blockquote>
 <ul>
-<li>describes the condition(s) being tested by each call to the procedure.</li>
 <li>
-<p>The Two methods test the Create, Read database actions.</p>
+<p>describes the condition(s) being tested by each call to the procedure.</p>
 <ul>
-<li>The first, API POST method, <code>def post(self):</code>. Creates a new row in the backend database.</li>
-<li>The second, API GET method, <code>def get(self):</code>.  Reads data from the backend database.</li>
+<li>The Two methods test the Create, Read database actions.  <ul>
+<li>The first, API POST method, is directed to the Python Restful API resource<code>def post(self):</code>. This Creates a new row in the backend database.</li>
+<li>The second, API GET method, is directed to the Python Restful API resource<code>def get(self):</code>.  This Reads data from the backend database.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <p>identifies the result of each call.</p>
 <ul>
-<li>The first, creates a record and performs <code>return jsonify(user.read())</code> which contains the newly create user row.  Alternately, it could return one or more errors <code>return {'message': f'User ID is missing, or is less than 2 characters'}, 400</code> based off of invalid user request.  On succesfull return the data is loaded and displayed by the JavaScript Web server</li>
+<li>The first, creates a record and performs <code>return jsonify(user.read())</code> which contains the newly created user row.  Alternately, it could return one of several errors <code>return {'message': f'User ID is missing, or is less than 2 characters'}, 400</code> based off of an invalid user request.  On succesfull return the data is loaded and displayed by the JavaScript Web server</li>
 <li>The second, produces a list of users from a database query <code>users = User.query.all()</code>, turns the query into a Python list, using list comprenhension <code>json_ready = [user.read() for user in users]</code>.  Then it returns a Status code and on success returns JSON data <code>return jsonify(json_ready)</code>.  On return the data is loaded and displayed by the JavaScript Web server</li>
 </ul>
 </li>
@@ -859,6 +863,113 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">single</span> <span class="n">API</span> <span class="n">edpoint</span> <span class="ow">is</span> <span class="n">called</span>
+<span class="n">var</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/users"</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">The</span> <span class="n">first</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">create_user</span><span class="p">()</span> <span class="n">perform</span> <span class="n">HTTP</span> <span class="n">POST</span> <span class="k">as</span> <span class="n">per</span> <span class="n">postOptions</span>
+<span class="n">function</span> <span class="n">create_user</span><span class="p">(){</span>
+
+    <span class="n">const</span> <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">uid</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"uid"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">password</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"password"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">dob</span><span class="p">:</span> <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"dob"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="p">};</span>
+    <span class="n">const</span> <span class="n">postOptions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+        <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">body</span><span class="p">),</span>
+        <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+            <span class="s1">'Authorization'</span><span class="p">:</span> <span class="s1">'Bearer my-token'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">};</span>
+    <span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">postOptions</span><span class="p">)</span>
+        <span class="o">//</span> <span class="n">response</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">RESTful</span> <span class="s2">"promise"</span> <span class="n">on</span> <span class="nb">any</span> <span class="n">successful</span> <span class="n">fetch</span>
+        <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">check</span> <span class="k">for</span> <span class="n">response</span> <span class="n">errors</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="o">...</span>
+        <span class="p">}</span>
+        <span class="o">//</span> <span class="n">response</span> <span class="n">contains</span> <span class="n">valid</span> <span class="n">result</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="o">//</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">JSON</span> <span class="n">item</span>
+            <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="p">})</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">The</span> <span class="n">second</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">read_users</span><span class="p">()</span> <span class="n">perform</span> <span class="n">HTTP</span> <span class="n">GET</span> <span class="k">as</span> <span class="n">per</span> <span class="n">options</span>
+<span class="n">function</span> <span class="n">read_users</span><span class="p">()</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">prepare</span> <span class="n">fetch</span> <span class="n">options</span>
+    <span class="n">const</span> <span class="n">read_options</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> <span class="o">//</span> <span class="o">*</span><span class="n">GET</span><span class="p">,</span> <span class="n">POST</span><span class="p">,</span> <span class="n">PUT</span><span class="p">,</span> <span class="n">DELETE</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span>
+      <span class="o">//</span> <span class="o">...</span>
+    <span class="p">};</span>
+
+    <span class="o">//</span> <span class="n">fetch</span> <span class="n">the</span> <span class="n">data</span> <span class="kn">from</span> <span class="nn">API</span>
+    <span class="n">fetch</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">read_options</span><span class="p">)</span>
+      <span class="o">//</span> <span class="n">response</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">RESTful</span> <span class="s2">"promise"</span> <span class="n">on</span> <span class="nb">any</span> <span class="n">successful</span> <span class="n">fetch</span>
+      <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">check</span> <span class="k">for</span> <span class="n">response</span> <span class="n">errors</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="o">...</span>
+        <span class="p">}</span>
+        <span class="o">//</span> <span class="n">valid</span> <span class="n">response</span> <span class="n">will</span> <span class="n">have</span> <span class="n">json</span> <span class="n">data</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="o">//</span> <span class="n">receives</span> <span class="n">a</span> <span class="n">JSON</span> <span class="n">array</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">let</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+              <span class="o">//</span> <span class="n">process</span> <span class="n">each</span> <span class="n">row</span>
+              <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">row</span><span class="p">]);</span>
+            <span class="p">}</span>
+        <span class="p">})</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">

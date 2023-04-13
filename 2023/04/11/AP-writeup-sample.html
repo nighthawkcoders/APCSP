@@ -924,8 +924,10 @@ window.onload = wrap_img;
 <p>The frontend makes two HTTP method calls (post, get) to the backend API endpoint.  A single API endpoint is defined in the <code>clase UserAPI</code> it is at the bottom of code sequence <code>api.add_resource(_CRUD, '/')</code>.  The supported backend methods <code>post(self), get(self)</code> can be found inside of the <code>class _CRUD(Resource):</code>.</p>
 <ul>
 <li>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.<ul>
-<li>Both calls are using same  JavaScript fetch url endpoint variable <code>url = "https://flask.nighthawkcodingsociety.com/api/users"</code>, but activate different HTTP methods.  These methods are activated by options passed into the API.</li>
-<li>The first call a data structure passes <code>body</code> (user input) and uses the<code>POST</code> option aas its HTTP method.</li>
+<li>See <strong><em>First endpoint fetch, HTTP POST</em></strong> function create_user() below.</li>
+<li>See <strong><em>Second endpoint fetch, HTTP POST</em></strong> function read_users() below.</li>
+<li>Both calls are using same  JavaScript fetch url endpoint variable <code>url = "https://flask.nighthawkcodingsociety.com/api/users"</code>, but activate different HTTP methods as options.  The HTTP methods are activated by API selection login in the backend of the API controller/definition.</li>
+<li>The first call has a data structure (user input) in <code>body</code> and uses the<code>POST</code> option aas its HTTP method.</li>
 <li>The second call sends the <code>GET</code> option as its HTTP method.  </li>
 </ul>
 </li>
@@ -935,17 +937,15 @@ window.onload = wrap_img;
 <li>
 <p>describes the condition(s) being tested by each call to the procedure.</p>
 <ul>
-<li>The Two methods test the Create, Read database actions.  <ul>
-<li>The first, API POST method, is directed to the Python Restful API resource<code>def post(self):</code>. This Creates a new row in the backend database.</li>
-<li>The second, API GET method, is directed to the Python Restful API resource<code>def get(self):</code>.  This Reads data from the backend database.</li>
-</ul>
-</li>
+<li>See <strong><em>Single API endpoint</em></strong> class UserAPI below, containing api.add_resource(_CRUD, '/')           </li>
+<li>The first, API POST method, is directed to the Python Restful API resource<code>def post(self):</code> within the class _CRUD(Resource). This Creates a new row in the backend database.</li>
+<li>The second, API GET method, is directed to the Python Restful API resource<code>def get(self):</code> within the class _CRUD(Resource).  This Reads data from the backend database.</li>
 </ul>
 </li>
 <li>
 <p>identifies the result of each call.</p>
 <ul>
-<li>The first, creates a record and performs <code>return jsonify(user.read())</code> which contains the newly created user row.  Alternately, it could return one of several errors <code>return {'message': f'User ID is missing, or is less than 2 characters'}, 400</code> based off of an invalid user request.  On succesfull return the data is loaded and displayed by the JavaScript Web server</li>
+<li>The first, creates a record and performs <code>return jsonify(user.read())</code> which contains the newly created user row.  Alternately, it could return one of several errors, for instance <code>return {'message': f'User ID is missing, or is less than 2 characters'}, 400</code> based off of an invalid User ID input.  On succesfull return the data is loaded and displayed by the JavaScript Web server</li>
 <li>The second, produces a list of users from a database query <code>users = User.query.all()</code>, turns the query into a Python list, using list comprenhension <code>json_ready = [user.read() for user in users]</code>.  Then it returns a Status code and on success returns JSON data <code>return jsonify(json_ready)</code>.  On return the data is loaded and displayed by the JavaScript Web server</li>
 </ul>
 </li>
@@ -979,7 +979,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">The</span> <span class="n">first</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">create_user</span><span class="p">()</span> <span class="n">perform</span> <span class="n">HTTP</span> <span class="n">POST</span> <span class="k">as</span> <span class="n">per</span> <span class="n">postOptions</span>
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">First</span> <span class="n">endpoint</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">HTTP</span> <span class="n">POST</span>
 <span class="n">function</span> <span class="n">create_user</span><span class="p">(){</span>
 
     <span class="n">const</span> <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
@@ -1026,7 +1026,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">The</span> <span class="n">second</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">read_users</span><span class="p">()</span> <span class="n">perform</span> <span class="n">HTTP</span> <span class="n">GET</span> <span class="k">as</span> <span class="n">per</span> <span class="n">options</span>
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Second</span> <span class="n">endpoint</span> <span class="n">fetch</span><span class="p">,</span> <span class="n">HTTP</span> <span class="n">GET</span>
 <span class="n">function</span> <span class="n">read_users</span><span class="p">()</span> <span class="p">{</span>
     <span class="o">//</span> <span class="n">prepare</span> <span class="n">fetch</span> <span class="n">options</span>
     <span class="n">const</span> <span class="n">read_options</span> <span class="o">=</span> <span class="p">{</span>

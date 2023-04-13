@@ -58,11 +58,7 @@ tags: [javascript, fetch, get, post, put]
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
   var url = "https://flask.nighthawkcodingsociety.com/api/users"
-  //url = "http://localhost:8086/api/users"
-  
-
-  const create_fetch = url + '/create';
-  const read_fetch = url + '/';
+  // url = "http://localhost:8086/api/users"
 
   // Load users on page entry
   read_users();
@@ -82,7 +78,7 @@ tags: [javascript, fetch, get, post, put]
     };
 
     // fetch the data from API
-    fetch(read_fetch, read_options)
+    fetch(url, read_options)
       // response is a RESTful "promise" on any successful fetch
       .then(response => {
         // check for response errors
@@ -136,7 +132,7 @@ tags: [javascript, fetch, get, post, put]
 
     // URL for Create API
     // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
+    fetch(url, requestOptions)
       .then(response => {
         // trap error response from Web API
         if (response.status !== 200) {

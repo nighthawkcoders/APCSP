@@ -830,7 +830,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#ROW-6.-Testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>ROW 6. Testing<a class="anchor-link" href="#ROW-6.-Testing"> </a>
 </h2>
 <blockquote>
-<p>The frontend makes two calls to the backend API endpoint based off of the methond passed in resource.  A single API endpoint is defined in the <code>clase UserAPI</code> it is at the bottom of code sequence <code>api.add_resource(_CRUD, '/')</code></p>
+<p>The frontend makes two calls to the backend API endpoint based off of the methond passed in Resource.  A single API endpoint is defined in the <code>clase UserAPI</code> it is at the bottom of code sequence <code>api.add_resource(_CRUD, '/')</code></p>
 </blockquote>
 <ul>
 <li>
@@ -876,7 +876,7 @@ window.onload = wrap_img;
 <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">user_api</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">UserAPI</span><span class="p">:</span>        
-    <span class="k">class</span> <span class="nc">_CRUD</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>  <span class="c1"># based off of API Resource, the method is run (post, get, etc)</span>
+    <span class="k">class</span> <span class="nc">_CRUD</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>  <span class="c1"># this class exposes supported HTTP methods (post, get, etc)</span>
         <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="sd">''' Read data for json body '''</span>
             <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
@@ -924,7 +924,7 @@ window.onload = wrap_img;
             <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">json_ready</span><span class="p">)</span>  <span class="c1"># jsonify creates Flask response object, more specific to APIs than json.dumps</span>
 
 
-    <span class="c1"># building RESTapi endpoint</span>
+    <span class="c1"># UserAPI RESTful API endpoint</span>
     <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">_CRUD</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">)</span>
 </pre></div>
 

@@ -830,27 +830,28 @@ window.onload = wrap_img;
 <a class="anchor" href="#ROW-6.-Testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>ROW 6. Testing<a class="anchor-link" href="#ROW-6.-Testing"> </a>
 </h2>
 <blockquote>
-<p>The frontend makes two calls to the backend API endpoint based off of the methond passed in Resource.  A single API endpoint is defined in the <code>clase UserAPI</code> it is at the bottom of code sequence <code>api.add_resource(_CRUD, '/')</code></p>
-</blockquote>
+<p>The frontend makes two HTTP method calls (post, get) to the backend API endpoint.  A single API endpoint is defined in the <code>clase UserAPI</code> it is at the bottom of code sequence <code>api.add_resource(_CRUD, '/')</code>.  The supported backend methods <code>post(self), get(self)</code> can be found inside of the <code>class _CRUD(Resource):</code>.</p>
 <ul>
-<li>
-<p>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.</p>
-<ul>
-<li>Two methods are contained in the <code>class _CRUD(Resource):</code>, the name means Create, Read, Update, Delete.  Ultimately the Update (put) and Delete (delete) methods will be added.    - The first, API GET method, <code>def get(self):</code>.  Reads data from the backend database.</li>
-<li>The second, API POST method, <code>def post(self):</code>. Creates a new row in the backend database.</li>
+<li>describe two calls to the selected procedure identified in written response 3c. Each call must pass a different argument(s) that causes a different segment of code in the algorithm to execute.<ul>
+<li>The backend API <code>class _CRUD(Resource):</code> detects the GET or POST method through the <code>Resource</code> and directs the action to the <code>def get(self):</code> or the <code>def post(self):</code> method.</li>
 </ul>
 </li>
-<li>
-<p>describes the condition(s) being tested by each call to the procedure.</p>
+</ul>
+</blockquote>
 <ul>
-<li>The backend API <code>class _CRUD(Resource):</code> detects the GET or POST method through the <code>Resource</code> and directs the action to the <code>def get(self):</code> or the <code>def post(self):</code> method.</li>
+<li>describes the condition(s) being tested by each call to the procedure.</li>
+<li>
+<p>The Two methods test the Create, Read database actions.</p>
+<ul>
+<li>The first, API POST method, <code>def post(self):</code>. Creates a new row in the backend database.</li>
+<li>The second, API GET method, <code>def get(self):</code>.  Reads data from the backend database.</li>
 </ul>
 </li>
 <li>
 <p>identifies the result of each call.</p>
 <ul>
-<li>The first, produces a list of users from a database query <code>users = User.query.all()</code>, turn the query using list comprenhension into json <code>json_ready = [user.read() for user in users]</code>.  Then it returns Status code and on success returns JSON data <code>return jsonify(json_ready)</code>.  On return the data is loaded a displayed by the JavaScript Web server</li>
-<li>The second, creates a record and performs <code>return jsonify(user.read())</code> which contains the newly create user row.  Alternately, it could return one or more errors <code>return {'message': f'User ID is missing, or is less than 2 characters'}, 400</code> based off of invalid user request.  On return the data is loaded a displayed by the JavaScript Web server</li>
+<li>The first, creates a record and performs <code>return jsonify(user.read())</code> which contains the newly create user row.  Alternately, it could return one or more errors <code>return {'message': f'User ID is missing, or is less than 2 characters'}, 400</code> based off of invalid user request.  On succesfull return the data is loaded and displayed by the JavaScript Web server</li>
+<li>The second, produces a list of users from a database query <code>users = User.query.all()</code>, turns the query into a Python list, using list comprenhension <code>json_ready = [user.read() for user in users]</code>.  Then it returns a Status code and on success returns JSON data <code>return jsonify(json_ready)</code>.  On return the data is loaded and displayed by the JavaScript Web server</li>
 </ul>
 </li>
 </ul>

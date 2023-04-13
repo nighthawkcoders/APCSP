@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      22 min read
+      23 min read
     
 </span></p>
 
@@ -230,7 +230,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Code Segment #1, Data Storage """</span>
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Code Segment #1 abstracting Data into a collection"""</span>
 <span class="c1"># Import Section</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="kn">import</span> <span class="nn">json</span>
@@ -452,7 +452,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Code</span> <span class="n">Segment</span> <span class="c1">#2, Data Use */</span>
+<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Code</span> <span class="n">Segment</span> <span class="c1">#2 showing Data abstraction being used */</span>
 
 <span class="o">//</span> <span class="n">response</span> <span class="n">contains</span> <span class="n">valid</span> <span class="n">result</span>
 <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -523,36 +523,6 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Backend, obtaining from Database List or Collection using Python Database Class.  In my Python API preparation code which returns a response to frontend…   This is reply from a Database query.  The collection is called “users”.</li>
-</ul>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>    <span class="c1"># read/extract all users from database</span>
-    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">]</span>  <span class="c1"># prepare output in json </span>
-    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">json_ready</span><span class="p">)</span>  <span class="c1"># jsonify creates Flask response object,  specific to APIs with response and dat</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="ROW-3.--Managing-Complexity.">
 <a class="anchor" href="#ROW-3.--Managing-Complexity." aria-hidden="true"><span class="octicon octicon-link"></span></a>ROW 3.  Managing Complexity.<a class="anchor-link" href="#ROW-3.--Managing-Complexity."> </a>
 </h2>
@@ -560,23 +530,9 @@ window.onload = wrap_img;
 <p>Data creation and storage is used to illustrate "managing complexity".  Since input is coming from users, data needs to be validate prior to adding it to the system.  By creating a User object, data can be stagged and validated utilizing methods that are defined in the collection/object discussed in this section.</p>
 </blockquote>
 <ul>
-<li>
-<p>includes a program code segment that shows a list being used to manage complexity in the program.</p>
-<ul>
-<li>The <code>class _Create(Resource):</code> has method <code>def post(self):</code> contains the variable <code>body</code>.  This is populated with the user input.  This collection contains a list of all the keys and values input by user in one varialble.          - the variable <code>body</code> contains the user input including: uid, name, dob</li>
-<li>The input data after it passes initial checks for errors is used to create an object <code>uo = User(name=name, uid=uid)</code>.   The uo object, user object, is assisting in managing the complexity of the user data.  The method <code>def post(self)</code> checks data and add it to the uo object as it ensures only clean data enters the database.  Ei</li>
-</ul>
-</li>
-<li>
-<p>explains how the named, selected list manages complexity in the program code by explaining why the program code could not be written, or how it would be written differently, without using this list.</p>
-<ul>
-<li>The "uo" object, after it is created contains data from the user input, as well as a method to Create, <code>`uo.create()</code> a record in the table.  The object activates code, through this method, that does not need to be throroughly understood by the implementor of the API.</li>
-<li>Additionally, there is a method to set the password, <code>uo.set_password(password)</code>.  This method abstracts complexity of password encryption.</li>
-<li>Also, there is a method to set the date of birth, <code>uo.dob = datetime.strptime(dob, '%Y-%m-%d').date()</code>.  Behind the scenes this calculates age of the user.</li>
-<li>Ultimately, after object is generated and all data is verified, the <code>uo.create()</code> method is called and a new row is committed into the database table.  In this step, all the commands required to interact with the SQL database have been abstracted.</li>
-<li>There are ways to write the <code>class User</code> code differently!  Primarly to make the code into a imperative sequence and perform everything done within the object in a serialized form of commands.  However, this would minimize the possibilities for code reuse.  For instance, in a <strong><em>User Management System</em></strong> there would be a need to <strong><em>Update</em></strong> user records, as well as this mentioned <strong><em>Create</em></strong> user record.   The user class and creating a <code>uo</code> object would similarly contain methods to support <strong><em>Update</em></strong> functionality.  For instance, the same  <code>password</code> and <code>dob</code> mutator/setter methods work for update.  Thus, an update API would be able to use these abstracted methods without a code modification or rewrite.   </li>
-<li>The concept of passing a list of Key/Value pairs through JSON, as illustrated with <code>body</code> variable is a foundation piece for REST API development.</li>
-<li>The concept of creating/updating a user object (<code>uo</code>) is common to Object Oriented Programming (OOP).  This enables the management of an Object (ie user object), which is a series of data elements, along with the code to  mutate and access that data in a reusable and reliable manner.  All things in code can be done in alternate ways, but OOP is great way to manage complexity on a list of attributes describing an object, aka user.</li>
+<li>includes a program code segment that shows a list being used to manage complexity in the program.<ul>
+<li>The <strong><em>User API</em></strong> code show managing complexity with the <code>uo (User Object)</code> which is a type of list or more commonly called a collection data structure.</li>
+<li>The <code>class _Create(Resource):</code> has method <code>def post(self):</code> contains the variable <code>body</code>.  This is populated with the user input.  This collection contains a list of all the keys and values input by user in one varialble.  The variable <code>body</code> contains the user input including: uid, name, dob    - The input <code>body</code> after it passes initial checks for errors is used to create a User object <code>uo = User(name=name, uid=uid)</code>.  This uo object, user object, is used in managing the complexity of gathering the user data.  The method <code>def post(self)</code> checks data and adds it to the uo object, only after it ensures only clean data enters the "uo" object.</li>
 </ul>
 </li>
 </ul>
@@ -591,16 +547,20 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Code Segment for Managing Complexity """</span>
+
+<span class="c1"># Import Section</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
 <span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span> <span class="c1"># used for REST API building</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
+<span class="c1"># Dependency Section</span>
 <span class="n">user_api</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">'user_api'</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">,</span>
                    <span class="n">url_prefix</span><span class="o">=</span><span class="s1">'/api/users'</span><span class="p">)</span>
-
 <span class="c1"># API docs https://flask-restful.readthedocs.io/en/latest/api.html</span>
 <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">user_api</span><span class="p">)</span>
 
+<span class="sd">""" User API"""</span>
 <span class="k">class</span> <span class="nc">UserAPI</span><span class="p">:</span>        
     <span class="k">class</span> <span class="nc">_Create</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -655,11 +615,53 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>explains how the named, selected list manages complexity in the program code by explaining why the program code could not be written, or how it would be written differently, without using this list.<ul>
+<li>The "uo" object, after it is created contains data from the user input, as well as a method to Create, <code>`uo.create()</code> a record in the table.  The object both stores data and activates code.</li>
+<li>Additionally, there is a method to set the password, <code>uo.set_password(password)</code>.  This method abstracts complexity of password encryption.</li>
+<li>Also, there is a method to set the date of birth, <code>uo.dob = datetime.strptime(dob, '%Y-%m-%d').date()</code>.  Behind the scenes this calculates an <code>age</code> attribute for the user.</li>
+<li>Ultimately, after object is generated and all data is verified, the <code>uo.create()</code> method is called and a new row is committed into the database table.  In this step, all the commands required to interact with the SQL database have been abstracted into the "uo" object.</li>
+<li>There are ways to write the <code>class User</code> code differently!  Primarly to make the code into a imperative sequence and perform everything done within the object into a serialized form of commands.  However, this would minimize the possibilities for code reuse.  For instance, in a <strong><em>User Management System</em></strong> there would be a need to <strong><em>Update</em></strong> user records, as well as the described <strong><em>Create</em></strong> user functionality.   The User class and creating a <code>uo</code> object could contain leveraged methods to support <strong><em>Update</em></strong> functionality.  For instance, the same  <code>password</code> and <code>dob</code> mutator/setter methods would work for update.  Thus, an Update API would be able to use these abstracted methods with similar code.   </li>
+<li>The concept of passing a list of Key/Value pairs through JSON, as illustrated with <code>body</code> variable is a foundation piece for REST API development.</li>
+<li>The concept of creating/updating a user object (<code>uo</code>) is common to Object Oriented Programming (OOP).  This enables the management of an Object (ie user object), which is a list or series of data elements, along with the code to mutate and access that data in a reusable and reliable object.  All things in code can be done in alternative ways, but OOP is great way to manage complexity on a list of attributes describing a User.  </li>
+<li>Any additions to attributes managed in User class would require code additions, but the places of addition is well defined, ordered, and understood by the developer.  Key methods like uo.create() would not be changed.</li>
+<li>After data creation, objects from the class can be used for a mariad of other purposes.  Obtaining a Database List or Collection using the User Class with its database properties allow for things like querying the data.  In  API preparation there is a need for code that returns a response of all uo objects to the frontend.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Method that returns all User Objects to frontend """</span>
+<span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>    <span class="c1"># read/extract all users from database</span>
+    <span class="n">json_ready</span> <span class="o">=</span> <span class="p">[</span><span class="n">uo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">uo</span> <span class="ow">in</span> <span class="n">users</span><span class="p">]</span>  <span class="c1"># prepare output in json </span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">json_ready</span><span class="p">)</span>  <span class="c1"># jsonify creates Flask response object,  specific to APIs with response and dat</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="ROW-4.-Procedural-Abstraction">
 <a class="anchor" href="#ROW-4.-Procedural-Abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>ROW 4. Procedural Abstraction<a class="anchor-link" href="#ROW-4.-Procedural-Abstraction"> </a>
 </h2>
 <blockquote>
-<p>In a user system there is a need to store a password.  However, it is not appropriate to store a password without encryption.  Answer to questions and code snippets follow.</p>
+<p>In a user system there is a need to store a password.  However, it is not appropriate to store a password without encryption.  Answer to the questions and code snippets follow.</p>
 </blockquote>
 <ul>
 <li>

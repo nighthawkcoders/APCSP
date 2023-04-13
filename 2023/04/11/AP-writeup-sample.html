@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      23 min read
+      24 min read
     
 </span></p>
 
@@ -661,22 +661,23 @@ window.onload = wrap_img;
 <a class="anchor" href="#ROW-4.-Procedural-Abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>ROW 4. Procedural Abstraction<a class="anchor-link" href="#ROW-4.-Procedural-Abstraction"> </a>
 </h2>
 <blockquote>
-<p>In a user system there is a need to store a password.  However, it is not appropriate to store a password without encryption.  Answer to the questions and code snippets follow.</p>
+<p>In a user system there is a need to store a password.  However, it is not appropriate to store a password without encryption.  This requires Procedural Abstraction.</p>
 </blockquote>
 <ul>
 <li>
-<p>includes two program code segments:- one showing a student-developed procedure with at least one parameter that has an effect on the functionality of the procedure.        - the code fragment below shows a procedure that sets the password in the user object <code>self._password</code>.  It receive a parameter <code>password</code> from the caller of the method.</p>
+<p>includes two program code segments:- one showing a student-developed procedure with at least one parameter that has an effect on the functionality of the procedure.        - See code for <strong><em>Procedural Abstraction for abstracting password hashing</em></strong> below.</p>
 
-<pre><code>  - the password is hashed before it is saved in the object using ```generate_password_hash``` method. this method is part of the ***werkzeug.security*** library.  
-  - a ```password``` is required to create a ***sha256 hashed*** password as a result
+<pre><code>  - the code fragment below shows a procedure that sets the password in the user object ```self._password```.  It receives a parameter ```password``` from the caller of the method.
+  - the password is hashed before it is saved in the object using ```generate_password_hash``` method. this method is part of the ***werkzeug.security*** library.  
+  - the library suppors encryption of a  ```password``` into ***sha256 hashed*** password as a result
 
 </code></pre>
 <ul>
 <li>one showing where the student-developed procedure is being called.<ul>
-<li>the <code>uo.set_password(password)</code> below is prefaced with the dependencies before the call.   The password is one attribute in a larger <strong><em>user object</em></strong>
-</li>
-<li>the <code>password</code> is obtained from input</li>
-<li>this input <code>password</code> is passed as a parameter to the user object set_password method as shown</li>
+<li>See code for <strong><em>Procedural Abstraction fragments for calling password hashing</em></strong> below OR see this code in full context in <strong><em>Code Segment for Managing Complexity</em></strong> above</li>
+<li>the <code>uo.set_password(password)</code> is prefaced with setting up password in lines before the call.   The password is one attribute in the larger <strong><em>User object</em></strong>.</li>
+<li>the <code>password</code> is initially obtained from input</li>
+<li>this input <code>password</code> is passed as a parameter to the User objects <strong><em>set_password method</em></strong> as shown in the code.  This results in plain text password be hashed and stored in the self._password variable within the object.</li>
 </ul>
 </li>
 </ul>
@@ -684,9 +685,10 @@ window.onload = wrap_img;
 <li>
 <p>describes what the identified procedure does and how it contributes to the overall functionality of the program.</p>
 <ul>
-<li>a <strong><em>User System</em></strong> requires a passowrd to validate identity of the user</li>
-<li>the set_password method is focus of this answer, but to support need a second method <code>def is_password(self, password):</code> is added below.   This method is used actually <strong><em>validate identity</em></strong>.  This method has a dependency that the hashed password is stored, it compares the passowrd passed as a paramter versus the hashed password in the object (<code>self._password</code>)</li>
-<li>together to <strong><em>set</em></strong> and <strong><em>is</em></strong> methods can be used to manage passwords and validate identy of the users</li>
+<li>a <strong><em>User System</em></strong> requires a password to validate identity of the user</li>
+<li>the set_password method is focussed on supporting the user identity securely</li>
+<li>a second method <code>def is_password(self, password):</code> is added below to support authentication.   This method is used actually <strong><em>validate identity</em></strong>.  This method has a dependency that the hashed password is stored, it compares the password passed as a paramter versus the hashed password retained in the object (<code>self._password</code>). It returns true if passwords match, otherwise it returns false.</li>
+<li>together the <strong><em>set</em></strong> and <strong><em>is</em></strong> methods can be used to manage passwords and validate identity of the users</li>
 </ul>
 </li>
 </ul>
@@ -701,7 +703,10 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Procedural Abstraction for abstracting password hashing """</span>
+
+<span class="c1"># update password, this is conventional setter</span>
+<span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
     <span class="sd">"""Create a hashed password."""</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha256'</span><span class="p">)</span>
 
@@ -726,7 +731,9 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<div class=" highlight hl-python"><pre><span></span><span class="sd">""" Procedural Abstraction fragments for calling password hashing """</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
 
 <span class="c1"># Dependencies for object creation</span>
 <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
@@ -754,19 +761,20 @@ window.onload = wrap_img;
 <a class="anchor" href="#ROW-5.-Algorithm-Implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>ROW 5. Algorithm Implementation<a class="anchor-link" href="#ROW-5.-Algorithm-Implementation"> </a>
 </h2>
 <blockquote>
-<p>The most highly visible algorithm in this program is the code that displays the users.  This contains all the elements required:sequencing, selection, iteration.</p>
+<p>The most highly visible algorithm in this program is the code that displays the users table in HTML.  This contains all the elements required:sequencing, selection, iteration requirements of this Algorithm.</p>
 <ul>
 <li>includes a program code segment of a studentdeveloped algorithm that includes<ul>
-<li>sequencing</li>
-<li>selection</li>
-<li>iteration</li>
+<li>See code for <strong><em>Algorithm Implementation, program code segment</em></strong> below.</li>
+<li>sequencing: this function has a order</li>
+<li>selection: .catch, and if are all selection conditions</li>
+<li>iteration: a for loop is used to display all users</li>
 </ul>
 </li>
 </ul>
 </blockquote>
 <ul>
 <li>explains in detailed steps how the identified algorithm works in enough detail that someone else could recreate it.<ul>
-<li>the function contain the algorithm is called <code>read_users()</code> which has the purpose to display all Users in the database.</li>
+<li>the function defines the algorithm is called <code>read_users()</code> which has the purpose of displaying all users in the database table.</li>
 <li>in JavaScript, the fetch() method is used to make a request to the server, this begins the sequence<ul>
 <li>
 <code>var url = "https://flask.nighthawkcodingsociety.com/api/users"</code> is the endpoint for API</li>
@@ -775,17 +783,18 @@ window.onload = wrap_img;
 <li>
 <code>mode: cors</code> states that API is cross origin</li>
 <li>
-<code>Content-Type: application/json</code> describes how we are passing data</li>
+<code>Content-Type: application/json</code> describes how we are passing and receive data</li>
 </ul>
 </li>
-<li>in JavaScript, the response of the fetch() using GET method contains status and data, this continues the sequence and will enable need for both select and iteration<ul>
+<li>in JavaScript, the response of the fetch(), using GET method contains status and data. This continues the sequence and will move to portion of algorithm where select and iteration are used.<ul>
 <li>
 <code>response.status</code> contains valid respone 200, or all other respones.</li>
 <li>the selection statement <code>if (response.status !== 200) {</code> traps all normal error conditions and builds an HTML container to display those errors to user.  Normal errors are handled by endpoint, such as invalid date.</li>
 <li>the <code>.catch</code> at bottom of procedure is another type of selection statement that traps all errors that are unexpected.  This would be errors that do not reach the endpoint, such as server being down.</li>
 <li>passing by the guards allows the sequence of code to progress to <code>response.json().then(data =&gt; {</code>.  This is a lamda expression that extracts the data and enables JavaScript to load the information that is returned by the server onto the web pages. </li>
 <li>the iteration statement <code>for (let row in data) {</code> extracts each row from the data.  The row is JSON and work as key/value pairs.</li>
-<li>through each iteration a call to <code>add_row(data[row]);</code> loads the data on screen</li>
+<li>each iteration will make a call to <code>add_row(data[row]);</code> which loads the data from that row on screen</li>
+<li>To view add_row() functions see <strong><em>Algorithm Implementation, code segement execulted within iteration</em></strong> below.</li>
 </ul>
 </li>
 </ul>
@@ -802,7 +811,9 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Display</span> <span class="n">User</span> <span class="n">Table</span><span class="p">,</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">fetched</span> <span class="kn">from</span> <span class="nn">Backend</span> <span class="n">Database</span>
+<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Algorithm</span> <span class="n">Implementation</span><span class="p">,</span> <span class="n">program</span> <span class="n">code</span> <span class="n">segment</span> <span class="o">*/</span>
+
+<span class="o">//</span> <span class="n">Display</span> <span class="n">User</span> <span class="n">Table</span><span class="p">,</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">fetched</span> <span class="kn">from</span> <span class="nn">Backend</span> <span class="n">Database</span>
 <span class="n">var</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">"https://flask.nighthawkcodingsociety.com/api/users"</span>
 
 <span class="n">function</span> <span class="n">read_users</span><span class="p">()</span> <span class="p">{</span>
@@ -851,6 +862,49 @@ window.onload = wrap_img;
     <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">/*</span> <span class="n">Algorithm</span> <span class="n">Implementation</span><span class="p">,</span> <span class="n">code</span> <span class="n">segement</span> <span class="n">execulted</span> <span class="n">within</span> <span class="n">iteration</span> <span class="o">*/</span>
+
+<span class="n">function</span> <span class="n">add_row</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">uid</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">name</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">posts</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">)</span>
+    <span class="n">const</span> <span class="n">dob</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+    <span class="n">const</span> <span class="n">age</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+  
+
+    <span class="o">//</span> <span class="n">obtain</span> <span class="n">data</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">the</span> <span class="n">API</span>
+    <span class="n">uid</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">uid</span><span class="p">;</span> 
+    <span class="n">name</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">;</span> 
+    <span class="n">posts</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">posts</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+    <span class="n">dob</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dob</span><span class="p">;</span> 
+    <span class="n">age</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">age</span><span class="p">;</span> 
+
+    <span class="o">//</span> <span class="n">add</span> <span class="n">HTML</span> <span class="n">to</span> <span class="n">container</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">uid</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">posts</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">dob</span><span class="p">);</span>
+    <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+
+    <span class="n">resultContainer</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+  <span class="p">}</span>
 </pre></div>
 
     </div>

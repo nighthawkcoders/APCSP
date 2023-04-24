@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      12 min read
     
 </span></p>
 
@@ -102,7 +102,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Vocabulary">Vocabulary </a></li>
-<li class="toc-entry toc-h2"><a href="#Simulations/Interactions">Simulations/Interactions </a></li>
+<li class="toc-entry toc-h2"><a href="#Simulations/Interactions">Simulations/Interactions </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Why-use-simulations?">Why use simulations? </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Lists">Lists </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#What-are-Lists?">What are Lists? </a>
@@ -120,6 +124,22 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Libaries">Libaries </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#APIs">APIs </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Dictionaries">Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-are-Dictionaries?">What are Dictionaries? </a></li>
+<li class="toc-entry toc-h3"><a href="#What-are-the-types-of-Dictionaries?">What are the types of Dictionaries? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Ordered-Dictionaries">Ordered Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#How-to-create-an-ordered-dictionary?">How to create an ordered dictionary? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Regular-Dictionaries">Regular Dictionaries </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#How-to-create-a-regular-dictionary?">How to create a regular dictionary? </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Code-Examples">Code Examples </a></li>
@@ -171,7 +191,7 @@ window.onload = wrap_img;
 <em>array</em> - Another name for a list, depends on the language <br>
 </li>
 <li>
-<em>Ke</em>y - the unique identifier associated with a value in a dictionary, such as name <br>
+<em>Key</em> - the unique identifier associated with a value in a dictionary, such as name <br>
 </li>
 <li>
 <em>Value</em> - the data associated with a key in a dictionary, such as age <br>
@@ -180,14 +200,48 @@ window.onload = wrap_img;
 <em>Pair</em> - a key-value combination in a dictionary, such as a person's name + age <br>
 </li>
 <li>
-<em>Mutable</em> - the ability to be changed or modified &lt; br&gt;</li>
+<em>Mutable</em> - the ability to be changed or modified <br>
+</li>
+<li>
+<em>Tuple</em> - an immutable ordered sequence of elements, similar to a list <br>
+</li>
 <li>
 <em>Insertion</em> - the process of adding a new key-value pair to a dictionary <br>
 </li>
 <li>
-<em>Deletion</em>-  the process of removing a key-value pair from a dictionary <br>
+<em>Deletion</em> -  the process of removing a key-value pair from a dictionary <br>
+</li>
+<li>
+<em>Keys method/<code>keys()</code></em> - a built-in Python function that returns a list of all keys in a dictionary <br>
+</li>
+<li>
+<em>Values method/<code>values()</code></em> - a built-in Python function that returns a list of all values in a dictionary <br>
+</li>
+<li>
+<em>Items method/<code>items()</code></em> - a built-in Python function that returns a list of all key-value pairs in a dictionary as tuples <br>
+</li>
+<li>
+<em>Update method/<code>update()</code></em> - a built-in Python function that updates a dictionary with key-value pairs from another dictionary or iterable <br>
+</li>
+<li>
+<em>Clear method/<code>clear()</code></em> - a built-in Python function that removes all key-value pairs from a dictionary <br>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Give an example of iteration.</li>
+<li>What is the difference between a for loop and while loop? That is, when would you use a for loop and when would you use a while loop?</li>
+<li>In the APCSP AP exam, what number do indexes start with? <strong>important to know</strong>
+</li>
+<li>Are dictionaries and lists mutable?</li>
+</ol>
 
 </div>
 </div>
@@ -198,21 +252,54 @@ window.onload = wrap_img;
 <h2 id="Simulations/Interactions">
 <a class="anchor" href="#Simulations/Interactions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simulations/Interactions<a class="anchor-link" href="#Simulations/Interactions"> </a>
 </h2>
-<p>Building a simulation or interaction using lists and iteration in VS Code can be accomplished using a few simple steps:</p>
+<p>Building a simulation o#r interaction using lists and iteration in VS Code can be accomplished using a few simple steps:</p>
 <ol>
 <li>
-<p>Define your data: First, you need to define the data that your simulation will be working with. This could be a list of numbers, a list of strings, or any other type of data that your simulation will be manipulating.</p>
+<p><strong>Define your data</strong>: First, you need to define the data that your simulation will be working with. This could be a list of numbers, a list of strings, or any other type of data that your simulation will be manipulating.</p>
 </li>
 <li>
-<p>Write your simulation code: Once you have defined your data, you can start writing the code for your simulation. This code will typically involve iterating over your list of data, performing some operation on each item in the list, and updating the list accordingly.</p>
+<p><strong>Write your simulation code:</strong> Once you have defined your data, you can start writing the code for your simulation. This code will typically involve iterating over your list of data, performing some operation on each item in the list, and updating the list accordingly.</p>
 </li>
 <li>
-<p>Test your simulation: After you have written your simulation code, it is important to test it to make sure it is working as expected. You can do this by running your code and checking the output to see if it matches what you expect.</p>
+<p><strong>Test your simulation:</strong> After you have written your simulation code, it is important to test it to make sure it is working as expected. You can do this by running your code and checking the output to see if it matches what you expect.</p>
 </li>
 <li>
-<p>Refine your simulation: Once you have tested your simulation, you may need to refine it based on the results. This could involve tweaking the code to make it more efficient, adding new features, or fixing any bugs that you have discovered.</p>
+<p><strong>Refine your simulation:</strong> Once you have tested your simulation, you may need to refine it based on the results. This could involve tweaking the code to make it more efficient, adding new features, or fixing any bugs that you have discovered.</p>
 </li>
 </ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Why-use-simulations?">
+<a class="anchor" href="#Why-use-simulations?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why use simulations?<a class="anchor-link" href="#Why-use-simulations?"> </a>
+</h4>
+<ul>
+<li>Simulations can be useful because they can emulate real world situations without needing excessive resources (ex: money), time, or equipment. For example, a simulation of the effectiveness of a new seatbelt or airbag can be performed by simulating car crashes. This would be better than doing it in real life because you wouldn't want to place people in cars and then crash them for obvious reasons.</li>
+<li>However, simulatins do assume things about the real world and can have biases. They can be oversimplified because the real world often has more complications and factors that can affect something. In the case of our car crash simulation, other things can have a big impact, such as the weather and experience of the driver. However, these things can sometimes be held constant in the simulations.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Explain an example of something you could simulate.</li>
+<li>Why are simulations useful and important?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Here's a simple example of a simulation in Python that uses lists and iteration to calculate the average of a list of numbers:</p>
 
 </div>
@@ -278,9 +365,7 @@ window.onload = wrap_img;
 <h2 id="Lists">
 <a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
 </h2>
-<p>For list operations, write expressions that use list indexing and list procedures. For algorithms involving elements of a list, write iteration statements to traverse a list.</p>
 <ul>
-<li>List procedures are implemented in accordance with the syntax rules of the programming language. </li>
 <li>Iteration statements can be used to traverse a list</li>
 <li>Knowldege of exisiting algorithms that use iteration can help in constructing new algorithms. Some are:<ul>
 <li>Determining a minimum or maximum value in a list</li>
@@ -292,7 +377,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#What-are-Lists?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are Lists?<a class="anchor-link" href="#What-are-Lists?"> </a>
 </h3>
 <ul>
-<li>Lists are a collection of data in a sequence that is an iterable</li>
+<li>Lists are <mark>_________________</mark>.</li>
 <li>Each sequence is demarcated with an <mark>index</mark>, starting from 0. This is known as <mark>base 0 indexing</mark>
 </li>
 <li>In memory, it is stored as a variable name with multiple pointers to each variable stored in a certain order</li>
@@ -306,7 +391,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#Uses-of-Nested-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uses of Nested lists<a class="anchor-link" href="#Uses-of-Nested-lists"> </a>
 </h5>
 <p>Placing lists within lists allows you to have arrays of similar data together, and create complexity. <br></p>
-<p>Some uses include:</p>
+<p><strong>Some uses include:</strong></p>
 <ul>
 <li>Creating 2d Arrays </li>
 <li>Storing similar, but slightly different categories (sublists)</li>
@@ -322,12 +407,25 @@ window.onload = wrap_img;
 <h2 id="Iteration">
 <a class="anchor" href="#Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iteration<a class="anchor-link" href="#Iteration"> </a>
 </h2>
-<p>Iterative statements are also called loops, and they repeat themselves over and over until the condition for stopping is met.</p>
+<p>Iterative statements are also called <mark>_____</mark>, and they repeat themselves over and over until the condition for stopping is met.</p>
 <ul>
 <li>In College Board's Pseudocode, the first is a REPEAT n TIMES loop, where the n represents some number.</li>
 </ul>
 <p>The second type of loop is a REPEAT UNTIL (condition) loop, where the loop will continue to run until a condition is met.</p>
 <p>Conceptually, a while loop is very similar to an if conditional, except that a while is continually executed until it's no longer true and an if is only executed once.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Describe a situation where you would need iteration.</li>
+<li>Describe the difference between a "REPEAT n TIMES" loop VS a "REPEAT UNTIL (condition)" loop. <mark>it is important you know this for the AP Exam</mark>
+</li>
+</ol>
 
 </div>
 </div>
@@ -356,6 +454,212 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>What are some libraries that we've learned about? What are their advantages/disadvantages?</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dictionaries">
+<a class="anchor" href="#Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dictionaries<a class="anchor-link" href="#Dictionaries"> </a>
+</h2>
+<h3 id="What-are-Dictionaries?">
+<a class="anchor" href="#What-are-Dictionaries?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are Dictionaries?<a class="anchor-link" href="#What-are-Dictionaries?"> </a>
+</h3>
+<ul>
+<li>an unordered collection of key-value pairs, where each key is <mark>_______</mark> and associated with a specific value</li>
+<li>known as associative arrays, maps, or hash tables in some programming languages</li>
+<li>used to store and retrieve data efficiently, as they allow fast access to values based on their associated keys</li>
+<li>useful for a wide range of tasks, such as storing, indexing, and counting</li>
+</ul>
+<h3 id="What-are-the-types-of-Dictionaries?">
+<a class="anchor" href="#What-are-the-types-of-Dictionaries?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are the types of Dictionaries?<a class="anchor-link" href="#What-are-the-types-of-Dictionaries?"> </a>
+</h3>
+<h2 id="Ordered-Dictionaries">
+<a class="anchor" href="#Ordered-Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ordered Dictionaries<a class="anchor-link" href="#Ordered-Dictionaries"> </a>
+</h2>
+<ul>
+<li>Iterates over keys and values in the same order that the keys were inserted </li>
+<li>If an entry is deleted and reinserted, then it will be moved to the end of the dictionary</li>
+<li>Specially designed to keep its items ordered</li>
+<li>Useful in situations where the order of insertion is important and when you need to process data in a specific order</li>
+<li>If the order of the data is important, an ordered dictionary is the better choice</li>
+</ul>
+<h3 id="How-to-create-an-ordered-dictionary?">
+<a class="anchor" href="#How-to-create-an-ordered-dictionary?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to create an ordered dictionary?<a class="anchor-link" href="#How-to-create-an-ordered-dictionary?"> </a>
+</h3>
+<ol>
+<li>Import OrderedDict from collections </li>
+<li>Create an empty ordered dictionary by instantiating OrderedDict without providing arguments to the constructor</li>
+<li>Add key-value pairs to the dictionary by providing a key in square brackets ([]) and assigning a value to that key. </li>
+<li>Print the ordered dictionary </li>
+<li>Iterate over the items in the ordered dictionary </li>
+</ol>
+<h2 id="Regular-Dictionaries">
+<a class="anchor" href="#Regular-Dictionaries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Regular Dictionaries<a class="anchor-link" href="#Regular-Dictionaries"> </a>
+</h2>
+<ul>
+<li>Mutable; can add, remove, and modify key-value pairs after they have been created</li>
+<li>Used to store data values in key:value pairs</li>
+<li>Can be iterated over using loops</li>
+<li>If order is not important, a regular dictionary may provide better performance</li>
+</ul>
+<h3 id="How-to-create-a-regular-dictionary?">
+<a class="anchor" href="#How-to-create-a-regular-dictionary?" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to create a regular dictionary?<a class="anchor-link" href="#How-to-create-a-regular-dictionary?"> </a>
+</h3>
+<ol>
+<li>Create a variable name which will be the name of the dictionary</li>
+<li>Assign the variable to an empty set of curly braces {}</li>
+<li>Create a dictionary with the dict() OR empty curly brackets </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>Compare and contrast lists and dictionaries.</li>
+<li>Do dictionary keys need to be unique?</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">folklore_album</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"title"</span><span class="p">:</span> <span class="s2">"Folklore"</span><span class="p">,</span>
+    <span class="s2">"artist"</span><span class="p">:</span> <span class="s2">"Taylor Swift"</span><span class="p">,</span>
+    <span class="s2">"year"</span><span class="p">:</span> <span class="mi">2020</span><span class="p">,</span>
+    <span class="s2">"genre"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Alternative/Indie"</span><span class="p">,</span> <span class="s2">"Pop"</span><span class="p">],</span>
+    <span class="s2">"tracks"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="s2">"the 1"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="s2">"cardigan"</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="s2">"the last great american dynasty"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="s2">"exile (ft. Bon Iver)"</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="s2">"my tears ricochet"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="s2">"mirrorball"</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="s2">"seven"</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="p">[</span><span class="s2">"august"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="p">[</span><span class="s2">"this is me trying"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="p">[</span><span class="s2">"illicit affairs"</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="p">[</span><span class="s2">"invisible string"</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="p">[</span><span class="s2">"mad woman"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">13</span><span class="p">:</span> <span class="p">[</span><span class="s2">"epiphany"</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+        <span class="mi">14</span><span class="p">:</span> <span class="p">[</span><span class="s2">"betty"</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+        <span class="mi">15</span><span class="p">:</span> <span class="p">[</span><span class="s2">"peace"</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+        <span class="mi">16</span><span class="p">:</span> <span class="p">[</span><span class="s2">"hoax"</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+        <span class="mi">17</span><span class="p">:</span> <span class="p">[</span><span class="s2">"the lakes"</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Printing the dictionary</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">folklore_album</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'title': 'Folklore', 'artist': 'Taylor Swift', 'year': 2020, 'genre': ['Alternative/Indie', 'Pop'], 'tracks': {1: ['the 1', 7], 2: ['cardigan', 19], 3: ['the last great american dynasty', 7], 4: ['exile (ft. Bon Iver)', 10], 5: ['my tears ricochet', 7], 6: ['mirrorball', 6], 7: ['seven', 5], 8: ['august', 7], 9: ['this is me trying', 7], 10: ['illicit affairs', 8], 11: ['invisible string', 6], 12: ['mad woman', 7], 13: ['epiphany', 6], 14: ['betty', 8], 15: ['peace', 9], 16: ['hoax', 7], 17: ['the lakes', 6]}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">folklore_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"track #"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": "</span> <span class="o">+</span> <span class="n">folklore_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"    my rating: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">folklore_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">"/10"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>track #1: the 1
+    my rating: 7/10
+track #2: cardigan
+    my rating: 19/10
+track #3: the last great american dynasty
+    my rating: 7/10
+track #4: exile (ft. Bon Iver)
+    my rating: 10/10
+track #5: my tears ricochet
+    my rating: 7/10
+track #6: mirrorball
+    my rating: 6/10
+track #7: seven
+    my rating: 5/10
+track #8: august
+    my rating: 7/10
+track #9: this is me trying
+    my rating: 7/10
+track #10: illicit affairs
+    my rating: 8/10
+track #11: invisible string
+    my rating: 6/10
+track #12: mad woman
+    my rating: 7/10
+track #13: epiphany
+    my rating: 6/10
+track #14: betty
+    my rating: 8/10
+track #15: peace
+    my rating: 9/10
+track #16: hoax
+    my rating: 7/10
+track #17: the lakes
+    my rating: 6/10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -399,7 +703,6 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>List before reverse :  [1, 2, 3, 4, 5]
-List after reverse :  [5, 4, 3, 2, 1]
 </pre>
 </div>
 </div>
@@ -454,7 +757,6 @@ List after reverse :  [5, 4, 3, 2, 1]
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>array before sort [9, 8, 4, 3, 5, 2, 6, 7, 1, 0]
-array after sort [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </pre>
 </div>
 </div>
@@ -465,6 +767,115 @@ array after sort [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a list comprehension example, using lists to create lists.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, only songs in the folklore album that have less than 7 characters in their titles are printed.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TS_folklore</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"exile"</span><span class="p">,</span> <span class="s2">"my tears ricochet"</span><span class="p">,</span> <span class="s2">"this is me trying"</span><span class="p">,</span> <span class="s2">"illicit affairs"</span><span class="p">,</span> <span class="s2">"august"</span><span class="p">,</span> <span class="s2">"mirrorball"</span><span class="p">,</span> <span class="s2">"betty"</span><span class="p">,</span> <span class="s2">"mad woman"</span><span class="p">,</span> <span class="s2">"epiphany"</span><span class="p">,</span> <span class="s2">"peace"</span><span class="p">,</span> <span class="s2">"cardigan"</span><span class="p">]</span>
+
+<span class="c1"># this list is only songs that have less than 10 characters in the title</span>
+<span class="n">TS_folklore_updated</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">TS_folklore</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"These are the songs in Taylor Swift's folklore album that have less than 7 characters in their title"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">TS_folklore_updated</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>These are the songs in Taylor Swift's folklore album that have less than 7 characters in their title
+['exile', 'august', 'betty', 'peace']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below, only songs that have a rating greater than 7 will be printed.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">TS_folklore_ratings</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"exile"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">"my tears ricochet"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"this is me trying"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">"illicit affairs"</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">"august"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"mirrorball"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"betty"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"mad woman"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">"epiphany"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">"peace"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"cardigan"</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="n">TS_folklore_best</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">TS_folklore_ratings</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="o">&gt;</span><span class="mi">7</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"These are the songs in Taylor Swift's folklore album that I give a rating greater than 7"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">TS_folklore_best</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>These are the songs in Taylor Swift's folklore album that I give a rating greater than 7
+{'exile': 8, 'illicit affairs': 8, 'peace': 10, 'cardigan': 10}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Questions:</p>
+<ol>
+<li>How is list comprehension similar to iteration?</li>
+</ol>
+
+</div>
+</div>
+</div>
 </div>
 
 

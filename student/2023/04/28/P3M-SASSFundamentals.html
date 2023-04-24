@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      17 min read
     
 </span></p>
 
@@ -101,101 +101,71 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#What-is-SASS?">What is SASS? </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser.">Sass is a preprocessor language that&#39;s interpreted into CSS. A preprocessor language takes input data and converts it to an output that&#39;s used as input by another program. This means when you run Sass code, you&#39;re actually converting your code to CSS. That CSS code output is then used directly by a browser. </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Variables">Variables </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-$-symbol-is-used-in-Sass-to-designate-a-variable.">Variables in CSS preprocessors such as Sass allow you to store information that you can reuse in your stylesheet, such as font stacks, colors, or any other CSS value you anticipate needing. The $ symbol is used in Sass to designate a variable. </a></li>
-<li class="toc-entry toc-h2"><a href="#Sass">Sass </a></li>
-<li class="toc-entry toc-h2"><a href="#Css">Css </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-$font-stack-and-$primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website.">Once Sass is processed, it generates standard CSS by inserting the values we assigned to variables such as $font-stack and $primary-color. This functionality can prove invaluable when dealing with brand colors and ensuring their consistency throughout the website. </a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Nesting">Nesting </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable.">While composing HTML, you might have observed that it exhibits an explicit nested and visual structure. However, CSS lacks such a hierarchy. On the contrary, Sass allows you to nest your CSS selectors in a manner that aligns with the visual hierarchy of your HTML. Nonetheless, excessive nesting may generate overly qualified CSS, which can be challenging to maintain and is usually considered undesirable. </a></li>
-<li class="toc-entry toc-h4"><a href="#Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass">Keeping this in consideration, here&#39;s a sample of common styles for a website&#39;s navigation:## Sass </a></li>
-<li class="toc-entry toc-h4"><a href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability. </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Modules">Modules </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-"@use"-rule.-This-rule-imports-another-Sass-file-as-a-module,-enabling-you-to-reference-its-variables,-mixins,-and-functions-in-your-Sass-code-using-a-namespace-derived-from-the-file-name.-Additionally,-by-using-a-file,-the-CSS-it-produces-will-also-be-included-in-the-compiled-output.">It is not mandatory to write all of your Sass code in a single file. You can divide it into multiple files as per your preference by utilizing the &quot;@use&quot; rule. This rule imports another Sass file as a module, enabling you to reference its variables, mixins, and functions in your Sass code using a namespace derived from the file name. Additionally, by using a file, the CSS it produces will also be included in the compiled output. </a></li>
-<li class="toc-entry toc-h2"><a href="#Sass">Sass </a></li>
-<li class="toc-entry toc-h2"><a href="#Css">Css </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#Observe-that-in-the-styles.scss-file,-we-are-employing-"@use-'base';".-If-you-utilize-a-file,-there's-no-requirement-to-add-the-file-extension.-Sass-is-intelligent-enough-to-comprehend-it-by-itself.">Observe that in the styles.scss file, we are employing &quot;@use &#39;base&#39;;&quot;. If you utilize a file, there&#39;s no requirement to add the file extension. Sass is intelligent enough to comprehend it by itself. </a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toc-entry toc-h1"><a href="#What-is-SASS?">What is SASS? </a></li>
 <li class="toc-entry toc-h1"><a href="#SCSS-vs.-CSS">SCSS vs. CSS </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#What-is-CSS">What is CSS </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#CSS-is-the-default-language-that-most-programmers-use-to-style-a-webpage.-It-is-one-of-the-3-fundamental-web-technologies-along-with-HTML-and-JavaScript.-HTML-manages-the-structure,-JavaScript-makes-pages-interactive,-and-CSS-changes-the-style-by-taking-a-markup-language-like-HTML-and-describes-how-it-should-be-presented-to-the-user.">CSS is the default language that most programmers use to style a webpage. It is one of the 3 fundamental web technologies along with HTML and JavaScript. HTML manages the structure, JavaScript makes pages interactive, and CSS changes the style by taking a markup language like HTML and describes how it should be presented to the user. </a></li>
+<li class="toc-entry toc-h3"><a href="#CSS-Example">CSS Example </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#What-is-SCSS">What is SCSS </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#SCSS-is-short-for-Sassy-CSS.-What-SCSS-does-is-very-similar-to-CSS-but-the-difference-comes-with-the-fact-that-SCSS-extends-the-functionality-of-CSS-while-also-making-it-simpler.-What-this-allows-us-to-do-is-it-enables-us-to-things-like-nested-styling,-functions,-mixins,-variables,-inheritance-(more-on-these-later)-and-so-on.">SCSS is short for Sassy CSS. What SCSS does is very similar to CSS but the difference comes with the fact that SCSS extends the functionality of CSS while also making it simpler. What this allows us to do is it enables us to things like nested styling, functions, mixins, variables, inheritance (more on these later) and so on. </a></li>
+<li class="toc-entry toc-h3"><a href="#Sass-Code-Example">Sass Code Example </a></li>
+<li class="toc-entry toc-h3"><a href="#So-which-one-is-better-to-use?">So which one is better to use? </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#So-which-one-is-better-to-use?">So which one is better to use? </a>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Modular-SCSS">Modular SCSS </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#CSS-tends-to-be-better-for-really-simple-styling-where-not-many-complex-or-nested-styles-are-required-and-small-projects-that-doesn't-require-a-lot-of-customization.-SCSS-on-the-other-hand-is-very-good-for-more-complex-styling-and-working-with-a-project-with-more-than-one-page-where-maybe-lots-of-customization-is-needed.">CSS tends to be better for really simple styling where not many complex or nested styles are required and small projects that doesn&#39;t require a lot of customization. SCSS on the other hand is very good for more complex styling and working with a project with more than one page where maybe lots of customization is needed. </a></li>
+<li class="toc-entry toc-h2"><a href="#File-1-_variable.scss">File 1 _variable.scss </a></li>
+<li class="toc-entry toc-h2"><a href="#File-2-style.scss">File 2 style.scss </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h1"><a href="#Nesting">Nesting </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#CSS---Lack-of-Nesting">CSS - Lack of Nesting </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Variables">Variables </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Variable-Example-Syntax">Variable Example Syntax </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Operators">Operators </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Operator-Example-Syntax">Operator Example Syntax </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Conditional-Statements">Conditional Statements </a></li>
+<li class="toc-entry toc-h1"><a href="#Loops-In-Sass">Loops In Sass </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Some-Code-Examples-of-Loops-and-Lists">Some Code Examples of Loops and Lists </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Functions-in-SASS">Functions in SASS </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#SASS-functions">SASS functions </a>
+<li class="toc-entry toc-h2"><a href="#SASS-functions">SASS functions </a></li>
+<li class="toc-entry toc-h2"><a href="#Using-Built-in-Functions">Using Built-in Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#Math-Functions">Math Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#Color-Functions">Color Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#String-Functions">String Functions </a></li>
+<li class="toc-entry toc-h2"><a href="#Creating-Custom-Functions">Creating Custom Functions </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Mixins">Mixins </a></li>
+<li class="toc-entry toc-h1"><a href="#Inheritance">Inheritance </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#Sass-Functions-allow-you-to-define-complex-calculations-and-transformations-that-can-be-used-throughout-your-stylesheet.">Sass Functions allow you to define complex calculations and transformations that can be used throughout your stylesheet. </a></li>
+<li class="toc-entry toc-h2"><a href="#Mixin-&-Inheritance-Code-Example">Mixin &amp; Inheritance Code Example </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#What-are-SASS-functions?">What are SASS functions? </a>
+<li class="toc-entry toc-h1"><a href="#Hacks-&-Hack-Helper---Calculator-&-Hack-Helper---Stopwatch">Hacks &amp; Hack Helper - Calculator &amp; Hack Helper - Stopwatch </a>
 <ul>
-<li class="toc-entry toc-h4"><a href="#Functions-are-a-powerful-feature-in-SASS-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-SASS-functions-can-be-used-to-perform-arithmetic-operations,-manipulate-colors,-work-with-strings,-and-more.">Functions are a powerful feature in SASS that allow you to perform complex operations on values, manipulate data, and generate content dynamically. SASS functions can be used to perform arithmetic operations, manipulate colors, work with strings, and more. </a></li>
-<li class="toc-entry toc-h4"><a href="#Functions-in-SASS-are-similar-to-functions-in-programming-languages,-but-they-can-be-used-within-SASS-stylesheets-to-generate-CSS-code-dynamically.">Functions in SASS are similar to functions in programming languages, but they can be used within SASS stylesheets to generate CSS code dynamically. </a></li>
+<li class="toc-entry toc-h2"><a href="#Part-1:-Reflections-0.4-Points">Part 1: Reflections 0.4 Points </a></li>
+<li class="toc-entry toc-h2"><a href="#Part-2:-Sass-Demo-0.5+-Points">Part 2: Sass Demo 0.5+ Points </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Using-Built-in-Functions">Using Built-in Functions </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#SASS-provides-a-variety-of-built-in-functions-that-you-can-use-to-perform-operations-like-math,-color-manipulation,-string-manipulation,-and-more.-Here-are-some-examples-of-built-in-functions-and-how-to-use-them.">SASS provides a variety of built-in functions that you can use to perform operations like math, color manipulation, string manipulation, and more. Here are some examples of built-in functions and how to use them. </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#Math-Functions">Math Functions </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#SASS-provides-a-number-of-math-functions-that-allow-you-to-perform-arithmetic-operations-on-values.-Here-are-some-examples:">SASS provides a number of math functions that allow you to perform arithmetic operations on values. Here are some examples: </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#String-Functions">String Functions </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#SASS-provides-a-variety-of-string-functions-that-allow-you-to-manipulate-strings.-Here-are-some-examples:">SASS provides a variety of string functions that allow you to manipulate strings. Here are some examples: </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#Creating-Custom-Functions">Creating Custom Functions </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#In-addition-to-using-built-in-functions,-you-can-also-create-your-own-functions-in-SASS-using-the-@function-directive.-Functions-take-input-values,-perform-calculations,-and-return-a-result.-Here's-an-example-of-a-simple-function-that-calculates-the-area-of-a-rectangle:">In addition to using built-in functions, you can also create your own functions in SASS using the @function directive. Functions take input values, perform calculations, and return a result. Here&#39;s an example of a simple function that calculates the area of a rectangle: </a></li>
-<li class="toc-entry toc-h4"><a href="#Custom-functions-can-be-very-powerful,-and-can-be-used-to-create-reusable-pieces-of-code-that-can-be-used-throughout-your-stylesheets.">Custom functions can be very powerful, and can be used to create reusable pieces of code that can be used throughout your stylesheets. </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#Conclusion">Conclusion </a>
-<ul>
-<li class="toc-entry toc-h4"><a href="#SASS-functions-are-a-powerful-feature-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-By-using-built-in-functions-and-creating-your-own-custom-functions,-you-can-greatly-extend-the-capabilities-of-your-SASS-stylesheets.">SASS functions are a powerful feature that allow you to perform complex operations on values, manipulate data, and generate content dynamically. By using built-in functions and creating your own custom functions, you can greatly extend the capabilities of your SASS stylesheets. </a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-entry toc-h1"><a href="#Examples-with-mixins">Examples with mixins </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -212,159 +182,8 @@ window.onload = wrap_img;
 <a class="anchor" href="#What-is-SASS?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is SASS?<a class="anchor-link" href="#What-is-SASS?"> </a>
 </h1>
 <blockquote>
-<h4 id="Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser.">
-<a class="anchor" href="#Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser." aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass is a preprocessor language that's interpreted into CSS. A preprocessor language takes input data and converts it to an output that's used as input by another program. This means when you run Sass code, you're actually converting your code to CSS. That CSS code output is then used directly by a browser.<a class="anchor-link" href="#Sass-is-a-preprocessor-language-that's-interpreted-into-CSS.-A-preprocessor-language-takes-input-data-and-converts-it-to-an-output-that's-used-as-input-by-another-program.-This-means-when-you-run-Sass-code,-you're-actually-converting-your-code-to-CSS.-That-CSS-code-output-is-then-used-directly-by-a-browser."> </a>
-</h4>
-<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMd7eiGMX9FwRLC0uJTDewSjw_7_WvCF4ABLdwztLrCnPEXrqW0gG-pH8eT-fYPLlghjY&amp;usqp=CAU" alt=""></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Variables">
-<a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
-</h1>
-<blockquote>
-<h4 id="Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-$-symbol-is-used-in-Sass-to-designate-a-variable.">
-<a class="anchor" href="#Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-%24-symbol-is-used-in-Sass-to-designate-a-variable." aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables in CSS preprocessors such as Sass allow you to store information that you can reuse in your stylesheet, such as font stacks, colors, or any other CSS value you anticipate needing. The $ symbol is used in Sass to designate a variable.<a class="anchor-link" href="#Variables-in-CSS-preprocessors-such-as-Sass-allow-you-to-store-information-that-you-can-reuse-in-your-stylesheet,-such-as-font-stacks,-colors,-or-any-other-CSS-value-you-anticipate-needing.-The-%24-symbol-is-used-in-Sass-to-designate-a-variable."> </a>
-</h4>
-<p>Below is an example:</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sass">
-<a class="anchor" href="#Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass<a class="anchor-link" href="#Sass"> </a>
-</h2>
-<pre><code>$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}</code></pre>
-<h2 id="Css">
-<a class="anchor" href="#Css" aria-hidden="true"><span class="octicon octicon-link"></span></a>Css<a class="anchor-link" href="#Css"> </a>
-</h2>
-<pre><code>body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}</code></pre>
-<blockquote>
-<h4 id="Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-$font-stack-and-$primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website.">
-<a class="anchor" href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-%24font-stack-and-%24primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website." aria-hidden="true"><span class="octicon octicon-link"></span></a>Once Sass is processed, it generates standard CSS by inserting the values we assigned to variables such as <code>$font-stack</code> and <code>$primary-color</code>. This functionality can prove invaluable when dealing with brand colors and ensuring their consistency throughout the website.<a class="anchor-link" href="#Once-Sass-is-processed,-it-generates-standard-CSS-by-inserting-the-values-we-assigned-to-variables-such-as-%24font-stack-and-%24primary-color.-This-functionality-can-prove-invaluable-when-dealing-with-brand-colors-and-ensuring-their-consistency-throughout-the-website."> </a>
-</h4>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Nesting">
-<a class="anchor" href="#Nesting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nesting<a class="anchor-link" href="#Nesting"> </a>
-</h1>
-<blockquote>
-<h4 id="While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable.">
-<a class="anchor" href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable." aria-hidden="true"><span class="octicon octicon-link"></span></a>While composing HTML, you might have observed that it exhibits an explicit nested and visual structure. However, CSS lacks such a hierarchy. On the contrary, Sass allows you to nest your CSS selectors in a manner that aligns with the visual hierarchy of your HTML. Nonetheless, excessive nesting may generate overly qualified CSS, which can be challenging to maintain and is usually considered undesirable.<a class="anchor-link" href="#While-composing-HTML,-you-might-have-observed-that-it-exhibits-an-explicit-nested-and-visual-structure.-However,-CSS-lacks-such-a-hierarchy.-On-the-contrary,-Sass-allows-you-to-nest-your-CSS-selectors-in-a-manner-that-aligns-with-the-visual-hierarchy-of-your-HTML.-Nonetheless,-excessive-nesting-may-generate-overly-qualified-CSS,-which-can-be-challenging-to-maintain-and-is-usually-considered-undesirable."> </a>
-</h4>
-<h4 id="Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass">
-<a class="anchor" href="#Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Keeping this in consideration, here's a sample of common styles for a website's navigation:## Sass<a class="anchor-link" href="#Keeping-this-in-consideration,-here's-a-sample-of-common-styles-for-a-website's-navigation:##-Sass"> </a>
-</h4>
-<p>```
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }</p>
-</blockquote>
-<p>li { display: inline-block; }</p>
-<p>a {
-    display: block;
-    padding: 6px 12px;
-    text-decoration: none;
-  }
-}</p>
-
-<pre><code>
-## Css</code></pre>
-<p>nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav li {
-  display: inline-block;
-}
-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-}
-```</p>
-<blockquote>
-<h4 id="As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability.">
-<a class="anchor" href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability." aria-hidden="true"><span class="octicon octicon-link"></span></a>As you observe, the ul, li, and a selectors are enclosed within the nav selector. This approach is highly beneficial in arranging your CSS and enhancing its readability.<a class="anchor-link" href="#As-you-observe,-the-ul,-li,-and-a-selectors-are-enclosed-within-the-nav-selector.-This-approach-is-highly-beneficial-in-arranging-your-CSS-and-enhancing-its-readability."> </a>
-</h4>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Modules">
-<a class="anchor" href="#Modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modules<a class="anchor-link" href="#Modules"> </a>
-</h1>
-<blockquote>
-<h4 id='It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-"@use"-rule.-This-rule-imports-another-Sass-file-as-a-module,-enabling-you-to-reference-its-variables,-mixins,-and-functions-in-your-Sass-code-using-a-namespace-derived-from-the-file-name.-Additionally,-by-using-a-file,-the-CSS-it-produces-will-also-be-included-in-the-compiled-output.'>
-<a class="anchor" href="#It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-" aria-hidden="true"><span class="octicon octicon-link"></span></a>It is not mandatory to write all of your Sass code in a single file. You can divide it into multiple files as per your preference by utilizing the "@use" rule. This rule imports another Sass file as a module, enabling you to reference its variables, mixins, and functions in your Sass code using a namespace derived from the file name. Additionally, by using a file, the CSS it produces will also be included in the compiled output.<a class="anchor-link" href="#It-is-not-mandatory-to-write-all-of-your-Sass-code-in-a-single-file.-You-can-divide-it-into-multiple-files-as-per-your-preference-by-utilizing-the-%22@use%22-rule.-This-rule-imports-another-Sass-file-as-a-module,-enabling-you-to-reference-its-variables,-mixins,-and-functions-in-your-Sass-code-using-a-namespace-derived-from-the-file-name.-Additionally,-by-using-a-file,-the-CSS-it-produces-will-also-be-included-in-the-compiled-output."> </a>
-</h4>
-</blockquote>
-<h2 id="Sass">
-<a class="anchor" href="#Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass<a class="anchor-link" href="#Sass"> </a>
-</h2>
-<pre><code>// _base.scss
-$font-stack:Helvetica, sans-serif;$primary-color: #333;
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}</code></pre>
-
-<pre><code>// styles.scss
-@use 'base';
-
-.inverse {
-  background-color: base.$primary-color;
-  color: white;
-}</code></pre>
-<h2 id="Css">
-<a class="anchor" href="#Css" aria-hidden="true"><span class="octicon octicon-link"></span></a>Css<a class="anchor-link" href="#Css"> </a>
-</h2>
-<pre><code>body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
-}
-
-.inverse {
-  background-color: #333;
-  color: white;
-}</code></pre>
-<blockquote>
-<h4 id="Observe-that-in-the-styles.scss-file,-we-are-employing-&quot;@use-'base';&quot;.-If-you-utilize-a-file,-there's-no-requirement-to-add-the-file-extension.-Sass-is-intelligent-enough-to-comprehend-it-by-itself.">
-<a class="anchor" href="#Observe-that-in-the-styles.scss-file,-we-are-employing-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Observe that in the styles.scss file, we are employing "@use 'base';". If you utilize a file, there's no requirement to add the file extension. Sass is intelligent enough to comprehend it by itself.<a class="anchor-link" href="#Observe-that-in-the-styles.scss-file,-we-are-employing-%22@use-'base';%22.-If-you-utilize-a-file,-there's-no-requirement-to-add-the-file-extension.-Sass-is-intelligent-enough-to-comprehend-it-by-itself."> </a>
-</h4>
+<p>Sass is a preprocessor language that's interpreted into CSS. A preprocessor language takes input data and converts it to an output that's used as input by another program. This means when you run Sass code, you're actually converting your code to CSS. That CSS code output is then used directly by a browser. Fun fact CSS stands for Cascading Style Sheets and SASS stands for Syntactically Awesome Style Sheets.
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMd7eiGMX9FwRLC0uJTDewSjw_7_WvCF4ABLdwztLrCnPEXrqW0gG-pH8eT-fYPLlghjY&amp;usqp=CAU" alt=""></p>
 </blockquote>
 
 </div>
@@ -382,41 +201,97 @@ body {
 <h2 id="What-is-CSS">
 <a class="anchor" href="#What-is-CSS" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is CSS<a class="anchor-link" href="#What-is-CSS"> </a>
 </h2>
-<blockquote>
-<h4 id="CSS-is-the-default-language-that-most-programmers-use-to-style-a-webpage.-It-is-one-of-the-3-fundamental-web-technologies-along-with-HTML-and-JavaScript.-HTML-manages-the-structure,-JavaScript-makes-pages-interactive,-and-CSS-changes-the-style-by-taking-a-markup-language-like-HTML-and-describes-how-it-should-be-presented-to-the-user.">
-<a class="anchor" href="#CSS-is-the-default-language-that-most-programmers-use-to-style-a-webpage.-It-is-one-of-the-3-fundamental-web-technologies-along-with-HTML-and-JavaScript.-HTML-manages-the-structure,-JavaScript-makes-pages-interactive,-and-CSS-changes-the-style-by-taking-a-markup-language-like-HTML-and-describes-how-it-should-be-presented-to-the-user." aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS is the default language that most programmers use to style a webpage. It is one of the 3 fundamental web technologies along with HTML and JavaScript. HTML manages the structure, JavaScript makes pages interactive, and CSS changes the style by taking a markup language like HTML and describes how it should be presented to the user.<a class="anchor-link" href="#CSS-is-the-default-language-that-most-programmers-use-to-style-a-webpage.-It-is-one-of-the-3-fundamental-web-technologies-along-with-HTML-and-JavaScript.-HTML-manages-the-structure,-JavaScript-makes-pages-interactive,-and-CSS-changes-the-style-by-taking-a-markup-language-like-HTML-and-describes-how-it-should-be-presented-to-the-user."> </a>
-</h4>
-</blockquote>
+<ul>
+<li>
+<p>CSS is the default technology that most programmers use when styling webpage. It is one of the 3 fundamental web technologies along with HTML and JavaScript. HTML manages the structure, JavaScript makes pages interactive, and CSS changes the style by taking a markup language like HTML and describes how it should be presented to the user.</p>
+</li>
+<li>
+<p>However, CSS is not very easy to work with lacking a lot features often making using CSS very confusing and difficult or hard to work with on lengthy projects. This is why there are tools like Bootstrap, Sass, and Tailwind that make styling a lot easier and more efficient. We will be using Sass in this course.</p>
+</li>
+</ul>
+<h3 id="CSS-Example">
+<a class="anchor" href="#CSS-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS Example<a class="anchor-link" href="#CSS-Example"> </a>
+</h3>
+<ul>
+<li>This is an example of CSS that can be used to change body text of an HTML document</li>
+<li>Hack Question:Can you guess what its changing style of the text to? </li>
+</ul>
 
-<pre><code>body{
-color:#0000FF;font-family: Ariel, sans-serif;
-font-size: 16px;
-}</code></pre>
-<p>This is an example of CSS that can be used to change body text of an HTML document</p>
-<p>Can you guess what its changing style of the text to?</p>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">body</span><span class="p">{</span>
+<span class="n">color</span><span class="p">:</span> <span class="c1">#0000FF;</span>
+<span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">Ariel</span><span class="p">,</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
+<span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="mi">16</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="What-is-SCSS">
 <a class="anchor" href="#What-is-SCSS" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is SCSS<a class="anchor-link" href="#What-is-SCSS"> </a>
 </h2>
-<blockquote>
-<h4 id="SCSS-is-short-for-Sassy-CSS.-What-SCSS-does-is-very-similar-to-CSS-but-the-difference-comes-with-the-fact-that-SCSS-extends-the-functionality-of-CSS-while-also-making-it-simpler.-What-this-allows-us-to-do-is-it-enables-us-to-things-like-nested-styling,-functions,-mixins,-variables,-inheritance-(more-on-these-later)-and-so-on.">
-<a class="anchor" href="#SCSS-is-short-for-Sassy-CSS.-What-SCSS-does-is-very-similar-to-CSS-but-the-difference-comes-with-the-fact-that-SCSS-extends-the-functionality-of-CSS-while-also-making-it-simpler.-What-this-allows-us-to-do-is-it-enables-us-to-things-like-nested-styling,-functions,-mixins,-variables,-inheritance-(more-on-these-later)-and-so-on." aria-hidden="true"><span class="octicon octicon-link"></span></a>SCSS is short for Sassy CSS. What SCSS does is very similar to CSS but the difference comes with the fact that SCSS extends the functionality of CSS while also making it simpler. What this allows us to do is it enables us to things like nested styling, functions, mixins, variables, inheritance (more on these later) and so on.<a class="anchor-link" href="#SCSS-is-short-for-Sassy-CSS.-What-SCSS-does-is-very-similar-to-CSS-but-the-difference-comes-with-the-fact-that-SCSS-extends-the-functionality-of-CSS-while-also-making-it-simpler.-What-this-allows-us-to-do-is-it-enables-us-to-things-like-nested-styling,-functions,-mixins,-variables,-inheritance-(more-on-these-later)-and-so-on."> </a>
-</h4>
-</blockquote>
+<ul>
+<li>SCSS is short for Sassy Cascading Style Sheets. </li>
+<li>SCSS very similar to CSS but the difference comes with the fact that SCSS extends the functionality of CSS while also making it simpler. What this allows us to do is it enables us to things like nested styling, functions, mixins, variables, inheritance (more on these later) and so on. </li>
+</ul>
+<h3 id="Sass-Code-Example">
+<a class="anchor" href="#Sass-Code-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass Code Example<a class="anchor-link" href="#Sass-Code-Example"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<pre><code>$blue:#0000FF;body{
-color: $blue;
-font-family: Ariel, sans-serif;
-font-size: 16px;
-}</code></pre>
-<p>This example is doing the same thing as the other code segment above but the difference being that here we defined the color as $blue which makes it much easier for us to recall later on. In fact, we have done this before, if you have been using the dark mode/midnight theme then go ahead and navigate your your _sass folder and check out the dark-mode.scss and you'll see something similar to the example above</p>
-<h2 id="So-which-one-is-better-to-use?">
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">$</span><span class="n">blue</span><span class="p">:</span> <span class="c1">#0000FF;</span>
+<span class="n">body</span><span class="p">{</span>
+<span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">blue</span><span class="p">;</span>
+<span class="n">font</span><span class="o">-</span><span class="n">family</span><span class="p">:</span> <span class="n">Ariel</span><span class="p">,</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
+<span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="mi">16</span><span class="n">px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>This example is doing the same thing as the other code segment above but the difference being that here we defined the color as $blue which makes it much easier for us to recall later on. In fact, we have done this before, if you have been using the dark mode/midnight theme then go ahead and navigate your your _sass folder and check out the dark-mode.scss and you'll see something similar to the example above</li>
+</ul>
+<h3 id="So-which-one-is-better-to-use?">
 <a class="anchor" href="#So-which-one-is-better-to-use?" aria-hidden="true"><span class="octicon octicon-link"></span></a>So which one is better to use?<a class="anchor-link" href="#So-which-one-is-better-to-use?"> </a>
-</h2>
-<blockquote>
-<h4 id="CSS-tends-to-be-better-for-really-simple-styling-where-not-many-complex-or-nested-styles-are-required-and-small-projects-that-doesn't-require-a-lot-of-customization.-SCSS-on-the-other-hand-is-very-good-for-more-complex-styling-and-working-with-a-project-with-more-than-one-page-where-maybe-lots-of-customization-is-needed.">
-<a class="anchor" href="#CSS-tends-to-be-better-for-really-simple-styling-where-not-many-complex-or-nested-styles-are-required-and-small-projects-that-doesn't-require-a-lot-of-customization.-SCSS-on-the-other-hand-is-very-good-for-more-complex-styling-and-working-with-a-project-with-more-than-one-page-where-maybe-lots-of-customization-is-needed." aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS tends to be better for really simple styling where not many complex or nested styles are required and small projects that doesn't require a lot of customization. SCSS on the other hand is very good for more complex styling and working with a project with more than one page where maybe lots of customization is needed.<a class="anchor-link" href="#CSS-tends-to-be-better-for-really-simple-styling-where-not-many-complex-or-nested-styles-are-required-and-small-projects-that-doesn't-require-a-lot-of-customization.-SCSS-on-the-other-hand-is-very-good-for-more-complex-styling-and-working-with-a-project-with-more-than-one-page-where-maybe-lots-of-customization-is-needed."> </a>
-</h4>
-</blockquote>
+</h3>
+<ul>
+<li>CSS tends to be better for really simple styling where not many complex or nested styles are required and small projects that doesn't require a lot of customization. </li>
+<li>SCSS on the other hand is very good for more complex styling and working with a project with more than one page where maybe lots of customization is needed. Such as the projects we made last and first trimester.</li>
+</ul>
 
 </div>
 </div>
@@ -424,47 +299,551 @@ font-size: 16px;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Modular-SCSS">
+<a class="anchor" href="#Modular-SCSS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modular SCSS<a class="anchor-link" href="#Modular-SCSS"> </a>
+</h1>
+<blockquote>
+<p>Understanding how to use modular SCSS</p>
+<ul>
+<li>Modular SCSS allows you to break multiple different files and then be able to compile them into a single CSS file </li>
+<li>How do you do this? Well all you need to do is have _filenames.scss so that is compiled into its own file</li>
+<li>Now after adding the <em> to the file name you can import it into you file without the </em> and all the styles will be carried over. </li>
+<li>The benefits of a partial is that it allows you to big websites and allows you to break up the code in multiple components and easily make changes instead of having to go through a huge file.</li>
+<li>All styles in the partial will be added and can be used into the main file as if they were defined in the main file.</li>
+</ul>
+</blockquote>
+<h2 id="File-1-_variable.scss">
+<a class="anchor" href="#File-1-_variable.scss" aria-hidden="true"><span class="octicon octicon-link"></span></a>File 1 _variable.scss<a class="anchor-link" href="#File-1-_variable.scss"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">button</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#009494;</span>
+<span class="err">$</span><span class="n">hover</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">black</span><span class="p">;</span>
+<span class="err">$</span><span class="n">menu</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#f2f2f2;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="File-2-style.scss">
+<a class="anchor" href="#File-2-style.scss" aria-hidden="true"><span class="octicon octicon-link"></span></a>File 2 style.scss<a class="anchor-link" href="#File-2-style.scss"> </a>
+</h2>
+<ul>
+<li>We can see the importing of the .scss file's content into the other main .scss file style.scss</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="p">{</span><span class="nd">@import</span> <span class="s1">'variables'</span><span class="p">;</span>
+<span class="nd">@import</span> <span class="s2">"{{ site.theme }}"</span><span class="p">;}</span>
+<span class="o">/*</span> <span class="s2">"row style"</span> <span class="ow">is</span> <span class="n">flexible</span> <span class="n">size</span> <span class="ow">and</span> <span class="n">aligns</span> <span class="n">pictures</span> <span class="ow">in</span> <span class="n">center</span> <span class="o">*/</span>
+<span class="o">.</span><span class="n">row</span> <span class="p">{</span>
+    <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="p">:</span> <span class="n">center</span><span class="p">;</span>
+    <span class="n">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="o">/*</span> <span class="s2">"column style"</span> <span class="ow">is</span> <span class="n">one</span><span class="o">-</span><span class="n">third</span> <span class="n">of</span> <span class="n">the</span> <span class="n">width</span> <span class="k">with</span> <span class="n">padding</span> <span class="o">*/</span>
+  <span class="o">.</span><span class="n">column</span> <span class="p">{</span>
+    <span class="n">flex</span><span class="p">:</span> <span class="mf">33.33</span><span class="o">%</span><span class="p">;</span>
+    <span class="n">padding</span><span class="p">:</span> <span class="mi">5</span><span class="n">px</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="o">.</span><span class="n">menu</span> <span class="n">a</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="nb">float</span><span class="p">:</span> <span class="n">left</span><span class="p">;</span>
+  <span class="n">display</span><span class="p">:</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">menu</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+  <span class="n">text</span><span class="o">-</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span><span class="p">;</span>
+  <span class="o">//</span> <span class="n">padding</span><span class="p">:</span> <span class="mi">14</span><span class="n">px</span> <span class="mi">16</span><span class="n">px</span><span class="p">;</span>
+  <span class="n">text</span><span class="o">-</span><span class="n">decoration</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">.</span><span class="n">menu</span> <span class="n">a</span><span class="p">:</span><span class="n">hover</span> <span class="p">{</span>
+  <span class="n">background</span><span class="p">:</span> <span class="err">$</span><span class="n">primary</span><span class="o">-</span><span class="n">button</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+    <span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">hover</span><span class="o">-</span><span class="n">color</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Nesting">
+<a class="anchor" href="#Nesting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Nesting<a class="anchor-link" href="#Nesting"> </a>
+</h1>
+<blockquote>
+<p>What is nesting? Where did the birds come from?</p>
+<ul>
+<li>Nesting is a way to organize your code and make it easier to read. It also helps keep your code DRY (Don't Repeat Yourself). </li>
+<li>Nesting is when you put one selector inside another selector. This is a great way to keep your code organized and make it easier to read. </li>
+<li>When we make HTML we often nest different elements within each other and have a clear structure when we look at it.</li>
+<li>The problem is that in regular CSS we don't have that so we need to use SASS to help us organize our code.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Warning:Don't nest too much as when the CSS is processed it can make overqualified selectors which can be hard to read and maintain. Which means that it would only target that specific element type and not any other elements that have the same class name.
+## Sass Nesting</li>
+<li>Through nesting the ul, li, and a selectors within the nav selector makes your CSS better and increases its readability overall.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">nav</span> <span class="p">{</span>
+  <span class="n">ul</span> <span class="p">{</span>
+    <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nb">list</span><span class="o">-</span><span class="n">style</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">li</span> <span class="p">{</span> <span class="n">display</span><span class="p">:</span> <span class="n">inline</span><span class="o">-</span><span class="n">block</span><span class="p">;</span> <span class="p">}</span>
+
+  <span class="n">a</span> <span class="p">{</span>
+    <span class="n">display</span><span class="p">:</span> <span class="n">block</span><span class="p">;</span>
+    <span class="n">padding</span><span class="p">:</span> <span class="mi">6</span><span class="n">px</span> <span class="mi">12</span><span class="n">px</span><span class="p">;</span>
+    <span class="n">text</span><span class="o">-</span><span class="n">decoration</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="CSS---Lack-of-Nesting">
+<a class="anchor" href="#CSS---Lack-of-Nesting" aria-hidden="true"><span class="octicon octicon-link"></span></a>CSS - Lack of Nesting<a class="anchor-link" href="#CSS---Lack-of-Nesting"> </a>
+</h2>
+<ul>
+<li>We can see that through the lack of nesting the CSS is not as organized and needs extra information to be able to make it more clear exactly what is being targeted.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">nav</span> <span class="n">ul</span> <span class="p">{</span>
+  <span class="n">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nb">list</span><span class="o">-</span><span class="n">style</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">nav</span> <span class="n">li</span> <span class="p">{</span>
+  <span class="n">display</span><span class="p">:</span> <span class="n">inline</span><span class="o">-</span><span class="n">block</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">nav</span> <span class="n">a</span> <span class="p">{</span>
+  <span class="n">display</span><span class="p">:</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">padding</span><span class="p">:</span> <span class="mi">6</span><span class="n">px</span> <span class="mi">12</span><span class="n">px</span><span class="p">;</span>
+  <span class="n">text</span><span class="o">-</span><span class="n">decoration</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Variables">
+<a class="anchor" href="#Variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variables<a class="anchor-link" href="#Variables"> </a>
+</h1>
+<blockquote>
+<p>What is a variable?</p>
+<ul>
+<li>A variable is a container that stores information so for instance when you multiple places that refer to one value you can just use the variable name instead of the value.</li>
+<li>This is valuable in SASS because it allows you to reuse that value in multiple places throughout you stylesheet. </li>
+<li>Variables in CSS preprocessors such as Sass allow you to store information that you can reuse in your stylesheet, such as font stacks, colors, or any other CSS value you anticipate needing. The $ symbol is used in Sass to designate a variable. </li>
+</ul>
+</blockquote>
+<p>Pro Tip:The reason SASS variables are better than variables in regular CSS is that they are more consider and easier to read with a much simpler syntax. 
+Fun Fact: Variables in SASS came before CSS and often SASS has features long before they are actually added to CSS as a whole.</p>
+<h2 id="Variable-Example-Syntax">
+<a class="anchor" href="#Variable-Example-Syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Variable Example Syntax<a class="anchor-link" href="#Variable-Example-Syntax"> </a>
+</h2>
+<ul>
+<li>$variable-name: value;</li>
+<li>Once the sass is processed the variable name is replaced with the value throughout the program.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">$</span><span class="n">main</span><span class="o">-</span><span class="n">font</span><span class="p">:</span> <span class="n">Calibri</span><span class="p">,</span> <span class="n">sans</span><span class="o">-</span><span class="n">serif</span><span class="p">;</span>
+<span class="err">$</span><span class="n">main</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#000;</span>
+<span class="err">$</span><span class="n">main</span><span class="o">-</span><span class="n">color</span><span class="o">-</span><span class="n">hover</span><span class="p">:</span> <span class="c1">#000;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Operators">
+<a class="anchor" href="#Operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operators<a class="anchor-link" href="#Operators"> </a>
+</h1>
+<ul>
+<li>Operators are used to perform operations on variables and other aspects of the language like in python we can use operators to see if values are equal, add, divide, subtract, multiply, etc.</li>
+<li>SASS has a lot of operators that can be used to perform operations on variables and other aspects of the language as well. They can include<ul>
+<li>== to check if two values are equal and != to check if two values are not equal</li>
+<li>
+<code>+ to add two values together</code> </li>
+<li><code>- to subtract two values</code></li>
+<li><code>* to multiply two values</code></li>
+<li><code>/ to divide two values</code></li>
+<li><code>% to find the remainder of two values</code></li>
+<li><code>&lt; to check if one value is less than another</code></li>
+<li><code>&gt; to check if one value is greater than another</code></li>
+<li><code>&lt;= to check if one value is less than or equal to another</code></li>
+<li><code>&gt;= to check if one value is greater than or equal to another</code></li>
+<li><code>Also there is and, or, &amp; not to be able to use boolean operations</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Operator-Example-Syntax">
+<a class="anchor" href="#Operator-Example-Syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Operator Example Syntax<a class="anchor-link" href="#Operator-Example-Syntax"> </a>
+</h2>
+<ul>
+<li>Operators are used in this example to perform string concatenation</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">Html</span>
+<span class="o">&lt;</span><span class="n">p</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"testing"</span><span class="o">&gt;</span><span class="n">original</span> <span class="n">text</span> <span class="ow">and</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+
+<span class="o">//</span> <span class="n">SASS</span>
+<span class="c1">#testing:after{</span>
+  <span class="n">content</span><span class="p">:</span> <span class="s2">" some"</span> <span class="o">+</span> <span class="s2">" more"</span> <span class="o">+</span> <span class="s2">" text"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">Output</span>
+<span class="n">original</span> <span class="n">text</span> <span class="ow">and</span> <span class="n">some</span> <span class="n">more</span> <span class="n">text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditional-Statements">
+<a class="anchor" href="#Conditional-Statements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional Statements<a class="anchor-link" href="#Conditional-Statements"> </a>
+</h1>
+<ul>
+<li>There are conditional statements in SASS just like in Python and JavaScript they work the same way as well.</li>
+<li>Conditional statements are used to perform different actions based on different conditions. Such as if a certain condition is true then do this, if it is false then do that and so on.</li>
+<li>SASS has @if which allows for different styles based on if a boolean expression was true or false.</li>
+<li>SASS has @else which allows for different set of styles if the if condition was not met or false. </li>
+<li>SASS has @else if which allows for an alternative conditions to be run if the first is not met. </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">$</span><span class="n">color</span><span class="p">:</span> <span class="n">red</span><span class="p">;</span>
+
+<span class="n">button</span> <span class="p">{</span>
+  <span class="nd">@if</span> <span class="err">$</span><span class="n">color</span> <span class="o">==</span> <span class="n">red</span> <span class="p">{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nd">@else</span><span class="p">:</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">provide</span> <span class="n">an</span> <span class="n">alternative</span> <span class="nb">set</span> <span class="n">of</span> <span class="n">styles</span> <span class="n">to</span> <span class="n">apply</span> <span class="k">if</span> <span class="n">the</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">the</span> <span class="nd">@if</span> <span class="n">statement</span> <span class="n">isn</span><span class="s1">'t met</span>
+<span class="err">$</span><span class="n">color</span><span class="p">:</span> <span class="n">blue</span><span class="p">;</span>
+
+<span class="n">button</span> <span class="p">{</span>
+  <span class="nd">@if</span> <span class="err">$</span><span class="n">color</span> <span class="o">==</span> <span class="n">red</span> <span class="p">{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">red</span><span class="p">;</span>
+  <span class="p">}</span> <span class="nd">@else</span> <span class="p">{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nd">@else</span> <span class="k">if</span><span class="p">:</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">provide</span> <span class="n">multiple</span> <span class="n">alternative</span> <span class="n">conditions</span> <span class="n">to</span> <span class="n">test</span>
+<span class="err">$</span><span class="n">color</span><span class="p">:</span> <span class="n">green</span><span class="p">;</span>
+
+<span class="n">button</span> <span class="p">{</span>
+  <span class="nd">@if</span> <span class="err">$</span><span class="n">color</span> <span class="o">==</span> <span class="n">red</span> <span class="p">{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">red</span><span class="p">;</span>
+  <span class="p">}</span> <span class="nd">@else</span> <span class="k">if</span> <span class="err">$</span><span class="n">color</span> <span class="o">==</span> <span class="n">blue</span> <span class="p">{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">blue</span><span class="p">;</span>
+  <span class="p">}</span> <span class="nd">@else</span> <span class="p">{</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loops-In-Sass">
+<a class="anchor" href="#Loops-In-Sass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Loops In Sass<a class="anchor-link" href="#Loops-In-Sass"> </a>
+</h1>
+<ul>
+<li>Loops are present in SASS through the @for and @while decorators, along with @each. </li>
+<li>
+<p>Loops are used to repeat a block of code a certain number of times or until a certain condition is met just like in any other programming language.</p>
+<ul>
+<li>For Loops: Are used to iterate through a value like a list or a range of numbers</li>
+<li>While Loops: Are used to iterate through a block of code until a certain condition is met such as a value is being equal to a certain value through an incrementing or decrementing a variable or any other condition that is met.</li>
+</ul>
+</li>
+<li>
+<p>When using while loops they can be necessary but it is better to use @each and @for as it will make it clear and be able to compile faster.</p>
+</li>
+<li>
+<p>Side Note: In SASS lists care a any group of values that are separated by a comma or a space there is no special brackets used like in python or javascript. Lists can be searched for values however they are immutable meaning that they cannot be changed once they are created.</p>
+</li>
+</ul>
+<h2 id="Some-Code-Examples-of-Loops-and-Lists">
+<a class="anchor" href="#Some-Code-Examples-of-Loops-and-Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Some Code Examples of Loops and Lists<a class="anchor-link" href="#Some-Code-Examples-of-Loops-and-Lists"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span> <span class="n">A</span> <span class="k">for</span> <span class="n">each</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">interact</span> <span class="k">with</span> <span class="n">a</span> <span class="n">group</span> <span class="n">of</span> <span class="n">sizes</span> <span class="n">changing</span> 
+<span class="o">//</span> <span class="n">the</span> <span class="n">size</span> <span class="n">of</span> <span class="n">the</span> <span class="n">element</span> <span class="k">for</span> <span class="n">each</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">list</span>
+
+<span class="err">$</span><span class="n">sizes</span><span class="p">:</span> <span class="mi">40</span><span class="n">px</span><span class="p">,</span> <span class="mi">50</span><span class="n">px</span><span class="p">,</span> <span class="mi">80</span><span class="n">px</span><span class="p">;</span>
+
+<span class="nd">@each</span> <span class="err">$</span><span class="n">size</span> <span class="ow">in</span> <span class="err">$</span><span class="n">sizes</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">icon</span><span class="o">-</span><span class="c1">#{$size} {</span>
+    <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="err">$</span><span class="n">size</span><span class="p">;</span>
+    <span class="n">height</span><span class="p">:</span> <span class="err">$</span><span class="n">size</span><span class="p">;</span>
+    <span class="n">width</span><span class="p">:</span> <span class="err">$</span><span class="n">size</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="o">//</span> <span class="nd">@each</span><span class="p">:</span> <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">loop</span> <span class="n">over</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">values</span> <span class="ow">and</span> <span class="n">generate</span> <span class="n">styles</span>
+<span class="err">$</span><span class="n">colors</span><span class="p">:</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">;</span>
+
+<span class="nd">@each</span> <span class="err">$</span><span class="n">color</span> <span class="ow">in</span> <span class="err">$</span><span class="n">colors</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">color</span><span class="o">-</span><span class="c1">#{$color} {</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="err">$</span><span class="n">color</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nd">@debug</span> <span class="nb">list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="n">red</span><span class="p">,</span> <span class="mi">1</span><span class="n">px</span><span class="p">);</span> <span class="o">//</span> <span class="mi">1</span>
+<span class="nd">@debug</span> <span class="nb">list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="n">red</span><span class="p">,</span> <span class="n">solid</span><span class="p">);</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="nd">@debug</span> <span class="nb">list</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="n">red</span><span class="p">,</span> <span class="n">dashed</span><span class="p">);</span> <span class="o">//</span> <span class="n">null</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nd">@use</span> <span class="s2">"sass:math"</span><span class="p">;</span>
+
+<span class="o">///</span> <span class="n">Divides</span> <span class="err">`$</span><span class="n">value</span><span class="err">`</span> <span class="n">by</span> <span class="err">`$</span><span class="n">ratio</span><span class="err">`</span> <span class="n">until</span> <span class="n">it</span><span class="s1">'s below `$base`.</span>
+<span class="nd">@function</span> <span class="n">scale</span><span class="o">-</span><span class="n">below</span><span class="p">(</span><span class="err">$</span><span class="n">value</span><span class="p">,</span> <span class="err">$</span><span class="n">base</span><span class="p">,</span> <span class="err">$</span><span class="n">ratio</span><span class="p">:</span> <span class="mf">1.618</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nd">@while</span> <span class="err">$</span><span class="n">value</span> <span class="o">&gt;</span> <span class="err">$</span><span class="n">base</span> <span class="p">{</span>
+    <span class="err">$</span><span class="n">value</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="err">$</span><span class="n">value</span><span class="p">,</span> <span class="err">$</span><span class="n">ratio</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nd">@return</span> <span class="err">$</span><span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="err">$</span><span class="n">normal</span><span class="o">-</span><span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="mi">16</span><span class="n">px</span><span class="p">;</span>
+<span class="n">sup</span> <span class="p">{</span>
+  <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="n">scale</span><span class="o">-</span><span class="n">below</span><span class="p">(</span><span class="mi">20</span><span class="n">px</span><span class="p">,</span> <span class="mi">16</span><span class="n">px</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="err">$</span><span class="n">base</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="c1">#036;</span>
+
+<span class="nd">@for</span> <span class="err">$</span><span class="n">i</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">through</span> <span class="mi">3</span> <span class="p">{</span>
+  <span class="n">ul</span><span class="p">:</span><span class="n">nth</span><span class="o">-</span><span class="n">child</span><span class="p">(</span><span class="mi">3</span><span class="n">n</span> <span class="o">+</span> <span class="c1">#{$i}) {</span>
+    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="n">lighten</span><span class="p">(</span><span class="err">$</span><span class="n">base</span><span class="o">-</span><span class="n">color</span><span class="p">,</span> <span class="err">$</span><span class="n">i</span> <span class="o">*</span> <span class="mi">5</span><span class="o">%</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="nd">@for</span><span class="p">:</span>  <span class="n">allows</span> <span class="n">you</span> <span class="n">to</span> <span class="n">loop</span> <span class="n">over</span> <span class="n">a</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">values</span> <span class="ow">and</span> <span class="n">generate</span> <span class="n">styles</span>
+
+<span class="nd">@for</span> <span class="err">$</span><span class="n">i</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">through</span> <span class="mi">3</span> <span class="p">{</span>
+  <span class="o">.</span><span class="n">item</span><span class="o">-</span><span class="c1">#{$i} {</span>
+    <span class="n">width</span><span class="p">:</span> <span class="mi">100</span><span class="n">px</span> <span class="o">*</span> <span class="err">$</span><span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Functions-in-SASS">
 <a class="anchor" href="#Functions-in-SASS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions in SASS<a class="anchor-link" href="#Functions-in-SASS"> </a>
 </h1>
 <blockquote>
-<p>Understanding the fundamental aspects of functions in SASS</p>
+<p>What is a function?</p>
+<ul>
+<li>A function is a block of code that performs a specific task. This is a great method to be able to reuse code and processes in a manner that is more efficient and allows for the reuse of code. We do this all the time in programming languages such as JavaScript and Python.</li>
+</ul>
 </blockquote>
 <h2 id="SASS-functions">
 <a class="anchor" href="#SASS-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS functions<a class="anchor-link" href="#SASS-functions"> </a>
 </h2>
-<blockquote>
-<h4 id="Sass-Functions-allow-you-to-define-complex-calculations-and-transformations-that-can-be-used-throughout-your-stylesheet.">
-<a class="anchor" href="#Sass-Functions-allow-you-to-define-complex-calculations-and-transformations-that-can-be-used-throughout-your-stylesheet." aria-hidden="true"><span class="octicon octicon-link"></span></a>Sass Functions allow you to define complex calculations and transformations that can be used throughout your stylesheet.<a class="anchor-link" href="#Sass-Functions-allow-you-to-define-complex-calculations-and-transformations-that-can-be-used-throughout-your-stylesheet."> </a>
-</h4>
-</blockquote>
-<h2 id="What-are-SASS-functions?">
-<a class="anchor" href="#What-are-SASS-functions?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are SASS functions?<a class="anchor-link" href="#What-are-SASS-functions?"> </a>
-</h2>
-<blockquote>
-<h4 id="Functions-are-a-powerful-feature-in-SASS-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-SASS-functions-can-be-used-to-perform-arithmetic-operations,-manipulate-colors,-work-with-strings,-and-more.">
-<a class="anchor" href="#Functions-are-a-powerful-feature-in-SASS-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-SASS-functions-can-be-used-to-perform-arithmetic-operations,-manipulate-colors,-work-with-strings,-and-more." aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions are a powerful feature in SASS that allow you to perform complex operations on values, manipulate data, and generate content dynamically. SASS functions can be used to perform arithmetic operations, manipulate colors, work with strings, and more.<a class="anchor-link" href="#Functions-are-a-powerful-feature-in-SASS-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-SASS-functions-can-be-used-to-perform-arithmetic-operations,-manipulate-colors,-work-with-strings,-and-more."> </a>
-</h4>
-<h4 id="Functions-in-SASS-are-similar-to-functions-in-programming-languages,-but-they-can-be-used-within-SASS-stylesheets-to-generate-CSS-code-dynamically.">
-<a class="anchor" href="#Functions-in-SASS-are-similar-to-functions-in-programming-languages,-but-they-can-be-used-within-SASS-stylesheets-to-generate-CSS-code-dynamically." aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions in SASS are similar to functions in programming languages, but they can be used within SASS stylesheets to generate CSS code dynamically.<a class="anchor-link" href="#Functions-in-SASS-are-similar-to-functions-in-programming-languages,-but-they-can-be-used-within-SASS-stylesheets-to-generate-CSS-code-dynamically."> </a>
-</h4>
-</blockquote>
+<ul>
+<li>
+<p>Sass Functions allow you to define complex calculations and transformations that can be used throughout your stylesheet and allow you to perform complex operations on values, manipulate data, plus you can generate content dynamically.</p>
+</li>
+<li>
+<p>There a are built in functions and ones you can make on your own like languages such as JavaScript and Python.</p>
+</li>
+<li>
+<p>SASS functions can be used to perform arithmetic operations, manipulate colors, work with strings, and more.</p>
+</li>
+<li>
+<p>Functions in SASS are similar to functions in programming languages, but they can be used within SASS stylesheets to generate CSS code dynamically.</p>
+</li>
+</ul>
 <h2 id="Using-Built-in-Functions">
 <a class="anchor" href="#Using-Built-in-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using Built-in Functions<a class="anchor-link" href="#Using-Built-in-Functions"> </a>
 </h2>
-<blockquote>
-<h4 id="SASS-provides-a-variety-of-built-in-functions-that-you-can-use-to-perform-operations-like-math,-color-manipulation,-string-manipulation,-and-more.-Here-are-some-examples-of-built-in-functions-and-how-to-use-them.">
-<a class="anchor" href="#SASS-provides-a-variety-of-built-in-functions-that-you-can-use-to-perform-operations-like-math,-color-manipulation,-string-manipulation,-and-more.-Here-are-some-examples-of-built-in-functions-and-how-to-use-them." aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS provides a variety of built-in functions that you can use to perform operations like math, color manipulation, string manipulation, and more. Here are some examples of built-in functions and how to use them.<a class="anchor-link" href="#SASS-provides-a-variety-of-built-in-functions-that-you-can-use-to-perform-operations-like-math,-color-manipulation,-string-manipulation,-and-more.-Here-are-some-examples-of-built-in-functions-and-how-to-use-them."> </a>
-</h4>
-</blockquote>
+<ul>
+<li>Like Python and Javascript SASS provides a variety of built-in functions for  math, color manipulation, string manipulation, and more. </li>
+</ul>
 <h2 id="Math-Functions">
 <a class="anchor" href="#Math-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math Functions<a class="anchor-link" href="#Math-Functions"> </a>
 </h2>
-<blockquote>
-<h4 id="SASS-provides-a-number-of-math-functions-that-allow-you-to-perform-arithmetic-operations-on-values.-Here-are-some-examples:">
-<a class="anchor" href="#SASS-provides-a-number-of-math-functions-that-allow-you-to-perform-arithmetic-operations-on-values.-Here-are-some-examples:" aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS provides a number of math functions that allow you to perform arithmetic operations on values. Here are some examples:<a class="anchor-link" href="#SASS-provides-a-number-of-math-functions-that-allow-you-to-perform-arithmetic-operations-on-values.-Here-are-some-examples:"> </a>
-</h4>
-</blockquote>
+<ul>
+<li>SASS has many functions that allow you to be able to perform wide range of math operations similar to the ones present in python including more complex operations. </li>
+</ul>
 
 </div>
 </div>
@@ -492,23 +871,19 @@ font-size: 16px;
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
+<div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="o">&gt;</span> <span class="c1">#### SASS provides a variety of color functions that allow you to manipulate colors. Here are some examples:</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Color-Functions">
+<a class="anchor" href="#Color-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Color Functions<a class="anchor-link" href="#Color-Functions"> </a>
+</h2>
+<ul>
+<li>Color is an important component of any website and SASS provides a wide range of functions that allow you to manipulate colors in a variety of ways.</li>
+</ul>
 
-    </div>
 </div>
 </div>
-
 </div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -536,11 +911,9 @@ font-size: 16px;
 <h2 id="String-Functions">
 <a class="anchor" href="#String-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>String Functions<a class="anchor-link" href="#String-Functions"> </a>
 </h2>
-<blockquote>
-<h4 id="SASS-provides-a-variety-of-string-functions-that-allow-you-to-manipulate-strings.-Here-are-some-examples:">
-<a class="anchor" href="#SASS-provides-a-variety-of-string-functions-that-allow-you-to-manipulate-strings.-Here-are-some-examples:" aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS provides a variety of string functions that allow you to manipulate strings. Here are some examples:<a class="anchor-link" href="#SASS-provides-a-variety-of-string-functions-that-allow-you-to-manipulate-strings.-Here-are-some-examples:"> </a>
-</h4>
-</blockquote>
+<ul>
+<li>SASS provides a variety of string functions that allow you to manipulate strings. Here are some examples:</li>
+</ul>
 
 </div>
 </div>
@@ -571,11 +944,12 @@ font-size: 16px;
 <h2 id="Creating-Custom-Functions">
 <a class="anchor" href="#Creating-Custom-Functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Custom Functions<a class="anchor-link" href="#Creating-Custom-Functions"> </a>
 </h2>
-<blockquote>
-<h4 id="In-addition-to-using-built-in-functions,-you-can-also-create-your-own-functions-in-SASS-using-the-@function-directive.-Functions-take-input-values,-perform-calculations,-and-return-a-result.-Here's-an-example-of-a-simple-function-that-calculates-the-area-of-a-rectangle:">
-<a class="anchor" href="#In-addition-to-using-built-in-functions,-you-can-also-create-your-own-functions-in-SASS-using-the-@function-directive.-Functions-take-input-values,-perform-calculations,-and-return-a-result.-Here's-an-example-of-a-simple-function-that-calculates-the-area-of-a-rectangle:" aria-hidden="true"><span class="octicon octicon-link"></span></a>In addition to using built-in functions, you can also create your own functions in SASS using the <code>@function</code> directive. Functions take input values, perform calculations, and return a result. Here's an example of a simple function that calculates the area of a rectangle:<a class="anchor-link" href="#In-addition-to-using-built-in-functions,-you-can-also-create-your-own-functions-in-SASS-using-the-@function-directive.-Functions-take-input-values,-perform-calculations,-and-return-a-result.-Here's-an-example-of-a-simple-function-that-calculates-the-area-of-a-rectangle:"> </a>
-</h4>
-</blockquote>
+<ul>
+<li>In addition to using built-in functions, you can also create your own functions in SASS using the <code>@function name(arguments){}</code>
+</li>
+<li>@return is similar to the return statement in JavaScript and Python. It returns a value from a function.</li>
+<li>Functions take input values, perform calculations, and return a result. Here's an example of a simple function that calculates the area of a rectangle:</li>
+</ul>
 
 </div>
 </div>
@@ -605,18 +979,113 @@ font-size: 16px;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Or you can also make a different kind of function that increases the font size to the factorial of a inputted number.  </li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="nd">@function</span> <span class="n">factorial</span><span class="p">(</span><span class="err">$</span><span class="n">number</span><span class="p">){</span>
+  <span class="err">$</span><span class="n">calculated</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nd">@for</span> <span class="err">$</span><span class="n">_</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">through</span> <span class="err">$</span><span class="n">number</span> <span class="p">{</span>
+    <span class="err">$</span><span class="n">calculated</span><span class="p">:</span> <span class="err">$</span><span class="n">calculated</span><span class="o">*</span><span class="err">$</span><span class="n">number</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nd">@return</span> <span class="err">$</span><span class="n">calculated</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">#testing {</span>
+  <span class="n">font</span><span class="o">-</span><span class="n">size</span><span class="p">:</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="o">//</span><span class="n">Combining</span> <span class="n">functions</span> <span class="ow">and</span> <span class="n">loops</span> <span class="n">to</span> <span class="n">achieve</span> <span class="n">different</span> <span class="n">sass</span> <span class="n">effects</span>
+
+<span class="nd">@function</span> <span class="nb">sum</span><span class="p">(</span><span class="err">$</span><span class="n">numList</span><span class="p">){</span>
+  <span class="err">$</span><span class="nb">sum</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nd">@each</span> <span class="err">$</span><span class="n">num</span> <span class="ow">in</span> <span class="err">$</span><span class="n">numList</span> <span class="p">{</span>
+    <span class="err">$</span><span class="nb">sum</span><span class="p">:</span> <span class="err">$</span><span class="nb">sum</span><span class="o">+</span><span class="err">$</span><span class="n">num</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nd">@return</span> <span class="err">$</span><span class="n">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@function</span> <span class="n">tri</span><span class="p">(</span><span class="err">$</span><span class="n">num</span><span class="p">){</span>
+  <span class="err">$</span><span class="nb">sum</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nd">@for</span> <span class="err">$</span><span class="n">i</span> <span class="kn">from</span> <span class="mi">1</span> <span class="n">through</span> <span class="err">$</span><span class="n">num</span> <span class="p">{</span>
+    <span class="err">$</span><span class="nb">sum</span><span class="p">:</span> <span class="err">$</span><span class="nb">sum</span><span class="o">+</span><span class="err">$</span><span class="n">num</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nd">@return</span> <span class="err">$</span><span class="nb">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">@function</span> <span class="nb">max</span><span class="p">(</span><span class="err">$</span><span class="n">nums</span><span class="p">){</span>
+  <span class="err">$</span><span class="n">i</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span>
+  <span class="err">$</span><span class="n">value</span><span class="p">:</span><span class="mi">0</span><span class="n">px</span><span class="p">;</span>
+  <span class="nd">@while</span> <span class="err">$</span><span class="n">i</span><span class="o">&lt;</span><span class="n">length</span><span class="p">(</span><span class="err">$</span><span class="n">nums</span><span class="p">){</span>
+    <span class="nd">@if</span> <span class="err">$</span><span class="n">value</span><span class="o">&lt;</span><span class="nb">list</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="err">$</span><span class="n">nums</span><span class="p">,</span><span class="err">$</span><span class="n">i</span><span class="p">){</span>
+      <span class="err">$</span><span class="n">value</span><span class="p">:</span><span class="nb">list</span><span class="o">.</span><span class="n">nth</span><span class="p">(</span><span class="err">$</span><span class="n">nums</span><span class="p">,</span><span class="err">$</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Custom functions are very powerful, and can be used to create reusable pieces of code that can be used throughout your stylesheets.</p>
+</li>
+<li>
+<p>SASS functions are a powerful feature that allow you to perform complex operations on values, manipulate data, and generate content dynamically. By using built-in functions and creating your own custom functions, you can greatly extend the capabilities of your SASS stylesheets.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Mixins">
+<a class="anchor" href="#Mixins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mixins<a class="anchor-link" href="#Mixins"> </a>
+</h1>
 <blockquote>
-<h4 id="Custom-functions-can-be-very-powerful,-and-can-be-used-to-create-reusable-pieces-of-code-that-can-be-used-throughout-your-stylesheets.">
-<a class="anchor" href="#Custom-functions-can-be-very-powerful,-and-can-be-used-to-create-reusable-pieces-of-code-that-can-be-used-throughout-your-stylesheets." aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom functions can be very powerful, and can be used to create reusable pieces of code that can be used throughout your stylesheets.<a class="anchor-link" href="#Custom-functions-can-be-very-powerful,-and-can-be-used-to-create-reusable-pieces-of-code-that-can-be-used-throughout-your-stylesheets."> </a>
-</h4>
-</blockquote>
-<h2 id="Conclusion">
-<a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
-</h2>
-<blockquote>
-<h4 id="SASS-functions-are-a-powerful-feature-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-By-using-built-in-functions-and-creating-your-own-custom-functions,-you-can-greatly-extend-the-capabilities-of-your-SASS-stylesheets.">
-<a class="anchor" href="#SASS-functions-are-a-powerful-feature-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-By-using-built-in-functions-and-creating-your-own-custom-functions,-you-can-greatly-extend-the-capabilities-of-your-SASS-stylesheets." aria-hidden="true"><span class="octicon octicon-link"></span></a>SASS functions are a powerful feature that allow you to perform complex operations on values, manipulate data, and generate content dynamically. By using built-in functions and creating your own custom functions, you can greatly extend the capabilities of your SASS stylesheets.<a class="anchor-link" href="#SASS-functions-are-a-powerful-feature-that-allow-you-to-perform-complex-operations-on-values,-manipulate-data,-and-generate-content-dynamically.-By-using-built-in-functions-and-creating-your-own-custom-functions,-you-can-greatly-extend-the-capabilities-of-your-SASS-stylesheets."> </a>
-</h4>
+<p>Mixin what is a mix in what are we mixing in?</p>
+<ul>
+<li>Mixins are a way to make groups of CSS that you want to reuse throughout your site anywhere you please.</li>
+<li>Mixins are a form of template and that you can use to build on top of to make different features later on this prevents you from having to write the same code over and over again.</li>
+<li>This is a form of encapsulation in your CSS and is a great way to make your code more organized and easier to read.</li>
+<li>Mixins can also take in arguments and be able to be used to apply effects on certain elements if that is a feature you want to add to your site. However unlike functions which also take arguments mixins cannot return values.</li>
+<li>To use a mixin declare it with @mixin and then incorporate with @include.</li>
+</ul>
 </blockquote>
 
 </div>
@@ -625,9 +1094,20 @@ font-size: 16px;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Examples-with-mixins">
-<a class="anchor" href="#Examples-with-mixins" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples with mixins<a class="anchor-link" href="#Examples-with-mixins"> </a>
+<h1 id="Inheritance">
+<a class="anchor" href="#Inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inheritance<a class="anchor-link" href="#Inheritance"> </a>
 </h1>
+<blockquote>
+<p>What is inheritance?</p>
+<ul>
+<li>In general programming concept where the child class can inherit properties from the parent class. These properties can be changed and modified in the child class. This prevents code from being repeated and makes the code more usable and flexible.</li>
+<li>In SASS we have a similar concept that can be used as well we can create base styles and then have other styles inherit from them and then we can change them as we please. </li>
+<li>We can do that by through using @extend .name-of-class and then we can add more styles to it as we please. Simple as that </li>
+</ul>
+</blockquote>
+<h2 id="Mixin-&amp;-Inheritance-Code-Example">
+<a class="anchor" href="#Mixin-&amp;-Inheritance-Code-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mixin &amp; Inheritance Code Example<a class="anchor-link" href="#Mixin-&amp;-Inheritance-Code-Example"> </a>
+</h2>
 </div>
 </div>
 </div>
@@ -686,6 +1166,32 @@ font-size: 16px;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hacks-&amp;-Hack-Helper---Calculator-&amp;-Hack-Helper---Stopwatch">
+<a class="anchor" href="#Hacks-&amp;-Hack-Helper---Calculator-&amp;-Hack-Helper---Stopwatch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks &amp; <a href="https://tirth-thakkar.github.io/MortaliciouslySassy/calculator">Hack Helper - Calculator</a> &amp; <a href="https://tirth-thakkar.github.io/MortaliciouslySassy/stopwatch">Hack Helper - Stopwatch</a><a class="anchor-link" href="#Hacks-&amp;-Hack-Helper---Calculator-&amp;-Hack-Helper---Stopwatch"> </a>
+</h1>
+<ul>
+<li>All hacks are pair/trio hacks, individual hacks are not recommended and will not be accepted unless a valid reason is given. We will respond in the appropriate slack channel if we have any questions. Hacks are due by 11:59pm on Wednesday 4/26/2023 at 11:59 p.m. PST. Any late submission will have a deduction of 0.1 points from their total grade. </li>
+</ul>
+<h2 id="Part-1:-Reflections-0.4-Points">
+<a class="anchor" href="#Part-1:-Reflections-0.4-Points" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 1: Reflections 0.4 Points<a class="anchor-link" href="#Part-1:-Reflections-0.4-Points"> </a>
+</h2>
+<ul>
+<li>Write a short description of each key feature of Sass and compare it to how it to CSS and how using Sass makes your life easier when using all the features. Include examples of how it would have made prior features from past projects simpler to implement. Also answer the questions indicated as hack questions.</li>
+</ul>
+<h2 id="Part-2:-Sass-Demo-0.5+-Points">
+<a class="anchor" href="#Part-2:-Sass-Demo-0.5+-Points" aria-hidden="true"><span class="octicon octicon-link"></span></a>Part 2: Sass Demo 0.5+ Points<a class="anchor-link" href="#Part-2:-Sass-Demo-0.5+-Points"> </a>
+</h2>
+<ul>
+<li>Using at least 3 or more sass features create a UI demo that may be used for future or current projects and reflect on how this was more effective than doing the same task using only regular features of CSS. Extra points will be awarded based on creativity and extra addition of features from SASS. </li>
+</ul>
+<p>Credits: Team Mortalicously Sassy 💖</p>
+
+</div>
+</div>
+</div>
 </div>
 
 

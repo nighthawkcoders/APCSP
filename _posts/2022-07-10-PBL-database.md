@@ -1,7 +1,7 @@
 ---
 title: Database CRUD Operations
 layout: base
-description: An advanced example of do database operation asynchronously between JavaScript and Backend Database.
+description: An advanced example of fetch operation asynchronously working between JavaScript and a Backend API that pulls content from a Database.
 permalink: /data/database
 image: /images/database.png
 categories: [C4.7, C7.0, C8.1, C8.6]
@@ -10,7 +10,7 @@ tags: [javascript, fetch, get, post, put]
 
 {% include nav_data.html %}
 
-<p>Database API</p>
+<p>Read Users API / GET Method</p>
 
 <table>
   <thead>
@@ -27,7 +27,7 @@ tags: [javascript, fetch, get, post, put]
   </tbody>
 </table>
 
-<p>Create API</p>
+<p>Create User API / POST Method</p>
 
 <form action="javascript:create_user()">
     <p><label>
@@ -58,11 +58,7 @@ tags: [javascript, fetch, get, post, put]
   const resultContainer = document.getElementById("result");
   // prepare URL's to allow easy switch from deployment and localhost
   var url = "https://flask.nighthawkcodingsociety.com/api/users"
-  //url = "http://localhost:8086/api/users"
-  
-
-  const create_fetch = url + '/create';
-  const read_fetch = url + '/';
+  // url = "http://localhost:8086/api/users"
 
   // Load users on page entry
   read_users();
@@ -82,7 +78,7 @@ tags: [javascript, fetch, get, post, put]
     };
 
     // fetch the data from API
-    fetch(read_fetch, read_options)
+    fetch(url, read_options)
       // response is a RESTful "promise" on any successful fetch
       .then(response => {
         // check for response errors
@@ -125,7 +121,7 @@ tags: [javascript, fetch, get, post, put]
         password: document.getElementById("password").value,
         dob: document.getElementById("dob").value
     };
-    const requestOptions = {
+    const postOptions = {
         method: 'POST',
         body: JSON.stringify(body),
         headers: {
@@ -136,7 +132,7 @@ tags: [javascript, fetch, get, post, put]
 
     // URL for Create API
     // Fetch API call to the database to create a new user
-    fetch(create_fetch, requestOptions)
+    fetch(url, postOptions)
       .then(response => {
         // trap error response from Web API
         if (response.status !== 200) {

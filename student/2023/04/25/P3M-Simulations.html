@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>P3-M 4/25 Simulations using Pandas | APCSP</title>
+<title>P3-M 4/25 Simulations | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="P3-M 4/25 Simulations using Pandas" />
+<meta property="og:title" content="P3-M 4/25 Simulations" />
 <meta name="author" content="Shruthi Malayath, Lina Awad, Lydia Cho, Sarah Liu, Jake Warren" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Creating simulations using pandas and python libraries" />
@@ -17,9 +17,9 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-04-25T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="P3-M 4/25 Simulations using Pandas" />
+<meta property="twitter:title" content="P3-M 4/25 Simulations" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shruthi Malayath, Lina Awad, Lydia Cho, Sarah Liu, Jake Warren"},"dateModified":"2023-04-25T00:00:00-05:00","datePublished":"2023-04-25T00:00:00-05:00","description":"Creating simulations using pandas and python libraries","headline":"P3-M 4/25 Simulations using Pandas","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/student/2023/04/25/P3M-Simulations.html"},"url":"https://nighthawkcoders.github.io/APCSP/student/2023/04/25/P3M-Simulations.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shruthi Malayath, Lina Awad, Lydia Cho, Sarah Liu, Jake Warren"},"dateModified":"2023-04-25T00:00:00-05:00","datePublished":"2023-04-25T00:00:00-05:00","description":"Creating simulations using pandas and python libraries","headline":"P3-M 4/25 Simulations","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/student/2023/04/25/P3M-Simulations.html"},"url":"https://nighthawkcoders.github.io/APCSP/student/2023/04/25/P3M-Simulations.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -74,7 +74,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">P3-M 4/25 Simulations using Pandas</h1><p class="page-description">Creating simulations using pandas and python libraries</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-25T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">P3-M 4/25 Simulations</h1><p class="page-description">Creating simulations using pandas and python libraries</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-25T00:00:00-05:00" itemprop="datePublished">
         Apr 25, 2023
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -104,14 +104,27 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Objectives">Objectives </a></li>
 <li class="toc-entry toc-h2"><a href="#What-are-simulations-by-College-Board-definition?">What are simulations by College Board definition? </a></li>
 <li class="toc-entry toc-h2"><a href="#Analyzing-an-Example:-Air-Traffic-Simulator">Analyzing an Example: Air-Traffic Simulator </a></li>
-<li class="toc-entry toc-h2"><a href="#Functions-we-often-need">Functions we often need </a></li>
+<li class="toc-entry toc-h2"><a href="#Functions-we-often-need-(python)">Functions we often need (python) </a></li>
+<li class="toc-entry toc-h2"><a href="#Functions-we-often-need-(js)">Functions we often need (js) </a></li>
 <li class="toc-entry toc-h2"><a href="#College-Board-Question-1">College Board Question 1 </a></li>
-<li class="toc-entry toc-h2"><a href="#College-Board-Question-2-(robot)">College Board Question 2 (robot) </a></li>
-<li class="toc-entry toc-h2"><a href="#Card-Flip">Card Flip </a></li>
-<li class="toc-entry toc-h2"><a href="#Coin-Flip">Coin Flip </a></li>
-<li class="toc-entry toc-h2"><a href="#Spin-the-Wheel">Spin the Wheel </a></li>
-<li class="toc-entry toc-h2"><a href="#Example-on-how-you-can-incorporate-a-database-into-a-simulation">Example on how you can incorporate a database into a simulation </a></li>
+<li class="toc-entry toc-h2"><a href="#Examples">Examples </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Card-Flip">Card Flip </a></li>
+<li class="toc-entry toc-h3"><a href="#Coin-Flip">Coin Flip </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Adding-images-(in-Python)">Adding images (in Python) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Spin-the-Wheel">Spin the Wheel </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Population-Growth-and-Plots">Population Growth and Plots </a></li>
+<li class="toc-entry toc-h2"><a href="#Example-on-how-simplification-can-cause-bias">Example on how simplification can cause bias </a></li>
+<li class="toc-entry toc-h1"><a href="#JS-examples">JS examples </a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
+</ul>
+</li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -131,7 +144,6 @@ window.onload = wrap_img;
 <li>Understand how computers can be used to represent real-world phenomena or outcomes</li>
 <li>Compare simulations with real-world contexts.</li>
 <li>Implement code to mimic real world situations, problems, or phenomena.</li>
-<li>Incorporate databases and python libraries into a simulation </li>
 </ol>
 
 </div>
@@ -144,19 +156,28 @@ window.onload = wrap_img;
 <a class="anchor" href="#What-are-simulations-by-College-Board-definition?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are simulations by College Board definition?<a class="anchor-link" href="#What-are-simulations-by-College-Board-definition?"> </a>
 </h2>
 <ul>
-<li>Simulations are abstractions that mimic more complex objects or phenomena from the real world<ul>
-<li>Purposes include drawing inferences without the contraints of the real world</li>
+<li>Simulations are <strong><strong><strong>_</strong></strong></strong> that mimic more complex objects or phenomena from the real world<ul>
+<li>Purposes include drawing inferences without the <strong><strong>__</strong></strong> of the real world</li>
 </ul>
 </li>
-<li>Simulations use varying sets of values to reflect the changing state of a real phenomenon</li>
-<li>Often, when developing a simulation, it is necessary to remove specific details or simplify aspects<ul>
-<li>Simulations can often contain bias based on which details or real-world elements were included/excluded</li>
+<li>Simulations use varying sets of values to reflect the <strong><strong>___</strong></strong> state of a real phenomenon</li>
+<li>Often, when developing a simulation, it is necessary to remove specific <strong><em>__</em></strong> or simplify aspects<ul>
+<li>Simulations can often contain <em>__</em> based on which details or real-world elements were included/excluded</li>
 </ul>
 </li>
-<li>Simulations allow the formulation of hypotheses under consideration</li>
-<li>Variability and randomness of the world is considered using random number generators</li>
+<li>Simulations allow the formulation of <strong><strong>___</strong></strong> under consideration</li>
+<li>Variability and <strong><strong>___</strong></strong> of the world is considered using random number generators</li>
 <li>Examples: rolling dice, spinners, molecular models, analyze chemicals/reactions...</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://www.itgsnews.com/wp-content/uploads/2017/05/ecosystem-model-678x381.webp" alt="">
+<img src="https://images.computerhistory.org/makesoftware/mscw.car-crash-simulation.real-and-simulated-crash-test.simulation-on-cray-supercomputer.jpg" alt=""></p>
 
 </div>
 </div>
@@ -168,13 +189,11 @@ window.onload = wrap_img;
 <a class="anchor" href="#Analyzing-an-Example:-Air-Traffic-Simulator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analyzing an Example: Air-Traffic Simulator<a class="anchor-link" href="#Analyzing-an-Example:-Air-Traffic-Simulator"> </a>
 </h2>
 <ul>
-<li>
-<p>Say we want to find out what the optimal number of aircrafts that can be in the air in one area is.</p>
-</li>
-<li>
-<p>A simulation allows us to explore this question without real world contraints of money, time, safety</p>
-</li>
+<li>Say we want to find out what the optimal number of aircrafts that can be in the air in one area is.</li>
+<li>A simulation allows us to explore this question without real world contraints of money, time, safety<ul>
 <li>Unfortunately we can't just fly 67 planes all at once and see what happens</li>
+</ul>
+</li>
 <li>Since the simulation won't be able to take all variables into control, it may have a bias towards one answer</li>
 <li>Will not always have the same result</li>
 </ul>
@@ -185,8 +204,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Functions-we-often-need">
-<a class="anchor" href="#Functions-we-often-need" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions we often need<a class="anchor-link" href="#Functions-we-often-need"> </a>
+<h2 id="Functions-we-often-need-(python)">
+<a class="anchor" href="#Functions-we-often-need-(python)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions we often need (python)<a class="anchor-link" href="#Functions-we-often-need-(python)"> </a>
 </h2>
 </div>
 </div>
@@ -198,11 +217,38 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="c1"># a module that defines a series of functions for generating or manipulating random integers</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> <span class="c1"># a module that defines a series of functions for generating or manipulating random integers</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">()</span> <span class="c1">#returns a randomly selected element from the specified sequence</span>
 <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span> <span class="c1"># returns random value from list</span>
 <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1">#randomly selects an integer from given range; range in this case is from 0 to 10</span>
 <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="c1">#will generate a random float between 0.0 to 1.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Functions-we-often-need-(js)">
+<a class="anchor" href="#Functions-we-often-need-(js)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions we often need (js)<a class="anchor-link" href="#Functions-we-often-need-(js)"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">Math</span><span class="o">.</span><span class="n">random</span><span class="p">();</span> <span class="n">returns</span> <span class="n">a</span> <span class="n">random</span> <span class="n">number</span>
+<span class="o">//</span> <span class="n">Math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">Math</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span><span class="p">);</span> <span class="o">//</span> <span class="n">Returns</span> <span class="n">a</span> <span class="n">random</span> <span class="n">integer</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">9</span><span class="p">:</span>
 </pre></div>
 
     </div>
@@ -249,7 +295,7 @@ daysStarving ← 0
 <p>}</p>
 <ul>
 <li>This simulation simplifies a real-world scenario into something that can be modeled in code and executed on a computer.</li>
-<li>Explain what each part of the code does</li>
+<li>Summarize how the code works:</li>
 </ul>
 
 </div>
@@ -258,8 +304,8 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="College-Board-Question-2-(robot)">
-<a class="anchor" href="#College-Board-Question-2-(robot)" aria-hidden="true"><span class="octicon octicon-link"></span></a>College Board Question 2 (robot)<a class="anchor-link" href="#College-Board-Question-2-(robot)"> </a>
+<h2 id="Examples">
+<a class="anchor" href="#Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples<a class="anchor-link" href="#Examples"> </a>
 </h2>
 </div>
 </div>
@@ -267,17 +313,9 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>need to add</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Card-Flip">
+<h3 id="Card-Flip">
 <a class="anchor" href="#Card-Flip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Card Flip<a class="anchor-link" href="#Card-Flip"> </a>
-</h2>
+</h3>
 </div>
 </div>
 </div>
@@ -288,7 +326,7 @@ daysStarving ← 0
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">cards</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Ace"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"6"</span><span class="p">,</span> <span class="s2">"7"</span><span class="p">,</span> <span class="s2">"8"</span><span class="p">,</span> <span class="s2">"9"</span><span class="p">,</span> <span class="s2">"10"</span><span class="p">,</span> <span class="s2">"Jack"</span><span class="p">,</span> <span class="s2">"Queen"</span><span class="p">,</span> <span class="s2">"King"</span><span class="p">]</span> 
 <span class="n">suits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Diamonds"</span><span class="p">,</span> <span class="s2">"Hearts"</span><span class="p">,</span> <span class="s2">"Spades"</span><span class="p">,</span> <span class="s2">"Clubs"</span><span class="p">]</span>
@@ -306,9 +344,9 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Coin-Flip">
+<h3 id="Coin-Flip">
 <a class="anchor" href="#Coin-Flip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coin Flip<a class="anchor-link" href="#Coin-Flip"> </a>
-</h2>
+</h3>
 </div>
 </div>
 </div>
@@ -319,7 +357,7 @@ daysStarving ← 0
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">coinflip</span><span class="p">():</span>         <span class="c1">#def function </span>
     <span class="n">randomflip</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#picks either 0 or 1 randomly </span>
@@ -355,9 +393,19 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Spin-the-Wheel">
-<a class="anchor" href="#Spin-the-Wheel" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spin the Wheel<a class="anchor-link" href="#Spin-the-Wheel"> </a>
+<h2 id="Adding-images-(in-Python)">
+<a class="anchor" href="#Adding-images-(in-Python)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding images (in Python)<a class="anchor-link" href="#Adding-images-(in-Python)"> </a>
 </h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Add a heads and tails images into your images directory with the correct names and run the code below</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -368,7 +416,58 @@ daysStarving ← 0
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1"># importing Image class from PIL package</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+ 
+<span class="c1"># creating a object</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">"images/HeadsOn.png"</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">"images/TailsOn.png"</span><span class="p">)</span>
+
+<span class="n">i</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"heads"</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">im</span><span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"tails"</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to display an image in python, we can use the PIL package we previously learned about.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Spin-the-Wheel">
+<a class="anchor" href="#Spin-the-Wheel" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spin the Wheel<a class="anchor-link" href="#Spin-the-Wheel"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Spin the wheel!"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"----------------------------------"</span><span class="p">)</span>
@@ -398,7 +497,7 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Your turn: Add a visual to the simulation</p>
+<p>Your turn: Add a visual to the simulation!</p>
 
 </div>
 </div>
@@ -406,8 +505,8 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-on-how-you-can-incorporate-a-database-into-a-simulation">
-<a class="anchor" href="#Example-on-how-you-can-incorporate-a-database-into-a-simulation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example on how you can incorporate a database into a simulation<a class="anchor-link" href="#Example-on-how-you-can-incorporate-a-database-into-a-simulation"> </a>
+<h2 id="Population-Growth-and-Plots">
+<a class="anchor" href="#Population-Growth-and-Plots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Population Growth and Plots<a class="anchor-link" href="#Population-Growth-and-Plots"> </a>
 </h2>
 </div>
 </div>
@@ -419,17 +518,19 @@ daysStarving ← 0
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="n">beak</span> <span class="o">=</span>  <span class="p">[</span><span class="s2">"small-beak"</span><span class="p">,</span> <span class="s2">"long-beak"</span><span class="p">,</span> <span class="s2">"medium-beak"</span><span class="p">],</span>
-<span class="n">wing</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"small-wings"</span><span class="p">,</span> <span class="s2">"large-wings"</span><span class="p">,</span> <span class="s2">"medium-wings"</span><span class="p">],</span>
-<span class="n">height</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"short"</span><span class="p">,</span> <span class="s2">"tall"</span><span class="p">,</span><span class="s2">"medium"</span><span class="p">]</span>
+<span class="n">totalPopulation</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">growthFactor</span> <span class="o">=</span> <span class="mf">1.00005</span>
+<span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Every 2 months the population is reported</span>
 
-
-<span class="n">naturaldisaster</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"flood"</span><span class="p">,</span> <span class="s2">"drought"</span><span class="p">,</span> <span class="s2">"fire"</span><span class="p">,</span> <span class="s2">"hurricane"</span><span class="p">,</span> <span class="s2">"dustbowl"</span><span class="p">]</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"When a"</span> <span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">naturaldisaster</span><span class="p">)</span> <span class="p">,</span> <span class="s2">"hit"</span><span class="p">,</span>  <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="s2">"birds died"</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">totalPopulation</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">:</span>
+    <span class="n">totalPopulation</span> <span class="o">*=</span> <span class="n">growthFactor</span>
+    <span class="c1">#Every 56th day, population is reported</span>
+    <span class="n">dayCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">dayCount</span> <span class="o">==</span> <span class="mi">56</span><span class="p">:</span> 
+        <span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">totalPopulation</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -442,7 +543,124 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>^ need to finish this and add database part</p>
+<p>Here we initialize the total population to be 50, then set the growth factor as 1.00005 (.005 percent change). It will print the population every 56th day until it reaches one million. It multiplies the current population by the growth factor in each iteration, and increments the day count. When the day count reaches 56, it prints the current population and resets the day count to 0.</p>
+<p>Note! This simulation assumes that the growth factor remains constant as time progresses, which may not be a realistic assumption in real-world scenarios.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Define the initial population and growth rate</span>
+<span class="n">population</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">growth_rate</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># Define the number of years to simulate</span>
+<span class="n">num_years</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1"># Create lists to store the population and year values</span>
+<span class="n">populations</span> <span class="o">=</span> <span class="p">[</span><span class="n">population</span><span class="p">]</span>
+<span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Simulate population growth for the specified number of years</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_years</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Calculate the new population size</span>
+    <span class="n">new_population</span> <span class="o">=</span> <span class="n">population</span> <span class="o">+</span> <span class="p">(</span><span class="n">growth_rate</span> <span class="o">*</span> <span class="n">population</span><span class="p">)</span>
+    <span class="c1"># Update the population and year lists</span>
+    <span class="n">populations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_population</span><span class="p">)</span>
+    <span class="n">years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="c1"># Set the new population as the current population for the next iteration</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">new_population</span>
+    
+<span class="c1"># Plot the population growth over time</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">populations</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Year'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Population'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Population Growth Simulation'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we create quantative data, we can plot it using the <a href="https://matplotlib.org/">Matplotlib library</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example-on-how-simplification-can-cause-bias">
+<a class="anchor" href="#Example-on-how-simplification-can-cause-bias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example on how simplification can cause bias<a class="anchor-link" href="#Example-on-how-simplification-can-cause-bias"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">beak</span> <span class="o">=</span>  <span class="p">[</span><span class="s2">"small-beak"</span><span class="p">,</span> <span class="s2">"long-beak"</span><span class="p">,</span> <span class="s2">"medium-beak"</span><span class="p">],</span>
+<span class="n">wing</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"small-wings"</span><span class="p">,</span> <span class="s2">"large-wings"</span><span class="p">,</span> <span class="s2">"medium-wings"</span><span class="p">],</span>
+<span class="n">height</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"short"</span><span class="p">,</span> <span class="s2">"tall"</span><span class="p">,</span><span class="s2">"medium"</span><span class="p">]</span>
+
+
+<span class="n">naturaldisaster</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"flood"</span><span class="p">,</span> <span class="s2">"drought"</span><span class="p">,</span> <span class="s2">"fire"</span><span class="p">,</span> <span class="s2">"hurricane"</span><span class="p">,</span> <span class="s2">"dustbowl"</span><span class="p">]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"When a"</span> <span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">naturaldisaster</span><span class="p">)</span> <span class="p">,</span> <span class="s2">"hit"</span><span class="p">,</span>  <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="s2">"birds died"</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How does this simulation have bias?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="JS-examples">
+<a class="anchor" href="#JS-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>JS examples<a class="anchor-link" href="#JS-examples"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://shruthim0.github.io/canada/diceroll/">Dice Roll</a>
+<a href="https://shruthim0.github.io/canada/2023/04/13/Coin-Flip.html">Binary Coin Flip</a>
+<a href="https://shruthim0.github.io/canada/2023/04/16/Card-Pull.html">Card Pull</a></p>
 
 </div>
 </div>
@@ -460,15 +678,19 @@ daysStarving ← 0
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Answer all questions and prompts in the notes (0.1)</li>
-<li>Make your own simulation incorporating a database (can be your own or from Kaggle/any db library) (0.5)<ul>
+<li>Answer all questions and prompts in the notes (0.2)</li>
+<li>Create a simulation<ol>
+<li>Create a simulation that uses iteration and some form of data collection (list, dictionary...) (0.4)<ul>
+<li>try creating quantative data and using the Matplotlib library to display said data </li>
 <li>Comment and describe function of each parts</li>
 <li>How does your simulation help solve/mimic a real world problem?</li>
 <li>Is there any bias in your simulation? Meaning, are there any discrepancies between your program and the real event?</li>
 </ul>
 </li>
-<li>Answer these <a href="">simulation questions</a> (0.1)</li>
-<li>Add a visual aspect to the Spin the Wheel simulation (0.2)</li>
+</ol>
+</li>
+<li>Answer these <a href="https://shruthim0.github.io/canada/2023/04/03/simulationsplanning2.html">simulation questions</a> (0.3)</li>
+<li>Bonus: take a real world event and make a pseudocode representation or pseudocode on a flowchart of how you would make a simulation for it (up to +0.1 bonus)</li>
 </ul>
 
 </div>

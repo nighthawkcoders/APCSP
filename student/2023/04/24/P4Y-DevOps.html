@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      2 min read
     
 </span></p>
 
@@ -113,80 +113,59 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>4/24 Presentation Outline</strong>:</p>
-<p>AWS and Deployment, Docker, Nginx Improvements (Shaurya and Shivansh)</p>
-<p>We will go through this for 3-5 minutes and make sure that the class understands any updates that we made, and go through the deployment review. This is a concept that mostly everyone is already familiar with, so we won't take too much time on this.</p>
-<p>We will be answering the following questions:</p>
+<p><strong>KASM HACKS</strong>:</p>
 <ol>
-<li>Are there any improvements that can be made to the current deployment guide?</li>
-<li>Is there anything unclear that we need to communicate further to the students for deployment?</li>
-<li>Are there any outdated Nginx/Docker functionalities to address?</li>
+<li>
+<p>In 3-4 sentences, please explain the significance of virtual desktops and KASM. How can virtual desktops such as these be utilized in our AP CSP environment? (0.45)</p>
+</li>
+<li>
+<p>Attempt to work through the KASM setup with your team. Attach two screenshots to show that you have successfully gone through the setup: The first screenshot of KASM generating your credentials, and the second screenshot of the KASM workspace once you have logged in. (0.45)</p>
+</li>
 </ol>
-<p>DNS Setup (Shaurya and Shivansh)
-DNS Setup incorporated with EC2. We will go more into DuckDNS, building off of what Jeffrey built. This will be presented for around 7-9 minutes.</p>
-<p>We will be answering the following questions:</p>
+<p><strong>AWS DATABASES HACKS</strong>:</p>
 <ol>
-<li>DuckDNS Guide for Setup</li>
-<li>Explanation and Setup of DNS in terms of EC2 Deployment</li>
+<li>
+<p>QUIZ: <a href="https://vardaansinha.github.io/devops/2023/04/23/DifferentAWS.html">https://vardaansinha.github.io/devops/2023/04/23/DifferentAWS.html</a></p>
+</li>
+<li>
+<p>QUIZ #2: <a href="https://vardaansinha.github.io/devops/2023/04/02/AWSSQL.html">https://vardaansinha.github.io/devops/2023/04/02/AWSSQL.html</a></p>
+</li>
 </ol>
-<p>What is KASM? (Justin and Vardaan)
-We will go through this blog post for 3-5 minutes and make sure that the class understands the basics and we can answer any questions if necessary.</p>
-<p>We will be answering the following questions:</p>
+<p><strong>DuckDNS and AWS HACKS</strong>:</p>
 <ol>
-<li>What is KASM?</li>
-<li>What are the different features KASM offers?</li>
-<li>How are their functionalities unique to other deployment platforms?</li>
+<li>
+<p>HACK 1: Create a diagram (Canva). What are the pros and cons of using DuckDNS? Show a diagram of an application running on AWS using a DuckDNS system.</p>
+</li>
+<li>
+<p>HACK 2: Write a reflection. Why do we use DNS? How does DuckDNS work? What makes DuckDNS unique? How is DuckDNS useful for our projects? What are the steps to setup DuckDNS?</p>
+</li>
+<li>
+<p>HACK 3: (EXTRA CREDIT): Create your own DuckDNS setup video.</p>
+</li>
+<li>
+<p>HACK 4: In 2-3 complete sentences, talk about any outdated Nginx/Docker functionalities that may need to be addressed or any confusions you may have in regards to the deployment process from Trimesters 1 and 2.</p>
+</li>
+<li>
+<p>HACK 5: Create a Venn Diagram comparing Nginx with Lighttpd.</p>
+</li>
+<li>
+<p>HACK 6: Complete the Python quiz and attach your output from the notebook (should be done once you do the quiz.)</p>
+</li>
 </ol>
-<p>KASM on EC2 Guide (Justin and Vardaan)
-We will go through this notebook for around 7-9 minutes. This is a setup process that may take up too much time for one class period for everyone to follow along and install all the necessary features for, so we will go through it ourselves with pictures and code blocks.</p>
-<p>We will be answering the following questions:</p>
+<p><strong>CERTBOT HACKS</strong>:</p>
 <ol>
-<li>How can KASM on EC2 Guide be applied to our APCSP environment?</li>
-<li>What are the steps we have to go through for setup? </li>
-<li>Is this process more difficult than what is currently in place for deployment?</li>
+<li>
+<p>Follow the instructions below and provide a full screenshot of all terminal commands after and including sudo certbot --apache all the way until it asks for the domain you want to secure. At this point you can take a screenshot and cancel the process. If you choose to continue the setup process and get Certbot fully working and show a before and after screenshot of your domain with http amd https connection we will grant extra credit points on hacks, or make up for lost points in other areas.</p>
+</li>
+<li>
+<p>Research and compare the security features of OpenSSL and LibreSSL, and write about the recent vulnerabilities within it. Write about your research in a fastpages blog post. It can be the same post that has your screenshot for the Certbot Hacks.</p>
+</li>
 </ol>
-<p>Advanced Security Certbot (Dhruva and Vyaan)
-We will go through this overview for 3-5 minutes. Mostly everyone is familiar with Certbot, but we will dive deeper with this post overview and make sure to clarify any concerns/questions.</p>
-<p>We will be answering the following questions:</p>
-<ol>
-<li>What are the applications of Certbot in the real world?</li>
-<li>What is its application in our CSP projects?</li>
-<li>Do we need a more advanced guide on its setup?</li>
-</ol>
-<p>Discovering Alternatives to Certbot (Dhruva and Vyaan)
-We will go through other alternatives to Certbot. We will explain the pros/cons of these alternatives and come to a final conclusion of which platform we should utilize for this aim, and make sure to explain our backing. This should take 5-7 minutes.</p>
-<p>We will be answering the following questions:</p>
-<ol>
-<li>What are the alternatives to Certbot?</li>
-<li>What are the pros/cons to using these alternatives?</li>
-<li>Possible setup of some of these alternatives?</li>
-</ol>
-<p>The different types of AWS Databases (Nicolas and Prasith)
-We will go through all the different types of AWS databases. This is going to be an overview of how each of these databases work, and review the SQLite functionalities as well. This should take 5-7 minutes.</p>
-<p>We will be answering the following questions:</p>
-<ol>
-<li>What are the different types of AWS Databases?</li>
-<li>What are the different SQLite functionalities (Review)?</li>
-</ol>
-<p>Pros/Cons of each of the AWS Databases in comparison to SQLite (line-by-line comparison) (Nicolas and Prasith)
-This will be an in-depth comparison, should take 5-7 minutes.</p>
-<ol>
-<li>What are the pros/cons of each of these AWS databases in comparison to SQLite?</li>
-</ol>
-<p>Implementing these AWS Databases (Notebook) (Nicolas and Prasith)
-We will go through the code blocks and have a comprehensive guide on how to implement these different AWS Databases. This will be similar to the SQLite setup implementation to make it easy to understand. This should take 7-9 minutes.</p>
-<ol>
-<li>How do we implement these AWS databases?</li>
-<li>How is this applicable in the APCSP Environment?</li>
-</ol>
-<p><strong>HOMEWORK/HACKS:</strong></p>
-<p>We will likely add questions within code blocks, or questions in regards to researching even more about some of the applications that we talk about (within blogs or notebooks).</p>
-<p>We will also ask for a notebook where they show off some of the functionalities of an AWS DB of their choice.</p>
-<p><strong>GRADING:</strong></p>
-<p>0.9/1: Finishing all of the hacks</p>
-<p>0.8/1: Trying the hacks but not completing them</p>
-<p>0.7/1; Not doing the hacks at all</p>
-<p>Overall, this entire presentation should take around 60-65 minutes, essentially taking up the whole class period.</p>
+<p><strong>SCORING GUIDELINES</strong>:</p>
+<p>As talked about in class, we'll be looking for effort in the hacks. Though some setups may inevitably not work, we want to see that you took a stab at it and that you understand what the errors you're getting might mean.</p>
+<p>FOR 2/4 SECTIONS OF HACKS COMPLETE: <strong>HIGHEST WILL BE A 3.2/4 POSSIBLE --&gt; 0.8/1</strong></p>
+<p>FOR 3/4 SECTIONS OF HACKS COMPLETE: <strong>HIGHEST WILL BE A 3.6/4 POSSIBLE --&gt; 0.9/1</strong></p>
+<p>FOR 4/4 SECTIONS OF HACKS COMPLETE: <strong>YOU CAN GET UP TO A 4/4 --&gt; 1/1</strong></p>
 
 </div>
 </div>

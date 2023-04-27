@@ -295,7 +295,7 @@ orange
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;apple&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;kiwi&#39;]
+<pre>[&#39;apple&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;grape&#39;]
 </pre>
 </div>
 </div>
@@ -338,7 +338,7 @@ orange
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;apple&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;kiwi&#39;, &#39;kiwi&#39;]
+<pre>[&#39;apple&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;kiwi&#39;]
 </pre>
 </div>
 </div>
@@ -379,7 +379,7 @@ orange
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;apple&#39;, &#39;peach&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;kiwi&#39;, &#39;kiwi&#39;]
+<pre>[&#39;apple&#39;, &#39;peach&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;grape&#39;, &#39;kiwi&#39;]
 </pre>
 </div>
 </div>
@@ -422,7 +422,7 @@ orange
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;apple&#39;, &#39;peach&#39;, &#39;banana&#39;, &#39;grape&#39;, &#39;kiwi&#39;, &#39;kiwi&#39;]
+<pre>[&#39;apple&#39;, &#39;peach&#39;, &#39;banana&#39;, &#39;grape&#39;, &#39;kiwi&#39;]
 </pre>
 </div>
 </div>
@@ -463,7 +463,7 @@ orange
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[&#39;apple&#39;, &#39;peach&#39;, &#39;grape&#39;, &#39;kiwi&#39;, &#39;kiwi&#39;]
+<pre>[&#39;apple&#39;, &#39;peach&#39;, &#39;grape&#39;, &#39;kiwi&#39;]
 </pre>
 </div>
 </div>
@@ -768,6 +768,59 @@ d
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For Forwards&quot;</span><span class="p">)</span>
+<span class="c1"># iterate forward</span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ellie&quot;</span><span class="p">,</span> <span class="s2">&quot;Haseeb&quot;</span><span class="p">,</span> <span class="s2">&quot;Theo&quot;</span><span class="p">,</span> <span class="s2">&quot;Luna&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;While Backwards&quot;</span><span class="p">)</span>
+<span class="c1"># countdown backwards</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  
+<span class="k">while</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>For Forwards
+Ellie
+Haseeb
+Theo
+Luna
+
+While Backwards
+Luna
+Theo
+Haseeb
+Ellie
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="n">my_list</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -923,6 +976,25 @@ d
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Your grocery list:
+- milk: $2.0
+- eggs: $2.5
+- muffin: $1.5
+- cheese: $4.0
+Total cost: $0
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Tri-3-Lesson | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Tri-3-Lesson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Reviewing Data Analysis." />
+<meta property="og:description" content="Reviewing Data Analysis." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/notebooks/2023/04/19/tri3_lesson.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/notebooks/2023/04/19/tri3_lesson.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-19T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Tri-3-Lesson" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-19T00:00:00-05:00","datePublished":"2023-04-19T00:00:00-05:00","description":"Reviewing Data Analysis.","headline":"Tri-3-Lesson","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/notebooks/2023/04/19/tri3_lesson.html"},"url":"https://nighthawkcoders.github.io/APCSP/notebooks/2023/04/19/tri3_lesson.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tri-3-Lesson</h1><p class="page-description">Reviewing Data Analysis.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-19T00:00:00-05:00" itemprop="datePublished">
+        Apr 19, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      14 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+          <a class="category-tags-link" href="/APCSP/categories/ap#Notebooks">Notebooks</a>
+        
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-04-19-tri3_lesson.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-04-19-tri3_lesson.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-04-19-tri3_lesson.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-04-19-tri3_lesson.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#What-you-should-Have-to-Start">What you should Have to Start </a></li>
+<li class="toc-entry toc-h1"><a href="#Lesson-Portion-1:-ReIntroduction-to-Data-Analysis,-NunPy,-and-Pandas,-Why-is-it-important?">Lesson Portion 1: ReIntroduction to Data Analysis, NunPy, and Pandas, Why is it important? </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Data-Analysis.">Data Analysis. </a></li>
+<li class="toc-entry toc-h3"><a href="#What-is-NumPy-and-Pandas">What is NumPy and Pandas </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Lesson-Portion-2-More-into-NumPy">Lesson Portion 2 More into NumPy </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-we-are-covering;">What we are covering; </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#What-is-NunPy's-use-in-data-analysis/-how-to-import-NunPy.">What is NunPy&#39;s use in data analysis/ how to import NunPy. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#List-of-NunPy-Functions,-what-they-do,-and-examples.">List of NunPy Functions, what they do, and examples. </a></li>
+<li class="toc-entry toc-h3"><a href="#Example-of-Using-NunPy-in-Our-Project">Example of Using NunPy in Our Project </a></li>
+<li class="toc-entry toc-h2"><a href="#Activity-1;-PopCorn-Hacks;-Creating-a-NunPy-Array-and-Analyzing-the-Data-using-Array-Operations">Activity 1; PopCorn Hacks; Creating a NunPy Array and Analyzing the Data using Array Operations </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Lesson-Portion-3-More-into-Pandas">Lesson Portion 3 More into Pandas </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-we-are-Covering">What we are Covering </a></li>
+<li class="toc-entry toc-h2"><a href="#What-are-pandas-and-what-is-its-purpose?">What are pandas and what is its purpose? </a></li>
+<li class="toc-entry toc-h2"><a href="#Things-you-can-do-using-pandas">Things you can do using pandas </a></li>
+<li class="toc-entry toc-h2"><a href="#Pandas-and-Data-analysis">Pandas and Data analysis </a></li>
+<li class="toc-entry toc-h2"><a href="#Dataframes">Dataframes </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Importing-CSV-Data">Importing CSV Data </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#In-this-code-segment-below-we-use-Pandas-to-read-a-CSV-file-containing-NBA-player-statistics-and-store-it-in-a-DataFrame.">In this code segment below we use Pandas to read a CSV file containing NBA player statistics and store it in a DataFrame. </a></li>
+<li class="toc-entry toc-h4"><a href="#The-reason-Pandas-is-useful-in-this-scenario-is-because-it-provides-various-functionalities-to-filter,-sort,-and-manipulate-the-NBA-data-efficiently.-In-this-code,-the-DataFrame-is-filtered-to-only-include-the-stats-for-the-player-you-guys-choose.">The reason Pandas is useful in this scenario is because it provides various functionalities to filter, sort, and manipulate the NBA data efficiently. In this code, the DataFrame is filtered to only include the stats for the player you guys choose. </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Lesson-Portion-4">Lesson Portion 4 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-we-will-be-covering">What we will be covering </a></li>
+<li class="toc-entry toc-h3"><a href="#Example-of-analyzing-data-using-both-NumPy-and-Pandas-libraries">Example of analyzing data using both NumPy and Pandas libraries </a></li>
+<li class="toc-entry toc-h3"><a href="#Importing-data-into-NumPy-and-Pandas-Performing-basic-data-analysis-tasks-such-as-mean,-median,-and-standard-deviation-Visualization-of-data-using-Matplotlib-library">Importing data into NumPy and Pandas Performing basic data analysis tasks such as mean, median, and standard deviation Visualization of data using Matplotlib library </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Lesson-Portion-5;-Summary">Lesson Portion 5; Summary </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Summary/Goals-of-Lesson:">Summary/Goals of Lesson: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Lesson-Portion-6-Hacks">Lesson Portion 6 Hacks </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Printing-a-CSV-File-(0.5)">Printing a CSV File (0.5) </a></li>
+<li class="toc-entry toc-h4"><a href="#Popcorn-Hacks-(0.2)">Popcorn Hacks (0.2) </a></li>
+<li class="toc-entry toc-h2"><a href="#Submit-By-Thursday-8:35-A.M.">Submit By Thursday 8:35 A.M. </a></li>
+<li class="toc-entry toc-h2"><a href="#Question-Hacks;">Question Hacks; </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-19-tri3_lesson.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-you-should-Have-to-Start">
+<a class="anchor" href="#What-you-should-Have-to-Start" aria-hidden="true"><span class="octicon octicon-link"></span></a>What you should Have to Start<a class="anchor-link" href="#What-you-should-Have-to-Start"> </a>
+</h2>
+<ul>
+<li>Should have wget this file (tri3-lesson.ipynb)</li>
+<li>wget this file: <a href="https://raw.githubusercontent.com/JoshuaW03628/Repository-1/master/nba_player_statistics.csv">https://raw.githubusercontent.com/JoshuaW03628/Repository-1/master/nba_player_statistics.csv</a>
+</li>
+<li>Copy Path from nba_player_statistics.csv and replace prior path for it.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Portion-1:-ReIntroduction-to-Data-Analysis,-NunPy,-and-Pandas,-Why-is-it-important?">
+<a class="anchor" href="#Lesson-Portion-1:-ReIntroduction-to-Data-Analysis,-NunPy,-and-Pandas,-Why-is-it-important?" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Portion 1: ReIntroduction to Data Analysis, NunPy, and Pandas, Why is it important?<a class="anchor-link" href="#Lesson-Portion-1:-ReIntroduction-to-Data-Analysis,-NunPy,-and-Pandas,-Why-is-it-important?"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Data-Analysis.">
+<a class="anchor" href="#Data-Analysis." aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Analysis.<a class="anchor-link" href="#Data-Analysis."> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Data Analysis is the process of examining data sets in order to find trends and draw conclusions about the given information. Data analysis is important because it helps businesses optimize their performances.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-NumPy-and-Pandas">
+<a class="anchor" href="#What-is-NumPy-and-Pandas" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is NumPy and Pandas<a class="anchor-link" href="#What-is-NumPy-and-Pandas"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Pandas library involves a lot of data analysis in Python. NumPy Library is mostly used for working with numerical values and it makes it easy to apply with mathematical functions. </li>
+<li>Imagine you have a lot of toys, but they are all mixed up in a big box. NumPy helps you to put all the same types of toys together, like all the cars in one pile and all the dolls in another.
+Pandas is like a helper that helps you to remember where each toy is located. So, if you want to find a specific toy, like a red car, you can ask Pandas to find it for you.</li>
+<li>Just like how it's easier to find a toy when they are sorted and organized, it's easier for grown-ups to understand and analyze big sets of numbers when they use NumPy and Pandas.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Portion-2-More-into-NumPy">
+<a class="anchor" href="#Lesson-Portion-2-More-into-NumPy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Portion 2 More into NumPy<a class="anchor-link" href="#Lesson-Portion-2-More-into-NumPy"> </a>
+</h1>
+<h3 id="What-we-are-covering;">
+<a class="anchor" href="#What-we-are-covering;" aria-hidden="true"><span class="octicon octicon-link"></span></a>What we are covering;<a class="anchor-link" href="#What-we-are-covering;"> </a>
+</h3>
+<ul>
+<li>Explanation of NumPy and its uses in data analysis</li>
+<li>Importing NumPy library</li>
+<li>Examining NumPy arrays</li>
+<li>Creating NumPy arrays and performing intermediate array operations</li>
+<li>Popcorn Hacks, Make your own percentile NumPy array</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="What-is-NunPy's-use-in-data-analysis/-how-to-import-NunPy.">
+<a class="anchor" href="#What-is-NunPy's-use-in-data-analysis/-how-to-import-NunPy." aria-hidden="true"><span class="octicon octicon-link"></span></a>What is NunPy's use in data analysis/ how to import NunPy.<a class="anchor-link" href="#What-is-NunPy's-use-in-data-analysis/-how-to-import-NunPy."> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NumPy is a tool in Python that helps with doing math and data analysis. It's great for working with large amounts of data, like numbers in a spreadsheet. NumPy is really good at doing calculations quickly and accurately, like finding averages, doing algebra, and making graphs. It's used a lot by scientists and people who work with data because it makes their work easier and faster.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="List-of-NunPy-Functions,-what-they-do,-and-examples.">
+<a class="anchor" href="#List-of-NunPy-Functions,-what-they-do,-and-examples." aria-hidden="true"><span class="octicon octicon-link"></span></a>List of NunPy Functions, what they do, and examples.<a class="anchor-link" href="#List-of-NunPy-Functions,-what-they-do,-and-examples."> </a>
+</h3>
+<ul>
+<li>Link; <a href="https://www.educba.com/numpy-functions/">https://www.educba.com/numpy-functions/</a>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-of-Using-NunPy-in-Our-Project">
+<a class="anchor" href="#Example-of-Using-NunPy-in-Our-Project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of Using NunPy in Our Project<a class="anchor-link" href="#Example-of-Using-NunPy-in-Our-Project"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This code calculates the total plate appearances for a baseball player using NumPy's sum() function, similar to the original example. It then uses NumPy to calculate the total number of bases (hits plus walks) for the player, and divides that by the total number of plate appearances to get the on-base percentage. The results are then printed to the console.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Example data</span>
+<span class="n">player_hits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># Player's hits in each game</span>
+<span class="n">player_walks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>  <span class="c1"># Player's walks in each game</span>
+<span class="n">player_strikeouts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># Player's strikeouts in each game</span>
+
+<span class="c1"># array to store plate appearances (PA) for the player</span>
+<span class="n">total_pa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">player_hits</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">player_walks</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">player_strikeouts</span><span class="p">)</span>
+
+<span class="c1"># array to store on-base percentage (OBP) for the player</span>
+<span class="n">total_bases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">player_hits</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">player_walks</span><span class="p">)</span>
+<span class="n">obp</span> <span class="o">=</span> <span class="n">total_bases</span> <span class="o">/</span> <span class="n">total_pa</span>
+
+<span class="c1"># Print the total plate appearances and on-base percentage for the player</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Total plate appearances: </span><span class="si">{</span><span class="n">total_pa</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"On-base percentage: </span><span class="si">{</span><span class="n">obp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Total plate appearances: 21
+On-base percentage: 0.857
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Activity-1;-PopCorn-Hacks;-Creating-a-NunPy-Array-and-Analyzing-the-Data-using-Array-Operations">
+<a class="anchor" href="#Activity-1;-PopCorn-Hacks;-Creating-a-NunPy-Array-and-Analyzing-the-Data-using-Array-Operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Activity 1; PopCorn Hacks; Creating a NunPy Array and Analyzing the Data using Array Operations<a class="anchor-link" href="#Activity-1;-PopCorn-Hacks;-Creating-a-NunPy-Array-and-Analyzing-the-Data-using-Array-Operations"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#Create a NumPy array of the heights of players in a basketball team</span>
+<span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">192</span><span class="p">,</span> <span class="mi">195</span><span class="p">,</span> <span class="mi">193</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">211</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">184</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="mi">196</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">208</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span> <span class="mi">207</span><span class="p">])</span>
+
+<span class="c1"># Calculate the percentile rank of each player's height</span>
+<span class="n">percentiles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">heights</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The 25th percentile height is"</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"cm."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The 50th percentile height is"</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"cm."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The 75th percentile height is"</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">"cm."</span><span class="p">)</span>
+
+<span class="c1"># Determine the number of players who are in the top 10% tallest</span>
+<span class="n">top_10_percent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">heights</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">tallest_players</span> <span class="o">=</span> <span class="n">heights</span><span class="p">[</span><span class="n">heights</span> <span class="o">&gt;=</span> <span class="n">top_10_percent</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"There are"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tallest_players</span><span class="p">),</span> <span class="s2">"players in the top 10% tallest."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The 25th percentile height is 192.5 cm.
+The 50th percentile height is 198.0 cm.
+The 75th percentile height is 202.0 cm.
+There are 2 players in the top 10% tallest.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#Create a NumPy array of the x</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">163</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">491</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">275</span><span class="p">])</span>
+
+<span class="c1"># Calculate the percentile rank of x</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">75</span><span class="p">])</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Cost 25th"</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">"$"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Cost 50th"</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"$"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Cost 75th"</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">"$"</span><span class="p">)</span>
+
+<span class="c1"># Determine the number of players who are in the top 10% x</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">cost</span><span class="p">[</span><span class="n">cost</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"There are"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="s2">"players in the top 10% (cost)."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Cost 25th 192.5 $
+Cost 50th 198.0 $
+Cost 75th 202.0 $
+There are 1 players in the top 10% (cost).
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Portion-3-More-into-Pandas">
+<a class="anchor" href="#Lesson-Portion-3-More-into-Pandas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Portion 3 More into Pandas<a class="anchor-link" href="#Lesson-Portion-3-More-into-Pandas"> </a>
+</h1>
+<h3 id="What-we-are-Covering">
+<a class="anchor" href="#What-we-are-Covering" aria-hidden="true"><span class="octicon octicon-link"></span></a>What we are Covering<a class="anchor-link" href="#What-we-are-Covering"> </a>
+</h3>
+<ul>
+<li>Explanation of Pandas and its uses in data analysis</li>
+<li>Importing Pandas library</li>
+<li>Loading data into Pandas DataFrames from CSV files</li>
+<li>Manipulating and exploring data in Pandas DataFrames</li>
+<li>Example of using Pandas for data analysis tasks such as filtering and sorting</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-are-pandas-and-what-is-its-purpose?">
+<a class="anchor" href="#What-are-pandas-and-what-is-its-purpose?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are pandas and what is its purpose?<a class="anchor-link" href="#What-are-pandas-and-what-is-its-purpose?"> </a>
+</h2>
+<ul>
+<li>Pandas is a software library that is used in Python</li>
+<li>Pandas are used for data analysis and data manipulation</li>
+<li>Pandas offer data structures and operations for manipulating numerical tables and time series.</li>
+<li>Pandas is free</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Things-you-can-do-using-pandas">
+<a class="anchor" href="#Things-you-can-do-using-pandas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Things you can do using pandas<a class="anchor-link" href="#Things-you-can-do-using-pandas"> </a>
+</h2>
+<ul>
+<li>Data Cleansing; Identifying and correcting errors, inconsistencies, and inaccuracies in datasets.</li>
+<li>Data fill; Filling in missing values in datasets.</li>
+<li>Statistical Analysis; Analyzing datasets using statistical techniques to draw conclusions and make predictions.</li>
+<li>Data Visualization; Representing datasets visually using graphs, charts, and other visual aids.</li>
+<li>Data inspection; Examining datasets to identify potential issues or patterns, such as missing data, outliers, or trends.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pandas-and-Data-analysis">
+<a class="anchor" href="#Pandas-and-Data-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pandas and Data analysis<a class="anchor-link" href="#Pandas-and-Data-analysis"> </a>
+</h2>
+<p>The 2 most important data structures in Pandas are:</p>
+<ul>
+<li>Series ; A Series is a one-dimensional labeled array that can hold data of any type (integer, float, string, etc.). It is similar to a column in a spreadsheet or a SQL table. Each element in a Series has a label, known as an index. A Series can be created from a list, a NumPy array, a dictionary, or another Pandas Series.</li>
+<li>DataFrame ;A DataFrame is a two-dimensional labeled data structure that can hold data of different types (integer, float, string, etc.). It is similar to a spreadsheet or a SQL table. Each column in a DataFrame is a Series, and each row is indexed by a label, known as an index. A DataFrame can be created from a dictionary of Series or NumPy arrays, a list of dictionaries, or other Pandas DataFrame.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dataframes">
+<a class="anchor" href="#Dataframes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataframes<a class="anchor-link" href="#Dataframes"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>'1.4.2'</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Importing-CSV-Data">
+<a class="anchor" href="#Importing-CSV-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing CSV Data<a class="anchor-link" href="#Importing-CSV-Data"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>imports the Pandas library and assigns it an alias 'pd'.</li>
+<li>Loads a CSV file named 'nba_player_statistics.csv' into a Pandas DataFrame called 'df'.</li>
+<li>Specifies a player's name 'Jimmy Butler' to filter the DataFrame for that player's stats. It creates a new DataFrame called 'player_stats' which only contains rows where the 'NAME' column matches 'Jimmy Butler'.</li>
+<li>Displays the player's stats for points per game (PPG), rebounds per game (RPG), and assists per game (APG) using the print() function and string formatting.</li>
+<li>The code uses the double square brackets [[PPG', 'RPG', 'APG']] to select only the columns corresponding to the player's points per game, rebounds per game, and assists per game from the player_stats DataFrame.</li>
+<li>In summary, the code loads NBA player statistics data from a CSV file, filters it for a specific player, and displays the stats for that player's PPG, RPG, and APG using a Pandas DataFrame.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Load the CSV file into a Pandas DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/nba_player_statistics.csv'</span><span class="p">)</span>
+<span class="c1"># Filter the DataFrame to only include stats for a specific player (in this case, Jimmy Butler)</span>
+<span class="n">player_name</span> <span class="o">=</span> <span class="s1">'Jayson Tatum'</span>
+<span class="n">player_stats</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'NAME'</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_name</span><span class="p">]</span>
+<span class="c1"># Display the stats for the player</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Stats for </span><span class="si">{</span><span class="n">player_name</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">player_stats</span><span class="p">[[</span><span class="s1">'PPG'</span><span class="p">,</span> <span class="s1">'RPG'</span><span class="p">,</span> <span class="s1">'APG'</span><span class="p">]])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Stats for Jayson Tatum:
+    PPG   RPG  APG
+9  27.0  10.5  4.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="In-this-code-segment-below-we-use-Pandas-to-read-a-CSV-file-containing-NBA-player-statistics-and-store-it-in-a-DataFrame.">
+<a class="anchor" href="#In-this-code-segment-below-we-use-Pandas-to-read-a-CSV-file-containing-NBA-player-statistics-and-store-it-in-a-DataFrame." aria-hidden="true"><span class="octicon octicon-link"></span></a>In this code segment below we use Pandas to read a CSV file containing NBA player statistics and store it in a DataFrame.<a class="anchor-link" href="#In-this-code-segment-below-we-use-Pandas-to-read-a-CSV-file-containing-NBA-player-statistics-and-store-it-in-a-DataFrame."> </a>
+</h4>
+<h4 id="The-reason-Pandas-is-useful-in-this-scenario-is-because-it-provides-various-functionalities-to-filter,-sort,-and-manipulate-the-NBA-data-efficiently.-In-this-code,-the-DataFrame-is-filtered-to-only-include-the-stats-for-the-player-you-guys-choose.">
+<a class="anchor" href="#The-reason-Pandas-is-useful-in-this-scenario-is-because-it-provides-various-functionalities-to-filter,-sort,-and-manipulate-the-NBA-data-efficiently.-In-this-code,-the-DataFrame-is-filtered-to-only-include-the-stats-for-the-player-you-guys-choose." aria-hidden="true"><span class="octicon octicon-link"></span></a>The reason Pandas is useful in this scenario is because it provides various functionalities to filter, sort, and manipulate the NBA data efficiently. In this code, the DataFrame is filtered to only include the stats for the player you guys choose.<a class="anchor-link" href="#The-reason-Pandas-is-useful-in-this-scenario-is-because-it-provides-various-functionalities-to-filter,-sort,-and-manipulate-the-NBA-data-efficiently.-In-this-code,-the-DataFrame-is-filtered-to-only-include-the-stats-for-the-player-you-guys-choose."> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Imports the Pandas library and assigns it an alias 'pd'.</li>
+<li>Loads a CSV file named 'nba_player_statistics.csv' into a Pandas DataFrame called 'df'.</li>
+<li>Asks the user to input a player name using the input() function and assigns it to the variable player_name.</li>
+<li>Filters the DataFrame for the specified player name using the df[df['NAME'] == player_name] syntax, and assigns the resulting DataFrame to the variable player_stats.</li>
+<li>Checks if the player_stats DataFrame is empty using the empty attribute. If it is empty, prints "No stats found for that player." Otherwise, it proceeds to step 6.</li>
+<li>Displays the player's stats for points per game (PPG), rebounds per game (RPG), assists per game (APG), and total points + rebounds + assists (P+R+A) using the print() function and string formatting.</li>
+<li>In summary, this code loads NBA player statistics data from a CSV file, asks the user to input a player name, filters the DataFrame for that player's stats, and displays the player's stats for PPG, RPG, APG, and P+R+A. If the player is not found in the DataFrame, it prints a message indicating that no stats were found.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/nba_player_statistics.csv'</span><span class="p">)</span>
+<span class="c1"># Load CSV file into a Pandas DataFrame</span>
+<span class="n">player_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter player name: "</span><span class="p">)</span>
+<span class="c1"># Get player name input from user</span>
+<span class="n">player_stats</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'NAME'</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_name</span><span class="p">]</span>
+<span class="c1"># Filter the DataFrame to only include stats for the specified player</span>
+<span class="k">if</span> <span class="n">player_stats</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No stats found for that player."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="c1"># Check if the player exists in the DataFrame</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Stats for </span><span class="si">{</span><span class="n">player_name</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">player_stats</span><span class="p">[[</span><span class="s1">'PPG'</span><span class="p">,</span> <span class="s1">'RPG'</span><span class="p">,</span> <span class="s1">'APG'</span><span class="p">,</span> <span class="s1">'P+R+A'</span><span class="p">]])</span>
+<span class="c1"># Display the stats for the player inputted.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Stats for Austin Reaves:
+     PPG  RPG  APG  P+R+A
+22  23.0  3.0  4.0   30.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Portion-4">
+<a class="anchor" href="#Lesson-Portion-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Portion 4<a class="anchor-link" href="#Lesson-Portion-4"> </a>
+</h1>
+<h3 id="What-we-will-be-covering">
+<a class="anchor" href="#What-we-will-be-covering" aria-hidden="true"><span class="octicon octicon-link"></span></a>What we will be covering<a class="anchor-link" href="#What-we-will-be-covering"> </a>
+</h3>
+<ul>
+<li>Example of analyzing data using both NumPy and Pandas libraries</li>
+<li>Importing data into NumPy and Pandas Performing basic data analysis tasks such as mean, median, and standard deviation Visualization of data using Matplotlib library</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-of-analyzing-data-using-both-NumPy-and-Pandas-libraries">
+<a class="anchor" href="#Example-of-analyzing-data-using-both-NumPy-and-Pandas-libraries" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example of analyzing data using both NumPy and Pandas libraries<a class="anchor-link" href="#Example-of-analyzing-data-using-both-NumPy-and-Pandas-libraries"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load CSV file into a Pandas DataFrame</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/nba_player_statistics.csv'</span><span class="p">)</span>
+
+<span class="c1"># Filter the DataFrame to only include stats for the specified player</span>
+
+<span class="n">player_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter player name: "</span><span class="p">)</span>
+<span class="n">player_stats</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'NAME'</span><span class="p">]</span> <span class="o">==</span> <span class="n">player_name</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">player_stats</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"No stats found for that player."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+
+    <span class="c1"># Convert the player stats to a NumPy array</span>
+    <span class="n">player_stats_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">player_stats</span><span class="p">[[</span><span class="s1">'PPG'</span><span class="p">,</span> <span class="s1">'RPG'</span><span class="p">,</span> <span class="s1">'APG'</span><span class="p">,</span> <span class="s1">'P+R+A'</span><span class="p">]])</span>
+
+    <span class="c1"># Calculate the average of each statistic for the player</span>
+
+    <span class="n">player_stats_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">player_stats_np</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Print out the average statistics for the player</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Average stats for </span><span class="si">{</span><span class="n">player_name</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PPG: </span><span class="si">{</span><span class="n">player_stats_avg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"RPG: </span><span class="si">{</span><span class="n">player_stats_avg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"APG: </span><span class="si">{</span><span class="n">player_stats_avg</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P+R+A: </span><span class="si">{</span><span class="n">player_stats_avg</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+Average stats for Austin Reaves:
+PPG: 23.00
+RPG: 3.00
+APG: 4.00
+P+R+A: 30.00
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NumPy impacts the given code because it performs operations on arrays efficiently. Specifically, it converts a Pandas DataFrame object to a NumPy array object, and then calculates the average statistics for a the player you guys inputted. Without NumPy, it would be more difficult and less efficient to perform these calculations on large data sets. It does the math for us.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Importing-data-into-NumPy-and-Pandas-Performing-basic-data-analysis-tasks-such-as-mean,-median,-and-standard-deviation-Visualization-of-data-using-Matplotlib-library">
+<a class="anchor" href="#Importing-data-into-NumPy-and-Pandas-Performing-basic-data-analysis-tasks-such-as-mean,-median,-and-standard-deviation-Visualization-of-data-using-Matplotlib-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Importing data into NumPy and Pandas Performing basic data analysis tasks such as mean, median, and standard deviation Visualization of data using Matplotlib library<a class="anchor-link" href="#Importing-data-into-NumPy-and-Pandas-Performing-basic-data-analysis-tasks-such-as-mean,-median,-and-standard-deviation-Visualization-of-data-using-Matplotlib-library"> </a>
+</h3>
+<p>Matplotlib is used essentially to create visuals of data. charts,diagrams,etc.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Load the CSV file into a Pandas DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/nba_player_statistics.csv'</span><span class="p">)</span>
+
+<span class="c1"># Print the first 5 rows of the DataFrame</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Calculate the mean, median, and standard deviation of the 'Points' column</span>
+<span class="n">mean_minutes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'MPG'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">median_minutes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'MPG'</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">stddev_minutes</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'MPG'</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Mean Minutes: '</span><span class="p">,</span> <span class="n">mean_minutes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Median Minutes: '</span><span class="p">,</span> <span class="n">median_minutes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Standard Deviation Minutes: '</span><span class="p">,</span> <span class="n">stddev_minutes</span><span class="p">)</span>
+
+<span class="c1"># Create a histogram of the 'Points' column using Matplotlib</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'MPG'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'MPG Histogram'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'MPG'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Frequency'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this example code, we first import the necessary libraries, including NumPy, Pandas, and Matplotlib. We then load the CSV file into a Pandas DataFrame using the pd.read_csv() function. We print the first 5 rows of the DataFrame using the df.head() function. Next, we calculate the mean, median, and standard deviation of the 'MPG' column using the appropriate Pandas methods, and print the results. And, we create a histogram of the 'MPG' column using Matplotlib by calling the plt.hist() function and setting appropriate axis labels and a title. We then call the plt.show() method to display the plot. Even though NumPy is not directly used in this code, it is an important underlying component of the pandas and Matplotlib libraries, which are used to load, manipulate and visualize data. It allows them to work more efficiently</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Portion-5;-Summary">
+<a class="anchor" href="#Lesson-Portion-5;-Summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Portion 5; Summary<a class="anchor-link" href="#Lesson-Portion-5;-Summary"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Summary/Goals-of-Lesson:">
+<a class="anchor" href="#Summary/Goals-of-Lesson:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary/Goals of Lesson:<a class="anchor-link" href="#Summary/Goals-of-Lesson:"> </a>
+</h4>
+<p>One of our goals was to make you understand data analysis and how it can be important in optimizing business performance. We also wanted to make sure you understood the use of Pandas and NumPy libraries in data analysis, with a focus on NumPy. As someone who works with data, we find Pandas incredibly useful for manipulating, analyzing, and visualizing data in Python. The way we use pandas is to calculate individual player and team statistics. We are a group that works with numerical data, so NumPy is one of our favorite tools for working with arrays and applying mathematical functions to them. It is very fast at computing and manipulating arrays making it a very valuable tool for tracking statistics which is important to our group. For example, if you have an array of the points scored by each player in a game, you can use NumPy to calculate the total points scored, average points per player, or the highest and lowest scoring players.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lesson-Portion-6-Hacks">
+<a class="anchor" href="#Lesson-Portion-6-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lesson Portion 6 Hacks<a class="anchor-link" href="#Lesson-Portion-6-Hacks"> </a>
+</h1>
+<h4 id="Printing-a-CSV-File-(0.5)">
+<a class="anchor" href="#Printing-a-CSV-File-(0.5)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Printing a CSV File (0.5)<a class="anchor-link" href="#Printing-a-CSV-File-(0.5)"> </a>
+</h4>
+<ul>
+<li>Use this link <a href="https://github.com/ali-ce/datasets">https://github.com/ali-ce/datasets</a> to select csv file of a topic you are interested in, or you may find one online.</li>
+<li>Once you select your topic make sure it is a csv file and then you want to press on the button that says raw.</li>
+<li>After that copy that information and create a file with a name and .csv at the end and paste your information.</li>
+<li>Below is a start that you can use for your hacks.</li>
+<li>Your goal is to print 2 specific parts from data (example could be like population and country).</li>
+</ul>
+<h4 id="Popcorn-Hacks-(0.2)">
+<a class="anchor" href="#Popcorn-Hacks-(0.2)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popcorn Hacks (0.2)<a class="anchor-link" href="#Popcorn-Hacks-(0.2)"> </a>
+</h4>
+<ul>
+<li>Lesson Portion 1.
+#### Answering Questions (0.2)</li>
+<li>Found Below.</li>
+</ul>
+<h2 id="Submit-By-Thursday-8:35-A.M.">
+<a class="anchor" href="#Submit-By-Thursday-8:35-A.M." aria-hidden="true"><span class="octicon octicon-link"></span></a>Submit By Thursday 8:35 A.M.<a class="anchor-link" href="#Submit-By-Thursday-8:35-A.M."> </a>
+</h2>
+<ul>
+<li>How to Submit: Slack a Blog Post that includes all of your hacks to "Joshua Williams" on Slack.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># read the CSV file</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"blank.csv"</span><span class="p">)</span>
+<span class="c1"># display the data in a table</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Question-Hacks;">
+<a class="anchor" href="#Question-Hacks;" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question Hacks;<a class="anchor-link" href="#Question-Hacks;"> </a>
+</h2>
+<p>What is NumPy and how is it used in data analysis?</p>
+<p>What is Pandas and how is it used in data analysis?</p>
+<p>How is NunPy different than Pandas for data analysis?</p>
+<p>What is a DataFrame?</p>
+<p>What are some common operations you can perform with NunPy?</p>
+<p>How Can You Incorporate Either of these Data Analysis Tools (NunPy, Pandas) into your project?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/notebooks/2023/04/19/tri3_lesson.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

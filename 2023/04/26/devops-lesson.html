@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DevOps Lesson | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="DevOps Lesson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AP Computer Science Principles course materials." />
+<meta property="og:description" content="AP Computer Science Principles course materials." />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/2023/04/26/devops-lesson.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/2023/04/26/devops-lesson.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-26T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DevOps Lesson" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-04-26T00:00:00-05:00","datePublished":"2023-04-26T00:00:00-05:00","description":"AP Computer Science Principles course materials.","headline":"DevOps Lesson","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/2023/04/26/devops-lesson.html"},"url":"https://nighthawkcoders.github.io/APCSP/2023/04/26/devops-lesson.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">DevOps Lesson</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-26T00:00:00-05:00" itemprop="datePublished">
+        Apr 26, 2023
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/nighthawkcoders/APCSP/tree/master/_notebooks/2023-04-26-devops-lesson.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/APCSP/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/nighthawkcoders/APCSP/master?filepath=_notebooks%2F2023-04-26-devops-lesson.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/nighthawkcoders/APCSP/blob/master/_notebooks/2023-04-26-devops-lesson.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/APCSP/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2FAPCSP%2Fblob%2Fmaster%2F_notebooks%2F2023-04-26-devops-lesson.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/APCSP/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Check-In">Check-In </a></li>
+<li class="toc-entry toc-h1"><a href="#NGINX">NGINX </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Configuration">Configuration </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Load-Balancing">Load Balancing </a></li>
+<li class="toc-entry toc-h3"><a href="#HTTP-Headers">HTTP Headers </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Check-In">Check In </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Bonus-(0.05)">Bonus (0.05) </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#CORS-Hacks">CORS Hacks </a></li>
+<li class="toc-entry toc-h1"><a href="#KASM-Hacks">KASM Hacks </a></li>
+<li class="toc-entry toc-h1"><a href="#AWS/RDS-Hacks">AWS/RDS Hacks </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2023-04-26-devops-lesson.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="c1"># Change the following host and see what IP it prints!</span>
+<span class="n">host</span> <span class="o">=</span> <span class="s2">"google.com"</span>
+<span class="n">ip</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>142.250.176.14
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">ip</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Successfully connected!"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Successfully connected!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Check-In">
+<a class="anchor" href="#Check-In" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check-In<a class="anchor-link" href="#Check-In"> </a>
+</h2>
+<ol>
+<li>What is an IP address?
+Unique identifier for a device on Internet.</li>
+<li>What is a TCP port?
+Unique identifier for an application on a device.</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="n">ip</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
+
+    <span class="c1"># Send a GET request to "/"</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">sendall</span><span class="p">(</span><span class="sa">b</span><span class="s2">"GET / HTTP/1.1</span><span class="se">\r\n\r\n</span><span class="s2">"</span><span class="p">)</span>
+
+    <span class="c1"># Recieve &amp; print 2048 bytes of data</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">2048</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HTTP/1.1 200 OK
+Date: Wed, 26 Apr 2023 21:06:50 GMT
+Expires: -1
+Cache-Control: private, max-age=0
+Content-Type: text/html; charset=ISO-8859-1
+Content-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-tWlxOx6t94Dd9xmLup9sAw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp
+P3P: CP="This is not a P3P policy! See g.co/p3phelp for more info."
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: 1P_JAR=2023-04-26-21; expires=Fri, 26-May-2023 21:06:50 GMT; path=/; domain=.google.com; Secure
+Set-Cookie: AEC=AUEFqZchFqKN74ejyNMr7lczJ9yDs5GTWkNlKeYpkgSetxu-8ppfdaPjgA; expires=Mon, 23-Oct-2023 21:06:50 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax
+Set-Cookie: NID=511=E-0j8XfQq_RWf7f9uoCth1cjTjuoR-HX7eUVUMKdFREAxvOfF35Tnl1s6an0MhGHnZyKtQqiP4QJVEZ9oMMdP9DcvZgvFLfRx7Afmbxu0yQPiJPvP2wJ5E8vMI2q_cEcs1W2T7Y4gz417x5IOdonr6SrXD2uBc_U2rvBFXvQ0Zo; expires=Thu, 26-Oct-2023 21:06:50 GMT; path=/; domain=.google.com; HttpOnly
+Accept-Ranges: none
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+
+5b46
+&lt;!doctype html&gt;&lt;html itemscope="" itemtype="http://schema.org/WebPage" lang="en"&gt;&lt;head&gt;&lt;meta content="Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking for." name="description"&gt;&lt;meta content="noodp" name="robots"&gt;&lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type"&gt;&lt;meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"&gt;&lt;title&gt;Google&lt;/title&gt;&lt;script nonce="tWlxOx6t94Dd9xmLup9sAw"&gt;(function(){window.google={kEI:'apJJZIGaAuzIkPIPh46f0A0',kEXPI:'0,18167,1341242,1709,4350,206,4804,2316,383,246,5,1129120,1197710,303252,77528,16115,28684,22431,1361,12312,17587,4998,13228,3847,38444,885,1987,2891,3926,7828,606,29842,30848,15324,432,3,346,1244,1,16916,2652,4,1528,2304,29062,13064,11444,2215,2980,1457,16786,5800,2557,4094,7596,1,4215
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># Change the URL to whatever you'd like</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://google.com"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Status code:"</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Headers:"</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Response text:"</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># Add a line to print the "Content-Type" header of the response</span>
+<span class="c1"># Try an image URL!</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Status code: 200
+Headers: {'Date': 'Wed, 26 Apr 2023 21:10:25 GMT', 'Expires': '-1', 'Cache-Control': 'private, max-age=0', 'Content-Type': 'text/html; charset=ISO-8859-1', 'Content-Security-Policy-Report-Only': "object-src 'none';base-uri 'self';script-src 'nonce-6gi9dKt0o9iLwf1TwS_kLg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp", 'P3P': 'CP="This is not a P3P policy! See g.co/p3phelp for more info."', 'Content-Encoding': 'gzip', 'Server': 'gws', 'X-XSS-Protection': '0', 'X-Frame-Options': 'SAMEORIGIN', 'Set-Cookie': '1P_JAR=2023-04-26-21; expires=Fri, 26-May-2023 21:10:25 GMT; path=/; domain=.google.com; Secure, AEC=AUEFqZf7_FRkMx1IvkPLsmojxU6o_FrwixaSF-ZUNPFoDYhXkRbH6c_3mxk; expires=Mon, 23-Oct-2023 21:10:25 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=511=dx4Tiy53t8ycg6QOGwuYFIs9kVTIWhdprj1a39J83CBwnx9FbBiFbjSOYTj_Ssi1G6WQ4h8PlSOT7NaqFHoKHmXV3unxw-p37nHub4ah_GdXCYJec0adMUXONiSWq7lLyGoLPyt8xRlmaTcp6V_yvp6LzhrmuteozPe3KS-1-Ds; expires=Thu, 26-Oct-2023 21:10:25 GMT; path=/; domain=.google.com; HttpOnly', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000', 'Transfer-Encoding': 'chunked'}
+Response text: &lt;!doctype html&gt;&lt;html itemscope="" itemtype="http://schema.org/WebPage" lang="en"&gt;&lt;head&gt;&lt;meta content
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="NGINX">
+<a class="anchor" href="#NGINX" aria-hidden="true"><span class="octicon octicon-link"></span></a>NGINX<a class="anchor-link" href="#NGINX"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aws</span> <span class="o">=</span> <span class="s2">"3.130.255.192"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://"</span> <span class="o">+</span> <span class="n">aws</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Cool site&lt;/title&gt;
+&lt;meta name="description" content="cool site for apcsp"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+Hello, this is my cool site. Check out my products:
+&lt;a href="/products"&gt;Products!!&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Configuration">
+<a class="anchor" href="#Configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration<a class="anchor-link" href="#Configuration"> </a>
+</h2>
+<div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">//</span> <span class="s">Listen</span> <span class="no">on</span> <span class="s">virtual</span> <span class="s">"port</span> <span class="mi">80</span><span class="s">"</span>
+    <span class="s">listen</span> <span class="mi">80</span><span class="p">;</span>
+    <span class="kn">listen</span> <span class="s">[::]:80</span><span class="p">;</span>
+    <span class="kn">server_name</span> <span class="mi">3</span><span class="s">.130.255.192</span><span class="p">;</span>
+
+    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+        <span class="kn">//</span> <span class="s">Inform</span> <span class="s">server</span> <span class="s">about</span> <span class="s">original</span> <span class="s">client</span>
+        <span class="s">proxy_set_header</span>        <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+        <span class="kn">proxy_set_header</span>        <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+        <span class="kn">proxy_set_header</span>        <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+        <span class="kn">proxy_set_header</span>        <span class="s">X-Forwarded-Proto</span> <span class="nv">$scheme</span><span class="p">;</span>
+
+        <span class="kn">//</span> <span class="s">Forward</span> <span class="s">all</span> <span class="s">requests</span> <span class="s">transparently</span> <span class="s">to</span> <span class="s">the</span> <span class="s">server</span> <span class="s">running</span> <span class="no">on</span> <span class="s">our</span> <span class="s">computer</span>
+        <span class="s">proxy_pass</span>              <span class="s">http://localhost:9099</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Load-Balancing">
+<a class="anchor" href="#Load-Balancing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Load Balancing<a class="anchor-link" href="#Load-Balancing"> </a>
+</h3>
+<div class="highlight"><pre><span></span><span class="k">upstream</span> <span class="s">example.com</span> <span class="p">{</span>
+    <span class="kn">server</span> <span class="s">server1.example.com</span><span class="p">;</span>
+    <span class="kn">server</span> <span class="s">server1.example.com</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="HTTP-Headers">
+<a class="anchor" href="#HTTP-Headers" aria-hidden="true"><span class="octicon octicon-link"></span></a>HTTP Headers<a class="anchor-link" href="#HTTP-Headers"> </a>
+</h3>
+<div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
+    <span class="kn">add_header</span> <span class="s">X-Cool-Header</span> <span class="s">"I</span> <span class="s">love</span> <span class="s">APCSP!"</span><span class="p">;</span>
+
+    <span class="kn">location</span> <span class="s">/pages</span> <span class="p">{</span>
+        <span class="kn">add_header</span> <span class="s">X-Cooler-Header</span> <span class="s">"This</span> <span class="s">is</span> <span class="s">my</span> <span class="s">secret</span> <span class="s">header!"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+<h2 id="Check-In">
+<a class="anchor" href="#Check-In" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check In<a class="anchor-link" href="#Check-In"> </a>
+</h2>
+<ol>
+<li>Research 1 HTTP header and describe, in detail, its purpose.</li>
+<li>Write a line in a sample NGINX configuration that will add that specific header to the <code>/information</code> location</li>
+<li>Explain the purpose of the load balancing performed by NGINX</li>
+<li>Modify the following code block to obtain the value of the secret header on <code>/products</code> of the AWS site</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">aws</span> <span class="o">=</span> <span class="s2">"3.130.255.192"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://"</span> <span class="o">+</span> <span class="n">aws</span><span class="o">+</span> <span class="s2">"/products"</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The secret header is:"</span><span class="p">,</span> <span class="s2">"..."</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The secret header is: ...
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hacks">
+<a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
+</h1>
+<ul>
+<li>Complete the above check-in questions and change the hosts (0.1)</li>
+<li>Complete the above code-segment to retrieve the secret header (0.1)</li>
+</ul>
+<h2 id="Bonus-(0.05)">
+<a class="anchor" href="#Bonus-(0.05)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bonus (0.05)<a class="anchor-link" href="#Bonus-(0.05)"> </a>
+</h2>
+<p>Create a diagram showing the layers of abstraction that allow us to use HTTP (IP, TCP, etc.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="CORS-Hacks">
+<a class="anchor" href="#CORS-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>CORS Hacks<a class="anchor-link" href="#CORS-Hacks"> </a>
+</h1>
+<ol>
+<li>Explain what CORS is and what it stands for</li>
+<li>Describe how you would be able to implement CORS into your own websites</li>
+<li>Describe why you would want to implement CORS into your own websites</li>
+<li>How could use CORS to benefit yourself in the future?</li>
+</ol>
+<p>Total: 0.2 points</p>
+<h1 id="KASM-Hacks">
+<a class="anchor" href="#KASM-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>KASM Hacks<a class="anchor-link" href="#KASM-Hacks"> </a>
+</h1>
+<ol>
+<li>What is the purpose of "sudo" when running commands in terminal?</li>
+<li>What are some commands which allow us to look at how the storage of a machine is set up as?</li>
+<li>What do you think are some alternatives to running "curl -O" to get the zip file for KASM?</li>
+<li>What kind of commands do you think the "install.sh" command has and why is it necessary to call it?</li>
+<li>Explain in at least 3-4 sentences how deploying KASM is related to/requires other topics talked about in the lesson and/or potential ways to add things mentioned in the lesson to this guide.</li>
+</ol>
+<p>Total: 0.2 points</p>
+<h1 id="AWS/RDS-Hacks">
+<a class="anchor" href="#AWS/RDS-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>AWS/RDS Hacks<a class="anchor-link" href="#AWS/RDS-Hacks"> </a>
+</h1>
+<p>See the <a href="https://firestorm0986.github.io/SLAAT/posts/sqlite-aws/">setup post</a></p>
+<ul>
+<li>Create your own database in the EC2 I have created (ec2-database-connect)<ul>
+<li>name it with your first and last name (example: aditya-nawandhar) (0.1)</li>
+<li>Create a table using the commands on the link provided. (0.1)</li>
+<li>using commands from the link provided make columns and rows with test data (can be anything) (example: “name” and “class” are the columns with rows being something like “Aditya” and “Junior”). At least 4 test rows (0.1)</li>
+<li>additional points if the data matches CPT (Bonus: 0.05)</li>
+</ul>
+</li>
+</ul>
+<p>Total: 0.3</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/APCSP/2023/04/26/devops-lesson.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

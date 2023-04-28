@@ -518,4 +518,10 @@ li .post-meta-description { color: rgba(216, 249, 221, 0.69) !important; }
 
 p code { font-size: 19px; }
 
+/* "row style" is flexible size and aligns pictures in center */
+.row { align-items: center; display: flex; }
+
+/* "column style" is one-third of the width with padding */
+.column { flex: 33.33%; padding: 5px; }
+
 /*# sourceMappingURL=style.css.map */

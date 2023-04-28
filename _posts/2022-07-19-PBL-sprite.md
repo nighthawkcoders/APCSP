@@ -20,7 +20,7 @@ tags: [javascript]
     <p id="walk" class="sprite walk" onmouseover="animateScript('walk', (-2 * {{size}}), 8)" onmouseout="stopAnimate()"> </p>
   </div>
   <div class="column">
-    <p id="run" class="sprite run" onmouseover="animateScript('run', (-4 * {{size}}), 16)" onmouseout="stopAnimate()"> </p>
+    <p id="run" class="sprite run" onmouseover="animateScript('run', (-4 * {{size}}), 15)" onmouseout="stopAnimate()"> </p>
   </div>
 </div>
 

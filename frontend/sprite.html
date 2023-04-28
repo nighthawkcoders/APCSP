@@ -87,38 +87,38 @@ window.onload = wrap_img;
 </table>
 <style>
 
-#rest1 {
+#rest {
   height: 256px;
   width: 256px;
 background: 
 url('/APCSP/images/mario_animation.png') 0px 0px;
 }
 
-#rest2 {
-  height: 256px;
-  width: 256px;
-background: 
-url('/APCSP/images/mario_animation.png') 0px -256px;
-}
-
-#rest3 {
+#walk {
   height: 256px;
   width: 256px;
 background: 
 url('/APCSP/images/mario_animation.png') 0px -512px;
 }
 
+#run {
+  height: 256px;
+  width: 256px;
+background: 
+url('/APCSP/images/mario_animation.png') 0px -1024px;
+}
+
 </style>
 
 <div class="row">
   <div class="column">    
-    <p id="rest1" onmouseover="animateScript('rest1', 0, 16)" onmouseout="stopAnimate()"> </p>
+    <p id="rest" onmouseover="animateScript('rest', 0, 16)" onmouseout="stopAnimate()"> </p>
   </div>
   <div class="column">
-    <p id="rest2" onmouseover="animateScript('rest2', -256, 16)" onmouseout="stopAnimate()"> </p>
+    <p id="walk" onmouseover="animateScript('walk', -512, 10)" onmouseout="stopAnimate()"> </p>
   </div>
   <div class="column">
-    <p id="rest3" onmouseover="animateScript('rest3', -512, 10)" onmouseout="stopAnimate()"> </p>
+    <p id="run" onmouseover="animateScript('run', -1024, 16)" onmouseout="stopAnimate()"> </p>
   </div>
 </div>
 

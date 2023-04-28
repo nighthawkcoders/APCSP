@@ -10,27 +10,29 @@ tags: [javascript]
 ---
 
 {% include nav_frontend.html %}
+{% assign size = 256 %}
+
 <style>
 
 #rest {
-  height: 256px;
-  width: 256px;
+  height: {{size}}px;
+  width: {{size}}px;
 background: 
 url('{{site.baseurl}}/images/mario_animation.png') 0px 0px;
 }
 
 #walk {
-  height: 256px;
-  width: 256px;
+  height: {{size}}px;
+  width: {{size}}px;
 background: 
-url('{{site.baseurl}}/images/mario_animation.png') 0px -512px;
+url('{{site.baseurl}}/images/mario_animation.png') 0px calc(-2 * {{size}} * 1px);
 }
 
 #run {
-  height: 256px;
-  width: 256px;
+  height: {{size}}px;
+  width: {{size}}px;
 background: 
-url('{{site.baseurl}}/images/mario_animation.png') 0px -1024px;
+url('{{site.baseurl}}/images/mario_animation.png') 0px calc(-4 * {{size}} * 1px);
 }
 
 </style>
@@ -40,10 +42,10 @@ url('{{site.baseurl}}/images/mario_animation.png') 0px -1024px;
     <p id="rest" onmouseover="animateScript('rest', 0, 16)" onmouseout="stopAnimate()"> </p>
   </div>
   <div class="column">
-    <p id="walk" onmouseover="animateScript('walk', -512, 10)" onmouseout="stopAnimate()"> </p>
+    <p id="walk" onmouseover="animateScript('walk', (-2 * {{size}}), 8)" onmouseout="stopAnimate()"> </p>
   </div>
   <div class="column">
-    <p id="run" onmouseover="animateScript('run', -1024, 16)" onmouseout="stopAnimate()"> </p>
+    <p id="run" onmouseover="animateScript('run', (-4 * {{size}}), 16)" onmouseout="stopAnimate()"> </p>
   </div>
 </div>
 
@@ -53,20 +55,20 @@ function stopAnimate() {
     clearInterval(tID);
 } //end of stopAnimate()
 
-function animateScript(id, row, characters) {
-    var    position = 256; //start position for the image slicer
-    const  diff = 256;     //diff is offset in the sprite
-    const  steps = diff * characters
+function animateScript(id, row, images) {
+    const  offset = {{size}};     //offset of images in the sprite
+    var    position = offset; //start position for the image slicer
+    const  steps = offset * images
     const  interval = 100; //100 ms of interval for the setInterval()
 
     tID = setInterval ( () => {
     document.getElementById(id).style.backgroundPosition = `-${position}px ${row}px`; 
     //we use the ES6 template literal to insert the variable "position"
     if (position < steps) { 
-        position = position + diff;
+        position = position + offset;
     } //we increment the position by 256 each time
     else { 
-        position = 256; 
+        position = offset; 
     }
     //reset the position to 256px, once position exceeds 1536px
     }

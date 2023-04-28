@@ -579,7 +579,7 @@ layout: notebook
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Backend:">Backend:<a class="anchor-link" href="#Backend:"> </a></h3><ul>
 <li>The backend creates endpoints that are used to edit the properties of the database constructed by the model.</li>
-<li><code>____</code>, <code>____</code>, <code>____</code>, and <code>____</code> methods are used in order to define HTTP endpoints in the API.<ul>
+<li><code>___GET_</code>, <code>_PUT___</code>, <code>_POST___</code>, and <code>_DELETE___</code> methods are used in order to define HTTP endpoints in the API.<ul>
 <li>These endpoints are based on requests that can be made to <em>__</em> the database.</li>
 <li>Variables defined in the <em>__</em> file are used to call data from the database in order to be manipulated.</li>
 </ul>
@@ -593,15 +593,15 @@ layout: notebook
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Methods-in-Backend-Example">Methods in Backend Example<a class="anchor-link" href="#Methods-in-Backend-Example"> </a></h3><ul>
 <li>Modules are being imported with specified classes which are used later in the program.<ul>
-<li><code>Blueprint</code>: used to organize <em>__</em> and functions</li>
-<li><code>request</code>: used to access data sent to the Flask app. through the <em>__</em> request</li>
+<li><code>Blueprint</code>: used to organize <em>route__</em> and functions</li>
+<li><code>request</code>: used to access data sent to the Flask app. through the <strong>HTTP</strong> request</li>
 <li><code>Api</code>: creates a Flask instance that handles requests</li>
 <li><code>Resource</code>: this allows for the definition of custom HTTP requests</li>
-<li><code>reqparse</code>: used to <em>__</em> (sort and search) and validate data that is requested</li>
+<li><code>reqparse</code>: used to <em>parse__</em> (sort and search) and validate data that is requested</li>
 </ul>
 </li>
-<li>The blueprint and api are then defined as variables and are used to store any future <em>__</em> that is requested.</li>
-<li>Some preliminary functions, such as <code>find_by_username</code>, are created to be used later in the API code, allowing for <em>__</em> code.<ul>
+<li>The blueprint and api are then defined as variables and are used to store any future <em>data__</em> that is requested.</li>
+<li>Some preliminary functions, such as <code>find_by_username</code>, are created to be used later in the API code, allowing for <em>progamatic access to__</em> code.<ul>
 <li>In this case, these functions are used to search through the database to find specific usernames.</li>
 </ul>
 </li>
@@ -686,7 +686,7 @@ layout: notebook
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="POST-Method">POST Method<a class="anchor-link" href="#POST-Method"> </a></h4><ul>
-<li>This method is used to <em>__</em> a specific piece of information in the database based on searching by usernames.</li>
+<li>This method is used to <em>add__</em> a specific piece of information in the database based on searching by usernames.</li>
 <li>This is again different for each database that is made, however the general structure stays the same.<ul>
 <li>In this example, a parser is being used to extract data from an incoming <em>__</em>. In this case, the <code>RequestParser</code> class is used from the Flask module.<ul>
 <li>All required arguments are added to the parser, specifying what type of data it is.</li>
@@ -902,9 +902,12 @@ layout: notebook
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Popcorn-Hacks">Popcorn Hacks<a class="anchor-link" href="#Popcorn-Hacks"> </a></h4><p>Please answer these questions to earn points for the popcorn hacks.</p>
 <ol>
-<li>What are the four HTTP request methods that are used with Flask?</li>
-<li>What is a parser and how would it be aid with data validation?</li>
-<li>What is the role endpoints in Flask?</li>
+<li>What are the four HTTP request methods that are used with Flask?
+GET, PUT, POST, DELETE</li>
+<li>What is a parser and how would it be aid with data validation?
+Used to analyze things like string to convert to a purpose.</li>
+<li>What is the role endpoints in Flask?
+They are URI's to connect to application with request and receive response</li>
 </ol>
 
 </div>
@@ -1210,9 +1213,12 @@ layout: notebook
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Popcorn-Hacks">Popcorn Hacks<a class="anchor-link" href="#Popcorn-Hacks"> </a></h4><p>Please answer these questions to earn points for the popcorn hacks.</p>
 <ol>
-<li>How is data for images stored in a Flask API and how is it displayed on the frontend when requested?</li>
-<li>What is the <code>fetch()</code> function and how is it used in frontend logic?</li>
-<li>How is data formatted and sent to the backend? (mention JSON in your answer)</li>
+<li>How is data for images stored in a Flask API and how is it displayed on the frontend when requested?
+base64, it is displayed a background-image</li>
+<li>What is the <code>fetch()</code> function and how is it used in frontend logic?
+It performs async request and provides a promise.</li>
+<li>How is data formatted and sent to the backend? (mention JSON in your answer)
+Into HTML</li>
 </ol>
 
 </div>

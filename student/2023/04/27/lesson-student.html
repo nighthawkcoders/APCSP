@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>P3 4/27 Big Idea 3 Data Structures | APCSP</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="P3 4/27 Big Idea 3 Data Structures" />
+<meta name="author" content="Alex, David, Kaiden, Ethan T.,Ethan Z., Navan, Nikhil" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Big Idea 3 with Databases and Data Operations" />
+<meta property="og:description" content="Big Idea 3 with Databases and Data Operations" />
+<link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/student/2023/04/27/lesson-student.html" />
+<meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/student/2023/04/27/lesson-student.html" />
+<meta property="og:site_name" content="APCSP" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-04-27T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="P3 4/27 Big Idea 3 Data Structures" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alex, David, Kaiden, Ethan T.,Ethan Z., Navan, Nikhil"},"dateModified":"2023-04-27T00:00:00-05:00","datePublished":"2023-04-27T00:00:00-05:00","description":"Big Idea 3 with Databases and Data Operations","headline":"P3 4/27 Big Idea 3 Data Structures","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/student/2023/04/27/lesson-student.html"},"url":"https://nighthawkcoders.github.io/APCSP/student/2023/04/27/lesson-student.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/APCSP/">APCSP</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/APCSP/schedule">Schedule</a><a class="page-link" href="/APCSP/frontend/overview">Frontend</a><a class="page-link" href="/APCSP/api/overview">API</a><a class="page-link" href="/APCSP/search/">Search</a><a class="page-link" href="/APCSP/categories/ap">AP Standards</a><a class="page-link" href="/APCSP/categories/cte">CTE Standards</a><a class="page-link" href="/APCSP/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">P3 4/27 Big Idea 3 Data Structures</h1><p class="page-description">Big Idea 3 with Databases and Data Operations</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-04-27T00:00:00-05:00" itemprop="datePublished">
+        Apr 27, 2023
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Alex, David, Kaiden, Ethan T.,Ethan Z., Navan, Nikhil</span></span>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      33 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+          <a class="category-tags-link" href="/APCSP/categories/ap#student">student</a>
+        
+        
+      
+      </p>
+    
+
+    
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Leaderboard-Database">Leaderboard Database </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#What-is-a-database-model">What is a database model </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Creating-SQLAlchemy-App">Creating SQLAlchemy App </a></li>
+<li class="toc-entry toc-h3"><a href="#Creating-Database-Template">Creating Database Template </a></li>
+<li class="toc-entry toc-h3"><a href="#Initialization-of-Data">Initialization of Data </a></li>
+<li class="toc-entry toc-h3"><a href="#DO-THESE-FOR-THIS-SECTION">DO THESE FOR THIS SECTION </a></li>
+<li class="toc-entry toc-h2"><a href="#Picture-Database">Picture Database </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Popcorn-Hacks">Popcorn Hacks </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Picture-Encoding">Picture Encoding </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Popcorn-Hack:">Popcorn Hack: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Endpoints">Endpoints </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Backend:">Backend: </a></li>
+<li class="toc-entry toc-h3"><a href="#Methods-in-Backend-Example">Methods in Backend Example </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#GET-Method">GET Method </a></li>
+<li class="toc-entry toc-h4"><a href="#POST-Method">POST Method </a></li>
+<li class="toc-entry toc-h4"><a href="#PUT-Method">PUT Method </a></li>
+<li class="toc-entry toc-h4"><a href="#DELETE-Method">DELETE Method </a></li>
+<li class="toc-entry toc-h4"><a href="#Displaying-the-Full-Database">Displaying the Full Database </a></li>
+<li class="toc-entry toc-h4"><a href="#Popcorn-Hacks">Popcorn Hacks </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Frontend-and-How-it-Communicates-to-Backend">Frontend and How it Communicates to Backend </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#GET-Method">GET Method </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#Printing-the-Data">Printing the Data </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h4"><a href="#POST-Method">POST Method </a></li>
+<li class="toc-entry toc-h4"><a href="#PUT-and-DELETE-Methods">PUT and DELETE Methods </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Calling-Images-(GET-Method)">Calling Images (GET Method) </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Popcorn-Hacks">Popcorn Hacks </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Time-and-Space-Complexity-of-Algorithms">Time and Space Complexity of Algorithms </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#QuickSort-Algorithm">QuickSort Algorithm </a></li>
+<li class="toc-entry toc-h3"><a href="#The-Logic">The Logic </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Partition-procedure">Partition procedure </a></li>
+<li class="toc-entry toc-h4"><a href="#qSort-procedure">qSort procedure </a></li>
+<li class="toc-entry toc-h4"><a href="#Complexity-analysis">Complexity analysis </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Popcorn-Hack">Popcorn Hack </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Hacks---Frontend-and-Backend">Hacks - Frontend and Backend </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks---QuickSort">Hacks - QuickSort </a></li>
+<li class="toc-entry toc-h2"><a href="#Hacks-Helpers">Hacks Helpers </a></li>
+<li class="toc-entry toc-h2"><a href="#Points">Points </a></li>
+<li class="toc-entry toc-h1"><a href="#HACKS-ARE-DUE-SATURDAY-(4/29)-11:59-PM">HACKS ARE DUE SATURDAY (4/29) 11:59 PM </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/lesson student.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Leaderboard-Database">
+<a class="anchor" href="#Leaderboard-Database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Leaderboard Database<a class="anchor-link" href="#Leaderboard-Database"> </a>
+</h3>
+<blockquote>
+<p>How do you set up a database model?</p>
+<h4 id="What-is-a-database-model">
+<a class="anchor" href="#What-is-a-database-model" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is a database model<a class="anchor-link" href="#What-is-a-database-model"> </a>
+</h4>
+<ul>
+<li>A database model shows the <strong><strong> </strong></strong> of a database</li>
+<li>It fundamentally determines in which manner data can be <strong><strong>, </strong></strong>, and <em>__</em>
+</li>
+<li>Some popular database models are relational models, object oriented models, hierarchial models, flat file models, and network models</li>
+<li>The one below is an Object-Relational Model which is a combination of a <strong><strong> model and an </strong></strong> <em>__</em> model</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-SQLAlchemy-App">
+<a class="anchor" href="#Creating-SQLAlchemy-App" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating SQLAlchemy App<a class="anchor-link" href="#Creating-SQLAlchemy-App"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+
+<span class="c1"># Setup of key Flask object (app)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Setup SQLAlchemy object and properties for the database (db)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'sqlite:///sqlite.db'</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"SQLALCHEMY_TRACK_MODIFICATIONS"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"SECRET_KEY"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"SECRET_KEY"</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Images storage</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"MAX_CONTENT_LENGTH"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span>  <span class="c1"># maximum size of uploaded content</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"UPLOAD_EXTENSIONS"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">".jpg"</span><span class="p">,</span> <span class="s2">".png"</span><span class="p">,</span> <span class="s2">".gif"</span><span class="p">]</span>  <span class="c1"># supported file types</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"UPLOAD_FOLDER"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"volumes/uploads/"</span>  <span class="c1"># location of user uploaded content</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Creating-Database-Template">
+<a class="anchor" href="#Creating-Database-Template" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating Database Template<a class="anchor-link" href="#Creating-Database-Template"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">Text</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.exc</span> <span class="kn">import</span> <span class="n">IntegrityError</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">werkzeug.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
+
+
+<span class="c1"># </span>
+<span class="c1"># Leaderboard DB class that maps leaderboard SQL table </span>
+<span class="c1">#</span>
+<span class="k">class</span> <span class="nc">Leaderboard</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s2">"leaderboard"</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Leaderboard DB columns for easy, medium and hard points with user info</span>
+    <span class="c1">#    </span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_username</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_password</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_pointsEasy</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_pointsMedium</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_pointsHard</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Leaderboard DB class constructor </span>
+    <span class="c1">#</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="p">,</span> <span class="n">pointsHard</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_username</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pointsEasy</span> <span class="o">=</span> <span class="n">pointsEasy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pointsMedium</span> <span class="o">=</span> <span class="n">pointsMedium</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pointsHard</span> <span class="o">=</span> <span class="n">pointsHard</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Leaderboard DB class string representation of an object</span>
+    <span class="c1">#</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"&lt;Leaderboard(id='</span><span class="si">%s</span><span class="s2">', username='</span><span class="si">%s</span><span class="s2">', pointsEasy='</span><span class="si">%s</span><span class="s2">', pointsMedium='</span><span class="si">%s</span><span class="s2">', pointsHard='</span><span class="si">%s</span><span class="s2">')&gt;"</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointsEasy</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointsMedium</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointsHard</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Returns Leaderboard username</span>
+    <span class="c1">#    </span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">username</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_username</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Sets Leaderboard username</span>
+    <span class="c1">#        </span>
+    <span class="nd">@username</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">username</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_username</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># checks Leaderboard username valid</span>
+    <span class="c1">#            </span>
+    <span class="k">def</span> <span class="nf">is_username</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_username</span> <span class="o">==</span> <span class="n">username</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Returns Leaderboard easy points</span>
+    <span class="c1">#        </span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pointsEasy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointsEasy</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Sets Leaderboard easy points</span>
+    <span class="c1">#        </span>
+    <span class="nd">@pointsEasy</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">pointsEasy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pointsEasy</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Sets Leaderboard medium points</span>
+    <span class="c1">#            </span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pointsMedium</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointsMedium</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Sets Leaderboard medium points</span>
+    <span class="c1">#        </span>
+    <span class="nd">@pointsMedium</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">pointsMedium</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pointsMedium</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Returns Leaderboard hard points</span>
+    <span class="c1">#            </span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">pointsHard</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointsHard</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Sets Leaderboard hard points</span>
+    <span class="c1">#        </span>
+    <span class="nd">@pointsHard</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">pointsHard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pointsHard</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Returns Leaderboard password</span>
+    <span class="c1">#            </span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"..."</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Sets Leaderboard password</span>
+    <span class="c1">#        </span>
+    <span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha512'</span><span class="p">)</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Checks Leaderboard password validity</span>
+    <span class="c1">#            </span>
+    <span class="k">def</span> <span class="nf">is_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Converts Leaderboard to dictionary</span>
+    <span class="c1">#            </span>
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">"username"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="s2">"password"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="s2">"pointsEasy"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointsEasy</span><span class="p">,</span> <span class="s2">"pointsMedium"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointsMedium</span><span class="p">,</span> <span class="s2">"pointsHard"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pointsHard</span><span class="p">}</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Converts Leaderboard to string values</span>
+    <span class="c1">#                </span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Creates Leaderboard database</span>
+    <span class="c1">#                </span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">except</span> <span class="n">IntegrityError</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1"># </span>
+    <span class="c1"># Returns Leaderboard name value pairs</span>
+    <span class="c1">#            </span>
+    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s2">"username"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">"password"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span>
+            <span class="s2">"pointsEasy"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointsEasy</span><span class="p">,</span>
+            <span class="s2">"pointsMedium"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointsMedium</span><span class="p">,</span>
+            <span class="s2">"pointsHard"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointsHard</span>
+        <span class="p">}</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Updates Leaderboard DB rows for points and user data</span>
+    <span class="c1">#                </span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">pointsHard</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+        <span class="sd">"""only updates values with length"""</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">username</span> <span class="o">=</span> <span class="n">username</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pointsEasy</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointsEasy</span> <span class="o">=</span> <span class="n">pointsEasy</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pointsMedium</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointsMedium</span> <span class="o">=</span> <span class="n">pointsMedium</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pointsHard</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointsHard</span> <span class="o">=</span> <span class="n">pointsHard</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c1"># </span>
+    <span class="c1"># Delets Leaderboard row from teh DB</span>
+    <span class="c1">#                </span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Initialization-of-Data">
+<a class="anchor" href="#Initialization-of-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Initialization of Data<a class="anchor-link" href="#Initialization-of-Data"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initializes Leaderboard DB with test data</span>
+<span class="c1">#   </span>
+<span class="k">def</span> <span class="nf">init_leaderboards</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="sd">"""Create database and tables"""</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+        <span class="sd">"""Tester data for table"""</span>
+        <span class="n">l1</span> <span class="o">=</span> <span class="n">Leaderboard</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">"bob"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"apple"</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pointsHard</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">l2</span> <span class="o">=</span> <span class="n">Leaderboard</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">"bobby"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"appley"</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">pointsHard</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">l3</span> <span class="o">=</span> <span class="n">Leaderboard</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">"bobbert"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"appled"</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">pointsHard</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+        <span class="n">l4</span> <span class="o">=</span> <span class="n">Leaderboard</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s2">"bobruth"</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">"appler"</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">pointsHard</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+        <span class="n">leaderboards</span> <span class="o">=</span> <span class="p">[</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">,</span> <span class="n">l3</span><span class="p">,</span> <span class="n">l4</span><span class="p">]</span>
+
+        <span class="sd">"""Builds sample user/note(s) data"""</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">leaderboards</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="sd">'''add user to table'''</span>
+                <span class="nb">object</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Created new uid </span><span class="si">{</span><span class="nb">object</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="sd">'''fails with bad or duplicate data'''</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Records exist uid </span><span class="si">{</span><span class="n">l</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">, or error."</span><span class="p">)</span>
+
+<span class="n">init_leaderboards</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="DO-THESE-FOR-THIS-SECTION">
+<a class="anchor" href="#DO-THESE-FOR-THIS-SECTION" aria-hidden="true"><span class="octicon octicon-link"></span></a>DO THESE FOR THIS SECTION<a class="anchor-link" href="#DO-THESE-FOR-THIS-SECTION"> </a>
+</h3>
+<ul>
+<li>fill in the blanks</li>
+<li>add a new leaderboard, and edit the bobbert leaderboard; add proof with a screenshot of the sqlite.db</li>
+<li>add a new set of keys and values to the leaderboard; add proof with a screenshot of the sqlite.db</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Picture-Database">
+<a class="anchor" href="#Picture-Database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Picture Database<a class="anchor-link" href="#Picture-Database"> </a>
+</h2>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/111910633/233181629-36a561c0-8ba5-4644-ac43-274c74a55dff.png" alt="image"></li>
+<li>Used CRUD methods which have create, read, update, and delete rows in the table.  There is a function called initEasyImages which populates the 'Images' table with data.</li>
+<li>The <strong>init</strong> method is used to create a new row in the table with a given imagePath, xCoord, yCoord, and difficulty. The <strong>repr</strong> method returns a string representation of the object when it is printed.</li>
+<li>The table has five columns: id, _imagePath, _xCoord, _yCoord, and _difficulty.
+<img src="https://user-images.githubusercontent.com/111910633/233180602-c81c1931-85a4-4d8e-b738-a091eb803d60.png" alt="image">
+</li>
+<li><img src="https://user-images.githubusercontent.com/111910633/233181071-4442d4c3-8c54-497f-b3bf-d625e6742c05.png" alt="image"></li>
+<li>This part of the code defines getter and setter methods for the columns in the Images model.  It sets and retrieves the metadata of the image.</li>
+<li><img src="https://user-images.githubusercontent.com/111910633/233181852-9daeed5a-6ab7-4d46-8069-8bcf390ea07a.png" alt="image"></li>
+<li>The initEasyImages function initializes the database with image metadata for easy difficulty images.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="p">,</span> <span class="n">Text</span><span class="p">,</span> <span class="n">LargeBinary</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.exc</span> <span class="kn">import</span> <span class="n">IntegrityError</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="k">class</span> <span class="nc">Images</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'images'</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_imagePath</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Text</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_xCoord</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_yCoord</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_difficulty</span> <span class="o">=</span> <span class="n">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imagePath</span><span class="p">,</span> <span class="n">xCoord</span><span class="p">,</span> <span class="n">yCoord</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_imagePath</span> <span class="o">=</span> <span class="n">imagePath</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">xCoord</span> <span class="o">=</span> <span class="n">xCoord</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">yCoord</span> <span class="o">=</span> <span class="n">yCoord</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="n">difficulty</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"&lt;image(id='</span><span class="si">%s</span><span class="s2">', imagePath='</span><span class="si">%s</span><span class="s2">', xCoord='</span><span class="si">%s</span><span class="s2">', yCoord='</span><span class="si">%s</span><span class="s2">', difficulty='</span><span class="si">%s</span><span class="s2">')&gt;"</span> <span class="o">%</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">imagePath</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xCoord</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">yCoord</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span>
+        <span class="p">)</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">imagePath</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_imagePath</span>
+
+    <span class="nd">@imagePath</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">imagePath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_imagePath</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">xCoord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xCoord</span>
+
+    <span class="nd">@xCoord</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">xCoord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_xCoord</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">yCoord</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_yCoord</span>
+
+    <span class="nd">@yCoord</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">yCoord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_yCoord</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_difficulty</span>
+
+    <span class="nd">@difficulty</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_difficulty</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s2">"imagePath"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_imagePath</span><span class="p">,</span> <span class="s2">"xCoord"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_xCoord</span><span class="p">,</span> <span class="s2">"yCoord"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_yCoord</span><span class="p">,</span> <span class="s2">"difficulty"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_difficulty</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># creates a person object from User(db.Model) class, passes initializers</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># add prepares to persist person object to Users table</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>  <span class="c1"># SqlAlchemy "unit of work pattern" requires a manual commit</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">except</span> <span class="n">IntegrityError</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># CRUD read converts self to dictionary</span>
+    <span class="c1"># returns dictionary</span>
+    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"path"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">imagePath</span><span class="p">,</span>
+            <span class="s2">"xCoord"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">xCoord</span><span class="p">,</span>
+            <span class="s2">"yCoord"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">yCoord</span><span class="p">,</span>
+            <span class="s2">"difficulty"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span>
+        <span class="p">}</span>
+
+    <span class="c1"># CRUD update: updates user name, password, phone</span>
+    <span class="c1"># returns self</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">xCoord</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">yCoord</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+        <span class="sd">"""only updates values with length"""</span>
+        <span class="n">xCoord</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">xCoord</span><span class="p">)</span>
+        <span class="n">yCoord</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">yCoord</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">imagePath</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">if</span> <span class="n">xCoord</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">xCoord</span> <span class="o">=</span> <span class="n">xCoord</span>
+        <span class="k">if</span> <span class="n">yCoord</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">yCoord</span> <span class="o">=</span> <span class="n">yCoord</span>
+        <span class="k">if</span> <span class="n">difficulty</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="n">difficulty</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">initEasyImages</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+        <span class="n">image_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">/</span><span class="s2">"images/easy"</span>
+        <span class="n">images_paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">image_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">()]</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[</span><span class="n">Images</span><span class="p">(</span><span class="s2">"images/easy/"</span> <span class="o">+</span> <span class="n">image</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images_paths</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">images</span><span class="p">:</span>
+             <span class="k">try</span><span class="p">:</span>
+                <span class="n">image</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Successfully added entry"</span><span class="p">)</span>
+             <span class="k">except</span><span class="p">:</span>
+                 <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+                 <span class="nb">print</span><span class="p">(</span><span class="s2">"Error adding image: "</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">imagePath</span><span class="p">)</span>
+
+<span class="n">initEasyImages</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Popcorn-Hacks">
+<a class="anchor" href="#Popcorn-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popcorn Hacks<a class="anchor-link" href="#Popcorn-Hacks"> </a>
+</h4>
+<ul>
+<li>The init method initializes a new Images object with the following parameters: imagePath, xCoord, yCoord, and <em>__</em>.</li>
+<li>In the Images class, the tablename attribute specifies the name of the <em>__</em>.</li>
+<li>The update method updates the values of the object's attributes imagePath, xCoord, yCoord, and difficulty based on the input parameters, and then uses the db.session.commit method to <em>__</em> the changes to the database.</li>
+<li>The db module used in this code is part of a larger library called <em>__</em>, which provides a set of tools for working with databases in Python.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Picture-Encoding">
+<a class="anchor" href="#Picture-Encoding" aria-hidden="true"><span class="octicon octicon-link"></span></a>Picture Encoding<a class="anchor-link" href="#Picture-Encoding"> </a>
+</h2>
+<p><strong>Essential Question: What are some methods that we could store and access images in the backend, and how can we send them to a frontend application?</strong></p>
+<p>The image encoding process for this project is done within the endpoints created on our backend application. The overarching process is split into three seperate sub-processes, each handling a different level of game-difficulty. For this lesson, we will look at the easy images sub-process as our example.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_random_easy_image</span><span class="p">():</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="n">Images</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_difficulty</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+</pre></div>
+<p>This procedure is a void function that takes in no arguments directly, but does access the database via the <code>Images</code> object imported from the models that we created</p>
+<p>The first line filters all database entries and searches for all image entries with the difficulty column set to 0, which we established as the identifying factor for easy images. The <code>.all()</code> method attached to the end of the query serves to return all matching image objects in a list called <code>image</code>.</p>
+<p>The procedure finally returns a random image using the <code>random.choice</code> method.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ImagesAPI</span><span class="p">:</span>
+    <span class="k">class</span> <span class="nc">_EasyImages</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">get_random_easy_image</span><span class="p">()</span>
+            <span class="n">json_data</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="n">image</span><span class="p">:</span>
+                <span class="n">image_path</span> <span class="o">=</span> <span class="n">project_path</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">image</span><span class="o">.</span><span class="n">imagePath</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+                    <span class="n">json_data</span><span class="p">[</span><span class="s2">"bytes"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()))[</span><span class="mi">2</span><span class="p">:][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">json_data</span><span class="p">[</span><span class="s2">"xCoord"</span><span class="p">]</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">xCoord</span>
+                <span class="n">json_data</span><span class="p">[</span><span class="s2">"yCoord"</span><span class="p">]</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">yCoord</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
+</pre></div>
+<p>If the first procedure locates and selects the image, the second procedure then encodes, formats, and returns the JSON data containing the image and its metadata.</p>
+<p>The procedure first calls the <code>get_random_easy_image()</code> procedure created earlier to store our image object and also initializes an empty dictionary to store our json data.</p>
+<p>If a valid image object is found, the procedure will attempt to create an absolute path to the image file on the computer running flask application. This is achieved by concatenating the absolute path of the working project directory to the relative image path stored in the database. The aboslute path of the directory is generated in our <em>namespace package</em> (__init__.py) in our _nighthawkguessr_api_ package. The line calculating the project path is shown below, and uses the <code>Path</code> object from the <code>pathlib</code> library.</p>
+<div class="highlight"><pre><span></span><span class="n">project_path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+</pre></div>
+<p>After creating the image path, the procedure attempts to open the image file, and procedes to use the <code>base64.b64encode</code> method to encode the image file bytes into base64 data. This is convinient for us as HTML on the frontend pages allows us to render images with base64 bytes (Not sure about normal image bytes). The base64 bytes are then encoded into a python literal string in order to be jsonified and displayed on the api endpoint. The <code>[2:][:-1]</code> appended to the end is a type of string slicing which removes the <strong>b'</strong> generated at the start of the data and the <strong>'</strong> generated at the end of the data. These extraneous characters are used to indicate a base64 string, and are not part of the original data.</p>
+<p>The procedure finally appends the metadata (position of the right coordinates on the map) to the <code>json_data</code> dictionary, completing the process.</p>
+<p>Finally, the procedure returns the JSONified data, which is accessible from our API. As you can see, the images we process are extremely large and possess high resolution (typically a few megabytes!)
+<img src="https://user-images.githubusercontent.com/111480448/234923845-98d21dea-ad65-48db-bae5-30819fb1f98b.png" alt='"API endpoint"'></p>
+<h3 id="Popcorn-Hack:">
+<a class="anchor" href="#Popcorn-Hack:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popcorn Hack:<a class="anchor-link" href="#Popcorn-Hack:"> </a>
+</h3>
+<blockquote>
+<p>Please write a few sentences answering the essential question, "What are some methods that we could store and access images in the backend, and how can we send them to a frontend application?"</p>
+</blockquote>
+<p>-</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Endpoints">
+<a class="anchor" href="#Endpoints" aria-hidden="true"><span class="octicon octicon-link"></span></a>Endpoints<a class="anchor-link" href="#Endpoints"> </a>
+</h2>
+<blockquote>
+<p>What are endpoints and how do we use them to transfer data from one part of the internet to another?</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Backend:">
+<a class="anchor" href="#Backend:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Backend:<a class="anchor-link" href="#Backend:"> </a>
+</h3>
+<ul>
+<li>The backend creates endpoints that are used to edit the properties of the database constructed by the model.</li>
+<li>
+<code>___GET_</code>, <code>_PUT___</code>, <code>_POST___</code>, and <code>_DELETE___</code> methods are used in order to define HTTP endpoints in the API.<ul>
+<li>These endpoints are based on requests that can be made to <em>__</em> the database.</li>
+<li>Variables defined in the <em>__</em> file are used to call data from the database in order to be manipulated.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Methods-in-Backend-Example">
+<a class="anchor" href="#Methods-in-Backend-Example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods in Backend Example<a class="anchor-link" href="#Methods-in-Backend-Example"> </a>
+</h3>
+<ul>
+<li>Modules are being imported with specified classes which are used later in the program.<ul>
+<li>
+<code>Blueprint</code>: used to organize <em>route__</em> and functions</li>
+<li>
+<code>request</code>: used to access data sent to the Flask app. through the <strong>HTTP</strong> request</li>
+<li>
+<code>Api</code>: creates a Flask instance that handles requests</li>
+<li>
+<code>Resource</code>: this allows for the definition of custom HTTP requests</li>
+<li>
+<code>reqparse</code>: used to <em>parse__</em> (sort and search) and validate data that is requested</li>
+</ul>
+</li>
+<li>The blueprint and api are then defined as variables and are used to store any future <em>data__</em> that is requested.</li>
+<li>Some preliminary functions, such as <code>find_by_username</code>, are created to be used later in the API code, allowing for <em>progamatic access to__</em> code.<ul>
+<li>In this case, these functions are used to search through the database to find specific usernames.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Blueprint</span><span class="p">,</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">reqparse</span>
+
+<span class="c1"># setting variables used to store future data</span>
+<span class="n">leaderboard_bp</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s2">"leaderboards"</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+<span class="n">leaderboard_api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">leaderboard_bp</span><span class="p">)</span>
+
+<span class="c1"># pre-made function created to search for usernames, allows for simplified program</span>
+<span class="k">def</span> <span class="nf">find_by_username</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="n">Leaderboard</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_username</span><span class="o">=</span><span class="n">username</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">users</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="GET-Method">
+<a class="anchor" href="#GET-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Method<a class="anchor-link" href="#GET-Method"> </a>
+</h4>
+<ul>
+<li>This method is used to <em>__</em> specific data points from the database by searching through the usernames.</li>
+<li>This will be different for each type of database being made, however the general format stays the same.<ul>
+<li>Since this is a text database, to pull specific information from the database, the API will <em>__</em> through the data using the username, which is unique.</li>
+<li>The function defined previously, <code>find_by_username()</code>, is used to search through the database and pull the specific data point that is being searched.</li>
+<li>If the user exists, the data of that user will be returned, being sent to the <em>__</em> of the program.</li>
+<li>If a user isn't found, an error will be returned that the user does not exist.
+<br>
+<br>
+</li>
+</ul>
+</li>
+<li>In general, the program will always be searching for a piece of information that is unique and that will be used to pull data to wherever it is being requested.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># requested username turned into variable for later use</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"username"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="s2">"uid"</span><span class="p">)</span>
+        <span class="c1"># username used to search for data and the found data is made into a variable</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_username</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+            <span class="c1"># data is sent to the frontend</span>
+            <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="c1"># error checking</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="n">user</span><span class="p">},</span> <span class="mi">404</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="POST-Method">
+<a class="anchor" href="#POST-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>POST Method<a class="anchor-link" href="#POST-Method"> </a>
+</h4>
+<ul>
+<li>This method is used to <em>add__</em> a specific piece of information in the database based on searching by usernames.</li>
+<li>This is again different for each database that is made, however the general structure stays the same.<ul>
+<li>In this example, a parser is being used to extract data from an incoming <em>__</em>. In this case, the <code>RequestParser</code> class is used from the Flask module.<ul>
+<li>All required arguments are added to the parser, specifying what type of data it is.</li>
+<li>The <code>____</code> variable is added in order to parse and store all incoming data.</li>
+</ul>
+</li>
+<li>The variable <code>leaderboard</code> is created to make a new object that will contain the values from the incoming data.</li>
+<li>The function will attempt to add a new entry in the leaderboard database and return a status of a successful addition of the data.</li>
+<li>If there is an error in the data being inputted, a status code of <em>__</em> will be returned.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># using parsers to gather and data that is to be posted and validate it's true</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="n">reqparse</span><span class="o">.</span><span class="n">RequestParser</span><span class="p">()</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"username"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"password"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"pointsEasy"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"pointsMedium"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"pointsHard"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="c1"># variable made to store data</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+        <span class="c1"># variable created to format all data into one place and send to database for logging</span>
+        <span class="n">leaderboard</span> <span class="o">=</span> <span class="n">Leaderboard</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="s2">"username"</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="s2">"password"</span><span class="p">],</span>
+                                  <span class="n">args</span><span class="p">[</span><span class="s2">"pointsEasy"</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="s2">"pointsMedium"</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="s2">"pointsHard"</span><span class="p">])</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># data is sent to the database for storage</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">leaderboard</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">leaderboard</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="mi">201</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># error checking</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"server error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">},</span> <span class="mi">500</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="PUT-Method">
+<a class="anchor" href="#PUT-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>PUT Method<a class="anchor-link" href="#PUT-Method"> </a>
+</h4>
+<ul>
+<li>This method is used to <em>__</em> a specific piece of information in the database based on searching by usernames.</li>
+<li>For each data base that is made, there will be different specific but the overall structure stays the same.<ul>
+<li>First, the <code>username</code> variable is defined, which <em>__</em> the requested username and sets it as a variable that will be used later to edit a specific dataset.</li>
+<li>The function <code>find_by_username()</code> is again used to search through the data to look for the username requested. This is set to a variable to be used later.</li>
+<li>If the username is found in the database, the rest of the dataset is updated with the new <em>__</em> requested. This is updated into the database.</li>
+<li>If there is an error found with the data requested of it the user isn't found, an error is returned.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># variable created to make requested username into something that can be used to search for data in future</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"username"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="s2">"uid"</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># attempts to find the data in the database</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_username</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+                <span class="c1"># if the data is found, the data points are updates</span>
+                <span class="n">user</span><span class="o">.</span><span class="n">pointsEasy</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"pointsEasy"</span><span class="p">))</span>
+                <span class="n">user</span><span class="o">.</span><span class="n">pointsMedium</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"pointsMedium"</span><span class="p">))</span>
+                <span class="n">user</span><span class="o">.</span><span class="n">pointsHard</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"pointsHard"</span><span class="p">))</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="mi">201</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># if user not found, error is returned</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="s2">"leaderboard not found"</span><span class="p">},</span> <span class="mi">404</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># checks for errors in request</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"server error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">},</span> <span class="mi">500</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="DELETE-Method">
+<a class="anchor" href="#DELETE-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>DELETE Method<a class="anchor-link" href="#DELETE-Method"> </a>
+</h4>
+<ul>
+<li>This method is used to <em>__</em> a specific information from the database, again searching by username.</li>
+<li>The overall structure stays the same between different databases, but the specific <em>__</em> will need to be changed to personalize the database.<ul>
+<li>A variable for the username is created in order to search for for the user name requested later in the code with the function <code>find_by_username()</code>.</li>
+<li>If the user is found, the user is deleted, along with that user's data and the change is saved to the database.</li>
+<li>If the user isn't found or if an error is found with the data requested, an <em>__</em> is returned.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># username variable defined to store requested value</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"username"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="s2">"uid"</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># finds the username and stores data in variable</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_username</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+                <span class="c1"># if the user is found, the user and their data is deleted</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+                <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># if user not found, error is returned</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="s2">"leaderboard not found"</span><span class="p">},</span> <span class="mi">404</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># error checking for request error</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"server error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">},</span> <span class="mi">500</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Displaying-the-Full-Database">
+<a class="anchor" href="#Displaying-the-Full-Database" aria-hidden="true"><span class="octicon octicon-link"></span></a>Displaying the Full Database<a class="anchor-link" href="#Displaying-the-Full-Database"> </a>
+</h4>
+<ul>
+<li>Another class is created in order to <em>__</em> the entire database at once and also to delete the entire database if necessary.</li>
+<li>This uses the same functions as before to GET and DELETE the data, however it is modified slightly to look through the entire database abd display or delete all data points.</li>
+<li>An example of where this would be useful is to create a table of data in the <em>__</em>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LeaderboardListAPI</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="c1"># GET method</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># attempts to find the entire database requested and is stored in variable</span>
+            <span class="n">leaderboards</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Leaderboard</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+            <span class="c1"># sends back the entire database</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">leaderboard</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">leaderboard</span> <span class="ow">in</span> <span class="n">leaderboards</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># error checking for request errors</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"server error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">},</span> <span class="mi">500</span>
+
+    <span class="c1"># DELETE method</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># deletes entire database</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">Leaderboard</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># checks for errors in request</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"server error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">},</span> <span class="mi">500</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Popcorn-Hacks">
+<a class="anchor" href="#Popcorn-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popcorn Hacks<a class="anchor-link" href="#Popcorn-Hacks"> </a>
+</h4>
+<p>Please answer these questions to earn points for the popcorn hacks.</p>
+<ol>
+<li>What are the four HTTP request methods that are used with Flask?
+GET, PUT, POST, DELETE</li>
+<li>What is a parser and how would it be aid with data validation?
+Used to analyze things like string to convert to a purpose.</li>
+<li>What is the role endpoints in Flask?
+They are URI's to connect to application with request and receive response</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Frontend-and-How-it-Communicates-to-Backend">
+<a class="anchor" href="#Frontend-and-How-it-Communicates-to-Backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frontend and How it Communicates to Backend<a class="anchor-link" href="#Frontend-and-How-it-Communicates-to-Backend"> </a>
+</h3>
+<blockquote>
+<p>This first part of the frontend logic simply finds out of the site is running locally or not, off of which is figures out whether or not to pull data from the local backend link or the global backend link. In this example, a global backend link hasn't been sent, however it would go in the second set of quotations after the local address. This isn't something you need to know, but it is nice to use when developing full stack applications.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">checks</span> <span class="k">if</span> <span class="n">site</span> <span class="ow">is</span> <span class="n">run</span> <span class="n">locally</span>
+<span class="n">const</span> <span class="n">isLocalhost</span> <span class="o">=</span> <span class="n">Boolean</span><span class="p">(</span>
+  <span class="n">window</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">hostname</span> <span class="o">===</span> <span class="s2">"localhost"</span> <span class="o">||</span>
+  <span class="n">window</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">hostname</span> <span class="o">===</span> <span class="s2">"[::1]"</span> <span class="o">||</span>
+  <span class="n">window</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">hostname</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="o">/^</span><span class="mi">127</span><span class="p">(</span><span class="err">?</span><span class="p">:</span>\<span class="o">.</span><span class="p">(</span><span class="err">?</span><span class="p">:</span><span class="mi">25</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">5</span><span class="p">]</span><span class="o">|</span><span class="mi">2</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="o">|</span><span class="p">[</span><span class="mi">01</span><span class="p">]</span><span class="err">?</span><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">][</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span><span class="err">?</span><span class="p">)){</span><span class="mi">3</span><span class="p">}</span><span class="err">$</span><span class="o">/</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="o">//</span> <span class="n">defines</span> <span class="n">database</span> <span class="n">url</span>
+<span class="n">const</span> <span class="n">api</span> <span class="o">=</span> <span class="n">isLocalhost</span> <span class="err">?</span> <span class="s2">"http://localhost:8200"</span> <span class="p">:</span> <span class="s2">""</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="GET-Method">
+<a class="anchor" href="#GET-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>GET Method<a class="anchor-link" href="#GET-Method"> </a>
+</h4>
+<ul>
+<li>This method is more complicated in terms of requesting, simply because in order to, for example, print all data points into a <em>__</em>, the function needs to iterate through the entire database.</li>
+<li>In this example, the function <code>getList()</code> is used to asynchronously fetch the entire database and set it to a variable called <code>list</code>.<ul>
+<li>The list is returned for later use outside of this <em>__</em> in order to print the data.</li>
+</ul>
+</li>
+</ul>
+<h5 id="Printing-the-Data">
+<a class="anchor" href="#Printing-the-Data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Printing the Data<a class="anchor-link" href="#Printing-the-Data"> </a>
+</h5>
+<ul>
+<li>In order to print the data, the function <code>getList()</code> is run and once it is run, it <em>__</em> through the data to pull out each individual data point and enter it into the function used to make the table.<ul>
+<li>For each class in the database, which is each row in the database, the variables corresponding to that specific class are pulled and inserted into the <code>addTask()</code> function as <em>__</em> to create the table of users.</li>
+</ul>
+</li>
+<li>The function <code>addTask()</code> is used to create the visual table that the user sees.<ul>
+<li>A row is created and for each table cell in that row, the data is added by iterating through the <em>__</em> of variables that are parameters pulled directly from the database.</li>
+<li>A new row is added into table for each new class of information pulled from the database.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">fetches</span> <span class="n">entire</span> <span class="n">database</span>
+<span class="n">const</span> <span class="n">getList</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="n">stores</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">variable</span> <span class="nb">list</span>
+  <span class="n">const</span> <span class="nb">list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">fetch</span><span class="p">(</span><span class="n">api</span> <span class="o">+</span> <span class="s2">"/leaderboardList"</span><span class="p">)</span><span class="o">.</span><span class="n">then</span><span class="p">((</span><span class="n">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">());</span>
+  <span class="k">return</span> <span class="nb">list</span>
+<span class="p">};</span>
+
+<span class="o">//</span> <span class="n">goes</span> <span class="n">through</span> <span class="n">entire</span> <span class="n">database</span> <span class="ow">and</span> <span class="n">pulls</span> <span class="n">each</span> <span class="n">individual</span> <span class="k">class</span>
+<span class="nc">getList</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="nb">list</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="o">//</span> <span class="k">for</span> <span class="n">each</span> <span class="k">class</span> <span class="err">(</span><span class="nc">row</span><span class="p">),</span> <span class="n">data</span> <span class="ow">is</span> <span class="n">pulled</span> <span class="ow">and</span> <span class="n">added</span> <span class="n">into</span> <span class="n">addTask</span><span class="p">()</span> <span class="n">function</span> <span class="n">to</span> <span class="n">be</span> <span class="n">put</span> <span class="ow">in</span> <span class="n">visual</span> <span class="n">table</span>
+  <span class="nb">list</span><span class="o">.</span><span class="n">forEach</span><span class="p">(</span><span class="bp">cls</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">addTask</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">pointsEasy</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">pointsMedium</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">pointsHard</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+
+<span class="o">//</span> <span class="n">adds</span> <span class="n">visual</span> <span class="n">representation</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">table</span>
+<span class="n">function</span> <span class="n">addTask</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="p">,</span> <span class="n">pointsHard</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="o">//</span> <span class="n">array</span> <span class="n">of</span> <span class="n">variables</span> <span class="n">defining</span> <span class="n">data</span> <span class="n">points</span>
+  <span class="n">var</span> <span class="n">tableCells</span> <span class="o">=</span> <span class="p">[</span><span class="n">username</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="p">,</span> <span class="n">pointsHard</span><span class="p">]</span>
+  <span class="o">//</span> <span class="n">creates</span> <span class="n">new</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">variable</span>
+  <span class="n">var</span> <span class="n">row</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">'tr'</span><span class="p">)</span>
+  <span class="o">//</span> <span class="n">goes</span> <span class="n">through</span> <span class="n">entire</span> <span class="n">data</span> <span class="nb">set</span> <span class="ow">and</span> <span class="n">places</span> <span class="n">data</span> <span class="n">into</span> <span class="n">cells</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tableCells</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="n">tableCell</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s1">'th'</span><span class="p">)</span>
+    <span class="n">tableCell</span><span class="o">.</span><span class="n">textContent</span> <span class="o">=</span> <span class="n">tableCells</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">tableCell</span><span class="o">.</span><span class="n">className</span> <span class="o">=</span> <span class="s1">'cell'</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tableCell</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="o">//</span> <span class="n">creates</span> <span class="n">new</span> <span class="n">row</span> <span class="k">as</span> <span class="n">child</span> <span class="n">of</span> <span class="n">schedule</span> <span class="n">element</span>
+  <span class="n">schedule</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="POST-Method">
+<a class="anchor" href="#POST-Method" aria-hidden="true"><span class="octicon octicon-link"></span></a>POST Method<a class="anchor-link" href="#POST-Method"> </a>
+</h4>
+<ul>
+<li>This method is used to push data to the backend using the <em>__</em> POST method.<ul>
+<li>The function <code>addData</code> is defined with the parameters that are going to be pushed into the backend.</li>
+<li>An object is created to define the variables that are going to be pushed into the backend. This is basically the <em>__</em> string that will be sent to the backend to get decoded and inserted into the database.</li>
+<li>The <code>fetch()</code> function is called with the <code>api</code> variable, which is a variable representing the url for the backend API, and the extension specific to where the data will be posted, in this case being <code>/leaderboard</code>.<ul>
+<li>The method, <em>__</em>, and body of the data are defined in order to complete a successful HTTP request to the backend. The object <code>data</code> which was created earlier, is converted to a JSON string here and sent to the backend.</li>
+</ul>
+</li>
+<li>If an error is detected, it is returned and the request will fail.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">calls</span> <span class="n">addData</span> <span class="n">function</span>
+<span class="n">function</span> <span class="n">addData</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="p">,</span> <span class="n">pointsHard</span><span class="p">){</span>
+
+<span class="o">//</span> <span class="n">creates</span> <span class="nb">object</span> <span class="n">defining</span> <span class="n">the</span> <span class="n">variables</span> <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">backend</span><span class="p">,</span> <span class="n">corresponding</span> <span class="k">with</span> <span class="n">the</span> <span class="n">backend</span> <span class="n">variables</span>
+<span class="n">let</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"username"</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+  <span class="s2">"password"</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
+  <span class="s2">"pointsEasy"</span><span class="p">:</span> <span class="n">pointsEasy</span><span class="p">,</span>
+  <span class="s2">"pointsMedium"</span><span class="p">:</span> <span class="n">pointsMedium</span><span class="p">,</span>
+  <span class="s2">"pointsHard"</span><span class="p">:</span> <span class="n">pointsHard</span>
+<span class="p">}</span>
+
+<span class="o">//</span> <span class="n">POST</span> <span class="n">method</span> <span class="n">called</span>
+<span class="n">fetch</span><span class="p">(</span><span class="n">api</span> <span class="o">+</span> <span class="s1">'/leaderboard'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="n">method</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
+  <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+<span class="p">})</span>
+  <span class="o">//</span> <span class="n">error</span> <span class="n">checking</span>
+  <span class="o">.</span><span class="n">then</span><span class="p">((</span><span class="n">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+  <span class="o">.</span><span class="n">catch</span><span class="p">((</span><span class="n">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">'Error:'</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="PUT-and-DELETE-Methods">
+<a class="anchor" href="#PUT-and-DELETE-Methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>PUT and DELETE Methods<a class="anchor-link" href="#PUT-and-DELETE-Methods"> </a>
+</h4>
+<ul>
+<li>These two methods are almost identical to the POST method above in the way they work, the only difference being that the <em>__</em> requested is different. The name of the function defined is also changes, in this case being <code>editData()</code> and <code>deleteData()</code>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">editing</span> <span class="n">function</span> <span class="n">defined</span>
+<span class="n">function</span> <span class="n">editData</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="p">,</span> <span class="n">pointsHard</span><span class="p">){</span>
+
+  <span class="o">//</span> <span class="n">has</span> <span class="nb">object</span> <span class="k">with</span> <span class="n">variables</span> <span class="n">that</span> <span class="n">are</span> <span class="n">required</span> <span class="ow">in</span> <span class="n">backend</span>
+  <span class="n">let</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"username"</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+    <span class="s2">"password"</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
+    <span class="s2">"pointsEasy"</span><span class="p">:</span> <span class="n">pointsEasy</span><span class="p">,</span>
+    <span class="s2">"pointsMedium"</span><span class="p">:</span> <span class="n">pointsMedium</span><span class="p">,</span>
+    <span class="s2">"pointsHard"</span><span class="p">:</span> <span class="n">pointsHard</span>
+  <span class="p">}</span>
+  
+  <span class="o">//</span> <span class="n">PUT</span> <span class="n">method</span> <span class="n">called</span>
+  <span class="n">fetch</span><span class="p">(</span><span class="n">api</span> <span class="o">+</span> <span class="s1">'/leaderboard'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="n">method</span><span class="p">:</span> <span class="s1">'PUT'</span><span class="p">,</span>
+    <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+  <span class="p">})</span>
+    <span class="o">//</span> <span class="n">error</span> <span class="n">checking</span>
+    <span class="o">.</span><span class="n">then</span><span class="p">((</span><span class="n">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">catch</span><span class="p">((</span><span class="n">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">'Error:'</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">deleting</span> <span class="n">function</span> <span class="n">defined</span>
+<span class="n">function</span> <span class="n">deleteData</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">pointsEasy</span><span class="p">,</span> <span class="n">pointsMedium</span><span class="p">,</span> <span class="n">pointsHard</span><span class="p">){</span>
+
+  <span class="o">//</span> <span class="nb">object</span> <span class="n">defined</span> <span class="k">with</span> <span class="n">variables</span> <span class="n">that</span> <span class="n">are</span> <span class="n">same</span> <span class="k">as</span> <span class="n">backend</span>
+  <span class="n">let</span> <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"username"</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+    <span class="s2">"password"</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
+    <span class="s2">"pointsEasy"</span><span class="p">:</span> <span class="n">pointsEasy</span><span class="p">,</span>
+    <span class="s2">"pointsMedium"</span><span class="p">:</span> <span class="n">pointsMedium</span><span class="p">,</span>
+    <span class="s2">"pointsHard"</span><span class="p">:</span> <span class="n">pointsHard</span>
+  <span class="p">}</span>
+  
+  <span class="o">//</span> <span class="n">DELETE</span> <span class="n">method</span> <span class="n">called</span>
+  <span class="n">fetch</span><span class="p">(</span><span class="n">api</span> <span class="o">+</span> <span class="s1">'/leaderboard'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="n">method</span><span class="p">:</span> <span class="s1">'DELETE'</span><span class="p">,</span>
+    <span class="n">headers</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">body</span><span class="p">:</span> <span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+  <span class="p">})</span>
+    <span class="o">//</span> <span class="n">error</span> <span class="n">checking</span>
+    <span class="o">.</span><span class="n">then</span><span class="p">((</span><span class="n">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">catch</span><span class="p">((</span><span class="n">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="n">console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">'Error:'</span><span class="p">,</span> <span class="n">error</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calling-Images-(GET-Method)">
+<a class="anchor" href="#Calling-Images-(GET-Method)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Calling Images (GET Method)<a class="anchor-link" href="#Calling-Images-(GET-Method)"> </a>
+</h3>
+<ul>
+<li>The process for calling images is basically the same as anything else, except you need to be able to reconstruct the images based on the <em>__</em> that is requested from the backend.</li>
+<li>In this case, the image in the api is being called to the frontend and is returned as the variable <code>list</code>.<ul>
+<li>This is then inserted directly into the html by getting the element that needs to be edited and styling with <em>__</em> by using the built-in function <code>data:image/png;base64,</code> which translated from bytes to pixel.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">GET</span> <span class="n">method</span> <span class="n">calling</span> <span class="n">info</span> <span class="kn">from</span> <span class="nn">backend</span> <span class="n">url</span>
+<span class="n">const</span> <span class="n">getList</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="n">const</span> <span class="nb">list</span> <span class="o">=</span> <span class="k">await</span> <span class="n">fetch</span><span class="p">(</span><span class="n">api</span> <span class="o">+</span> <span class="s2">"/api/images/GetEasyImage"</span><span class="p">)</span><span class="o">.</span><span class="n">then</span><span class="p">((</span><span class="n">r</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">());</span>
+  <span class="k">return</span> <span class="nb">list</span>
+<span class="p">};</span>
+
+<span class="o">//</span> <span class="n">inserting</span> <span class="n">image</span> <span class="n">into</span> <span class="n">frontend</span>
+<span class="n">getList</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="nb">list</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="n">document</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">"body"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="s2">"background-image: url('data:image/png;base64, "</span> <span class="o">+</span> <span class="nb">list</span><span class="o">.</span><span class="n">bytes</span> <span class="o">+</span><span class="s2">"');"</span>
+<span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Popcorn-Hacks">
+<a class="anchor" href="#Popcorn-Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popcorn Hacks<a class="anchor-link" href="#Popcorn-Hacks"> </a>
+</h4>
+<p>Please answer these questions to earn points for the popcorn hacks.</p>
+<ol>
+<li>How is data for images stored in a Flask API and how is it displayed on the frontend when requested?
+base64, it is displayed a background-image</li>
+<li>What is the <code>fetch()</code> function and how is it used in frontend logic?
+It performs async request and provides a promise.</li>
+<li>How is data formatted and sent to the backend? (mention JSON in your answer)
+Into HTML</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Time-and-Space-Complexity-of-Algorithms">
+<a class="anchor" href="#Time-and-Space-Complexity-of-Algorithms" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time and Space Complexity of Algorithms<a class="anchor-link" href="#Time-and-Space-Complexity-of-Algorithms"> </a>
+</h2>
+<p>The lesson for time and space complexity of algorithms will consist of demonstrations of sorting algorithms and the different time complexities that they come with on a small scale. This can be acomplished using things such as a deck of cards or even with actual people. An example of how this will work is laying out the cards in a random order on the table, and demonstrating different ways of sorting it. From methods such as bubble sort to methods such as bogo sort, it will be really easy to see exactly how much time it would take for these different sorting algoritms to complete. Then after that, it is easy to understand the concept of time complexity when given a real world example.</p>
+<p>Space complexity can be demonstrated by using the same method, however, adding in the extra step of having the cards in a pile. This will show how much space is needed to complete the sorting algorithm. This will easily reveal the concept of space complexity because it allows people to witness a real world, physical example of the concept, turning a really hard to grasp concept into something that is easy to understand.</p>
+<p>Additionally, we are also going to analyze certain algorithms within our project to show how such analysis is applicable to real world projects.</p>
+<p><strong>Essential Question: What is the quicksort algorithm, and how does it work? How does it's time and space complexities scale with input sizes?</strong></p>
+<h3 id="QuickSort-Algorithm">
+<a class="anchor" href="#QuickSort-Algorithm" aria-hidden="true"><span class="octicon octicon-link"></span></a>QuickSort Algorithm<a class="anchor-link" href="#QuickSort-Algorithm"> </a>
+</h3>
+<p>The main algorithm we've employed is an recursive implementation of quickSort in the backend to sort the database entries to obtain the user with the highest overall score. Typically this algorithm is implemented to sort in ascending order, but to make it easier to extract the top 10 users, we sill be modifying the algorithm to sort in descending order (so the top players show up first in the list).</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LeaderboardTop10</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+        <span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>                                              <span class="c1"># Pivot value set to the 2nd index of the last element</span>
+        <span class="n">pivot_pos</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span>                                              <span class="c1"># Set our base pivot position, ensure that lower picoit index == lo</span>
+        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>                                       <span class="c1"># Iterate over all elements in the partition array</span>
+            <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">pivot</span><span class="p">:</span>                                    <span class="c1"># Found an element creater than pivot</span>
+                <span class="n">pivot_pos</span><span class="o">+=</span><span class="mi">1</span>                                            <span class="c1"># Increment correct position for pivot</span>
+                <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span><span class="p">]</span>     <span class="c1"># Swap the larger element with the element at the current pivot position</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>       <span class="c1"># Swap element at pivot position with the pivot element</span>
+        <span class="k">return</span> <span class="n">pivot_pos</span><span class="o">+</span><span class="mi">1</span>                                              <span class="c1"># Return index of pivot element</span>
+
+    <span class="k">def</span> <span class="nf">qSortUserList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">lo</span> <span class="o">&lt;</span> <span class="n">hi</span><span class="p">:</span>
+            <span class="n">last_pivot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qSortUserList</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">last_pivot</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">qSortUserList</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">last_pivot</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">users_list</span> <span class="o">=</span> <span class="n">get_user_list</span><span class="p">()</span>
+        <span class="n">top10</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qSortUserList</span><span class="p">(</span><span class="n">users_list</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">users_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users_list</span><span class="p">:</span>
+            <span class="n">top10</span><span class="p">[</span><span class="n">user</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">user</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">top10</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">top10</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">top10</span>
+        <span class="k">return</span> <span class="n">top10</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+<p>To understand how the algorithm first, we must first familiarize ourselves with the process.</p>
+<ol>
+<li>Our backend grabs all users from our leaderboard </li>
+<li>Returns all users and their scores in a 2-D array, each element is a list of length two that contains the username and cumulative score of the player</li>
+<li>The sorting algorithm will use the second element representing the user score to sort the array of users.  
+<pre><code>┌─────────────────────┐               ┌──────────────────┐              ┌─────────────────┐  
+│                     │               │                  │              │                 │  
+│                     │               │      Split       │              │    display      │  
+│      Database       │               │       the        ├──────────────►    sorted list  │  
+│                     │               │    List into     │              │    on endpoint  │  
+│                     │               │   top 10 users   │              │                 │  
+└──────────┬──────────┘               └─────────▲────────┘              └─────────────────┘  
+        │                                    │  
+        │                                    │  
+        │                                    │  
+        │                                    │  
+┌──────────▼──────────┐               ┌─────────┴────────┐  
+│                     │               │                  │  
+│   2-D User  Array   │               │    QuickSort     │  
+│                     ├───────────────►                  │  
+│ [(username, score)] │               │    Algorithm     │  
+│                     │               │                  │  
+└─────────────────────┘               └──────────────────┘</code></pre>
+Our quickSort algorithm consists of 2 procedures, a <code>partition()</code> procedure that <strong>pivots</strong> and sorts individual elements, and a <code>qSortUserList()</code> that performs recursion which finishes the sorting.</li>
+</ol>
+<h3 id="The-Logic">
+<a class="anchor" href="#The-Logic" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Logic<a class="anchor-link" href="#The-Logic"> </a>
+</h3>
+<p>The partition procedure will serve to "partition" our list into 2 parts, a smaller portion and a larger portion around a certain pivot value (Note: These portions don't have to sorted yet!).</p>
+<h4 id="Partition-procedure">
+<a class="anchor" href="#Partition-procedure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Partition procedure<a class="anchor-link" href="#Partition-procedure"> </a>
+</h4>
+<p>First, partition selects a certain element in a list to be a <strong>___</strong>. This pivot value will be used to make comparisons to every other value in the array. For simplicity, we have selected our pivot element as the last element in the unsorted list. The procedure defines a <code>pivot_pos</code> variable to denote the correct position of the pivot index after each iteration. Although it may seem weird that the variable intially starts with a value of 0-1 = -1, this negative index is resolved by the return statement, which always returns an index that's one higher than pivot_pos. This serves to ensure that the lowest pivot index would be 0, which is the smallest element in any given partition.</p>
+<div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pivot_pos</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+<p>The partition will then iterate over each element in the list from the starting and ending indexes indicated by the parameters. if a particular value is found to be larger than the pivot, the algorithm well then increment the recorded pivot position and swap the pivot with the found element.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">pivot</span><span class="p">:</span>
+        <span class="n">pivot_pos</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span><span class="p">]</span>
+</pre></div>
+<p>Finally, the partition procedure swaps the element at the <code>pivot_pos+1</code> index with our pivot element at the <code>hi</code> index to place the pivot at it's rightful place. We know that <code>pivot_pos+1</code> must be smaller than <code>hi</code> because it did not trigger the conditional to increment the `pivot_pos+1`` index. At last, the pivot_pos is incremented and returned to serve as an indicator of where our two partitions split.</p>
+<div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">hi</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">pivot_pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="k">return</span> <span class="n">pivot_pos</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+<h4 id="qSort-procedure">
+<a class="anchor" href="#qSort-procedure" aria-hidden="true"><span class="octicon octicon-link"></span></a>qSort procedure<a class="anchor-link" href="#qSort-procedure"> </a>
+</h4>
+<p>If the parition procedure splits our list into smaller and larger regions, then our qSort procedure ensures that these regions are in order. It's hard to explain, but the procedure iterates over each paritition, repeating the paritition process, setting new pivot values, and correctly places the pivot values at their correct sorted order.</p>
+<p>The procedure first checks if the lower index is smaller than the higher index, to ensure that our parition has a length greater than 1. If this check passes, the procedure then calls the <code>partition</code> procedure to both split our list into the two distinct regions and also the index of our correctly placed pivot value. The procedure then invokes itself again on the larger interval (replacing hi to be the partition index-1 since the previous pivot is already sorted), and also on the smaller interval (replacing lo to be partition index+1).</p>
+<p>Eventually, the qSort procedure will iterate through all elements in the list while parition places each element at the correct position, giving us the final sorted list.</p>
+<h4 id="Complexity-analysis">
+<a class="anchor" href="#Complexity-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Complexity analysis<a class="anchor-link" href="#Complexity-analysis"> </a>
+</h4>
+<p>To analyze time complexity, we must analyze the partition and qSort procedures.</p>
+<p>For the qSort procedure, because we divide the array into 2 halves during each function call, our number of function calls scales proportionally to <strong>___</strong>, where <strong>___</strong> is the length of the input array. However, within each function call, we also call the partition procedure, which contains an for-loop that iterates over each element in the partioned array, comparing it to a pivot value. We are well familiar with since loops, and can safely say that runtime scales proportionally to the length of the partition array. Due to this, we can conclude that our iteration time complexity scales <strong>___</strong>. Thus for each iterative process, our timerun scales proportionally to <strong>___</strong>.</p>
+<p>Finally, we could multiply our two complexities together to get a representation of our overall complexity. Thus, the asymptotic notation for a time complexity could be represented as <strong><strong>_</strong></strong>, where n is the length of the input array. Keep in mind, Big-Oh notation is not a function that returns the accurate runtime for any given input, but rather only gives us a model to see how runtime scales with increasing input sizes.</p>
+<p>Space complexity for this program is much easier to analyze. Because the array is sorted in-place (meaning we don't create other placeholders or copies), we require no additional space to sort this array. However, recursive function calls may require extra storage on the call stack. Since we found the number of recursive calls to be asymptotic to <strong><strong>_</strong></strong>, we can conclude that quickSort has an <strong>O(1)</strong> space complexity for an iterative method, and an <strong>O(logn)</strong> space complexity for a recursive method.</p>
+<h3 id="Popcorn-Hack">
+<a class="anchor" href="#Popcorn-Hack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Popcorn Hack<a class="anchor-link" href="#Popcorn-Hack"> </a>
+</h3>
+<p>Please answer our EQ for this section: <strong>What is the quicksort algorithm, and how does it work? How does it's time and space complexities scale with input sizes?</strong></p>
+<p>-</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hacks---Frontend-and-Backend">
+<a class="anchor" href="#Hacks---Frontend-and-Backend" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks - Frontend and Backend<a class="anchor-link" href="#Hacks---Frontend-and-Backend"> </a>
+</h2>
+<p>Please clone these two repositories:</p>
+<ul>
+<li><a href="https://github.com/DavidVasilev1/hacks-FE">Frontend</a></li>
+<li><a href="https://github.com/DavidVasilev1/hacks-BE">Backend</a></li>
+</ul>
+<p>Directions:</p>
+<p>You will be creating a full stack of a text and image database which you will code in the Flask Backend and pull information to sort in the Frontend.</p>
+<p>You need to have coded a fully working CRUD in the Flask, which you can show working with Postman, however you only need to show the Frontend reading and displaying data from the backend.</p>
+<p>You may use the code we showed to you today in class in order to code the both the Frontend and Backend.</p>
+<p>Follow the directions in the comments in the Flask Backend and the ReadMe in the frontend before starting.</p>
+<h2 id="Hacks---QuickSort">
+<a class="anchor" href="#Hacks---QuickSort" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks - QuickSort<a class="anchor-link" href="#Hacks---QuickSort"> </a>
+</h2>
+<p>On this notebook, try recreating the original quicksort algorithm from our modified version. For an additional challenge, try abstracting the partitioning process through list comprehension!</p>
+<p>After creating a successful algorithm, either create a diagram showing how the algorithm works, or a diagram that illustrates the time and/or space complexity of a recursive approach.</p>
+<h2 id="Hacks-Helpers">
+<a class="anchor" href="#Hacks-Helpers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks Helpers<a class="anchor-link" href="#Hacks-Helpers"> </a>
+</h2>
+<p>If you need help with your hacks, you can check out our project repos to see how we did it.</p>
+<ul>
+<li><a href="https://github.com/DavidVasilev1/Nighthawk-guessr/blob/gh-pages/leaderboard.html">Frontend Table</a></li>
+<li><a href="https://github.com/DavidVasilev1/Nighthawk-guessr/blob/gh-pages/game.html">Frontend Image</a></li>
+<li><a href="https://github.com/DavidVasilev1/flask3/tree/master/nighthawkguessr_api">Backend</a></li>
+</ul>
+<p>You can also message us on the coding Slack channel for additional help.</p>
+<h2 id="Points">
+<a class="anchor" href="#Points" aria-hidden="true"><span class="octicon octicon-link"></span></a>Points<a class="anchor-link" href="#Points"> </a>
+</h2>
+<ul>
+<li>Popcorn Hacks - 0.1 pts</li>
+<li>Full Stack - 0.4+<ul>
+<li>0.5 extra for styling html page</li>
+</ul>
+</li>
+<li>QuickSort Hacks - 0.3+<ul>
+<li>0.5 extra for implementing quicksort</li>
+</ul>
+</li>
+</ul>
+<h1 id="HACKS-ARE-DUE-SATURDAY-(4/29)-11:59-PM">
+<a class="anchor" href="#HACKS-ARE-DUE-SATURDAY-(4/29)-11:59-PM" aria-hidden="true"><span class="octicon octicon-link"></span></a>HACKS ARE DUE SATURDAY (4/29) 11:59 PM<a class="anchor-link" href="#HACKS-ARE-DUE-SATURDAY-(4/29)-11:59-PM"> </a>
+</h1>
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="nighthawkcoders/APCSP"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/APCSP/student/2023/04/27/lesson-student.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/APCSP/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://nighthawkcoders.github.io/APCSP/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/APCSP/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science Principles course materials.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li>
+  <a rel="me" href="https://github.com/nighthawkcoders" target="_blank" title="github">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#github"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://twitter.com/NighthawkCoding" target="_blank" title="twitter">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#twitter"></use>
+    </svg>
+  </a>
+</li>
+<li>
+  <a rel="me" href="https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q" target="_blank" title="youtube">
+    <svg class="svg-icon grey">
+      <use xlink:href="/APCSP/assets/minima-social-icons.svg#youtube"></use>
+    </svg>
+  </a>
+</li>
+</ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

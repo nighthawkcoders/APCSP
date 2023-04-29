@@ -44,6 +44,7 @@ This <div> contains <id>'s  "rest", "walk", "etc".  The id attribute is used to 
     width: {{size}}px;
     background-image: url('{{site.baseurl}}/{{sprite_file}}');
     background-repeat: no-repeat;
+    transform: scale(0.5);  /* How to adjust the display size of sprite frame in my HTML */
   }
 
   /* background position of element */

@@ -109,6 +109,7 @@ Sprite files are a collection of images that are combined into a single file
     width: 256px;
     background-image: url('/APCSP/images/mario_animation.png');
     background-repeat: no-repeat;
+    transform: scale(0.5);  /* How to adjust the display size of sprite frame in my HTML */
   }
 
   /* background position of element */
@@ -119,12 +120,13 @@ Sprite files are a collection of images that are combined into a single file
 
 <!--- Embedded executable code--->
 <script>
+  const sprite = document.getElementById("sprite");
   var tID; //this variable used to capture setInterval() task ID
-  var position = 0; //start position for the image slicer
+  var frame = 0; //start position for frame
   const offset = 256; //offset of images in the sprite
   const steps = offset * 3; //total number of steps in the sprite image
-  const interval = 100; //100 ms of interval for the setInterval()
-  // row of images in sprite
+  const interval = 125; //100 ms of interval for the setInterval()
+  // rows of frames in sprite
   const restRow = 0;
   const walkRow = -offset * 2;
   const runRow = -offset * 4;
@@ -134,15 +136,10 @@ Sprite files are a collection of images that are combined into a single file
   } 
 
   function startAnimate(row, images) {
-    position = 0; // reset position for new animation
+    frame = 0; // reset position for new animation
     tID = setInterval(() => { // task ID starts with animation interval
-      // update backgroundPosition in DOM
-      document.getElementById("sprite").style.backgroundPosition = `-${position}px ${row}px`; 
-      if (position < steps) { //increment the position by offset on each interval
-        position += offset;
-      } else { 
-        position = 0; 
-      }
+      sprite.style.backgroundPosition = `-${frame}px ${row}px`; // update sprite frame
+      frame = (frame + offset) % steps;  //next sprite image, modulo helps cycle frame animation
     }, interval); //time of interval
   } //end of startAnimate()
 

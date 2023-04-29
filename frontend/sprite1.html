@@ -87,96 +87,101 @@ window.onload = wrap_img;
 </table>
 
 <!---
-Sprite files are a collection of images that are combined into a single file 
+Sprite files are a collection of images, called frames, that are combined into a single file 
 -->
 
-<!--- Sprite files are a collection of images that are combined into a single file -->
+<p><!--- size in pixels of frames in sprite ---></p>
 
-<!--- The <div> tag is used as a division for HTML elements. -->
-<div class="row">
-  <div class="column">
-    <p id="sprite" class="sprite rest"></p>
-  </div>
-</div>
+<!--- HTML for page contains <p> tag "named" mario and class properties for a "sprite"  -->
+<p id="mario" class="sprite"></p>
 
-<!--- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element look --->
+<!--- Embedded Cascading Style Sheet (CSS) rules, defines how HTML elements look --->
 <style>
-  /* CSS style rules for the elements id's above...
-    They all share same sprite properties
+  /* CSS style rules for the elements id and class above...
   */
   .sprite {
     height: 256px;
     width: 256px;
     background-image: url('/APCSP/images/mario_animation.png');
     background-repeat: no-repeat;
-    transform: scale(0.5);  /* How to adjust the display size of sprite frame in my HTML */
+    transform: scale(0.5);  /* scale the display size of sprite frame in HTML */
   }
 
-  /* background position of element */
-  #sprite {
+  /* background position of sprite element */
+  #mario {
     background-position: 0px 0px;
   }
 </style>
 
 <!--- Embedded executable code--->
 <script>
-  const sprite = document.getElementById("sprite");
-  var tID; //this variable used to capture setInterval() task ID
-  var frame = 0; //start position for frame
-  const offset = 256; //offset of images in the sprite
-  const steps = offset * 3; //total number of steps in the sprite image
-  const interval = 125; //100 ms of interval for the setInterval()
-  // rows of frames in sprite
+  ////////// global variables /////////
+
+  var tID; //capture setInterval() task ID
+  const offset = 256; //pixel offset of images in the sprite, set by liquid constant
+  // row of frames in sprite
   const restRow = 0;
   const walkRow = -offset * 2;
-  const runRow = -offset * 4;
+  const runRow = -offset * 6;
 
-  function stopAnimate() {  //stop animate task ID
-    clearInterval(tID);
+
+  ////////// animation control /////////
+
+  //animation controller
+  function startAnimate(row, frames) {
+    //animation control variables
+    const interval = 100; //animation time interval
+    const sprite = document.getElementById("mario"); //HTML element of sprite
+    const steps = offset * frames  //number of steps in animation
+    var frame = 0; //start position for new animation
+
+    //animation interval process/function
+    tID = setInterval(() => { //task ID begins
+      sprite.style.backgroundPosition = `-${frame}px ${row}px`; //update sprite in HTML
+      frame = (frame + offset) % steps;  //next sprite frame, modulo helps cycle frame animation
+    }, interval); //time of interval
+  }
+
+  //animation end
+  function stopAnimate() {  
+    clearInterval(tID); //stop setInterval task ID
   } 
 
-  function startAnimate(row, images) {
-    frame = 0; // reset position for new animation
-    tID = setInterval(() => { // task ID starts with animation interval
-      sprite.style.backgroundPosition = `-${frame}px ${row}px`; // update sprite frame
-      frame = (frame + offset) % steps;  //next sprite image, modulo helps cycle frame animation
-    }, interval); //time of interval
-  } //end of startAnimate()
 
+  ////////// event control /////////
+
+  //key events that enable animations
   window.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") {
-      if (event.repeat) {
-        // run animation
+      if (event.repeat) { //on hold key
         stopAnimate();
-        startAnimate(runRow, 15);
-      } else {
-        // walk animation
+        startAnimate(runRow, 15);  //run animation 
+      } else { //on tap key
         stopAnimate();
-        startAnimate(walkRow, 8);
+        startAnimate(walkRow, 8);  //walk animation
       }
     } else if (event.key === "ArrowLeft") {
-      if (event.repeat) {
-        // no animation
+      if (event.repeat) { //on multi tap
+        // stop animation 
         stopAnimate();
-      } else {
-        // rest animation
+      } else { //on tap key
         stopAnimate();
-        startAnimate(restRow, 15);
+        startAnimate(restRow, 15); //rest animation
       }
     }
   });
 
-  // stop animation on window blur
+  //stop animation on window blur
   window.addEventListener("blur", () => {
     stopAnimate();
   });
 
-  // start animation on window focus
+  //start animation on window focus
   window.addEventListener("focus", () => {
     startAnimate(restRow, 15);
   });
 
-  // start animation on page load or refresh
+  //start animation on page load or page refresh
   document.addEventListener("DOMContentLoaded", () => {
     startAnimate(restRow, 15);
   });

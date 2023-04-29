@@ -145,24 +145,26 @@ Sprite files are a collection of images that are combined into a single file
   window.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") {
       if (event.repeat) {
-        // transition to run animation
+        // run animation
         stopAnimate();
         startAnimate(-offset * 4, 15);
       } else {
-        // transition to walk animation
+        // walk animation
         stopAnimate();
         startAnimate(-offset * 2, 8);
+      }
+    } else if (event.key === "ArrowLeft") {
+      if (event.repeat) {
+        // no animation
+        stopAnimate();
+      } else {
+        // rest animation
+        stopAnimate();
+        startAnimate(0, 15);
       }
     }
   });
 
-  window.addEventListener("keyup", (event) => {
-    if (event.key === "ArrowLeft") {
-      // transition back to rest animation
-      stopAnimate();
-      startAnimate(0, 15);
-    }
-  });
 </script>
 
 

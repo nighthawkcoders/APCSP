@@ -124,6 +124,10 @@ Sprite files are a collection of images that are combined into a single file
   const offset = 256; //offset of images in the sprite
   const steps = offset * 3; //total number of steps in the sprite image
   const interval = 100; //100 ms of interval for the setInterval()
+  // row of images in sprite
+  const restRow = 0;
+  const walkRow = -offset * 2;
+  const runRow = -offset * 4;
 
   function stopAnimate() {  //stop animate task ID
     clearInterval(tID);
@@ -147,11 +151,11 @@ Sprite files are a collection of images that are combined into a single file
       if (event.repeat) {
         // run animation
         stopAnimate();
-        startAnimate(-offset * 4, 15);
+        startAnimate(runRow, 15);
       } else {
         // walk animation
         stopAnimate();
-        startAnimate(-offset * 2, 8);
+        startAnimate(walkRow, 8);
       }
     } else if (event.key === "ArrowLeft") {
       if (event.repeat) {
@@ -160,7 +164,7 @@ Sprite files are a collection of images that are combined into a single file
       } else {
         // rest animation
         stopAnimate();
-        startAnimate(0, 15);
+        startAnimate(restRow, 15);
       }
     }
   });

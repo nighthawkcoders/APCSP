@@ -522,6 +522,6 @@ p code { font-size: 19px; }
 .row { align-items: center; display: flex; }
 
 /* "column style" is one-third of the width with padding */
-.column { flex: 33.33%; padding: 5px; }
+.column { flex: 16.66%; padding: 3px; }
 
 /*# sourceMappingURL=style.css.map */

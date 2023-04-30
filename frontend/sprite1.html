@@ -119,6 +119,7 @@ Sprite files are a collection of images, called frames, that are combined into a
 
   var tID; //capture setInterval() task ID
   var positionX = 0; // current position of sprite in X direction
+  var currentSpeed = 0;
   const sprite = document.getElementById("mario"); //HTML element of sprite
   const offset = 256; //pixel offset of images in the sprite, set by liquid constant
   const interval = 100; //animation time interval
@@ -133,6 +134,7 @@ Sprite files are a collection of images, called frames, that are combined into a
   function startAnimate(row, frames, speed) {
     sprite.style.position = "absolute";  //set sprite to move idependent of other elements on screen
     var frame = 0; //frame index in sprite
+    currentSpeed = speed;
 
     //setInterval function for animation 
     tID = setInterval(() => { //tID is set to capture task ID
@@ -166,14 +168,19 @@ Sprite files are a collection of images, called frames, that are combined into a
       event.preventDefault(); // prevent default browser action
       if (event.repeat) { //on hold key
         stopAnimate();
-        startAnimate(runRow, 15, 6);  //running animation 
+        startAnimate(restRow, 15, 0);  //rest animation 
       } else { //on tap key
-        stopAnimate();
-        startAnimate(walkRow, 8, 3);  //walking animation
+        if (currentSpeed === 0) { // if at rest, go to walking
+          stopAnimate();
+          startAnimate(walkRow, 8, 3);  //walking animation
+        } else if (currentSpeed === 3) { // if walking, go to running
+          stopAnimate();
+          startAnimate(runRow, 15, 6);  //running animation
+        }
       }
     } else if (event.key === "ArrowLeft") {
       event.preventDefault(); // prevent default browser action
-      if (event.repeat) { //on multi tap
+      if (event.repeat) { //on hold key
         // stop animation 
         stopAnimate();
       } else { //on tap key

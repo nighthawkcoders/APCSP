@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Sprite Display" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Use JavaScript without external libararies to display a Sprite." />
-<meta property="og:description" content="Use JavaScript without external libararies to display a Sprite." />
+<meta name="description" content="Use JavaScript without external libararies to animate a scene from a Sprite." />
+<meta property="og:description" content="Use JavaScript without external libararies to animate a scene from a Sprite." />
 <link rel="canonical" href="https://nighthawkcoders.github.io/APCSP/frontend/sprite1" />
 <meta property="og:url" content="https://nighthawkcoders.github.io/APCSP/frontend/sprite1" />
 <meta property="og:site_name" content="APCSP" />
@@ -20,7 +20,7 @@
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/calculator.png" />
 <meta property="twitter:title" content="Sprite Display" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-19T00:00:00-05:00","datePublished":"2022-07-19T00:00:00-05:00","description":"Use JavaScript without external libararies to display a Sprite.","headline":"Sprite Display","image":"https://nighthawkcoders.github.io/APCSP/images/calculator.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/frontend/sprite1"},"url":"https://nighthawkcoders.github.io/APCSP/frontend/sprite1"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-19T00:00:00-05:00","datePublished":"2022-07-19T00:00:00-05:00","description":"Use JavaScript without external libararies to animate a scene from a Sprite.","headline":"Sprite Display","image":"https://nighthawkcoders.github.io/APCSP/images/calculator.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/frontend/sprite1"},"url":"https://nighthawkcoders.github.io/APCSP/frontend/sprite1"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -132,21 +132,22 @@ Sprite files are a collection of images, called frames, that are combined into a
   //animation controller
   function startAnimate(row, frames, speed) {
     sprite.style.position = "absolute";  //set sprite to move idependent of other elements on screen
-    var frame = 0; //start position for new animation
+    var frame = 0; //frame index in sprite
 
     //animation interval process/function
-    tID = setInterval(() => { //task ID begins
-      sprite.style.backgroundPosition = `-${frame}px ${row}px`; //update sprites animation frame
-      sprite.style.left = `${positionX}px`; //update sprites left postion
-      frame = (frame + offset) % (frames * offset);  //next sprite frame, modulo helps recycle frames
-      positionX += speed;  // next sprite position
+    tID = setInterval(() => { //task ID for Interfal begins
+      //animate sprite
+      sprite.style.backgroundPosition = `-${frame}px ${row}px`; //update animation frame
+      sprite.style.left = `${positionX}px`; //update left postion
+      frame = (frame + offset) % (frames * offset);  //next frame, modulo math recycles frame index
+      positionX += speed;  // next X position
 
-      // check if sprite animation has moved beyond the viewport
+      //follow sprite
       const viewportWidth = window.innerWidth;
       if (positionX > viewportWidth - offset) {
-        document.documentElement.scrollLeft = positionX - viewportWidth + offset;  //follow sprite
+        document.documentElement.scrollLeft = positionX - viewportWidth + offset;  //scroll
       }
-    }, interval); //time of interval
+    }, interval); //time setting of interval
   }
 
   //animation end

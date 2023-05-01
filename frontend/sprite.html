@@ -128,7 +128,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
     <div class="row"> <!--- cycle row start on 0 --->  
     <div class="column"> 
       <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
-      <p id="run" class="sprite" onmouseover="startAnimate('run', (-6 * 256), 15)" onmouseout="stopAnimate()"> </p>
+      <p id="run1" class="sprite" onmouseover="startAnimate('run1', (-4 * 256), 15)" onmouseout="stopAnimate()"> </p>
     </div>
     
     
@@ -136,12 +136,60 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
       
     <div class="column"> 
       <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
-      <p id="runL" class="sprite" onmouseover="startAnimate('runL', (-7 * 256), 15)" onmouseout="stopAnimate()"> </p>
+      <p id="run1L" class="sprite" onmouseover="startAnimate('run1L', (-5 * 256), 15)" onmouseout="stopAnimate()"> </p>
     </div>
     
     
     
       
+    <div class="column"> 
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
+      <p id="run2" class="sprite" onmouseover="startAnimate('run2', (-6 * 256), 15)" onmouseout="stopAnimate()"> </p>
+    </div>
+    
+    
+    
+      
+    <div class="column"> 
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
+      <p id="run2L" class="sprite" onmouseover="startAnimate('run2L', (-7 * 256), 15)" onmouseout="stopAnimate()"> </p>
+    </div>
+    </div> <!--- cycle row end on 4 --->
+    
+    
+    <div class="row"> <!--- cycle row start on 0 --->  
+    <div class="column"> 
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
+      <p id="xxx" class="sprite" onmouseover="startAnimate('xxx', (-8 * 256), 15)" onmouseout="stopAnimate()"> </p>
+    </div>
+    
+    
+    
+      
+    <div class="column"> 
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
+      <p id="xxxL" class="sprite" onmouseover="startAnimate('xxxL', (-9 * 256), 15)" onmouseout="stopAnimate()"> </p>
+    </div>
+    
+    
+    
+      
+    <div class="column"> 
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
+      <p id="yyy" class="sprite" onmouseover="startAnimate('yyy', (-10 * 256), 15)" onmouseout="stopAnimate()"> </p>
+    </div>
+    
+    
+    
+      
+    <div class="column"> 
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
+      <p id="yyyL" class="sprite" onmouseover="startAnimate('yyyL', (-11 * 256), 15)" onmouseout="stopAnimate()"> </p>
+    </div>
+    </div> <!--- cycle row end on 4 --->
+    
+    
+    <div class="row"> <!--- cycle row start on 0 --->  
     <div class="column"> 
       <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
       <p id="flip" class="sprite" onmouseover="startAnimate('flip', (-12 * 256), 15)" onmouseout="stopAnimate()"> </p>
@@ -154,14 +202,13 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
       <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
       <p id="flipL" class="sprite" onmouseover="startAnimate('flipL', (-13 * 256), 15)" onmouseout="stopAnimate()"> </p>
     </div>
-    </div> <!--- cycle row end on 4 --->
+    
   
 </div>
 
 <!-- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element look --->
 <style>
-  /* CSS style rules for the elements id's above...
-    They all share same sprite properties
+  /* CSS style rules for the HTML elements, all share same .sprite properties
   */
   .sprite {
     height: 256px;
@@ -174,42 +221,72 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   
   
   #rest {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(0 * 256 * 1px);
   }
   
   #restL {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-1 * 256 * 1px);
   }
   
   #walk {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-2 * 256 * 1px);
   }
   
   #walkL {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-3 * 256 * 1px);
   }
   
-  #run {
-    /* background row and offset is calculated within sprite file */
+  #run1 {
+    /* calc of row and offset is relative to frame in backgroud-image */
+    background-position: 0px calc(-4 * 256 * 1px);
+  }
+  
+  #run1L {
+    /* calc of row and offset is relative to frame in backgroud-image */
+    background-position: 0px calc(-5 * 256 * 1px);
+  }
+  
+  #run2 {
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-6 * 256 * 1px);
   }
   
-  #runL {
-    /* background row and offset is calculated within sprite file */
+  #run2L {
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-7 * 256 * 1px);
   }
   
+  #xxx {
+    /* calc of row and offset is relative to frame in backgroud-image */
+    background-position: 0px calc(-8 * 256 * 1px);
+  }
+  
+  #xxxL {
+    /* calc of row and offset is relative to frame in backgroud-image */
+    background-position: 0px calc(-9 * 256 * 1px);
+  }
+  
+  #yyy {
+    /* calc of row and offset is relative to frame in backgroud-image */
+    background-position: 0px calc(-10 * 256 * 1px);
+  }
+  
+  #yyyL {
+    /* calc of row and offset is relative to frame in backgroud-image */
+    background-position: 0px calc(-11 * 256 * 1px);
+  }
+  
   #flip {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-12 * 256 * 1px);
   }
   
   #flipL {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc(-13 * 256 * 1px);
   }
   
@@ -238,7 +315,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
     clearInterval(tID);
   } 
 </script>
-
+</div>
 
       </div>
     </main><footer class="site-footer h-card">

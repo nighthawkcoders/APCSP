@@ -7,7 +7,6 @@ permalink: /frontend/sprite
 image: /images/calculator.png
 categories: []
 tags: [javascript]
-
 animations:
   - id: rest
     row: 0
@@ -36,24 +35,26 @@ animations:
 ---
 {% include nav_frontend.html %}
 
-<!---
+{% comment %}
 Sprite files are a collection of images that are combined into a single file 
--->
+{% endcomment %}
 {% assign sprite_file = "images/mario_animation.png" %}
 {% assign size = 256 %}
 
 <!---
-The <div> tag is used as a division for HTML elements.
-
-This <div> class container contains <id>'s  "rest", "walk", "etc" from Jekyll front matter table.  The id attribute is used to point to a specific style declaration in a style sheet. It is used by JavaScript to access and manipulate the element with the specific id.
+This <div> class container contains <id>'s  "rest", "walk", "etc" from Jekyll front matter table.  The id attribute is used to identify a specific animation and is used by JavaScript to access and manipulate the element.
 -->
 <div class="container">
-  <!-- This Liquid for loop is used to generate repeating HTML from Jekyll animations list -->
+  {% comment %}
+  This Liquid for loop is used to generate repeating HTML from Jekyll animations list
+  {% endcomment %}
   {% for animation in page.animations %}  
-    <!-- The cylcle tag is used to conditionally insert opening and closing div tags for the rows. The cycle goes through a sequence of four steps, like modulo math, to insert and close row <div>'s -->
-    {% cycle '<div class="row"> <!--- cycle row start on 0 --->', '', '', '' %}
+    {% comment %}
+    The cylcle tag is used to sequence four steps, works like modulo math, its purpose is to start and close row div's on every 4 times through the loop
+    {% endcomment %}
+    {% cycle '<div class="row"> <!--- cycle row start on 0 --->', '', '', '' %}  
     <div class="column"> 
-      <!--- id for sprite image, row and frames are passed to JavaScript method--->
+      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
       <p id="{{animation.id}}" class="sprite" onmouseover="startAnimate('{{animation.id}}', ({{animation.row}} * {{size}}), {{animation.frames}})" onmouseout="stopAnimate()"> </p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
@@ -73,10 +74,12 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" from Jekyll fr
     transform: scale(0.5);  /* How to adjust the display size of sprite frame in my HTML */
   }
 
-  /* Liquid for loop is used to generate repeating CSS from Jekyll animations list */
+  {% comment %}
+  Liquid for loop is used to generate repeating CSS from Jekyll animations list
+  {% endcomment %}
   {% for animation in page.animations %}
   #{{animation.id}} {
-    /* background starting images is calculated from animation table for sprite frame */
+    /* background row and offset is calculated within sprite file */
     background-position: 0px calc({{animation.row}} * {{size}} * 1px);
   }
   {% endfor %}
@@ -99,9 +102,9 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" from Jekyll fr
         frame = (frame + offset) % (frames * offset);  //next frame, modulo math recycles frame index
       }
       , interval ); //time of interval
-    } //end of startAnimate()
+  }
 
-    function stopAnimate() {  //stop animate task ID
-      clearInterval(tID);
-    } 
+  function stopAnimate() {  //stop animate task ID
+    clearInterval(tID);
+  } 
 </script>

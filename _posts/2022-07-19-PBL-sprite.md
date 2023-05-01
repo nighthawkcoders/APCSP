@@ -42,7 +42,7 @@ Sprite files are a collection of images that are combined into a single file
 {% assign size = 256 %}
 
 <!---
-This <div> class container contains <id>'s  "rest", "walk", "etc" from Jekyll front matter table.  The id attribute is used to identify a specific animation and is used by JavaScript to access and manipulate the element.
+This <div> class container contains <id>'s  "rest", "walk", "etc" generated from a Jekyll table.  The id attribute is used to identify a specific animation and is used by JavaScript to access and manipulate the element.
 -->
 <div class="container">
   {% comment %}

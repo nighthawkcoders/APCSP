@@ -20,11 +20,29 @@ animations:
   - id: walkL
     row: -3
     frames: 8
-  - id: run
+  - id: run1
+    row: -4
+    frames: 15
+  - id: run1L
+    row: -5
+    frames: 15
+  - id: run2
     row: -6
     frames: 15
-  - id: runL
+  - id: run2L
     row: -7
+    frames: 15
+  - id: xxx
+    row: -8
+    frames: 15
+  - id: xxxL
+    row: -9
+    frames: 15
+  - id: yyy
+    row: -10
+    frames: 15
+  - id: yyyL
+    row: -11
     frames: 15
   - id: flip
     row: -12
@@ -63,8 +81,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
 
 <!-- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element look --->
 <style>
-  /* CSS style rules for the elements id's above...
-    They all share same sprite properties
+  /* CSS style rules for the HTML elements, all share same .sprite properties
   */
   .sprite {
     height: {{size}}px;
@@ -79,7 +96,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   {% endcomment %}
   {% for animation in page.animations %}
   #{{animation.id}} {
-    /* background row and offset is calculated within sprite file */
+    /* calc of row and offset is relative to frame in backgroud-image */
     background-position: 0px calc({{animation.row}} * {{size}} * 1px);
   }
   {% endfor %}

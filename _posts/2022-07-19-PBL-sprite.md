@@ -7,7 +7,7 @@ permalink: /frontend/sprite
 image: /images/mario_animation.png
 categories: []
 tags: [javascript]
-# animations is array of objects, (key, values), that represent specific animations in a sprite sheet.
+# "animations" is array of objects (key, values), that describe a series of frames in a sprite sheet.
 animations:
   - id: Rest
     row: 0
@@ -95,8 +95,11 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
     {% endcomment %}
     {% cycle '<div class="row"> <!--- cycle row start on 0 --->', '', '', '' %}  
     <div class="column"> 
-      <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
-      <p id="{{animation.id}}" class="sprite" onmouseover="startAnimate('{{animation.id}}', ({{animation.row}} * {{pixels}}), ({{animation.col}} * {{pixels}}), {{animation.frames}})" onmouseout="stopAnimate()">{{animation.id}}</p>
+      <!--- <p> tags are created for each animation described in page.animations
+      Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
+      Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
+      --->
+      <p class="sprite" id="{{animation.id}}" onmouseover="startAnimate('{{animation.id}}', ({{animation.row}} * {{pixels}}), ({{animation.col}} * {{pixels}}), {{animation.frames}})" onmouseout="stopAnimate()">{{animation.id}}</p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
   {% endfor %}
@@ -104,13 +107,17 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
 
 <!-- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element visualized --->
 <style>
-  /* CSS style rules for the HTML elements, all id's share the .sprite class properties
+  /* CSS style rules for coresponding <p> tag HTML elements
+    Background: .sprite has url reference to sprite file, pixel height and width of frames
+    #{{animation.id}}: row/col position of animation in sprite file
+    Transform: allows HTML display to be scaled
+    Text: contains properties for title
   */
   .sprite {
-    height: {{pixels}}px;
-    width: {{pixels}}px;
     background-image: url('{{ sprite_file }}');
     background-repeat: no-repeat;
+    height: {{pixels}}px;
+    width: {{pixels}}px;
     transform: scale(0.5);  /* scales the display size of sprite frame in HTML */
     font-size: 2em;
     text-align: center;
@@ -121,7 +128,11 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   {% endcomment %}
   {% for animation in page.animations %}
   #{{animation.id}} {
-    /* calc of row and col is relative location in the .sprite backgroud-image */
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
     background-position: calc({{animation.col}} * {{pixels}} * -1px) calc({{animation.row}} * {{pixels}} * -1px);
   }
   {% endfor %}
@@ -138,7 +149,13 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
       var col = col1;  //start at 1st column/frame in series of frames
 
       tID = setInterval ( () => { // task ID is stored to allow animation interval to be stopped
-        // construct the CSS backgroundPosition property to point to current background frame
+        /* Each pass set the CSS backgroundPosition property to point to next background frame
+         * Formula: row stays the same, but column is mutated "+ pixels" each interval
+         * Modulo Operator: frames * pixels is upper bound
+         *                  col + pixels is increment
+         *                  remainder is the col position
+         * Offset: "col1" is offset of 1st image in series, col1 can start in middle of page
+        */
         document.getElementById(id).style.backgroundPosition = `-${col}px -${row}px`;
         col -= col1; // remove 1st frame offset, temporarily
         col = (col + pixels) % (frames * pixels);  // use modulo operator to cycle through sequence

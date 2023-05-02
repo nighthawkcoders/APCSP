@@ -1,12 +1,13 @@
 ---
-title: Mario Sprite Display
+title: Mario Sprite Sheet
 comments: true
 layout: base
-description: Use JavaScript without external libararies to display a Sprite.
+description: Use JavaScript without external libararies to display all the animations in a sprite sheet.
 permalink: /frontend/sprite
 image: /images/mario_animation.png
 categories: []
 tags: [javascript]
+# animations is array of objects, (key, values), that represent specific animations in a sprite sheet.
 animations:
   - id: Rest
     row: 0
@@ -76,7 +77,7 @@ animations:
 {% include nav_frontend.html %}
 
 {% comment %}
-Sprite files are a collection of images that are combined into a single file 
+Sprite files are a collection of animations that are combined into a single file 
 {% endcomment %}
 {% assign sprite_file = site.baseurl | append: page.image %}
 {% assign pixels = 256 %}
@@ -86,11 +87,11 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
 -->
 <div class="container">
   {% comment %}
-  This Liquid for loop is used to generate repeating HTML from Jekyll animations list
+  This Liquid for loop is used to generate repeating HTML lines from Jekyll animations list
   {% endcomment %}
   {% for animation in page.animations %}  
     {% comment %}
-    The cylcle tag is used to sequence four steps, works like modulo math, its purpose is to start and close row div's on every 4 times through the loop
+    The cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     {% endcomment %}
     {% cycle '<div class="row"> <!--- cycle row start on 0 --->', '', '', '' %}  
     <div class="column"> 
@@ -101,16 +102,16 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   {% endfor %}
 </div>
 
-<!-- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element look --->
+<!-- Embedded Cascading Style Sheet (CSS) rules, defines how HTML element visualized --->
 <style>
-  /* CSS style rules for the HTML elements, all share same .sprite properties
+  /* CSS style rules for the HTML elements, all id's share the .sprite class properties
   */
   .sprite {
     height: {{pixels}}px;
     width: {{pixels}}px;
     background-image: url('{{ sprite_file }}');
     background-repeat: no-repeat;
-    transform: scale(0.5);  /* How to adjust the display size of sprite frame in my HTML */
+    transform: scale(0.5);  /* scales the display size of sprite frame in HTML */
     font-size: 2em;
     text-align: center;
   }
@@ -120,7 +121,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   {% endcomment %}
   {% for animation in page.animations %}
   #{{animation.id}} {
-    /* calc of row and col is relative to frame in backgroud-image */
+    /* calc of row and col is relative location in the .sprite backgroud-image */
     background-position: calc({{animation.col}} * {{pixels}} * -1px) calc({{animation.row}} * {{pixels}} * -1px);
   }
   {% endfor %}

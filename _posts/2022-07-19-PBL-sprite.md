@@ -8,68 +8,68 @@ image: /images/mario_animation.png
 categories: []
 tags: [javascript]
 animations:
-  - id: rest
+  - id: Rest
     row: 0
     col: 0
     frames: 15
-  - id: restL
-    row: -1
+  - id: RestL
+    row: 1
     col: 0
     frames: 15
-  - id: walk
-    row: -2
+  - id: Walk
+    row: 2
     col: 0
     frames: 8
-  - id: tada
-    row: -2
+  - id: Tada
+    row: 2
     col: 11
     frames: 3
-  - id: walkL
-    row: -3
+  - id: WalkL
+    row: 3
     col: 0
     frames: 8
-  - id: tadaL
-    row: -3
+  - id: TadaL
+    row: 3
     col: 11
     frames: 3
-  - id: run1
-    row: -4
+  - id: Run1
+    row: 4
     col: 0
     frames: 15
-  - id: run1L
-    row: -5
+  - id: Run1L
+    row: 5
     col: 0
     frames: 15
-  - id: run2
-    row: -6
+  - id: Run2
+    row: 6
     col: 0
     frames: 15
-  - id: run2L
-    row: -7
+  - id: Run2L
+    row: 7
     col: 0
     frames: 15
-  - id: puff
-    row: -8
+  - id: Puff
+    row: 8
     col: 0
     frames: 15
-  - id: puffL
-    row: -9
+  - id: PuffL
+    row: 9
     col: 0
     frames: 15
-  - id: cheer
-    row: -10
+  - id: Cheer
+    row: 10
     col: 0
     frames: 15
-  - id: cheerL
-    row: -11
+  - id: CheerL
+    row: 11
     col: 0
     frames: 15
-  - id: flip
-    row: -12
+  - id: Flip
+    row: 12
     col: 0
     frames: 15
-  - id: flipL
-    row: -13
+  - id: FlipL
+    row: 13
     col: 0
     frames: 15
 ---
@@ -95,7 +95,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
     {% cycle '<div class="row"> <!--- cycle row start on 0 --->', '', '', '' %}  
     <div class="column"> 
       <!--- animate id, row and frames are passed to JavaScript onmouseover method--->
-      <p id="{{animation.id}}" class="sprite" onmouseover="startAnimate('{{animation.id}}', ({{animation.row}} * {{pixels}}), {{animation.col}}, {{animation.frames}})" onmouseout="stopAnimate()"> </p>
+      <p id="{{animation.id}}" class="sprite" onmouseover="startAnimate('{{animation.id}}', ({{animation.row}} * {{pixels}}), ({{animation.col}} * {{pixels}}), {{animation.frames}})" onmouseout="stopAnimate()">{{animation.id}}</p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
   {% endfor %}
@@ -111,6 +111,8 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
     background-image: url('{{ sprite_file }}');
     background-repeat: no-repeat;
     transform: scale(0.5);  /* How to adjust the display size of sprite frame in my HTML */
+    font-size: 2em;
+    text-align: center;
   }
 
   {% comment %}
@@ -119,7 +121,7 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   {% for animation in page.animations %}
   #{{animation.id}} {
     /* calc of row and col is relative to frame in backgroud-image */
-    background-position: 0px calc({{animation.row}} * {{pixels}} * 1px);
+    background-position: calc({{animation.col}} * {{pixels}} * -1px) calc({{animation.row}} * {{pixels}} * -1px);
   }
   {% endfor %}
 
@@ -131,17 +133,15 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
   const pixels = {{pixels}}; //pixel count of images in the sprite, set by liquid constant
   const interval = 100; //animation time interval
 
-  function startAnimate(id, row, col, frames) {
-      const start = pixels * col; //1st frame in series
-      var frame = start;
+  function startAnimate(id, row, col1, frames) {
+      var col = col1;  //1st column or frame in series of frames
 
-      tID = setInterval ( () => { // task ID starts with animation interval
-        // update backgroundPosition in DOM
-        document.getElementById(id).style.backgroundPosition = `-${frame}px ${row}px`; //update animation frame
-        frame += pixels;
-        if (frame > (start + (frames * pixels))) {
-          frame = start;
-        }
+      tID = setInterval ( () => { // task ID is stored to allow animation interval to be stopped
+        // construct the CSS backgroundPosition property to point to current background frame
+        document.getElementById(id).style.backgroundPosition = `-${col}px -${row}px`;
+        col -= col1; // remove col1 offset, temporarily
+        col = (col + pixels) % (frames * pixels);  // use modulo operator to cycle through sequence
+        col += col1; // replace col1 offset
       }
       , interval ); //time of interval
   }

@@ -324,18 +324,18 @@ This <div> class container contains <id>'s  "rest", "walk", "etc" generated from
 <!--- Embedded executable code--->
 <script>
   var tID; //this variable used to capture setInterval() task ID
-  const pixels = 256; //pixel count of images in the sprite, set by liquid constant
+  const pixels = 256; //size of each frame in the sprite, set by liquid constant
   const interval = 100; //animation time interval
 
   function startAnimate(id, row, col1, frames) {
-      var col = col1;  //1st column or frame in series of frames
+      var col = col1;  //start at 1st column/frame in series of frames
 
       tID = setInterval ( () => { // task ID is stored to allow animation interval to be stopped
         // construct the CSS backgroundPosition property to point to current background frame
         document.getElementById(id).style.backgroundPosition = `-${col}px -${row}px`;
-        col -= col1; // remove col1 offset, temporarily
+        col -= col1; // remove 1st frame offset, temporarily
         col = (col + pixels) % (frames * pixels);  // use modulo operator to cycle through sequence
-        col += col1; // replace col1 offset
+        col += col1; // restore 1st frame offset
       }
       , interval ); //time of interval
   }

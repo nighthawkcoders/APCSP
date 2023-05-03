@@ -7,95 +7,30 @@ permalink: /frontend/sprite
 image: /images/mario_animation.png
 categories: []
 tags: [javascript]
-# "animations" is array of objects (key, values), that describe a series of frames in a sprite sheet.
-animations:
-  - id: Rest
-    row: 0
-    col: 0
-    frames: 15
-  - id: RestL
-    row: 1
-    col: 0
-    frames: 15
-  - id: Walk
-    row: 2
-    col: 0
-    frames: 8
-  - id: Tada
-    row: 2
-    col: 11
-    frames: 3
-  - id: WalkL
-    row: 3
-    col: 0
-    frames: 8
-  - id: TadaL
-    row: 3
-    col: 11
-    frames: 3
-  - id: Run1
-    row: 4
-    col: 0
-    frames: 15
-  - id: Run1L
-    row: 5
-    col: 0
-    frames: 15
-  - id: Run2
-    row: 6
-    col: 0
-    frames: 15
-  - id: Run2L
-    row: 7
-    col: 0
-    frames: 15
-  - id: Puff
-    row: 8
-    col: 0
-    frames: 15
-  - id: PuffL
-    row: 9
-    col: 0
-    frames: 15
-  - id: Cheer
-    row: 10
-    col: 0
-    frames: 15
-  - id: CheerL
-    row: 11
-    col: 0
-    frames: 15
-  - id: Flip
-    row: 12
-    col: 0
-    frames: 15
-  - id: FlipL
-    row: 13
-    col: 0
-    frames: 15
 ---
 {% include nav_frontend.html %}
 
-{% comment %}
-Sprite files are a collection of animations that are combined into a single file 
-{% endcomment %}
-{% assign sprite_file = site.baseurl | append: page.image %}
-{% assign pixels = 256 %}
+<!---
+Sprite files are a collection of animations that are combined into a single file. The _data/mario.yml file has metadata description for the sprit file.  Each sprite is seperated by pixels horizontally and veritically.
+-->
+{% assign sprite_file = site.baseurl | append: page.image %}  <!--- Liquid concatentation --->
+{% assign animations = site.data.mario %}  <!--- Liquid list variable created from file containing metatdata --->
+{% assign pixels = 256 %} <!--- Liquid integer assignment --->
 
 <!---
-This <div> class container contains <id>'s  "rest", "walk", "etc" generated from a Jekyll table.  The id attribute is used to identify a specific animation and is used by JavaScript to access and manipulate the element.
+This <div> class "container" has rows and columns.  Each row/col is a frame and has metadata like ID (rest, walk, etc), a default image, and an animation sequence triggered by mouse over.
 -->
 <div class="container">
-  {% comment %}
+  <!---
   This Liquid for loop is used to generate repeating HTML lines from Jekyll animations list
-  {% endcomment %}
-  {% for animation in page.animations %}  
-    {% comment %}
-    The cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
-    {% endcomment %}
+  -->
+  {% for animation in animations %}  
+    <!---
+    The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
+    -->
     {% cycle '<div class="row"> <!--- cycle row start on 0 --->', '', '', '' %}  
     <div class="column"> 
-      <!--- <p> tags are created for each animation described in page.animations
+      <!--- The HTML <p> tags are created for each animation described in metadata
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->

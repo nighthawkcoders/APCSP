@@ -107,12 +107,163 @@ window.onload = wrap_img;
 
   /* background position of sprite element */
   #mario {
-    background-position: calc(0 * 256 * -1px) calc(0 * 256 * -1px);
+    background-position: calc( * 256 * -1px) calc( * 256 * -1px);
   }
 </style>
 
 <!--- Embedded executable code--->
 <script>
+  ////////// convert liquid hash to javascript key value objects /////////
+
+
+  var obj = {}; // key, value object
+    
+  
+  var key = "Rest"  // key
+  var values = {} //values
+  values["row"] = 0
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "RestL"  // key
+  var values = {} //values
+  values["row"] = 1
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Walk"  // key
+  var values = {} //values
+  values["row"] = 2
+  values["col"] = 0
+  values["frames"] = 8
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Tada"  // key
+  var values = {} //values
+  values["row"] = 2
+  values["col"] = 11
+  values["frames"] = 3
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "WalkL"  // key
+  var values = {} //values
+  values["row"] = 3
+  values["col"] = 0
+  values["frames"] = 8
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "TadaL"  // key
+  var values = {} //values
+  values["row"] = 3
+  values["col"] = 11
+  values["frames"] = 3
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Run1"  // key
+  var values = {} //values
+  values["row"] = 4
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Run1L"  // key
+  var values = {} //values
+  values["row"] = 5
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Run2"  // key
+  var values = {} //values
+  values["row"] = 6
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Run2L"  // key
+  var values = {} //values
+  values["row"] = 7
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Puff"  // key
+  var values = {} //values
+  values["row"] = 8
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "PuffL"  // key
+  var values = {} //values
+  values["row"] = 9
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Cheer"  // key
+  var values = {} //values
+  values["row"] = 10
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "CheerL"  // key
+  var values = {} //values
+  values["row"] = 11
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "Flip"  // key
+  var values = {} //values
+  values["row"] = 12
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+    
+  
+  var key = "FlipL"  // key
+  var values = {} //values
+  values["row"] = 13
+  values["col"] = 0
+  values["frames"] = 15
+  obj[key] = values; // key, values added
+
+  
+
+
   ////////// global variables /////////
 
   var tID; //capture setInterval() task ID
@@ -121,16 +272,14 @@ window.onload = wrap_img;
   const sprite = document.getElementById("mario"); //HTML element of sprite
   const offset = 256; //pixel offset of images in the sprite, set by liquid constant
   const interval = 100; //animation time interval
-  // row of frames in sprite
-  const restRow = 0;
-  const walkRow = -offset * 2;
-  const runRow = -offset * 6;
 
   ////////// animation control /////////
 
   //animation controller
-  function startAnimate(row, frames, speed) {
+  function startAnimate(obj, speed) {
     sprite.style.position = "absolute";  //set sprite to move idependent of other elements on screen
+    var row = obj["row"] * offset;
+    var frames = obj["frames"];
     var frame = 0; //frame index in sprite
     currentSpeed = speed;
 
@@ -139,7 +288,7 @@ window.onload = wrap_img;
       //// animation function ////
 
       //animate sprite
-      sprite.style.backgroundPosition = `-${frame}px ${row}px`; //update animation frame
+      sprite.style.backgroundPosition = `-${frame}px -${row}px`; //update animation frame
       sprite.style.left = `${positionX}px`; //update left postion
       frame = (frame + offset) % (frames * offset);  //next frame, modulo math recycles frame index
       positionX += speed;  // next X position
@@ -166,14 +315,14 @@ window.onload = wrap_img;
       event.preventDefault(); // prevent default browser action
       if (event.repeat) { //on hold key
         stopAnimate();
-        startAnimate(restRow, 15, 0);  //rest animation 
+        startAnimate(obj["Rest"],0);  //rest animation 
       } else { //on tap key
         if (currentSpeed === 0) { // if at rest, go to walking
           stopAnimate();
-          startAnimate(walkRow, 8, 3);  //walking animation
+          startAnimate(obj["Walk"],3);  //walking animation
         } else if (currentSpeed === 3) { // if walking, go to running
           stopAnimate();
-          startAnimate(runRow, 15, 6);  //running animation
+          startAnimate(obj["Run1"],6);  //running animation
         }
       }
     } else if (event.key === "ArrowLeft") {
@@ -183,7 +332,7 @@ window.onload = wrap_img;
         stopAnimate();
       } else { //on tap key
         stopAnimate();
-        startAnimate(restRow, 15, 0); //resting animation
+        startAnimate(obj["Rest"],0); //resting animation
       }
     }
   });
@@ -195,12 +344,12 @@ window.onload = wrap_img;
 
   //start animation on window focus
   window.addEventListener("focus", () => {
-    startAnimate(restRow, 15, 0);
+    startAnimate(obj["Rest"],0);
   });
 
   //start animation on page load or page refresh
   document.addEventListener("DOMContentLoaded", () => {
-    startAnimate(restRow, 15, 0);
+    startAnimate(obj["Rest"],0);
   });
 
 

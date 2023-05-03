@@ -14,7 +14,7 @@ tags: [javascript]
 Sprite files are a collection of animations that are combined into a single file. The _data/mario.yml file has metadata description for the sprit file.  Each sprite is seperated by pixels horizontally and veritically.
 -->
 {% assign sprite_file = site.baseurl | append: page.image %}  <!--- Liquid concatentation --->
-{% assign animations = site.data.mario %}  <!--- Liquid list variable created from file containing metatdata --->
+{% assign hash = site.data.mario %}  <!--- Liquid list variable created from file containing metatdata --->
 {% assign pixels = 256 %} <!--- Liquid integer assignment --->
 
 <!---
@@ -22,9 +22,13 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
 -->
 <div class="container">
   <!---
-  This Liquid for loop is used to generate repeating HTML lines from Jekyll animations list
+  Loop over the 'hash' list to generate repeating HTML lines for animations.
   -->
-  {% for animation in animations %}  
+  {% for key in hash %}
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+    {% assign id = key | first %} 
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -34,7 +38,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="{{animation.id}}" onmouseover="startAnimate('{{animation.id}}', ({{animation.row}} * {{pixels}}), ({{animation.col}} * {{pixels}}), {{animation.frames}})" onmouseout="stopAnimate()">{{animation.id}}</p>
+      <p class="sprite" id="{{id}}" onmouseover="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})" onmouseout="stopAnimate()">{{id}}</p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
   {% endfor %}
@@ -44,7 +48,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
 <style>
   /* CSS style rules for coresponding <p> tag HTML elements
     Background: .sprite has url reference to sprite file, pixel height and width of frames
-    #{{animation.id}}: row/col position of animation in sprite file
+    #{{id[0]}}: row/col position of id in sprite file
     Transform: allows HTML display to be scaled
     Text: contains properties for title
   */
@@ -59,17 +63,19 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
   }
 
   /* Liquid for loop is used to generate CSS from Jekyll animations list
-     ID: #animation.id associate this CSS with id=animation.id in HTML
+     ID: #id[0] associate this CSS with id=id[0] in HTML
      Col, Row: background-position position of frame in sprite
   */
-  {% for animation in page.animations %}
-  #{{animation.id}} {
+  {% for key in hash %}
+    {% assign id = key | first %}
+
+    #{{id}} {
     /*
       Formula:  calculates row and col location in the .sprite backgroud-image
       Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
       Offset: "-1px" negative sign is used to indicate the offset direction with background
     */
-    background-position: calc({{animation.col}} * {{pixels}} * -1px) calc({{animation.row}} * {{pixels}} * -1px);
+    background-position: calc({{key.col}} * {{pixels}} * -1px) calc({{key.row}} * {{pixels}} * -1px);
   }
   {% endfor %}
 

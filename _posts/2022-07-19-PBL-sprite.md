@@ -58,9 +58,10 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
     text-align: center;
   }
 
-  {% comment %}
-  Liquid for loop is used to generate repeating CSS from Jekyll animations list
-  {% endcomment %}
+  /* Liquid for loop is used to generate CSS from Jekyll animations list
+     ID: #animation.id associate this CSS with id=animation.id in HTML
+     Col, Row: background-position position of frame in sprite
+  */
   {% for animation in page.animations %}
   #{{animation.id}} {
     /*

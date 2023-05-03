@@ -98,9 +98,13 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
 -->
 <div class="container">
   <!---
-  This Liquid for loop is used to generate repeating HTML lines from Jekyll animations list
+  Loop over the 'hash' list to generate repeating HTML lines for animations.
   -->
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -110,10 +114,14 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Rest" onmouseover="startAnimate('Rest', (2 * 256), (11 * 256), 3)" onmouseout="stopAnimate()">Rest</p>
+      <p class="sprite" id="Rest" onmouseover="startAnimate('Rest', (0 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Rest</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -126,7 +134,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="RestL" onmouseover="startAnimate('RestL', (1 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">RestL</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -139,7 +151,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Walk" onmouseover="startAnimate('Walk', (2 * 256), (0 * 256), 8)" onmouseout="stopAnimate()">Walk</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -152,7 +168,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Tada" onmouseover="startAnimate('Tada', (2 * 256), (11 * 256), 3)" onmouseout="stopAnimate()">Tada</p>
     </div>
     </div> <!--- cycle row end on 4 --->
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -165,7 +185,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="WalkL" onmouseover="startAnimate('WalkL', (3 * 256), (0 * 256), 8)" onmouseout="stopAnimate()">WalkL</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -178,7 +202,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="TadaL" onmouseover="startAnimate('TadaL', (3 * 256), (11 * 256), 3)" onmouseout="stopAnimate()">TadaL</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -191,7 +219,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Run1" onmouseover="startAnimate('Run1', (4 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Run1</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -204,7 +236,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Run1L" onmouseover="startAnimate('Run1L', (5 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Run1L</p>
     </div>
     </div> <!--- cycle row end on 4 --->
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -217,7 +253,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Run2" onmouseover="startAnimate('Run2', (6 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Run2</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -230,7 +270,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Run2L" onmouseover="startAnimate('Run2L', (7 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Run2L</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -243,7 +287,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Puff" onmouseover="startAnimate('Puff', (8 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Puff</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -256,7 +304,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="PuffL" onmouseover="startAnimate('PuffL', (9 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">PuffL</p>
     </div>
     </div> <!--- cycle row end on 4 --->
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -269,7 +321,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Cheer" onmouseover="startAnimate('Cheer', (10 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Cheer</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -282,7 +338,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="CheerL" onmouseover="startAnimate('CheerL', (11 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">CheerL</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -295,7 +355,11 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       <p class="sprite" id="Flip" onmouseover="startAnimate('Flip', (12 * 256), (0 * 256), 15)" onmouseout="stopAnimate()">Flip</p>
     </div>
     
-    
+  
+    <!--- 
+    Assign the key of the animation to the 'id' variable to be used as the HTML id 
+    --->
+     
     <!---
     The Liquid cylcle tag is used to sequence four steps, works like modulo, its purpose is to start and close row div's on every 4 iterations through the loop
     -->
@@ -315,7 +379,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
 <style>
   /* CSS style rules for coresponding <p> tag HTML elements
     Background: .sprite has url reference to sprite file, pixel height and width of frames
-    #: row/col position of animation in sprite file
+    #FlipL: row/col position of id in sprite file
     Transform: allows HTML display to be scaled
     Text: contains properties for title
   */
@@ -330,9 +394,185 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
   }
 
   /* Liquid for loop is used to generate CSS from Jekyll animations list
-     ID: #animation.id associate this CSS with id=animation.id in HTML
+     ID: #id[0] associate this CSS with id=id[0] in HTML
      Col, Row: background-position position of frame in sprite
   */
+  
+    
+
+    #Rest {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(0 * 256 * -1px);
+  }
+  
+    
+
+    #RestL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(1 * 256 * -1px);
+  }
+  
+    
+
+    #Walk {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(2 * 256 * -1px);
+  }
+  
+    
+
+    #Tada {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(11 * 256 * -1px) calc(2 * 256 * -1px);
+  }
+  
+    
+
+    #WalkL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(3 * 256 * -1px);
+  }
+  
+    
+
+    #TadaL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(11 * 256 * -1px) calc(3 * 256 * -1px);
+  }
+  
+    
+
+    #Run1 {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(4 * 256 * -1px);
+  }
+  
+    
+
+    #Run1L {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(5 * 256 * -1px);
+  }
+  
+    
+
+    #Run2 {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(6 * 256 * -1px);
+  }
+  
+    
+
+    #Run2L {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(7 * 256 * -1px);
+  }
+  
+    
+
+    #Puff {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(8 * 256 * -1px);
+  }
+  
+    
+
+    #PuffL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(9 * 256 * -1px);
+  }
+  
+    
+
+    #Cheer {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(10 * 256 * -1px);
+  }
+  
+    
+
+    #CheerL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(11 * 256 * -1px);
+  }
+  
+    
+
+    #Flip {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(12 * 256 * -1px);
+  }
+  
+    
+
+    #FlipL {
+    /*
+      Formula:  calculates row and col location in the .sprite backgroud-image
+      Pixels: columns and rows are a block of pixels (col * pixels)  or (row * pixels)
+      Offset: "-1px" negative sign is used to indicate the offset direction with background
+    */
+    background-position: calc(0 * 256 * -1px) calc(13 * 256 * -1px);
+  }
   
 
 </style>

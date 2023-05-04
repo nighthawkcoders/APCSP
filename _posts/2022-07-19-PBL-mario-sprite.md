@@ -8,8 +8,10 @@ image: /images/mario_animation.png
 categories: []
 tags: [javascript]
 ---
-<!-- Hack 1: convert to independent objects -->
-<!-- Hack 2: have an interaction to start and stop animation -->
+<!-- Hack 1: find your own sprite -->
+<!-- Hack 2: make you own sprite display -->
+<!-- Hack 3: come up with a new event or sequence, reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event-->
+
 {% include nav_frontend.html %}
 
 <!---
@@ -40,7 +42,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="{{id}}" onmouseup="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})">{{id}}</p>
+      <p class="sprite" id="{{id}}" onmousedown="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})" onmouseover="stopAnimate('{{id}}')">{{id}}</p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
   {% endfor %}
@@ -85,14 +87,15 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
 
 <!--- Embedded executable code--->
 <script>
-  var tID; //this variable used to capture setInterval() task ID
+  var intervalIDs = {}; // Object to store interval IDs
   const pixels = {{pixels}}; //size of each frame in the sprite, set by liquid constant
   const interval = 100; //animation time interval
 
   function startAnimate(id, row, col1, frames) {
       var col = col1;  //start at 1st column/frame in series of frames
-
-      tID = setInterval ( () => { // task ID is stored to allow animation interval to be stopped
+      
+      // Use the animation ID as the key for storing the interval ID
+      intervalIDs[id] = setInterval ( () => {
         /* Each pass set the CSS backgroundPosition property to point to next background frame
          * Formula: row stays the same, but column is mutated "+ pixels" each interval
          * Modulo Operator: frames * pixels is upper bound
@@ -108,7 +111,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       , interval ); //time of interval
   }
 
-  function stopAnimate() {  //stop animate task ID
-    clearInterval(tID);
+  function stopAnimate(id) {  //stop animate task ID
+    clearInterval(intervalIDs[id]);
   } 
 </script>

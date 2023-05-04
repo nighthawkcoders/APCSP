@@ -89,73 +89,7 @@ window.onload = wrap_img;
 <!-- Hack 2: Add a common math operation that is missing from calculator -->
 <!-- Hack 3: Implement 1 number operation (ie SQRT) -->
 
-<!-- Style (CSS) implementation of the calculator. -->
-<style>
-/* class to create the calculator's container; uses CSS grid dsiplay to partition off buttons */
-.calculator-container { 
-    width: 90vw; /* this width and height is specified for mobile devices by default */
-    height: 80vh;
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
-    grid-template-rows: 0.5fr repeat(4, 1fr);
-    gap: 10px 10px;
-}
-
-/* 
-    CSS allows programmers to use media queries to change the size of classes based on the size of the device.
-    This allows us to make it so that our website looks good on both mobile and desktop. If the width of the
-    device is big enough, then the calculator will take up more of the screen.
-*/
-@media (min-width: 600px) { 
-    .calculator-container {
-        width: 40vw;
-        height: 80vh;
-    }
-}
-
-/* styling for the calculator buttons themselves */
-.calculator-button {
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    background-color: #665B45;
-    border: 3px solid black;
-    font-size: 1.5em;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* grid display allows programmer to specify how much of the grid an element should take up; these buttons will take up 1 row and 1 column */
-    grid-column: span 1;
-    grid-row: span 1;
-
-    /* allows for smooth transition of properties and the "animation" effect to appear on hover */
-    transition: all 0.5s; 
-}
-
-/* darkens the background color on hover to create a selecting effect */
-.calculator-button:hover {
-    background-color: #373737;
-}
-
-/* styling for the top bar which shows the results of the calculator */
-.calculator-output {
-    /* note how the output instead takes up 4 columns and 1 row; essentially takes up the entirety of the first row */
-    grid-column: span 4;
-    grid-row: span 1;
-
-    border-radius: 10px;
-    padding: 1em;
-    font-size: auto;
-    border: 5px solid black;
-
-    display: flex;
-    align-items: center;
-}
-</style>
+<!-- Styling implemented with Sass -->
 
 <!-- HTML implementation of the calculator. 
     CSS sets 4 buttons (calculator-button) to a row
@@ -166,25 +100,25 @@ window.onload = wrap_img;
     <!--result-->
     <div class="calculator-output" id="output">0</div>
     <!--row 1-->
-    <div class="calculator-button" onclick="number('1')">1</div>
-    <div class="calculator-button" onclick="number('2')">2</div>
-    <div class="calculator-button" onclick="number('3')">3</div>
-    <div class="calculator-button" onclick="operation('+')">+</div>
+    <div class="button" onclick="number('1')">1</div>
+    <div class="button" onclick="number('2')">2</div>
+    <div class="button" onclick="number('3')">3</div>
+    <div class="button" onclick="operation('+')">+</div>
     <!--row 2-->
-    <div class="calculator-button" onclick="number('4')">4</div>
-    <div class="calculator-button" onclick="number('5')">5</div>
-    <div class="calculator-button" onclick="number('6')">6</div>
-    <div class="calculator-button" onclick="operation('-')">-</div>
+    <div class="button" onclick="number('4')">4</div>
+    <div class="button" onclick="number('5')">5</div>
+    <div class="button" onclick="number('6')">6</div>
+    <div class="button" onclick="operation('-')">-</div>
     <!--row 3-->
-    <div class="calculator-button" onclick="number('7')">7</div>
-    <div class="calculator-button" onclick="number('8')">8</div>
-    <div class="calculator-button" onclick="number('9')">9</div>
-    <div class="calculator-button" onclick="operation('*')">*</div>
+    <div class="button" onclick="number('7')">7</div>
+    <div class="button" onclick="number('8')">8</div>
+    <div class="button" onclick="number('9')">9</div>
+    <div class="button" onclick="operation('*')">*</div>
     <!--row 4-->
-    <div class="calculator-button" onclick="clearCalc()">A/C</div>
-    <div class="calculator-button" onclick="number('0')">0</div>
-    <div class="calculator-button" onclick="number('.')">.</div>
-    <div class="calculator-button" onclick="equals()">=</div>
+    <div class="calculator-button-clear" onclick="clearCalc()">A/C</div>
+    <div class="button" onclick="number('0')">0</div>
+    <div class="button" onclick="number('.')">.</div>
+    <div class="calculator-button-equals" onclick="equals()">=</div>
 </div>
 
 <!-- JavaScript (JS) implementation of the calculator. -->

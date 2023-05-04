@@ -3,7 +3,7 @@ title: Mario Sprite Sheet
 comments: true
 layout: base
 description: Use JavaScript without external libararies to display all the animations in a sprite sheet.
-permalink: /frontend/sprite
+permalink: /frontend/mario
 image: /images/mario_animation.png
 categories: []
 tags: [javascript]
@@ -14,7 +14,7 @@ tags: [javascript]
 Sprite files are a collection of animations that are combined into a single file. The _data/mario.yml file has metadata description for the sprit file.  Each sprite is seperated by pixels horizontally and veritically.
 -->
 {% assign sprite_file = site.baseurl | append: page.image %}  <!--- Liquid concatentation --->
-{% assign hash = site.data.mario %}  <!--- Liquid list variable created from file containing metatdata --->
+{% assign hash = site.data.mario_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
 {% assign pixels = 256 %} <!--- Liquid integer assignment --->
 
 <!---

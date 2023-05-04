@@ -3,7 +3,7 @@ title: Mario in Motion
 comments: true
 layout: base
 description: Use JavaScript without external libararies to animate Mario moving across screen.
-permalink: /frontend/sprite1
+permalink: /frontend/mario1
 image: /images/mario_animation.png
 categories: []
 tags: [javascript]
@@ -12,7 +12,7 @@ tags: [javascript]
 {% include nav_frontend.html %}
 
 {% assign sprite_file = site.baseurl | append: page.image %}  <!--- Liquid concatentation --->
-{% assign hash = site.data.mario %}  <!--- Liquid list variable created from file containing metatdata --->
+{% assign hash = site.data.mario_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
 {% assign pixels = 256 %} <!--- Liquid integer assignment --->
 
 <!--- HTML for page contains <p> tag named "mario" and class properties for a "sprite"  -->

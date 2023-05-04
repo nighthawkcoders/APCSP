@@ -14,7 +14,7 @@ tags: [javascript]
 Sprite files are a collection of animations that are combined into a single file. The _data/mario.yml file has metadata description for the sprit file.  Each sprite is seperated by pixels horizontally and veritically.
 -->
 {% assign sprite_file = site.baseurl | append: page.image %}  <!--- Liquid concatentation --->
-{% assign hash = site.data.mario_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite --->
+{% assign hash = site.data.mario_metadata %}  <!--- Liquid list variable created from file containing mario metatdata for sprite--->
 {% assign pixels = 256 %} <!--- Liquid integer assignment --->
 
 <!---
@@ -38,7 +38,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="{{id}}" onmouseover="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})" onmouseout="stopAnimate()">{{id}}</p>
+      <p class="sprite" id="{{id}}" onmouseover="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})">{{id}}</p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
   {% endfor %}

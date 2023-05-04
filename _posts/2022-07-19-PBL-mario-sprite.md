@@ -8,6 +8,8 @@ image: /images/mario_animation.png
 categories: []
 tags: [javascript]
 ---
+<!-- Hack 1: convert to independent objects -->
+<!-- Hack 2: have an interaction to start and stop animation -->
 {% include nav_frontend.html %}
 
 <!---
@@ -38,7 +40,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="{{id}}" onmouseover="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})">{{id}}</p>
+      <p class="sprite" id="{{id}}" onmouseup="startAnimate('{{id}}', ({{key.row}} * {{pixels}}), ({{key.col}} * {{pixels}}), {{key.frames}})">{{id}}</p>
     </div>
     {% cycle '', '', '', '</div> <!--- cycle row end on 4 --->' %}
   {% endfor %}

@@ -72,7 +72,9 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <table>
+        <!-- Hack 1: convert to independent objects -->
+<!-- Hack 2: have an interaction to start and stop animation -->
+<table>
     <tr>
         <td><img src="/APCSP//images/logo.png" height="60" title="Frontend" alt="" /></td>
         <td><a href="/APCSP/frontend/overview">Overview</a></td>
@@ -114,7 +116,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Rest" onmouseover="startAnimate('Rest', (0 * 256), (0 * 256), 15)">Rest</p>
+      <p class="sprite" id="Rest" onmouseup="startAnimate('Rest', (0 * 256), (0 * 256), 15)">Rest</p>
     </div>
     
   
@@ -131,7 +133,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="RestL" onmouseover="startAnimate('RestL', (1 * 256), (0 * 256), 15)">RestL</p>
+      <p class="sprite" id="RestL" onmouseup="startAnimate('RestL', (1 * 256), (0 * 256), 15)">RestL</p>
     </div>
     
   
@@ -148,7 +150,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Walk" onmouseover="startAnimate('Walk', (2 * 256), (0 * 256), 8)">Walk</p>
+      <p class="sprite" id="Walk" onmouseup="startAnimate('Walk', (2 * 256), (0 * 256), 8)">Walk</p>
     </div>
     
   
@@ -165,7 +167,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Tada" onmouseover="startAnimate('Tada', (2 * 256), (11 * 256), 3)">Tada</p>
+      <p class="sprite" id="Tada" onmouseup="startAnimate('Tada', (2 * 256), (11 * 256), 3)">Tada</p>
     </div>
     </div> <!--- cycle row end on 4 --->
   
@@ -182,7 +184,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="WalkL" onmouseover="startAnimate('WalkL', (3 * 256), (0 * 256), 8)">WalkL</p>
+      <p class="sprite" id="WalkL" onmouseup="startAnimate('WalkL', (3 * 256), (0 * 256), 8)">WalkL</p>
     </div>
     
   
@@ -199,7 +201,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="TadaL" onmouseover="startAnimate('TadaL', (3 * 256), (11 * 256), 3)">TadaL</p>
+      <p class="sprite" id="TadaL" onmouseup="startAnimate('TadaL', (3 * 256), (11 * 256), 3)">TadaL</p>
     </div>
     
   
@@ -216,7 +218,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Run1" onmouseover="startAnimate('Run1', (4 * 256), (0 * 256), 15)">Run1</p>
+      <p class="sprite" id="Run1" onmouseup="startAnimate('Run1', (4 * 256), (0 * 256), 15)">Run1</p>
     </div>
     
   
@@ -233,7 +235,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Run1L" onmouseover="startAnimate('Run1L', (5 * 256), (0 * 256), 15)">Run1L</p>
+      <p class="sprite" id="Run1L" onmouseup="startAnimate('Run1L', (5 * 256), (0 * 256), 15)">Run1L</p>
     </div>
     </div> <!--- cycle row end on 4 --->
   
@@ -250,7 +252,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Run2" onmouseover="startAnimate('Run2', (6 * 256), (0 * 256), 15)">Run2</p>
+      <p class="sprite" id="Run2" onmouseup="startAnimate('Run2', (6 * 256), (0 * 256), 15)">Run2</p>
     </div>
     
   
@@ -267,7 +269,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Run2L" onmouseover="startAnimate('Run2L', (7 * 256), (0 * 256), 15)">Run2L</p>
+      <p class="sprite" id="Run2L" onmouseup="startAnimate('Run2L', (7 * 256), (0 * 256), 15)">Run2L</p>
     </div>
     
   
@@ -284,7 +286,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Puff" onmouseover="startAnimate('Puff', (8 * 256), (0 * 256), 15)">Puff</p>
+      <p class="sprite" id="Puff" onmouseup="startAnimate('Puff', (8 * 256), (0 * 256), 15)">Puff</p>
     </div>
     
   
@@ -301,7 +303,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="PuffL" onmouseover="startAnimate('PuffL', (9 * 256), (0 * 256), 15)">PuffL</p>
+      <p class="sprite" id="PuffL" onmouseup="startAnimate('PuffL', (9 * 256), (0 * 256), 15)">PuffL</p>
     </div>
     </div> <!--- cycle row end on 4 --->
   
@@ -318,7 +320,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Cheer" onmouseover="startAnimate('Cheer', (10 * 256), (0 * 256), 15)">Cheer</p>
+      <p class="sprite" id="Cheer" onmouseup="startAnimate('Cheer', (10 * 256), (0 * 256), 15)">Cheer</p>
     </div>
     
   
@@ -335,7 +337,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="CheerL" onmouseover="startAnimate('CheerL', (11 * 256), (0 * 256), 15)">CheerL</p>
+      <p class="sprite" id="CheerL" onmouseup="startAnimate('CheerL', (11 * 256), (0 * 256), 15)">CheerL</p>
     </div>
     
   
@@ -352,7 +354,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="Flip" onmouseover="startAnimate('Flip', (12 * 256), (0 * 256), 15)">Flip</p>
+      <p class="sprite" id="Flip" onmouseup="startAnimate('Flip', (12 * 256), (0 * 256), 15)">Flip</p>
     </div>
     
   
@@ -369,7 +371,7 @@ This <div> class "container" has rows and columns.  Each row/col is a frame and 
       Display: Inner HTML contains ID, corresponding CSS contains 1st frame from animation series 
       Action: animate id, row and col are passed to JavaScript startAnimate() on onmouseover action
       --->
-      <p class="sprite" id="FlipL" onmouseover="startAnimate('FlipL', (13 * 256), (0 * 256), 15)">FlipL</p>
+      <p class="sprite" id="FlipL" onmouseup="startAnimate('FlipL', (13 * 256), (0 * 256), 15)">FlipL</p>
     </div>
     </div> <!--- cycle row end on 4 --->
   

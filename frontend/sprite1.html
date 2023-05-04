@@ -102,7 +102,6 @@ window.onload = wrap_img;
     width: 256px;
     background-image: url('/APCSP/images/mario_animation.png');
     background-repeat: no-repeat;
-    transform: scale(0.5);  /* scale the display size of sprite frame in HTML */
   }
 
   /* background position of sprite element */
@@ -339,6 +338,25 @@ window.onload = wrap_img;
     }
   });
 
+  //touch events that enable animations
+  window.addEventListener("touchstart", (event) => {
+    event.preventDefault(); // prevent default browser action
+    if (event.touches[0].clientX > window.innerWidth / 2) {
+      // move right
+      if (currentSpeed === 0) { // if at rest, go to walking
+        stopAnimate();
+        startAnimate(obj["Walk"],3);  //walking animation
+      } else if (currentSpeed === 3) { // if walking, go to running
+        stopAnimate();
+        startAnimate(obj["Run1"],6);  //running animation
+      }
+    } else {
+      // move left
+      stopAnimate();
+      startAnimate(obj["Puff"],0); //resting animation
+    }
+  });
+
   //stop animation on window blur
   window.addEventListener("blur", () => {
     stopAnimate();
@@ -351,9 +369,17 @@ window.onload = wrap_img;
 
   //start animation on page load or page refresh
   document.addEventListener("DOMContentLoaded", () => {
-    startAnimate(obj["Rest"],0);
+    // adjust sprite size for high pixel density devices
+    const scale = window.devicePixelRatio;
+    const sprite = document.querySelector(".sprite");
+    sprite.style.transform = `scale(${0.2 * scale})`;
+    /*
+    sprite.style.width = `${pixels * scale}px`;
+    sprite.style.height = `${pixels * scale}px`;
+    */ 
+    // start the animation
+    startAnimate(obj["Flip"],0);
   });
-
 
 </script>
 

@@ -10,7 +10,7 @@ tags: [javascript, css. dom, getElementID]
 ---
 
 <!-- 
-Hack 1: Test conditions on small and big numbers, report on findings
+Hack 1: Test conditions on small, big, and decimal numbers, report on findings. Fix issues.
 Hack 2: Add a common math operation that is missing from calculator
 Hack 3: Implement 1 number operation (ie SQRT) 
 -->
@@ -53,16 +53,16 @@ HTML implementation of the calculator.
 
 <!-- JavaScript (JS) implementation of the calculator. -->
 <script>
-// initialize important variables
-let output = document.getElementById("output");
-let operator = null;
-let firstNumber = null;
-let nextReady = true;
-// build objects containing key buttons
-let numbers = document.querySelectorAll(".calculator-number");
-let operations = document.querySelectorAll(".calculator-operation");
-let clear = document.querySelectorAll(".calculator-clear");
-let equals = document.querySelectorAll(".calculator-equals");
+// initialize important variables to manage calculations
+var firstNumber = null;
+var operator = null;
+var nextReady = true;
+// build objects containing key elements
+const output = document.getElementById("output");
+const numbers = document.querySelectorAll(".calculator-number");
+const operations = document.querySelectorAll(".calculator-operation");
+const clear = document.querySelectorAll(".calculator-clear");
+const equals = document.querySelectorAll(".calculator-equals");
 
 // Number buttons listener
 numbers.forEach(button => {

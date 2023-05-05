@@ -9,41 +9,45 @@ categories: [2.C, C7.0]
 tags: [javascript, css. dom, getElementID]
 ---
 
-{% include nav_frontend.html %}
-<!-- Hack 1: Test conditions on small and big numbers, report on findings -->
-<!-- Hack 2: Add a common math operation that is missing from calculator -->
-<!-- Hack 3: Implement 1 number operation (ie SQRT) -->
-
-<!-- Styling implemented with Sass -->
-
-<!-- HTML implementation of the calculator. 
-    CSS sets 4 buttons (calculator-button) to a row
-    All buttons have onclick JavaScript action
-    All actions result in calculator-output.innerHTML change
+<!-- 
+Hack 1: Test conditions on small and big numbers, report on findings
+Hack 2: Add a common math operation that is missing from calculator
+Hack 3: Implement 1 number operation (ie SQRT) 
 -->
+
+<!-- 
+HTML implementation of the calculator. 
+    Styling implemented with SASSS
+    The div calculator-container sets 4 elements to a row, see cusstome-styles.sccs
+    Each class (calculator-*) is used for styling and for event actions
+    Calculator actions result in calculator-output.innerHTML change
+-->
+
+{% include nav_frontend.html %}
+
 <div class="calculator-container">
     <!--result-->
     <div class="calculator-output" id="output">0</div>
     <!--row 1-->
-    <div class="button" onclick="number('1')">1</div>
-    <div class="button" onclick="number('2')">2</div>
-    <div class="button" onclick="number('3')">3</div>
-    <div class="button" onclick="operation('+')">+</div>
+    <div class="calculator-number">1</div>
+    <div class="calculator-number">2</div>
+    <div class="calculator-number">3</div>
+    <div class="calculator-operation">+</div>
     <!--row 2-->
-    <div class="button" onclick="number('4')">4</div>
-    <div class="button" onclick="number('5')">5</div>
-    <div class="button" onclick="number('6')">6</div>
-    <div class="button" onclick="operation('-')">-</div>
+    <div class="calculator-number">4</div>
+    <div class="calculator-number">5</div>
+    <div class="calculator-number">6</div>
+    <div class="calculator-operation">-</div>
     <!--row 3-->
-    <div class="button" onclick="number('7')">7</div>
-    <div class="button" onclick="number('8')">8</div>
-    <div class="button" onclick="number('9')">9</div>
-    <div class="button" onclick="operation('*')">*</div>
+    <div class="calculator-number">7</div>
+    <div class="calculator-number">8</div>
+    <div class="calculator-number">9</div>
+    <div class="calculator-operation">*</div>
     <!--row 4-->
-    <div class="calculator-button-clear" onclick="clearCalc()">A/C</div>
-    <div class="button" onclick="number('0')">0</div>
-    <div class="button" onclick="number('.')">.</div>
-    <div class="calculator-button-equals" onclick="equals()">=</div>
+    <div class="calculator-clear">A/C</div>
+    <div class="calculator-number">0</div>
+    <div class="calculator-number">.</div>
+    <div class="calculator-equals">=</div>
 </div>
 
 
@@ -54,6 +58,18 @@ let output = document.getElementById("output");
 let operator = null;
 let firstNumber = null;
 let nextReady = true;
+// build objects containing key buttons
+let numbers = document.querySelectorAll(".calculator-number");
+let operations = document.querySelectorAll(".calculator-operation");
+let clear = document.querySelectorAll(".calculator-clear");
+let equals = document.querySelectorAll(".calculator-equals");
+
+// Number buttons listener
+numbers.forEach(button => {
+  button.addEventListener("click", function() {
+    number(button.textContent);
+  });
+});
 
 // Number action
 function number (value) { // function to input numbers into the calculator
@@ -73,6 +89,13 @@ function number (value) { // function to input numbers into the calculator
         }
     }
 }
+
+// Operation buttons listener
+operations.forEach(button => {
+  button.addEventListener("click", function() {
+    operation(button.textContent);
+  });
+});
 
 // Operator action
 function operation (choice) { // function to input operations into the calculator
@@ -111,12 +134,26 @@ function calculate (first, second) { // function to calculate the result of the 
     return result;
 }
 
+// Equals button listener
+equals.forEach(button => {
+  button.addEventListener("click", function() {
+    equal();
+  });
+});
+
 // Equal action
-function equals () { // function used when the equals button is clicked; calculates equation and displays it
+function equal () { // function used when the equals button is clicked; calculates equation and displays it
     firstNumber = calculate(firstNumber, parseFloat(output.innerHTML));
     output.innerHTML = firstNumber.toString();
     nextReady = true;
 }
+
+// Clear button listener
+clear.forEach(button => {
+  button.addEventListener("click", function() {
+    clearCalc();
+  });
+});
 
 // A/C action
 function clearCalc () { // clears calculator

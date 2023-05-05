@@ -63,15 +63,25 @@
         height: 80vh;
     }
   }
+
+  /* styling for the calculator number button */
+  .calculator-number {
+    @extend .button;
+  }
+
+  /* styling for the calculator operation button */
+  .calculator-operation {
+    @extend .button;
+  }
   
   /* styling for the calculator clear button */
-  .calculator-button-clear {
+  .calculator-clear {
     @extend .button;
     background-color: #e68b1c;
   }
   
   /* styling for the calculator equals button */
-  .calculator-button-equals {
+  .calculator-equals {
     @extend .button;
     background-color: #e70f0f;
   }

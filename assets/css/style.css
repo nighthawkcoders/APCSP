@@ -464,7 +464,7 @@ li .post-meta-description { color: rgba(216, 249, 221, 0.69) !important; }
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 /* define class for redifined button */
-.button, .calculator-button-equals, .calculator-button-clear { width: auto; height: auto; border-radius: 10px; background-color: #21807c; border: 3px solid black; font-size: 1.5em; display: flex; justify-content: center; align-items: center; grid-column: span 1; grid-row: span 1; transition: all 0.5s; }
+.button, .calculator-equals, .calculator-clear, .calculator-operation, .calculator-number { width: auto; height: auto; border-radius: 10px; background-color: #21807c; border: 3px solid black; font-size: 1.5em; display: flex; justify-content: center; align-items: center; grid-column: span 1; grid-row: span 1; transition: all 0.5s; }
 
 /* "row style" is flexible size and aligns pictures in center */
 .row { align-items: center; display: flex; }
@@ -477,14 +477,16 @@ li .post-meta-description { color: rgba(216, 249, 221, 0.69) !important; }
 
 @media (min-width: 600px) { .calculator-container { width: 40vw; height: 80vh; } }
 
+/* styling for the calculator number button */
+/* styling for the calculator operation button */
 /* styling for the calculator clear button */
-.calculator-button-clear { background-color: #e68b1c; }
+.calculator-clear { background-color: #e68b1c; }
 
 /* styling for the calculator equals button */
-.calculator-button-equals { background-color: #e70f0f; }
+.calculator-equals { background-color: #e70f0f; }
 
 /* darkens the background color on hover to create a selecting effect */
-.button:hover, .calculator-button-clear:hover, .calculator-button-equals:hover { background-color: #373737; }
+.button:hover, .calculator-number:hover, .calculator-operation:hover, .calculator-clear:hover, .calculator-equals:hover { background-color: #373737; }
 
 .calculator-button-clear:hover { background-color: #534b40; }
 

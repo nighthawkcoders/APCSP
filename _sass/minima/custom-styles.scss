@@ -32,6 +32,11 @@
     @include button;
   }
 
+   /* darkens the background color on hover to create a selecting effect */
+  .button:hover {
+    background-color: #373737;
+  }
+
   /* "row style" is flexible size and aligns pictures in center */
   .row {
     align-items: center;
@@ -86,35 +91,5 @@
     background-color: #e70f0f;
   }
   
-  /* darkens the background color on hover to create a selecting effect */
-  .button:hover {
-    background-color: #373737;
-  }
-  
-  .calculator-button-clear:hover {
-    background-color: #534b40;
-  }
-  
-  .calculator-button-equals:hover {
-    background-color: #533e3e;
-  }
-  
-  /* styling for the top bar which shows the results of the calculator */
-  .calculator-output {
-    /* note how the output instead takes up 4 columns and 1 row; essentially takes up the entirety of the first row */
-    grid-column: span 4;
-    grid-row: span 1;
-  
-    border-radius: 10px;
-    padding: 0.25em;
-    font-size: 20px;
-    border: 5px solid black;
-  
-    display: flex;
-    align-items: center;
-  }
-
-
 // If you want to turn off dark background for syntax highlighting, comment or delete the below line.
 @import "minima/fastpages-dracula-highlight"; 
-

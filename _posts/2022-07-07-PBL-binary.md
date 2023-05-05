@@ -9,15 +9,31 @@ tags: [html, liquid, javascript]
 week: 13
 type: pbl
 ---
-<!-- Jekyll Table Reference: https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html -->
 
-<!-- Hack 1: change turn on to indicator and add value of bin (128, 64, 32, 16, 8, 4, 2, 1) -->
-<!-- Hack 2: add a character display to text when 8 bits, determine if printable or not printable -->
-<!-- Hack 3: change to 24 bits and add a color code and display color when 24 bits, think about display on this one -->
-<!-- Hack 4: do your own thing -->
+<!-- 
+
+Learn how page works, plus learu about binary
+Hack 0: Do your own on/off thing with Image and Buttons thing
+Hack 1: change diplay to indicate value of bin (128, 64, 32, 16, 8, 4, 2, 1)
+Hack 3: change one-zero input under bulb to perform updates to page
+
+Learn about binary representations
+Hack 4: add a ASCII character display to text when 8 bits, determine if printable or not printable
+Hack 5: change to 24 bits and add a color code and display color when 24 bits. Think about display on this one, perhaps wrap bits 
+
+Jekyll Table Reference: https://idratherbewriting.com/documentation-theme-jekyll/mydoc_tables.html
+
+--->
 
 {% include nav_frontend.html %}
 {% assign BITS = 8 %}
+
+<style>
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+</style>
 
 <table>
     <thead>
@@ -32,12 +48,12 @@ type: pbl
     </thead>
     <tbody>
         <tr>
-            <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
+            <td><div class="button" id="add1" onclick="add(1)">+1</div></td>
             <td id="binary">00000000</td>
             <td id="octal">0</td>
             <td id="hexadecimal">0</td>
             <td id="decimal">0</td>
-            <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
+            <td><div class="button" id="sub1" onclick="add(-1)">-1</div></td>
         </tr>
     </tbody>
 </table>
@@ -48,17 +64,19 @@ Liquid for loop includes last number, thus the Minus
 {% assign bits = BITS | minus: 1 %} 
 
 <table>
-    <tbody>
+    <thead>
         <tr>
             {% comment %}
             Build many bits
             {% endcomment %}
             {% for i in (0..bits) %}
-            <td><img id="bulb{{ i }}" src="{{site.baseurl}}/images/bulb_off.png" alt="" width="40" height="Auto">
-                <button type="button" id="butt{{ i }}" onclick="javascript:toggleBit({{ i }})">Turn on</button>
-            </td>
+            <th><img id="bulb{{ i }}" src="{{site.baseurl}}/images/bulb_off.png" alt="" width="40" height="Auto">
+                <div class="button" id="butt{{ i }}" onclick="javascript:toggleBit({{ i }})">Turn on</div>
+            </th>
             {% endfor %}
         </tr>
+    </thead>
+    <tbody>
         <tr>
             {% comment %}
             Value of bit

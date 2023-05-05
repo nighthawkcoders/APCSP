@@ -80,10 +80,6 @@ Hack 3: Implement 1 number operation (ie SQRT)
 
 <!-- 
 HTML implementation of the calculator. 
-    Styling implemented with SASSS
-    The div calculator-container sets 4 elements to a row, see cusstome-styles.sccs
-    Each class (calculator-*) is used for styling and for event actions
-    Calculator actions result in calculator-output.innerHTML change
 -->
 
 <table>
@@ -124,6 +120,34 @@ HTML implementation of the calculator.
     <div class="calculator-number">.</div>
     <div class="calculator-equals">=</div>
 </div>
+
+<!-- Style implementation for calculator
+    Style and Events are aligned with calculator-* class definition
+    SASS contains majority of style (number, operation, clear, and equals)
+    - The div calculator-container sets 4 elements to a row, see cusstome-styles.sccs
+    - All of the calulator-* classes extend .button
+    The calculator-output style is defined on this page
+    - Most calculator-* events/actions result in calculator-output.innerHTML change
+-->
+<style>
+  .calculator-output {
+    /* calulator output 
+      top bar shows the results of the calculator;
+      result to take up the entirety of the first row;
+      span defines 4 columns and 1 row
+    */
+    grid-column: span 4;
+    grid-row: span 1;
+  
+    border-radius: 10px;
+    padding: 0.25em;
+    font-size: 20px;
+    border: 5px solid black;
+  
+    display: flex;
+    align-items: center;
+  }
+</style>
 
 <!-- JavaScript (JS) implementation of the calculator. -->
 <script>

@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -188,10 +188,12 @@ window.onload = wrap_img;
 
 
 
-<div id="5a8d4680-a2e2-425e-a394-cb15c3254d04"></div>
+<div id="57929932-9043-43e6-bf17-62ba9ee1ee34"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5a8d4680-a2e2-425e-a394-cb15c3254d04');
+var element = $('#57929932-9043-43e6-bf17-62ba9ee1ee34');
+console.log("JavaScript Tutorial");
+
 console.log("Hello, World!");
 element.text("Hello, World!");
 //alert("Hello, World!");
@@ -248,10 +250,12 @@ element.text("Hello, World!");
 
 
 
-<div id="7b819079-4815-4d68-883d-9f5592ad7616"></div>
+<div id="f6e1cb95-d9d2-4c77-a641-dde7bbde875a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7b819079-4815-4d68-883d-9f5592ad7616');
+var element = $('#f6e1cb95-d9d2-4c77-a641-dde7bbde875a');
+console.log("Variable Definition");
+
 var msg = "Hello, World!";
 console.log(msg);  //right click browser select Inspect, then select Console to view
 element.text(msg);
@@ -297,6 +301,10 @@ element.text(msg);
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Function Definition&quot;</span><span class="p">);</span>
 
+<span class="cm">/* Function: logIt</span>
+<span class="cm"> * Parameter: output</span>
+<span class="cm"> * Description: The parameter is &quot;output&quot; is logged to console</span>
+<span class="cm">*/</span>
 <span class="kd">function</span> <span class="nx">logIt</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> 
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">output</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>
@@ -311,7 +319,7 @@ element.text(msg);
 <span class="c1">// Second sequence</span>
 <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello, Students!&quot;</span> <span class="c1">// replaces content of variable</span>
 <span class="kd">var</span> <span class="nx">classOf</span> <span class="o">=</span> <span class="s2">&quot;Welcome CS class of 2023-2024&quot;</span>
-<span class="nx">logIt</span><span class="p">(</span><span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">classOf</span><span class="p">);</span> <span class="c1">// concatenation of strings within parameter</span>
+<span class="nx">logIt</span><span class="p">(</span><span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">classOf</span><span class="p">);</span> <span class="c1">// concatenation of strings</span>
 
 <span class="nx">element</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
 </pre></div>
@@ -328,14 +336,17 @@ element.text(msg);
 
 
 
-<div id="e2d6b9db-7b5f-4716-b19d-59be07b79e09"></div>
+<div id="5cb3bf9c-36dc-4c82-afcc-52c375faa9b5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e2d6b9db-7b5f-4716-b19d-59be07b79e09');
+var element = $('#5cb3bf9c-36dc-4c82-afcc-52c375faa9b5');
 console.log("Function Definition");
 
+/* Function: logIt
+ * Parameter: output
+ * Description: The parameter is "output" is logged to console
+*/
 function logIt(output) {
-    console.info(output);
     console.log(output); 
     element.append(output + "<br>");
     //alert(output);
@@ -349,7 +360,7 @@ logIt(msg);
 // Second sequence
 var msg = "Hello, Students!" // replaces content of variable
 var classOf = "Welcome CS class of 2023-2024"
-logIt(msg + " " + classOf); // concatenation of strings within parameter
+logIt(msg + " " + classOf); // concatenation of strings
 
 element.html();
 
@@ -393,8 +404,8 @@ element.html();
 
 <span class="c1">// Function defintion</span>
 <span class="kd">function</span> <span class="nx">logIt</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getType</span><span class="p">(</span><span class="nx">output</span><span class="p">));</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> <span class="c1">//logs the info</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getType</span><span class="p">(</span><span class="nx">output</span><span class="p">));</span>  <span class="c1">// logs string</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>          <span class="c1">// logs object</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">getType</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(getType(output));</span>
 <span class="p">}</span>
@@ -439,10 +450,10 @@ element.html();
 
 
 
-<div id="560ecfe3-5f09-454d-b06d-74f86291cd99"></div>
+<div id="9ab775df-ce26-4d2a-ac08-3d85f184297b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#560ecfe3-5f09-454d-b06d-74f86291cd99');
+var element = $('#9ab775df-ce26-4d2a-ac08-3d85f184297b');
 console.log("Examine Data Types");
 
 // Function to add typeof to output
@@ -452,8 +463,8 @@ function getType(output) {
 
 // Function defintion
 function logIt(output) {
-    console.log(getType(output));
-    console.info(output); //logs the info
+    console.log(getType(output));  // logs string
+    console.info(output);          // logs object
     element.append(getType(output) + "<br>");  
     //alert(getType(output));
 }
@@ -500,7 +511,7 @@ element.html();
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Build-a-Person-object-and-JSON">Build a Person object and JSON<a class="anchor-link" href="#Build-a-Person-object-and-JSON"> </a></h3><p>JavaScript and other languages have special properties and syntax to store and represent data.  In fact, a class in JavaScript is a special function.</p>
 <ul>
-<li><mark>Definition of class allows for a collection of data</mark>, the "class Person" allows programmer to retain name, github id, and class of designation.</li>
+<li><mark>Definition of class allows for a collection of data</mark>, the "class Person" allows programmer to retain name, github id, and class of a Person.</li>
 <li><mark>Instance of a class</mark>, the "const teacher = new Person("Mr M", "jm1021", 1977)" makes an object "teacher" which is an object representation of "class Person".</li>
 <li><mark>Setting additional properties and Getting properties</mark> After creating teacher and student objects, observe that properties can be changed/muted or extracted/accessed.</li>
 </ul>
@@ -518,7 +529,16 @@ element.html();
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Person objects&quot;</span><span class="p">);</span>
 
+<span class="cm">/* class: Person</span>
+<span class="cm"> * Description: A collection of Person data</span>
+<span class="cm">*/</span>
 <span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="cm">/* method: constructor</span>
+<span class="cm">   * parameters: name, ghID - GitHub ID, classOf - Graduation Class </span>
+<span class="cm">   * description: returns object when &quot;new Person()&quot; is called with matching parameters</span>
+<span class="cm">   * assignment: this.name, this.ghID, ... are properties retained in the returned object</span>
+<span class="cm">   * default: this.role is a default property retained in object, it is set to &quot;Student&quot;</span>
+<span class="cm">  */</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">ghID</span> <span class="o">=</span> <span class="nx">ghID</span><span class="p">;</span>
@@ -526,16 +546,27 @@ element.html();
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">&quot;Student&quot;</span><span class="p">;</span>
   <span class="p">}</span>
 
+  <span class="cm">/* method: setter</span>
+<span class="cm">   * parameters: role - role in classroom</span>
+<span class="cm">   * description: this.role is updated from default value to value contained in role parameter</span>
+<span class="cm">  */</span>
   <span class="nx">setRole</span><span class="p">(</span><span class="nx">role</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="nx">role</span><span class="p">;</span>
   <span class="p">}</span>
   
+  <span class="cm">/* method: getter</span>
+<span class="cm">   * description: turns properties of object into JSON object</span>
+<span class="cm">   * return value: JSON object</span>
+<span class="cm">  */</span>
   <span class="nx">getJSON</span><span class="p">()</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="k">typeof</span> <span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
     <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
   <span class="p">}</span>
-    
+
+  <span class="cm">/* method: logIT</span>
+<span class="cm">   * description: &quot;this&quot; Person object is logged to console</span>
+<span class="cm">  */</span>
   <span class="nx">logIt</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">//Person Object</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
@@ -544,18 +575,20 @@ element.html();
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.getJSON());</span>
   <span class="p">}</span>
+    
 <span class="p">}</span>
 
-<span class="c1">// make a new Person Object and assign to variable teacher</span>
+<span class="c1">// make a new Person Object</span>
 <span class="kr">const</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Mr M&quot;</span><span class="p">,</span> <span class="s2">&quot;jm1021&quot;</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span> <span class="c1">// object type is easy to work with in JavaScript</span>
-<span class="c1">// output of Object and JSON/string associated with Teacher</span>
+<span class="c1">// update role to Teacher</span>
 <span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">);</span> <span class="c1">// set the role</span>
-<span class="nx">teacher</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span>  <span class="c1">// log</span>
+<span class="nx">teacher</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span>  <span class="c1">// log to console</span>
 
-<span class="c1">// make a new Person Object and assign to variable student</span>
+<span class="c1">// make a new Person Object</span>
 <span class="kr">const</span> <span class="nx">student</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="mf">2007</span><span class="p">);</span> <span class="c1">// object type is easy to work with in JavaScript</span>
-<span class="c1">// output of Object and JSON/string associated with Teacher</span>
-<span class="nx">student</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span>
+<span class="nx">student</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span> <span class="c1">// log to console</span>
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -570,13 +603,22 @@ element.html();
 
 
 
-<div id="fc63bf9c-069a-4220-880a-aaf657742386"></div>
+<div id="13047703-1d90-4792-a162-252918b6d4bd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fc63bf9c-069a-4220-880a-aaf657742386');
+var element = $('#13047703-1d90-4792-a162-252918b6d4bd');
 console.log("Person objects");
 
+/* class: Person
+ * Description: A collection of Person data
+*/
 class Person {
+  /* method: constructor
+   * parameters: name, ghID - GitHub ID, classOf - Graduation Class 
+   * description: returns object when "new Person()" is called with matching parameters
+   * assignment: this.name, this.ghID, ... are properties retained in the returned object
+   * default: this.role is a default property retained in object, it is set to "Student"
+  */
   constructor(name, ghID, classOf) {
     this.name = name;
     this.ghID = ghID;
@@ -584,16 +626,27 @@ class Person {
     this.role = "Student";
   }
 
+  /* method: setter
+   * parameters: role - role in classroom
+   * description: this.role is updated from default value to value contained in role parameter
+  */
   setRole(role) {
     this.role = role;
   }
   
+  /* method: getter
+   * description: turns properties of object into JSON object
+   * return value: JSON object
+  */
   getJSON() {
     const obj = {type: typeof this, name: this.name, ghID: this.ghID, classOf: this.classOf, role: this.role};
     const json = JSON.stringify(obj);
     return json;
   }
-    
+
+  /* method: logIT
+   * description: "this" Person object is logged to console
+  */
   logIt() {
     //Person Object
     console.info(this);
@@ -602,18 +655,23 @@ class Person {
     element.append(this.getJSON() + "<br>");  
     //alert(this.getJSON());
   }
+    
+  toString() {
+      return this.getJSON();
+  }
 }
 
-// make a new Person Object and assign to variable teacher
+// make a new Person Object
 const teacher = new Person("Mr M", "jm1021", 1977); // object type is easy to work with in JavaScript
-// output of Object and JSON/string associated with Teacher
+// update role to Teacher
 teacher.setRole("Teacher"); // set the role
-teacher.logIt();  // log
+teacher.logIt();  // log to console
 
-// make a new Person Object and assign to variable student
+// make a new Person Object
 const student = new Person("Jane Doe", "jane", 2007); // object type is easy to work with in JavaScript
-// output of Object and JSON/string associated with Teacher
-student.logIt();
+student.logIt(); // log to console
+
+element.html();
 
 </script>
 </div>
@@ -646,6 +704,7 @@ student.logIt();
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Classroom object&quot;</span><span class="p">);</span>
+
 <span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
@@ -671,35 +730,49 @@ student.logIt();
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">// define a classroom with parameters teacher and students</span>
+<span class="cm">/* class: Classroom</span>
+<span class="cm"> * Description: A collection of Person objects</span>
+<span class="cm">*/</span>
 <span class="kr">class</span> <span class="nx">Classroom</span> <span class="p">{</span>
+  <span class="cm">/* method: constructor</span>
+<span class="cm">   * parameters: teacher - a Person object, students - an array of Person objects</span>
+<span class="cm">   * description: returns object when &quot;new Classroom()&quot; is called containing properties and methods of a Classroom</span>
+<span class="cm">   * assignment: this.classroom, this.teacher, ... are properties retained in the returned object</span>
+<span class="cm">   * note: forEach is an iteration method on an object type that allows access to individual elements of an array</span>
+<span class="cm">  */</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// start a Classroom with Teacher</span>
+    <span class="c1">// start this.classroom array with Teacher object</span>
     <span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="nx">teacher</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">];</span>
-    <span class="c1">// then add each Student to Classroom</span>
+      
+    <span class="c1">// push each Student object to this.classroom array </span>
     <span class="k">this</span><span class="p">.</span><span class="nx">students</span> <span class="o">=</span> <span class="nx">students</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">student</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span> <span class="p">});</span>
-    <span class="c1">// build json object of the entire classroom</span>
+      
+    <span class="c1">// start this.json array containing each person in JSON objects</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()));</span>
   <span class="p">}</span>
-      
+
+  <span class="cm">/* method: logIT</span>
+<span class="cm">   * description: &quot;this&quot; Classroom object is logged to console</span>
+<span class="cm">  */</span>
   <span class="nx">logIt</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">//Classroom object</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
     
+    <span class="c1">//Classroom json</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Classroom json &lt;br&gt;&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.json);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">// define a Teacher</span>
+<span class="c1">// define a Teacher object</span>
 <span class="kr">const</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Mr M&quot;</span><span class="p">,</span> <span class="s2">&quot;jm1021&quot;</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span> <span class="c1">// object type is easy to work with in JavaScript</span>
 
-<span class="c1">// define a student Array of Person(s)</span>
+<span class="c1">// define a student Array of Person objects</span>
 <span class="kr">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span> 
     <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Anthony&quot;</span><span class="p">,</span> <span class="s2">&quot;tonyhieu&quot;</span><span class="p">,</span> <span class="mf">2022</span><span class="p">),</span>
     <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Bria&quot;</span><span class="p">,</span> <span class="s2">&quot;B-G101&quot;</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
@@ -727,11 +800,12 @@ student.logIt();
 
 
 
-<div id="066b3e4e-f4c0-4467-b725-5918a163a693"></div>
+<div id="acabcf56-5ef1-43c8-8a0d-141d13e16cdd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#066b3e4e-f4c0-4467-b725-5918a163a693');
+var element = $('#acabcf56-5ef1-43c8-8a0d-141d13e16cdd');
 console.log("Classroom object");
+
 class Person {
   constructor(name, ghID, classOf) {
     this.name = name;
@@ -757,35 +831,49 @@ class Person {
   }
 }
 
-// define a classroom with parameters teacher and students
+/* class: Classroom
+ * Description: A collection of Person objects
+*/
 class Classroom {
+  /* method: constructor
+   * parameters: teacher - a Person object, students - an array of Person objects
+   * description: returns object when "new Classroom()" is called containing properties and methods of a Classroom
+   * assignment: this.classroom, this.teacher, ... are properties retained in the returned object
+   * note: forEach is an iteration method on an object type that allows access to individual elements of an array
+  */
   constructor(teacher, students) {
-    // start a Classroom with Teacher
+    // start this.classroom array with Teacher object
     teacher.setRole("Teacher");
     this.teacher = teacher;
     this.classroom = [teacher];
-    // then add each Student to Classroom
+      
+    // push each Student object to this.classroom array 
     this.students = students;
     this.students.forEach(student => { this.classroom.push(student); });
-    // build json object of the entire classroom
+      
+    // start this.json array containing each person in JSON objects
     this.json = [];
     this.classroom.forEach(person => this.json.push(person.getJSON()));
   }
-      
+
+  /* method: logIT
+   * description: "this" Classroom object is logged to console
+  */
   logIt() {
     //Classroom object
     console.log(this);
     
+    //Classroom json
     element.append("Classroom json <br>");
     element.append(this.json + "<br>");  
     //alert(this.json);
   }
 }
 
-// define a Teacher
+// define a Teacher object
 const teacher = new Person("Mr M", "jm1021", 1977); // object type is easy to work with in JavaScript
 
-// define a student Array of Person(s)
+// define a student Array of Person objects
 const students = [ 
     new Person("Anthony", "tonyhieu", 2022),
     new Person("Bria", "B-G101", 2023),
@@ -891,7 +979,7 @@ compsci.logIt();
 
 <div class="output_subarea output_text output_error">
 <pre>
-<span class="ansi-cyan-fg">  Input </span><span class="ansi-green-fg">In [8]</span>
+<span class="ansi-cyan-fg">  Input </span><span class="ansi-green-fg">In [7]</span>
 <span class="ansi-red-fg">    // define an HTML conversion &#34;method&#34; associated with Classroom</span>
     ^
 <span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax

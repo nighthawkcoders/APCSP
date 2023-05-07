@@ -137,10 +137,17 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="JavaScript-references">JavaScript references<a class="anchor-link" href="#JavaScript-references"> </a></h2><blockquote><p>JavaScript is the most important language you need to learn as a frontend developer.</p>
+<h2 id="JavaScript-/-Jupyter-references">JavaScript / Jupyter references<a class="anchor-link" href="#JavaScript-/-Jupyter-references"> </a></h2><blockquote><p>JavaScript is the most important language you need to learn as a frontend developer.  Jupyter Notebooks is a convenient way to learn the language without the overhead of creating a full Website.  Jupyter Notebooks had ChatGPT plugins to assist with design and troubleshooting problems.  This Notebook has colors on HTML pages that were designed with a dark mode background.</p>
 </blockquote>
 <ul>
-<li><a href="https://www.w3schools.com/js/">W3Schools</a>  - reference</li>
+<li><a href="https://www.w3schools.com/js/">W3Schools</a>  - reference- ChatGPT AI assistant for <a href="https://chrome.google.com/webstore/detail/chatgpt-jupyter-ai-assist/dlipncbkjmjjdpgcnodkbdobkadiejll">Chrome/Jupyter</a> </li>
+<li>Theme setup for Jupyter <a href="https://linuxhint.com/change-theme-jupyter-notebook/">Article</a>.  Or do these commands from shell...<ul>
+<li>Install pip: pip install jupyterthemes</li>
+<li>Revert theme: jt -r </li>
+<li>Install with Theme, Name, Logo: jt -t onedork -T -N -kl</li>
+<li>Run jupyter notebook:  jupyter notebook 2022-09-19-PBL-javascript_tutorial.ipynb </li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -172,7 +179,7 @@ window.onload = wrap_img;
 <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">    &lt;style&gt;</span>
 <span class="s1">        #output {</span>
-<span class="s1">            background-color: #f0f0f0;</span>
+<span class="s1">            background-color: #353b45;</span>
 <span class="s1">            padding: 10px;</span>
 <span class="s1">            border: 3px solid #ccc;</span>
 <span class="s1">        }</span>
@@ -197,7 +204,7 @@ window.onload = wrap_img;
 
     <style>
         #output {
-            background-color: #f0f0f0;
+            background-color: #353b45;
             padding: 10px;
             border: 3px solid #ccc;
         }
@@ -271,10 +278,10 @@ window.onload = wrap_img;
 
 
 
-<div id="89490bf1-b7fa-4ade-ba37-c2b15ddc0b1c"></div>
+<div id="d1ce4021-5b5a-4c64-ada9-003a873370d0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#89490bf1-b7fa-4ade-ba37-c2b15ddc0b1c');
+var element = $('#d1ce4021-5b5a-4c64-ada9-003a873370d0');
 console.log("JavaScript/Jupyter Output Intro");
 
 // Browser Console output; debugging or tracing
@@ -347,10 +354,10 @@ element.append('<br><b>Hello World Again!');
 
 
 
-<div id="d3729df4-d160-48de-a7ae-6254936b0ce1"></div>
+<div id="a6574609-8955-40ed-b1ee-0f66ae9afa2f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d3729df4-d160-48de-a7ae-6254936b0ce1');
+var element = $('#a6574609-8955-40ed-b1ee-0f66ae9afa2f');
 console.log("Variable Definition");
 
 var msg = "Hello, World!";
@@ -432,10 +439,10 @@ element.text(msg);
 
 
 
-<div id="b0410614-ae55-4bdb-b329-0522fee918d4"></div>
+<div id="375618bd-6e60-400e-8656-e113de422686"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b0410614-ae55-4bdb-b329-0522fee918d4');
+var element = $('#375618bd-6e60-400e-8656-e113de422686');
 console.log("Function Definition");
 
 /* Function: logIt
@@ -543,10 +550,10 @@ logIt(msg + "  " + classOf); // concatenation of strings
 
 
 
-<div id="e0b53234-2090-409a-90a2-448dad8ae87d"></div>
+<div id="350ed0e0-a3f2-4413-926a-a92d789e4cdd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e0b53234-2090-409a-90a2-448dad8ae87d');
+var element = $('#350ed0e0-a3f2-4413-926a-a92d789e4cdd');
 console.log("Examine Data Types");
 
 // Function to add typeof to output
@@ -693,10 +700,10 @@ logIt(JSON.stringify(person));  //method used to convert this object into readab
 
 
 
-<div id="ddc85201-bc65-4f7c-8129-cb85f2761740"></div>
+<div id="fa0bb3ac-2245-4c37-a430-19af856d15fc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ddc85201-bc65-4f7c-8129-cb85f2761740');
+var element = $('#fa0bb3ac-2245-4c37-a430-19af856d15fc');
 console.log("Person objects");
 
 /* class: Person
@@ -847,21 +854,15 @@ student.logIt(); // log to console
 <span class="cm">   * parameters: teacher - a Person object, students - an array of Person objects</span>
 <span class="cm">   * description: returns object when &quot;new Classroom()&quot; is called containing properties and methods of a Classroom</span>
 <span class="cm">   * assignment: this.classroom, this.teacher, ... are properties retained in the returned object</span>
-<span class="cm">   * note: forEach is an iteration method on an object type that allows access to individual elements of an array</span>
 <span class="cm">  */</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// start this.classroom array with Teacher object</span>
-    <span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">);</span>
+    <span class="cm">/* spread: this.classroom contains Teacher object and all Student objects</span>
+<span class="cm">     * map: this.json contains of map of all persons to JSON</span>
+<span class="cm">    */</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="nx">teacher</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">];</span>
-      
-    <span class="c1">// push each Student object to this.classroom array </span>
     <span class="k">this</span><span class="p">.</span><span class="nx">students</span> <span class="o">=</span> <span class="nx">students</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">student</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span> <span class="p">});</span>
-      
-    <span class="c1">// start this.json array containing each person in JSON objects</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">,</span> <span class="p">...</span><span class="nx">students</span><span class="p">];</span> <span class="c1">// ... spread option</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="nx">person</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">());</span>
   <span class="p">}</span>
 
   <span class="cm">/* method: logIT</span>
@@ -909,10 +910,10 @@ student.logIt(); // log to console
 
 
 
-<div id="5834f6c0-b1eb-4ef6-a745-3699fa181df9"></div>
+<div id="9e323ca2-656b-464e-9326-eea2a0f93e27"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5834f6c0-b1eb-4ef6-a745-3699fa181df9');
+var element = $('#9e323ca2-656b-464e-9326-eea2a0f93e27');
 console.log("Classroom object");
 
 /* class: Person
@@ -972,21 +973,15 @@ class Classroom {
    * parameters: teacher - a Person object, students - an array of Person objects
    * description: returns object when "new Classroom()" is called containing properties and methods of a Classroom
    * assignment: this.classroom, this.teacher, ... are properties retained in the returned object
-   * note: forEach is an iteration method on an object type that allows access to individual elements of an array
   */
   constructor(teacher, students) {
-    // start this.classroom array with Teacher object
-    teacher.setRole("Teacher");
+    /* spread: this.classroom contains Teacher object and all Student objects
+     * map: this.json contains of map of all persons to JSON
+    */
     this.teacher = teacher;
-    this.classroom = [teacher];
-      
-    // push each Student object to this.classroom array 
     this.students = students;
-    this.students.forEach(student => { this.classroom.push(student); });
-      
-    // start this.json array containing each person in JSON objects
-    this.json = [];
-    this.classroom.forEach(person => this.json.push(person.getJSON()));
+    this.classroom = [teacher, ...students]; // ... spread option
+    this.json = this.classroom.map(person => person.getJSON());
   }
 
   /* method: logIT
@@ -1058,7 +1053,7 @@ compsci.logIt();
 <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">    &lt;style&gt;</span>
 <span class="s1">        #compsci {</span>
-<span class="s1">            background-color: #f0f0f0;</span>
+<span class="s1">            background-color: #353b45;</span>
 <span class="s1">            padding: 10px;</span>
 <span class="s1">            border: 3px solid #ccc;</span>
 <span class="s1">            box-shadow: 0.8em 0.4em 0.4em grey;</span>
@@ -1094,7 +1089,7 @@ compsci.logIt();
 
     <style>
         #compsci {
-            background-color: #f0f0f0;
+            background-color: #353b45;
             padding: 10px;
             border: 3px solid #ccc;
             box-shadow: 0.8em 0.4em 0.4em grey;
@@ -1207,21 +1202,15 @@ compsci.logIt();
 <span class="cm">   * parameters: teacher - a Person object, students - an array of Person objects</span>
 <span class="cm">   * description: returns object when &quot;new Classroom()&quot; is called containing properties and methods of a Classroom</span>
 <span class="cm">   * assignment: this.classroom, this.teacher, ... are properties retained in the returned object</span>
-<span class="cm">   * note: forEach is an iteration method on an object type that allows access to individual elements of an array</span>
 <span class="cm">  */</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// start this.classroom array with Teacher object</span>
-    <span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">);</span>
+    <span class="cm">/* spread: this.classroom contains Teacher object and all Student objects</span>
+<span class="cm">     * map: this.json contains of map of all persons to JSON</span>
+<span class="cm">    */</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="nx">teacher</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">];</span>
-      
-    <span class="c1">// push each Student object to this.classroom array </span>
     <span class="k">this</span><span class="p">.</span><span class="nx">students</span> <span class="o">=</span> <span class="nx">students</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">student</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span> <span class="p">});</span>
-      
-    <span class="c1">// start this.json array containing each person in JSON objects</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">,</span> <span class="p">...</span><span class="nx">students</span><span class="p">];</span> <span class="c1">// ... spread option</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="nx">person</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">());</span>
   <span class="p">}</span>
 
   <span class="cm">/* method: logIT</span>
@@ -1231,7 +1220,7 @@ compsci.logIt();
     <span class="c1">//Classroom object</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
     
-    <span class="c1">//Classroom json</span>
+    <span class="c1">//Classroom JSON output using Jupyter provided element</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Classroom json &lt;br&gt;&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.json);</span>
@@ -1240,6 +1229,7 @@ compsci.logIt();
 
 <span class="c1">// define a Teacher object</span>
 <span class="kr">const</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Mr M&quot;</span><span class="p">,</span> <span class="s2">&quot;jm1021&quot;</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span> <span class="c1">// object type is easy to work with in JavaScript</span>
+<span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">);</span>
 
 <span class="c1">// define a student Array of Person objects</span>
 <span class="kr">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span> 
@@ -1282,10 +1272,10 @@ compsci.logIt();
 
 
 
-<div id="fb7a0643-15ad-470d-b766-b196e67142f1"></div>
+<div id="2c01a01b-b510-4d3c-a894-85f32ada4a42"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fb7a0643-15ad-470d-b766-b196e67142f1');
+var element = $('#2c01a01b-b510-4d3c-a894-85f32ada4a42');
 console.log("Classroom Web Page");
 
 /* class: Person
@@ -1345,21 +1335,15 @@ class Classroom {
    * parameters: teacher - a Person object, students - an array of Person objects
    * description: returns object when "new Classroom()" is called containing properties and methods of a Classroom
    * assignment: this.classroom, this.teacher, ... are properties retained in the returned object
-   * note: forEach is an iteration method on an object type that allows access to individual elements of an array
   */
   constructor(teacher, students) {
-    // start this.classroom array with Teacher object
-    teacher.setRole("Teacher");
+    /* spread: this.classroom contains Teacher object and all Student objects
+     * map: this.json contains of map of all persons to JSON
+    */
     this.teacher = teacher;
-    this.classroom = [teacher];
-      
-    // push each Student object to this.classroom array 
     this.students = students;
-    this.students.forEach(student => { this.classroom.push(student); });
-      
-    // start this.json array containing each person in JSON objects
-    this.json = [];
-    this.classroom.forEach(person => this.json.push(person.getJSON()));
+    this.classroom = [teacher, ...students]; // ... spread option
+    this.json = this.classroom.map(person => person.getJSON());
   }
 
   /* method: logIT
@@ -1369,7 +1353,7 @@ class Classroom {
     //Classroom object
     console.log(this);
     
-    //Classroom json
+    //Classroom JSON output using Jupyter provided element
     element.append("Classroom json <br>");
     element.append(this.json + "<br>");  
     //alert(this.json);
@@ -1378,6 +1362,7 @@ class Classroom {
 
 // define a Teacher object
 const teacher = new Person("Mr M", "jm1021", 1977); // object type is easy to work with in JavaScript
+teacher.setRole("Teacher");
 
 // define a student Array of Person objects
 const students = [ 

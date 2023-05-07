@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      14 min read
     
 </span></p>
 
@@ -148,14 +148,11 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="alert-output">alert output<a class="anchor-link" href="#alert-output"> </a></h3><p>Output to alert dialog box using the classic programming introduction message: "Hello, World!"</p>
+<h3 id="output-introduction-with-HTML-and-CSS">output introduction with HTML and CSS<a class="anchor-link" href="#output-introduction-with-HTML-and-CSS"> </a></h3><p>The next cell is used to setup HTML, the first JavaScript cell will use the output tag to write into the HTML that has been setup.</p>
 <ul>
-<li>%%js is required to allow cell to be JavaScript enabled</li>
-<li>The command or function is <mark>console.log()</mark></li>
-<li>"Hello, World" is a String literal. This is the referred to as <mark>Static text</mark>, as it does not change.</li>
-<li>"Hello, World" is a parameter to the alert command provided by JavaScript.</li>
-<li>The alert <mark>command outputs the parameter to a dialog box</mark>, so you can see it in this Jupyter notebook.</li>
-<li>Note, in a Web Application, alert is often used for debugging.</li>
+<li>Python is used to setup HTML code block</li>
+<li>"style" tag enables visuals customization</li>
+<li>"div" tag is setup to receive data</li>
 </ul>
 
 </div>
@@ -168,15 +165,51 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;JavaScript Tutorial&quot;</span><span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
-<span class="c1">//alert(&quot;Hello, World!&quot;);</span>
+<span class="c1"># This block allow Jupyter Notebook to generate conventional HTML and CSS</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    &lt;style&gt;</span>
+<span class="s1">        #output {</span>
+<span class="s1">            background-color: #f0f0f0;</span>
+<span class="s1">            padding: 10px;</span>
+<span class="s1">            border: 3px solid #ccc;</span>
+<span class="s1">        }</span>
+<span class="s1">    &lt;/style&gt;</span>
+<span class="s1">    &lt;div id=&quot;output&quot;&gt;</span>
+<span class="s1">        Hello!</span>
+<span class="s1">    &lt;/div&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+    <style>
+        #output {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 3px solid #ccc;
+        }
+    </style>
+    <div id="output">
+        Hello!
+    </div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -185,12 +218,100 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="multiple-outputs-showing-use-of-variable">multiple outputs showing use of variable<a class="anchor-link" href="#multiple-outputs-showing-use-of-variable"> </a></h3><p>This second example is a "sequence of code", two or more lines of code forms a sequence.  This example defines a variable, then displays it in multiple ways.</p>
+<h3 id="output-explored">output explored<a class="anchor-link" href="#output-explored"> </a></h3><p>There are several ways to ouput the classic introduction message: "Hello, World!"</p>
+<ul>
+<li>Before you go further, open Console on your Browser. <mark>JavaScript developer leaves Console open</mark> all the time!!!</li>
+<li>The function <mark>console.log()</mark> outputs to Console, this is often used for inspection or debugging.</li>
+<li>"Hello, World" is a String literal. This is the referred to as <mark>Static text</mark>, as it does not change.  Developer call this a <mark>hard coded string</mark>.</li>
+<li><mark>"Hello, World" literal is a parameter</mark> to console.log(), element.txt() and alert().</li>
+<li>The element.txt function is part of <mark>Jupyter Notebook %%js magic</mark>.  This is convenient for Notebook and testing.</li>
+<li>The <mark>alert command outputs the parameter to a dialog box</mark>, so you can see it in this Jupyter notebook. The alert commands are shown, but are commented out as the stop run all execution of the notebook.</li>
+<li>Note, in a Web Application Debugging: An alert is often used for less savy Developers. Console is used by more savy developers; console often requires setting up a lot of outputs. Source level debugging is the most powerful solution for debugging and does not require alert or console commands.</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span> // required to allow cell to be JavaScript enabled
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;JavaScript/Jupyter Output Intro&quot;</span><span class="p">);</span>
+
+<span class="c1">// Browser Console output; debugging or tracing</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello, World Again!&quot;</span><span class="p">);</span>
+
+<span class="c1">// Document Object Model (DOM) output; output to HTML, CSS which is standard for a Web Page</span>
+<span class="c1">// &lt;mark&gt;select element method&lt;/mark&gt;: DOM native JavaScript get, document.getElementByID</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;output&quot;</span><span class="p">).</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<span class="c1">// &lt;mark&gt;jQuery CSS-style method&lt;/mark&gt;: Tag for DOM selector, $(&#39;#output&#39;)</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#output&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;br&gt;&lt;b&gt;Hello World Again!&#39;</span><span class="p">);</span>  <span class="c1">// br is break or new line, b is bold</span>
+
+<span class="c1">// Jupyter built in magic element for testing and convenience of development</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">);</span> <span class="c1">// element is output option as part of %%js magic</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;br&gt;&lt;b&gt;Hello World Again!&#39;</span><span class="p">);</span>
+
+<span class="c1">//alert(&quot;Hello, World!&quot;);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="89490bf1-b7fa-4ade-ba37-c2b15ddc0b1c"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#89490bf1-b7fa-4ade-ba37-c2b15ddc0b1c');
+console.log("JavaScript/Jupyter Output Intro");
+
+// Browser Console output; debugging or tracing
+console.log("Hello, World!");
+console.log("Hello, World Again!");
+
+// Document Object Model (DOM) output; output to HTML, CSS which is standard for a Web Page
+// <mark>select element method</mark>: DOM native JavaScript get, document.getElementByID
+document.getElementById("output").textContent = "Hello, World!";
+// <mark>jQuery CSS-style method</mark>: Tag for DOM selector, $('#output')
+$('#output').append('<br><b>Hello World Again!');  // br is break or new line, b is bold
+
+// Jupyter built in magic element for testing and convenience of development
+element.text("Hello, World!"); // element is output option as part of %%js magic
+element.append('<br><b>Hello World Again!');
+
+//alert("Hello, World!");
+
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="multiple-outputs-using-one-variable">multiple outputs using one variable<a class="anchor-link" href="#multiple-outputs-using-one-variable"> </a></h3><p>This second example is a new <mark>sequence of code</mark>, two or more lines of code forms a sequence.  This example defines a variable, thank goodness!!! In the previous example we were typing the string <code>"Hello, World" over and over</code>.  Observe with the variable <code>msg="Hello, World!";</code> we type the string once and now use <code>msg</code> over and over.</p>
 <ul>
 <li>The variable "var msg =" is used to capture the data</li>
-<li>The alert(msg) works the same as previous, but uses msg as parameter</li>
-<li>The console.log(msg) outputs to console, be sure to Inspect</li>
-<li>The element.text() is part of Jupyter Notebooks and displays as output on page.</li>
+<li>The console.log(msg) outputs to console, be sure to Inspect it!</li>
+<li>The element.text() is part of Jupyter Notebooks and displays as output blow the code on this page. Until we build up some more interesting data for Web Site, we will not use be using the Python HTML, CSS technique.</li>
+<li>The alert(msg) works the same as previous, but as the other commands uses msg as parameter.</li>
 </ul>
 
 </div>
@@ -207,6 +328,8 @@ window.onload = wrap_img;
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Variable Definition&quot;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
+
+<span class="c1">// Use msg to output code to Console and Jupyter Notebook</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>  <span class="c1">//right click browser select Inspect, then select Console to view</span>
 <span class="nx">element</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
 <span class="c1">//alert(msg);</span>
@@ -224,13 +347,15 @@ window.onload = wrap_img;
 
 
 
-<div id="3068d69f-9966-4ecb-a079-024ef7651468"></div>
+<div id="d3729df4-d160-48de-a7ae-6254936b0ce1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3068d69f-9966-4ecb-a079-024ef7651468');
+var element = $('#d3729df4-d160-48de-a7ae-6254936b0ce1');
 console.log("Variable Definition");
 
 var msg = "Hello, World!";
+
+// Use msg to output code to Console and Jupyter Notebook
 console.log(msg);  //right click browser select Inspect, then select Console to view
 element.text(msg);
 //alert(msg);
@@ -277,7 +402,7 @@ element.text(msg);
 
 <span class="cm">/* Function: logIt</span>
 <span class="cm"> * Parameter: output</span>
-<span class="cm"> * Description: The parameter is &quot;output&quot; is logged to console</span>
+<span class="cm"> * Description: The parameter is &quot;output&quot; to console and jupyter page</span>
 <span class="cm">*/</span>
 <span class="kd">function</span> <span class="nx">logIt</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span> 
@@ -285,17 +410,14 @@ element.text(msg);
     <span class="c1">//alert(output);</span>
 <span class="p">}</span>
 
-
-<span class="c1">// First sequence</span>
+<span class="c1">// First sequence calling logIt function</span>
 <span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span><span class="p">;</span>
 <span class="nx">logIt</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
 
-<span class="c1">// Second sequence</span>
-<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello, Students!&quot;</span> <span class="c1">// replaces content of variable</span>
-<span class="kd">var</span> <span class="nx">classOf</span> <span class="o">=</span> <span class="s2">&quot;Welcome CS class of 2023-2024&quot;</span>
-<span class="nx">logIt</span><span class="p">(</span><span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">classOf</span><span class="p">);</span> <span class="c1">// concatenation of strings</span>
-
-<span class="nx">element</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
+<span class="c1">// Second sequence calling logIt function</span>
+<span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="s2">&quot;Hello, &lt;b&gt;Students&lt;/b&gt;!&quot;</span> <span class="c1">// replaces content of variable</span>
+<span class="kd">var</span> <span class="nx">classOf</span> <span class="o">=</span> <span class="s2">&quot;Welcome CS class of 2023-2024.&quot;</span>
+<span class="nx">logIt</span><span class="p">(</span><span class="nx">msg</span> <span class="o">+</span> <span class="s2">&quot;  &quot;</span> <span class="o">+</span> <span class="nx">classOf</span><span class="p">);</span> <span class="c1">// concatenation of strings</span>
 </pre></div>
 
     </div>
@@ -310,15 +432,15 @@ element.text(msg);
 
 
 
-<div id="39ecbb99-67de-4af9-bc78-965051bdcb84"></div>
+<div id="b0410614-ae55-4bdb-b329-0522fee918d4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#39ecbb99-67de-4af9-bc78-965051bdcb84');
+var element = $('#b0410614-ae55-4bdb-b329-0522fee918d4');
 console.log("Function Definition");
 
 /* Function: logIt
  * Parameter: output
- * Description: The parameter is "output" is logged to console
+ * Description: The parameter is "output" to console and jupyter page
 */
 function logIt(output) {
     console.log(output); 
@@ -326,17 +448,14 @@ function logIt(output) {
     //alert(output);
 }
 
-
-// First sequence
+// First sequence calling logIt function
 var msg = "Hello, World!";
 logIt(msg);
 
-// Second sequence
-var msg = "Hello, Students!" // replaces content of variable
-var classOf = "Welcome CS class of 2023-2024"
-logIt(msg + " " + classOf); // concatenation of strings
-
-element.html();
+// Second sequence calling logIt function
+var msg = "Hello, <b>Students</b>!" // replaces content of variable
+var classOf = "Welcome CS class of 2023-2024."
+logIt(msg + "  " + classOf); // concatenation of strings
 
 </script>
 </div>
@@ -351,12 +470,13 @@ element.html();
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loosely-typed-language">Loosely typed language<a class="anchor-link" href="#Loosely-typed-language"> </a></h3><p>"JavaScript is a loosely typed language", meaning you don't have to specify what type of information will be stored in a variable in advance.</p>
-
-<pre><code>- To define a variable you prefix the name with var or const.   The variable type is determined by JavaScript at runtime.
-- Python and many interpretive languages are loosely typed like JavaScript.  This is considered programmer friendly.  
-- Java which is a compiled language is strongly typed, thus you will see terms like String, Integer, Double, and Object in the source code. 
-- In JavaScript, the "typeof" keyword returns the type.  Become familiar with type as it is valuable in conversation and knowing type help you understand built in operations.</code></pre>
+<h3 id="Loosely-typed-language">Loosely typed language<a class="anchor-link" href="#Loosely-typed-language"> </a></h3><p><mark>JavaScript is a loosely typed language</mark>, meaning you don't have to specify what type of information will be stored in a variable in advance.</p>
+<ul>
+<li>To define a variable you prefix the name with <mark>var or const</mark>.   The variable type is determined by JavaScript at runtime.</li>
+<li>Python and many interpretive languages are loosely typed like JavaScript.  This is considered programmer friendly.  </li>
+<li>Java which is a compiled language is strongly typed, thus you will see terms like <mark>String, Integer, Double, and Object</mark> in the source code. </li>
+<li>In JavaScript, the <mark>typeof keyword</mark> returns the type of the variable.  Become familiar with type as it is valuable in conversation and knowing type help you understand how to modify data.  Each variable type will have built in methods to manage content within the data type.</li>
+</ul>
 
 </div>
 </div>
@@ -380,7 +500,7 @@ element.html();
 <span class="kd">function</span> <span class="nx">logIt</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getType</span><span class="p">(</span><span class="nx">output</span><span class="p">));</span>  <span class="c1">// logs string</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>          <span class="c1">// logs object</span>
-    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">getType</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">getType</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  <span class="c1">// adds to Jupyter output</span>
     <span class="c1">//alert(getType(output));</span>
 <span class="p">}</span>
 
@@ -409,7 +529,6 @@ element.html();
 <span class="p">};</span> 
 <span class="nx">logIt</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
 <span class="nx">logIt</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">));</span>  <span class="c1">//method used to convert this object into readable format</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -424,10 +543,10 @@ element.html();
 
 
 
-<div id="071fe430-0e05-4e5c-99f1-b33b28add27e"></div>
+<div id="e0b53234-2090-409a-90a2-448dad8ae87d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#071fe430-0e05-4e5c-99f1-b33b28add27e');
+var element = $('#e0b53234-2090-409a-90a2-448dad8ae87d');
 console.log("Examine Data Types");
 
 // Function to add typeof to output
@@ -439,7 +558,7 @@ function getType(output) {
 function logIt(output) {
     console.log(getType(output));  // logs string
     console.info(output);          // logs object
-    element.append(getType(output) + "<br>");  
+    element.append(getType(output) + "<br>");  // adds to Jupyter output
     //alert(getType(output));
 }
 
@@ -468,7 +587,6 @@ var person = { // key:value pairs seperated by comma
 }; 
 logIt(person);
 logIt(JSON.stringify(person));  //method used to convert this object into readable format
-element.html();
 
 </script>
 </div>
@@ -487,7 +605,7 @@ element.html();
 <ul>
 <li><mark>Definition of class allows for a collection of data</mark>, the "class Person" allows programmer to retain name, github id, and class of a Person.</li>
 <li><mark>Instance of a class</mark>, the "const teacher = new Person("Mr M", "jm1021", 1977)" makes an object "teacher" which is an object representation of "class Person".</li>
-<li><mark>Setting additional properties and Getting properties</mark> After creating teacher and student objects, observe that properties can be changed/muted or extracted/accessed.</li>
+<li><mark>Setting and Getting properties</mark> After creating teacher and student objects, observe that properties can be changed/muted or extracted/accessed.</li>
 </ul>
 
 </div>
@@ -544,7 +662,7 @@ element.html();
   <span class="nx">logIt</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">//Person Object</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-
+    <span class="c1">//Log to Jupter</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Person json &lt;br&gt;&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.getJSON());</span>
@@ -561,8 +679,6 @@ element.html();
 <span class="c1">// make a new Person Object</span>
 <span class="kr">const</span> <span class="nx">student</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;jane&quot;</span><span class="p">,</span> <span class="mf">2007</span><span class="p">);</span> <span class="c1">// object type is easy to work with in JavaScript</span>
 <span class="nx">student</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span> <span class="c1">// log to console</span>
-
-<span class="nx">element</span><span class="p">.</span><span class="nx">html</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -577,10 +693,10 @@ element.html();
 
 
 
-<div id="1fa616c8-733a-405b-8d23-a4a747beb3cc"></div>
+<div id="ddc85201-bc65-4f7c-8129-cb85f2761740"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1fa616c8-733a-405b-8d23-a4a747beb3cc');
+var element = $('#ddc85201-bc65-4f7c-8129-cb85f2761740');
 console.log("Person objects");
 
 /* class: Person
@@ -624,7 +740,7 @@ class Person {
   logIt() {
     //Person Object
     console.info(this);
-
+    //Log to Jupter
     element.append("Person json <br>");
     element.append(this.getJSON() + "<br>");  
     //alert(this.getJSON());
@@ -641,8 +757,6 @@ teacher.logIt();  // log to console
 // make a new Person Object
 const student = new Person("Jane Doe", "jane", 2007); // object type is easy to work with in JavaScript
 student.logIt(); // log to console
-
-element.html();
 
 </script>
 </div>
@@ -676,7 +790,16 @@ element.html();
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Classroom object&quot;</span><span class="p">);</span>
 
+<span class="cm">/* class: Person</span>
+<span class="cm"> * Description: A collection of Person data</span>
+<span class="cm">*/</span>
 <span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="cm">/* method: constructor</span>
+<span class="cm">   * parameters: name, ghID - GitHub ID, classOf - Graduation Class </span>
+<span class="cm">   * description: returns object when &quot;new Person()&quot; is called with matching parameters</span>
+<span class="cm">   * assignment: this.name, this.ghID, ... are properties retained in the returned object</span>
+<span class="cm">   * default: this.role is a default property retained in object, it is set to &quot;Student&quot;</span>
+<span class="cm">  */</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">ghID</span> <span class="o">=</span> <span class="nx">ghID</span><span class="p">;</span>
@@ -684,21 +807,36 @@ element.html();
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">&quot;Student&quot;</span><span class="p">;</span>
   <span class="p">}</span>
 
+  <span class="cm">/* method: setter</span>
+<span class="cm">   * parameters: role - role in classroom</span>
+<span class="cm">   * description: this.role is updated from default value to value contained in role parameter</span>
+<span class="cm">  */</span>
   <span class="nx">setRole</span><span class="p">(</span><span class="nx">role</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="nx">role</span><span class="p">;</span>
   <span class="p">}</span>
   
+  <span class="cm">/* method: getter</span>
+<span class="cm">   * description: turns properties of object into JSON object</span>
+<span class="cm">   * return value: JSON object</span>
+<span class="cm">  */</span>
   <span class="nx">getJSON</span><span class="p">()</span> <span class="p">{</span>
     <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="k">typeof</span> <span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
     <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
     <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
   <span class="p">}</span>
-    
+
+  <span class="cm">/* method: logIT</span>
+<span class="cm">   * description: &quot;this&quot; Person object is logged to console</span>
+<span class="cm">  */</span>
   <span class="nx">logIt</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">());</span>
+    <span class="c1">//Person Object</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="c1">//Log to Jupter</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Person json &lt;br&gt;&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.getJSON());</span>
   <span class="p">}</span>
+    
 <span class="p">}</span>
 
 <span class="cm">/* class: Classroom</span>
@@ -771,13 +909,22 @@ element.html();
 
 
 
-<div id="16c9a277-ef2d-4855-be74-470e512ec177"></div>
+<div id="5834f6c0-b1eb-4ef6-a745-3699fa181df9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#16c9a277-ef2d-4855-be74-470e512ec177');
+var element = $('#5834f6c0-b1eb-4ef6-a745-3699fa181df9');
 console.log("Classroom object");
 
+/* class: Person
+ * Description: A collection of Person data
+*/
 class Person {
+  /* method: constructor
+   * parameters: name, ghID - GitHub ID, classOf - Graduation Class 
+   * description: returns object when "new Person()" is called with matching parameters
+   * assignment: this.name, this.ghID, ... are properties retained in the returned object
+   * default: this.role is a default property retained in object, it is set to "Student"
+  */
   constructor(name, ghID, classOf) {
     this.name = name;
     this.ghID = ghID;
@@ -785,21 +932,36 @@ class Person {
     this.role = "Student";
   }
 
+  /* method: setter
+   * parameters: role - role in classroom
+   * description: this.role is updated from default value to value contained in role parameter
+  */
   setRole(role) {
     this.role = role;
   }
   
+  /* method: getter
+   * description: turns properties of object into JSON object
+   * return value: JSON object
+  */
   getJSON() {
     const obj = {type: typeof this, name: this.name, ghID: this.ghID, classOf: this.classOf, role: this.role};
     const json = JSON.stringify(obj);
     return json;
   }
-    
+
+  /* method: logIT
+   * description: "this" Person object is logged to console
+  */
   logIt() {
-    console.log(this.getJSON());
+    //Person Object
+    console.info(this);
+    //Log to Jupter
+    element.append("Person json <br>");
     element.append(this.getJSON() + "<br>");  
     //alert(this.getJSON());
   }
+    
 }
 
 /* class: Classroom
@@ -872,15 +1034,11 @@ compsci.logIt();
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="IJavaScript-and-Table-formatting-using-toHTML-method">IJavaScript and Table formatting using toHTML method<a class="anchor-link" href="#IJavaScript-and-Table-formatting-using-toHTML-method"> </a></h3><p>This example builds a <mark>Classroom method _toHTML</mark> which is passed to the IJavaScript interpreter $$.html which renders output similarly to a real website.</p>
+<h3 id="output-array-of-hash-objects-to-HTML-and-CSS">output array of hash objects to HTML and CSS<a class="anchor-link" href="#output-array-of-hash-objects-to-HTML-and-CSS"> </a></h3><p>The HTML and CSS  contains the foundations of an HTML Table (table, th, and td tags). Style is consistent with example from the top of this Notebook.</p>
 <ul>
-<li>JavaScript in the _toHTML method is broken into three parts...<ul>
-<li>Style part is building CSS inline formatting</li>
-<li>Body part is constructing the Table Rows (tr), Table Headings (th), and Table Data (td).  The table data is obtained from a Classroom object.  The JavaScript for loop allows the construction of a new row of data for each person object in the Array.</li>
-<li>Return part creates the HTML fragment for rendering</li>
-</ul>
-</li>
-<li>The last line in the example <mark>$$.html is IJavaScript HTML interpreter</mark> and by passing the parameter of the _toHTML method it obtains HTML to render</li>
+<li>style tag <code>#compsci</code> is CSS-style selector</li>
+<li>table id <code>compsci</code> is match for styling</li>
+<li>tbody id <code>classroom</code> is jQuery selector for table data</li>
 </ul>
 
 </div>
@@ -893,53 +1051,367 @@ compsci.logIt();
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">//</span> <span class="n">define</span> <span class="n">an</span> <span class="n">HTML</span> <span class="n">conversion</span> <span class="s2">&quot;method&quot;</span> <span class="n">associated</span> <span class="k">with</span> <span class="n">Classroom</span>
-<span class="n">Classroom</span><span class="o">.</span><span class="n">prototype</span><span class="o">.</span><span class="n">_toHtml</span> <span class="o">=</span> <span class="n">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="o">//</span> <span class="n">HTML</span> <span class="n">Style</span> <span class="ow">is</span> <span class="n">build</span> <span class="n">using</span> <span class="n">inline</span> <span class="n">structure</span>
-  <span class="n">var</span> <span class="n">style</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;display:inline-block;&quot;</span> <span class="o">+</span>
-    <span class="s2">&quot;border: 2px solid grey;&quot;</span> <span class="o">+</span>
-    <span class="s2">&quot;box-shadow: 0.8em 0.4em 0.4em grey;&quot;</span>
-  <span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 
-  <span class="o">//</span> <span class="n">HTML</span> <span class="n">Body</span> <span class="n">of</span> <span class="n">Table</span> <span class="ow">is</span> <span class="n">build</span> <span class="k">as</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">concatenations</span> <span class="p">(</span><span class="o">+=</span><span class="p">)</span>
-  <span class="n">var</span> <span class="n">body</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="o">//</span> <span class="n">Heading</span> <span class="k">for</span> <span class="n">Array</span> <span class="n">Columns</span>
-  <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-  <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Name&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;GitHub ID&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Class Of&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;th&gt;&lt;mark&gt;&quot;</span> <span class="o">+</span> <span class="s2">&quot;Role&quot;</span> <span class="o">+</span> <span class="s2">&quot;&lt;/mark&gt;&lt;/th&gt;&quot;</span><span class="p">;</span>
-  <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/tr&gt;&quot;</span><span class="p">;</span>
-  <span class="o">//</span> <span class="n">Data</span> <span class="n">of</span> <span class="n">Array</span><span class="p">,</span> <span class="n">iterate</span> <span class="n">through</span> <span class="n">each</span> <span class="n">row</span> <span class="n">of</span> <span class="n">compsci</span><span class="o">.</span><span class="n">classroom</span> 
-  <span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">row</span> <span class="n">of</span> <span class="n">compsci</span><span class="o">.</span><span class="n">classroom</span><span class="p">)</span> <span class="p">{</span>
-    <span class="o">//</span> <span class="n">tr</span> <span class="k">for</span> <span class="n">each</span> <span class="n">row</span><span class="p">,</span> <span class="n">a</span> <span class="n">new</span> <span class="n">line</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">td</span> <span class="k">for</span> <span class="n">each</span> <span class="n">column</span> <span class="n">of</span> <span class="n">data</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">ghID</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">classOf</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;td&gt;&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="o">.</span><span class="n">role</span> <span class="o">+</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">tr</span> <span class="n">to</span> <span class="n">end</span> <span class="n">line</span>
-    <span class="n">body</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-
-   <span class="o">//</span> <span class="n">Build</span> <span class="ow">and</span> <span class="n">HTML</span> <span class="n">fragment</span> <span class="n">of</span> <span class="n">div</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">table</span> <span class="n">body</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="s2">&quot;&lt;div style=&#39;&quot;</span> <span class="o">+</span> <span class="n">style</span> <span class="o">+</span> <span class="s2">&quot;&#39;&gt;&quot;</span> <span class="o">+</span>
-      <span class="s2">&quot;&lt;table&gt;&quot;</span> <span class="o">+</span>
-        <span class="n">body</span> <span class="o">+</span>
-      <span class="s2">&quot;&lt;/table&gt;&quot;</span> <span class="o">+</span>
-    <span class="s2">&quot;&lt;/div&gt;&quot;</span>
-  <span class="p">);</span>
-
-<span class="p">};</span>
-
-<span class="o">//</span> <span class="n">IJavaScript</span> <span class="n">HTML</span> <span class="n">processor</span> <span class="n">receive</span> <span class="n">parameter</span> <span class="n">of</span> <span class="n">defined</span> <span class="n">HTML</span> <span class="n">fragment</span>
-<span class="err">$$</span><span class="o">.</span><span class="n">html</span><span class="p">(</span><span class="n">compsci</span><span class="o">.</span><span class="n">_toHtml</span><span class="p">());</span>
+<span class="c1"># This block allow Jupyter Notebook to generate conventional HTML and CSS</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    &lt;style&gt;</span>
+<span class="s1">        #compsci {</span>
+<span class="s1">            background-color: #f0f0f0;</span>
+<span class="s1">            padding: 10px;</span>
+<span class="s1">            border: 3px solid #ccc;</span>
+<span class="s1">            box-shadow: 0.8em 0.4em 0.4em grey;</span>
+<span class="s1">        }</span>
+<span class="s1">    &lt;/style&gt;</span>
+<span class="s1">    &lt;table id=&quot;compsci&quot;&gt;</span>
+<span class="s1">      &lt;thead&gt;</span>
+<span class="s1">      &lt;tr&gt;</span>
+<span class="s1">        &lt;th&gt;Name&lt;/th&gt;</span>
+<span class="s1">        &lt;th&gt;GitHub ID&lt;/th&gt;</span>
+<span class="s1">        &lt;th&gt;Class Of&lt;/th&gt;</span>
+<span class="s1">        &lt;th&gt;Role&lt;/th&gt;</span>
+<span class="s1">      &lt;/tr&gt;</span>
+<span class="s1">      &lt;/thead&gt;</span>
+<span class="s1">      &lt;tbody id=&quot;classroom&quot;&gt;</span>
+<span class="s1">        &lt;!-- generated rows --&gt;</span>
+<span class="s1">      &lt;/tbody&gt;</span>
+<span class="s1">    &lt;/table&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">))</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+    <style>
+        #compsci {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 3px solid #ccc;
+            box-shadow: 0.8em 0.4em 0.4em grey;
+        }
+    </style>
+    <table id="compsci">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>GitHub ID</th>
+        <th>Class Of</th>
+        <th>Role</th>
+      </tr>
+      </thead>
+      <tbody id="classroom">
+        <!-- generated rows -->
+      </tbody>
+    </table>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="for-loop-to-generate-Table-Rows-in-HTML-output">for loop to generate Table Rows in HTML output<a class="anchor-link" href="#for-loop-to-generate-Table-Rows-in-HTML-output"> </a></h3><p>The addition to this code is a JavaScript for loop at the bottom of code to iterate over classroom object creating rows in the tbody classroom id.</p>
+<ul>
+<li>Table generation is broken into parts...<ul>
+<li>table data is obtained from a classroom array inside of the compsci object.  </li>
+<li>the JavaScript for loop allows the construction of a new row of data for each Person hash object inside of the the Array.</li>
+<li>in the loop a table row <code>&lt;tr&gt; ... &lt;/tr&gt;</code> is created for each Person object</li>
+<li>in the loop table data, a table column, <code>&lt;td&gt; ... &lt;/td&gt;</code> is created for name, ghID, classOf, and role.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Classroom Web Page&quot;</span><span class="p">);</span>
+
+<span class="cm">/* class: Person</span>
+<span class="cm"> * Description: A collection of Person data</span>
+<span class="cm">*/</span>
+<span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="cm">/* method: constructor</span>
+<span class="cm">   * parameters: name, ghID - GitHub ID, classOf - Graduation Class </span>
+<span class="cm">   * description: returns object when &quot;new Person()&quot; is called with matching parameters</span>
+<span class="cm">   * assignment: this.name, this.ghID, ... are properties retained in the returned object</span>
+<span class="cm">   * default: this.role is a default property retained in object, it is set to &quot;Student&quot;</span>
+<span class="cm">  */</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">ghID</span> <span class="o">=</span> <span class="nx">ghID</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span> <span class="o">=</span> <span class="nx">classOf</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">&quot;Student&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* method: setter</span>
+<span class="cm">   * parameters: role - role in classroom</span>
+<span class="cm">   * description: this.role is updated from default value to value contained in role parameter</span>
+<span class="cm">  */</span>
+  <span class="nx">setRole</span><span class="p">(</span><span class="nx">role</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="nx">role</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="cm">/* method: getter</span>
+<span class="cm">   * description: turns properties of object into JSON object</span>
+<span class="cm">   * return value: JSON object</span>
+<span class="cm">  */</span>
+  <span class="nx">getJSON</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="k">typeof</span> <span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">ghID</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">ghID</span><span class="p">,</span> <span class="nx">classOf</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
+    <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* method: logIT</span>
+<span class="cm">   * description: &quot;this&quot; Person object is logged to console</span>
+<span class="cm">  */</span>
+  <span class="nx">logIt</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//Person Object</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="c1">//Log to Jupter</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Person json &lt;br&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
+    <span class="c1">//alert(this.getJSON());</span>
+  <span class="p">}</span>
+    
+<span class="p">}</span>
+
+<span class="cm">/* class: Classroom</span>
+<span class="cm"> * Description: A collection of Person objects</span>
+<span class="cm">*/</span>
+<span class="kr">class</span> <span class="nx">Classroom</span> <span class="p">{</span>
+  <span class="cm">/* method: constructor</span>
+<span class="cm">   * parameters: teacher - a Person object, students - an array of Person objects</span>
+<span class="cm">   * description: returns object when &quot;new Classroom()&quot; is called containing properties and methods of a Classroom</span>
+<span class="cm">   * assignment: this.classroom, this.teacher, ... are properties retained in the returned object</span>
+<span class="cm">   * note: forEach is an iteration method on an object type that allows access to individual elements of an array</span>
+<span class="cm">  */</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// start this.classroom array with Teacher object</span>
+    <span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="nx">teacher</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">];</span>
+      
+    <span class="c1">// push each Student object to this.classroom array </span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">students</span> <span class="o">=</span> <span class="nx">students</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">student</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span> <span class="p">});</span>
+      
+    <span class="c1">// start this.json array containing each person in JSON objects</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()));</span>
+  <span class="p">}</span>
+
+  <span class="cm">/* method: logIT</span>
+<span class="cm">   * description: &quot;this&quot; Classroom object is logged to console</span>
+<span class="cm">  */</span>
+  <span class="nx">logIt</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//Classroom object</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    
+    <span class="c1">//Classroom json</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Classroom json &lt;br&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
+    <span class="c1">//alert(this.json);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// define a Teacher object</span>
+<span class="kr">const</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Mr M&quot;</span><span class="p">,</span> <span class="s2">&quot;jm1021&quot;</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span> <span class="c1">// object type is easy to work with in JavaScript</span>
+
+<span class="c1">// define a student Array of Person objects</span>
+<span class="kr">const</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span> 
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Anthony&quot;</span><span class="p">,</span> <span class="s2">&quot;tonyhieu&quot;</span><span class="p">,</span> <span class="mf">2022</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Bria&quot;</span><span class="p">,</span> <span class="s2">&quot;B-G101&quot;</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Allie&quot;</span><span class="p">,</span> <span class="s2">&quot;xiaoa0&quot;</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Tigran&quot;</span><span class="p">,</span> <span class="s2">&quot;Tigran7&quot;</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Rebecca&quot;</span><span class="p">,</span> <span class="s2">&quot;Rebecca-123&quot;</span><span class="p">,</span> <span class="mf">2023</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">&quot;Vidhi&quot;</span><span class="p">,</span> <span class="s2">&quot;VidhiKulkarni&quot;</span><span class="p">,</span> <span class="mf">2024</span><span class="p">)</span>
+<span class="p">];</span>
+
+<span class="c1">// make a CompSci classroom from formerly defined teacher and student Person</span>
+<span class="kr">const</span> <span class="nx">compsci</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">);</span>
+<span class="c1">// output of Objects and JSON in CompSci classroom</span>
+<span class="nx">compsci</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span>
+
+<span class="c1">// from classroom object creates rows and columns in HTML table</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// tr for each row, a new line</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;tr&gt;&#39;</span><span class="p">)</span>
+    <span class="c1">// td for each column of data</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">ghID</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">classOf</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">role</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+    <span class="c1">// tr to end row</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;/tr&gt;&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="fb7a0643-15ad-470d-b766-b196e67142f1"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#fb7a0643-15ad-470d-b766-b196e67142f1');
+console.log("Classroom Web Page");
+
+/* class: Person
+ * Description: A collection of Person data
+*/
+class Person {
+  /* method: constructor
+   * parameters: name, ghID - GitHub ID, classOf - Graduation Class 
+   * description: returns object when "new Person()" is called with matching parameters
+   * assignment: this.name, this.ghID, ... are properties retained in the returned object
+   * default: this.role is a default property retained in object, it is set to "Student"
+  */
+  constructor(name, ghID, classOf) {
+    this.name = name;
+    this.ghID = ghID;
+    this.classOf = classOf;
+    this.role = "Student";
+  }
+
+  /* method: setter
+   * parameters: role - role in classroom
+   * description: this.role is updated from default value to value contained in role parameter
+  */
+  setRole(role) {
+    this.role = role;
+  }
+  
+  /* method: getter
+   * description: turns properties of object into JSON object
+   * return value: JSON object
+  */
+  getJSON() {
+    const obj = {type: typeof this, name: this.name, ghID: this.ghID, classOf: this.classOf, role: this.role};
+    const json = JSON.stringify(obj);
+    return json;
+  }
+
+  /* method: logIT
+   * description: "this" Person object is logged to console
+  */
+  logIt() {
+    //Person Object
+    console.info(this);
+    //Log to Jupter
+    element.append("Person json <br>");
+    element.append(this.getJSON() + "<br>");  
+    //alert(this.getJSON());
+  }
+    
+}
+
+/* class: Classroom
+ * Description: A collection of Person objects
+*/
+class Classroom {
+  /* method: constructor
+   * parameters: teacher - a Person object, students - an array of Person objects
+   * description: returns object when "new Classroom()" is called containing properties and methods of a Classroom
+   * assignment: this.classroom, this.teacher, ... are properties retained in the returned object
+   * note: forEach is an iteration method on an object type that allows access to individual elements of an array
+  */
+  constructor(teacher, students) {
+    // start this.classroom array with Teacher object
+    teacher.setRole("Teacher");
+    this.teacher = teacher;
+    this.classroom = [teacher];
+      
+    // push each Student object to this.classroom array 
+    this.students = students;
+    this.students.forEach(student => { this.classroom.push(student); });
+      
+    // start this.json array containing each person in JSON objects
+    this.json = [];
+    this.classroom.forEach(person => this.json.push(person.getJSON()));
+  }
+
+  /* method: logIT
+   * description: "this" Classroom object is logged to console
+  */
+  logIt() {
+    //Classroom object
+    console.log(this);
+    
+    //Classroom json
+    element.append("Classroom json <br>");
+    element.append(this.json + "<br>");  
+    //alert(this.json);
+  }
+}
+
+// define a Teacher object
+const teacher = new Person("Mr M", "jm1021", 1977); // object type is easy to work with in JavaScript
+
+// define a student Array of Person objects
+const students = [ 
+    new Person("Anthony", "tonyhieu", 2022),
+    new Person("Bria", "B-G101", 2023),
+    new Person("Allie", "xiaoa0", 2023),
+    new Person("Tigran", "Tigran7", 2023),
+    new Person("Rebecca", "Rebecca-123", 2023),
+    new Person("Vidhi", "VidhiKulkarni", 2024)
+];
+
+// make a CompSci classroom from formerly defined teacher and student Person
+const compsci = new Classroom(teacher, students);
+// output of Objects and JSON in CompSci classroom
+compsci.logIt();
+
+// from classroom object creates rows and columns in HTML table
+for (var row of compsci.classroom) {
+    // tr for each row, a new line
+    $('#classroom').append('<tr>')
+    // td for each column of data
+    $('#classroom').append('<td>' + row.name + '</td>')
+    $('#classroom').append('<td>' + row.ghID + '</td>')
+    $('#classroom').append('<td>' + row.classOf + '</td>')
+    $('#classroom').append('<td>' + row.role + '</td>')
+    // tr to end row
+    $('#classroom').append('</tr>');
+}
+
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 

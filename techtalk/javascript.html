@@ -157,7 +157,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="output-introduction-with-HTML-and-CSS">output introduction with HTML and CSS<a class="anchor-link" href="#output-introduction-with-HTML-and-CSS"> </a></h3><p>The next cell is used to setup HTML, the first JavaScript cell will use the output tag to write into the HTML that has been setup.</p>
+<h3 id="output-using-HTML-and-CSS">output using HTML and CSS<a class="anchor-link" href="#output-using-HTML-and-CSS"> </a></h3><p>Multiple cells are used to setup HTML, many of the JavaScript cells will use the output tag(s) to write into the HTML that has been setup.</p>
 <ul>
 <li>Python is used to setup HTML code block</li>
 <li>"style" tag enables visuals customization</li>
@@ -225,6 +225,117 @@ window.onload = wrap_img;
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+
+<span class="c1"># This block allow Jupyter Notebook to generate conventional HTML and CSS</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">    &lt;style&gt;</span>
+<span class="s1">        /* CSS-style selector maps to table id or other id&#39;s in HTML */</span>
+<span class="s1">        #jsonTable, #flaskTable  {</span>
+<span class="s1">            background-color: #353b45;</span>
+<span class="s1">            padding: 10px;</span>
+<span class="s1">            border: 3px solid #ccc;</span>
+<span class="s1">            box-shadow: 0.8em 0.4em 0.4em grey;</span>
+<span class="s1">        }</span>
+<span class="s1">    &lt;/style&gt;</span>
+<span class="s1">    </span>
+<span class="s1">    &lt;!-- Table for writing and extracting jsonText --&gt;</span>
+<span class="s1">    &lt;table id=&quot;jsonTable&quot;&gt;</span>
+<span class="s1">      &lt;thead&gt;</span>
+<span class="s1">      &lt;tr&gt;</span>
+<span class="s1">        &lt;th&gt;Classroom JSON Data&lt;/th&gt;</span>
+<span class="s1">      &lt;/tr&gt;</span>
+<span class="s1">      &lt;/thead&gt;</span>
+<span class="s1">      &lt;tbody&gt;</span>
+<span class="s1">      &lt;tr&gt;</span>
+<span class="s1">        &lt;td id=&quot;jsonText&quot;&gt;{&quot;classroom&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;ghID&quot;:&quot;sample&quot;,&quot;classOf&quot;:2000,&quot;role&quot;:&quot;sample&quot;}]}&lt;/th&gt;</span>
+<span class="s1">      &lt;/tr&gt;      </span>
+<span class="s1">      &lt;/tbody&gt;</span>
+<span class="s1">    &lt;/table&gt;</span>
+<span class="s1">    </span>
+<span class="s1">    &lt;!-- Table used to format dat from API </span>
+<span class="s1">    HTML contains the foundations of an HTML Table (table, th, and td tags).</span>
+<span class="s1">    - table id is in these examples is to apply styling</span>
+<span class="s1">    - tbody id is in these examples is JavaScript jQuery selector for table data</span>
+<span class="s1">    --&gt;</span>
+<span class="s1">    &lt;table id=&quot;flaskTable&quot;&gt;</span>
+<span class="s1">      &lt;thead id=&quot;flaskHead&quot;&gt;</span>
+<span class="s1">          &lt;th&gt;API Data&lt;/th&gt;</span>
+<span class="s1">      &lt;/thead&gt;</span>
+<span class="s1">      &lt;tbody id=&quot;flaskBody&quot;&gt;   </span>
+<span class="s1">      &lt;/tbody&gt;</span>
+<span class="s1">    &lt;/table&gt;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+    <style>
+        /* CSS-style selector maps to table id or other id's in HTML */
+        #jsonTable, #flaskTable  {
+            background-color: #353b45;
+            padding: 10px;
+            border: 3px solid #ccc;
+            box-shadow: 0.8em 0.4em 0.4em grey;
+        }
+    </style>
+    
+    <!-- Table for writing and extracting jsonText -->
+    <table id="jsonTable">
+      <thead>
+      <tr>
+        <th>Classroom JSON Data</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td id="jsonText">{"classroom":[{"type":"object","name":"sample","ghID":"sample","classOf":2000,"role":"sample"}]}&lt;/th&gt;
+      &lt;/tr&gt;      
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+    
+    <!-- Table used to format dat from API 
+    HTML contains the foundations of an HTML Table (table, th, and td tags).
+    - table id is in these examples is to apply styling
+    - tbody id is in these examples is JavaScript jQuery selector for table data
+    -->
+    <table id="flaskTable">
+      <thead id="flaskHead">
+          <th>API Data</th>
+      </thead>
+      <tbody id="flaskBody">   
+      </tbody>
+    </table>
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="output-explored">output explored<a class="anchor-link" href="#output-explored"> </a></h3><p>There are several ways to ouput the classic introduction message: "Hello, World!"</p>
@@ -280,10 +391,10 @@ window.onload = wrap_img;
 
 
 
-<div id="5c74a1ab-9034-448c-860f-838f745a1028"></div>
+<div id="bed04eb8-e2ea-4c83-93c3-486d5557a9a7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5c74a1ab-9034-448c-860f-838f745a1028');
+var element = $('#bed04eb8-e2ea-4c83-93c3-486d5557a9a7');
 console.log("JavaScript/Jupyter Output Intro");
 
 // Browser Console output; debugging or tracing
@@ -356,10 +467,10 @@ element.append('<br><b>Hello World Again!');
 
 
 
-<div id="32c18160-1830-4a62-bf8e-9b41f983b7a2"></div>
+<div id="616cd1d9-c290-4159-bd9a-194af4f2b7ca"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#32c18160-1830-4a62-bf8e-9b41f983b7a2');
+var element = $('#616cd1d9-c290-4159-bd9a-194af4f2b7ca');
 console.log("Variable Definition");
 
 var msg = "Hello, World!";
@@ -441,10 +552,10 @@ element.text(msg);
 
 
 
-<div id="ee1175ff-eb89-405c-bc2c-5a340d6d02ff"></div>
+<div id="2804ca91-2a05-49be-933c-90fbd0a3cf3f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ee1175ff-eb89-405c-bc2c-5a340d6d02ff');
+var element = $('#2804ca91-2a05-49be-933c-90fbd0a3cf3f');
 console.log("Function Definition");
 
 /* Function: logIt
@@ -479,7 +590,7 @@ logIt(msg + "  " + classOf); // concatenation of strings
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Loosely-typed-language">Loosely typed language<a class="anchor-link" href="#Loosely-typed-language"> </a></h3><p><mark>JavaScript is a loosely typed language</mark>, meaning you don't have to specify what type of information will be stored in a variable in advance.</p>
+<h3 id="output-showing-Loosely-typed-data">output showing Loosely typed data<a class="anchor-link" href="#output-showing-Loosely-typed-data"> </a></h3><p><mark>JavaScript is a loosely typed language</mark>, meaning you don't have to specify what type of information will be stored in a variable in advance.</p>
 <ul>
 <li>To define a variable you prefix the name with <mark>var or const</mark>.   The variable type is determined by JavaScript at runtime.</li>
 <li>Python and many interpretive languages are loosely typed like JavaScript.  This is considered programmer friendly.  </li>
@@ -552,10 +663,10 @@ logIt(msg + "  " + classOf); // concatenation of strings
 
 
 
-<div id="e2e42732-0418-4f0b-a8b2-b4ab8a45a508"></div>
+<div id="8db550dd-bbc9-4a84-ae13-7c679fead190"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e2e42732-0418-4f0b-a8b2-b4ab8a45a508');
+var element = $('#8db550dd-bbc9-4a84-ae13-7c679fead190');
 console.log("Examine Data Types");
 
 // Function to add typeof to output
@@ -672,7 +783,7 @@ logIt(JSON.stringify(person));  //method used to convert this object into readab
     <span class="c1">//Person Object</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
     <span class="c1">//Log to Jupter</span>
-    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Person json &lt;br&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Person object in JSON &lt;br&gt;&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.getJSON());</span>
   <span class="p">}</span>
@@ -702,10 +813,10 @@ logIt(JSON.stringify(person));  //method used to convert this object into readab
 
 
 
-<div id="8632fffd-3c4b-428a-9b16-2399adbf6f95"></div>
+<div id="dbca832b-ca6f-4198-a6ed-d5f87c60aff7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8632fffd-3c4b-428a-9b16-2399adbf6f95');
+var element = $('#dbca832b-ca6f-4198-a6ed-d5f87c60aff7');
 console.log("Person objects");
 
 /* class: Person
@@ -750,7 +861,7 @@ class Person {
     //Person Object
     console.info(this);
     //Log to Jupter
-    element.append("Person json <br>");
+    element.append("Person object in JSON <br>");
     element.append(this.getJSON() + "<br>");  
     //alert(this.getJSON());
   }
@@ -789,84 +900,6 @@ student.logIt(); // log to console
 </div>
 </div>
 </div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-
-<span class="c1"># This block allow Jupyter Notebook to generate conventional HTML and CSS</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    &lt;style&gt;</span>
-<span class="s1">        #jsonTable {</span>
-<span class="s1">            background-color: #353b45;</span>
-<span class="s1">            padding: 10px;</span>
-<span class="s1">            border: 3px solid #ccc;</span>
-<span class="s1">            box-shadow: 0.8em 0.4em 0.4em grey;</span>
-<span class="s1">        }</span>
-<span class="s1">    &lt;/style&gt;</span>
-<span class="s1">    &lt;table id=&quot;jsonTable&quot;&gt;</span>
-<span class="s1">      &lt;thead&gt;</span>
-<span class="s1">      &lt;tr&gt;</span>
-<span class="s1">        &lt;th&gt;Classroom JSON Data&lt;/th&gt;</span>
-<span class="s1">      &lt;/tr&gt;</span>
-<span class="s1">      &lt;/thead&gt;</span>
-<span class="s1">      &lt;tbody&gt;</span>
-<span class="s1">      &lt;tr&gt;</span>
-<span class="s1">        &lt;td id=&quot;jsonText&quot;&gt;{&quot;classroom&quot;:[{&quot;type&quot;:&quot;object&quot;,&quot;name&quot;:&quot;sample&quot;,&quot;ghID&quot;:&quot;sample&quot;,&quot;classOf&quot;:2000,&quot;role&quot;:&quot;sample&quot;}]}&lt;/th&gt;</span>
-<span class="s1">      &lt;/tr&gt;      </span>
-<span class="s1">      &lt;/tbody&gt;</span>
-<span class="s1">    &lt;/table&gt;</span>
-<span class="s1">&#39;&#39;&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-    <style>
-        #jsonTable {
-            background-color: #353b45;
-            padding: 10px;
-            border: 3px solid #ccc;
-            box-shadow: 0.8em 0.4em 0.4em grey;
-        }
-    </style>
-    <table id="jsonTable">
-      <thead>
-      <tr>
-        <th>Classroom JSON Data</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td id="jsonText">{"classroom":[{"type":"object","name":"sample","ghID":"sample","classOf":2000,"role":"sample"}]}&lt;/th&gt;
-      &lt;/tr&gt;      
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -953,7 +986,7 @@ student.logIt(); // log to console
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
     
     <span class="c1">//Classroom json</span>
-    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Classroom json &lt;br&gt;&quot;</span><span class="p">);</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Classroom object in JSON&lt;br&gt;&quot;</span><span class="p">);</span>
     <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>  
     <span class="c1">//alert(this.json);</span>
   <span class="p">}</span>
@@ -986,7 +1019,7 @@ student.logIt(); // log to console
 <span class="c1">// output of Objects and JSON in CompSci classroom</span>
 <span class="nx">compsci</span><span class="p">.</span><span class="nx">logIt</span><span class="p">();</span>
 <span class="c1">// enable sharing of data across jupyter cells</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jsonText&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">compsci</span><span class="p">.</span><span class="nx">json</span><span class="p">);</span>  <span class="c1">// posts compsci.json to HTML DOM element called jsonText</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#jsonText&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">compsci</span><span class="p">.</span><span class="nx">json</span><span class="p">);</span>  <span class="c1">// posts/embeds/writes compsci.json to HTML DOM element called jsonText</span>
 </pre></div>
 
     </div>
@@ -1001,10 +1034,10 @@ student.logIt(); // log to console
 
 
 
-<div id="0d9cf374-065e-42e8-ba86-c09bb66a03c5"></div>
+<div id="9b613349-a86c-4732-ac59-de0f58648262"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0d9cf374-065e-42e8-ba86-c09bb66a03c5');
+var element = $('#9b613349-a86c-4732-ac59-de0f58648262');
 console.log("Classroom object");
 
 /* class: Person
@@ -1083,7 +1116,7 @@ class Classroom {
     console.log(this);
     
     //Classroom json
-    element.append("Classroom json <br>");
+    element.append("Classroom object in JSON<br>");
     element.append(this.json + "<br>");  
     //alert(this.json);
   }
@@ -1095,7 +1128,7 @@ class Classroom {
 */
 function constructCompSciClassroom() {
     // define a Teacher object
-    const teacher = new Person("Mr M", "jm1021", 1977, "Teacher"); // object type is easy to work with in JavaScript
+    const teacher = new Person("Mr M", "jm1021", 1977, "Teacher");  // optional 4th parameter
 
     // define a student Array of Person objects
     const students = [ 
@@ -1111,12 +1144,12 @@ function constructCompSciClassroom() {
     return new Classroom(teacher, students);  // returns object
 }
 
-// assigns compsci the object returned by constructCompSciClassroom() function
+// assigns "compsci" to the object returned by "constructCompSciClassroom()" function
 const compsci = constructCompSciClassroom();
 // output of Objects and JSON in CompSci classroom
 compsci.logIt();
-// post JSON data to HTML DOM, enable sharing of data across jupyter cells
-$('#jsonText').text(compsci.json);
+// enable sharing of data across jupyter cells
+$('#jsonText').text(compsci.json);  // posts/embeds/writes compsci.json to HTML DOM element called jsonText
 
 </script>
 </div>
@@ -1131,99 +1164,7 @@ $('#jsonText').text(compsci.json);
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="output-array-of-hash-objects-to-HTML-and-CSS">output array of hash objects to HTML and CSS<a class="anchor-link" href="#output-array-of-hash-objects-to-HTML-and-CSS"> </a></h3><p>The HTML and CSS  contains the foundations of an HTML Table (table, th, and td tags). Style is consistent with example from the top of this Notebook.</p>
-<ul>
-<li>style tag <code>#compsci</code> is CSS-style selector</li>
-<li>table id <code>compsci</code> is match for styling</li>
-<li>tbody id <code>classroom</code> is jQuery selector for table data</li>
-</ul>
-
-</div>
-</div>
-</div>
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-
-<span class="c1"># This block allow Jupyter Notebook to generate conventional HTML and CSS</span>
-<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    &lt;style&gt;</span>
-<span class="s1">        #compsci {</span>
-<span class="s1">            background-color: #353b45;</span>
-<span class="s1">            padding: 10px;</span>
-<span class="s1">            border: 3px solid #ccc;</span>
-<span class="s1">            box-shadow: 0.8em 0.4em 0.4em grey;</span>
-<span class="s1">        }</span>
-<span class="s1">    &lt;/style&gt;</span>
-<span class="s1">    &lt;table id=&quot;compsci&quot;&gt;</span>
-<span class="s1">      &lt;thead&gt;</span>
-<span class="s1">      &lt;tr&gt;</span>
-<span class="s1">        &lt;th&gt;Name&lt;/th&gt;</span>
-<span class="s1">        &lt;th&gt;GitHub ID&lt;/th&gt;</span>
-<span class="s1">        &lt;th&gt;Class Of&lt;/th&gt;</span>
-<span class="s1">        &lt;th&gt;Role&lt;/th&gt;</span>
-<span class="s1">      &lt;/tr&gt;</span>
-<span class="s1">      &lt;/thead&gt;</span>
-<span class="s1">      &lt;tbody id=&quot;classroom&quot;&gt;</span>
-<span class="s1">        &lt;!-- generated rows --&gt;</span>
-<span class="s1">      &lt;/tbody&gt;</span>
-<span class="s1">    &lt;/table&gt;</span>
-<span class="s1">&#39;&#39;&#39;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea ">
-
-    <style>
-        #compsci {
-            background-color: #353b45;
-            padding: 10px;
-            border: 3px solid #ccc;
-            box-shadow: 0.8em 0.4em 0.4em grey;
-        }
-    </style>
-    <table id="compsci">
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>GitHub ID</th>
-        <th>Class Of</th>
-        <th>Role</th>
-      </tr>
-      </thead>
-      <tbody id="classroom">
-        <!-- generated rows -->
-      </tbody>
-    </table>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="for-loop-to-generate-Table-Rows-in-HTML-output">for loop to generate Table Rows in HTML output<a class="anchor-link" href="#for-loop-to-generate-Table-Rows-in-HTML-output"> </a></h3><p>This code extracts JSON text, that was placed in DOM in an earlier cell, then parses text into a JavaScript object.  In addition, there is a JavaScript for loop that iterates over the extracted object generating formated rows and columns in an HTML table.</p>
+<h3 id="for-loop-to-generate-Table-Rows-in-HTML-output">for loop to generate Table Rows in HTML output<a class="anchor-link" href="#for-loop-to-generate-Table-Rows-in-HTML-output"> </a></h3><p>This code extracts JSON text from HTML, that was placed in DOM in an earlier JavaScript cell, then it parses text into a JavaScript object.  In addition, there is a for loop that iterates over the extracted object generating formated rows and columns in an HTML table.</p>
 <ul>
 <li>Table generation is broken into parts...<ul>
 <li>table data is obtained from a classroom array inside of the extracted object.  </li>
@@ -1250,7 +1191,7 @@ $('#jsonText').text(compsci.json);
 <span class="c1">// extract JSON text from HTML page</span>
 <span class="kr">const</span> <span class="nx">jsonText</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;jsonText&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="p">;</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonText</span><span class="p">);</span>
-<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Extracted json &lt;br&gt;&quot;</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Raw jsonText element embedded in HTML&lt;br&gt;&quot;</span><span class="p">);</span>
 <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span> <span class="nx">jsonText</span> <span class="o">+</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>
 
 <span class="c1">// convert JSON text to Object</span>
@@ -1258,7 +1199,9 @@ $('#jsonText').text(compsci.json);
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">classroom</span><span class="p">);</span>
 
 <span class="c1">// from classroom object creates rows and columns in HTML table</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;&lt;br&gt;Formatted data sample from jsonText &lt;br&gt;&quot;</span><span class="p">);</span>
 <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">ghID</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">);</span>
     <span class="c1">// tr for each row, a new line</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#classroom&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;tr&gt;&#39;</span><span class="p">)</span>
     <span class="c1">// td for each column of data</span>
@@ -1283,16 +1226,16 @@ $('#jsonText').text(compsci.json);
 
 
 
-<div id="f8a25ebb-723e-4b6e-8977-70a955e59ca9"></div>
+<div id="a7d13563-68f1-4f4a-baf3-f35e78848383"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f8a25ebb-723e-4b6e-8977-70a955e59ca9');
+var element = $('#a7d13563-68f1-4f4a-baf3-f35e78848383');
 console.log("Classroom Web Page");
 
 // extract JSON text from HTML page
 const jsonText = document.getElementById("jsonText").innerHTML;
 console.log(jsonText);
-element.append("Extracted json <br>");
+element.append("Raw jsonText element embedded in HTML<br>");
 element.append( jsonText + "<br>");
 
 // convert JSON text to Object
@@ -1300,7 +1243,9 @@ const classroom = JSON.parse(jsonText).classroom;
 console.log(classroom);
 
 // from classroom object creates rows and columns in HTML table
+element.append("<br>Formatted data sample from jsonText <br>");
 for (var row of classroom) {
+    element.append(row.ghID + " " + row.name + '<br>');
     // tr for each row, a new line
     $('#classroom').append('<tr>')
     // td for each column of data
@@ -1311,6 +1256,118 @@ for (var row of classroom) {
     // tr to end row
     $('#classroom').append('</tr>');
 }
+
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;API Web Page&quot;</span><span class="p">);</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://flask.nighthawkcodingsociety.com/api/users/&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">mode</span><span class="o">:</span> <span class="s1">&#39;cors&#39;</span> <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">response</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;API response failed&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// table headings</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskHead&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;tr&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskHead&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;th&gt;ID&lt;/th&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskHead&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;th&gt;Name&lt;/th&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskHead&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;th&gt;DOB&lt;/th&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskHead&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;th&gt;Age&lt;/th&gt;&#39;</span><span class="p">)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskHead&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;/tr&gt;&#39;</span><span class="p">)</span>
+      
+    <span class="c1">// table data</span>
+    <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Formatted data sample from api/users &lt;br&gt;&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">of</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">);</span>
+      <span class="c1">// tr for each row, a new line</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskBody&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;tr&gt;&#39;</span><span class="p">)</span>
+      <span class="c1">// td for each column of data</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskBody&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">id</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskBody&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskBody&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">dob</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskBody&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td&gt;&#39;</span> <span class="o">+</span> <span class="nx">row</span><span class="p">.</span><span class="nx">age</span> <span class="o">+</span> <span class="s1">&#39;&lt;/td&gt;&#39;</span><span class="p">)</span>
+      <span class="c1">// tr to end row</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#flaskBody&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;/tr&gt;&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+  <span class="p">});</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="31728486-5646-4d0f-a097-ee41b3ded187"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#31728486-5646-4d0f-a097-ee41b3ded187');
+console.log("API Web Page");
+
+fetch('https://flask.nighthawkcodingsociety.com/api/users/', { mode: 'cors' })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('API response failed');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // table headings
+    console.log(data);
+    $('#flaskHead').append('<tr>')
+    $('#flaskHead').append('<th>ID</th>')
+    $('#flaskHead').append('<th>Name</th>')
+    $('#flaskHead').append('<th>DOB</th>')
+    $('#flaskHead').append('<th>Age</th>')
+    $('#flaskHead').append('</tr>')
+      
+    // table data
+    element.append("Formatted data sample from api/users <br>");
+    for (var row of data) {
+      element.append(row.id + " " + row.name + '<br>');
+      // tr for each row, a new line
+      $('#flaskBody').append('<tr>')
+      // td for each column of data
+      $('#flaskBody').append('<td>' + row.id + '</td>')
+      $('#flaskBody').append('<td>' + row.name + '</td>')
+      $('#flaskBody').append('<td>' + row.dob + '</td>')
+      $('#flaskBody').append('<td>' + row.age + '</td>')
+      // tr to end row
+      $('#flaskBody').append('</tr>');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 </script>
 </div>

@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Python 2D Iteration | APCSP</title>
+<title>Python 2D Iteration and Animation | APCSP</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Python 2D Iteration" />
+<meta property="og:title" content="Python 2D Iteration and Animation" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript." />
 <meta property="og:description" content="Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript." />
@@ -18,9 +18,9 @@
 <meta property="article:published_time" content="2023-05-16T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://nighthawkcoders.github.io/APCSP/images/monkeys.png" />
-<meta property="twitter:title" content="Python 2D Iteration" />
+<meta property="twitter:title" content="Python 2D Iteration and Animation" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-16T00:00:00-05:00","datePublished":"2023-05-16T00:00:00-05:00","description":"Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript.","headline":"Python 2D Iteration","image":"https://nighthawkcoders.github.io/APCSP/images/monkeys.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html"},"url":"https://nighthawkcoders.github.io/APCSP/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-16T00:00:00-05:00","datePublished":"2023-05-16T00:00:00-05:00","description":"Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python. The objective is to build a stronger foundation in iteration and data. Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript.","headline":"Python 2D Iteration and Animation","image":"https://nighthawkcoders.github.io/APCSP/images/monkeys.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://nighthawkcoders.github.io/APCSP/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html"},"url":"https://nighthawkcoders.github.io/APCSP/1.d/2.b/3.b/c3.1/2023/05/16/DS-arrays_lab.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/APCSP/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://nighthawkcoders.github.io/APCSP/feed.xml" title="APCSP" /><link rel="shortcut icon" type="image/x-icon" href="/APCSP/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -75,13 +75,13 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Python 2D Iteration</h1><p class="page-description">Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python.  The objective is to build a stronger foundation in iteration and data.  Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-05-16T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Python 2D Iteration and Animation</h1><p class="page-description">Several 2D arrays and Animations hacks are provided to further learn iteration and data in Python.  The objective is to build a stronger foundation in iteration and data.  Also, it is important to see concepts like printing color and moving objects in terminal, prior to moving to frontend development with JavaScript.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-05-16T00:00:00-05:00" itemprop="datePublished">
         May 16, 2023
       </time>
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -139,7 +139,12 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#2D-array">2D array </a></li>
+<li class="toc-entry toc-h2"><a href="#2D-Programming-and-Resources">2D Programming and Resources </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Python-2D-array">Python 2D array </a></li>
+<li class="toc-entry toc-h3"><a href="#JavaScript-2D-array">JavaScript 2D array </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#Monkey-Jumpers-Poem">Monkey Jumpers Poem </a></li>
 <li class="toc-entry toc-h2"><a href="#Animation,-the-Energetic-versus-Lazy-Programmer-methods">Animation, the Energetic versus Lazy Programmer methods </a></li>
 </ul><!--
@@ -154,9 +159,32 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2D-array">
-<a class="anchor" href="#2D-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>2D array<a class="anchor-link" href="#2D-array"> </a>
+<h2 id="2D-Programming-and-Resources">
+<a class="anchor" href="#2D-Programming-and-Resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>2D Programming and Resources<a class="anchor-link" href="#2D-Programming-and-Resources"> </a>
 </h2>
+<blockquote>
+<p>There are lots of applications for 2D data.  Common terms in 2D are tabular data, row/columns, matrix, etc.  Nested iterative loops are often used to find or discover each cell in a 2D array.</p>
+<ul>
+<li>2D samples and challenges in Jupyter.  wget link:<a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-05-16-DS-arrays_lab.ipynb-">https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_notebooks/2023-05-16-DS-arrays_lab.ipynb-</a> Gaining familiariy with JavaScript animations, these are markdown code examples.<ul>
+<li>Assets  <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_data/mario_metadata.yml">metadata yml</a>, wget and place in _data directory;  <a href="https://github.com/nighthawkcoders/APCSP/blob/master/images/mario_animation.png">sprite</a>, download and place in images directory </li>
+<li>Code to interact with Sprite Animations <a href="https://nighthawkcoders.github.io/APCSP/frontend/mario">runtime</a>, <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-19-PBL-mario-sprite.md">wget code</a>
+</li>
+<li>Game starters <a href="https://nighthawkcoders.github.io/APCSP/frontend/mario2">runtime</a>, <a href="https://raw.githubusercontent.com/nighthawkcoders/APCSP/master/_posts/2022-07-19-PBL-mario-animation.md">wget imperative code</a>, <a href="https://github.com/nighthawkcoders/APCSP/blob/master/_posts/2022-07-19-PBL-mario-animation-oop.md">wget oop code</a>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Python-2D-array">
+<a class="anchor" href="#Python-2D-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python 2D array<a class="anchor-link" href="#Python-2D-array"> </a>
+</h3>
 <blockquote>
 <p>Example of pre-populating 2D array and printing using 3 different styles</p>
 <ul>
@@ -247,6 +275,58 @@ window.onload = wrap_img;
 <span class="c1"># tester section</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">test_matrices</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="JavaScript-2D-array">
+<a class="anchor" href="#JavaScript-2D-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>JavaScript 2D array<a class="anchor-link" href="#JavaScript-2D-array"> </a>
+</h3>
+<blockquote>
+<p>Populate a 2D array.  Key concepts are ij loop and assignments</p>
+<ul>
+<li>Candy challenge:Create one of the Python examples above.</li>
+</ul>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%js</span>
+
+<span class="cm">/*</span>
+<span class="cm">* Creator: Nighthawk Coding Society</span>
+<span class="cm">Construct a two-dimensional array in JS</span>
+<span class="cm">*/</span>
+
+<span class="kd">var</span> <span class="nx">arr2D</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="kd">var</span> <span class="nx">rows</span> <span class="o">=</span> <span class="mf">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">cols</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
+ 
+<span class="c1">// Loop to initialize 2D array elements</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">rows</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">arr2D</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span><span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">cols</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">arr2D</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"r:"</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="s2">"c:"</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr2D</span><span class="p">);</span>
+<span class="nx">element</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">arr2D</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -665,7 +745,7 @@ window.onload = wrap_img;
 
 <span class="c1"># ANSI Color Codes</span>
 <span class="n">OCEAN_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[34m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
-<span class="n">SHIP_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[33m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
+<span class="n">SHIP_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[35m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
 <span class="n">RESET_COLOR</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">"</span><span class="se">\u001B</span><span class="s2">[0m</span><span class="se">\u001B</span><span class="s2">[2D"</span>
 
 <span class="k">def</span> <span class="nf">ship_print</span><span class="p">(</span><span class="n">position</span><span class="p">):</span>  <span class="c1"># print ship with colors and leading spaces according to position</span>

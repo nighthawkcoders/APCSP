@@ -12,10 +12,10 @@ week: 34
 ---
 
 ## Plans Week 34
-> Last tech talks and review project plans
-- Monday: Tech Talk: Sorting Algorithms: Bubble, Insertion, Selection, Merge
+> Last tech talks and 4 hours of project work
+- Monday: Enrichment TT: Sorting Algorithms: Bubble, Insertion, Selection, Merge
 - Tuesday: Project Check #6 review, Work Day
-- Wednesday: Tech Talk: 2D arrays and Animation
+- Wednesday: Enrichment TT: 2D arrays and Animation
 - Thursday: Work Day
 - Friday: Work Day
 

@@ -2,8 +2,8 @@
 toc: true
 comments: true
 layout: post
-title:  Week of 05-15, Search and Sort
-description: Introduction to Sorting and Searching Algorithms
+title:  Week of 05-15, Sort and 2D
+description: Introduction to Sorting, 2D and animation
 permalink: /points/34
 image: /images/points.jpeg
 categories: []
@@ -12,10 +12,10 @@ week: 34
 ---
 
 ## Plans Week 34
-> 
-- Monday: Data Structures: Sorting Algorithms: Bubble, Insertion, Selection, Merge
-- Tuesday: Work Day
-- Wednesday: Data Structures: Searching Algorithms: Linear Search, Binary Search
+> Last tech talks and review project plans
+- Monday: Tech Talk: Sorting Algorithms: Bubble, Insertion, Selection, Merge
+- Tuesday: Project Check #6 review, Work Day
+- Wednesday: Tech Talk: 2D arrays and Animation
 - Thursday: Work Day
 - Friday: Work Day
 

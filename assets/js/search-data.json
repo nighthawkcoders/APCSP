@@ -69,7 +69,7 @@
     
         ,"post6": {
             "title": "Sorting Algorithms",
-            "content": "import random numbers = [] for i in range(10): numbers.append(random.randint(0,100)) print(&quot;Random List&quot;) print(numbers) .",
+            "content": "import random numbers = [] for i in range(10): numbers.append(random.randint(0,100)) print(&quot;Random List&quot;) print(numbers) . Random List [70, 88, 8, 54, 95, 47, 71, 90, 20, 36] . Warm Up . Discuss with a partner... What are some strategies you would use to sort this list? (Don&#39;t worry about writing code for now) . ? | . Explore . Get into groups of 3 . We will be focusing on 4 algorithms today. . We will look at the first one together, Bubble Sort . . What is happening with this sort? . In your groups you will each choose to be an expert on a sorting algorithm. Merge, Selection, and Insertion. Take about 5 minutes to read about your algorithm and be ready to explain it to your other group members. . Merge . Selection . Insertion .",
             "url": "https://nighthawkcoders.github.io/APCSP/2023/05/15/DS-sorting.html",
             "relUrl": "/2023/05/15/DS-sorting.html",
             "date": " • May 15, 2023"

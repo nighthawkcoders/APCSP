@@ -69,7 +69,7 @@
     
         ,"post6": {
             "title": "Sorting Algorithms",
-            "content": "",
+            "content": "import random numbers = [] for i in range(10): numbers.append(random.randint(0,100)) print(&quot;Random List&quot;) print(numbers) .",
             "url": "https://nighthawkcoders.github.io/APCSP/2023/05/15/DS-sorting.html",
             "relUrl": "/2023/05/15/DS-sorting.html",
             "date": " • May 15, 2023"

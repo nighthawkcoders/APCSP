@@ -313,7 +313,7 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 <a class="anchor" href="#Bubble-Sort-Poopcorn-Hack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bubble Sort Poopcorn Hack<a class="anchor-link" href="#Bubble-Sort-Poopcorn-Hack"> </a>
 </h2>
 <blockquote>
-<p>Mortensen did this in class.  Make sure you rebuild words between each sort.</p>
+<p>Mortensen did this hack in class.</p>
 </blockquote>
 
 </div>
@@ -362,8 +362,8 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['septicolored', 'lapped', 'Jesuitically', 'Colville', 'unscrupulousness', 'elytroclasia', 'femororotulian', 'bicaudate', 'Novial', 'invendible']
-['Colville', 'Jesuitically', 'Novial', 'bicaudate', 'elytroclasia', 'femororotulian', 'invendible', 'lapped', 'septicolored', 'unscrupulousness']
+<pre>['semihyperbolical', 'samesome', 'paradoxidian', 'pyruline', 'gangliocyte', 'reckoning', 'intertubular', 'copelate', 'cered', 'amyloid']
+['amyloid', 'cered', 'copelate', 'gangliocyte', 'intertubular', 'paradoxidian', 'pyruline', 'reckoning', 'samesome', 'semihyperbolical']
 </pre>
 </div>
 </div>
@@ -381,7 +381,7 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 <a class="anchor" href="#Selection-Sort-Poopcorn-Hack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Selection Sort Poopcorn Hack<a class="anchor-link" href="#Selection-Sort-Poopcorn-Hack"> </a>
 </h2>
 <blockquote>
-<p>Mortensen did this in class.  Make sure you rebuild words between each sort.</p>
+<p>Mortensen did this hack in class.</p>
 </blockquote>
 
 </div>
@@ -401,7 +401,7 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
     
     <span class="c1"># List is traversed from index 0 to n-1, n elements</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="n">smallI</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">smallI</span> <span class="o">=</span> <span class="n">i</span>  <span class="c1"># small index is captured</span>
         <span class="n">smallV</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
         <span class="c1"># Inner traversal looks at elements after i</span>
@@ -409,10 +409,10 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
             <span class="c1"># Save reference if less</span>
             <span class="n">keyV</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
             <span class="k">if</span> <span class="n">keyV</span> <span class="o">&lt;</span> <span class="n">smallV</span><span class="p">:</span>
-                <span class="n">smallI</span> <span class="o">=</span> <span class="n">j</span>
+                <span class="n">smallI</span> <span class="o">=</span> <span class="n">j</span>  <span class="c1"># small index is replaced</span>
                 <span class="n">smallV</span> <span class="o">=</span> <span class="n">keyV</span>
         
-        <span class="c1"># swap smallest to current i</span>
+        <span class="c1"># swap smallest to current i positon, sorting left to right</span>
         <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">smallI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">smallI</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># single line swap </span>
         
 <span class="n">selectionSort</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
@@ -429,8 +429,8 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['unnegotiated', 'wuss', 'pleuritical', 'Whitefieldian', 'furthermost', 'ascaridiasis', 'porophyllous', 'bobbinwork', 'penetrator', 'meningocele']
-['Whitefieldian', 'ascaridiasis', 'bobbinwork', 'furthermost', 'meningocele', 'penetrator', 'pleuritical', 'porophyllous', 'unnegotiated', 'wuss']
+<pre>['ainoi', 'accipient', 'marvelry', 'rampageously', 'unpalatial', 'diaminogen', 'Pacht', 'tweak', 'faddism', 'elegant']
+['Pacht', 'accipient', 'ainoi', 'diaminogen', 'elegant', 'faddism', 'marvelry', 'rampageously', 'tweak', 'unpalatial']
 </pre>
 </div>
 </div>

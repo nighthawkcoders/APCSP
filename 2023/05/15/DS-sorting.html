@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      6 min read
     
 </span></p>
 
@@ -125,6 +125,8 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h1"><a href="#Sorting-Words">Sorting Words </a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#Bubble-Sort-Poopcorn-Hack">Bubble Sort Poopcorn Hack </a></li>
+<li class="toc-entry toc-h2"><a href="#Selection-Sort-Poopcorn-Hack">Selection Sort Poopcorn Hack </a></li>
 <li class="toc-entry toc-h2"><a href="#Discuss">Discuss </a></li>
 <li class="toc-entry toc-h2"><a href="#HACKS">HACKS </a></li>
 </ul>
@@ -173,7 +175,7 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Random List
-[9, 62, 78, 54, 18, 74, 58, 84, 20, 46]
+[82, 33, 5, 63, 33, 66, 55, 81, 90, 49]
 </pre>
 </div>
 </div>
@@ -307,7 +309,7 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Random List
-['taqua', 'radknight', 'gonococcal', 'unreproducible', 'blastogranitic', 'polyoecism', 'ulrichite', 'geosyncline', 'entomologist', 'kilnrib']
+['voided', 'beseechment', 'acquiescently', 'elator', 'intrapleural', 'elementally', 'maceman', 'defrayal', 'turnsole', 'vernacle']
 </pre>
 </div>
 </div>
@@ -316,6 +318,139 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>[nltk_data]   Unzipping corpora/words.zip.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bubble-Sort-Poopcorn-Hack">
+<a class="anchor" href="#Bubble-Sort-Poopcorn-Hack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bubble Sort Poopcorn Hack<a class="anchor-link" href="#Bubble-Sort-Poopcorn-Hack"> </a>
+</h2>
+<blockquote>
+<p>Mortensen did this in class.  Make sure you rebuild words between each sort.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># list are indexed 0 to n-1, len is n</span>
+    
+    <span class="c1"># Traverse through list with i index</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">swapped</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># optimize code, so it exits if now swaps on inner loop</span>
+
+        <span class="c1"># Inner traversal using j index</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">):</span>  <span class="c1"># n-i as positions on right are in order in bubble</span>
+ 
+            <span class="c1"># Swap if the element KeyN is greater KeyN1</span>
+            <span class="n">keyN</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">keyN1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">keyN</span> <span class="o">&gt;</span> <span class="n">keyN1</span><span class="p">:</span>
+                <span class="n">swapped</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># single line swap</span>
+         
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">swapped</span><span class="p">:</span>  <span class="c1"># if no swaps on inner pass, list is sorted</span>
+            <span class="k">return</span>  <span class="c1"># exit function</span>
+        
+<span class="n">bubbleSort</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['pyrolytic', 'sleechy', 'attingence', 'Mayda', 'pylorogastrectomy', 'gonadotropin', 'mesocarp', 'Hydrochoerus', 'nonpropagandistic', 'deoxygenate']
+['Hydrochoerus', 'Mayda', 'attingence', 'deoxygenate', 'gonadotropin', 'mesocarp', 'nonpropagandistic', 'pylorogastrectomy', 'pyrolytic', 'sleechy']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Selection-Sort-Poopcorn-Hack">
+<a class="anchor" href="#Selection-Sort-Poopcorn-Hack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Selection Sort Poopcorn Hack<a class="anchor-link" href="#Selection-Sort-Poopcorn-Hack"> </a>
+</h2>
+<blockquote>
+<p>Mortensen did this in class.  Make sure you rebuild words between each sort.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="nb">list</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>  <span class="c1"># length is n</span>
+    
+    <span class="c1"># List is traversed from index 0 to n-1, n elements</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">smallI</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">smallV</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="c1"># Inner traversal looks at elements after i</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="c1"># Save reference if less</span>
+            <span class="n">keyV</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">keyV</span> <span class="o">&lt;</span> <span class="n">smallV</span><span class="p">:</span>
+                <span class="n">smallI</span> <span class="o">=</span> <span class="n">j</span>
+                <span class="n">smallV</span> <span class="o">=</span> <span class="n">keyV</span>
+        
+        <span class="c1"># swap smallest to current i</span>
+        <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">smallI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">smallI</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># single line swap </span>
+        
+<span class="n">selectionSort</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['voided', 'beseechment', 'acquiescently', 'elator', 'intrapleural', 'elementally', 'maceman', 'defrayal', 'turnsole', 'vernacle']
+['acquiescently', 'beseechment', 'defrayal', 'elator', 'elementally', 'intrapleural', 'maceman', 'turnsole', 'vernacle', 'voided']
 </pre>
 </div>
 </div>
@@ -440,6 +575,27 @@ Select the algorithm you believe is best for each, explain.</li>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Original
+[{'name': 'Risa', 'age': 18, 'city': 'New York'}, {'name': 'John', 'age': 63, 'city': 'Eugene'}, {'name': 'Shekar', 'age': 18, 'city': 'San Francisco'}, {'name': 'Ryan', 'age': 21, 'city': 'Los Angeles'}]
+name
+[{'name': 'John', 'age': 63, 'city': 'Eugene'}, {'name': 'Risa', 'age': 18, 'city': 'New York'}, {'name': 'Ryan', 'age': 21, 'city': 'Los Angeles'}, {'name': 'Shekar', 'age': 18, 'city': 'San Francisco'}]
+age
+[{'name': 'Risa', 'age': 18, 'city': 'New York'}, {'name': 'Shekar', 'age': 18, 'city': 'San Francisco'}, {'name': 'Ryan', 'age': 21, 'city': 'Los Angeles'}, {'name': 'John', 'age': 63, 'city': 'Eugene'}]
+city
+[{'name': 'John', 'age': 63, 'city': 'Eugene'}, {'name': 'Ryan', 'age': 21, 'city': 'Los Angeles'}, {'name': 'Risa', 'age': 18, 'city': 'New York'}, {'name': 'Shekar', 'age': 18, 'city': 'San Francisco'}]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

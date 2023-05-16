@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      11 min read
     
 </span></p>
 
@@ -188,7 +188,7 @@ window.onload = wrap_img;
 <blockquote>
 <p>Example of pre-populating 2D array and printing using 3 different styles</p>
 <ul>
-<li>Candy Challenge:print a christmas tree and trunck</li>
+<li>Candy Challenge:print a christmas tree and trunk</li>
 </ul>
 </blockquote>
 
@@ -281,6 +281,67 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Keypad 4 x ~3
+Classic nested loops using ij indexes
+1 2 3 
+4 5 6 
+7 8 9 
+  0   
+Enhanced nested for loops
+1 2 3 
+4 5 6 
+7 8 9 
+  0   
+For loop with shortcut (*) row expansion
+1 2 3
+4 5 6
+7 8 9
+  0  
+
+Keyboard 4 x ~24
+Classic nested loops using ij indexes
+` 1   2   3   4   5   6   7   8   9   0   -   = 
+    Q   W   E   R   T   Y   U   I     O   P   [   ]   \ 
+      A   S   D   F   G   H   J   K   L   ;   ' 
+        Z   X   C   V   B   N   M   ,   .   / 
+Enhanced nested for loops
+` 1   2   3   4   5   6   7   8   9   0   -   = 
+    Q   W   E   R   T   Y   U   I     O   P   [   ]   \ 
+      A   S   D   F   G   H   J   K   L   ;   ' 
+        Z   X   C   V   B   N   M   ,   .   / 
+For loop with shortcut (*) row expansion
+` 1   2   3   4   5   6   7   8   9   0   -   =
+    Q   W   E   R   T   Y   U   I     O   P   [   ]   \
+      A   S   D   F   G   H   J   K   L   ;   '
+        Z   X   C   V   B   N   M   ,   .   /
+
+Number Systems 3 x ~2
+Classic nested loops using ij indexes
+0 1 
+0 1 2 3 4 5 6 7 8 9 
+0 1 2 3 4 5 6 7 8 9 A B C D E F 
+Enhanced nested for loops
+0 1 
+0 1 2 3 4 5 6 7 8 9 
+0 1 2 3 4 5 6 7 8 9 A B C D E F 
+For loop with shortcut (*) row expansion
+0 1
+0 1 2 3 4 5 6 7 8 9
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -291,9 +352,9 @@ window.onload = wrap_img;
 <a class="anchor" href="#JavaScript-2D-array" aria-hidden="true"><span class="octicon octicon-link"></span></a>JavaScript 2D array<a class="anchor-link" href="#JavaScript-2D-array"> </a>
 </h3>
 <blockquote>
-<p>Populate a 2D array.  Key concepts are ij loop and assignments</p>
+<p>Example below populate a 2D array.  Key concepts are ij loop and assignments.  Observe the object that is created in console.  Learn the basics of iteration through 2D array in JavaScript.</p>
 <ul>
-<li>Candy challenge:Create one of the Python examples above.</li>
+<li>Candy challenge:Work of pairs.  Create one of the Python examples (christmas tree, keyboard, ...). Use the element.append to output within the notebook.   As you work on JavaScript make sure your development enviornment is setup like JavaScript programmer.</li>
 </ul>
 </blockquote>
 
@@ -330,6 +391,46 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="2839ce44-b366-45e6-9e50-4cc150994221"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#2839ce44-b366-45e6-9e50-4cc150994221');
+
+/*
+* Creator: Nighthawk Coding Society
+Construct a two-dimensional array in JS
+*/
+
+var arr2D = [];
+var rows = 3;
+var cols = 4;
+ 
+// Loop to initialize 2D array elements
+for (var i = 0; i < rows; i++) {
+    arr2D[i]=[];
+    for (var j = 0; j < cols; j++) {
+        arr2D[i][j] = "r:" + i + "c:" + j;
+    }
+}
+console.log(arr2D);
+element.append(arr2D);
+
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -452,6 +553,22 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>No more monkeys jumping on the bed
+0000000000000000000000000000000000
+             THE END              
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -724,6 +841,24 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                                          |\ 
+                                          |/ 
+                                      \__ |__/ 
+                                       \____/ 
+<span class="ansi-blue-fg"> -------------------------------------------- </span><span class="ansi-white-fg">
+</span></pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -777,6 +912,25 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+                                                              |\   
+                                                              |/   
+<span class="ansi-magenta-fg">                                                          \__ |__/ 
+                                                           \____/  
+</span><span class="ansi-blue-fg">----------------------------------------------------------------</span>
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

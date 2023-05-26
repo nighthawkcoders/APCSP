@@ -1,72 +1,72 @@
-# Metadata to describe animations in sprite file images/mario_animations.png
-- C1.0: Identify and apply the systems development process.
-- C1.1: Identify the phases of the systems development life cycle, including analysis, design, programming, testing, implementation, maintenance, and improvement.
-- C1.2: Identify and describe models of systems development, systems development life cycle (SDLC), and agile computing.
-- C1.3: Identify and describe how specifications and requirements are developed for new and existing software applications. 
-- C1.4: Work as a member of, and within the scope and boundaries of, a development project team.
-- C1.5: Track development project milestones using the concept of versions.
-- C1.6: Diagram processes using flowcharts and the Unified Modeling Language.
-- C2.0: Define and analyze systems and software requirements.
-- C2.1: Describe the major purposes and benefits of development, including automation, improving productivity, modeling and analysis, and entertainment.
-- C2.2: Recognize and prevent unintended consequences of development work; programming errors, security issues, health and environmental risks, and privacy concerns.
-- C2.3: Develop strategies that target the specific needs and desires of the customer.
-- C2.4: Analyze customers’ needs for development.
-- C2.5: Determine and document the requirements and alternative solutions to fulfill the customers needs.
-- C3.0: Create effective interfaces between humans and technology.
-- C3.1: Describe and apply the basic process of input, processing, and output.
-- C3.2: Design effective and intuitive interfaces using knowledge of cognitive, physical, and social interactions.
-- C3.3: Support methods of accessibility for all potential users, including users with disabilities and non-English-speaking users.
-- C4.0: Develop software using programming languages.
-- C4.1: Identify and describe the abstraction level of programming languages from low-level, hardware-based languages to high-level, interpreted, Web-based languages.
-- C4.2: Describe the interaction and integration of programming languages and protocols such as how client-side programming can work with server-side programming to use a query language to access a database.
-- C4.3: Identify and use different authoring tools and integrated development environments (IDEs).
-- C4.4: Identify and apply data types and encoding.
-- C4.5: Demonstrate awareness of various programming paradigms, including procedural, object oriented, event-driven, and multithreaded programing.
-- C4.6: Use proper programming language syntax.
-- C4.7: Use various data structures, arrays, objects, files, and databases.
-- C4.8: Use object oriented programming concepts, properties, methods, and inheritance.
-- C4.9: Create programs using control structures, procedures, functions, parameters, variables, error recovery, and recursion.
-- C4.10: Create and know the comparative advantages of various queue, sorting, and searching algorithms.
-- C4.11: Document development work for various audiences, such as comments for other programmers, and manuals for users.
-- C5.0: Test, debug, and improve software development work.
-- C5.1: Identify the characteristics of reliable, effective, and efficient products.
-- C5.2: Describe the ways in which specification changes and technological advances can require the modification of programs.
-- C5.3: Use strategies to optimize code for improved performance.
-- C5.4: Test software and projects.
-- C5.5: Evaluate results against initial requirements.
-- C5.6: Debug software as part of the quality assurance process.
-- C6.0: Integrate a variety of media into development projects.
-- C6.1: Identify the basic design elements necessary to produce effective print, video, audio, and interactive media.
-- C6.2: Describe the various encoding methods of media and trade-offs; vector graphics vs. bitmaps, and bit depth.
-- C6.3: Use media design and editing software; keyframe animation, drawing software, image editors, and three-dimensional design.
-- C6.4: Develop a presentation or other multimedia project; video, game, or interactive Web sites, from storyboard to production.
-- C6.5: Analyze the use of media to determine the appropriate file format and level of compression.
-- C6.6: Integrate media into a full project using appropriate tools.
-- C6.7: Create and/or capture professional-quality media, images, documents, audio, and video clips.
-- C7.0: Develop Web and online projects.
-- C7.1: Identify the hardware (server) and software required for Web hosting and other services.
-- C7.2: Describe the full process of online content delivery, registering domain names, setting up hosting, and setting up e-mail addresses.
-- C7.3: Attract Web-site visitors through search engine optimization using various strategies like keywords and meta-tags.
-- C7.4: Enable e-commerce capabilities to sell products, create a shopping cart, and handle credit card transactions.
-- C7.5: Create an online project, Web-based business, and e-portfolio.
-- C7.6: Optimize fast delivery and retrieval of online content such as Web pages.
-- C8.0: Develop databases.
-- C8.1: Describe the critical function of databases in modern organizations.
-- C8.2: Identify and use the basic structures of databases, fields, records, tables, and views
-- C8.3: Identify and explain the types of relationships between tables (one-to-one, one-to-many, many-to-many) and use methods to establish these relationships, including primary keys, foreign keys, and indexes.
-- C8.4: Use data modeling techniques to create databases based upon business needs.
-- C8.5: Use queries to extract and manipulate data (select queries, action queries).
-- C8.6: Develop databases that are properly normalized using appropriate schemas.
-- C8.7: Export and import data to and from other applications and a database recognizing the limitations and challenges inherent in the process.
-- C8.8: Analyze and display data to assist with decision making using methods like cross tabulations, graphs, and charts.
-- C9.0: Develop software for a variety of devices, including robotics.
-- C9.1: Demonstrate awareness of the applications of device development work, including personalized computing, robotics, and smart appliances.
-- C9.2: Install equipment, assemble hardware, and perform tests using appropriate tools and technology.
-- C9.3: Use hardware to gain input, process information, and take action.
-- C9.4: Apply the concepts of embedded programming, including digital logic, machine-level representation of data, and memory-system organization.
-- C9.5: Program a micro-controller for a device or robot.
-- C10.0: Develop intelligent computing.
-- C10.1: Describe models of intelligent behavior and what distinguishes humans from machines. 
-- C10.2: Describe the major areas of intelligent computing, including perception, proximity, processing, and control.
-- C10.3: Know artificial intelligence methods such as neural networks, Bayesian inferences, fuzzy logic, and finite state machines.
-- C10.4: Implement artificial intelligent behavior through various methods; mathematical modeling, reinforcement learning, and probabilistic analysis.
+# Key and Values to describe standards
+C1.0: Identify and apply the systems development process.
+C1.1: Identify the phases of the systems development life cycle, including analysis, design, programming, testing, implementation, maintenance, and improvement.
+C1.2: Identify and describe models of systems development, systems development life cycle (SDLC), and agile computing.
+C1.3: Identify and describe how specifications and requirements are developed for new and existing software applications. 
+C1.4: Work as a member of, and within the scope and boundaries of, a development project team.
+C1.5: Track development project milestones using the concept of versions.
+C1.6: Diagram processes using flowcharts and the Unified Modeling Language.
+C2.0: Define and analyze systems and software requirements.
+C2.1: Describe the major purposes and benefits of development, including automation, improving productivity, modeling and analysis, and entertainment.
+C2.2: Recognize and prevent unintended consequences of development work; programming errors, security issues, health and environmental risks, and privacy concerns.
+C2.3: Develop strategies that target the specific needs and desires of the customer.
+C2.4: Analyze customers’ needs for development.
+C2.5: Determine and document the requirements and alternative solutions to fulfill the customers needs.
+C3.0: Create effective interfaces between humans and technology.
+C3.1: Describe and apply the basic process of input, processing, and output.
+C3.2: Design effective and intuitive interfaces using knowledge of cognitive, physical, and social interactions.
+C3.3: Support methods of accessibility for all potential users, including users with disabilities and non-English-speaking users.
+C4.0: Develop software using programming languages.
+C4.1: Identify and describe the abstraction level of programming languages from low-level, hardware-based languages to high-level, interpreted, Web-based languages.
+C4.2: Describe the interaction and integration of programming languages and protocols such as how client-side programming can work with server-side programming to use a query language to access a database.
+C4.3: Identify and use different authoring tools and integrated development environments (IDEs).
+C4.4: Identify and apply data types and encoding.
+C4.5: Demonstrate awareness of various programming paradigms, including procedural, object oriented, event-driven, and multithreaded programing.
+C4.6: Use proper programming language syntax.
+C4.7: Use various data structures, arrays, objects, files, and databases.
+C4.8: Use object oriented programming concepts, properties, methods, and inheritance.
+C4.9: Create programs using control structures, procedures, functions, parameters, variables, error recovery, and recursion.
+C4.10: Create and know the comparative advantages of various queue, sorting, and searching algorithms.
+C4.11: Document development work for various audiences, such as comments for other programmers, and manuals for users.
+C5.0: Test, debug, and improve software development work.
+C5.1: Identify the characteristics of reliable, effective, and efficient products.
+C5.2: Describe the ways in which specification changes and technological advances can require the modification of programs.
+C5.3: Use strategies to optimize code for improved performance.
+C5.4: Test software and projects.
+C5.5: Evaluate results against initial requirements.
+C5.6: Debug software as part of the quality assurance process.
+C6.0: Integrate a variety of media into development projects.
+C6.1: Identify the basic design elements necessary to produce effective print, video, audio, and interactive media.
+C6.2: Describe the various encoding methods of media and trade-offs; vector graphics vs. bitmaps, and bit depth.
+C6.3: Use media design and editing software; keyframe animation, drawing software, image editors, and three-dimensional design.
+C6.4: Develop a presentation or other multimedia project; video, game, or interactive Web sites, from storyboard to production.
+C6.5: Analyze the use of media to determine the appropriate file format and level of compression.
+C6.6: Integrate media into a full project using appropriate tools.
+C6.7: Create and/or capture professional-quality media, images, documents, audio, and video clips.
+C7.0: Develop Web and online projects.
+C7.1: Identify the hardware (server) and software required for Web hosting and other services.
+C7.2: Describe the full process of online content delivery, registering domain names, setting up hosting, and setting up e-mail addresses.
+C7.3: Attract Web-site visitors through search engine optimization using various strategies like keywords and meta-tags.
+C7.4: Enable e-commerce capabilities to sell products, create a shopping cart, and handle credit card transactions.
+C7.5: Create an online project, Web-based business, and e-portfolio.
+C7.6: Optimize fast delivery and retrieval of online content such as Web pages.
+C8.0: Develop databases.
+C8.1: Describe the critical function of databases in modern organizations.
+C8.2: Identify and use the basic structures of databases, fields, records, tables, and views
+C8.3: Identify and explain the types of relationships between tables (one-to-one, one-to-many, many-to-many) and use methods to establish these relationships, including primary keys, foreign keys, and indexes.
+C8.4: Use data modeling techniques to create databases based upon business needs.
+C8.5: Use queries to extract and manipulate data (select queries, action queries).
+C8.6: Develop databases that are properly normalized using appropriate schemas.
+C8.7: Export and import data to and from other applications and a database recognizing the limitations and challenges inherent in the process.
+C8.8: Analyze and display data to assist with decision making using methods like cross tabulations, graphs, and charts.
+C9.0: Develop software for a variety of devices, including robotics.
+C9.1: Demonstrate awareness of the applications of device development work, including personalized computing, robotics, and smart appliances.
+C9.2: Install equipment, assemble hardware, and perform tests using appropriate tools and technology.
+C9.3: Use hardware to gain input, process information, and take action.
+C9.4: Apply the concepts of embedded programming, including digital logic, machine-level representation of data, and memory-system organization.
+C9.5: Program a micro-controller for a device or robot.
+C10.0: Develop intelligent computing.
+C10.1: Describe models of intelligent behavior and what distinguishes humans from machines. 
+C10.2: Describe the major areas of intelligent computing, including perception, proximity, processing, and control.
+C10.3: Know artificial intelligence methods such as neural networks, Bayesian inferences, fuzzy logic, and finite state machines.
+C10.4: Implement artificial intelligent behavior through various methods; mathematical modeling, reinforcement learning, and probabilistic analysis.
